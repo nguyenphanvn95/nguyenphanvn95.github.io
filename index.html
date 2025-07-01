@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ospalh's GitHub Pages</title>
-  <style>
-    body {
-      max-width: 700px;
-      margin: auto;
-      font-family: sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
-      padding: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    a {
-      color: #0645ad;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Addon Showcase</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { text-align: center; }
+        form { margin-bottom: 20px; }
+        .addon { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 8px; }
+        .addon img { max-width: 150px; }
+    </style>
 </head>
 <body>
+    <h1>Addon Showcase</h1>
 
-  <h1>ospalh's GitHub Pages</h1>
+    <form id="addonForm">
+        <input type="text" id="name" placeholder="Addon Name" required><br>
+        <input type="text" id="link" placeholder="Addon Link" required><br>
+        <input type="text" id="image" placeholder="Image URL"><br>
+        <textarea id="description" placeholder="Addon Description" required></textarea><br>
+        <button type="submit">Add Addon</button>
+    </form>
 
-  <p>This is the landing page for some of my small projects. These are mostly related to <strong>Anki</strong>, and some might still be under development.</p>
+    <div id="addonList"></div>
 
-  <ul>
-    <li><a href="https://github.com/ospalh/anki-addons">Anki Add-ons on GitHub</a></li>
-    <li><a href="https://ankiweb.net/shared/addons/">AnkiWeb Add-ons</a></li>
-    <li><a href="anki-dictionaries/index.html">Anki Dictionaries</a></li>
-    <li><a href="generate-hint-smart/index.html">Generate Hint Smart</a></li>
-    <li><a href="restart-anki/index.html">Restart Anki Add-on</a></li>
-    <li><a href="anki-decks/index.html">Shared Anki Decks</a></li>
-  </ul>
+    <script>
+        const form = document.getElementById('addonForm');
+        const addonList = document.getElementById('addonList');
 
-  <p>Feel free to fork, reuse or improve the content. All add-ons are free and open-source.</p>
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
 
+            const name = document.getElementById('name').value;
+            const link = document.getElementById('link').value;
+            const image = document.getElementById('image').value;
+            const description = document.getElementById('description').value;
+
+            const addon = { name, link, image, description };
+            displayAddon(addon);
+            saveAddon(addon);
+            form.reset();
+        });
+
+        function displayAddon(addon) {
+            const div = document.createElement('div');
+            div.className = 'addon';
+            div.innerHTML = `
+                <h3><a href="${addon.link}" target="_blank">${addon.name}</a></h3>
+                ${addon.image ? `<img src="${addon.image}" alt="${addon.name}">` : ''}
+                <p>${addon.description}</p>
+            `;
+            addonList.appendChild(div);
+        }
+
+        function saveAddon(addon) {
+            let addons = JSON.parse(localStorage.getItem('addons')) || [];
+            addons.push(addon);
+            localStorage.setItem('addons', JSON.stringify(addons));
+        }
+
+        function loadAddons() {
+            let addons = JSON.parse(localStorage.getItem('addons')) || [];
+            addons.forEach(displayAddon);
+        }
+
+        loadAddons();
+    </script>
 </body>
 </html>
