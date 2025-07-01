@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Writing Practice</title>
+    <title>Anki Sharing</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
         h1 { text-align: center; }
@@ -12,55 +12,6 @@
     </style>
 </head>
 <body>
-    <h1>AI Writing Practice</h1>
-
-    <label for="topic">Enter a topic:</label>
-    <input type="text" id="topic" placeholder="e.g. The impact of technology on education">
-    <button onclick="generateTopic()">Generate Random Topic</button>
-
-    <label for="essay">Write your essay:</label>
-    <textarea id="essay" rows="10" placeholder="Start writing your essay here..."></textarea>
-    <button onclick="evaluateEssay()">Evaluate Essay</button>
-
-    <div class="feedback" id="feedback"></div>
-
-    <script>
-        function generateTopic() {
-            const topics = [
-                "The importance of learning a second language",
-                "How climate change affects our daily life",
-                "The pros and cons of online learning",
-                "The impact of artificial intelligence on jobs",
-                "Why exercise is essential for health"
-            ];
-            const randomTopic = topics[Math.floor(Math.random() * topics.length)];
-            document.getElementById('topic').value = randomTopic;
-        }
-
-        async function evaluateEssay() {
-            const topic = document.getElementById('topic').value;
-            const essay = document.getElementById('essay').value;
-            const feedbackDiv = document.getElementById('feedback');
-            feedbackDiv.innerHTML = 'Evaluating your essay...';
-
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer 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'
-                },
-                body: JSON.stringify({
-                    model: 'gpt-4',
-                    messages: [
-                        { role: 'system', content: 'You are an English writing teacher. Evaluate the student essay based on content, structure, grammar, and vocabulary. Give a score from 1 to 10 and feedback.' },
-                        { role: 'user', content: `Topic: ${topic}\nEssay: ${essay}` }
-                    ]
-                })
-            });
-
-            const data = await response.json();
-            feedbackDiv.innerHTML = data.choices[0].message.content;
-        }
-    </script>
+    <iframe src="https://nguyenphanvn95.notion.site/ebd/22339e2b621580ee9ebef529ee78f74c" width="100%" height="600" frameborder="0" allowfullscreen />
 </body>
 </html>
