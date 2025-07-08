@@ -545,7 +545,7 @@
                 // Generate exercise content using Gemini
                 const prompt = `Hãy tạo một bài viết ngắn khoảng 10-12 câu với tiêu đề: "${exercise.title}" 
                 bằng tiếng Việt, phù hợp với mức độ ${selectedLevel} và thể loại ${selectedType}. 
-                Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh.`;
+                Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh. Tạo tên, địa chỉ ngẫu nhiên nếu bài viết cần, Trả lời văn bản đơn thuần không có các ký tự dạng markdown.`;
                 
                 currentText = await callGeminiAPI(prompt);
                 vietnameseTextEl.textContent = currentText;
