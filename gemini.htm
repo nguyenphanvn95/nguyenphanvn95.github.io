@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Viết Tiếng Anh với Gemini Flash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f72585;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: none;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .practice-card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+        }
+        
+        .sentence-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid var(--accent);
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .sentence-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .feedback-good {
+            background-color: rgba(76, 201, 240, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .feedback-average {
+            background-color: rgba(247, 202, 24, 0.1);
+            border-left: 4px solid #f7ca18;
+        }
+        
+        .feedback-poor {
+            background-color: rgba(247, 37, 133, 0.1);
+            border-left: 4px solid var(--warning);
+        }
+        
+        .progress-bar {
+            background-color: var(--accent);
+        }
+        
+        .gemini-response {
+            background-color: #eef7ff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .summary-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .step.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: #dee2e6;
+            z-index: 1;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #dee2e6;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .step.active .step-number {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        .rating {
+            display: inline-flex;
+            margin-left: 10px;
+        }
+        
+        .star {
+            color: #ddd;
+            font-size: 1.2rem;
+        }
+        
+        .star.filled {
+            color: #ffc107;
+        }
+        
+        .stats-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+        
+        .api-key-container {
+            background: #fff8e1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .gemini-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #ea4335, #4285f4, #34a853, #fbbc05);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="fas fa-pen-fancy me-2"></i>Luyện Viết Tiếng Anh</h1>
+                    <p class="lead">Nâng cao kỹ năng viết tiếng Anh với công nghệ Gemini Flash</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <div class="d-inline-block bg-white text-dark p-2 rounded">
+                        <i class="fas fa-bolt text-warning"></i>
+                        <span class="gemini-logo">Gemini Flash 2.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Bước 1: Tạo bài luyện tập -->
+        <div id="setup-section" class="practice-card">
+            <div class="step-indicator">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div>Tạo bài luyện tập</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>Luyện dịch</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>Kết quả</div>
+                </div>
+            </div>
+
+            <div class="api-key-container">
+                <h4><i class="fas fa-key me-2"></i>Cài đặt API Key</h4>
+                <div class="input-group mb-3">
+                    <input type="password" id="apiKeyInput" class="form-control" placeholder="Nhập API Key Gemini của bạn...">
+                    <button class="btn btn-warning" id="saveApiKeyBtn">Lưu</button>
+                </div>
+                <p class="text-muted mb-0">
+                    <small>Bạn có thể lấy API key miễn phí từ <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>. Key này chỉ được lưu trong trình duyệt của bạn.</small>
+                </p>
+            </div>
+            
+            <h2 class="mb-4">Tạo bài luyện viết mới</h2>
+            
+            <div class="mb-4">
+                <h4>Chọn cách tạo bài luyện tập</h4>
+                <div class="d-flex gap-3 mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="creationMethod" id="methodTopic" checked>
+                        <label class="form-check-label" for="methodTopic">
+                            <strong>Tạo bài từ chủ đề</strong><br>
+                            <small class="text-muted">AI tạo nội dung dựa trên chủ đề bạn chọn</small>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="creationMethod" id="methodCustom">
+                        <label class="form-check-label" for="methodCustom">
+                            <strong>Nhập đoạn văn của bạn</strong><br>
+                            <small class="text-muted">Sử dụng đoạn văn tiếng Việt do bạn cung cấp</small>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Chọn ngôn ngữ viết</strong></label>
+                        <select class="form-select">
+                            <option selected>Tiếng Anh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Chọn chủ đề luyện tập</strong></label>
+                        <select class="form-select" id="topicSelect">
+                            <option selected disabled>Chọn chủ đề --</option>
+                            <option>Du lịch và khám phá</option>
+                            <option>Văn hóa Việt Nam</option>
+                            <option>Công nghệ hiện đại</option>
+                            <option>Giáo dục và học tập</option>
+                            <option>Môi trường và thiên nhiên</option>
+                            <option>Ẩm thực Việt Nam</option>
+                            <option>Kinh doanh và khởi nghiệp</option>
+                            <option>Sức khỏe và thể thao</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Hoặc nhập chủ đề tự chọn:</strong></label>
+                        <input type="text" id="customTopicInput" class="form-control" placeholder="Nhập chủ đề bạn muốn luyện tập...">
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Chọn mức độ khó</strong></label>
+                        <select class="form-select" id="difficultySelect">
+                            <option selected>Khá dễ</option>
+                            <option>Trung bình</option>
+                            <option>Hơi khó</option>
+                            <option>Khó</option>
+                            <option>Rất khó</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label"><strong>Loại nội dung</strong></label>
+                        <div class="d-flex gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contentType" id="typeDialogue" checked>
+                                <label class="form-check-label" for="typeDialogue">
+                                    <strong>Hội thoại</strong><br>
+                                    <small class="text-muted">Đối thoại giữa các nhân vật, thích hợp cải thiện giao tiếp</small>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contentType" id="typeParagraph">
+                                <label class="form-check-label" for="typeParagraph">
+                                    <strong>Đoạn văn</strong><br>
+                                    <small class="text-muted">Nội dung mô tả liên tục, thiên về luyện tập viết</small>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button id="startPracticeBtn" class="btn btn-primary btn-lg pulse">
+                            <i class="fas fa-play me-2"></i>Bắt đầu luyện viết
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bước 2: Luyện dịch -->
+        <div id="practice-section" class="practice-card hidden">
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>Tạo bài luyện tập</div>
+                </div>
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <div>Luyện dịch</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>Kết quả</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Luyện dịch câu</h2>
+                <div class="d-flex align-items-center">
+                    <span class="me-2">Tiến độ:</span>
+                    <div class="progress" style="width: 200px; height: 20px;">
+                        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span id="progress-text" class="ms-2">0/0</span>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Hướng dẫn:</strong> Dịch từng câu tiếng Việt sang tiếng Anh. Sau khi dịch, Gemini sẽ đánh giá bản dịch của bạn ngay lập tức.
+            </div>
+
+            <div id="sentences-container">
+                <!-- Các câu sẽ được thêm vào đây bằng JavaScript -->
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <button id="finishPracticeBtn" class="btn btn-primary" disabled>
+                    <i class="fas fa-flag-checkered me-2"></i>Hoàn thành bài luyện tập
+                </button>
+            </div>
+        </div>
+
+        <!-- Bước 3: Kết quả -->
+        <div id="results-section" class="practice-card hidden">
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>Tạo bài luyện tập</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>Luyện dịch</div>
+                </div>
+                <div class="step active">
+                    <div class="step-number">3</div>
+                    <div>Kết quả</div>
+                </div>
+            </div>
+
+            <h2 class="mb-4">Kết quả bài luyện tập</h2>
+
+            <div class="row mb-4" id="stats-container">
+                <!-- Thống kê sẽ được thêm vào đây -->
+            </div>
+
+            <div class="mb-4">
+                <h4>Đánh giá tổng thể</h4>
+                <div class="gemini-response">
+                    <p id="overall-feedback">Đang tải đánh giá...</p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h4>Chi tiết từng câu</h4>
+                <div id="results-details">
+                    <!-- Chi tiết kết quả từng câu -->
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button id="newPracticeBtn" class="btn btn-outline-primary">
+                    <i class="fas fa-plus me-2"></i>Bài luyện tập mới
+                </button>
+                <button id="reviewPracticeBtn" class="btn btn-primary">
+                    <i class="fas fa-redo me-2"></i>Làm lại bài này
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-section" class="practice-card hidden">
+            <div class="loading">
+                <div class="spinner-border text-primary spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="ms-3">
+                    <h4 id="loading-text">Gemini đang tạo bài luyện tập...</h4>
+                    <p class="text-muted">Vui lòng chờ trong giây lát</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 py-4 text-center text-muted">
+        <div class="container">
+            <p>© 2023 Trang Luyện Viết Tiếng Anh với Gemini Flash | Phiên bản 2.0</p>
+            <p>Sử dụng công nghệ AI tiên tiến để nâng cao kỹ năng viết tiếng Anh</p>
+        </div>
+    </footer>
+
+    <script>
+        // API Key mặc định (thay bằng key của bạn để hoạt động)
+        const DEFAULT_API_KEY = "AIzaSyCTHLa6IeIaPSD8kkrswsM_Mt5zEUhGWJQ";
+        
+        // Lưu trữ dữ liệu bài luyện tập
+        let practiceData = {
+            title: "",
+            sentences: [],
+            userAnswers: [],
+            evaluations: [],
+            startTime: null,
+            endTime: null
+        };
+        
+        // Khởi tạo trang
+        document.addEventListener('DOMContentLoaded', function() {
+            const startBtn = document.getElementById('startPracticeBtn');
+            const finishBtn = document.getElementById('finishPracticeBtn');
+            const newPracticeBtn = document.getElementById('newPracticeBtn');
+            const reviewPracticeBtn = document.getElementById('reviewPracticeBtn');
+            const saveApiKeyBtn = document.getElementById('saveApiKeyBtn');
+            const apiKeyInput = document.getElementById('apiKeyInput');
+            const setupSection = document.getElementById('setup-section');
+            const practiceSection = document.getElementById('practice-section');
+            const resultsSection = document.getElementById('results-section');
+            const loadingSection = document.getElementById('loading-section');
+            const sentencesContainer = document.getElementById('sentences-container');
+            const resultsDetails = document.getElementById('results-details');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const statsContainer = document.getElementById('stats-container');
+            const overallFeedback = document.getElementById('overall-feedback');
+            const loadingText = document.getElementById('loading-text');
+            
+            // Tải API key đã lưu (nếu có)
+            const savedApiKey = localStorage.getItem('geminiApiKey') || DEFAULT_API_KEY;
+            apiKeyInput.value = savedApiKey;
+            
+            // Xử lý lưu API key
+            saveApiKeyBtn.addEventListener('click', function() {
+                const apiKey = apiKeyInput.value.trim();
+                if (apiKey) {
+                    localStorage.setItem('geminiApiKey', apiKey);
+                    alert('API Key đã được lưu thành công!');
+                } else {
+                    alert('Vui lòng nhập API Key');
+                }
+            });
+            
+            // Xử lý bắt đầu luyện tập
+            startBtn.addEventListener('click', async function() {
+                const apiKey = apiKeyInput.value.trim();
+                if (!apiKey) {
+                    alert('Vui lòng nhập API Key của Gemini');
+                    return;
+                }
+                
+                setupSection.classList.add('hidden');
+                loadingSection.classList.remove('hidden');
+                loadingText.textContent = "Gemini đang tạo bài luyện tập...";
+                
+                try {
+                    // Tạo bài luyện tập với Gemini
+                    const topic = document.getElementById('customTopicInput').value || 
+                                 document.getElementById('topicSelect').value || 
+                                 "Môi trường và thiên nhiên";
+                    
+                    const difficulty = document.getElementById('difficultySelect').value;
+                    const contentType = document.querySelector('input[name="contentType"]:checked').id === 'typeDialogue' ? 
+                                      'hội thoại' : 'đoạn văn';
+                    
+                    const content = await generatePracticeContent(apiKey, topic, difficulty, contentType);
+                    
+                    practiceData = {
+                        title: topic,
+                        sentences: content.sentences,
+                        userAnswers: [],
+                        evaluations: [],
+                        startTime: new Date(),
+                        endTime: null
+                    };
+                    
+                    loadingSection.classList.add('hidden');
+                    practiceSection.classList.remove('hidden');
+                    generatePracticeUI();
+                } catch (error) {
+                    loadingSection.classList.add('hidden');
+                    setupSection.classList.remove('hidden');
+                    alert('Lỗi khi tạo bài luyện tập: ' + error.message);
+                    console.error(error);
+                }
+            });
+            
+            // Xử lý hoàn thành bài luyện tập
+            finishBtn.addEventListener('click', async function() {
+                const apiKey = apiKeyInput.value.trim();
+                if (!apiKey) {
+                    alert('Vui lòng nhập API Key của Gemini');
+                    return;
+                }
+                
+                practiceSection.classList.add('hidden');
+                loadingSection.classList.remove('hidden');
+                loadingText.textContent = "Gemini đang đánh giá tổng thể...";
+                
+                try {
+                    // Đánh giá tổng thể với Gemini
+                    practiceData.endTime = new Date();
+                    const overall = await getOverallEvaluation(apiKey, practiceData);
+                    
+                    // Hiển thị kết quả
+                    loadingSection.classList.add('hidden');
+                    resultsSection.classList.remove('hidden');
+                    showResults(overall);
+                } catch (error) {
+                    loadingSection.classList.add('hidden');
+                    practiceSection.classList.remove('hidden');
+                    alert('Lỗi khi đánh giá tổng thể: ' + error.message);
+                    console.error(error);
+                }
+            });
+            
+            // Xử lý bài luyện tập mới
+            newPracticeBtn.addEventListener('click', function() {
+                resultsSection.classList.add('hidden');
+                setupSection.classList.remove('hidden');
+                resetPractice();
+            });
+            
+            // Xử lý làm lại bài
+            reviewPracticeBtn.addEventListener('click', function() {
+                resultsSection.classList.add('hidden');
+                practiceSection.classList.remove('hidden');
+                resetPractice();
+                generatePracticeUI();
+            });
+            
+            // Tạo giao diện bài luyện tập
+            function generatePracticeUI() {
+                sentencesContainer.innerHTML = '';
+                progressText.textContent = `0/${practiceData.sentences.length}`;
+                progressBar.style.width = '0%';
+                
+                practiceData.sentences.forEach((sentence, index) => {
+                    const sentenceElement = document.createElement('div');
+                    sentenceElement.className = 'sentence-card';
+                    sentenceElement.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5>Câu ${index + 1}</h5>
+                            <span class="badge bg-secondary">Chưa hoàn thành</span>
+                        </div>
+                        <p class="fw-bold">${sentence}</p>
+                        <div class="mb-3">
+                            <label class="form-label">Dịch sang tiếng Anh:</label>
+                            <textarea class="form-control translation-input" rows="2" data-index="${index}" placeholder="Nhập bản dịch của bạn..."></textarea>
+                        </div>
+                        <div class="text-end">
+                            <button class="btn btn-primary submit-btn" data-index="${index}">Gửi đánh giá</button>
+                        </div>
+                        <div class="gemini-response hidden" id="feedback-${index}"></div>
+                    `;
+                    sentencesContainer.appendChild(sentenceElement);
+                });
+                
+                // Thêm sự kiện cho nút gửi
+                document.querySelectorAll('.submit-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        submitTranslation(index, this); // truyền this
+                    });
+                });
+                
+                // Cập nhật progress bar
+                updateProgress(0);
+            }
+            
+            // Gửi bản dịch để đánh giá
+            async function submitTranslation(index) {
+                const apiKey = apiKeyInput.value.trim();
+                if (!apiKey) {
+                    alert('Vui lòng nhập API Key của Gemini');
+                    return;
+                }
+                
+                const textarea = document.querySelector(`.translation-input[data-index="${index}"]`);
+                const translation = textarea.value.trim();
+                const feedbackElement = document.getElementById(`feedback-${index}`);
+                const sentenceCard = textarea.closest('.sentence-card');
+                const badge = sentenceCard.querySelector('.badge');
+                
+                if (!translation) {
+                    alert('Vui lòng nhập bản dịch trước khi gửi!');
+                    return;
+                }
+                
+                // Hiển thị loading
+                feedbackElement.innerHTML = `
+                    <div class="text-center py-2">
+                        <div class="spinner-border spinner-border-sm text-primary me-2"></div>
+                        <span>Gemini đang đánh giá bản dịch của bạn...</span>
+                    </div>
+                `;
+                feedbackElement.classList.remove('hidden');
+                
+                try {
+                    // Gửi đánh giá tới Gemini
+                    const evaluation = await evaluateTranslation(
+                        apiKey, 
+                        practiceData.sentences[index], 
+                        translation
+                    );
+                    
+                    // Lưu kết quả đánh giá
+                    practiceData.userAnswers[index] = translation;
+                    practiceData.evaluations[index] = evaluation;
+                    
+                    // Xác định loại feedback dựa trên điểm số
+                    let feedbackClass = 'feedback-average';
+                    if (evaluation.score >= 9) feedbackClass = 'feedback-good';
+                    if (evaluation.score < 7) feedbackClass = 'feedback-poor';
+                    
+                    // Hiển thị kết quả đánh giá
+                    feedbackElement.innerHTML = `
+                        <div class="${feedbackClass} p-3 rounded">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong>Đánh giá của Gemini:</strong>
+                                <div>
+                                    <span class="fw-bold">${evaluation.score}/10</span>
+                                    <div class="rating d-inline-block">
+                                        ${generateRatingStars(evaluation.score)}
+                                    </div>
+                                </div>
+                            </div>
+                            <p>${evaluation.feedback}</p>
+                            <div class="mt-2">
+                                <strong>Bản dịch gợi ý:</strong>
+                                <p class="mb-0">${evaluation.suggested_translation}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Cập nhật trạng thái
+                    badge.className = 'badge bg-success';
+                    badge.textContent = 'Đã hoàn thành';
+                    
+                    // Vô hiệu hóa textarea và nút gửi
+                    textarea.disabled = true;
+                    this.disabled = true;
+                    
+                    // Cập nhật tiến độ
+                    updateProgress(practiceData.evaluations.filter(e => e).length);
+                    
+                    // Kiểm tra nếu đã hoàn thành tất cả câu
+                    if (practiceData.evaluations.filter(e => e).length === practiceData.sentences.length) {
+                        finishBtn.disabled = false;
+                    }
+                } catch (error) {
+                    feedbackElement.innerHTML = `
+                        <div class="feedback-poor p-3 rounded">
+                            <p class="text-danger"><i class="fas fa-exclamation-circle me-2"></i>Lỗi khi đánh giá: ${error.message}</p>
+                        </div>
+                    `;
+                    console.error(error);
+                }
+            }
+            
+            // Tạo sao đánh giá
+            function generateRatingStars(score) {
+                const fullStars = Math.floor(score / 2);
+                let starsHTML = '';
+                
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= fullStars) {
+                        starsHTML += '<i class="fas fa-star star filled"></i>';
+                    } else {
+                        starsHTML += '<i class="far fa-star star"></i>';
+                    }
+                }
+                
+                return starsHTML;
+            }
+            
+            // Cập nhật thanh tiến độ
+            function updateProgress(completed) {
+                const total = practiceData.sentences.length;
+                const percentage = (completed / total) * 100;
+                
+                progressBar.style.width = `${percentage}%`;
+                progressBar.setAttribute('aria-valuenow', percentage);
+                progressText.textContent = `${completed}/${total}`;
+            }
+            
+            // Hiển thị kết quả tổng thể
+            function showResults(overallEvaluation) {
+                resultsDetails.innerHTML = '';
+                statsContainer.innerHTML = '';
+                
+                // Tính toán thời gian hoàn thành
+                const timeDiff = (practiceData.endTime - practiceData.startTime) / 1000; // in seconds
+                const minutes = Math.floor(timeDiff / 60);
+                const seconds = Math.floor(timeDiff % 60);
+                const timeString = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                
+                // Tính điểm trung bình
+                const totalScore = practiceData.evaluations.reduce((sum, eval) => sum + eval.score, 0);
+                const averageScore = (totalScore / practiceData.evaluations.length).toFixed(1);
+                const accuracy = Math.round((practiceData.evaluations.filter(e => e.score >= 8).length / practiceData.evaluations.length) * 100);
+                
+                // Hiển thị đánh giá tổng thể
+                overallFeedback.innerHTML = overallEvaluation;
+                
+                // Thống kê
+                statsContainer.innerHTML = `
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="fas fa-star fa-2x text-warning"></i>
+                            <h5>Điểm số</h5>
+                            <div class="stats-number">${averageScore}</div>
+                            <small>trên 10 điểm</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="fas fa-check-circle fa-2x text-success"></i>
+                            <h5>Câu đúng</h5>
+                            <div class="stats-number">${practiceData.evaluations.filter(e => e.score >= 8).length}</div>
+                            <small>trên ${practiceData.sentences.length} câu</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="fas fa-lightbulb fa-2x text-info"></i>
+                            <h5>Độ chính xác</h5>
+                            <div class="stats-number">${accuracy}%</div>
+                            <small>tỷ lệ chính xác</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <i class="fas fa-clock fa-2x text-primary"></i>
+                            <h5>Thời gian</h5>
+                            <div class="stats-number">${timeString}</div>
+                            <small>phút:giây</small>
+                        </div>
+                    </div>
+                `;
+                
+                // Hiển thị chi tiết từng câu
+                practiceData.sentences.forEach((sentence, index) => {
+                    const evaluation = practiceData.evaluations[index];
+                    const userAnswer = practiceData.userAnswers[index] || "Chưa dịch";
+                    
+                    let feedbackClass = 'feedback-average';
+                    if (evaluation.score >= 9) feedbackClass = 'feedback-good';
+                    if (evaluation.score < 7) feedbackClass = 'feedback-poor';
+                    
+                    const sentenceElement = document.createElement('div');
+                    sentenceElement.className = `sentence-card ${feedbackClass}`;
+                    sentenceElement.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5>Câu ${index + 1}</h5>
+                            <div>
+                                <span class="fw-bold">${evaluation.score}/10</span>
+                                <div class="rating d-inline-block">
+                                    ${generateRatingStars(evaluation.score)}
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fw-bold">${sentence}</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Bản dịch của bạn:</strong></p>
+                                <p>${userAnswer}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Bản dịch gợi ý:</strong></p>
+                                <p>${evaluation.suggested_translation}</p>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Nhận xét:</strong>
+                            <p class="mb-0">${evaluation.feedback}</p>
+                        </div>
+                    `;
+                    resultsDetails.appendChild(sentenceElement);
+                });
+            }
+            
+            // Đặt lại bài luyện tập
+            function resetPractice() {
+                practiceData = {
+                    title: "",
+                    sentences: [],
+                    userAnswers: [],
+                    evaluations: [],
+                    startTime: null,
+                    endTime: null
+                };
+                finishBtn.disabled = true;
+            }
+            
+            // =====================================
+            // HÀM GỌI API GEMINI
+            // =====================================
+            
+            // Tạo nội dung bài luyện tập với Gemini
+            async function generatePracticeContent(apiKey, topic, difficulty, contentType) {
+                const prompt = `Hãy tạo một ${contentType} tiếng Việt ngắn gồm 5 câu về chủ đề "${topic}" ở mức độ ${difficulty}. 
+                Mỗi câu nằm trên một dòng riêng biệt, không đánh số câu.`;
+                
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: prompt
+                                }]
+                            }]
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(data.error.message || 'Lỗi khi tạo nội dung');
+                    }
+                    
+                    // Trích xuất nội dung
+                    const content = data.candidates[0].content.parts[0].text;
+                    
+                    // Tách thành các câu
+                    const sentences = content.split('\n')
+                        .map(s => s.trim())
+                        .filter(s => s.length > 0);
+                        
+                    if (sentences.length < 3) {
+                        throw new Error('Không tạo đủ câu cho bài luyện tập');
+                    }
+                    
+                    return {
+                        sentences: sentences.slice(0, 5) // Lấy 5 câu đầu
+                    };
+                } catch (error) {
+                    console.error('Lỗi khi gọi Gemini API:', error);
+                    throw error;
+                }
+            }
+            
+            // Đánh giá bản dịch với Gemini
+            async function evaluateTranslation(apiKey, original, translation) {
+                const prompt = `Bạn là một giáo viên dạy tiếng Anh. Hãy đánh giá bản dịch từ tiếng Việt sang tiếng Anh của học sinh. 
+                Đưa ra điểm số từ 0 đến 10, nhận xét ngắn gọn bằng tiếng Việt và đưa ra bản dịch tốt hơn nếu cần. 
+                Hãy trả lời theo định dạng JSON như sau: 
+                {
+                    "score": [điểm số],
+                    "feedback": [nhận xét],
+                    "suggested_translation": [bản dịch gợi ý]
+                }
+                
+                Câu gốc (tiếng Việt): "${original}"
+                Bản dịch của học sinh: "${translation}"`;
+                
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: prompt
+                                }]
+                            }]
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(data.error.message || 'Lỗi khi đánh giá bản dịch');
+                    }
+                    
+                    // Trích xuất nội dung
+                    const content = data.candidates[0].content.parts[0].text;
+                    
+                    // Tìm và trích xuất JSON từ phản hồi
+                    const jsonStart = content.indexOf('{');
+                    const jsonEnd = content.lastIndexOf('}') + 1;
+                    const jsonString = content.substring(jsonStart, jsonEnd);
+                    
+                    return JSON.parse(jsonString);
+                } catch (error) {
+                    console.error('Lỗi khi gọi Gemini API:', error);
+                    throw new Error('Lỗi khi đánh giá bản dịch');
+                }
+            }
+            
+            // Đánh giá tổng thể với Gemini
+            async function getOverallEvaluation(apiKey, practiceData) {
+                let prompt = `Bạn là một giáo viên dạy tiếng Anh. Dưới đây là bài tập dịch của học sinh gồm ${practiceData.sentences.length} câu từ tiếng Việt sang tiếng Anh. 
+                Hãy đưa ra đánh giá tổng thể bằng tiếng Việt về bài dịch này, chỉ ra những điểm mạnh, điểm yếu và đề xuất cách cải thiện. 
+                Viết đánh giá dài khoảng 150-200 từ.\n\n`;
+                
+                // Thêm từng câu và bản dịch
+                practiceData.sentences.forEach((sentence, index) => {
+                    prompt += `Câu ${index + 1} (gốc): ${sentence}\n`;
+                    prompt += `Bản dịch: ${practiceData.userAnswers[index] || "Chưa dịch"}\n\n`;
+                });
+                
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: prompt
+                                }]
+                            }]
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(data.error.message || 'Lỗi khi đánh giá tổng thể');
+                    }
+                    
+                    // Trích xuất nội dung
+                    return data.candidates[0].content.parts[0].text;
+                } catch (error) {
+                    console.error('Lỗi khi gọi Gemini API:', error);
+                    return 'Không thể tạo đánh giá tổng thể.';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
