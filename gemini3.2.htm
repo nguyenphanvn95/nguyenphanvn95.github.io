@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Dịch Tiếng Anh - Gemini Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .api-key-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .api-key-container label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .api-key-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .api-key-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .api-key-input input:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .api-key-input button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .api-key-input button:hover {
+            background-color: var(--secondary);
+        }
+
+        .selection-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .selection-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px;
+        }
+ .debug-panel {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .debug-toggle {
+            background-color: #e9ecef;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .debug-content {
+            max-height: 200px;
+            overflow: auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+        .selection-card h2 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .level-options, .type-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background-color: var(--light-gray);
+        }
+
+        .option.selected {
+            border-color: var(--accent);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .option-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .option-icon i {
+            color: var(--primary);
+        }
+
+        .option-details h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .option-details p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .time-indicator {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+        .start-btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        .start-btn:disabled {
+            background: var(--light-gray);
+            color: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .practice-section {
+            display: none;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin-top: 20px;
+        }
+
+        .practice-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exercise-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .exercise-meta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .exercise-tag {
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .practice-container {
+            display: flex;
+            min-height: 500px;
+            flex-direction: column;
+        }
+
+        .original-section {
+            flex: 1;
+            padding: 25px;
+            border-bottom: 1px solid var(--light-gray);
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .section-title {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .vietnamese-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--dark);
+            white-space: pre-wrap;
+        }
+
+        .translation-section {
+            flex: 1;
+            padding: 25px;
+            background-color: #fafbff;
+            overflow-y: auto;
+        }
+
+        .current-sentence {
+            font-weight: 700;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-left: 3px solid var(--primary);
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .translation-container {
+            margin-top: 20px;
+        }
+
+        .translation-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin: 10px 0;
+            min-height: 120px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        .translation-input:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .translation-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 15px;
+        }
+
+        .translation-btn {
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hint-btn {
+            background-color: var(--light-gray);
+            color: var(--gray);
+        }
+
+        .hint-btn:hover {
+            background-color: #dcdde1;
+        }
+
+        .submit-btn {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #3aa8d0;
+        }
+
+        .next-btn {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .feedback-section {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--light);
+            border-left: 4px solid var(--accent);
+            display: none;
+        }
+
+        .feedback-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feedback-content {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .overall-feedback-container {
+            padding: 25px;
+            border-top: 1px solid var(--light-gray);
+            display: none;
+        }
+
+        .overall-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .overall-feedback {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 150px;
+            color: var(--gray);
+        }
+
+        .overall-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .new-exercise-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .submit-all-btn {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            color: #e74c3c;
+            background-color: #fdeded;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Markdown styling */
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            color: var(--dark);
+            margin: 15px 0 10px;
+            font-weight: 600;
+        }
+
+        .markdown-content p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin: 10px 0 10px 20px;
+        }
+
+        .markdown-content li {
+            margin-bottom: 5px;
+        }
+
+        .markdown-content strong {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .markdown-content em {
+            font-style: italic;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin: 15px 0;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .markdown-content pre {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            overflow: auto;
+            margin: 15px 0;
+        }
+
+        .markdown-content code {
+            font-family: 'Courier New', monospace;
+            background-color: var(--light);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .exercises-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .exercise-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .exercise-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .exercise-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .exercise-meta {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .exercise-tag {
+            background-color: var(--light-gray);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .exercise-card.selected {
+            border-color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .progress-container {
+            margin: 20px 0;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        .results-summary {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .results-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .original-text, .translated-text {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .results-content h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background-color: #e74c3c;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .selection-section {
+                flex-direction: column;
+            }
+            
+            .results-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .notification {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+            }
+        }
+	.shortcut-hint {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            color: var(--gray);
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            background-color: var(--light-gray);
+            border-radius: 6px;
+        }
+        
+        .shortcut-hint div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .key {
+            display: inline-block;
+            padding: 2px 6px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-language"></i>
+                <h1>Luyện Dịch Tiếng Anh</h1>
+            </div>
+            <p class="subtitle">Nâng cao kỹ năng dịch thuật với trí tuệ nhân tạo Gemini</p>
+        </header>
+
+        <div class="api-key-container">
+            <label for="api-key">Gemini API Key:</label>
+            <div class="api-key-input">
+                <input type="password" id="api-key" placeholder="Nhập API key của bạn...">
+                <button id="save-api-key"><i class="fas fa-save"></i> Lưu</button>
+            </div>
+            <p><small>Bạn cần API key để sử dụng ứng dụng. Lấy key tại <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</small></p>
+            <div class="error-message" id="api-key-error"></div>
+        </div>
+	<div class="debug-panel" id="debug-panel" style ="display:none;">
+            <button class="debug-toggle" id="debug-toggle">
+                <i class="fas fa-bug"></i> Hiển thị thông tin gỡ lỗi
+            </button>
+            <div class="debug-content" id="debug-content"></div>
+        </div>
+        <div class="selection-section">
+            <div class="selection-card">
+                <h2><i class="fas fa-chart-line"></i> Chọn Mức Độ</h2>
+                <div class="level-options">
+                    <div class="option" data-level="beginner">
+                        <div class="option-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Beginner</h3>
+                            <p>Hoàn hảo cho người mới bắt đầu. Câu đơn giản và từ vựng cơ bản.</p>
+                            <span class="time-indicator">15-20 phút/bài</span>
+                        </div>
+                    </div>
+                    <div class="option" data-level="intermediate">
+                        <div class="option-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Intermediate</h3>
+                            <p>Cho người học sẵn sàng với câu phức tạp hơn và từ vựng đa dạng.</p>
+                            <span class="time-indicator">20-30 phút/bài</span>
+                        </div>
+                    </div>
+                    <div class="option" data-level="advanced">
+                        <div class="option-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Advanced</h3>
+                            <p>Thử thách bản thân với văn bản phức tạp và từ vựng chuyên nghiệp.</p>
+                            <span class="time-indicator">30-40 phút/bài</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selection-card">
+                <h2><i class="fas fa-file-alt"></i> Chọn Thể Loại</h2>
+                <div class="type-options">
+                    <div class="option" data-type="emails">
+                        <div class="option-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Emails</h3>
+                            <p>Thư từ công việc và cá nhân</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="diaries">
+                        <div class="option-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Diaries</h3>
+                            <p>Suy ngẫm và trải nghiệm cá nhân</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="essays">
+                        <div class="option-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Essays</h3>
+                            <p>Bài viết học thuật và quan điểm</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="articles">
+                        <div class="option-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Articles</h3>
+                            <p>Nội dung báo chí và tạp chí</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="stories">
+                        <div class="option-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Stories</h3>
+                            <p>Truyện ngắn và tường thuật</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="reports">
+                        <div class="option-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Reports</h3>
+                            <p>Báo cáo kinh doanh và nghiên cứu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-btn-container">
+            <button id="start-practice" class="start-btn" disabled>
+                <i class="fas fa-play"></i> Tải Bài Tập
+            </button>
+        </div>
+
+        <div class="exercises-section" id="exercises-section" style="display: none;">
+            <h2 class="section-title">Chọn Bài Tập:</h2>
+            <div class="exercises-list" id="exercises-list">
+                <!-- Bài tập sẽ được thêm động ở đây -->
+            </div>
+        </div>
+
+        <div class="practice-section" id="practice-section">
+            <div class="practice-header">
+                <div class="exercise-title" id="exercise-title">Đang tạo bài tập...</div>
+                <div class="exercise-meta">
+                    <div class="exercise-tag" id="exercise-level">...</div>
+                    <div class="exercise-tag" id="exercise-type">...</div>
+                </div>
+            </div>
+            
+            <div class="practice-container">
+                <div class="original-section">
+                    <h3 class="section-title">Bài viết mẫu:</h3>
+                    <div class="vietnamese-text" id="vietnamese-text">
+                        Đang tải nội dung...
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Câu 0/0</div>
+                
+                <div class="translation-section">
+                    <div id="current-sentence-container">
+                        <h3 class="section-title">Câu đang dịch:</h3>
+                        <div class="current-sentence" id="current-sentence"></div>
+                    </div>
+                    
+                    <div class="translation-section">
+                    <div id="current-sentence-container">
+                        <h3 class="section-title">Câu đang dịch:</h3>
+                        <div class="current-sentence" id="current-sentence"></div>
+                    </div>
+                    
+                    <div class="translation-container">
+                        <h3 class="section-title">Dịch sang tiếng Anh:</h3>
+                        <textarea class="translation-input" id="current-translation" placeholder="Nhập bản dịch của bạn..."></textarea>
+                        
+                        <!-- Thêm phần hiển thị phím tắt -->
+                        <div class="shortcut-hint">
+                            <div>
+                                <span class="key">H</span> Gợi ý
+                            </div>
+                            <div>
+                                <span class="key">Enter</span> Kiểm tra
+                            </div>
+                            <div>
+                                <span class="key">Shift</span> + <span class="key">Enter</span> Câu tiếp
+                            </div>
+                            <div>
+                                <span class="key">Tab</span> Focus ô dịch
+                            </div>
+                        </div>
+                        
+                        <div class="translation-actions">
+                            <button class="translation-btn hint-btn" id="hint-btn">
+                                <i class="fas fa-lightbulb"></i> Gợi ý
+                            </button>
+                            <button class="translation-btn submit-btn" id="submit-btn">
+                                <i class="fas fa-check"></i> Kiểm tra
+                            </button>
+                            <button class="translation-btn next-btn" id="next-btn">
+                                <i class="fas fa-arrow-right"></i> Câu tiếp
+                            </button>
+                        </div>
+                        
+                        <div class="feedback-section" id="feedback-section">
+                            <div class="feedback-title"><i class="fas fa-comment-alt"></i> Nhận xét:</div>
+                            <div class="feedback-content markdown-content" id="feedback-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overall-feedback-container" id="overall-feedback-container">
+                <h3 class="overall-title"><i class="fas fa-star"></i> Đánh Giá Tổng Thể</h3>
+                <div class="overall-feedback markdown-content" id="overall-feedback">
+                    Nhấn "Gửi đánh giá" để nhận nhận xét tổng thể từ AI về bản dịch của bạn.
+                </div>
+                <div class="overall-actions">
+                    <button class="action-btn new-exercise-btn" id="new-exercise-btn">
+                        <i class="fas fa-sync-alt"></i> Bài Tập Mới
+                    </button>
+                    <button class="action-btn submit-all-btn" id="submit-all-btn">
+                        <i class="fas fa-paper-plane"></i> Gửi Đánh Giá
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-summary" id="results-summary">
+            <h2 class="results-title">Kết Quả Tổng Hợp</h2>
+            <div class="results-content">
+                <div class="original-text">
+                    <h3>Bài viết gốc:</h3>
+                    <div id="original-summary"></div>
+                </div>
+                <div class="translated-text">
+                    <h3>Bản dịch của bạn:</h3>
+                    <div id="translation-summary"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const apiKeyInput = document.getElementById('api-key');
+        const saveApiKeyBtn = document.getElementById('save-api-key');
+        const levelOptions = document.querySelectorAll('.level-options .option');
+        const typeOptions = document.querySelectorAll('.type-options .option');
+        const startPracticeBtn = document.getElementById('start-practice');
+        const exercisesSection = document.getElementById('exercises-section');
+        const exercisesList = document.getElementById('exercises-list');
+        const practiceSection = document.getElementById('practice-section');
+        const vietnameseTextEl = document.getElementById('vietnamese-text');
+        const exerciseTitle = document.getElementById('exercise-title');
+        const exerciseLevel = document.getElementById('exercise-level');
+        const exerciseType = document.getElementById('exercise-type');
+        const currentSentenceEl = document.getElementById('current-sentence');
+        const currentTranslationEl = document.getElementById('current-translation');
+        const feedbackSection = document.getElementById('feedback-section');
+        const feedbackContentEl = document.getElementById('feedback-content');
+        const hintBtn = document.getElementById('hint-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const overallFeedbackContainer = document.getElementById('overall-feedback-container');
+        const overallFeedback = document.getElementById('overall-feedback');
+        const newExerciseBtn = document.getElementById('new-exercise-btn');
+        const submitAllBtn = document.getElementById('submit-all-btn');
+        const apiKeyError = document.getElementById('api-key-error');
+        const resultsSummary = document.getElementById('results-summary');
+        const originalSummary = document.getElementById('original-summary');
+        const translationSummary = document.getElementById('translation-summary');
+        const notification = document.getElementById('notification');
+	const debugPanel = document.getElementById('debug-panel');
+        const debugToggle = document.getElementById('debug-toggle');
+        const debugContent = document.getElementById('debug-content');
+        // App State
+        let selectedLevel = null;
+        let selectedType = null;
+        let apiKey = null;
+        let currentText = "";
+        let sentences = [];
+        let userTranslations = [];
+        let currentSentenceIndex = 0;
+        let generatedExercises = [];
+        let selectedExercise = null;
+
+        // Gemini API Endpoint
+        const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+        
+        // Configure Marked.js
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        // Show notification
+        function showNotification(message, isError = true) {
+            notification.textContent = message;
+            notification.style.backgroundColor = isError ? '#e74c3c' : '#2ecc71';
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
+        // Load saved API key if exists
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedApiKey = localStorage.getItem('gemini_api_key');
+            if (savedApiKey) {
+                apiKeyInput.value = savedApiKey;
+                apiKey = savedApiKey;
+                startPracticeBtn.disabled = false;
+            }
+        });
+
+        // Save API key
+        saveApiKeyBtn.addEventListener('click', () => {
+            apiKey = apiKeyInput.value.trim();
+            if (apiKey) {
+                localStorage.setItem('gemini_api_key', apiKey);
+                startPracticeBtn.disabled = false;
+                apiKeyError.style.display = 'none';
+                showNotification('API key đã được lưu thành công!', false);
+            } else {
+                apiKeyError.textContent = 'Vui lòng nhập API key hợp lệ.';
+                apiKeyError.style.display = 'block';
+            }
+        });
+
+        // Select level
+        levelOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                levelOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                selectedLevel = option.getAttribute('data-level');
+                checkSelections();
+            });
+        });
+
+        // Select type
+        typeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                typeOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                selectedType = option.getAttribute('data-type');
+                checkSelections();
+            });
+        });
+
+        // Enable start button when both selections are made
+        function checkSelections() {
+            if (selectedLevel && selectedType && apiKey) {
+                startPracticeBtn.disabled = false;
+            }
+        }
+
+        // Start practice
+        startPracticeBtn.addEventListener('click', async () => {
+            startPracticeBtn.innerHTML = '<span class="loading"></span> Đang tải bài tập...';
+            startPracticeBtn.disabled = true;
+            
+            try {
+                // Generate exercises
+                await generateExercisesWithGemini();
+                
+                // Show exercises list
+                exercisesSection.style.display = 'block';
+                startPracticeBtn.innerHTML = '<i class="fas fa-play"></i> Tải Bài Tập';
+                startPracticeBtn.disabled = false;
+                
+                // Scroll to exercises section
+                exercisesSection.scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error generating exercises:', error);
+                showNotification('Có lỗi xảy ra khi tạo bài tập. Vui lòng thử lại.');
+                startPracticeBtn.innerHTML = '<i class="fas fa-play"></i> Tải Bài Tập';
+                startPracticeBtn.disabled = false;
+            }
+        });
+
+        // Generate exercises using Gemini API
+        async function generateExercisesWithGemini() {
+            // Tạo prompt rõ ràng hơn, chỉ định rõ định dạng
+            const prompt = `Hãy tạo 3 bài tập dịch tiếng Việt sang tiếng Anh. 
+            Mỗi bài tập gồm tiêu đề và nội dung khoảng 5-7 câu.
+            Mức độ: ${selectedLevel} - Thể loại: ${selectedType}.
+            
+            YÊU CẦU:
+            1. Trả lời bằng một mảng JSON ĐÚNG CÚ PHÁP
+            2. Mỗi bài tập là một object với 2 trường: "title" và "text"
+            3. Ví dụ:
+            [
+              {
+                "title": "Cảm ơn vì món quà",
+                "text": "Xin chào Mai. Tôi rất cảm ơn vì món quà bạn đã tặng. Nó thật sự ý nghĩa với tôi. Tôi sẽ sử dụng nó hàng ngày. Bạn thật chu đáo."
+              },
+              {
+                "title": "Kế hoạch cuối tuần",
+                "text": "Chào Nam. Cuối tuần này tôi định đi cắm trại. Bạn có muốn tham gia không? Chúng ta sẽ đi vào sáng thứ Bảy. Tôi sẽ chuẩn bị đồ ăn."
+              }
+            ]
+            
+            CHÚ Ý: 
+            - KHÔNG thêm bất kỳ nội dung nào ngoài JSON
+            - Đảm bảo JSON hợp lệ`;
+
+            try {
+                const response = await callGeminiAPI(prompt);
+                logDebugInfo("Response from Gemini:", response);
+                
+                // Xử lý kết quả linh hoạt hơn
+                let jsonResponse = extractJSON(response);
+                
+                if (!jsonResponse || !Array.isArray(jsonResponse)) {
+                    throw new Error("Không tìm thấy dữ liệu bài tập hợp lệ");
+                }
+                
+                generatedExercises = jsonResponse;
+                renderExercisesList();
+            } catch (error) {
+                console.error('Error generating exercises with Gemini:', error);
+                showNotification('Lỗi tạo bài tập: ' + error.message);
+                startPracticeBtn.innerHTML = '<i class="fas fa-play"></i> Tải Bài Tập';
+                startPracticeBtn.disabled = false;
+                
+                // Hiển thị panel debug khi có lỗi
+                debugPanel.style.display = 'block';
+            }
+        }
+	// Hàm trích xuất JSON từ response
+        function extractJSON(text) {
+            // Thử parse trực tiếp
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                // Nếu không thành công, thử tìm JSON trong text
+                const jsonMatch = text.match(/\[[\s\S]*?\]/);
+                if (jsonMatch) {
+                    try {
+                        return JSON.parse(jsonMatch[0]);
+                    } catch (e2) {
+                        logDebugInfo("Lỗi parse JSON:", e2);
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Hàm ghi log debug
+        function logDebugInfo(title, content) {
+            debugContent.innerHTML += `\n\n=== ${title} ===\n`;
+            
+            if (typeof content === 'object') {
+                debugContent.innerHTML += JSON.stringify(content, null, 2);
+            } else {
+                debugContent.innerHTML += content;
+            }
+            
+            debugPanel.style.display = 'block';
+        }
+	debugToggle.addEventListener('click', () => {
+            const isVisible = debugContent.style.display !== 'none';
+            debugContent.style.display = isVisible ? 'none' : 'block';
+            debugToggle.innerHTML = isVisible 
+                ? '<i class="fas fa-bug"></i> Hiển thị thông tin gỡ lỗi' 
+                : '<i class="fas fa-bug"></i> Ẩn thông tin gỡ lỗi';
+        });
+
+        // Render exercises list
+        function renderExercisesList() {
+            exercisesList.innerHTML = '';
+            
+            generatedExercises.forEach((exercise, index) => {
+                const exerciseCard = document.createElement('div');
+                exerciseCard.className = 'exercise-card';
+                exerciseCard.dataset.index = index;
+                
+                // Get first 100 characters of text
+                const previewText = exercise.text.length > 100 
+                    ? exercise.text.substring(0, 100) + '...' 
+                    : exercise.text;
+                
+                exerciseCard.innerHTML = `
+                    <h3><i class="fas fa-file-alt"></i> ${exercise.title}</h3>
+                    <p>${previewText}</p>
+                    <div class="exercise-meta">
+                        <div class="exercise-tag">${selectedLevel}</div>
+                        <div class="exercise-tag">${selectedType}</div>
+                    </div>
+                `;
+                
+                exerciseCard.addEventListener('click', () => {
+                    document.querySelectorAll('.exercise-card').forEach(card => {
+                        card.classList.remove('selected');
+                    });
+                    exerciseCard.classList.add('selected');
+                    selectedExercise = index;
+                    
+                    // Start exercise after 500ms
+                    setTimeout(startSelectedExercise, 500);
+                });
+                
+                exercisesList.appendChild(exerciseCard);
+            });
+        }
+// Thêm hàm xử lý phím tắt
+        function setupKeyboardShortcuts() {
+            // Xử lý phím tắt chung cho toàn trang
+            document.addEventListener('keydown', function(e) {
+                // Phím Tab - focus vào ô dịch
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                    currentTranslationEl.focus();
+                }
+                
+                // Phím H - gợi ý (chỉ khi không ở trong input/textarea)
+                if (e.key.toLowerCase() === 'h' && 
+                    document.activeElement.tagName !== 'INPUT' && 
+                    document.activeElement.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    showHint();
+                }
+            });
+            
+            // Xử lý phím trong ô nhập liệu dịch
+            currentTranslationEl.addEventListener('keydown', function(e) {
+                // Enter - kiểm tra
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    submitTranslation();
+                }
+                
+                // Shift + Enter - chuyển câu tiếp theo
+                if (e.key === 'Enter' && e.shiftKey) {
+                    e.preventDefault();
+                    goToNextSentence();
+                }
+            });
+        }
+        // Start selected exercise
+        function startSelectedExercise() {
+            if (selectedExercise === null) return;
+            
+            const exercise = generatedExercises[selectedExercise];
+            exerciseTitle.textContent = exercise.title;
+            exerciseLevel.textContent = selectedLevel.charAt(0).toUpperCase() + selectedLevel.slice(1);
+            exerciseType.textContent = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
+            
+            currentText = exercise.text;
+            vietnameseTextEl.textContent = currentText;
+            
+            // Split text into sentences
+            sentences = splitTextIntoSentences(currentText);
+            
+            // Reset translations
+            userTranslations = new Array(sentences.length).fill('');
+            currentSentenceIndex = 0;
+            
+            // Hide exercises, show practice section
+            exercisesSection.style.display = 'none';
+            practiceSection.style.display = 'block';
+            overallFeedbackContainer.style.display = 'none';
+            resultsSummary.style.display = 'none';
+            
+            // Scroll to practice section
+            practiceSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Start with first sentence
+            displayCurrentSentence();
+            
+            // Thiết lập phím tắt
+            setupKeyboardShortcuts();
+            
+            // Focus vào ô dịch tự động
+            setTimeout(() => {
+                currentTranslationEl.focus();
+            }, 300);
+        }
+
+        // Display current sentence
+        function displayCurrentSentence() {
+            // Highlight current sentence in the text
+            const sentence = sentences[currentSentenceIndex];
+            const highlightedText = sentences.map((s, i) => {
+                if (i === currentSentenceIndex) {
+                    return `<span class="current-sentence">${s}</span>`;
+                }
+                return s;
+            }).join(' ');
+            
+            vietnameseTextEl.innerHTML = highlightedText;
+            
+            // Display current sentence for translation
+            currentSentenceEl.textContent = sentence;
+            currentTranslationEl.value = userTranslations[currentSentenceIndex] || '';
+            
+            // Clear feedback
+            feedbackSection.style.display = 'none';
+            feedbackContentEl.innerHTML = '';
+            
+            // Update progress
+            const progressPercent = ((currentSentenceIndex + 1) / sentences.length) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            progressText.textContent = `Câu ${currentSentenceIndex + 1}/${sentences.length}`;
+            
+            // Scroll to current sentence
+            const currentSentenceElement = vietnameseTextEl.querySelector('.current-sentence');
+            if (currentSentenceElement) {
+                currentSentenceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Call Gemini API
+        async function callGeminiAPI(prompt) {
+            try {
+                const response = await axios.post(
+                    `${GEMINI_API_URL}?key=${apiKey}`,
+                    {
+                        contents: [{
+                            parts: [{
+                                text: prompt
+                            }]
+                        }]
+                    },
+                    {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                );
+                
+                return response.data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error('Gemini API Error:', error);
+                if (error.response && error.response.data) {
+                    console.error('API Error Details:', error.response.data);
+                    if (error.response.data.error && error.response.data.error.message) {
+                        throw new Error(`Gemini API: ${error.response.data.error.message}`);
+                    }
+                }
+                throw new Error('Lỗi khi kết nối với Gemini API');
+            }
+        }
+
+        // Split text into sentences
+        function splitTextIntoSentences(text) {
+            // Simple sentence splitting
+            return text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s/);
+        }
+
+        // Show hint for current sentence
+        async function showHint() {
+            const sentence = sentences[currentSentenceIndex];
+            if (!sentence) return;
+            
+            // Get hint from Gemini
+            try {
+                hintBtn.innerHTML = '<span class="loading"></span> Đang tạo gợi ý...';
+                hintBtn.disabled = true;
+                
+                const prompt = `Hãy đưa ra một gợi ý dịch câu sau sang tiếng Anh: "${sentence}". 
+                Gợi ý chỉ nên là một câu dịch mẫu, không giải thích.`;
+                
+                const hint = await callGeminiAPI(prompt);
+                
+                feedbackContentEl.innerHTML = `<p><strong>Gợi ý:</strong> "${hint}"</p>`;
+                feedbackSection.style.display = 'block';
+                
+                hintBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Gợi ý';
+                hintBtn.disabled = false;
+                
+            } catch (error) {
+                console.error('Error getting hint:', error);
+                feedbackContentEl.innerHTML = "<p>Không thể tạo gợi ý. Vui lòng thử lại.</p>";
+                feedbackSection.style.display = 'block';
+                
+                hintBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Gợi ý';
+                hintBtn.disabled = false;
+            }
+        }
+
+        // Submit current translation for review
+        async function submitTranslation() {
+            const userTranslation = currentTranslationEl.value.trim();
+            const sentence = sentences[currentSentenceIndex];
+            
+            if (!userTranslation) {
+                feedbackContentEl.innerHTML = "<p>Vui lòng nhập bản dịch trước khi kiểm tra.</p>";
+                feedbackSection.style.display = 'block';
+                return;
+            }
+            
+            // Save user translation
+            userTranslations[currentSentenceIndex] = userTranslation;
+            
+            // Get feedback from Gemini
+            try {
+                submitBtn.innerHTML = '<span class="loading"></span> Đang kiểm tra...';
+                submitBtn.disabled = true;
+                
+                const prompt = `Hãy đánh giá bản dịch sau của câu tiếng Việt sang tiếng Anh. 
+                Trả lời bằng tiếng Việt, ngắn gọn (dưới 100 từ), tập trung vào độ chính xác và tự nhiên.
+                Sử dụng định dạng markdown để làm rõ các điểm quan trọng.
+                Câu gốc: "${sentence}"
+                Bản dịch: "${userTranslation}"`;
+                
+                const feedback = await callGeminiAPI(prompt);
+                
+                feedbackContentEl.innerHTML = marked.parse(feedback);
+                feedbackSection.style.display = 'block';
+                
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Kiểm tra';
+                submitBtn.disabled = false;
+                
+            } catch (error) {
+                console.error('Error getting feedback:', error);
+                feedbackContentEl.innerHTML = "<p>Không thể kiểm tra bản dịch. Vui lòng thử lại.</p>";
+                feedbackSection.style.display = 'block';
+                
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Kiểm tra';
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Go to next sentence
+        function goToNextSentence() {
+            if (currentSentenceIndex < sentences.length - 1) {
+                currentSentenceIndex++;
+                displayCurrentSentence();
+            } else {
+                // All sentences completed
+                overallFeedbackContainer.style.display = 'block';
+                overallFeedbackContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Submit all for overall feedback
+        submitAllBtn.addEventListener('click', async () => {
+            // Get overall feedback from Gemini
+            try {
+                submitAllBtn.innerHTML = '<span class="loading"></span> Đang tạo đánh giá...';
+                submitAllBtn.disabled = true;
+                
+                const fullTranslation = userTranslations.join(' ');
+                const prompt = `Hãy đánh giá tổng thể bản dịch sau từ tiếng Việt sang tiếng Anh. 
+                Văn bản gốc: "${currentText}"
+                Bản dịch: "${fullTranslation}"
+                Trả lời bằng tiếng Việt, khoảng 200-300 từ, sử dụng định dạng markdown để trình bày rõ ràng.
+                Bao gồm:
+                - **Điểm tốt**: Liệt kê những điểm tốt trong bản dịch
+                - **Điểm cần cải thiện**: Liệt kê những điểm cần cải thiện
+                - **Gợi ý**: Đưa ra gợi ý để cải thiện bản dịch
+                - **Điểm số**: Cho điểm từ 1-10 với giải thích ngắn gọn`;
+                
+                const feedback = await callGeminiAPI(prompt);
+                
+                overallFeedback.innerHTML = marked.parse(feedback);
+                submitAllBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi Đánh Giá';
+                submitAllBtn.disabled = false;
+                
+                // Show results summary
+                showResultsSummary();
+                
+            } catch (error) {
+                console.error('Error getting overall feedback:', error);
+                overallFeedback.innerHTML = "<p>Không thể tạo đánh giá tổng thể. Vui lòng thử lại.</p>";
+                submitAllBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi Đánh Giá';
+                submitAllBtn.disabled = false;
+            }
+        });
+
+        // Show results summary
+        function showResultsSummary() {
+            resultsSummary.style.display = 'block';
+            
+            // Format original text with sentence numbers
+            const originalWithNumbers = sentences.map((sentence, index) => 
+                `<p><strong>${index + 1}.</strong> ${sentence}</p>`
+            ).join('');
+            
+            // Format translations with sentence numbers
+            const translationWithNumbers = userTranslations.map((translation, index) => 
+                `<p><strong>${index + 1}.</strong> ${translation}</p>`
+            ).join('');
+            
+            originalSummary.innerHTML = originalWithNumbers;
+            translationSummary.innerHTML = translationWithNumbers;
+            
+            resultsSummary.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // New exercise
+        newExerciseBtn.addEventListener('click', () => {
+            exercisesSection.style.display = 'block';
+            practiceSection.style.display = 'none';
+            resultsSummary.style.display = 'none';
+            exercisesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Event listeners
+        hintBtn.addEventListener('click', showHint);
+        submitBtn.addEventListener('click', submitTranslation);
+        nextBtn.addEventListener('click', goToNextSentence);
+    </script>
+</body>
+</html>
