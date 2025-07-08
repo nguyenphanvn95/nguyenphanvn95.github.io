@@ -141,22 +141,11 @@
         </div>
 
         <div class="exercises-section" id="exercises-section" style="display: none;">
-    <h2 class="section-title"><i class="fas fa-list"></i> Chọn Bài Tập:</h2>
-    <div class="exercises-list" id="exercises-list">
-        <!-- Bài tập sẽ được thêm động ở đây -->
-    </div>
-    
-    <!--  phần phân trang -->
-    <div class="pagination" id="pagination" style="display: none;">
-        <button id="prev-page" class="pagination-btn">
-            <i class="fas fa-chevron-left"></i> Trang trước
-        </button>
-        <span id="page-info">Trang 1/1</span>
-        <button id="next-page" class="pagination-btn">
-            Trang sau <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
-</div>
+            <h2 class="section-title"><i class="fas fa-list"></i> Chọn Bài Tập:</h2>
+            <div class="exercises-list" id="exercises-list">
+                <!-- Bài tập sẽ được thêm động ở đây -->
+            </div>
+        </div>
 
         <div class="practice-section" id="practice-section">
             <div class="practice-header">
@@ -294,15 +283,7 @@
         const debugPanel = document.getElementById('debug-panel');
         const debugToggle = document.getElementById('debug-toggle');
         const debugContent = document.getElementById('debug-content');
-        // Thêm các biến phân trang
-let currentPage = 1;
-const exercisesPerPage = 6;
-
-// DOM cho phân trang
-const pagination = document.getElementById('pagination');
-const prevPageBtn = document.getElementById('prev-page');
-const nextPageBtn = document.getElementById('next-page');
-const pageInfo = document.getElementById('page-info');
+        
         // App State
         let selectedLevel = null;
         let selectedType = null;
@@ -412,8 +393,7 @@ const pageInfo = document.getElementById('page-info');
             try {
                 // Get exercises for selected level and type
                 const exercises = exercisesData[selectedLevel][selectedType];
-                // Reset về trang đầu tiên
-    		currentPage = 1;
+                
                 if (!exercises || exercises.length === 0) {
                     throw new Error("Không tìm thấy bài tập phù hợp");
                 }
@@ -440,17 +420,7 @@ const pageInfo = document.getElementById('page-info');
         // Render exercises list
         function renderExercisesList() {
             exercisesList.innerHTML = '';
-             // Tính toán bài tập cho trang hiện tại
-    const startIndex = (currentPage - 1) * exercisesPerPage;
-    const endIndex = startIndex + exercisesPerPage;
-    const currentExercises = generatedExercises.slice(startIndex, endIndex);
-    
-    currentExercises.forEach((exercise, index) => {
-        const realIndex = startIndex + index;
-        const exerciseCard = document.createElement('div');
-        exerciseCard.className = 'exercise-card';
-        exerciseCard.dataset.index = realIndex;
-
+            
             generatedExercises.forEach((exercise, index) => {
                 const exerciseCard = document.createElement('div');
                 exerciseCard.className = 'exercise-card';
@@ -481,37 +451,7 @@ const pageInfo = document.getElementById('page-info');
                 exercisesList.appendChild(exerciseCard);
             });
         }
- const totalPages = Math.ceil(generatedExercises.length / exercisesPerPage);
-    
-    if (totalPages > 1) {
-        pagination.style.display = 'flex';
-        pageInfo.textContent = `Trang ${currentPage}/${totalPages}`;
-        
-        // Cập nhật trạng thái nút
-        prevPageBtn.disabled = currentPage === 1;
-        nextPageBtn.disabled = currentPage === totalPages;
-    } else {
-        pagination.style.display = 'none';
-    }
-}
 
-// Thêm sự kiện cho nút phân trang
-prevPageBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderExercisesList();
-        exercisesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
-
-nextPageBtn.addEventListener('click', () => {
-    const totalPages = Math.ceil(generatedExercises.length / exercisesPerPage);
-    if (currentPage < totalPages) {
-        currentPage++;
-        renderExercisesList();
-        exercisesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
         // Hàm ghi log debug
         function logDebugInfo(title, content) {
             debugContent.innerHTML += `\n\n=== ${title} ===\n`;
