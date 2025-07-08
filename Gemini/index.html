@@ -545,11 +545,10 @@
                 // Generate exercise content using Gemini
                 const prompt = `Hãy tạo một bài viết ngắn khoảng 10-12 câu với tiêu đề: "${exercise.title}" 
                 bằng tiếng Việt, phù hợp với mức độ ${selectedLevel} và thể loại ${selectedType}. 
-                Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh. Tạo tên, địa chỉ ngẫu nhiên nếu bài viết cần, 
-		Trả lời văn bản đơn thuần không có các ký tự dạng markdown, không cần nhắc lại tiêu đề bài viết. 
-		Ví dụ: Tiêu đề Cảm ơn vì món quà ở mức độ beginner, thể loại email cần trả lời: 
-		Chào Mai, Mình là Lan, học sinh lớp 6B. Mình viết thư này để cảm ơn bạn vì món quà sinh nhật tuyệt vời! Mình rất thích bộ bút màu mà bạn tặng. Mình đã dùng nó để vẽ rất nhiều bức tranh đẹp rồi. Màu sắc rất tươi sáng và dễ sử dụng. Cảm ơn bạn rất nhiều vì đã nhớ đến sinh nhật mình...
-`;
+                Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh. 
+		Nếu bài viết thư cần tên và địa chỉ thì tạo tên, địa chỉ ngẫu nhiên cho bài viết, 
+		Trả lời văn bản đơn thuần, loại bỏ các ký tự không cần thiết. 
+		`;
                 
                 currentText = await callGeminiAPI(prompt);
                 vietnameseTextEl.textContent = currentText;
