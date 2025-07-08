@@ -25,53 +25,31 @@ body {
 }
 
 header {
-  background: linear-gradient(to right, #3498db, #2c3e50);
-  color: white;
-  border-radius: 10px;
-  padding: 20px 30px;
-  margin-bottom: 25px;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.8rem;
-  font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .logo i {
-  font-size: 2rem;
+    font-size: 2.5rem;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
+.logo h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
-.nav-links a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: white;
-  background: rgba(255, 255, 255, 0.15);
-}
 .subtitle {
     font-size: 1.1rem;
     opacity: 0.9;
