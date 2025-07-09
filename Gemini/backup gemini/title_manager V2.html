@@ -412,13 +412,6 @@
                 gap: 15px;
             }
         }
-        
-        .no-results {
-            text-align: center;
-            padding: 30px;
-            color: #718096;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -430,19 +423,19 @@
         
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number" id="total-articles">0</div>
+                <div class="stat-number" id="total-articles">300</div>
                 <div class="stat-label">Tổng số bài viết</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="beginner-count">0</div>
+                <div class="stat-number">100</div>
                 <div class="stat-label">Bài cơ bản</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="intermediate-count">0</div>
+                <div class="stat-number">100</div>
                 <div class="stat-label">Bài trung cấp</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="advanced-count">0</div>
+                <div class="stat-number">100</div>
                 <div class="stat-label">Bài nâng cao</div>
             </div>
         </div>
@@ -491,11 +484,7 @@
             
             <div class="content">
                 <div class="article-list" id="article-list">
-                    <div class="no-results">
-                        <i class="fas fa-info-circle" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                        <p>Chưa có bài viết nào được thêm</p>
-                        <p style="margin-top: 10px;">Hãy bắt đầu bằng cách thêm bài viết mới!</p>
-                    </div>
+                    <!-- Articles will be loaded here -->
                 </div>
                 
                 <div class="form-container">
@@ -525,7 +514,7 @@
                         
                         <div class="form-group">
                             <label for="article-title">Tiêu đề bài viết</label>
-                            <textarea id="article-title" placeholder="Nhập tiêu đề bài viết..."></textarea>
+                            <textarea id="article-title" placeholder="Nhập tiêu đề bài viết..." required></textarea>
                             
                             <!-- Bulk input section -->
                             <div class="bulk-input-container">
@@ -588,34 +577,23 @@
     </div>
     
     <script>
-        // Dữ liệu mẫu ban đầu rỗng
+        // Dữ liệu mẫu từ exerciseData.json
         const exerciseData = {
             "beginner": {
-                "emails": [],
-                "essays": [],
-                "reports": [],
-                "summaries": [],
-                "stories": []
+                "emails": [
+                    {
+                        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+                        "id": "emails_beginner_1"
+                    },
+                    // ... (rest of the data remains the same)
+                ],
+                // ... (rest of the data remains the same)
             },
-            "intermediate": {
-                "emails": [],
-                "essays": [],
-                "reports": [],
-                "summaries": [],
-                "stories": []
-            },
-            "advanced": {
-                "emails": [],
-                "essays": [],
-                "reports": [],
-                "summaries": [],
-                "stories": []
-            }
+            // ... (rest of the data remains the same)
         };
 
         // Biến toàn cục
         let currentEditingId = null;
-        let currentImportedData = null;
         const levelNames = {
             "beginner": "Cơ bản",
             "intermediate": "Trung cấp",
@@ -711,13 +689,7 @@
             }
             
             if (count === 0) {
-                articleList.innerHTML = `
-                    <div class="no-results">
-                        <i class="fas fa-info-circle" style="font-size: 3rem; margin-bottom: 15px;"></i>
-                        <p>Không tìm thấy bài viết nào phù hợp với bộ lọc</p>
-                        <p style="margin-top: 10px;">Hãy thử thay đổi bộ lọc hoặc thêm bài viết mới!</p>
-                    </div>
-                `;
+                articleList.innerHTML = `<div class="no-results">Không tìm thấy bài viết nào phù hợp với bộ lọc</div>`;
             }
             
             updateStats();
@@ -742,9 +714,9 @@
             }
             
             document.getElementById('total-articles').textContent = total;
-            document.getElementById('beginner-count').textContent = beginnerCount;
-            document.getElementById('intermediate-count').textContent = intermediateCount;
-            document.getElementById('advanced-count').textContent = advancedCount;
+            document.querySelector('.stat-card:nth-child(2) .stat-number').textContent = beginnerCount;
+            document.querySelector('.stat-card:nth-child(3) .stat-number').textContent = intermediateCount;
+            document.querySelector('.stat-card:nth-child(4) .stat-number').textContent = advancedCount;
         }
 
         // Thiết lập event listeners
@@ -793,9 +765,6 @@
             });
             closeImportBtn.addEventListener('click', () => {
                 importModal.style.display = 'none';
-                currentImportedData = null;
-                jsonUpload.value = '';
-                importPreview.textContent = '';
             });
             jsonUpload.addEventListener('change', handleFileUpload);
             confirmImportBtn.addEventListener('click', confirmImport);
@@ -875,7 +844,7 @@
                 alert(`Đã thêm ${titles.length} bài viết mới!`);
             } else {
                 // Xử lý nhập một tiêu đề
-                const title = articleTitle.value.trim();
+                const title = articleTitle.value;
                 
                 if (!title) {
                     alert('Vui lòng nhập tiêu đề bài viết');
@@ -1018,12 +987,10 @@
             reader.onload = function(event) {
                 try {
                     const jsonData = JSON.parse(event.target.result);
-                    currentImportedData = jsonData;
                     importPreview.textContent = JSON.stringify(jsonData, null, 2);
                 } catch (error) {
                     importPreview.textContent = 'Lỗi: File JSON không hợp lệ';
                     console.error('Error parsing JSON:', error);
-                    currentImportedData = null;
                 }
             };
             reader.readAsText(file);
@@ -1031,37 +998,29 @@
 
         // Xác nhận nhập dữ liệu
         function confirmImport() {
-            if (!currentImportedData) {
-                alert('Không có dữ liệu hợp lệ để nhập');
-                return;
-            }
-            
             try {
+                const jsonString = importPreview.textContent;
+                if (!jsonString || jsonString === 'Lỗi: File JSON không hợp lệ') {
+                    alert('Không có dữ liệu hợp lệ để nhập');
+                    return;
+                }
+                
+                const importedData = JSON.parse(jsonString);
+                
                 // Kiểm tra cấu trúc dữ liệu cơ bản
-                if (!currentImportedData.beginner || !currentImportedData.intermediate || !currentImportedData.advanced) {
+                if (!importedData.beginner || !importedData.intermediate || !importedData.advanced) {
                     alert('Dữ liệu không đúng định dạng. Vui lòng kiểm tra lại.');
                     return;
                 }
                 
                 // Cập nhật dữ liệu
-                Object.keys(currentImportedData).forEach(level => {
-                    if (exerciseData[level]) {
-                        Object.keys(currentImportedData[level]).forEach(type => {
-                            if (exerciseData[level][type]) {
-                                exerciseData[level][type] = [...currentImportedData[level][type]];
-                            }
-                        });
-                    }
-                });
+                Object.assign(exerciseData, importedData);
                 
                 // Render lại danh sách
                 renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
                 
                 alert('Nhập dữ liệu thành công!');
                 importModal.style.display = 'none';
-                currentImportedData = null;
-                jsonUpload.value = '';
-                importPreview.textContent = '';
             } catch (error) {
                 alert('Lỗi khi nhập dữ liệu: ' + error.message);
             }
