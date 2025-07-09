@@ -260,6 +260,7 @@
             // Tìm câu theo level và category
             if (sentenceData[selectedLevel] && sentenceData[selectedLevel][selectedCategory]) {
                 sentences = [...sentenceData[selectedLevel][selectedCategory]];
+		sentences.sort(() => Math.random() - 0.5); // 🔁 Trộn ngẫu nhiên thứ tự câu
             }
             
             // Nếu không tìm thấy, sử dụng dữ liệu mặc định
