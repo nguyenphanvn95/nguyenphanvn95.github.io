@@ -290,6 +290,8 @@
 		`;
                 
                 currentText = await callGeminiAPI(prompt);
+		// Loại bỏ tất cả đoạn trong dấu ** là chủ đề bị lặp lại
+		currentText = currentText.replace(/\*\*(.*?)\*\*/g, '').trim();
                 vietnameseTextEl.textContent = currentText;
                 
                 // Split text into sentences
