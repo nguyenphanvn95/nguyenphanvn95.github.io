@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Bài Viết Tiếng Anh</title>
+    <title>Quản lý Bài viết</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,26 +13,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        :root {
-            --primary: #4a6fa5;
-            --primary-dark: #3a5a8c;
-            --secondary: #ff6b6b;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
             padding: 20px;
-            color: var(--dark);
+            min-height: 100vh;
         }
         
         .container {
@@ -42,941 +28,1006 @@
         
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            padding: 30px 0;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+        header h1 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
-        .logo i {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 600px;
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
             margin: 0 auto;
         }
         
         .app-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-        
-        @media (max-width: 900px) {
-            .app-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .card {
             background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 25px;
-            height: fit-content;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
         }
         
-        .card-title {
+        .controls {
+            padding: 20px;
+            background: #f5f7fa;
+            border-bottom: 1px solid #e0e6ed;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        
+        select, input {
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-danger {
+            background: #e53e3e;
+            color: white;
+        }
+        
+        .btn-warning {
+            background: #ed8936;
+            color: white;
+        }
+        
+        .btn-dark {
+            background: #2d3748;
+            color: white;
+        }
+        
+        .btn-export {
+            background: #9f7aea;
+            color: white;
+        }
+        
+        .content {
+            display: flex;
+            min-height: 500px;
+        }
+        
+        .article-list {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 600px;
+            border-right: 1px solid #e0e6ed;
+        }
+        
+        .article-item {
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid #4299e1;
+            transition: all 0.3s;
+        }
+        
+        .article-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .article-id {
+            font-weight: 700;
+            background: #ebf8ff;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #2b6cb0;
+        }
+        
+        .article-level {
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .beginner {
+            background: #bee3f8;
+            color: #2b6cb0;
+        }
+        
+        .intermediate {
+            background: #c6f6d5;
+            color: #276749;
+        }
+        
+        .advanced {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .article-category {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .article-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        
+        .article-actions {
+            display: flex;
             gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            background: #f7fafc;
+            border-left: 1px solid #e0e6ed;
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--light-gray);
-        }
-        
-        .card-title i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .card-title h2 {
-            font-size: 1.5rem;
-            color: var(--dark);
+            color: #2d3748;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4299e1;
         }
         
         .form-group {
             margin-bottom: 20px;
         }
         
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        select, input, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        select:focus, input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
-        }
-        
         textarea {
-            min-height: 100px;
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 16px;
             resize: vertical;
         }
         
-        .btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-        
-        .btn-success {
-            background: var(--success);
-            color: white;
-        }
-        
-        .btn-success:hover {
-            background: #218838;
-        }
-        
-        .btn-danger {
-            background: var(--danger);
-            color: white;
-        }
-        
-        .btn-danger:hover {
-            background: #c82333;
-        }
-        
-        .btn-warning {
-            background: var(--warning);
-            color: var(--dark);
-        }
-        
-        .btn-warning:hover {
-            background: #e0a800;
-        }
-        
-        .actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-group {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .table-container {
-            overflow-x: auto;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-gray);
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-        
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        
-        th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-        
-        tr:hover {
-            background-color: #e9f7fe;
-        }
-        
-        .level-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .beginner-badge {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-        
-        .intermediate-badge {
-            background: #e3f2fd;
-            color: #1565c0;
-        }
-        
-        .advanced-badge {
-            background: #fce4ec;
-            color: #c2185b;
-        }
-        
-        .type-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: #e0f7fa;
-            color: #006064;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .btn-sm {
-            padding: 8px 12px;
-            font-size: 0.9rem;
-        }
-        
-        .notification {
+        .modal {
+            display: none;
             position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            color: white;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transform: translateX(150%);
-            transition: transform 0.3s ease;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
             z-index: 1000;
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
-        
-        .notification.success {
-            background: var(--success);
-        }
-        
-        .notification.error {
-            background: var(--danger);
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--gray);
-        }
-        
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--light-gray);
-        }
-        
-        .empty-state p {
-            font-size: 1.1rem;
-        }
-        
-        .data-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .import-export {
-            display: flex;
-            gap: 10px;
             align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #718096;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2d3748;
         }
         
         .stats {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap;
+            justify-content: space-around;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .stat-card {
-            background: var(--light);
-            border-radius: var(--border-radius);
-            padding: 15px;
-            flex: 1;
-            min-width: 150px;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            padding: 15px;
+            border-radius: 10px;
+            background: #f7fafc;
+            flex: 1;
+            margin: 0 10px;
         }
         
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 5px 0;
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4299e1;
         }
         
         .stat-label {
-            font-size: 0.9rem;
-            color: var(--gray);
+            font-size: 1rem;
+            color: #718096;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+        
+        .type-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .emails { background: #f6ad55; color: white; }
+        .essays { background: #68d391; color: white; }
+        .reports { background: #63b3ed; color: white; }
+        .summaries { background: #b794f4; color: white; }
+        .stories { background: #fc8181; color: white; }
+        
+        /* New styles for bulk input */
+        .bulk-input-container {
+            margin-top: 15px;
+            border-top: 1px solid #e0e6ed;
+            padding-top: 15px;
+        }
+        
+        .toggle-bulk {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+        
+        .bulk-input {
+            display: none;
+        }
+        
+        .bulk-input.active {
+            display: block;
+        }
+        
+        .bulk-info {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 5px;
+        }
+        
+        .bulk-count {
+            background: #4299e1;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .form-container {
+                width: 100%;
+                border-left: none;
+                border-top: 1px solid #e0e6ed;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                <i class="fas fa-book-open"></i>
-                <h1>Quản lý Bài Viết Tiếng Anh</h1>
-            </div>
-            <p class="subtitle">Quản lý, thêm, sửa, xóa các bài viết theo mức độ và thể loại</p>
+            <h1><i class="fas fa-book"></i> Quản lý Bài viết</h1>
+            <p>Quản lý các tiêu đề bài viết theo cấp độ và loại hình. <br>Thêm, sửa, xóa, xuất và nhập dữ liệu dễ dàng.</p>
         </header>
-
-        <div class="app-container">
-            <!-- Form Section -->
-            <div class="card">
-                <div class="card-title">
-                    <i class="fas fa-edit"></i>
-                    <h2>Thêm/Sửa Bài Viết</h2>
-                </div>
-                
-                <form id="article-form">
-                    <input type="hidden" id="edit-id">
-                    
-                    <div class="form-group">
-                        <label for="level">Mức độ</label>
-                        <select id="level" required>
-                            <option value="">-- Chọn mức độ --</option>
-                            <option value="beginner">Beginner (Cơ bản)</option>
-                            <option value="intermediate">Intermediate (Trung cấp)</option>
-                            <option value="advanced">Advanced (Nâng cao)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="type">Thể loại</label>
-                        <select id="type" required>
-                            <option value="">-- Chọn thể loại --</option>
-                            <option value="emails">Emails (Thư điện tử)</option>
-                            <option value="essays">Essays (Bài luận)</option>
-                            <option value="reports">Reports (Báo cáo)</option>
-                            <option value="summaries">Summaries (Tóm tắt)</option>
-                            <option value="stories">Stories (Câu chuyện)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="title">Tiêu đề bài viết</label>
-                        <input type="text" id="title" placeholder="Nhập tiêu đề bài viết..." required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="id">ID bài viết</label>
-                        <input type="text" id="id" placeholder="Nhập ID duy nhất cho bài viết..." required>
-                    </div>
-                    
-                    <div class="actions">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i> Lưu bài viết
-                        </button>
-                        <button type="button" id="reset-btn" class="btn">
-                            <i class="fas fa-times"></i> Hủy
-                        </button>
-                    </div>
-                </form>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-articles">300</div>
+                <div class="stat-label">Tổng số bài viết</div>
             </div>
-            
-            <!-- List Section -->
-            <div class="card">
-                <div class="card-title">
-                    <i class="fas fa-list"></i>
-                    <h2>Danh sách Bài Viết</h2>
+            <div class="stat-card">
+                <div class="stat-number">100</div>
+                <div class="stat-label">Bài cơ bản</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100</div>
+                <div class="stat-label">Bài trung cấp</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100</div>
+                <div class="stat-label">Bài nâng cao</div>
+            </div>
+        </div>
+        
+        <div class="app-container">
+            <div class="controls">
+                <div class="filter-group">
+                    <label for="level-filter">Cấp độ</label>
+                    <select id="level-filter">
+                        <option value="all">Tất cả cấp độ</option>
+                        <option value="beginner">Cơ bản</option>
+                        <option value="intermediate">Trung cấp</option>
+                        <option value="advanced">Nâng cao</option>
+                    </select>
                 </div>
                 
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="filter-level">Lọc theo mức độ</label>
-                        <select id="filter-level">
-                            <option value="">Tất cả mức độ</option>
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="filter-type">Lọc theo thể loại</label>
-                        <select id="filter-type">
-                            <option value="">Tất cả thể loại</option>
-                            <option value="emails">Emails</option>
-                            <option value="essays">Essays</option>
-                            <option value="reports">Reports</option>
-                            <option value="summaries">Summaries</option>
-                            <option value="stories">Stories</option>
-                        </select>
-                    </div>
+                <div class="filter-group">
+                    <label for="type-filter">Loại bài viết</label>
+                    <select id="type-filter">
+                        <option value="all">Tất cả loại</option>
+                        <option value="emails">Emails</option>
+                        <option value="essays">Essays</option>
+                        <option value="reports">Reports</option>
+                        <option value="summaries">Summaries</option>
+                        <option value="stories">Stories</option>
+                    </select>
                 </div>
                 
-                <div class="table-container">
-                    <table id="articles-table">
-                        <thead>
-                            <tr>
-                                <th>Tiêu đề</th>
-                                <th>Mức độ</th>
-                                <th>Thể loại</th>
-                                <th>ID</th>
-                                <th>Hành động</th>
-                            </tr>
-                        </thead>
-                        <tbody id="articles-list">
-                            <!-- Articles will be loaded here -->
-                        </tbody>
-                    </table>
+                <div class="filter-group">
+                    <label for="search">Tìm kiếm</label>
+                    <input type="text" id="search" placeholder="Nhập từ khóa...">
                 </div>
                 
-                <div class="empty-state" id="empty-state">
-                    <i class="fas fa-inbox"></i>
-                    <p>Không có bài viết nào. Hãy thêm bài viết mới!</p>
-                </div>
-                
-                <div class="stats" id="stats">
-                    <!-- Stats will be loaded here -->
-                </div>
-                
-                <div class="data-actions">
-                    <div class="import-export">
-                        <button id="export-btn" class="btn btn-success">
-                            <i class="fas fa-file-export"></i> Xuất dữ liệu
-                        </button>
-                        <button id="import-btn" class="btn btn-primary">
-                            <i class="fas fa-file-import"></i> Nhập dữ liệu
-                        </button>
-                        <input type="file" id="import-file" accept=".json" style="display: none;">
-                    </div>
-                    <button id="delete-all-btn" class="btn btn-danger">
-                        <i class="fas fa-trash-alt"></i> Xóa tất cả dữ liệu
+                <div class="button-group">
+                    <button class="btn-success" id="add-article-btn">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </button>
+                    <button class="btn-export" id="export-btn">
+                        <i class="fas fa-file-export"></i> Xuất JSON
+                    </button>
+                    <button class="btn-dark" id="import-btn">
+                        <i class="fas fa-file-import"></i> Nhập JSON
                     </button>
                 </div>
             </div>
+            
+            <div class="content">
+                <div class="article-list" id="article-list">
+                    <!-- Articles will be loaded here -->
+                </div>
+                
+                <div class="form-container">
+                    <h3 class="form-title">Thêm/Sửa bài viết</h3>
+                    <form id="article-form">
+                        <div class="form-group">
+                            <label for="article-level">Cấp độ</label>
+                            <select id="article-level" required>
+                                <option value="">Chọn cấp độ</option>
+                                <option value="beginner">Cơ bản</option>
+                                <option value="intermediate">Trung cấp</option>
+                                <option value="advanced">Nâng cao</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="article-type">Loại bài viết</label>
+                            <select id="article-type" required>
+                                <option value="">Chọn loại</option>
+                                <option value="emails">Emails</option>
+                                <option value="essays">Essays</option>
+                                <option value="reports">Reports</option>
+                                <option value="summaries">Summaries</option>
+                                <option value="stories">Stories</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="article-title">Tiêu đề bài viết</label>
+                            <textarea id="article-title" placeholder="Nhập tiêu đề bài viết..." required></textarea>
+                            
+                            <!-- Bulk input section -->
+                            <div class="bulk-input-container">
+                                <div class="toggle-bulk" id="toggle-bulk">
+                                    <i class="fas fa-layer-group"></i>
+                                    Nhập nhiều tiêu đề cùng lúc
+                                </div>
+                                <div class="bulk-input" id="bulk-input">
+                                    <textarea id="article-titles-bulk" placeholder="Nhập nhiều tiêu đề, phân cách bằng dấu chấm phẩy (;)"></textarea>
+                                    <div class="bulk-info">
+                                        Số lượng tiêu đề: <span id="bulk-count" class="bulk-count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-save"></i> Lưu bài viết
+                            </button>
+                            <button type="button" class="btn-danger" id="cancel-edit">
+                                <i class="fas fa-times"></i> Hủy bỏ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+        
+        <div class="modal" id="export-modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-export">&times;</span>
+                <h3 class="modal-title">Xuất dữ liệu JSON</h3>
+                <p>Dữ liệu của bạn đã sẵn sàng để tải xuống:</p>
+                <div style="background: #f7fafc; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                    <pre id="json-output" style="max-height: 300px; overflow: auto;"></pre>
+                </div>
+                <button class="btn-export" id="download-json">
+                    <i class="fas fa-download"></i> Tải file JSON
+                </button>
+            </div>
+        </div>
+        
+        <div class="modal" id="import-modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-import">&times;</span>
+                <h3 class="modal-title">Nhập dữ liệu từ JSON</h3>
+                <p>Chọn file JSON để nhập dữ liệu:</p>
+                <input type="file" id="json-upload" accept=".json" style="margin: 20px 0; width: 100%; padding: 15px; border: 2px dashed #cbd5e0; border-radius: 8px;">
+                <div id="import-preview" style="background: #f7fafc; padding: 15px; border-radius: 8px; margin: 20px 0; max-height: 300px; overflow: auto;"></div>
+                <button class="btn-success" id="confirm-import">
+                    <i class="fas fa-check"></i> Xác nhận nhập dữ liệu
+                </button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Ứng dụng Quản lý Bài viết &copy; 2025 - Chạy hoàn toàn trên trình duyệt</p>
+        </footer>
     </div>
     
-    <div class="notification" id="notification"></div>
-
     <script>
+        // Dữ liệu mẫu từ exerciseData.json
+        const exerciseData = {
+            "beginner": {
+                "emails": [
+                    {
+                        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+                        "id": "emails_beginner_1"
+                    },
+                    // ... (rest of the data remains the same)
+                ],
+                // ... (rest of the data remains the same)
+            },
+            // ... (rest of the data remains the same)
+        };
+
+        // Biến toàn cục
+        let currentEditingId = null;
+        const levelNames = {
+            "beginner": "Cơ bản",
+            "intermediate": "Trung cấp",
+            "advanced": "Nâng cao"
+        };
+        
+        const typeNames = {
+            "emails": "Emails",
+            "essays": "Essays",
+            "reports": "Reports",
+            "summaries": "Summaries",
+            "stories": "Stories"
+        };
+
         // DOM Elements
-        const articleForm = document.getElementById('article-form');
-        const articlesList = document.getElementById('articles-list');
-        const emptyState = document.getElementById('empty-state');
-        const filterLevel = document.getElementById('filter-level');
-        const filterType = document.getElementById('filter-type');
-        const resetBtn = document.getElementById('reset-btn');
-        const notification = document.getElementById('notification');
+        const articleList = document.getElementById('article-list');
+        const levelFilter = document.getElementById('level-filter');
+        const typeFilter = document.getElementById('type-filter');
+        const searchInput = document.getElementById('search');
+        const addArticleBtn = document.getElementById('add-article-btn');
         const exportBtn = document.getElementById('export-btn');
         const importBtn = document.getElementById('import-btn');
-        const importFile = document.getElementById('import-file');
-        const deleteAllBtn = document.getElementById('delete-all-btn');
-        const statsContainer = document.getElementById('stats');
+        const articleForm = document.getElementById('article-form');
+        const cancelEditBtn = document.getElementById('cancel-edit');
+        const exportModal = document.getElementById('export-modal');
+        const importModal = document.getElementById('import-modal');
+        const closeExportBtn = document.getElementById('close-export');
+        const closeImportBtn = document.getElementById('close-import');
+        const jsonOutput = document.getElementById('json-output');
+        const downloadJsonBtn = document.getElementById('download-json');
+        const jsonUpload = document.getElementById('json-upload');
+        const importPreview = document.getElementById('import-preview');
+        const confirmImportBtn = document.getElementById('confirm-import');
+        const articleLevel = document.getElementById('article-level');
+        const articleType = document.getElementById('article-type');
+        const articleTitle = document.getElementById('article-title');
+        
+        // New elements for bulk input
+        const toggleBulkBtn = document.getElementById('toggle-bulk');
+        const bulkInput = document.getElementById('bulk-input');
+        const articleTitlesBulk = document.getElementById('article-titles-bulk');
+        const bulkCount = document.getElementById('bulk-count');
 
-        // Initialize articles data from localStorage or sample data
-        function initializeData() {
-            const storedData = localStorage.getItem('articlesData');
-            if (storedData) {
-                return JSON.parse(storedData);
-            }
-            
-            // If no data in localStorage, use sample data
-            return {
-                "beginner": {
-                    "emails": [
-                        {"title": "Email mời bạn tham gia nhóm học IELTS", "id": "emails_beginner_1"},
-                        {"title": "Email hỏi về việc đổi lịch thi nói IELTS", "id": "emails_beginner_2"}
-                    ],
-                    "essays": [
-                        {"title": "Một số người tin rằng công nghệ khiến con người cô đơn hơn. Thảo luận cả hai quan điểm", "id": "essays_beginner_1"}
-                    ],
-                    "reports": [
-                        {"title": "Báo cáo điểm danh và phản hồi từ câu lạc bộ nói", "id": "reports_beginner_1"}
-                    ],
-                    "summaries": [
-                        {"title": "Tóm tắt cuộc phỏng vấn với giám khảo IELTS", "id": "summaries_beginner_1"}
-                    ],
-                    "stories": [
-                        {"title": "Kể chuyện được bạn giúp đỡ phút cuối", "id": "stories_beginner_1"}
-                    ]
-                },
-                "intermediate": {
-                    "emails": [
-                        {"title": "Email cảm ơn giáo viên đã hỗ trợ luyện thi", "id": "emails_intermediate_1"}
-                    ],
-                    "essays": [
-                        {"title": "Chính phủ nên tài trợ đại học đến mức nào?", "id": "essays_intermediate_1"}
-                    ],
-                    "reports": [
-                        {"title": "Báo cáo về kỹ năng quản lý thời gian trong kỳ thi", "id": "reports_intermediate_1"}
-                    ],
-                    "summaries": [
-                        {"title": "Tóm tắt buổi nói chuyện về chiến lược đọc hiệu quả", "id": "summaries_intermediate_1"}
-                    ],
-                    "stories": [
-                        {"title": "Kể chuyện gặp bất ngờ trong bài đọc", "id": "stories_intermediate_1"}
-                    ]
-                },
-                "advanced": {
-                    "emails": [
-                        {"title": "Email xin lỗi vì bỏ lỡ buổi thi thử đã lên lịch", "id": "emails_advanced_1"}
-                    ],
-                    "essays": [
-                        {"title": "Tăng thời gian tù có phải cách tốt nhất để giảm tội phạm?", "id": "essays_advanced_1"}
-                    ],
-                    "reports": [
-                        {"title": "Báo cáo cải thiện từ vựng qua ứng dụng di động", "id": "reports_advanced_1"}
-                    ],
-                    "summaries": [
-                        {"title": "Tóm tắt podcast về cách giảm căng thẳng khi thi", "id": "summaries_advanced_1"}
-                    ],
-                    "stories": [
-                        {"title": "Kể chuyện bị trễ buổi thi nói quan trọng", "id": "stories_advanced_1"}
-                    ]
-                }
-            };
+        // Khởi tạo ứng dụng
+        function initApp() {
+            renderArticles();
+            setupEventListeners();
+            updateStats();
         }
 
-        let articlesData = initializeData();
-        saveDataToLocalStorage();
-
-        // Save data to localStorage
-        function saveDataToLocalStorage() {
-            localStorage.setItem('articlesData', JSON.stringify(articlesData));
-        }
-
-        // Display level badge
-        function getLevelBadge(level) {
-            switch(level) {
-                case 'beginner': 
-                    return '<span class="level-badge beginner-badge">Beginner</span>';
-                case 'intermediate': 
-                    return '<span class="level-badge intermediate-badge">Intermediate</span>';
-                case 'advanced': 
-                    return '<span class="level-badge advanced-badge">Advanced</span>';
-                default:
-                    return level;
-            }
-        }
-
-        // Display type badge
-        function getTypeBadge(type) {
-            let displayName = '';
-            switch(type) {
-                case 'emails': displayName = 'Emails'; break;
-                case 'essays': displayName = 'Essays'; break;
-                case 'reports': displayName = 'Reports'; break;
-                case 'summaries': displayName = 'Summaries'; break;
-                case 'stories': displayName = 'Stories'; break;
-                default: displayName = type;
-            }
-            return `<span class="type-badge">${displayName}</span>`;
-        }
-
-        // Show notification
-        function showNotification(message, type) {
-            notification.textContent = message;
-            notification.className = `notification show ${type}`;
+        // Render danh sách bài viết
+        function renderArticles(level = 'all', type = 'all', searchTerm = '') {
+            articleList.innerHTML = '';
+            let count = 0;
             
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        // Calculate statistics
-        function calculateStats() {
-            let total = 0;
-            const counts = {
-                beginner: 0,
-                intermediate: 0,
-                advanced: 0
-            };
-            
-            for (const level in articlesData) {
-                for (const type in articlesData[level]) {
-                    const count = articlesData[level][type].length;
-                    total += count;
-                    counts[level] += count;
-                }
-            }
-            
-            return { total, ...counts };
-        }
-
-        // Render statistics
-        function renderStats() {
-            const stats = calculateStats();
-            
-            statsContainer.innerHTML = `
-                <div class="stat-card">
-                    <div class="stat-value">${stats.total}</div>
-                    <div class="stat-label">Tổng bài viết</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${stats.beginner}</div>
-                    <div class="stat-label">Beginner</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${stats.intermediate}</div>
-                    <div class="stat-label">Intermediate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">${stats.advanced}</div>
-                    <div class="stat-label">Advanced</div>
-                </div>
-            `;
-        }
-
-        // Render articles table
-        function renderArticles() {
-            const selectedLevel = filterLevel.value;
-            const selectedType = filterType.value;
-            
-            let hasArticles = false;
-            articlesList.innerHTML = '';
-            
-            for (const level in articlesData) {
-                if (selectedLevel && selectedLevel !== level) continue;
+            for (const [levelKey, types] of Object.entries(exerciseData)) {
+                if (level !== 'all' && level !== levelKey) continue;
                 
-                for (const type in articlesData[level]) {
-                    if (selectedType && selectedType !== type) continue;
+                for (const [typeKey, articles] of Object.entries(types)) {
+                    if (type !== 'all' && type !== typeKey) continue;
                     
-                    const articles = articlesData[level][type];
-                    articles.forEach(article => {
-                        hasArticles = true;
-                        const row = document.createElement('tr');
+                    for (const article of articles) {
+                        if (searchTerm && !article.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            continue;
+                        }
                         
-                        row.innerHTML = `
-                            <td>${article.title}</td>
-                            <td>${getLevelBadge(level)}</td>
-                            <td>${getTypeBadge(type)}</td>
-                            <td>${article.id}</td>
-                            <td class="action-buttons">
-                                <button class="btn btn-warning btn-sm edit-btn" 
-                                    data-level="${level}" 
-                                    data-type="${type}" 
-                                    data-id="${article.id}">
-                                    <i class="fas fa-edit"></i>
+                        const articleElement = document.createElement('div');
+                        articleElement.className = 'article-item';
+                        articleElement.innerHTML = `
+                            <div class="article-header">
+                                <span class="article-id">ID: ${article.id}</span>
+                                <span class="article-level ${levelKey}">${levelNames[levelKey]}</span>
+                            </div>
+                            <div class="article-category">
+                                <i class="fas fa-tag"></i> 
+                                <span class="type-badge ${typeKey}">${typeNames[typeKey]}</span>
+                                ${typeNames[typeKey]}
+                            </div>
+                            <div class="article-title">${article.title}</div>
+                            <div class="article-actions">
+                                <button class="action-btn btn-warning edit-article" data-level="${levelKey}" data-type="${typeKey}" data-id="${article.id}">
+                                    <i class="fas fa-edit"></i> Sửa
                                 </button>
-                                <button class="btn btn-danger btn-sm delete-btn" 
-                                    data-level="${level}" 
-                                    data-type="${type}" 
-                                    data-id="${article.id}">
-                                    <i class="fas fa-trash"></i>
+                                <button class="action-btn btn-danger delete-article" data-level="${levelKey}" data-type="${typeKey}" data-id="${article.id}">
+                                    <i class="fas fa-trash"></i> Xóa
                                 </button>
-                            </td>
+                            </div>
                         `;
-                        
-                        articlesList.appendChild(row);
-                    });
+                        articleList.appendChild(articleElement);
+                        count++;
+                    }
                 }
             }
             
-            emptyState.style.display = hasArticles ? 'none' : 'block';
-            renderStats();
+            if (count === 0) {
+                articleList.innerHTML = `<div class="no-results">Không tìm thấy bài viết nào phù hợp với bộ lọc</div>`;
+            }
+            
+            updateStats();
+        }
+        
+        // Cập nhật thống kê
+        function updateStats() {
+            let total = 0;
+            let beginnerCount = 0;
+            let intermediateCount = 0;
+            let advancedCount = 0;
+            
+            for (const [levelKey, types] of Object.entries(exerciseData)) {
+                for (const articles of Object.values(types)) {
+                    const count = articles.length;
+                    total += count;
+                    
+                    if (levelKey === 'beginner') beginnerCount += count;
+                    else if (levelKey === 'intermediate') intermediateCount += count;
+                    else if (levelKey === 'advanced') advancedCount += count;
+                }
+            }
+            
+            document.getElementById('total-articles').textContent = total;
+            document.querySelector('.stat-card:nth-child(2) .stat-number').textContent = beginnerCount;
+            document.querySelector('.stat-card:nth-child(3) .stat-number').textContent = intermediateCount;
+            document.querySelector('.stat-card:nth-child(4) .stat-number').textContent = advancedCount;
         }
 
-        // Add new article
-        function addArticle(level, type, title, id) {
-            if (!articlesData[level]) {
-                articlesData[level] = {};
-            }
-            
-            if (!articlesData[level][type]) {
-                articlesData[level][type] = [];
-            }
-            
-            articlesData[level][type].push({
-                title: title,
-                id: id
+        // Thiết lập event listeners
+        function setupEventListeners() {
+            // Lọc và tìm kiếm
+            levelFilter.addEventListener('change', () => {
+                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
             });
             
-            saveDataToLocalStorage();
-            renderArticles();
-            showNotification('Bài viết đã được thêm thành công!', 'success');
+            typeFilter.addEventListener('change', () => {
+                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
+            });
+            
+            searchInput.addEventListener('input', () => {
+                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
+            });
+            
+            // Thêm bài viết mới
+            addArticleBtn.addEventListener('click', () => {
+                currentEditingId = null;
+                articleForm.reset();
+                bulkInput.classList.remove('active');
+                articleLevel.focus();
+            });
+            
+            // Xử lý form
+            articleForm.addEventListener('submit', handleFormSubmit);
+            
+            // Hủy chỉnh sửa
+            cancelEditBtn.addEventListener('click', () => {
+                articleForm.reset();
+                bulkInput.classList.remove('active');
+                currentEditingId = null;
+            });
+            
+            // Xuất dữ liệu
+            exportBtn.addEventListener('click', showExportModal);
+            closeExportBtn.addEventListener('click', () => {
+                exportModal.style.display = 'none';
+            });
+            downloadJsonBtn.addEventListener('click', downloadJson);
+            
+            // Nhập dữ liệu
+            importBtn.addEventListener('click', () => {
+                importModal.style.display = 'flex';
+            });
+            closeImportBtn.addEventListener('click', () => {
+                importModal.style.display = 'none';
+            });
+            jsonUpload.addEventListener('change', handleFileUpload);
+            confirmImportBtn.addEventListener('click', confirmImport);
+            
+            // Xử lý sửa/xóa (sử dụng event delegation)
+            articleList.addEventListener('click', (e) => {
+                // Sửa bài viết
+                if (e.target.closest('.edit-article')) {
+                    const btn = e.target.closest('.edit-article');
+                    const level = btn.dataset.level;
+                    const type = btn.dataset.type;
+                    const id = btn.dataset.id;
+                    
+                    editArticle(level, type, id);
+                }
+                
+                // Xóa bài viết
+                if (e.target.closest('.delete-article')) {
+                    const btn = e.target.closest('.delete-article');
+                    const level = btn.dataset.level;
+                    const type = btn.dataset.type;
+                    const id = btn.dataset.id;
+                    
+                    if (confirm('Bạn có chắc chắn muốn xóa bài viết này?')) {
+                        deleteArticle(level, type, id);
+                    }
+                }
+            });
+            
+            // Toggle bulk input
+            toggleBulkBtn.addEventListener('click', () => {
+                bulkInput.classList.toggle('active');
+                if (bulkInput.classList.contains('active')) {
+                    articleTitlesBulk.focus();
+                }
+            });
+            
+            // Update bulk count
+            articleTitlesBulk.addEventListener('input', updateBulkCount);
         }
 
-        // Edit existing article
-        function editArticle(oldLevel, oldType, oldId, newLevel, newType, newTitle, newId) {
-            // Remove from old location
-            const oldArticles = articlesData[oldLevel][oldType];
-            const articleIndex = oldArticles.findIndex(a => a.id === oldId);
+        // Cập nhật số lượng tiêu đề trong chế độ nhập nhiều
+        function updateBulkCount() {
+            const titles = articleTitlesBulk.value.split(';').filter(t => t.trim() !== '');
+            bulkCount.textContent = titles.length;
+        }
+
+        // Xử lý submit form
+        function handleFormSubmit(e) {
+            e.preventDefault();
             
-            if (articleIndex === -1) return;
+            const level = articleLevel.value;
+            const type = articleType.value;
             
-            const article = oldArticles[articleIndex];
-            oldArticles.splice(articleIndex, 1);
+            if (!level || !type) {
+                alert('Vui lòng chọn cấp độ và loại bài viết');
+                return;
+            }
             
-            // Clean up if empty
-            if (oldArticles.length === 0) {
-                delete articlesData[oldLevel][oldType];
+            // Xử lý nhập nhiều tiêu đề
+            if (bulkInput.classList.contains('active')) {
+                const titlesBulk = articleTitlesBulk.value;
+                const titles = titlesBulk.split(';')
+                    .map(title => title.trim())
+                    .filter(title => title !== '');
                 
-                if (Object.keys(articlesData[oldLevel]).length === 0) {
-                    delete articlesData[oldLevel];
+                if (titles.length === 0) {
+                    alert('Vui lòng nhập ít nhất một tiêu đề');
+                    return;
+                }
+                
+                // Thêm từng tiêu đề
+                titles.forEach(title => {
+                    addNewArticle(level, type, title);
+                });
+                
+                alert(`Đã thêm ${titles.length} bài viết mới!`);
+            } else {
+                // Xử lý nhập một tiêu đề
+                const title = articleTitle.value;
+                
+                if (!title) {
+                    alert('Vui lòng nhập tiêu đề bài viết');
+                    return;
+                }
+                
+                if (currentEditingId) {
+                    // Cập nhật bài viết hiện có
+                    updateArticle(level, type, title);
+                } else {
+                    // Thêm bài viết mới
+                    addNewArticle(level, type, title);
                 }
             }
             
-            // Add to new location
-            article.title = newTitle;
-            article.id = newId;
+            // Reset form
+            articleForm.reset();
+            bulkInput.classList.remove('active');
+            currentEditingId = null;
+            bulkCount.textContent = '0';
             
-            if (!articlesData[newLevel]) {
-                articlesData[newLevel] = {};
-            }
-            
-            if (!articlesData[newLevel][newType]) {
-                articlesData[newLevel][newType] = [];
-            }
-            
-            articlesData[newLevel][newType].push(article);
-            
-            saveDataToLocalStorage();
-            renderArticles();
-            showNotification('Bài viết đã được cập nhật thành công!', 'success');
+            // Render lại danh sách
+            renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
         }
 
-        // Delete article
+        // Thêm bài viết mới
+        function addNewArticle(level, type, title) {
+            // Tạo ID mới (tìm ID lớn nhất + 1)
+            let maxId = 0;
+            const currentArticles = exerciseData[level][type];
+            currentArticles.forEach(article => {
+                // Tách id để lấy số
+                const parts = article.id.split('_');
+                const num = parseInt(parts[2]);
+                if (num > maxId) maxId = num;
+            });
+            const newId = `${type}_${level}_${maxId+1}`;
+            
+            // Thêm bài viết vào dữ liệu
+            exerciseData[level][type].push({
+                id: newId,
+                title: title
+            });
+        }
+
+        // Chỉnh sửa bài viết
+        function editArticle(level, type, id) {
+            const articles = exerciseData[level][type];
+            const article = articles.find(a => a.id === id);
+            
+            if (article) {
+                articleLevel.value = level;
+                articleType.value = type;
+                articleTitle.value = article.title;
+                currentEditingId = { level, type, id };
+                bulkInput.classList.remove('active');
+                
+                // Cuộn đến form
+                document.querySelector('.form-container').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Cập nhật bài viết
+        function updateArticle(newLevel, newType, newTitle) {
+            const { level, type, id } = currentEditingId;
+            
+            // Tìm bài viết cũ
+            const oldArticles = exerciseData[level][type];
+            const articleIndex = oldArticles.findIndex(a => a.id === id);
+            
+            if (articleIndex !== -1) {
+                // Cập nhật tiêu đề
+                oldArticles[articleIndex].title = newTitle;
+                
+                // Nếu thay đổi level hoặc type
+                if (level !== newLevel || type !== newType) {
+                    // Xóa bài viết cũ
+                    const [article] = oldArticles.splice(articleIndex, 1);
+                    
+                    // Cập nhật tiêu đề
+                    article.title = newTitle;
+                    
+                    // Tạo ID mới
+                    const parts = id.split('_');
+                    let maxId = 0;
+                    const currentArticles = exerciseData[newLevel][newType];
+                    currentArticles.forEach(a => {
+                        const num = parseInt(a.id.split('_')[2]);
+                        if (num > maxId) maxId = num;
+                    });
+                    article.id = `${newType}_${newLevel}_${maxId+1}`;
+                    
+                    // Thêm vào vị trí mới
+                    exerciseData[newLevel][newType].push(article);
+                }
+            }
+        }
+
+        // Xóa bài viết
         function deleteArticle(level, type, id) {
-            if (!confirm('Bạn có chắc chắn muốn xóa bài viết này?')) return;
+            const articles = exerciseData[level][type];
+            const index = articles.findIndex(a => a.id === id);
             
-            const articles = articlesData[level][type];
-            const articleIndex = articles.findIndex(a => a.id === id);
-            
-            if (articleIndex === -1) return;
-            
-            articles.splice(articleIndex, 1);
-            
-            // Clean up if empty
-            if (articles.length === 0) {
-                delete articlesData[level][type];
-                
-                if (Object.keys(articlesData[level]).length === 0) {
-                    delete articlesData[level];
-                }
+            if (index !== -1) {
+                articles.splice(index, 1);
+                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
             }
-            
-            saveDataToLocalStorage();
-            renderArticles();
-            showNotification('Bài viết đã được xóa thành công!', 'success');
         }
 
-        // Export data
-        function exportData() {
-            const dataStr = JSON.stringify(articlesData, null, 2);
-            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-            
-            const exportFileDefaultName = 'bai-viet-tieng-anh.json';
-            
-            const linkElement = document.createElement('a');
-            linkElement.setAttribute('href', dataUri);
-            linkElement.setAttribute('download', exportFileDefaultName);
-            linkElement.click();
+        // Hiển thị modal xuất dữ liệu
+        function showExportModal() {
+            const jsonString = JSON.stringify(exerciseData, null, 2);
+            jsonOutput.textContent = jsonString;
+            exportModal.style.display = 'flex';
         }
 
-        // Import data
-        function importData(file) {
+        // Tải file JSON
+        function downloadJson() {
+            const jsonString = JSON.stringify(exerciseData, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'exerciseData.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            exportModal.style.display = 'none';
+        }
+
+        // Xử lý tải file lên
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function(event) {
                 try {
-                    const newData = JSON.parse(e.target.result);
-                    articlesData = newData;
-                    saveDataToLocalStorage();
-                    renderArticles();
-                    showNotification('Dữ liệu đã được nhập thành công!', 'success');
+                    const jsonData = JSON.parse(event.target.result);
+                    importPreview.textContent = JSON.stringify(jsonData, null, 2);
                 } catch (error) {
-                    showNotification('Lỗi: File không hợp lệ!', 'error');
-                    console.error(error);
+                    importPreview.textContent = 'Lỗi: File JSON không hợp lệ';
+                    console.error('Error parsing JSON:', error);
                 }
             };
             reader.readAsText(file);
         }
 
-        // Delete all data
-        function deleteAllData() {
-            if (!confirm('Bạn có chắc chắn muốn xóa TẤT CẢ dữ liệu? Hành động này không thể hoàn tác.')) return;
-            
-            localStorage.removeItem('articlesData');
-            articlesData = initializeData();
-            saveDataToLocalStorage();
-            renderArticles();
-            showNotification('Tất cả dữ liệu đã được xóa thành công!', 'success');
-        }
-
-        // Handle form submission
-        articleForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const level = document.getElementById('level').value;
-            const type = document.getElementById('type').value;
-            const title = document.getElementById('title').value;
-            const id = document.getElementById('id').value;
-            const editId = document.getElementById('edit-id').value;
-            
-            if (!level || !type || !title || !id) {
-                showNotification('Vui lòng điền đầy đủ thông tin!', 'error');
-                return;
-            }
-            
-            if (editId) {
-                // Extract old data from editId (format: level_type_id)
-                const [oldLevel, oldType, oldId] = editId.split('_');
-                editArticle(oldLevel, oldType, oldId, level, type, title, id);
-            } else {
-                // Check if ID already exists
-                let idExists = false;
-                
-                for (const lvl in articlesData) {
-                    for (const typ in articlesData[lvl]) {
-                        if (articlesData[lvl][typ].some(a => a.id === id)) {
-                            idExists = true;
-                            break;
-                        }
-                    }
-                    if (idExists) break;
-                }
-                
-                if (idExists) {
-                    showNotification('ID bài viết đã tồn tại! Vui lòng chọn ID khác.', 'error');
+        // Xác nhận nhập dữ liệu
+        function confirmImport() {
+            try {
+                const jsonString = importPreview.textContent;
+                if (!jsonString || jsonString === 'Lỗi: File JSON không hợp lệ') {
+                    alert('Không có dữ liệu hợp lệ để nhập');
                     return;
                 }
                 
-                addArticle(level, type, title, id);
-            }
-            
-            // Reset form
-            articleForm.reset();
-            document.getElementById('edit-id').value = '';
-        });
-
-        // Reset form
-        resetBtn.addEventListener('click', function() {
-            articleForm.reset();
-            document.getElementById('edit-id').value = '';
-        });
-
-        // Edit button click
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('edit-btn')) {
-                const btn = e.target.closest('.edit-btn');
-                const level = btn.dataset.level;
-                const type = btn.dataset.type;
-                const id = btn.dataset.id;
+                const importedData = JSON.parse(jsonString);
                 
-                // Find the article
-                const article = articlesData[level][type].find(a => a.id === id);
-                
-                if (article) {
-                    document.getElementById('level').value = level;
-                    document.getElementById('type').value = type;
-                    document.getElementById('title').value = article.title;
-                    document.getElementById('id').value = article.id;
-                    document.getElementById('edit-id').value = `${level}_${type}_${id}`;
-                    
-                    // Scroll to form
-                    document.querySelector('.card:first-child').scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                // Kiểm tra cấu trúc dữ liệu cơ bản
+                if (!importedData.beginner || !importedData.intermediate || !importedData.advanced) {
+                    alert('Dữ liệu không đúng định dạng. Vui lòng kiểm tra lại.');
+                    return;
                 }
-            }
-            
-            // Delete button click
-            if (e.target.classList.contains('delete-btn')) {
-                const btn = e.target.closest('.delete-btn');
-                const level = btn.dataset.level;
-                const type = btn.dataset.type;
-                const id = btn.dataset.id;
                 
-                deleteArticle(level, type, id);
+                // Cập nhật dữ liệu
+                Object.assign(exerciseData, importedData);
+                
+                // Render lại danh sách
+                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
+                
+                alert('Nhập dữ liệu thành công!');
+                importModal.style.display = 'none';
+            } catch (error) {
+                alert('Lỗi khi nhập dữ liệu: ' + error.message);
             }
-        });
+        }
 
-        // Export button
-        exportBtn.addEventListener('click', exportData);
-
-        // Import button
-        importBtn.addEventListener('click', function() {
-            importFile.click();
-        });
-
-        // Handle file import
-        importFile.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            
-            importData(file);
-            e.target.value = ''; // Reset file input
-        });
-
-        // Delete all data button
-        deleteAllBtn.addEventListener('click', deleteAllData);
-
-        // Filter change
-        filterLevel.addEventListener('change', renderArticles);
-        filterType.addEventListener('change', renderArticles);
-
-        // Initialize
-        renderArticles();
+        // Khởi động ứng dụng
+        document.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
 </html>

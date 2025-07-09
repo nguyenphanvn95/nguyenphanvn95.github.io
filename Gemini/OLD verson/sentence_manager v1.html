@@ -143,11 +143,6 @@
             color: white;
         }
         
-        .btn-batch {
-            background: #0bc5ea;
-            color: white;
-        }
-        
         .content {
             display: flex;
             min-height: 500px;
@@ -345,31 +340,6 @@
             font-size: 1rem;
         }
         
-        .batch-input {
-            background: #f0f9ff;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 15px;
-        }
-        
-        .batch-input h4 {
-            margin-bottom: 10px;
-            color: #0c4a6e;
-        }
-        
-        .batch-input p {
-            margin-bottom: 15px;
-            color: #64748b;
-        }
-        
-        .batch-input textarea {
-            font-size: 14px;
-        }
-        
-        .batch-input .button-group {
-            margin-top: 10px;
-        }
-        
         @media (max-width: 900px) {
             .content {
                 flex-direction: column;
@@ -397,19 +367,19 @@
         
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number" id="total-sentences">0</div>
+                <div class="stat-number" id="total-sentences">108</div>
                 <div class="stat-label">Tổng số câu</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="beginner-count">0</div>
+                <div class="stat-number">36</div>
                 <div class="stat-label">Câu cơ bản</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="intermediate-count">0</div>
+                <div class="stat-number">36</div>
                 <div class="stat-label">Câu trung cấp</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="advanced-count">0</div>
+                <div class="stat-number">36</div>
                 <div class="stat-label">Câu nâng cao</div>
             </div>
         </div>
@@ -454,9 +424,6 @@
                     <button class="btn-success" id="add-sentence-btn">
                         <i class="fas fa-plus"></i> Thêm mới
                     </button>
-                    <button class="btn-batch" id="batch-add-btn">
-                        <i class="fas fa-list-ol"></i> Thêm hàng loạt
-                    </button>
                     <button class="btn-export" id="export-btn">
                         <i class="fas fa-file-export"></i> Xuất JSON
                     </button>
@@ -468,11 +435,7 @@
             
             <div class="content">
                 <div class="sentence-list" id="sentence-list">
-                    <div class="no-results" style="text-align: center; padding: 40px; color: #718096;">
-                        <i class="fas fa-inbox" style="font-size: 48px; margin-bottom: 15px;"></i>
-                        <h3>Không có câu nào</h3>
-                        <p>Hãy bắt đầu bằng cách thêm câu mới hoặc nhập dữ liệu từ file JSON</p>
-                    </div>
+                    <!-- Sentences will be loaded here -->
                 </div>
                 
                 <div class="form-container">
@@ -510,17 +473,6 @@
                         <div class="form-group">
                             <label for="sentence-text">Nội dung câu</label>
                             <textarea id="sentence-text" placeholder="Nhập nội dung câu tiếng Việt..." required></textarea>
-                        </div>
-                        
-                        <div class="batch-input">
-                            <h4><i class="fas fa-bolt"></i> Thêm hàng loạt</h4>
-                            <p>Nhập nhiều câu cùng lúc, mỗi câu cách nhau bằng dấu chấm phẩy (;)</p>
-                            <textarea id="batch-text" placeholder="Câu 1; Câu 2; Câu 3;..."></textarea>
-                            <div class="button-group">
-                                <button type="button" class="btn-batch" id="add-batch-btn">
-                                    <i class="fas fa-plus-circle"></i> Thêm tất cả
-                                </button>
-                            </div>
                         </div>
                         
                         <div class="button-group">
@@ -569,11 +521,194 @@
     </div>
     
     <script>
-        // Dữ liệu ban đầu (rỗng)
+        // Dữ liệu mẫu
         const sentencesData = {
-            "beginner": {},
-            "intermediate": {},
-            "advanced": {}
+            "beginner": {
+                "everyday": [
+                    { "id": 1, "vi": "Chào buổi sáng, hôm nay bạn thế nào?" },
+                    { "id": 2, "vi": "Tôi thích uống cà phê vào buổi sáng." },
+                    { "id": 3, "vi": "Bạn có muốn đi ăn tối với tôi không?" }
+                ],
+                "transportation": [
+                    { "id": 4, "vi": "Làm thế nào để đến sân bay?" },
+                    { "id": 5, "vi": "Xe buýt này có đến trung tâm thành phố không?" },
+                    { "id": 6, "vi": "Tôi muốn mua một vé tàu." }
+                ],
+                "education": [
+                    { "id": 7, "vi": "Tôi là học sinh." },
+                    { "id": 8, "vi": "Tôi đang học tiếng Anh." },
+                    { "id": 9, "vi": "Bạn có thể giúp tôi với bài tập này không?" }
+                ],
+                "public-services": [
+                    { "id": 10, "vi": "Tôi cần gia hạn hộ chiếu." },
+                    { "id": 11, "vi": "Thủ tục đăng ký kinh doanh ở đâu?" },
+                    { "id": 12, "vi": "Giấy phép xây dựng cần những gì?" }
+                ],
+                "health": [
+                    { "id": 13, "vi": "Tôi cần đặt lịch khám bệnh." },
+                    { "id": 14, "vi": "Bệnh viện gần nhất ở đâu?" },
+                    { "id": 15, "vi": "Thuốc này uống bao nhiêu viên một ngày?" }
+                ],
+                "shopping": [
+                    { "id": 16, "vi": "Cửa hàng này có chấp nhận thẻ không?" },
+                    { "id": 17, "vi": "Tôi muốn đổi cái áo này." },
+                    { "id": 18, "vi": "Bạn có size nhỏ hơn không?" }
+                ],
+                "entertainment": [
+                    { "id": 19, "vi": "Rạp chiếu phim gần nhất ở đâu?" },
+                    { "id": 20, "vi": "Bộ phim này có phụ đề tiếng Anh không?" },
+                    { "id": 21, "vi": "Buổi hòa nhạc bắt đầu lúc mấy giờ?" }
+                ],
+                "nature": [
+                    { "id": 22, "vi": "Công viên này rất đẹp." },
+                    { "id": 23, "vi": "Chúng ta nên bảo vệ môi trường." },
+                    { "id": 24, "vi": "Con sông này dài bao nhiêu km?" }
+                ],
+                "science": [
+                    { "id": 25, "vi": "Mặt trăng quay quanh trái đất." },
+                    { "id": 26, "vi": "Nước sôi ở 100 độ C." },
+                    { "id": 27, "vi": "Thực vật cần ánh sáng để quang hợp." }
+                ],
+                "government": [
+                    { "id": 28, "vi": "Chính phủ đang cải cách thuế." },
+                    { "id": 29, "vi": "Bầu cử sẽ diễn ra vào tháng tới." },
+                    { "id": 30, "vi": "Luật mới có hiệu lực từ ngày mai." }
+                ],
+                "history": [
+                    { "id": 31, "vi": "Việt Nam giành độc lập năm 1945." },
+                    { "id": 32, "vi": "Vua Quang Trung đánh tan quân Thanh." },
+                    { "id": 33, "vi": "Hà Nội có hơn 1000 năm lịch sử." }
+                ],
+                "sports": [
+                    { "id": 34, "vi": "Tôi thích chơi bóng đá." },
+                    { "id": 35, "vi": "Việt Nam vô địch SEA Games." },
+                    { "id": 36, "vi": "Anh ấy là vận động viên bơi lội." }
+                ]
+            },
+            "intermediate": {
+                "everyday": [
+                    { "id": 37, "vi": "Bạn có kế hoạch gì cho cuối tuần này?" },
+                    { "id": 38, "vi": "Tôi thường dậy sớm vào buổi sáng." },
+                    { "id": 39, "vi": "Chúng ta nên đi ăn ở nhà hàng mới mở." }
+                ],
+                "transportation": [
+                    { "id": 40, "vi": "Tàu điện ngầm là cách di chuyển nhanh nhất." },
+                    { "id": 41, "vi": "Bạn nên đặt vé máy bay trước 2 tháng." },
+                    { "id": 42, "vi": "Ứng dụng gọi xe này rất tiện lợi." }
+                ],
+                "education": [
+                    { "id": 43, "vi": "Tôi đang học để lấy chứng chỉ IELTS." },
+                    { "id": 44, "vi": "Giáo dục đại học rất quan trọng cho sự nghiệp." },
+                    { "id": 45, "vi": "Bạn có thể giải thích lại vấn đề này không?" }
+                ],
+                "public-services": [
+                    { "id": 46, "vi": "Dịch vụ công trực tuyến giúp tiết kiệm thời gian." },
+                    { "id": 47, "vi": "Tôi cần đăng ký giấy khai sinh cho con." },
+                    { "id": 48, "vi": "Thủ tục xin cấp visa du lịch cần những gì?" }
+                ],
+                "health": [
+                    { "id": 49, "vi": "Bạn nên tập thể dục thường xuyên để nâng cao sức khỏe." },
+                    { "id": 50, "vi": "Bảo hiểm y tế giúp giảm chi phí khám chữa bệnh." },
+                    { "id": 51, "vi": "Phòng khám này chuyên về nội khoa." }
+                ],
+                "shopping": [
+                    { "id": 52, "vi": "Tôi thích mua sắm trực tuyến vì thuận tiện." },
+                    { "id": 53, "vi": "Bạn có thể trả góp sản phẩm này không?" },
+                    { "id": 54, "vi": "Sản phẩm này có bảo hành bao lâu?" }
+                ],
+                "entertainment": [
+                    { "id": 55, "vi": "Bộ phim mới này đang rất hot trên Netflix." },
+                    { "id": 56, "vi": "Tôi thích nghe nhạc jazz để thư giãn." },
+                    { "id": 57, "vi": "Buổi triển lãm nghệ thuật sẽ kéo dài đến cuối tháng." }
+                ],
+                "nature": [
+                    { "id": 58, "vi": "Biến đổi khí hậu đang ảnh hưởng đến toàn cầu." },
+                    { "id": 59, "vi": "Chúng ta cần giảm thiểu rác thải nhựa." },
+                    { "id": 60, "vi": "Vườn quốc gia này có hệ sinh thái đa dạng." }
+                ],
+                "science": [
+                    { "id": 61, "vi": "Trí tuệ nhân tạo đang thay đổi nhiều ngành công nghiệp." },
+                    { "id": 62, "vi": "Công nghệ blockchain có nhiều ứng dụng tiềm năng." },
+                    { "id": 63, "vi": "Năng lượng tái tạo là giải pháp cho tương lai." }
+                ],
+                "government": [
+                    { "id": 64, "vi": "Chính sách thuế mới sẽ có hiệu lực từ năm sau." },
+                    { "id": 65, "vi": "Chính phủ đang nỗ lực cải cách hành chính." },
+                    { "id": 66, "vi": "Quốc hội đang thảo luận về luật an ninh mạng." }
+                ],
+                "history": [
+                    { "id": 67, "vi": "Chiến tranh thế giới thứ hai kết thúc năm 1945." },
+                    { "id": 68, "vi": "Văn Miếu là trường đại học đầu tiên của Việt Nam." },
+                    { "id": 69, "vi": "Cách mạng công nghiệp bắt đầu ở Anh." }
+                ],
+                "sports": [
+                    { "id": 70, "vi": "Anh ấy đã phá kỷ lục thế giới ở nội dung chạy 100m." },
+                    { "id": 71, "vi": "Đội tuyển bóng đá nam đã giành huy chương vàng SEA Games." },
+                    { "id": 72, "vi": "Yoga giúp cải thiện sức khỏe và tinh thần." }
+                ]
+            },
+            "advanced": {
+                "everyday": [
+                    { "id": 73, "vi": "Việc cân bằng giữa công việc và cuộc sống cá nhân là rất quan trọng." },
+                    { "id": 74, "vi": "Sự phát triển của công nghệ đã thay đổi cách chúng ta giao tiếp hàng ngày." },
+                    { "id": 75, "vi": "Văn hóa làm việc từ xa đang trở nên phổ biến." }
+                ],
+                "transportation": [
+                    { "id": 76, "vi": "Các thành phố thông minh đang đầu tư vào hệ thống giao thông công cộng tự động." },
+                    { "id": 77, "vi": "Vấn đề tắc nghẽn giao thông đòi hỏi giải pháp sáng tạo và bền vững." },
+                    { "id": 78, "vi": "Phương tiện giao thông chạy bằng năng lượng sạch là xu hướng tương lai." }
+                ],
+                "education": [
+                    { "id": 79, "vi": "Giáo dục khai phóng nhấn mạnh vào phát triển tư duy phản biện." },
+                    { "id": 80, "vi": "Học tập suốt đời là chìa khóa thích ứng với thị trường lao động." },
+                    { "id": 81, "vi": "Công nghệ giáo dục mở ra kỷ nguyên lớp học trực tuyến quy mô lớn." }
+                ],
+                "public-services": [
+                    { "id": 82, "vi": "Chính phủ điện tử nâng cao hiệu quả quản lý và dịch vụ công." },
+                    { "id": 83, "vi": "Cải cách thủ tục hành chính giúp giảm phiền hà cho người dân." },
+                    { "id": 84, "vi": "Dịch vụ công trực tuyến tích hợp đa ngành là xu hướng tất yếu." }
+                ],
+                "health": [
+                    { "id": 85, "vi": "Y học cá thể hóa dựa trên hệ gen là tương lai của ngành y tế." },
+                    { "id": 86, "vi": "Telemedicine mang lại cơ hội chăm sóc sức khỏe cho vùng sâu vùng xa." },
+                    { "id": 87, "vi": "Sức khỏe tâm thần cần được quan tâm như sức khỏe thể chất." }
+                ],
+                "shopping": [
+                    { "id": 88, "vi": "Thương mại điện tử đang định hình lại hành vi người tiêu dùng." },
+                    { "id": 89, "vi": "Kinh tế chia sẻ mang lại giải pháp tối ưu về tài nguyên." },
+                    { "id": 90, "vi": "Blockchain đảm bảo minh bạch trong chuỗi cung ứng." }
+                ],
+                "entertainment": [
+                    { "id": 91, "vi": "Metaverse hứa hẹn cách mạng hóa ngành giải trí kỹ thuật số." },
+                    { "id": 92, "vi": "Trí tuệ nhân tạo đang thay đổi cách sản xuất nội dung giải trí." },
+                    { "id": 93, "vi": "Streaming trực tiếp trở thành xu hướng chủ đạo trong ngành công nghiệp giải trí." }
+                ],
+                "nature": [
+                    { "id": 94, "vi": "Đa dạng sinh học đang suy giảm ở mức báo động toàn cầu." },
+                    { "id": 95, "vi": "Nông nghiệp bền vững là giải pháp cho an ninh lương thực." },
+                    { "id": 96, "vi": "Kinh tế tuần hoàn giúp giảm tác động đến môi trường." }
+                ],
+                "science": [
+                    { "id": 97, "vi": "Vật liệu nano mở ra kỷ nguyên mới cho ngành y tế và điện tử." },
+                    { "id": 98, "vi": "Máy tính lượng tử hứa hẹn giải quyết các vấn đề phức tạp." },
+                    { "id": 99, "vi": "CRISPR-Cas9 đang cách mạng hóa chỉnh sửa gen." }
+                ],
+                "government": [
+                    { "id": 100, "vi": "Quản trị minh bạch là nền tảng cho phát triển bền vững." },
+                    { "id": 101, "vi": "Chính sách đối ngoại đa phương ngày càng quan trọng trong thế giới toàn cầu hóa." },
+                    { "id": 102, "vi": "An ninh mạng trở thành ưu tiên hàng đầu của các quốc gia." }
+                ],
+                "history": [
+                    { "id": 103, "vi": "Lịch sử toàn cầu đòi hỏi cách tiếp cận đa chiều và đa văn hóa." },
+                    { "id": 104, "vi": "Khảo cổ học dưới nước đang làm sáng tỏ nhiều bí ẩn lịch sử." },
+                    { "id": 105, "vi": "Di sản văn hóa phi vật thể cần được bảo tồn và phát huy." }
+                ],
+                "sports": [
+                    { "id": 106, "vi": "Công nghệ VAR đang thay đổi cách thức trọng tài điều hành trận đấu." },
+                    { "id": 107, "vi": "Thể thao điện tử được công nhận là môn thể thao chính thức." },
+                    { "id": 108, "vi": "Phân tích dữ liệu lớn đang cách mạng hóa huấn luyện thể thao." }
+                ]
+            }
         };
 
         // Biến toàn cục
@@ -605,7 +740,6 @@
         const categoryFilter = document.getElementById('category-filter');
         const searchInput = document.getElementById('search');
         const addSentenceBtn = document.getElementById('add-sentence-btn');
-        const batchAddBtn = document.getElementById('batch-add-btn');
         const exportBtn = document.getElementById('export-btn');
         const importBtn = document.getElementById('import-btn');
         const sentenceForm = document.getElementById('sentence-form');
@@ -622,13 +756,10 @@
         const sentenceLevel = document.getElementById('sentence-level');
         const sentenceCategory = document.getElementById('sentence-category');
         const sentenceText = document.getElementById('sentence-text');
-        const batchText = document.getElementById('batch-text');
-        const addBatchBtn = document.getElementById('add-batch-btn');
 
         // Khởi tạo ứng dụng
         function initApp() {
             renderSentences();
-            updateStats();
             setupEventListeners();
         }
 
@@ -675,41 +806,8 @@
             }
             
             if (count === 0) {
-                sentenceList.innerHTML = `
-                    <div class="no-results" style="text-align: center; padding: 40px; color: #718096;">
-                        <i class="fas fa-inbox" style="font-size: 48px; margin-bottom: 15px;"></i>
-                        <h3>Không tìm thấy câu nào</h3>
-                        <p>Không có câu nào phù hợp với bộ lọc hiện tại</p>
-                    </div>
-                `;
+                sentenceList.innerHTML = `<div class="no-results">Không tìm thấy câu nào phù hợp với bộ lọc</div>`;
             }
-        }
-        
-        // Cập nhật thống kê
-        function updateStats() {
-            const totalElement = document.getElementById('total-sentences');
-            const beginnerElement = document.getElementById('beginner-count');
-            const intermediateElement = document.getElementById('intermediate-count');
-            const advancedElement = document.getElementById('advanced-count');
-            
-            let total = 0;
-            let beginner = 0;
-            let intermediate = 0;
-            let advanced = 0;
-            
-            for (const [level, categories] of Object.entries(sentencesData)) {
-                for (const sentences of Object.values(categories)) {
-                    if (level === 'beginner') beginner += sentences.length;
-                    if (level === 'intermediate') intermediate += sentences.length;
-                    if (level === 'advanced') advanced += sentences.length;
-                    total += sentences.length;
-                }
-            }
-            
-            totalElement.textContent = total;
-            beginnerElement.textContent = beginner;
-            intermediateElement.textContent = intermediate;
-            advancedElement.textContent = advanced;
         }
 
         // Thiết lập event listeners
@@ -760,9 +858,6 @@
             jsonUpload.addEventListener('change', handleFileUpload);
             confirmImportBtn.addEventListener('click', confirmImport);
             
-            // Thêm hàng loạt
-            addBatchBtn.addEventListener('click', handleBatchAdd);
-            
             // Xử lý sửa/xóa (sử dụng event delegation)
             sentenceList.addEventListener('click', (e) => {
                 // Sửa câu
@@ -795,7 +890,7 @@
             
             const level = sentenceLevel.value;
             const category = sentenceCategory.value;
-            const text = sentenceText.value.trim();
+            const text = sentenceText.value;
             
             if (!level || !category || !text) {
                 alert('Vui lòng điền đầy đủ thông tin');
@@ -816,64 +911,6 @@
             
             // Render lại danh sách
             renderSentences(levelFilter.value, categoryFilter.value, searchInput.value);
-            updateStats();
-        }
-        
-        // Xử lý thêm hàng loạt
-        function handleBatchAdd() {
-            const level = sentenceLevel.value;
-            const category = sentenceCategory.value;
-            const text = batchText.value.trim();
-            
-            if (!level || !category) {
-                alert('Vui lòng chọn cấp độ và chủ đề trước khi thêm hàng loạt');
-                return;
-            }
-            
-            if (!text) {
-                alert('Vui lòng nhập các câu cần thêm');
-                return;
-            }
-            
-            // Tách các câu bằng dấu chấm phẩy
-            const sentences = text.split(';')
-                .map(s => s.trim())
-                .filter(s => s.length > 0);
-            
-            if (sentences.length === 0) {
-                alert('Không tìm thấy câu nào để thêm');
-                return;
-            }
-            
-            // Tìm ID lớn nhất hiện tại
-            let maxId = 0;
-            for (const categories of Object.values(sentencesData)) {
-                for (const sentences of Object.values(categories)) {
-                    for (const sentence of sentences) {
-                        if (sentence.id > maxId) maxId = sentence.id;
-                    }
-                }
-            }
-            
-            // Tạo câu mới
-            const newSentences = sentences.map((sentence, index) => ({
-                id: maxId + index + 1,
-                vi: sentence
-            }));
-            
-            // Thêm vào dữ liệu
-            if (!sentencesData[level][category]) {
-                sentencesData[level][category] = [];
-            }
-            
-            sentencesData[level][category].push(...newSentences);
-            
-            alert(`Đã thêm ${newSentences.length} câu mới`);
-            batchText.value = '';
-            
-            // Render lại danh sách
-            renderSentences(levelFilter.value, categoryFilter.value, searchInput.value);
-            updateStats();
         }
 
         // Thêm câu mới
@@ -952,7 +989,6 @@
             if (index !== -1) {
                 sentences.splice(index, 1);
                 renderSentences(levelFilter.value, categoryFilter.value, searchInput.value);
-                updateStats();
                 alert(`Đã xóa câu ID: ${id}`);
             }
         }
@@ -1021,7 +1057,6 @@
                 
                 // Render lại danh sách
                 renderSentences(levelFilter.value, categoryFilter.value, searchInput.value);
-                updateStats();
                 
                 alert('Nhập dữ liệu thành công!');
                 importModal.style.display = 'none';

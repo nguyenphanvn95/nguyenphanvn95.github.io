@@ -524,3 +524,15 @@
                 alert('Đã xảy ra lỗi khi khởi tạo ứng dụng. Vui lòng tải lại trang.');
             });
         });
+
+// Toggle hiển thị khu vực nhập API key
+const toggleApiSettingsBtn = document.getElementById('toggle-api-settings');
+const apiKeySection = document.getElementById('api-key-section');
+
+toggleApiSettingsBtn.addEventListener('click', () => {
+    const isVisible = apiKeySection.style.display !== 'none';
+    apiKeySection.style.display = isVisible ? 'none' : 'block';
+    toggleApiSettingsBtn.innerHTML = isVisible
+        ? '<i class="fas fa-cog"></i> Cài đặt Gemini API'
+        : '<i class="fas fa-times"></i> Ẩn Cài đặt API';
+});

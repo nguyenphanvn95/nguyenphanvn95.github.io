@@ -23,7 +23,7 @@ body {
     overflow: hidden;
     padding: 20px;
 }
-
+/* Header style */
 header {
   background: linear-gradient(to right, #3498db, #2c3e50);
   color: white;
@@ -87,12 +87,13 @@ header {
     border: 1px solid #e9ecef;
 }
 
-.api-key-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #2c3e50;
-}
+.api-key-container h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
 
 .api-key-input {
     display: flex;
@@ -143,6 +144,14 @@ header {
 
 .api-key-container a:hover {
     text-decoration: underline;
+}
+#toggle-api-settings {
+    background: #9b59b6;
+    color: white;
+}
+
+#toggle-api-settings:hover {
+    background: #8e44ad;
 }
 
 .error-message {

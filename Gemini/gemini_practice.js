@@ -606,3 +606,14 @@
                 goToNextSentence();
             }
         });
+
+const toggleApiSettingsBtn = document.getElementById('toggle-api-settings');
+const apiKeyContainer = document.getElementById('api-key-container');
+
+toggleApiSettingsBtn.addEventListener('click', () => {
+    const isVisible = apiKeyContainer.style.display !== 'none';
+    apiKeyContainer.style.display = isVisible ? 'none' : 'block';
+    toggleApiSettingsBtn.innerHTML = isVisible 
+        ? '<i class="fas fa-cog"></i> Cài đặt Gemini API' 
+        : '<i class="fas fa-times"></i> Ẩn Cài đặt API';
+});
