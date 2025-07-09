@@ -425,7 +425,7 @@
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
             
             // Construct the prompt
-            const prompt = `Bạn là một giáo viên dạy tiếng Anh. Hãy kiểm tra bản dịch của học sinh và đưa ra nhận xét.
+            const prompt = `Bạn là một giáo viên dạy tiếng Anh. Hãy kiểm tra bản dịch của học sinh và đưa ra nhận xét bằng tiếng Việt.
             
             Câu gốc tiếng Việt: "${vietnamese}"
             Câu dịch của học sinh: "${studentTranslation}"
