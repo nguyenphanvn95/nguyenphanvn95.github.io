@@ -281,13 +281,12 @@
             
             try {
                 // Generate exercise content using Gemini
-                const prompt = `Hãy tạo một bài viết ngắn khoảng 12-15 câu với tiêu đề: "${exercise.title}" 
-                bằng tiếng Việt, phù hợp với mức độ ${selectedLevel} và thể loại ${selectedType}. 
+                const prompt = `Hãy tạo một bài viết ngắn khoảng 12-15 câu với tiêu đề: "${exercise.title}" bằng tiếng Việt, phù hợp với mức độ ${selectedLevel} và thể loại ${selectedType}. 
                 Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh. 
-		Nếu bài viết thư cần tên và địa chỉ thì tạo tên, địa chỉ ngẫu nhiên cho bài viết, 
-		Trả lời văn bản đơn thuần, loại bỏ các ký tự không cần thiết, không cần trả lời tiêu đề bài viết. 
-		Ví dụ: Tiêu đề Niềm vui nho nhỏ của tiếng cười trẻ thơ
-		Bài viết là: Hôm nay là một ngày bận rộn với tôi. Tôi thức dậy sớm. Tôi pha cà phê và ăn bánh mì nướng. Tôi cảm thấy mệt mỏi nhưng vui vẻ. Tôi quyết định đi bộ đến công viên. Mặt trời chiếu sáng rực rỡ. Trong công viên, tôi nhìn thấy một đứa trẻ nhỏ. Nó đang chơi với một quả bóng bay màu đỏ. Quả bóng bay lơ lửng trên bầu trời. Đứa trẻ cười lớn. Tôi không thể không mỉm cười. Niềm vui của nó thật trong sáng. Nó khiến tôi nghĩ về hạnh phúc của chính mình. Tại sao những điều nhỏ nhặt lại khiến chúng ta cảm thấy vui? Tôi ngồi trên băng ghế để ngắm nhìn nó. 
+		**Không cần lặp lại tiêu đề hoặc thông tin như tên, địa chỉ trong phần trả lời.**  Chỉ viết phần nội dung chính, bắt đầu ngay bằng mô tả tình huống hoặc câu chuyện. Tránh mở đầu bằng tiêu đề hoặc "Tôi là...", "Tên tôi là...", "Tôi sống ở...", v.v.  
+		Trả lời văn bản đơn thuần, loại bỏ các ký tự không cần thiết. 
+		Ví dụ tiêu đề: "Kể lại khoảnh khắc tự hào khi đạt học bổng"  
+		Ví dụ nội dung: "Hôm đó là một ngày nắng đẹp. Tôi run run mở email..."  
 		`;
                 
                 currentText = await callGeminiAPI(prompt);
