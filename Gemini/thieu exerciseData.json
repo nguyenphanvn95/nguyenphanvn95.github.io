@@ -1,0 +1,1238 @@
+{
+  "beginner": {
+    "emails": [
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_1"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_2"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_beginner_3"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_beginner_4"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_beginner_5"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_beginner_6"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_beginner_7"
+      },
+      {
+        "title": "Email yêu cầu thông tin về khóa học trực tuyến",
+        "id": "emails_beginner_8"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_9"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_beginner_10"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_beginner_11"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_beginner_12"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_13"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_beginner_14"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_beginner_15"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_beginner_16"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_17"
+      },
+      {
+        "title": "Email yêu cầu thông tin về khóa học trực tuyến",
+        "id": "emails_beginner_18"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_beginner_19"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_beginner_20"
+      }
+    ],
+    "essays": [
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_beginner_1"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_2"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_3"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_beginner_4"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_5"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_6"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_7"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_beginner_8"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_9"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_beginner_10"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_beginner_11"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_12"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_beginner_13"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_14"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_15"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_16"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_beginner_17"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_beginner_18"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_19"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_20"
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_beginner_1"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_beginner_2"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_3"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_4"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_5"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_6"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_7"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_beginner_8"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_9"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_beginner_10"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_11"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_12"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_13"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_14"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_15"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_16"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_17"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_18"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_19"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_20"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_2"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_3"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_4"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_5"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_6"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_beginner_7"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_8"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_9"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_beginner_10"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_11"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_12"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_13"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_14"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_beginner_15"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_16"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_beginner_17"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_18"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_19"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_beginner_20"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_beginner_2"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_3"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_beginner_4"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_5"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_6"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_7"
+      },
+      {
+        "title": "Kể lại một buổi thuyết trình đáng nhớ",
+        "id": "stories_beginner_8"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_beginner_9"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_10"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_beginner_11"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_beginner_12"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_beginner_13"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_14"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_15"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_16"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_17"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_18"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_19"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_beginner_20"
+      }
+    ]
+  },
+  "intermediate": {
+    "emails": [
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_1"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_intermediate_2"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_intermediate_3"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_4"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_5"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_6"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_7"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_8"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_intermediate_9"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_10"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_intermediate_11"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_12"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_13"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_intermediate_14"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_15"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_intermediate_16"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_17"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_intermediate_18"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_19"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_intermediate_20"
+      }
+    ],
+    "essays": [
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_1"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_2"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_3"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_intermediate_4"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_intermediate_5"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_6"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_intermediate_7"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_8"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_intermediate_9"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_10"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_intermediate_11"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_intermediate_12"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_13"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_intermediate_14"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_15"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_intermediate_16"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_intermediate_17"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_intermediate_18"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_19"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_20"
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_1"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_intermediate_2"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_3"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_4"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_intermediate_5"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_6"
+      },
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_intermediate_7"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_intermediate_8"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_9"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_10"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_11"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_12"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_intermediate_13"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_14"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_15"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_16"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_17"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_18"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_19"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_intermediate_20"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_intermediate_1"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_intermediate_2"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_intermediate_3"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_intermediate_4"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_intermediate_5"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_intermediate_6"
+      },
+      {
+        "title": "Tóm tắt tài liệu học thuật về đánh giá năng lực",
+        "id": "summaries_intermediate_7"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_8"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_9"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_intermediate_10"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_11"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_12"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_13"
+      },
+      {
+        "title": "Tóm tắt tài liệu học thuật về đánh giá năng lực",
+        "id": "summaries_intermediate_14"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_15"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_intermediate_16"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_intermediate_17"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_18"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_intermediate_19"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_intermediate_20"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_1"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_2"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_intermediate_3"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_intermediate_4"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_intermediate_5"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_6"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_7"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_intermediate_8"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_intermediate_9"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_10"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_intermediate_11"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_12"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_intermediate_13"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_14"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_intermediate_15"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_intermediate_16"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_17"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_intermediate_18"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_19"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_intermediate_20"
+      }
+    ]
+  },
+  "advanced": {
+    "emails": [
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_advanced_1"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_advanced_2"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_3"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_4"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_advanced_5"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_6"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_advanced_7"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_advanced_8"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_9"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_advanced_10"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_advanced_11"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_advanced_12"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_13"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_advanced_14"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_advanced_15"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_advanced_16"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_17"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_18"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_19"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_advanced_20"
+      }
+    ],
+    "essays": [
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_advanced_1"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_advanced_2"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_advanced_3"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_advanced_4"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_5"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_6"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_advanced_7"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_8"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_advanced_9"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_10"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_11"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_advanced_12"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_advanced_13"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_advanced_14"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_advanced_15"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_advanced_16"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_17"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_advanced_18"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_19"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_advanced_20"
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_1"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_advanced_2"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_advanced_3"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_4"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_5"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_6"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_advanced_7"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_advanced_8"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_9"
+      },
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_advanced_10"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_advanced_11"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_advanced_12"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_13"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_14"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_15"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_advanced_16"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_17"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_18"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_19"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_20"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_1"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_2"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_advanced_3"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_advanced_4"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_advanced_5"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_6"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_7"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_8"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_9"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_10"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_advanced_11"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_advanced_12"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_advanced_13"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_14"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_advanced_15"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_advanced_16"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_17"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_18"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_advanced_19"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_20"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_2"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_3"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_4"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_advanced_5"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_6"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_7"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_8"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_9"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_advanced_10"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_advanced_11"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_12"
+      },
+      {
+        "title": "Kể lại một buổi thuyết trình đáng nhớ",
+        "id": "stories_advanced_13"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_14"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_15"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_advanced_16"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_17"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_advanced_18"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_advanced_19"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_advanced_20"
+      }
+    ]
+  }
+}

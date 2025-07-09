@@ -355,8 +355,6 @@
         .reports { background: #63b3ed; color: white; }
         .summaries { background: #b794f4; color: white; }
         .stories { background: #fc8181; color: white; }
-        .diaries { background: #4fd1c5; color: white; } /* Mới */
-        .article { background: #81e6d9; color: white; } /* Mới */
         
         /* New styles for bulk input */
         .bulk-input-container {
@@ -421,6 +419,9 @@
             color: #718096;
             font-style: italic;
         }
+/* Thêm vào phần CSS */
+.diaries { background: #4fd1c5; color: white; }
+.article { background: #81e6d9; color: white; }
     </style>
 </head>
 <body>
@@ -464,15 +465,15 @@
                 <div class="filter-group">
                     <label for="type-filter">Loại bài viết</label>
                     <select id="type-filter">
-                        <option value="all">Tất cả loại</option>
-                        <option value="emails">Emails</option>
-                        <option value="essays">Essays</option>
-                        <option value="reports">Reports</option>
-                        <option value="summaries">Summaries</option>
-                        <option value="stories">Stories</option>
-                        <option value="diaries">Diaries</option> <!-- Mới -->
-                        <option value="articles">Articles</option> <!-- Mới -->
-                    </select>
+    <option value="all">Tất cả loại</option>
+    <option value="emails">Emails</option>
+    <option value="essays">Essays</option>
+    <option value="reports">Reports</option>
+    <option value="summaries">Summaries</option>
+    <option value="stories">Stories</option>
+    <option value="diaries">Diaries</option> <!-- Thêm mới -->
+    <option value="article">Articles</option> <!-- Thêm mới -->
+</select>
                 </div>
                 
                 <div class="filter-group">
@@ -517,16 +518,16 @@
                         
                         <div class="form-group">
                             <label for="article-type">Loại bài viết</label>
-                            <select id="article-type" required>
-                                <option value="">Chọn loại</option>
-                                <option value="emails">Emails</option>
-                                <option value="essays">Essays</option>
-                                <option value="reports">Reports</option>
-                                <option value="summaries">Summaries</option>
-                                <option value="stories">Stories</option>
-                                <option value="diaries">Diaries</option> <!-- Mới -->
-                                <option value="articles">Articles</option> <!-- Mới -->
-                            </select>
+                           <select id="article-type" required>
+    <option value="">Chọn loại</option>
+    <option value="emails">Emails</option>
+    <option value="essays">Essays</option>
+    <option value="reports">Reports</option>
+    <option value="summaries">Summaries</option>
+    <option value="stories">Stories</option>
+    <option value="diaries">Diaries</option> <!-- Thêm mới -->
+    <option value="article">Articles</option> <!-- Thêm mới -->
+</select>
                         </div>
                         
                         <div class="form-group">
@@ -594,7 +595,7 @@
     </div>
     
     <script>
-        // Dữ liệu mẫu ban đầu rỗng với 2 thể loại mới
+        // Dữ liệu mẫu ban đầu rỗng
         const exerciseData = {
             "beginner": {
                 "emails": [],
@@ -602,8 +603,8 @@
                 "reports": [],
                 "summaries": [],
                 "stories": [],
-                "diaries": [], // Mới
-                "articles": []  // Mới
+"articles": [],
+"diaries": []
             },
             "intermediate": {
                 "emails": [],
@@ -611,8 +612,8 @@
                 "reports": [],
                 "summaries": [],
                 "stories": [],
-                "diaries": [], // Mới
-                "articles": []  // Mới
+"articles": [],
+"diaries": []
             },
             "advanced": {
                 "emails": [],
@@ -620,8 +621,8 @@
                 "reports": [],
                 "summaries": [],
                 "stories": [],
-                "diaries": [], // Mới
-                "articles": []  // Mới
+"articles": [],
+"diaries": []
             }
         };
 
@@ -634,16 +635,15 @@
             "advanced": "Nâng cao"
         };
         
-        // Cập nhật typeNames với 2 thể loại mới
         const typeNames = {
-            "emails": "Emails",
-            "essays": "Essays",
-            "reports": "Reports",
-            "summaries": "Summaries",
-            "stories": "Stories",
-            "diaries": "Diaries", // Mới
-            "articles": "Articles" // Mới
-        };
+    "emails": "Emails",
+    "essays": "Essays",
+    "reports": "Reports",
+    "summaries": "Summaries",
+    "stories": "Stories",
+    "diaries": "Diaries", // Thêm mới
+    "articles": "Articles" // Thêm mới
+};
 
         // DOM Elements
         const articleList = document.getElementById('article-list');
@@ -918,6 +918,11 @@
 
         // Thêm bài viết mới
         function addNewArticle(level, type, title) {
+const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "articles"];
+if (!allTypes.includes(type)) {
+    alert("Loại bài viết không hợp lệ");
+    return;
+}
             // Tạo ID mới (tìm ID lớn nhất + 1)
             let maxId = 0;
             const currentArticles = exerciseData[level][type];
@@ -1052,14 +1057,8 @@
             }
             
             try {
-                // Kiểm tra cấu trúc dữ liệu cơ bản
-                if (!currentImportedData.beginner || !currentImportedData.intermediate || !currentImportedData.advanced) {
-                    alert('Dữ liệu không đúng định dạng. Vui lòng kiểm tra lại.');
-                    return;
-                }
-                
-                // Đảm bảo tất cả các thể loại đều có trong dữ liệu nhập
-                const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "article"];
+                // Kiểm tra và thêm cấu trúc cho loại mới nếu cần
+                const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "articles"];
                 const allLevels = ["beginner", "intermediate", "advanced"];
                 
                 allLevels.forEach(level => {
@@ -1072,17 +1071,6 @@
                             currentImportedData[level][type] = [];
                         }
                     });
-                });
-                
-                // Cập nhật dữ liệu
-                Object.keys(currentImportedData).forEach(level => {
-                    if (exerciseData[level]) {
-                        Object.keys(currentImportedData[level]).forEach(type => {
-                            if (exerciseData[level][type]) {
-                                exerciseData[level][type] = [...currentImportedData[level][type]];
-                            }
-                        });
-                    }
                 });
                 
                 // Render lại danh sách
