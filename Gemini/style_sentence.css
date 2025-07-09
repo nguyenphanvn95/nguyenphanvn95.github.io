@@ -765,3 +765,17 @@ header {
                 padding: 1.25rem;
             }
         }
+
+.btn-random {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-random:hover {
+    background-color: #8e44ad;
+}
