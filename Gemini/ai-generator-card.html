@@ -20,6 +20,7 @@
             --warning-color: #f39c12;
             --error-color: #e74c3c;
             --remake-color: #f39c12;
+            --duplicate-color: #e74c3c;
             --border-radius: 12px;
             --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             --card-hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -88,6 +89,11 @@
             height: 100%;
             position: relative;
             background: linear-gradient(to bottom right, white, #f8f9ff);
+        }
+
+        .vocab-card.duplicate {
+            border: 2px solid var(--duplicate-color);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
         }
 
         .vocab-card:hover {
@@ -732,6 +738,11 @@
                     <label class="form-label fw-bold">Or upload a text file</label>
                     <input type="file" id="fileUpload" accept=".txt" class="form-control">
                 </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Or import from CSV file</label>
+                    <input type="file" id="csvUpload" accept=".csv" class="form-control">
+                    <small class="text-muted">CSV file should contain columns: word, phonetic, partOfSpeech, meaning, example, translation, wordFamily, synonyms</small>
+                </div>
                 <button class="btn btn-primary w-100 py-3" onclick="processVocabulary()">
                     <i class="fas fa-magic me-2"></i>Generate Vocabulary Cards
                 </button>
@@ -908,6 +919,7 @@
             
             // Set up file upload
             document.getElementById('fileUpload').addEventListener('change', handleFileUpload);
+            document.getElementById('csvUpload').addEventListener('change', handleCSVUpload);
         }
 
         // Toggle AI configuration visibility
@@ -947,6 +959,155 @@
                 showNotification('File loaded successfully!');
             };
             reader.readAsText(file);
+        }
+
+        // Handle CSV file upload
+        function handleCSVUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const csvContent = e.target.result;
+                    const vocabData = parseCSV(csvContent);
+                    
+                    if (vocabData.length === 0) {
+                        showNotification('No valid data found in CSV file!', true);
+                        return;
+                    }
+                    
+                    // Check for duplicates
+                    const duplicates = findDuplicates(vocabData);
+                    
+                    // Add to generatedVocab
+                    vocabData.forEach(item => {
+                        const isDuplicate = duplicates.includes(item.word.toLowerCase());
+                        if (isDuplicate) {
+                            item.isDuplicate = true;
+                        }
+                        generatedVocab.push(item);
+                    });
+                    
+                    // Show results
+                    document.getElementById('resultsSection').style.display = 'block';
+                    renderVocabularyCards();
+                    
+                    if (duplicates.length > 0) {
+                        showNotification(`Imported ${vocabData.length} cards (${duplicates.length} duplicates found)`, false, true);
+                    } else {
+                        showNotification(`Imported ${vocabData.length} cards successfully!`);
+                    }
+                    
+                    // Update stats
+                    processingStats.total += vocabData.length;
+                    processingStats.processed += vocabData.length;
+                    processingStats.success += vocabData.length;
+                    updateStats();
+                    updateProgress();
+                    
+                } catch (error) {
+                    console.error('Error parsing CSV:', error);
+                    showNotification('Error parsing CSV file!', true);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Parse CSV content
+        function parseCSV(csvContent) {
+            const lines = csvContent.split('\n');
+            if (lines.length < 2) return [];
+            
+            // Get headers (first line)
+            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+            
+            // Define field mapping - FIXED FOR PART OF SPEECH AND WORD FAMILY
+            const fieldMapping = {
+                "word": "word",
+                "phonetic": "phonetic",
+                "partofspeech": "partOfSpeech",  // Fixed mapping
+                "meaning": "meaning",
+                "example": "example",
+                "translation": "translation",
+                "wordfamily": "wordFamily",      // Fixed mapping
+                "synonyms": "synonyms"
+            };
+
+            // Process data lines
+            const vocabData = [];
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                
+                const values = parseCSVLine(lines[i]);
+                const vocabItem = {};
+                
+                // Map values to fields based on headers
+                headers.forEach((header, index) => {
+                    const mappedField = fieldMapping[header];
+                    if (mappedField && values[index] !== undefined) {
+                        vocabItem[mappedField] = values[index].trim();
+                    }
+                });
+                
+                // Ensure we have at least a word
+                if (vocabItem.word) {
+                    vocabData.push(vocabItem);
+                }
+            }
+            
+            return vocabData;
+        }
+
+        // Parse CSV line (handling quoted values with commas)
+        function parseCSVLine(line) {
+            const values = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    values.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            
+            values.push(current); // Add last value
+            return values.map(v => v.replace(/^"|"$/g, '')); // Remove surrounding quotes
+        }
+
+        // Find duplicate words in the imported data
+        function findDuplicates(vocabData) {
+            const wordCount = {};
+            const duplicates = [];
+            
+            // Count occurrences of each word
+            vocabData.forEach(item => {
+                const wordLower = item.word.toLowerCase();
+                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+            });
+            
+            // Check against existing words
+            generatedVocab.forEach(item => {
+                const wordLower = item.word.toLowerCase();
+                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+            });
+            
+            // Find duplicates in the imported data
+            vocabData.forEach(item => {
+                const wordLower = item.word.toLowerCase();
+                if (wordCount[wordLower] > 1) {
+                    duplicates.push(wordLower);
+                }
+            });
+            
+            return [...new Set(duplicates)]; // Return unique duplicates
         }
 
         // Process vocabulary with batching
@@ -1215,9 +1376,17 @@ Important:
             const vocabGrid = document.getElementById('vocabGrid');
             vocabGrid.innerHTML = '';
             
+            // Find all duplicate words
+            const wordCount = {};
+            generatedVocab.forEach(item => {
+                const wordLower = item.word.toLowerCase();
+                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+            });
+            
             generatedVocab.forEach((word, index) => {
+                const isDuplicate = wordCount[word.word.toLowerCase()] > 1;
                 const vocabCard = document.createElement('div');
-                vocabCard.className = 'vocab-card';
+                vocabCard.className = `vocab-card ${isDuplicate ? 'duplicate' : ''}`;
                 vocabCard.innerHTML = `
                     <div class="card-actions">
                         <div class="card-btn remake" onclick="remakeVocabCard(${index})">
@@ -1232,25 +1401,33 @@ Important:
                     </div>
                     <div class="vocab-header">
                         <h4 class="vocab-word">${word.word}</h4>
-                        <div class="vocab-phonetic">${word.phonetic}</div>
-                        <span class="vocab-pos">${word.partOfSpeech}</span>
+                        <div class="vocab-phonetic">${word.phonetic || ''}</div>
+                        <span class="vocab-pos">${word.partOfSpeech || ''}</span>
                     </div>
                     <div class="vocab-body">
-                        <p class="vocab-meaning">${word.meaning}</p>
+                        <p class="vocab-meaning">${word.meaning || ''}</p>
+                        ${word.example ? `
                         <div class="vocab-example">
                             <strong>Example:</strong> ${word.example}
                         </div>
+                        ` : ''}
+                        ${word.translation ? `
                         <div class="vocab-translation">
                             <strong>Translation:</strong> ${word.translation}
                         </div>
+                        ` : ''}
                     </div>
                     <div class="vocab-footer">
+                        ${word.wordFamily ? `
                         <div>
                             <strong>Word Family:</strong> ${word.wordFamily}
                         </div>
+                        ` : '<div></div>'}
+                        ${word.synonyms ? `
                         <div>
                             <strong>Synonyms:</strong> ${word.synonyms}
                         </div>
+                        ` : '<div></div>'}
                     </div>
                 `;
                 
