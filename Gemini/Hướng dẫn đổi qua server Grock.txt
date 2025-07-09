@@ -1,0 +1,44 @@
+// === CHUYỂN TỪ GEMINI API SANG GROQ API ===
+// Bước 1: Thay đổi URL và model sử dụng của Groq
+// ❌ Bỏ dòng cũ:
+// const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+// ✅ Dùng dòng mới:
+const GEMINI_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_MODEL = 'mixtral-8x7b-32768'; // hoặc 'llama3-70b-8192' nếu bạn muốn dùng LLaMA 3
+
+
+// === CHUYỂN TỪ GEMINI API SANG GROQ API - PHẦN GỌI API ===
+// Bước 2: Giữ nguyên tên hàm callGeminiAPI
+// ❌ Bỏ đoạn gọi Gemini cũ sử dụng "contents"
+// ✅ Thay bằng đoạn gọi Groq API chuẩn như dưới:
+
+const response = await axios.post(
+    GEMINI_API_URL,
+    {
+        model: GROQ_MODEL,
+        messages: [
+            {
+                role: "user",
+                content: prompt
+            }
+        ],
+        temperature: 0.7
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}` // Dùng key Groq, có thể dán vào ô API key như cũ
+        }
+    }
+);
+
+// Trả về phần nội dung text từ Groq API
+return response.data.choices[0].message.content;
+
+
+// 📌 Lưu ý:
+// - Không cần đổi tên hàm callGeminiAPI → giữ nguyên để sửa ít nhất
+// - Không cần đổi phần hiển thị hay chia câu (vì định dạng văn bản Groq vẫn tương thích)
+// - Nên dùng prompt rõ ràng vì Groq phản hồi như ChatGPT (không markdown unless yêu cầu)
+// - Groq không dùng ?key= trên URL, mà dùng Authorization header
+
