@@ -713,6 +713,12 @@ footer {
     animation: spinner-border .75s linear infinite;
     margin: 0 auto;
 }
+.spinner-text {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--gray-color);
+  text-align: center;
+}
 
 @keyframes spinner-border {
     to { transform: rotate(360deg); }
