@@ -187,18 +187,15 @@ header {
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 10px 25px;
     border: none;
-    border-radius: 10px;
-    font-size: 0.95rem;
+    border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
-    display: inline-flex;
+    transition: all 0.3s;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    touch-action: manipulation; /* Cải thiện trải nghiệm chạm trên mobile */
+    gap: 8px;
 }
 
 #toggle-api-settings {
@@ -235,7 +232,7 @@ header {
     box-shadow: 0 5px 12px rgba(46, 196, 182, 0.35);
 }
 
-.btn-outline {
+.xbtn-outline {
     background: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
