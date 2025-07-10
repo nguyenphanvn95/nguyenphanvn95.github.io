@@ -1025,3 +1025,12 @@ header {
 #back-to-selection:hover {
     background: linear-gradient(to right, #c0392b, #a93226);
 }
+/* THÊM VÀO CUỐI FILE */
+#back-to-selection, #back-to-exercises {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    margin-bottom: 20px;
+}
+
+#back-to-selection:hover, #back-to-exercises:hover {
+    background: linear-gradient(to right, #c0392b, #a93226);
+}

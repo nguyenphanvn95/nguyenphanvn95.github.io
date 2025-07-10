@@ -160,6 +160,8 @@
             renderExercisesList();
  // THÊM 2 DÒNG NÀY: Ẩn phần chọn và thay đổi nút
             document.querySelector('.selection-section').style.display = 'none'; // Ẩn phần chọn level/type
+// HIỂN THỊ NÚT QUAY LẠI TRONG PHẦN BÀI TẬP
+        document.getElementById('back-to-selection').style.display = 'block';
         startPracticeBtn.style.display = 'none'; // Ẩn nút "Tải Bài Tập"
             // Show exercises list
             exercisesSection.style.display = 'block';
@@ -282,6 +284,7 @@
             exerciseType.textContent = selectedType.charAt(0).toUpperCase() + selectedType.slice(1);
             
             try {
+
                 // Generate exercise content using Gemini
                 const prompt = `Hãy tạo một bài viết ngắn khoảng 12-15 câu với tiêu đề: "${exercise.title}" bằng tiếng Việt, phù hợp với mức độ ${selectedLevel} và thể loại ${selectedType}. 
                 Bài viết nên có nội dung liên quan đến tiêu đề và phù hợp với ngữ cảnh. 
@@ -302,7 +305,8 @@
                 // Reset translations
                 userTranslations = new Array(sentences.length).fill('');
                 currentSentenceIndex = 0;
-                
+                // HIỂN THỊ NÚT QUAY LẠI TRONG PHẦN LUYỆN VIẾT
+        document.getElementById('back-to-exercises').style.display = 'block';
                 // Hide exercises, show practice section
                 exercisesSection.style.display = 'none';
                 practiceSection.style.display = 'block';
@@ -645,4 +649,28 @@ document.getElementById('back-to-selection').addEventListener('click', function(
     
     // Cuộn lên phần đầu
     document.querySelector('.selection-section').scrollIntoView({ behavior: 'smooth' });
+});
+// THÊM XỬ LÝ CHO NÚT QUAY LẠI TRONG PHẦN LUYỆN VIẾT
+document.getElementById('back-to-exercises').addEventListener('click', function() {
+    // Ẩn phần luyện viết
+    practiceSection.style.display = 'none';
+    
+    // Hiển thị lại phần danh sách bài tập
+    exercisesSection.style.display = 'block';
+    
+    // Cuộn đến phần bài tập
+    exercisesSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// THÊM VÀO CUỐI FILE HOẶC PHẦN KHỞI TẠO
+window.addEventListener('DOMContentLoaded', () => {
+    // ... code hiện tại ...
+    
+    // Ẩn các nút Quay lại ban đầu
+    if (document.getElementById('back-to-selection')) {
+        document.getElementById('back-to-selection').style.display = 'none';
+    }
+    if (document.getElementById('back-to-exercises')) {
+        document.getElementById('back-to-exercises').style.display = 'none';
+    }
 });
