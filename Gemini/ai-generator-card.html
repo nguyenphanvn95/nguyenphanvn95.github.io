@@ -25,7 +25,237 @@
             --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             --card-hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-
+/* New Writing Practice Section */
+        .writing-section {
+            background-color: var(--writing-section-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-top: 35px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+        
+        .writing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .writing-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .writing-content {
+            display: none;
+            padding-top: 20px;
+        }
+        
+        .writing-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .writing-practice-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+        
+        .writing-prompt {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .highlight-word {
+            background-color: #fffacd;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .writing-input {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            font-size: 1.1rem;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        .writing-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(74, 105, 189, 0.2);
+        }
+        
+        .key-hint {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .writing-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .writing-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            font-size: 1.05rem;
+        }
+        
+        .writing-btn.new-word {
+            background: linear-gradient(to right, var(--accent-color), #6c8af0);
+            color: white;
+        }
+        
+        .writing-btn.new-word:hover {
+            background: linear-gradient(to right, #3a5bbd, #5b79e0);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(74, 105, 189, 0.3);
+        }
+        
+        .writing-btn.reset {
+            background: #f0f2f5;
+            border: 1px solid #ddd;
+            color: var(--text-primary);
+        }
+        
+        .writing-btn.reset:hover {
+            background: #e4e7eb;
+            border-color: #ccc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .writing-btn.submit {
+            background: linear-gradient(to right, var(--success-color), #219653);
+            color: white;
+        }
+        
+        .writing-btn.submit:hover {
+            background: linear-gradient(to right, #219653, #1e8449);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+        }
+        
+        .ai-feedback {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #eaeaea;
+            display: none;
+        }
+        
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .feedback-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feedback-content {
+            padding: 15px;
+            background: rgba(74, 105, 189, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .feedback-content h3, .feedback-content h4 {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .feedback-content ul {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .feedback-content li {
+            margin-bottom: 8px;
+        }
+        
+        .feedback-content .correct {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+        
+        .feedback-content .suggestion {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid var(--success-color);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 30px;
+            display: none;
+        }
+        
+        .loading-spinner {
+            border: 5px solid rgba(74, 105, 189, 0.2);
+            border-radius: 50%;
+            border-top: 5px solid var(--accent-color);
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         body {
             background-color: var(--background-color);
             color: var(--text-primary);
@@ -796,7 +1026,63 @@
                 <span class="badge bg-primary rounded-pill py-2 px-3" id="cardCount">0 cards</span>
             </div>
             <div class="vocab-grid" id="vocabGrid"></div>
-            
+             <!-- Writing Practice Section -->
+            <div class="writing-section">
+                <div class="writing-header" id="writingHeader">
+                    <div class="writing-title">
+                        <i class="fas fa-pencil-alt"></i>
+                        <span>Luyện viết câu với từ vựng</span>
+                    </div>
+                    <i class="fas fa-chevron-down" id="writingToggleIcon"></i>
+                </div>
+                
+                <div class="writing-content" id="writingContent">
+                    <div class="writing-container">
+                        <div class="writing-practice-card">
+                            <div class="writing-prompt">
+                                Hãy viết một câu sử dụng từ: 
+                                <span class="highlight-word" id="writingWord">từ vựng</span>
+                                <div id="writingMeaning">Nghĩa: <span id="writingMeaningText"></span></div>
+                            </div>
+                            
+                            <textarea class="writing-input" id="writingInput" placeholder="Viết câu của bạn ở đây..."></textarea>
+                            <div class="key-hint">Shift+Enter để chuyển từ tiếp theo, Enter để gửi</div>
+                            
+                            <div class="writing-buttons">
+                                <button class="writing-btn new-word" id="newWordBtn">
+                                    <i class="fas fa-random"></i> Câu tiếp theo
+                                </button>
+                                <button class="writing-btn reset" id="resetBtn">
+                                    <i class="fas fa-redo"></i> Làm lại
+                                </button>
+                                <button class="writing-btn submit" id="submitBtn">
+                                    <i class="fas fa-paper-plane"></i> Đánh giá
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="loading" id="loading">
+                            <div class="loading-spinner"></div>
+                            <p>AI đang đánh giá câu của bạn...</p>
+                        </div>
+                        
+                        <div class="ai-feedback" id="aiFeedback">
+                            <div class="feedback-header">
+                                <div class="feedback-title">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Phản hồi từ AI</span>
+                                </div>
+                                <i class="fas fa-star" style="color: #FFD700; font-size: 1.5rem;"></i>
+                            </div>
+                            <div class="feedback-content" id="feedbackContent">
+                                <!-- AI feedback will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+
             <!-- Export Options -->
             <div class="export-options">
                 <h4 class="section-title"><i class="fas fa-file-export me-3"></i>Export Options</h4>
@@ -888,377 +1174,167 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
-        // Current state
-        let generatedVocab = [];
-        let errorWords = [];
-        let processingStats = {
-            total: 0,
-            processed: 0,
-            success: 0,
-            error: 0
+    // Current state
+    let currentWritingWord = null;
+    let generatedVocab = [];
+    let errorWords = [];
+    let processingStats = {
+        total: 0,
+        processed: 0,
+        success: 0,
+        error: 0
+    };
+    let currentEditIndex = -1;
+    let currentRemakeIndex = -1;
+
+    // Initialize the application
+    function initApp() {
+        // Load saved configuration
+        const config = JSON.parse(localStorage.getItem('vocabConfig')) || {
+            aiService: 'gemini',
+            apiKey: '',
+            batchSize: 2,
+            requestDelay: 2000
         };
-        let currentEditIndex = -1;
-        let currentRemakeIndex = -1;
-
-        // Initialize the application
-        function initApp() {
-            // Load saved configuration
-            const config = JSON.parse(localStorage.getItem('vocabConfig')) || {
-                aiService: 'gemini',
-                apiKey: '',
-                batchSize: 2,
-                requestDelay: 2000
-            };
-            
-            document.getElementById('aiService').value = config.aiService;
-            document.getElementById('apiKey').value = config.apiKey;
-            document.getElementById('batchSize').value = config.batchSize;
-            document.getElementById('requestDelay').value = config.requestDelay;
-            
-            // Set up file upload
-            document.getElementById('fileUpload').addEventListener('change', handleFileUpload);
-            document.getElementById('csvUpload').addEventListener('change', handleCSVUpload);
-        }
-
-        // Toggle AI configuration visibility
-        function toggleAIConfig() {
-            const body = document.getElementById('aiConfigBody');
-            const icon = document.getElementById('aiConfigIcon');
-            if (body.style.display === 'none') {
-                body.style.display = 'block';
-                icon.className = 'fas fa-chevron-up';
-            } else {
-                body.style.display = 'none';
-                icon.className = 'fas fa-chevron-down';
+        
+        document.getElementById('aiService').value = config.aiService;
+        document.getElementById('apiKey').value = config.apiKey;
+        document.getElementById('batchSize').value = config.batchSize;
+        document.getElementById('requestDelay').value = config.requestDelay;
+        
+        // Set up file upload
+        document.getElementById('fileUpload').addEventListener('change', handleFileUpload);
+        document.getElementById('csvUpload').addEventListener('change', handleCSVUpload);
+        
+        // Setup writing practice
+        document.getElementById('writingHeader').addEventListener('click', function() {
+            toggleWritingSection();
+            // Khi mở phần luyện viết, tự động lấy từ ngẫu nhiên
+            if (document.getElementById('writingContent').style.display === 'block') {
+                getRandomWordForWriting();
             }
+        });
+        
+        document.getElementById('newWordBtn').addEventListener('click', getRandomWordForWriting);
+        document.getElementById('resetBtn').addEventListener('click', resetWriting);
+        document.getElementById('submitBtn').addEventListener('click', submitWriting);
+        
+        // Keyboard shortcuts for writing
+        document.getElementById('writingInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                submitWriting();
+            } else if (e.key === 'Enter' && e.shiftKey) {
+                e.preventDefault();
+                getRandomWordForWriting();
+            }
+        });
+        
+        // Get a random word initially
+        getRandomWordForWriting();
+    }
+    
+    // Toggle writing section visibility
+    function toggleWritingSection() {
+        const content = document.getElementById('writingContent');
+        const icon = document.getElementById('writingToggleIcon');
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            icon.className = 'fas fa-chevron-up';
+        } else {
+            content.style.display = 'none';
+            icon.className = 'fas fa-chevron-down';
         }
-
-        // Save configuration
-        function saveConfig() {
-            const config = {
-                aiService: document.getElementById('aiService').value,
-                apiKey: document.getElementById('apiKey').value,
-                batchSize: parseInt(document.getElementById('batchSize').value) || 2,
-                requestDelay: parseInt(document.getElementById('requestDelay').value) || 2000
-            };
-            
-            localStorage.setItem('vocabConfig', JSON.stringify(config));
-            showNotification('Configuration saved successfully!');
+    }
+    
+    // Get random word for writing practice
+    function getRandomWordForWriting() {
+        if (generatedVocab.length === 0) {
+            showNotification('Chưa có thẻ từ vựng nào. Hãy tạo thẻ từ vựng trước!', true);
+            return;
         }
-
-        // Handle file upload
-        function handleFileUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('vocabInput').value = e.target.result;
-                showNotification('File loaded successfully!');
-            };
-            reader.readAsText(file);
-        }
-
-        // Handle CSV file upload
-        function handleCSVUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const csvContent = e.target.result;
-                    const vocabData = parseCSV(csvContent);
-                    
-                    if (vocabData.length === 0) {
-                        showNotification('No valid data found in CSV file!', true);
-                        return;
-                    }
-                    
-                    // Check for duplicates
-                    const duplicates = findDuplicates(vocabData);
-                    
-                    // Add to generatedVocab
-                    vocabData.forEach(item => {
-                        const isDuplicate = duplicates.includes(item.word.toLowerCase());
-                        if (isDuplicate) {
-                            item.isDuplicate = true;
-                        }
-                        generatedVocab.push(item);
-                    });
-                    
-                    // Show results
-                    document.getElementById('resultsSection').style.display = 'block';
-                    renderVocabularyCards();
-                    
-                    if (duplicates.length > 0) {
-                        showNotification(`Imported ${vocabData.length} cards (${duplicates.length} duplicates found)`, false, true);
-                    } else {
-                        showNotification(`Imported ${vocabData.length} cards successfully!`);
-                    }
-                    
-                    // Update stats
-                    processingStats.total += vocabData.length;
-                    processingStats.processed += vocabData.length;
-                    processingStats.success += vocabData.length;
-                    updateStats();
-                    updateProgress();
-                    
-                } catch (error) {
-                    console.error('Error parsing CSV:', error);
-                    showNotification('Error parsing CSV file!', true);
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // Parse CSV content
-        function parseCSV(csvContent) {
-            const lines = csvContent.split('\n');
-            if (lines.length < 2) return [];
-            
-            // Get headers (first line)
-            const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-            
-            // Define field mapping - FIXED FOR PART OF SPEECH AND WORD FAMILY
-            const fieldMapping = {
-                "word": "word",
-                "phonetic": "phonetic",
-                "partofspeech": "partOfSpeech",  // Fixed mapping
-                "meaning": "meaning",
-                "example": "example",
-                "translation": "translation",
-                "wordfamily": "wordFamily",      // Fixed mapping
-                "synonyms": "synonyms"
-            };
-
-            // Process data lines
-            const vocabData = [];
-            for (let i = 1; i < lines.length; i++) {
-                if (!lines[i].trim()) continue;
+        
+        // Reset UI
+        resetWriting();
                 
-                const values = parseCSVLine(lines[i]);
-                const vocabItem = {};
-                
-                // Map values to fields based on headers
-                headers.forEach((header, index) => {
-                    const mappedField = fieldMapping[header];
-                    if (mappedField && values[index] !== undefined) {
-                        vocabItem[mappedField] = values[index].trim();
-                    }
-                });
-                
-                // Ensure we have at least a word
-                if (vocabItem.word) {
-                    vocabData.push(vocabItem);
-                }
-            }
-            
-            return vocabData;
+        // Get random word từ danh sách đã tạo
+        const randomIndex = Math.floor(Math.random() * generatedVocab.length);
+        currentWritingWord = generatedVocab[randomIndex];
+        
+        // Display word and meaning
+        document.getElementById('writingWord').textContent = currentWritingWord.word;
+        document.getElementById('writingMeaningText').textContent = currentWritingWord.meaning;
+    }
+
+    // Trong hàm resetWriting, không reset từ nữa
+    function resetWriting() {
+        document.getElementById('writingInput').value = '';
+        document.getElementById('aiFeedback').style.display = 'none';
+        document.getElementById('feedbackContent').innerHTML = '';
+    }
+    
+    // Submit writing for AI evaluation
+    async function submitWriting() {
+        const sentence = document.getElementById('writingInput').value.trim();
+
+        if (!sentence) {
+            showNotification('Vui lòng viết câu trước khi gửi!', true);
+            return;
         }
-
-        // Parse CSV line (handling quoted values with commas)
-        function parseCSVLine(line) {
-            const values = [];
-            let current = '';
-            let inQuotes = false;
-            
-            for (let i = 0; i < line.length; i++) {
-                const char = line[i];
-                
-                if (char === '"') {
-                    inQuotes = !inQuotes;
-                } else if (char === ',' && !inQuotes) {
-                    values.push(current);
-                    current = '';
-                } else {
-                    current += char;
-                }
-            }
-            
-            values.push(current); // Add last value
-            return values.map(v => v.replace(/^"|"$/g, '')); // Remove surrounding quotes
+        
+        // Sử dụng currentWritingWord thay vì lấy từ DOM
+        if (!currentWritingWord) {
+            showNotification('Không tìm thấy từ vựng!', true);
+            return;
         }
-
-        // Find duplicate words in the imported data
-        function findDuplicates(vocabData) {
-            const wordCount = {};
-            const duplicates = [];
-            
-            // Count occurrences of each word
-            vocabData.forEach(item => {
-                const wordLower = item.word.toLowerCase();
-                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
-            });
-            
-            // Check against existing words
-            generatedVocab.forEach(item => {
-                const wordLower = item.word.toLowerCase();
-                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
-            });
-            
-            // Find duplicates in the imported data
-            vocabData.forEach(item => {
-                const wordLower = item.word.toLowerCase();
-                if (wordCount[wordLower] > 1) {
-                    duplicates.push(wordLower);
-                }
-            });
-            
-            return [...new Set(duplicates)]; // Return unique duplicates
+        
+        const apiKey = document.getElementById('apiKey').value;
+        if (!apiKey) {
+            showNotification('Vui lòng nhập API Key trước!', true);
+            return;
         }
-
-        // Process vocabulary with batching
-        async function processVocabulary() {
-            const inputText = document.getElementById('vocabInput').value;
-            if (!inputText) {
-                showNotification('Please enter vocabulary words!', true);
-                return;
-            }
-            
-            const apiKey = document.getElementById('apiKey').value;
-            if (!apiKey) {
-                showNotification('Please enter your API key!', true);
-                return;
-            }
-            
-            // Get configuration
-            const config = JSON.parse(localStorage.getItem('vocabConfig')) || {
-                batchSize: 2,
-                requestDelay: 2000
-            };
-            
-            const batchSize = Math.min(Math.max(config.batchSize, 1), 5);
-            const requestDelay = Math.min(Math.max(config.requestDelay, 500), 10000);
-            
-            // Reset state
-            generatedVocab = [];
-            errorWords = [];
-            processingStats = {
-                total: 0,
-                processed: 0,
-                success: 0,
-                error: 0
-            };
-            
-            // Parse input words
-            const words = inputText.split(/[;\n]+/)
-                .map(word => word.trim())
-                .filter(word => word.length > 0);
-            
-            if (words.length === 0) {
-                showNotification('No valid words found!', true);
-                return;
-            }
-            
-            // Show progress section
-            document.getElementById('progressSection').style.display = 'block';
-            document.getElementById('resultsSection').style.display = 'none';
-            document.getElementById('errorSection').style.display = 'none';
-            
-            // Update stats
-            processingStats.total = words.length;
-            updateStats();
-            
-            // Process words in batches
-            const batches = [];
-            for (let i = 0; i < words.length; i += batchSize) {
-                batches.push(words.slice(i, i + batchSize));
-            }
-            
-            for (let i = 0; i < batches.length; i++) {
-                const batch = batches[i];
-                const batchResults = await processBatch(batch, apiKey);
-                
-                // Add results to generatedVocab
-                batchResults.forEach(result => {
-                    if (result.error) {
-                        errorWords.push({
-                            word: result.word,
-                            error: result.error
-                        });
-                        processingStats.error++;
-                    } else {
-                        generatedVocab.push(result);
-                        processingStats.success++;
-                    }
-                    processingStats.processed++;
-                    updateStats();
-                    updateProgress();
-                });
-                
-                // Delay before next batch (except the last one)
-                if (i < batches.length - 1) {
-                    await new Promise(resolve => setTimeout(resolve, requestDelay));
-                }
-            }
-            
-            // Show results
-            document.getElementById('resultsSection').style.display = 'block';
-            renderVocabularyCards();
-            
-            // Show errors if any
-            if (errorWords.length > 0) {
-                document.getElementById('errorSection').style.display = 'block';
-                renderErrorWords();
-            }
-            
-            showNotification(`Processed ${words.length} words with ${errorWords.length} errors`);
+        
+        // Show loading
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('aiFeedback').style.display = 'none';
+        
+        try {
+            const feedback = await getAIWritingFeedback(apiKey, currentWritingWord, sentence);
+            document.getElementById('feedbackContent').innerHTML = feedback;
+            document.getElementById('aiFeedback').style.display = 'block';
+        } catch (error) {
+            console.error('Error getting AI feedback:', error);
+            document.getElementById('feedbackContent').innerHTML = `
+                <div class="error">
+                    <p><strong>Lỗi khi kết nối với AI:</strong></p>
+                    <p>${error.message || 'Vui lòng kiểm tra lại kết nối mạng và API Key'}</p>
+                </div>
+            `;
+            document.getElementById('aiFeedback').style.display = 'block';
+        } finally {
+            document.getElementById('loading').style.display = 'none';
         }
+    }
+    
+    // Get AI writing feedback
+    async function getAIWritingFeedback(apiKey, word, sentence) {
+        const aiService = document.getElementById('aiService').value;
+        
+        // Build prompt
+        const promptText = `Hãy đánh giá câu sau sử dụng từ "${word.word}" (${word.meaning}):
+        
+Câu: "${sentence}"
 
-        // Process a batch of words
-        async function processBatch(batch, apiKey) {
-            const results = [];
-            
-            for (const word of batch) {
-                try {
-                    const vocabData = await fetchVocabData(word, apiKey);
-                    results.push(vocabData);
-                } catch (error) {
-                    console.error(`Error processing word "${word}":`, error);
-                    results.push({
-                        word: word,
-                        error: error.message
-                    });
-                }
-            }
-            
-            return results;
-        }
+Đánh giá theo các tiêu chí:
+1. Ngữ pháp (Grammar)
+2. Sử dụng từ trong ngữ cảnh (Context)
+3. Độ tự nhiên (Naturalness)
+4. Gợi ý cải thiện (nếu có)
 
-        // Fetch vocabulary data from AI
-        async function fetchVocabData(word, apiKey) {
-            const aiService = document.getElementById('aiService').value;
-            
-            if (aiService === 'gemini') {
-                return fetchFromGemini(word, apiKey);
-            } else if (aiService === 'openai') {
-                return fetchFromOpenAI(word, apiKey);
-            } else {
-                throw new Error('Unsupported AI service');
-            }
-        }
-
-        // Fetch from Gemini API with improved prompt
-        async function fetchFromGemini(word, apiKey) {
-            const promptText = `Provide accurate vocabulary information for "${word}" in JSON format with these fields:
-- word: the vocabulary word (keep original)
-- phonetic: phonetic transcription (in /.../ format)
-- partOfSpeech: part of speech (in Vietnamese)
-- meaning: Vietnamese meaning (accurate translation)
-- example: natural example sentence in English (not a template)
-- translation: accurate Vietnamese translation of the example
-- wordFamily: related word forms (e.g., noun, verb, adjective forms) separated by commas
-- synonyms: 2-3 relevant synonyms in English, separated by commas
-
-Important: 
-- Ensure the example is a natural, realistic sentence
-- Synonyms should be contextually appropriate
-- Word family should show different grammatical forms
-- Return only JSON, no other text.`;
-            
+Trả lời bằng tiếng Việt, ngắn gọn, rõ ràng và hữu ích. Định dạng kết quả bằng Markdown.`;
+        
+        if (aiService === 'gemini') {
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: {
@@ -1280,42 +1356,9 @@ Important:
             const data = await response.json();
             const text = data.candidates[0].content.parts[0].text;
             
-            // Extract JSON from response
-            let jsonText = text.trim();
-            if (jsonText.startsWith('```json')) {
-                jsonText = jsonText.substring(7, jsonText.length - 3).trim();
-            } else if (jsonText.startsWith('```')) {
-                jsonText = jsonText.substring(3, jsonText.length - 3).trim();
-            }
-            
-            const result = JSON.parse(jsonText);
-            
-            // Validate result
-            if (!result.word || !result.meaning) {
-                throw new Error('Incomplete data from AI');
-            }
-            
-            return result;
-        }
-
-        // Fetch from OpenAI API with improved prompt
-        async function fetchFromOpenAI(word, apiKey) {
-            const promptText = `Provide accurate vocabulary information for "${word}" in JSON format with these fields:
-- word: the vocabulary word (keep original)
-- phonetic: phonetic transcription (in /.../ format)
-- partOfSpeech: part of speech (in Vietnamese)
-- meaning: Vietnamese meaning (accurate translation)
-- example: natural example sentence in English (not a template)
-- translation: accurate Vietnamese translation of the example
-- wordFamily: related word forms (e.g., noun, verb, adjective forms) separated by commas
-- synonyms: 2-3 relevant synonyms in English, separated by commas
-
-Important: 
-- Ensure the example is a natural, realistic sentence
-- Synonyms should be contextually appropriate
-- Word family should show different grammatical forms
-- Return only JSON, no other text.`;
-            
+            // Convert markdown to HTML
+            return markdownToHTML(text);
+        } else if (aiService === 'openai') {
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -1339,361 +1382,825 @@ Important:
             const data = await response.json();
             const text = data.choices[0].message.content;
             
-            // Extract JSON from response
-            let jsonText = text.trim();
-            if (jsonText.startsWith('```json')) {
-                jsonText = jsonText.substring(7, jsonText.length - 3).trim();
-            } else if (jsonText.startsWith('```')) {
-                jsonText = jsonText.substring(3, jsonText.length - 3).trim();
-            }
-            
-            const result = JSON.parse(jsonText);
-            
-            // Validate result
-            if (!result.word || !result.meaning) {
-                throw new Error('Incomplete data from AI');
-            }
-            
-            return result;
+            // Convert markdown to HTML
+            return markdownToHTML(text);
+        } else {
+            throw new Error('Unsupported AI service');
         }
+    }
+    
+    // Convert markdown to HTML
+    function markdownToHTML(text) {
+        // Convert headers
+        text = text.replace(/^# (.*$)/gim, '<h3>$1</h3>');
+        text = text.replace(/^## (.*$)/gim, '<h4>$1</h4>');
+        text = text.replace(/^### (.*$)/gim, '<h5>$1</h5>');
+        
+        // Convert bold and italic
+        text = text.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+        text = text.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+        
+        // Convert lists
+        text = text.replace(/^\s*-\s+(.*)$/gim, '<li>$1</li>');
+        text = text.replace(/(<li>.*<\/li>)/gis, '<ul>$1</ul>');
+        
+        // Convert code blocks
+        text = text.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+        
+        // Convert inline code
+        text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+        
+        // Convert paragraphs
+        text = text.replace(/\n\n/g, '</p><p>');
+        text = '<p>' + text + '</p>';
+        
+        // Add highlight for correct suggestions
+        text = text.replace(/Đúng:/g, '<span class="correct">Đúng:</span>');
+        
+        // Add suggestion block
+        text = text.replace(/Gợi ý cải thiện:/g, '<div class="suggestion"><strong>Gợi ý cải thiện:</strong>');
+        text = text.replace(/<\/div><\/div>/g, '</div>');
+        
+        return text;
+    }
 
-        // Update progress stats
-        function updateStats() {
-            document.getElementById('totalWords').textContent = processingStats.total;
-            document.getElementById('processedWords').textContent = processingStats.processed;
-            document.getElementById('successWords').textContent = processingStats.success;
-            document.getElementById('errorWords').textContent = processingStats.error;
+    // Toggle AI configuration visibility
+    function toggleAIConfig() {
+        const body = document.getElementById('aiConfigBody');
+        const icon = document.getElementById('aiConfigIcon');
+        if (body.style.display === 'none') {
+            body.style.display = 'block';
+            icon.className = 'fas fa-chevron-up';
+        } else {
+            body.style.display = 'none';
+            icon.className = 'fas fa-chevron-down';
         }
+    }
 
-        // Update progress bar
-        function updateProgress() {
-            const progress = (processingStats.processed / processingStats.total) * 100;
-            document.getElementById('progressBar').style.width = `${progress}%`;
-        }
+    // Save configuration
+    function saveConfig() {
+        const config = {
+            aiService: document.getElementById('aiService').value,
+            apiKey: document.getElementById('apiKey').value,
+            batchSize: parseInt(document.getElementById('batchSize').value) || 2,
+            requestDelay: parseInt(document.getElementById('requestDelay').value) || 2000
+        };
+        
+        localStorage.setItem('vocabConfig', JSON.stringify(config));
+        showNotification('Configuration saved successfully!');
+    }
 
-        // Render vocabulary cards
-        function renderVocabularyCards() {
-            const vocabGrid = document.getElementById('vocabGrid');
-            vocabGrid.innerHTML = '';
-            
-            // Find all duplicate words
-            const wordCount = {};
-            generatedVocab.forEach(item => {
-                const wordLower = item.word.toLowerCase();
-                wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
-            });
-            
-            generatedVocab.forEach((word, index) => {
-                const isDuplicate = wordCount[word.word.toLowerCase()] > 1;
-                const vocabCard = document.createElement('div');
-                vocabCard.className = `vocab-card ${isDuplicate ? 'duplicate' : ''}`;
-                vocabCard.innerHTML = `
-                    <div class="card-actions">
-                        <div class="card-btn remake" onclick="remakeVocabCard(${index})">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div class="card-btn edit" onclick="openEditModal(${index})">
-                            <i class="fas fa-edit"></i>
-                        </div>
-                        <div class="card-btn delete" onclick="deleteVocabCard(${index})">
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                    <div class="vocab-header">
-                        <h4 class="vocab-word">${word.word}</h4>
-                        <div class="vocab-phonetic">${word.phonetic || ''}</div>
-                        <span class="vocab-pos">${word.partOfSpeech || ''}</span>
-                    </div>
-                    <div class="vocab-body">
-                        <p class="vocab-meaning">${word.meaning || ''}</p>
-                        ${word.example ? `
-                        <div class="vocab-example">
-                            <strong>Example:</strong> ${word.example}
-                        </div>
-                        ` : ''}
-                        ${word.translation ? `
-                        <div class="vocab-translation">
-                            <strong>Translation:</strong> ${word.translation}
-                        </div>
-                        ` : ''}
-                    </div>
-                    <div class="vocab-footer">
-                        ${word.wordFamily ? `
-                        <div>
-                            <strong>Word Family:</strong> ${word.wordFamily}
-                        </div>
-                        ` : '<div></div>'}
-                        ${word.synonyms ? `
-                        <div>
-                            <strong>Synonyms:</strong> ${word.synonyms}
-                        </div>
-                        ` : '<div></div>'}
-                    </div>
-                `;
+    // Handle file upload
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('vocabInput').value = e.target.result;
+            showNotification('File loaded successfully!');
+        };
+        reader.readAsText(file);
+    }
+
+    // Handle CSV file upload
+    function handleCSVUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const csvContent = e.target.result;
+                const vocabData = parseCSV(csvContent);
                 
-                vocabGrid.appendChild(vocabCard);
-            });
-            
-            // Update card count
-            document.getElementById('cardCount').textContent = `${generatedVocab.length} cards`;
-        }
-
-        // Render error words
-        function renderErrorWords() {
-            const errorList = document.getElementById('errorList');
-            errorList.innerHTML = '';
-            
-            errorWords.forEach((item, index) => {
-                const errorItem = document.createElement('div');
-                errorItem.className = 'mb-3 d-flex justify-content-between align-items-center p-3 bg-white rounded';
-                errorItem.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
-                errorItem.innerHTML = `
-                    <div class="fw-bold text-danger">
-                        <i class="fas fa-exclamation-triangle me-2"></i>${item.word}
-                    </div>
-                    <button class="btn btn-sm btn-primary" onclick="retrySingleWord(${index})">
-                        <i class="fas fa-redo me-1"></i> Retry
-                    </button>
-                `;
-                errorList.appendChild(errorItem);
-            });
-        }
-
-        // Open edit modal
-        function openEditModal(index) {
-            currentEditIndex = index;
-            const word = generatedVocab[index];
-            
-            document.getElementById('editWord').value = word.word || '';
-            document.getElementById('editPhonetic').value = word.phonetic || '';
-            document.getElementById('editPos').value = word.partOfSpeech || '';
-            document.getElementById('editMeaning').value = word.meaning || '';
-            document.getElementById('editExample').value = word.example || '';
-            document.getElementById('editTranslation').value = word.translation || '';
-            document.getElementById('editWordFamily').value = word.wordFamily || '';
-            document.getElementById('editSynonyms').value = word.synonyms || '';
-            
-            document.getElementById('editModal').style.display = 'flex';
-        }
-
-        // Close edit modal
-        function closeEditModal() {
-            document.getElementById('editModal').style.display = 'none';
-            currentEditIndex = -1;
-        }
-
-        // Save edited card
-        function saveEditedCard() {
-            if (currentEditIndex === -1) return;
-            
-            generatedVocab[currentEditIndex] = {
-                word: document.getElementById('editWord').value,
-                phonetic: document.getElementById('editPhonetic').value,
-                partOfSpeech: document.getElementById('editPos').value,
-                meaning: document.getElementById('editMeaning').value,
-                example: document.getElementById('editExample').value,
-                translation: document.getElementById('editTranslation').value,
-                wordFamily: document.getElementById('editWordFamily').value,
-                synonyms: document.getElementById('editSynonyms').value
-            };
-            
-            renderVocabularyCards();
-            closeEditModal();
-            showNotification('Card updated successfully!');
-        }
-
-        // Delete vocab card
-        function deleteVocabCard(index) {
-            if (confirm('Are you sure you want to delete this vocabulary card?')) {
-                generatedVocab.splice(index, 1);
-                renderVocabularyCards();
-                showNotification('Card deleted successfully!');
-            }
-        }
-
-        // Remake vocab card using AI
-        async function remakeVocabCard(index) {
-            const word = generatedVocab[index].word;
-            const apiKey = document.getElementById('apiKey').value;
-            
-            // Show loading on remake button
-            const remakeBtn = document.querySelectorAll('.card-btn.remake')[index];
-            remakeBtn.innerHTML = '<i class="fas fa-sync-alt remake-loading"></i>';
-            
-            try {
-                const vocabData = await fetchVocabData(word, apiKey);
-                generatedVocab[index] = vocabData;
-                renderVocabularyCards();
-                showNotification(`Card for "${word}" has been regenerated successfully!`);
-            } catch (error) {
-                console.error(`Error regenerating card for "${word}":`, error);
-                showNotification(`Failed to regenerate card for "${word}": ${error.message}`, true);
-                // Reset button icon
-                remakeBtn.innerHTML = '<i class="fas fa-sync-alt"></i>';
-            }
-        }
-
-        // Retry single failed word
-        async function retrySingleWord(index) {
-            const word = errorWords[index].word;
-            const apiKey = document.getElementById('apiKey').value;
-            
-            // Remove from error list
-            errorWords.splice(index, 1);
-            renderErrorWords();
-            
-            try {
-                const vocabData = await fetchVocabData(word, apiKey);
-                generatedVocab.push(vocabData);
-                processingStats.success++;
-                processingStats.processed++;
-                updateStats();
-                renderVocabularyCards();
-                showNotification(`Successfully processed "${word}"`);
-            } catch (error) {
-                console.error(`Error processing word "${word}":`, error);
-                errorWords.push({
-                    word: word,
-                    error: error.message
+                if (vocabData.length === 0) {
+                    showNotification('No valid data found in CSV file!', true);
+                    return;
+                }
+                
+                // Check for duplicates
+                const duplicates = findDuplicates(vocabData);
+                
+                // Add to generatedVocab (giữ nguyên các thẻ đang có)
+                vocabData.forEach(item => {
+                    const isDuplicate = duplicates.includes(item.word.toLowerCase());
+                    if (isDuplicate) {
+                        item.isDuplicate = true;
+                    }
+                    generatedVocab.push(item);
                 });
-                renderErrorWords();
-                showNotification(`Failed to process "${word}"`, true);
+                
+                // Show results
+                document.getElementById('resultsSection').style.display = 'block';
+                renderVocabularyCards();
+                
+                if (duplicates.length > 0) {
+                    showNotification(`Imported ${vocabData.length} cards (${duplicates.length} duplicates found)`, false, true);
+                } else {
+                    showNotification(`Imported ${vocabData.length} cards successfully!`);
+                }
+                
+                // Update stats
+                processingStats.total += vocabData.length;
+                processingStats.processed += vocabData.length;
+                processingStats.success += vocabData.length;
+                updateStats();
+                updateProgress();
+                
+            } catch (error) {
+                console.error('Error parsing CSV:', error);
+                showNotification('Error parsing CSV file!', true);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    // Parse CSV content
+    function parseCSV(csvContent) {
+        const lines = csvContent.split('\n');
+        if (lines.length < 2) return [];
+        
+        // Get headers (first line)
+        const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
+        
+        // Define field mapping - FIXED FOR PART OF SPEECH AND WORD FAMILY
+        const fieldMapping = {
+            "word": "word",
+            "phonetic": "phonetic",
+            "partofspeech": "partOfSpeech",  // Fixed mapping
+            "meaning": "meaning",
+            "example": "example",
+            "translation": "translation",
+            "wordfamily": "wordFamily",      // Fixed mapping
+            "synonyms": "synonyms"
+        };
+
+        // Process data lines
+        const vocabData = [];
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            
+            const values = parseCSVLine(lines[i]);
+            const vocabItem = {};
+            
+            // Map values to fields based on headers
+            headers.forEach((header, index) => {
+                const mappedField = fieldMapping[header];
+                if (mappedField && values[index] !== undefined) {
+                    vocabItem[mappedField] = values[index].trim();
+                }
+            });
+            
+            // Ensure we have at least a word
+            if (vocabItem.word) {
+                vocabData.push(vocabItem);
             }
         }
+        
+        return vocabData;
+    }
 
-        // Retry all failed words
-        async function retryFailedWords() {
-            if (errorWords.length === 0) return;
+    // Parse CSV line (handling quoted values with commas)
+    function parseCSVLine(line) {
+        const values = [];
+        let current = '';
+        let inQuotes = false;
+        
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
             
-            const apiKey = document.getElementById('apiKey').value;
-            const wordsToRetry = [...errorWords];
-            errorWords = [];
-            renderErrorWords();
+            if (char === '"') {
+                inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+                values.push(current);
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+        
+        values.push(current); // Add last value
+        return values.map(v => v.replace(/^"|"$/g, '')); // Remove surrounding quotes
+    }
+
+    // Find duplicate words in the imported data
+    function findDuplicates(vocabData) {
+        const wordCount = {};
+        const duplicates = [];
+        
+        // Count occurrences of each word
+        vocabData.forEach(item => {
+            const wordLower = item.word.toLowerCase();
+            wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+        });
+        
+        // Check against existing words
+        generatedVocab.forEach(item => {
+            const wordLower = item.word.toLowerCase();
+            wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+        });
+        
+        // Find duplicates in the imported data
+        vocabData.forEach(item => {
+            const wordLower = item.word.toLowerCase();
+            if (wordCount[wordLower] > 1) {
+                duplicates.push(wordLower);
+            }
+        });
+        
+        return [...new Set(duplicates)]; // Return unique duplicates
+    }
+
+    // Process vocabulary with batching
+    async function processVocabulary() {
+        const inputText = document.getElementById('vocabInput').value;
+        if (!inputText) {
+            showNotification('Please enter vocabulary words!', true);
+            return;
+        }
+        
+        const apiKey = document.getElementById('apiKey').value;
+        if (!apiKey) {
+            showNotification('Please enter your API key!', true);
+            return;
+        }
+        
+        // Get configuration
+        const config = JSON.parse(localStorage.getItem('vocabConfig')) || {
+            batchSize: 2,
+            requestDelay: 2000
+        };
+        
+        const batchSize = Math.min(Math.max(config.batchSize, 1), 5);
+        const requestDelay = Math.min(Math.max(config.requestDelay, 500), 10000);
+        
+        // Reset state (giữ lại các thẻ đang có)
+        errorWords = [];
+        processingStats = {
+            total: 0,
+            processed: 0,
+            success: 0,
+            error: 0
+        };
+        
+        // Parse input words
+        const words = inputText.split(/[;\n]+/)
+            .map(word => word.trim())
+            .filter(word => word.length > 0);
+        
+        if (words.length === 0) {
+            showNotification('No valid words found!', true);
+            return;
+        }
+        
+        // Show progress section
+        document.getElementById('progressSection').style.display = 'block';
+        document.getElementById('resultsSection').style.display = 'none';
+        document.getElementById('errorSection').style.display = 'none';
+        
+        // Update stats
+        processingStats.total = words.length;
+        updateStats();
+        
+        // Process words in batches
+        const batches = [];
+        for (let i = 0; i < words.length; i += batchSize) {
+            batches.push(words.slice(i, i + batchSize));
+        }
+        
+        for (let i = 0; i < batches.length; i++) {
+            const batch = batches[i];
+            const batchResults = await processBatch(batch, apiKey);
             
-            for (const item of wordsToRetry) {
-                try {
-                    const vocabData = await fetchVocabData(item.word, apiKey);
-                    generatedVocab.push(vocabData);
-                    processingStats.success++;
-                } catch (error) {
-                    console.error(`Error processing word "${item.word}":`, error);
+            // Add results to generatedVocab
+            batchResults.forEach(result => {
+                if (result.error) {
                     errorWords.push({
-                        word: item.word,
-                        error: error.message
+                        word: result.word,
+                        error: result.error
                     });
+                    processingStats.error++;
+                } else {
+                    generatedVocab.push(result);
+                    processingStats.success++;
                 }
                 processingStats.processed++;
                 updateStats();
                 updateProgress();
-            }
-            
-            renderVocabularyCards();
-            renderErrorWords();
-            
-            if (errorWords.length > 0) {
-                document.getElementById('errorSection').style.display = 'block';
-            }
-            
-            showNotification(`Retried ${wordsToRetry.length} words with ${errorWords.length} errors`);
-        }
-
-        // Export to CSV
-        function exportToCSV() {
-            if (generatedVocab.length === 0) {
-                showNotification('No vocabulary to export!', true);
-                return;
-            }
-            
-            // Get selected fields
-            const fields = [
-                { id: 'word', export: document.getElementById('exportWord').checked },
-                { id: 'phonetic', export: document.getElementById('exportPhonetic').checked },
-                { id: 'partOfSpeech', export: document.getElementById('exportPos').checked },
-                { id: 'meaning', export: document.getElementById('exportMeaning').checked },
-                { id: 'example', export: document.getElementById('exportExample').checked },
-                { id: 'translation', export: document.getElementById('exportTranslation').checked },
-                { id: 'wordFamily', export: document.getElementById('exportWordFamily').checked },
-                { id: 'synonyms', export: document.getElementById('exportSynonyms').checked }
-            ];
-            
-            // Create CSV header
-            let csvContent = fields.filter(f => f.export).map(f => f.id).join(',') + '\n';
-            
-            // Add data rows
-            generatedVocab.forEach(word => {
-                const row = fields
-                    .filter(f => f.export)
-                    .map(f => {
-                        // Escape quotes and wrap in quotes
-                        const value = word[f.id] || '';
-                        return `"${value.toString().replace(/"/g, '""')}"`;
-                    })
-                    .join(',');
-                
-                csvContent += row + '\n';
             });
             
-            // Create download link
-            const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'vocabulary_cards.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            showNotification('CSV file exported successfully!');
+            // Delay before next batch (except the last one)
+            if (i < batches.length - 1) {
+                await new Promise(resolve => setTimeout(resolve, requestDelay));
+            }
         }
         
-        // Export error words as TXT
-        function exportErrorWords() {
-            if (errorWords.length === 0) return;
-            
-            // Create TXT content with each error word on a new line
-            let txtContent = errorWords.map(item => item.word).join('\n');
-            
-            // Create download link
-            const blob = new Blob([txtContent], {type: 'text/plain;charset=utf-8;'});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'vocabulary_errors.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            showNotification('Error list exported as TXT successfully!');
+        // Show results
+        document.getElementById('resultsSection').style.display = 'block';
+        renderVocabularyCards();
+        
+        // Show errors if any
+        if (errorWords.length > 0) {
+            document.getElementById('errorSection').style.display = 'block';
+            renderErrorWords();
         }
+        
+        showNotification(`Processed ${words.length} words with ${errorWords.length} errors`);
+    }
 
-        // Show notification
-        function showNotification(message, isError = false, isWarning = false) {
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            
-            notificationText.textContent = message;
-            notification.style.display = 'flex';
-            
-            if (isError) {
-                notification.style.borderLeftColor = 'var(--error-color)';
-                notification.querySelector('i').className = 'fas fa-exclamation-circle';
-            } else if (isWarning) {
-                notification.style.borderLeftColor = 'var(--warning-color)';
-                notification.querySelector('i').className = 'fas fa-exclamation-triangle';
-            } else {
-                notification.style.borderLeftColor = 'var(--success-color)';
-                notification.querySelector('i').className = 'fas fa-check-circle';
+    // Process a batch of words
+    async function processBatch(batch, apiKey) {
+        const results = [];
+        
+        for (const word of batch) {
+            try {
+                const vocabData = await fetchVocabData(word, apiKey);
+                results.push(vocabData);
+            } catch (error) {
+                console.error(`Error processing word "${word}":`, error);
+                results.push({
+                    word: word,
+                    error: error.message
+                });
             }
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
         }
+        
+        return results;
+    }
 
-        // Initialize the app when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initApp);
-    </script>
+    // Fetch vocabulary data from AI
+    async function fetchVocabData(word, apiKey) {
+        const aiService = document.getElementById('aiService').value;
+        
+        if (aiService === 'gemini') {
+            return fetchFromGemini(word, apiKey);
+        } else if (aiService === 'openai') {
+            return fetchFromOpenAI(word, apiKey);
+        } else {
+            throw new Error('Unsupported AI service');
+        }
+    }
+
+    // Fetch from Gemini API with improved prompt
+    async function fetchFromGemini(word, apiKey) {
+        const promptText = `Provide accurate vocabulary information for "${word}" in JSON format with these fields:
+- word: the vocabulary word (keep original)
+- phonetic: phonetic transcription (in /.../ format)
+- partOfSpeech: part of speech (in Vietnamese)
+- meaning: Vietnamese meaning (accurate translation)
+- example: natural example sentence in English (not a template)
+- translation: accurate Vietnamese translation of the example
+- wordFamily: related word forms (e.g., noun, verb, adjective forms) separated by commas
+- synonyms: 2-3 relevant synonyms in English, separated by commas
+
+Important: 
+- Ensure the example is a natural, realistic sentence
+- Synonyms should be contextually appropriate
+- Word family should show different grammatical forms
+- Return only JSON, no other text.`;
+        
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: promptText
+                    }]
+                }]
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const text = data.candidates[0].content.parts[0].text;
+        
+        // Extract JSON from response
+        let jsonText = text.trim();
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.substring(7, jsonText.length - 3).trim();
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.substring(3, jsonText.length - 3).trim();
+        }
+        
+        const result = JSON.parse(jsonText);
+        
+        // Validate result
+        if (!result.word || !result.meaning) {
+            throw new Error('Incomplete data from AI');
+        }
+        
+        return result;
+    }
+
+    // Fetch from OpenAI API with improved prompt
+    async function fetchFromOpenAI(word, apiKey) {
+        const promptText = `Provide accurate vocabulary information for "${word}" in JSON format with these fields:
+- word: the vocabulary word (keep original)
+- phonetic: phonetic transcription (in /.../ format)
+- partOfSpeech: part of speech (in Vietnamese)
+- meaning: Vietnamese meaning (accurate translation)
+- example: natural example sentence in English (not a template)
+- translation: accurate Vietnamese translation of the example
+- wordFamily: related word forms (e.g., noun, verb, adjective forms) separated by commas
+- synonyms: 2-3 relevant synonyms in English, separated by commas
+
+Important: 
+- Ensure the example is a natural, realistic sentence
+- Synonyms should be contextually appropriate
+- Word family should show different grammatical forms
+- Return only JSON, no other text.`;
+        
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [{
+                    role: "user",
+                    content: promptText
+                }],
+                temperature: 0.7
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const text = data.choices[0].message.content;
+        
+        // Extract JSON from response
+        let jsonText = text.trim();
+        if (jsonText.startsWith('```json')) {
+            jsonText = jsonText.substring(7, jsonText.length - 3).trim();
+        } else if (jsonText.startsWith('```')) {
+            jsonText = jsonText.substring(3, jsonText.length - 3).trim();
+        }
+        
+        const result = JSON.parse(jsonText);
+        
+        // Validate result
+        if (!result.word || !result.meaning) {
+            throw new Error('Incomplete data from AI');
+        }
+        
+        return result;
+    }
+
+    // Update progress stats
+    function updateStats() {
+        document.getElementById('totalWords').textContent = processingStats.total;
+        document.getElementById('processedWords').textContent = processingStats.processed;
+        document.getElementById('successWords').textContent = processingStats.success;
+        document.getElementById('errorWords').textContent = processingStats.error;
+    }
+
+    // Update progress bar
+    function updateProgress() {
+        const progress = (processingStats.processed / processingStats.total) * 100;
+        document.getElementById('progressBar').style.width = `${progress}%`;
+    }
+
+    // Render vocabulary cards
+    function renderVocabularyCards() {
+        const vocabGrid = document.getElementById('vocabGrid');
+        vocabGrid.innerHTML = '';
+        
+        // Find all duplicate words
+        const wordCount = {};
+        generatedVocab.forEach(item => {
+            const wordLower = item.word.toLowerCase();
+            wordCount[wordLower] = (wordCount[wordLower] || 0) + 1;
+        });
+        
+        generatedVocab.forEach((word, index) => {
+            const isDuplicate = wordCount[word.word.toLowerCase()] > 1;
+            const vocabCard = document.createElement('div');
+            vocabCard.className = `vocab-card ${isDuplicate ? 'duplicate' : ''}`;
+            vocabCard.innerHTML = `
+                <div class="card-actions">
+                    <div class="card-btn remake" onclick="remakeVocabCard(${index})">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="card-btn edit" onclick="openEditModal(${index})">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="card-btn delete" onclick="deleteVocabCard(${index})">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                </div>
+                <div class="vocab-header">
+                    <h4 class="vocab-word">${word.word}</h4>
+                    <div class="vocab-phonetic">${word.phonetic || ''}</div>
+                    <span class="vocab-pos">${word.partOfSpeech || ''}</span>
+                </div>
+                <div class="vocab-body">
+                    <p class="vocab-meaning">${word.meaning || ''}</p>
+                    ${word.example ? `
+                    <div class="vocab-example">
+                        <strong>Example:</strong> ${word.example}
+                    </div>
+                    ` : ''}
+                    ${word.translation ? `
+                    <div class="vocab-translation">
+                        <strong>Translation:</strong> ${word.translation}
+                    </div>
+                    ` : ''}
+                </div>
+                <div class="vocab-footer">
+                    ${word.wordFamily ? `
+                    <div>
+                        <strong>Word Family:</strong> ${word.wordFamily}
+                    </div>
+                    ` : '<div></div>'}
+                    ${word.synonyms ? `
+                    <div>
+                        <strong>Synonyms:</strong> ${word.synonyms}
+                    </div>
+                    ` : '<div></div>'}
+                </div>
+            `;
+            
+            vocabGrid.appendChild(vocabCard);
+        });
+        
+        // Update card count
+        document.getElementById('cardCount').textContent = `${generatedVocab.length} cards`;
+        
+        // Tự động cập nhật từ cho phần luyện viết nếu đang mở
+        if (document.getElementById('writingContent').style.display === 'block') {
+            getRandomWordForWriting();
+        }
+    }
+
+    // Render error words
+    function renderErrorWords() {
+        const errorList = document.getElementById('errorList');
+        errorList.innerHTML = '';
+        
+        errorWords.forEach((item, index) => {
+            const errorItem = document.createElement('div');
+            errorItem.className = 'mb-3 d-flex justify-content-between align-items-center p-3 bg-white rounded';
+            errorItem.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
+            errorItem.innerHTML = `
+                <div class="fw-bold text-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>${item.word}
+                </div>
+                <button class="btn btn-sm btn-primary" onclick="retrySingleWord(${index})">
+                    <i class="fas fa-redo me-1"></i> Retry
+                </button>
+            `;
+            errorList.appendChild(errorItem);
+        });
+    }
+
+    // Open edit modal
+    function openEditModal(index) {
+        currentEditIndex = index;
+        const word = generatedVocab[index];
+        
+        document.getElementById('editWord').value = word.word || '';
+        document.getElementById('editPhonetic').value = word.phonetic || '';
+        document.getElementById('editPos').value = word.partOfSpeech || '';
+        document.getElementById('editMeaning').value = word.meaning || '';
+        document.getElementById('editExample').value = word.example || '';
+        document.getElementById('editTranslation').value = word.translation || '';
+        document.getElementById('editWordFamily').value = word.wordFamily || '';
+        document.getElementById('editSynonyms').value = word.synonyms || '';
+        
+        document.getElementById('editModal').style.display = 'flex';
+    }
+
+    // Close edit modal
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = 'none';
+        currentEditIndex = -1;
+    }
+
+    // Save edited card
+    function saveEditedCard() {
+        if (currentEditIndex === -1) return;
+        
+        generatedVocab[currentEditIndex] = {
+            word: document.getElementById('editWord').value,
+            phonetic: document.getElementById('editPhonetic').value,
+            partOfSpeech: document.getElementById('editPos').value,
+            meaning: document.getElementById('editMeaning').value,
+            example: document.getElementById('editExample').value,
+            translation: document.getElementById('editTranslation').value,
+            wordFamily: document.getElementById('editWordFamily').value,
+            synonyms: document.getElementById('editSynonyms').value
+        };
+        
+        renderVocabularyCards();
+        closeEditModal();
+        showNotification('Card updated successfully!');
+    }
+
+    // Delete vocab card
+    function deleteVocabCard(index) {
+        if (confirm('Are you sure you want to delete this vocabulary card?')) {
+            generatedVocab.splice(index, 1);
+            renderVocabularyCards();
+            showNotification('Card deleted successfully!');
+        }
+    }
+
+    // Remake vocab card using AI
+    async function remakeVocabCard(index) {
+        const word = generatedVocab[index].word;
+        const apiKey = document.getElementById('apiKey').value;
+        
+        // Show loading on remake button
+        const remakeBtn = document.querySelectorAll('.card-btn.remake')[index];
+        remakeBtn.innerHTML = '<i class="fas fa-sync-alt remake-loading"></i>';
+        
+        try {
+            const vocabData = await fetchVocabData(word, apiKey);
+            generatedVocab[index] = vocabData;
+            renderVocabularyCards();
+            showNotification(`Card for "${word}" has been regenerated successfully!`);
+        } catch (error) {
+            console.error(`Error regenerating card for "${word}":`, error);
+            showNotification(`Failed to regenerate card for "${word}": ${error.message}`, true);
+            // Reset button icon
+            remakeBtn.innerHTML = '<i class="fas fa-sync-alt"></i>';
+        }
+    }
+
+    // Retry single failed word
+    async function retrySingleWord(index) {
+        const word = errorWords[index].word;
+        const apiKey = document.getElementById('apiKey').value;
+        
+        // Remove from error list
+        errorWords.splice(index, 1);
+        renderErrorWords();
+        
+        try {
+            const vocabData = await fetchVocabData(word, apiKey);
+            generatedVocab.push(vocabData); // Thêm vào cuối mảng
+            processingStats.success++;
+            processingStats.processed++;
+            updateStats();
+            renderVocabularyCards();
+            showNotification(`Successfully processed "${word}"`);
+        } catch (error) {
+            console.error(`Error processing word "${word}":`, error);
+            errorWords.push({
+                word: word,
+                error: error.message
+            });
+            renderErrorWords();
+            showNotification(`Failed to process "${word}"`, true);
+        }
+    }
+
+    // Retry all failed words
+    async function retryFailedWords() {
+        if (errorWords.length === 0) return;
+        
+        const apiKey = document.getElementById('apiKey').value;
+        const wordsToRetry = [...errorWords];
+        errorWords = [];
+        renderErrorWords();
+        
+        for (const item of wordsToRetry) {
+            try {
+                const vocabData = await fetchVocabData(item.word, apiKey);
+                generatedVocab.push(vocabData); // Thêm vào cuối mảng
+                processingStats.success++;
+            } catch (error) {
+                console.error(`Error processing word "${item.word}":`, error);
+                errorWords.push({
+                    word: item.word,
+                    error: error.message
+                });
+            }
+            processingStats.processed++;
+            updateStats();
+            updateProgress();
+        }
+        
+        renderVocabularyCards();
+        renderErrorWords();
+        
+        if (errorWords.length > 0) {
+            document.getElementById('errorSection').style.display = 'block';
+        }
+        
+        showNotification(`Retried ${wordsToRetry.length} words with ${errorWords.length} errors`);
+    }
+
+    // Export to CSV
+    function exportToCSV() {
+        if (generatedVocab.length === 0) {
+            showNotification('No vocabulary to export!', true);
+            return;
+        }
+        
+        // Get selected fields
+        const fields = [
+            { id: 'word', export: document.getElementById('exportWord').checked },
+            { id: 'phonetic', export: document.getElementById('exportPhonetic').checked },
+            { id: 'partOfSpeech', export: document.getElementById('exportPos').checked },
+            { id: 'meaning', export: document.getElementById('exportMeaning').checked },
+            { id: 'example', export: document.getElementById('exportExample').checked },
+            { id: 'translation', export: document.getElementById('exportTranslation').checked },
+            { id: 'wordFamily', export: document.getElementById('exportWordFamily').checked },
+            { id: 'synonyms', export: document.getElementById('exportSynonyms').checked }
+        ];
+        
+        // Create CSV header
+        let csvContent = fields.filter(f => f.export).map(f => f.id).join(',') + '\n';
+        
+        // Add data rows
+        generatedVocab.forEach(word => {
+            const row = fields
+                .filter(f => f.export)
+                .map(f => {
+                    // Escape quotes and wrap in quotes
+                    const value = word[f.id] || '';
+                    return `"${value.toString().replace(/"/g, '""')}"`;
+                })
+                .join(',');
+            
+            csvContent += row + '\n';
+        });
+        
+        // Create download link
+        const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'vocabulary_cards.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        showNotification('CSV file exported successfully!');
+    }
+    
+    // Export error words as TXT
+    function exportErrorWords() {
+        if (errorWords.length === 0) return;
+        
+        // Create TXT content with each error word on a new line
+        let txtContent = errorWords.map(item => item.word).join('\n');
+        
+        // Create download link
+        const blob = new Blob([txtContent], {type: 'text/plain;charset=utf-8;'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'vocabulary_errors.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        showNotification('Error list exported as TXT successfully!');
+    }
+
+    // Show notification
+    function showNotification(message, isError = false, isWarning = false) {
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notificationText');
+        
+        notificationText.textContent = message;
+        notification.style.display = 'flex';
+        
+        if (isError) {
+            notification.style.borderLeftColor = 'var(--error-color)';
+            notification.querySelector('i').className = 'fas fa-exclamation-circle';
+        } else if (isWarning) {
+            notification.style.borderLeftColor = 'var(--warning-color)';
+            notification.querySelector('i').className = 'fas fa-exclamation-triangle';
+        } else {
+            notification.style.borderLeftColor = 'var(--success-color)';
+            notification.querySelector('i').className = 'fas fa-check-circle';
+        }
+        
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Initialize the app when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initApp);
+</script>
+    
 </body>
 </html>
