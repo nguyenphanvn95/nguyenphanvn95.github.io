@@ -1014,3 +1014,14 @@ header {
         font-size: 0.8rem;
     }
 }
+
+/* Thêm vào cuối file */
+#back-to-selection {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    margin: 0 auto 20px;
+    display: block;
+}
+
+#back-to-selection:hover {
+    background: linear-gradient(to right, #c0392b, #a93226);
+}

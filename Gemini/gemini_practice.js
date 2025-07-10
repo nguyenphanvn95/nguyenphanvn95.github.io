@@ -52,7 +52,6 @@
         let generatedExercises = [];
         let selectedExercise = null;
         let exercisesData = {}; // Dữ liệu bài tập sẽ được load từ JSON
-
         // Gemini API Endpoint
         const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
         
@@ -150,6 +149,7 @@
         try {
             // Get exercises for selected level and type
             const exercises = exercisesData[selectedLevel][selectedType];
+
             // Reset về trang đầu tiên
             currentPage = 1;
             if (!exercises || exercises.length === 0) {
@@ -158,7 +158,9 @@
             
             generatedExercises = exercises;
             renderExercisesList();
-            
+ // THÊM 2 DÒNG NÀY: Ẩn phần chọn và thay đổi nút
+            document.querySelector('.selection-section').style.display = 'none'; // Ẩn phần chọn level/type
+        startPracticeBtn.style.display = 'none'; // Ẩn nút "Tải Bài Tập"
             // Show exercises list
             exercisesSection.style.display = 'block';
             startPracticeBtn.innerHTML = '<i class="fas fa-play"></i> Tải Bài Tập';
@@ -617,4 +619,30 @@ toggleApiSettingsBtn.addEventListener('click', () => {
     toggleApiSettingsBtn.innerHTML = isVisible 
         ? '<i class="fas fa-cog"></i> Cài đặt Gemini API' 
         : '<i class="fas fa-times"></i> Ẩn Cài đặt API';
+});
+// Thêm sự kiện cho nút Quay lại
+document.getElementById('back-to-selection').addEventListener('click', function() {
+    // Ẩn phần bài tập
+    exercisesSection.style.display = 'none';
+    
+    // Hiển thị phần chọn level và thể loại
+    document.querySelector('.selection-section').style.display = 'grid';
+    
+    // Hiển thị lại nút Tải Bài Tập
+    startPracticeBtn.style.display = 'block';
+    
+    // Reset trạng thái
+    selectedLevel = null;
+    selectedType = null;
+    
+    // Bỏ chọn các option
+    document.querySelectorAll('.option.selected').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    // Vô hiệu hóa nút Tải Bài Tập
+    startPracticeBtn.disabled = true;
+    
+    // Cuộn lên phần đầu
+    document.querySelector('.selection-section').scrollIntoView({ behavior: 'smooth' });
 });
