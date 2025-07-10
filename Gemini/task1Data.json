@@ -1,26 +1,14 @@
 [
     {
         "title": "Biểu đồ đường về dân số",
-        "description": "Biểu đồ đường thể hiện sự thay đổi dân số từ 1950 đến 2020",
+        "description": "Biểu đồ đường thể hiện sự thay đổi dân số từ 1950 đến 2020 [[https://i.imgur.com/abc123.png]]",
         "band": "7.5",
         "englishText": "The line graph illustrates the changes in population from 1950 to 2020. Overall, there was a steady increase in population over the period shown. In 1950, the population stood at around 2.5 billion. By 1980, this figure had risen to approximately 4.4 billion. The most significant growth occurred between 1980 and 2020, when the population nearly doubled, reaching about 7.8 billion by the end of the period."
     },
     {
         "title": "Bảng số liệu về năng lượng",
-        "description": "Bảng so sánh các nguồn năng lượng khác nhau",
+        "description": "Bảng so sánh các nguồn năng lượng khác nhau [[https://i.imgur.com/def456.png]]",
         "band": "8.0",
         "englishText": "The table compares four different energy sources in terms of their cost, efficiency and environmental impact. Coal is shown to be the cheapest option but also the least efficient and most polluting. Solar power, by contrast, is the most expensive but has the highest efficiency and lowest environmental impact. Natural gas and nuclear power fall somewhere in between these two extremes."
-    },
-    {
-        "title": "Biểu đồ cột về xuất khẩu",
-        "description": "Biểu đồ cột so sánh xuất khẩu của 5 quốc gia",
-        "band": "7.0",
-        "englishText": "The bar chart compares the export figures of five different countries in 2022. China had the highest exports at $3.5 trillion, followed by the United States at $2.1 trillion. Germany, Japan and the UK had significantly lower export values, ranging between $1.5 trillion and $800 billion. The data clearly shows China's dominance in global exports."
-    },
-    {
-        "title": "Quy trình sản xuất giấy",
-        "description": "Sơ đồ quy trình sản xuất giấy từ gỗ",
-        "band": "6.5",
-        "englishText": "The diagram illustrates the process of paper production from wood. First, trees are cut down and transported to a mill. The wood is then chipped and mixed with chemicals to create pulp. After being washed and bleached, the pulp is pressed and dried to form paper rolls. Finally, these rolls are cut into various sizes for different uses."
     }
 ]
