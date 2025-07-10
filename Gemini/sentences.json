@@ -212,6 +212,398 @@
       {
         "id": 158,
         "vi": "Tôi viết nhật ký mỗi tối."
+      },
+      {
+        "id": 1860,
+        "vi": "Buổi sáng thường bắt đầu với một tách cà phê nóng"
+      },
+      {
+        "id": 1861,
+        "vi": "Mọi người hay đi bộ ở công viên gần nhà"
+      },
+      {
+        "id": 1862,
+        "vi": "Bữa sáng thường có bánh mì và trứng ốp la"
+      },
+      {
+        "id": 1863,
+        "vi": "Trẻ em thích chơi đùa ngoài sân vào buổi chiều"
+      },
+      {
+        "id": 1864,
+        "vi": "Chợ gần nhà luôn đông đúc vào cuối tuần"
+      },
+      {
+        "id": 1865,
+        "vi": "Cửa hàng tạp hóa mở cửa từ sáng sớm"
+      },
+      {
+        "id": 1866,
+        "vi": "Xe buýt chạy qua khu phố mỗi 15 phút"
+      },
+      {
+        "id": 1867,
+        "vi": "Người dân thường quét dọn sân nhà sạch sẽ"
+      },
+      {
+        "id": 1868,
+        "vi": "Bữa trưa hay có cơm với cá kho"
+      },
+      {
+        "id": 1869,
+        "vi": "Trẻ con thích xem hoạt hình trên tivi"
+      },
+      {
+        "id": 1870,
+        "vi": "Mẹ thường nấu canh rau muống cho cả nhà"
+      },
+      {
+        "id": 1871,
+        "vi": "Ông cụ hay đọc báo vào buổi sáng"
+      },
+      {
+        "id": 1872,
+        "vi": "Chó sủa inh ỏi khi có khách đến"
+      },
+      {
+        "id": 1873,
+        "vi": "Hàng xóm thường trò chuyện vào buổi tối"
+      },
+      {
+        "id": 1874,
+        "vi": "Cây cối trong vườn được tưới nước mỗi ngày"
+      },
+      {
+        "id": 1875,
+        "vi": "Đèn đường sáng rực khi trời tối"
+      },
+      {
+        "id": 1876,
+        "vi": "Mọi người hay đi siêu thị vào cuối tuần"
+      },
+      {
+        "id": 1877,
+        "vi": "Bánh chưng được gói dịp Tết"
+      },
+      {
+        "id": 1878,
+        "vi": "Trẻ em thích ăn kem vào mùa hè"
+      },
+      {
+        "id": 1879,
+        "vi": "Xe máy đỗ đầy trước cổng nhà"
+      },
+      {
+        "id": 1880,
+        "vi": "Bữa tối thường có thịt gà luộc"
+      },
+      {
+        "id": 1881,
+        "vi": "Công viên trở nên yên tĩnh vào ban đêm"
+      },
+      {
+        "id": 1882,
+        "vi": "Mưa rơi khiến đường phố trơn trượt"
+      },
+      {
+        "id": 1883,
+        "vi": "Người lớn hay uống trà sau bữa ăn"
+      },
+      {
+        "id": 1884,
+        "vi": "Trẻ con chạy nhảy khắp sân trường"
+      },
+      {
+        "id": 1885,
+        "vi": "Nhà cửa luôn được dọn dẹp trước Tết"
+      },
+      {
+        "id": 1886,
+        "vi": "Mèo nằm cuộn tròn trên ghế sofa"
+      },
+      {
+        "id": 1887,
+        "vi": "Chợ đêm bán nhiều đồ ăn vặt"
+      },
+      {
+        "id": 1888,
+        "vi": "Người dân thích đi chùa vào ngày rằm"
+      },
+      {
+        "id": 1889,
+        "vi": "Gà gáy vang vào sáng sớm"
+      },
+      {
+        "id": 1890,
+        "vi": "Bàn ăn được bày sẵn trước giờ cơm"
+      },
+      {
+        "id": 1891,
+        "vi": "Trẻ em hay chơi đá bóng ở sân trường"
+      },
+      {
+        "id": 1892,
+        "vi": "Cửa sổ được mở để đón gió mát"
+      },
+      {
+        "id": 1893,
+        "vi": "Mọi người thường đi ngủ trước 10 giờ tối"
+      },
+      {
+        "id": 1894,
+        "vi": "Xe đạp được dùng để đi học"
+      },
+      {
+        "id": 1895,
+        "vi": "Cây hoa trong vườn nở rộ vào mùa xuân"
+      },
+      {
+        "id": 1896,
+        "vi": "Bếp lửa cháy đỏ khi nấu cơm"
+      },
+      {
+        "id": 1897,
+        "vi": "Trẻ con thích ăn bánh ngọt"
+      },
+      {
+        "id": 1898,
+        "vi": "Người lớn hay xem tin tức trên tivi"
+      },
+      {
+        "id": 1899,
+        "vi": "Đường phố đông đúc vào giờ tan tầm"
+      },
+      {
+        "id": 1900,
+        "vi": "Chợ cá luôn ồn ào vào buổi sáng"
+      },
+      {
+        "id": 1901,
+        "vi": "Mọi người hay mặc áo ấm khi trời lạnh"
+      },
+      {
+        "id": 1902,
+        "vi": "Nhà hàng xóm tổ chức tiệc sinh nhật"
+      },
+      {
+        "id": 1903,
+        "vi": "Trẻ em thích vẽ tranh bằng bút chì màu"
+      },
+      {
+        "id": 1904,
+        "vi": "Đồng hồ báo thức kêu vang mỗi sáng"
+      },
+      {
+        "id": 1905,
+        "vi": "Cửa hàng bán hoa tươi rất đông khách"
+      },
+      {
+        "id": 1906,
+        "vi": "Người dân thường đi bộ để tập thể dục"
+      },
+      {
+        "id": 1907,
+        "vi": "Bữa ăn gia đình luôn rộn ràng tiếng cười"
+      },
+      {
+        "id": 1908,
+        "vi": "Trẻ con thích thả diều vào buổi chiều"
+      },
+      {
+        "id": 1909,
+        "vi": "Mưa nhỏ làm ướt áo người đi đường"
+      },
+      {
+        "id": 1910,
+        "vi": "Cửa hiệu cắt tóc luôn bận rộn vào cuối tuần"
+      },
+      {
+        "id": 1911,
+        "vi": "Người lớn hay kể chuyện cho trẻ con nghe"
+      },
+      {
+        "id": 1912,
+        "vi": "Xe tải chở hàng qua phố vào ban đêm"
+      },
+      {
+        "id": 1913,
+        "vi": "Chợ quê bán nhiều rau củ tươi"
+      },
+      {
+        "id": 1914,
+        "vi": "Trẻ em thích chơi trò đuổi bắt"
+      },
+      {
+        "id": 1915,
+        "vi": "Nhà bếp luôn thơm mùi thức ăn"
+      },
+      {
+        "id": 1916,
+        "vi": "Mọi người hay đi dạo sau bữa tối"
+      },
+      {
+        "id": 1917,
+        "vi": "Cây bàng trước sân trường rụng lá"
+      },
+      {
+        "id": 1918,
+        "vi": "Người dân thích uống nước dừa mát lạnh"
+      },
+      {
+        "id": 1919,
+        "vi": "Trẻ con hay hát bài đồng dao"
+      },
+      {
+        "id": 1920,
+        "vi": "Đường làng yên bình vào ban đêm"
+      },
+      {
+        "id": 1921,
+        "vi": "Cửa hàng quần áo giảm giá vào dịp lễ"
+      },
+      {
+        "id": 1922,
+        "vi": "Mọi người thường xuyên quét sân nhà"
+      },
+      {
+        "id": 1923,
+        "vi": "Trẻ em thích ăn kẹo dẻo"
+      },
+      {
+        "id": 1924,
+        "vi": "Bầu trời xanh trong vào buổi sáng"
+      },
+      {
+        "id": 1925,
+        "vi": "Người lớn hay chơi cờ tướng ở công viên"
+      },
+      {
+        "id": 1926,
+        "vi": "Chợ hoa tấp nập người mua bán"
+      },
+      {
+        "id": 1927,
+        "vi": "Trẻ con thích chơi với bong bóng"
+      },
+      {
+        "id": 1928,
+        "vi": "Nhà hàng luôn đông khách vào buổi tối"
+      },
+      {
+        "id": 1929,
+        "vi": "Mọi người hay đi xe đạp vào cuối tuần"
+      },
+      {
+        "id": 1930,
+        "vi": "Cây xoài trong vườn sai quả"
+      },
+      {
+        "id": 1931,
+        "vi": "Trẻ em thích nghe bà kể chuyện cổ tích"
+      },
+      {
+        "id": 1932,
+        "vi": "Đường phố sáng đèn khi đêm xuống"
+      },
+      {
+        "id": 1933,
+        "vi": "Người dân thường mua báo đọc hàng ngày"
+      },
+      {
+        "id": 1934,
+        "vi": "Bữa cơm gia đình luôn có rau xanh"
+      },
+      {
+        "id": 1935,
+        "vi": "Trẻ con thích chạy nhảy trong sân"
+      },
+      {
+        "id": 1936,
+        "vi": "Chợ đêm sáng rực ánh đèn"
+      },
+      {
+        "id": 1937,
+        "vi": "Mọi người hay đi chùa cầu may"
+      },
+      {
+        "id": 1938,
+        "vi": "Xe máy chạy qua đường làng bụi mù"
+      },
+      {
+        "id": 1939,
+        "vi": "Trẻ em thích ăn bánh bao"
+      },
+      {
+        "id": 1940,
+        "vi": "Nhà cửa được trang trí đẹp vào dịp Tết"
+      },
+      {
+        "id": 1941,
+        "vi": "Người lớn hay nghe radio buổi sáng"
+      },
+      {
+        "id": 1942,
+        "vi": "Cây cối được cắt tỉa gọn gàng"
+      },
+      {
+        "id": 1943,
+        "vi": "Trẻ con thích chơi trò nhảy dây"
+      },
+      {
+        "id": 1944,
+        "vi": "Đường phố yên ắng vào sáng sớm"
+      },
+      {
+        "id": 1945,
+        "vi": "Mọi người thường mua trái cây ở chợ"
+      },
+      {
+        "id": 1946,
+        "vi": "Bữa trưa hay có món canh chua"
+      },
+      {
+        "id": 1947,
+        "vi": "Trẻ em thích vẽ hình ngôi nhà"
+      },
+      {
+        "id": 1948,
+        "vi": "Cửa hàng bánh mì luôn thơm phức"
+      },
+      {
+        "id": 1949,
+        "vi": "Người dân hay đi bộ quanh hồ"
+      },
+      {
+        "id": 1950,
+        "vi": "Chợ chiều bán nhiều đồ ăn ngon"
+      },
+      {
+        "id": 1951,
+        "vi": "Trẻ con thích chơi với xe đồ chơi"
+      },
+      {
+        "id": 1952,
+        "vi": "Nhà bếp luôn sạch sẽ trước khi nấu ăn"
+      },
+      {
+        "id": 1953,
+        "vi": "Mọi người hay uống trà xanh buổi chiều"
+      },
+      {
+        "id": 1954,
+        "vi": "Cây hoa giấy nở đỏ rực trước nhà"
+      },
+      {
+        "id": 1955,
+        "vi": "Trẻ em thích chơi trò trốn tìm"
+      },
+      {
+        "id": 1956,
+        "vi": "Đường phố nhộn nhịp vào giờ cao điểm"
+      },
+      {
+        "id": 1957,
+        "vi": "Người lớn hay đọc sách trước khi ngủ."
       }
     ],
     "transportation": [
@@ -426,6 +818,406 @@
       {
         "id": 309,
         "vi": "Tôi dừng xe khi có trẻ em qua đường."
+      },
+      {
+        "id": 2154,
+        "vi": "Xe buýt dừng ở trạm mỗi sáng"
+      },
+      {
+        "id": 2155,
+        "vi": "Đường phố đông đúc vào giờ đi làm"
+      },
+      {
+        "id": 2156,
+        "vi": "Xe máy chạy nhanh trên đường lớn"
+      },
+      {
+        "id": 2157,
+        "vi": "Đèn giao thông chuyển đỏ ở ngã tư"
+      },
+      {
+        "id": 2158,
+        "vi": "Người dân đi bộ qua vạch kẻ đường"
+      },
+      {
+        "id": 2159,
+        "vi": "Xe đạp được dùng để đi học"
+      },
+      {
+        "id": 2160,
+        "vi": "Ô tô đỗ bên lề đường"
+      },
+      {
+        "id": 2161,
+        "vi": "Mọi người đội mũ bảo hiểm khi lái xe"
+      },
+      {
+        "id": 2162,
+        "vi": "Đường làng yên tĩnh vào ban đêm"
+      },
+      {
+        "id": 2163,
+        "vi": "Xe tải chở hàng qua cầu"
+      },
+      {
+        "id": 2164,
+        "vi": "Người đi đường dừng lại khi đèn đỏ"
+      },
+      {
+        "id": 2165,
+        "vi": "Xe buýt chở học sinh đến trường"
+      },
+      {
+        "id": 2166,
+        "vi": "Đường phố sạch sẽ sau khi quét"
+      },
+      {
+        "id": 2167,
+        "vi": "Xe máy được rửa ở tiệm gần nhà"
+      },
+      {
+        "id": 2168,
+        "vi": "Người dân đi bộ trên vỉa hè"
+      },
+      {
+        "id": 2169,
+        "vi": "Ô tô chạy chậm ở khu đông người"
+      },
+      {
+        "id": 2170,
+        "vi": "Đèn đường sáng vào ban đêm"
+      },
+      {
+        "id": 2171,
+        "vi": "Xe đạp được khóa cẩn thận"
+      },
+      {
+        "id": 2172,
+        "vi": "Mọi người chờ xe buýt ở trạm"
+      },
+      {
+        "id": 2173,
+        "vi": "Đường phố ướt sau cơn mưa"
+      },
+      {
+        "id": 2174,
+        "vi": "Xe máy dừng ở bãi đỗ xe"
+      },
+      {
+        "id": 2175,
+        "vi": "Người đi đường mang áo mưa"
+      },
+      {
+        "id": 2176,
+        "vi": "Ô tô kêu còi khi đường đông"
+      },
+      {
+        "id": 2177,
+        "vi": "Xe buýt chạy đúng giờ"
+      },
+      {
+        "id": 2178,
+        "vi": "Đường phố có nhiều cây xanh"
+      },
+      {
+        "id": 2179,
+        "vi": "Xe máy đi chậm ở ngõ nhỏ"
+      },
+      {
+        "id": 2180,
+        "vi": "Người dân qua đường cẩn thận"
+      },
+      {
+        "id": 2181,
+        "vi": "Đèn giao thông nhấp nháy vào ban đêm"
+      },
+      {
+        "id": 2182,
+        "vi": "Xe đạp được sơn màu mới"
+      },
+      {
+        "id": 2183,
+        "vi": "Ô tô chở hàng ra chợ"
+      },
+      {
+        "id": 2184,
+        "vi": "Mọi người đi bộ qua cầu vượt"
+      },
+      {
+        "id": 2185,
+        "vi": "Xe máy chạy qua đường làng"
+      },
+      {
+        "id": 2186,
+        "vi": "Đường phố sáng đèn khi tối"
+      },
+      {
+        "id": 2187,
+        "vi": "Người đi đường đội mũ bảo hiểm"
+      },
+      {
+        "id": 2188,
+        "vi": "Xe buýt dừng ở trạm lớn"
+      },
+      {
+        "id": 2189,
+        "vi": "Ô tô chạy trên đường cao tốc"
+      },
+      {
+        "id": 2190,
+        "vi": "Đường phố yên tĩnh vào sáng sớm"
+      },
+      {
+        "id": 2191,
+        "vi": "Xe máy được sửa ở tiệm"
+      },
+      {
+        "id": 2192,
+        "vi": "Người dân chờ đèn xanh để qua đường"
+      },
+      {
+        "id": 2193,
+        "vi": "Xe đạp đi trên đường nhỏ"
+      },
+      {
+        "id": 2194,
+        "vi": "Ô tô đỗ dưới bóng cây"
+      },
+      {
+        "id": 2195,
+        "vi": "Đường phố đông vào giờ tan tầm"
+      },
+      {
+        "id": 2196,
+        "vi": "Xe máy chạy qua cầu nhỏ"
+      },
+      {
+        "id": 2197,
+        "vi": "Người đi đường nhìn biển báo"
+      },
+      {
+        "id": 2198,
+        "vi": "Xe buýt chở khách ra bến"
+      },
+      {
+        "id": 2199,
+        "vi": "Đường phố sạch sẽ vào buổi sáng"
+      },
+      {
+        "id": 2200,
+        "vi": "Ô tô dừng ở trạm xăng"
+      },
+      {
+        "id": 2201,
+        "vi": "Xe máy đi chậm khi đường trơn"
+      },
+      {
+        "id": 2202,
+        "vi": "Người dân đi bộ trên lối đi"
+      },
+      {
+        "id": 2203,
+        "vi": "Đèn giao thông hoạt động cả ngày"
+      },
+      {
+        "id": 2204,
+        "vi": "Xe đạp được để trong sân"
+      },
+      {
+        "id": 2205,
+        "vi": "Ô tô chạy qua đường hẹp"
+      },
+      {
+        "id": 2206,
+        "vi": "Người đi đường mang ô khi mưa"
+      },
+      {
+        "id": 2207,
+        "vi": "Xe buýt đến trạm đúng giờ"
+      },
+      {
+        "id": 2208,
+        "vi": "Đường phố có nhiều xe cộ"
+      },
+      {
+        "id": 2209,
+        "vi": "Xe máy được kiểm tra lốp"
+      },
+      {
+        "id": 2210,
+        "vi": "Người dân qua đường ở ngã ba"
+      },
+      {
+        "id": 2211,
+        "vi": "Ô tô kêu còi ở ngã tư"
+      },
+      {
+        "id": 2212,
+        "vi": "Đường phố sáng rõ vào ban đêm"
+      },
+      {
+        "id": 2213,
+        "vi": "Xe đạp đi trên vỉa hè"
+      },
+      {
+        "id": 2214,
+        "vi": "Người đi đường dừng ở đèn đỏ"
+      },
+      {
+        "id": 2215,
+        "vi": "Xe buýt chở khách vào thành phố"
+      },
+      {
+        "id": 2216,
+        "vi": "Ô tô đỗ ở bãi lớn"
+      },
+      {
+        "id": 2217,
+        "vi": "Đường phố đông người vào cuối tuần"
+      },
+      {
+        "id": 2218,
+        "vi": "Xe máy chạy qua khu chợ"
+      },
+      {
+        "id": 2219,
+        "vi": "Người dân đội mũ khi lái xe"
+      },
+      {
+        "id": 2220,
+        "vi": "Đèn giao thông chuyển xanh đúng lúc"
+      },
+      {
+        "id": 2221,
+        "vi": "Xe đạp được buộc dây khóa"
+      },
+      {
+        "id": 2222,
+        "vi": "Ô tô chạy chậm ở khu dân cư"
+      },
+      {
+        "id": 2223,
+        "vi": "Người đi đường nhìn gương chiếu hậu"
+      },
+      {
+        "id": 2224,
+        "vi": "Xe buýt dừng ở trạm nhỏ"
+      },
+      {
+        "id": 2225,
+        "vi": "Đường phố ướt át sau mưa lớn"
+      },
+      {
+        "id": 2226,
+        "vi": "Xe máy được lau sạch bụi"
+      },
+      {
+        "id": 2227,
+        "vi": "Người dân đi bộ qua đường hầm"
+      },
+      {
+        "id": 2228,
+        "vi": "Ô tô chạy trên đường chính"
+      },
+      {
+        "id": 2229,
+        "vi": "Đường phố có biển báo rõ ràng"
+      },
+      {
+        "id": 2230,
+        "vi": "Xe đạp đi qua công viên"
+      },
+      {
+        "id": 2231,
+        "vi": "Người đi đường mang áo mưa màu"
+      },
+      {
+        "id": 2232,
+        "vi": "Xe buýt chở khách đi xa"
+      },
+      {
+        "id": 2233,
+        "vi": "Ô tô dừng ở lề đường"
+      },
+      {
+        "id": 2234,
+        "vi": "Đường phố yên bình vào sáng sớm"
+      },
+      {
+        "id": 2235,
+        "vi": "Xe máy chạy qua ngõ nhỏ"
+      },
+      {
+        "id": 2236,
+        "vi": "Người dân qua đường ở vạch trắng"
+      },
+      {
+        "id": 2237,
+        "vi": "Đèn giao thông nhấp nháy ban đêm"
+      },
+      {
+        "id": 2238,
+        "vi": "Xe đạp được để ở góc nhà"
+      },
+      {
+        "id": 2239,
+        "vi": "Ô tô chạy qua cầu lớn"
+      },
+      {
+        "id": 2240,
+        "vi": "Người đi đường cẩn thận khi trời mưa"
+      },
+      {
+        "id": 2241,
+        "vi": "Xe buýt đến bến đúng giờ"
+      },
+      {
+        "id": 2242,
+        "vi": "Đường phố có nhiều xe máy"
+      },
+      {
+        "id": 2243,
+        "vi": "Xe đạp được sửa lốp"
+      },
+      {
+        "id": 2244,
+        "vi": "Người dân nhìn biển chỉ đường"
+      },
+      {
+        "id": 2245,
+        "vi": "Ô tô kêu còi khi đường tắc"
+      },
+      {
+        "id": 2246,
+        "vi": "Đường phố sáng đèn vào tối"
+      },
+      {
+        "id": 2247,
+        "vi": "Xe máy chạy chậm ở khu đông"
+      },
+      {
+        "id": 2248,
+        "vi": "Người đi đường đội mũ bảo hiểm"
+      },
+      {
+        "id": 2249,
+        "vi": "Xe buýt chở học sinh về nhà"
+      },
+      {
+        "id": 2250,
+        "vi": "Ô tô đỗ ở bãi gửi xe"
+      },
+      {
+        "id": 2251,
+        "vi": "Đường phố sạch sẽ mỗi sáng"
+      },
+      {
+        "id": 2252,
+        "vi": "Xe máy được kiểm tra phanh"
+      },
+      {
+        "id": 2253,
+        "vi": "Người dân đi bộ qua cầu vượt."
       }
     ],
     "education": [
@@ -640,6 +1432,406 @@
       {
         "id": 458,
         "vi": "Tôi xem video học tiếng Anh."
+      },
+      {
+        "id": 2447,
+        "vi": "Học sinh đi bộ đến trường mỗi sáng"
+      },
+      {
+        "id": 2448,
+        "vi": "Lớp học bắt đầu lúc 7 giờ"
+      },
+      {
+        "id": 2449,
+        "vi": "Giáo viên viết bài trên bảng đen"
+      },
+      {
+        "id": 2450,
+        "vi": "Sân trường đầy học sinh giờ ra chơi"
+      },
+      {
+        "id": 2451,
+        "vi": "Sách vở được xếp gọn trên bàn"
+      },
+      {
+        "id": 2452,
+        "vi": "Trẻ em thích vẽ tranh trong lớp"
+      },
+      {
+        "id": 2453,
+        "vi": "Thầy giáo kể chuyện cho học sinh nghe"
+      },
+      {
+        "id": 2454,
+        "vi": "Bàn ghế trong lớp được lau sạch"
+      },
+      {
+        "id": 2455,
+        "vi": "Học sinh mặc đồng phục màu trắng"
+      },
+      {
+        "id": 2456,
+        "vi": "Thư viện trường có nhiều sách hay"
+      },
+      {
+        "id": 2457,
+        "vi": "Cây xanh trong sân trường tạo bóng mát"
+      },
+      {
+        "id": 2458,
+        "vi": "Trống trường vang lên báo giờ học"
+      },
+      {
+        "id": 2459,
+        "vi": "Học sinh làm bài tập về nhà"
+      },
+      {
+        "id": 2460,
+        "vi": "Giáo viên kiểm tra vở của học sinh"
+      },
+      {
+        "id": 2461,
+        "vi": "Lớp học treo nhiều tranh ảnh đẹp"
+      },
+      {
+        "id": 2462,
+        "vi": "Sân trường được quét sạch mỗi ngày"
+      },
+      {
+        "id": 2463,
+        "vi": "Học sinh chơi đá bóng giờ thể dục"
+      },
+      {
+        "id": 2464,
+        "vi": "Bảng đen được lau sau mỗi tiết"
+      },
+      {
+        "id": 2465,
+        "vi": "Giáo viên dạy học sinh đọc thơ"
+      },
+      {
+        "id": 2466,
+        "vi": "Thư viện mở cửa vào buổi chiều"
+      },
+      {
+        "id": 2467,
+        "vi": "Học sinh mang cặp sách nặng"
+      },
+      {
+        "id": 2468,
+        "vi": "Cây bàng trước lớp rụng lá"
+      },
+      {
+        "id": 2469,
+        "vi": "Trẻ em thích hát trong lớp nhạc"
+      },
+      {
+        "id": 2470,
+        "vi": "Giáo viên viết chữ trên bảng trắng"
+      },
+      {
+        "id": 2471,
+        "vi": "Học sinh xếp hàng trước giờ học"
+      },
+      {
+        "id": 2472,
+        "vi": "Sân trường đông vui khi tan học"
+      },
+      {
+        "id": 2473,
+        "vi": "Sách giáo khoa được phát đầu năm"
+      },
+      {
+        "id": 2474,
+        "vi": "Giáo viên dạy học sinh cách tính toán"
+      },
+      {
+        "id": 2475,
+        "vi": "Lớp học có cửa sổ lớn"
+      },
+      {
+        "id": 2476,
+        "vi": "Học sinh ăn sáng trước khi đến trường"
+      },
+      {
+        "id": 2477,
+        "vi": "Thầy giáo kiểm tra bài tập nhóm"
+      },
+      {
+        "id": 2478,
+        "vi": "Sân trường có cột cờ cao"
+      },
+      {
+        "id": 2479,
+        "vi": "Học sinh vẽ hình trong vở"
+      },
+      {
+        "id": 2480,
+        "vi": "Giáo viên kể chuyện cổ tích"
+      },
+      {
+        "id": 2481,
+        "vi": "Thư viện có bàn đọc sách"
+      },
+      {
+        "id": 2482,
+        "vi": "Học sinh mặc áo đồng phục sạch"
+      },
+      {
+        "id": 2483,
+        "vi": "Cây xanh được tưới nước mỗi ngày"
+      },
+      {
+        "id": 2484,
+        "vi": "Trống trường kêu vang giờ ra chơi"
+      },
+      {
+        "id": 2485,
+        "vi": "Học sinh làm bài kiểm tra"
+      },
+      {
+        "id": 2486,
+        "vi": "Giáo viên dạy cách viết chữ đẹp"
+      },
+      {
+        "id": 2487,
+        "vi": "Lớp học được trang trí tranh"
+      },
+      {
+        "id": 2488,
+        "vi": "Sân trường sạch sẽ vào buổi sáng"
+      },
+      {
+        "id": 2489,
+        "vi": "Học sinh chơi nhảy dây giờ thể dục"
+      },
+      {
+        "id": 2490,
+        "vi": "Bảng trắng được dùng để dạy học"
+      },
+      {
+        "id": 2491,
+        "vi": "Giáo viên hướng dẫn cách làm bài"
+      },
+      {
+        "id": 2492,
+        "vi": "Thư viện có nhiều sách truyện"
+      },
+      {
+        "id": 2493,
+        "vi": "Học sinh mang nước uống đến trường"
+      },
+      {
+        "id": 2494,
+        "vi": "Cây hoa trong sân trường nở đẹp"
+      },
+      {
+        "id": 2495,
+        "vi": "Trẻ em thích học bài hát mới"
+      },
+      {
+        "id": 2496,
+        "vi": "Giáo viên kiểm tra bài đọc"
+      },
+      {
+        "id": 2497,
+        "vi": "Học sinh đứng chào cờ mỗi sáng"
+      },
+      {
+        "id": 2498,
+        "vi": "Sân trường yên tĩnh sau giờ học"
+      },
+      {
+        "id": 2499,
+        "vi": "Sách vở được để trong cặp"
+      },
+      {
+        "id": 2500,
+        "vi": "Giáo viên dạy học sinh đếm số"
+      },
+      {
+        "id": 2501,
+        "vi": "Lớp học có quạt trần mát"
+      },
+      {
+        "id": 2502,
+        "vi": "Học sinh làm bài tập nhóm"
+      },
+      {
+        "id": 2503,
+        "vi": "Thầy giáo kể chuyện lịch sử"
+      },
+      {
+        "id": 2504,
+        "vi": "Thư viện trường luôn yên tĩnh"
+      },
+      {
+        "id": 2505,
+        "vi": "Học sinh mặc đồng phục chỉnh tề"
+      },
+      {
+        "id": 2506,
+        "vi": "Cây cối trong trường được chăm sóc"
+      },
+      {
+        "id": 2507,
+        "vi": "Trống trường báo hiệu giờ vào lớp"
+      },
+      {
+        "id": 2508,
+        "vi": "Học sinh làm bài tập toán"
+      },
+      {
+        "id": 2509,
+        "vi": "Giáo viên dạy cách vẽ hình"
+      },
+      {
+        "id": 2510,
+        "vi": "Lớp học treo bản đồ lớn"
+      },
+      {
+        "id": 2511,
+        "vi": "Sân trường đông đúc giờ tan học"
+      },
+      {
+        "id": 2512,
+        "vi": "Học sinh chơi cầu lông giờ thể dục"
+      },
+      {
+        "id": 2513,
+        "vi": "Bảng đen được lau sạch mỗi ngày"
+      },
+      {
+        "id": 2514,
+        "vi": "Giáo viên dạy học sinh hát dân ca"
+      },
+      {
+        "id": 2515,
+        "vi": "Thư viện có ghế ngồi thoải mái"
+      },
+      {
+        "id": 2516,
+        "vi": "Học sinh mang bút chì đến lớp"
+      },
+      {
+        "id": 2517,
+        "vi": "Cây xanh tạo bóng mát cho sân trường"
+      },
+      {
+        "id": 2518,
+        "vi": "Trẻ em thích kể chuyện trong lớp"
+      },
+      {
+        "id": 2519,
+        "vi": "Giáo viên kiểm tra bài viết"
+      },
+      {
+        "id": 2520,
+        "vi": "Học sinh xếp hàng vào lớp học"
+      },
+      {
+        "id": 2521,
+        "vi": "Sân trường có nhiều trò chơi"
+      },
+      {
+        "id": 2522,
+        "vi": "Sách giáo khoa được giữ sạch sẽ"
+      },
+      {
+        "id": 2523,
+        "vi": "Giáo viên dạy cách đọc sách"
+      },
+      {
+        "id": 2524,
+        "vi": "Lớp học có ánh sáng tốt"
+      },
+      {
+        "id": 2525,
+        "vi": "Học sinh làm bài kiểm tra ngắn"
+      },
+      {
+        "id": 2526,
+        "vi": "Thầy giáo hướng dẫn cách học tốt"
+      },
+      {
+        "id": 2527,
+        "vi": "Thư viện mở cửa cho học sinh"
+      },
+      {
+        "id": 2528,
+        "vi": "Học sinh mặc áo đồng phục mới"
+      },
+      {
+        "id": 2529,
+        "vi": "Cây hoa được trồng quanh trường"
+      },
+      {
+        "id": 2530,
+        "vi": "Trống trường kêu vào giờ nghỉ"
+      },
+      {
+        "id": 2531,
+        "vi": "Học sinh làm bài tập văn"
+      },
+      {
+        "id": 2532,
+        "vi": "Giáo viên dạy cách viết đoạn văn"
+      },
+      {
+        "id": 2533,
+        "vi": "Lớp học có bàn ghế ngay ngắn"
+      },
+      {
+        "id": 2534,
+        "vi": "Sân trường được quét sạch buổi chiều"
+      },
+      {
+        "id": 2535,
+        "vi": "Học sinh chơi trò kéo co"
+      },
+      {
+        "id": 2536,
+        "vi": "Bảng trắng được viết bằng bút lông"
+      },
+      {
+        "id": 2537,
+        "vi": "Giáo viên kể chuyện cho trẻ nghe"
+      },
+      {
+        "id": 2538,
+        "vi": "Thư viện có sách khoa học"
+      },
+      {
+        "id": 2539,
+        "vi": "Học sinh mang thước kẻ đến lớp"
+      },
+      {
+        "id": 2540,
+        "vi": "Cây xanh trong trường cao lớn"
+      },
+      {
+        "id": 2541,
+        "vi": "Trẻ em thích học vẽ tranh"
+      },
+      {
+        "id": 2542,
+        "vi": "Giáo viên kiểm tra bài tập về nhà"
+      },
+      {
+        "id": 2543,
+        "vi": "Học sinh đứng hát quốc ca"
+      },
+      {
+        "id": 2544,
+        "vi": "Sân trường sạch sẽ vào sáng sớm"
+      },
+      {
+        "id": 2545,
+        "vi": "Sách vở được xếp gọn trong cặp"
+      },
+      {
+        "id": 2546,
+        "vi": "Giáo viên dạy cách học thuộc bài."
       }
     ],
     "public-services": [
@@ -854,6 +2046,406 @@
       {
         "id": 608,
         "vi": "Tôi được hướng dẫn cài app dịch vụ công."
+      },
+      {
+        "id": 2743,
+        "vi": "Xe buýt dừng ở trạm mỗi sáng"
+      },
+      {
+        "id": 2744,
+        "vi": "Đèn đường sáng lên khi trời tối"
+      },
+      {
+        "id": 2745,
+        "vi": "Nhân viên vệ sinh quét đường phố sạch sẽ"
+      },
+      {
+        "id": 2746,
+        "vi": "Nước máy chảy mạnh vào buổi sáng"
+      },
+      {
+        "id": 2747,
+        "vi": "Bệnh viện mở cửa cả ngày"
+      },
+      {
+        "id": 2748,
+        "vi": "Bưu điện nhận thư từ sáng sớm"
+      },
+      {
+        "id": 2749,
+        "vi": "Công viên được tưới cây mỗi ngày"
+      },
+      {
+        "id": 2750,
+        "vi": "Xe rác đi qua khu phố mỗi chiều"
+      },
+      {
+        "id": 2751,
+        "vi": "Điện được cung cấp liên tục"
+      },
+      {
+        "id": 2752,
+        "vi": "Trạm y tế có bác sĩ trực"
+      },
+      {
+        "id": 2753,
+        "vi": "Chợ được dọn sạch sau giờ bán"
+      },
+      {
+        "id": 2754,
+        "vi": "Xe buýt chở khách đến bến"
+      },
+      {
+        "id": 2755,
+        "vi": "Đèn đường chiếu sáng khu dân cư"
+      },
+      {
+        "id": 2756,
+        "vi": "Nhân viên vệ sinh thu gom rác đúng giờ"
+      },
+      {
+        "id": 2757,
+        "vi": "Nước sạch được cấp cho mọi nhà"
+      },
+      {
+        "id": 2758,
+        "vi": "Bệnh viện có giường cho bệnh nhân"
+      },
+      {
+        "id": 2759,
+        "vi": "Bưu điện gửi thư nhanh chóng"
+      },
+      {
+        "id": 2760,
+        "vi": "Công viên có ghế đá sạch"
+      },
+      {
+        "id": 2761,
+        "vi": "Xe rác đến khu phố mỗi ngày"
+      },
+      {
+        "id": 2762,
+        "vi": "Điện sáng cả đêm ở đường lớn"
+      },
+      {
+        "id": 2763,
+        "vi": "Trạm y tế cấp thuốc miễn phí"
+      },
+      {
+        "id": 2764,
+        "vi": "Chợ có người dọn dẹp"
+      },
+      {
+        "id": 2765,
+        "vi": "Xe buýt chạy đúng giờ"
+      },
+      {
+        "id": 2766,
+        "vi": "Đèn đường được sửa khi hỏng"
+      },
+      {
+        "id": 2767,
+        "vi": "Rác được thu gom vào thùng"
+      },
+      {
+        "id": 2768,
+        "vi": "Nước máy chảy đều cả ngày"
+      },
+      {
+        "id": 2769,
+        "vi": "Bệnh viện đón bệnh nhân khẩn cấp"
+      },
+      {
+        "id": 2770,
+        "vi": "Bưu điện nhận gói hàng lớn"
+      },
+      {
+        "id": 2771,
+        "vi": "Công viên có cây xanh mát"
+      },
+      {
+        "id": 2772,
+        "vi": "Xe rác đi qua ngõ nhỏ"
+      },
+      {
+        "id": 2773,
+        "vi": "Điện không bị cắt vào ban đêm"
+      },
+      {
+        "id": 2774,
+        "vi": "Trạm y tế kiểm tra sức khỏe"
+      },
+      {
+        "id": 2775,
+        "vi": "Chợ sạch sẽ vào buổi sáng"
+      },
+      {
+        "id": 2776,
+        "vi": "Xe buýt có ghế ngồi thoải mái"
+      },
+      {
+        "id": 2777,
+        "vi": "Đèn đường sáng rõ ban đêm"
+      },
+      {
+        "id": 2778,
+        "vi": "Nhân viên vệ sinh làm việc chăm chỉ"
+      },
+      {
+        "id": 2779,
+        "vi": "Nước sạch được kiểm tra thường xuyên"
+      },
+      {
+        "id": 2780,
+        "vi": "Bệnh viện có máy móc hiện đại"
+      },
+      {
+        "id": 2781,
+        "vi": "Bưu điện mở cửa đến chiều"
+      },
+      {
+        "id": 2782,
+        "vi": "Công viên có lối đi sạch"
+      },
+      {
+        "id": 2783,
+        "vi": "Xe rác thu gom rác tái chế"
+      },
+      {
+        "id": 2784,
+        "vi": "Điện được cung cấp ổn định"
+      },
+      {
+        "id": 2785,
+        "vi": "Trạm y tế tư vấn sức khỏe"
+      },
+      {
+        "id": 2786,
+        "vi": "Chợ được quét dọn mỗi ngày"
+      },
+      {
+        "id": 2787,
+        "vi": "Xe buýt chở học sinh đi học"
+      },
+      {
+        "id": 2788,
+        "vi": "Đèn đường sáng ở ngã tư"
+      },
+      {
+        "id": 2789,
+        "vi": "Rác được phân loại trước khi thu"
+      },
+      {
+        "id": 2790,
+        "vi": "Nước máy chảy mạnh vào buổi tối"
+      },
+      {
+        "id": 2791,
+        "vi": "Bệnh viện có phòng cấp cứu"
+      },
+      {
+        "id": 2792,
+        "vi": "Bưu điện gửi thư đi xa"
+      },
+      {
+        "id": 2793,
+        "vi": "Công viên có khu vui chơi"
+      },
+      {
+        "id": 2794,
+        "vi": "Xe rác đến đúng giờ quy định"
+      },
+      {
+        "id": 2795,
+        "vi": "Điện sáng ở khu phố nhỏ"
+      },
+      {
+        "id": 2796,
+        "vi": "Trạm y tế có y tá trực"
+      },
+      {
+        "id": 2797,
+        "vi": "Chợ có thùng rác lớn"
+      },
+      {
+        "id": 2798,
+        "vi": "Xe buýt chạy qua cầu lớn"
+      },
+      {
+        "id": 2799,
+        "vi": "Đèn đường được kiểm tra định kỳ"
+      },
+      {
+        "id": 2800,
+        "vi": "Nhân viên vệ sinh quét vỉa hè"
+      },
+      {
+        "id": 2801,
+        "vi": "Nước sạch được cấp cho trường học"
+      },
+      {
+        "id": 2802,
+        "vi": "Bệnh viện có bác sĩ giỏi"
+      },
+      {
+        "id": 2803,
+        "vi": "Bưu điện nhận thư quốc tế"
+      },
+      {
+        "id": 2804,
+        "vi": "Công viên có hồ nước đẹp"
+      },
+      {
+        "id": 2805,
+        "vi": "Xe rác đi qua đường làng"
+      },
+      {
+        "id": 2806,
+        "vi": "Điện không bị mất vào ban ngày"
+      },
+      {
+        "id": 2807,
+        "vi": "Trạm y tế cấp cứu kịp thời"
+      },
+      {
+        "id": 2808,
+        "vi": "Chợ sạch sẽ sau giờ bán"
+      },
+      {
+        "id": 2809,
+        "vi": "Xe buýt có máy lạnh mát"
+      },
+      {
+        "id": 2810,
+        "vi": "Đèn đường sáng ở đường nhỏ"
+      },
+      {
+        "id": 2811,
+        "vi": "Rác được thu gom đúng nơi"
+      },
+      {
+        "id": 2812,
+        "vi": "Nước máy được dùng để nấu ăn"
+      },
+      {
+        "id": 2813,
+        "vi": "Bệnh viện có phòng khám sạch"
+      },
+      {
+        "id": 2814,
+        "vi": "Bưu điện gửi bưu phẩm nhanh"
+      },
+      {
+        "id": 2815,
+        "vi": "Công viên có cây hoa đẹp"
+      },
+      {
+        "id": 2816,
+        "vi": "Xe rác thu gom rác lớn"
+      },
+      {
+        "id": 2817,
+        "vi": "Điện sáng ở công viên"
+      },
+      {
+        "id": 2818,
+        "vi": "Trạm y tế có thuốc cơ bản"
+      },
+      {
+        "id": 2819,
+        "vi": "Chợ được dọn sạch mỗi chiều"
+      },
+      {
+        "id": 2820,
+        "vi": "Xe buýt chở khách đi xa"
+      },
+      {
+        "id": 2821,
+        "vi": "Đèn đường sáng ở khu chợ"
+      },
+      {
+        "id": 2822,
+        "vi": "Nhân viên vệ sinh làm việc buổi tối"
+      },
+      {
+        "id": 2823,
+        "vi": "Nước sạch chảy đều ở khu phố"
+      },
+      {
+        "id": 2824,
+        "vi": "Bệnh viện có xe cứu thương"
+      },
+      {
+        "id": 2825,
+        "vi": "Bưu điện nhận hàng nặng"
+      },
+      {
+        "id": 2826,
+        "vi": "Công viên có đường đi bộ"
+      },
+      {
+        "id": 2827,
+        "vi": "Xe rác đi qua khu dân cư"
+      },
+      {
+        "id": 2828,
+        "vi": "Điện được cung cấp cho chợ"
+      },
+      {
+        "id": 2829,
+        "vi": "Trạm y tế khám bệnh miễn phí"
+      },
+      {
+        "id": 2830,
+        "vi": "Chợ có người giữ vệ sinh"
+      },
+      {
+        "id": 2831,
+        "vi": "Xe buýt dừng ở trạm lớn"
+      },
+      {
+        "id": 2832,
+        "vi": "Đèn đường sáng ở ngõ nhỏ"
+      },
+      {
+        "id": 2833,
+        "vi": "Rác được thu gom mỗi sáng"
+      },
+      {
+        "id": 2834,
+        "vi": "Nước máy chảy ổn định"
+      },
+      {
+        "id": 2835,
+        "vi": "Bệnh viện có phòng mổ"
+      },
+      {
+        "id": 2836,
+        "vi": "Bưu điện gửi thư nhanh"
+      },
+      {
+        "id": 2837,
+        "vi": "Công viên có ghế nghỉ mát"
+      },
+      {
+        "id": 2838,
+        "vi": "Xe rác thu gom rác đúng giờ"
+      },
+      {
+        "id": 2839,
+        "vi": "Điện sáng ở khu công nghiệp"
+      },
+      {
+        "id": 2840,
+        "vi": "Trạm y tế có bác sĩ trực đêm"
+      },
+      {
+        "id": 2841,
+        "vi": "Chợ sạch sẽ vào ban đêm"
+      },
+      {
+        "id": 2842,
+        "vi": "Xe buýt chạy qua đường chính."
       }
     ],
     "health": [
@@ -1064,6 +2656,406 @@
       {
         "id": 755,
         "vi": "Tôi lau dọn nhà cửa thường xuyên."
+      },
+      {
+        "id": 3035,
+        "vi": "Bệnh viện mở cửa cả ngày"
+      },
+      {
+        "id": 3036,
+        "vi": "Bác sĩ khám bệnh cho bệnh nhân"
+      },
+      {
+        "id": 3037,
+        "vi": "Trạm y tế có thuốc cơ bản"
+      },
+      {
+        "id": 3038,
+        "vi": "Người dân rửa tay trước khi ăn"
+      },
+      {
+        "id": 3039,
+        "vi": "Phòng khám sạch sẽ và thoáng mát"
+      },
+      {
+        "id": 3040,
+        "vi": "Y tá đo huyết áp cho bệnh nhân"
+      },
+      {
+        "id": 3041,
+        "vi": "Thuốc được cấp ở quầy thuốc"
+      },
+      {
+        "id": 3042,
+        "vi": "Mọi người ăn rau để khỏe mạnh"
+      },
+      {
+        "id": 3043,
+        "vi": "Bệnh viện có giường cho bệnh nhân"
+      },
+      {
+        "id": 3044,
+        "vi": "Trẻ em được tiêm vắc-xin"
+      },
+      {
+        "id": 3045,
+        "vi": "Bác sĩ kiểm tra nhiệt độ cơ thể"
+      },
+      {
+        "id": 3046,
+        "vi": "Phòng khám mở cửa vào sáng sớm"
+      },
+      {
+        "id": 3047,
+        "vi": "Người dân uống nước sạch mỗi ngày"
+      },
+      {
+        "id": 3048,
+        "vi": "Y tá chăm sóc bệnh nhân chu đáo"
+      },
+      {
+        "id": 3049,
+        "vi": "Bệnh viện có xe cứu thương"
+      },
+      {
+        "id": 3050,
+        "vi": "Thuốc được bán ở nhà thuốc"
+      },
+      {
+        "id": 3051,
+        "vi": "Mọi người tập thể dục buổi sáng"
+      },
+      {
+        "id": 3052,
+        "vi": "Trạm y tế khám bệnh miễn phí"
+      },
+      {
+        "id": 3053,
+        "vi": "Bác sĩ kê đơn thuốc cho bệnh nhân"
+      },
+      {
+        "id": 3054,
+        "vi": "Phòng khám có máy đo thân nhiệt"
+      },
+      {
+        "id": 3055,
+        "vi": "Người dân ăn trái cây để khỏe"
+      },
+      {
+        "id": 3056,
+        "vi": "Bệnh viện có phòng cấp cứu"
+      },
+      {
+        "id": 3057,
+        "vi": "Y tá thay băng cho bệnh nhân"
+      },
+      {
+        "id": 3058,
+        "vi": "Thuốc được giữ trong tủ mát"
+      },
+      {
+        "id": 3059,
+        "vi": "Mọi người đi bộ để giữ sức khỏe"
+      },
+      {
+        "id": 3060,
+        "vi": "Trạm y tế có bác sĩ trực"
+      },
+      {
+        "id": 3061,
+        "vi": "Bác sĩ khám mắt cho trẻ em"
+      },
+      {
+        "id": 3062,
+        "vi": "Phòng khám có ghế chờ sạch"
+      },
+      {
+        "id": 3063,
+        "vi": "Người dân uống đủ nước mỗi ngày"
+      },
+      {
+        "id": 3064,
+        "vi": "Bệnh viện có phòng khám tai mũi họng"
+      },
+      {
+        "id": 3065,
+        "vi": "Y tá đo nhịp tim bệnh nhân"
+      },
+      {
+        "id": 3066,
+        "vi": "Thuốc được cấp theo toa"
+      },
+      {
+        "id": 3067,
+        "vi": "Mọi người ngủ đủ giấc để khỏe"
+      },
+      {
+        "id": 3068,
+        "vi": "Trạm y tế tư vấn sức khỏe"
+      },
+      {
+        "id": 3069,
+        "vi": "Bác sĩ kiểm tra sức khỏe định kỳ"
+      },
+      {
+        "id": 3070,
+        "vi": "Phòng khám có máy đo huyết áp"
+      },
+      {
+        "id": 3071,
+        "vi": "Người dân ăn cơm với rau"
+      },
+      {
+        "id": 3072,
+        "vi": "Bệnh viện có phòng mổ sạch"
+      },
+      {
+        "id": 3073,
+        "vi": "Y tá tiêm thuốc cho bệnh nhân"
+      },
+      {
+        "id": 3074,
+        "vi": "Thuốc được bán giá rẻ"
+      },
+      {
+        "id": 3075,
+        "vi": "Mọi người chạy bộ vào buổi chiều"
+      },
+      {
+        "id": 3076,
+        "vi": "Trạm y tế có y tá trực đêm"
+      },
+      {
+        "id": 3077,
+        "vi": "Bác sĩ khám răng cho trẻ em"
+      },
+      {
+        "id": 3078,
+        "vi": "Phòng khám có bảng hướng dẫn"
+      },
+      {
+        "id": 3079,
+        "vi": "Người dân ăn ít đường để khỏe"
+      },
+      {
+        "id": 3080,
+        "vi": "Bệnh viện có phòng chờ rộng"
+      },
+      {
+        "id": 3081,
+        "vi": "Y tá kiểm tra vết thương"
+      },
+      {
+        "id": 3082,
+        "vi": "Thuốc được để trong hộp sạch"
+      },
+      {
+        "id": 3083,
+        "vi": "Mọi người tập yoga để thư giãn"
+      },
+      {
+        "id": 3084,
+        "vi": "Trạm y tế cấp thuốc miễn phí"
+      },
+      {
+        "id": 3085,
+        "vi": "Bác sĩ khám bệnh cho người già"
+      },
+      {
+        "id": 3086,
+        "vi": "Phòng khám có quạt mát"
+      },
+      {
+        "id": 3087,
+        "vi": "Người dân ăn cá để bổ sung dinh dưỡng"
+      },
+      {
+        "id": 3088,
+        "vi": "Bệnh viện có xe đẩy cho bệnh nhân"
+      },
+      {
+        "id": 3089,
+        "vi": "Y tá hướng dẫn dùng thuốc"
+      },
+      {
+        "id": 3090,
+        "vi": "Thuốc được bảo quản cẩn thận"
+      },
+      {
+        "id": 3091,
+        "vi": "Mọi người đi bộ quanh công viên"
+      },
+      {
+        "id": 3092,
+        "vi": "Trạm y tế có phòng khám nhỏ"
+      },
+      {
+        "id": 3093,
+        "vi": "Bác sĩ kiểm tra sức khỏe học sinh"
+      },
+      {
+        "id": 3094,
+        "vi": "Phòng khám có dụng cụ sạch"
+      },
+      {
+        "id": 3095,
+        "vi": "Người dân uống trà xanh tốt cho sức khỏe"
+      },
+      {
+        "id": 3096,
+        "vi": "Bệnh viện có phòng khám nhi"
+      },
+      {
+        "id": 3097,
+        "vi": "Y tá đo cân nặng bệnh nhân"
+      },
+      {
+        "id": 3098,
+        "vi": "Thuốc được cấp ở trạm y tế"
+      },
+      {
+        "id": 3099,
+        "vi": "Mọi người tập thể dục ở công viên"
+      },
+      {
+        "id": 3100,
+        "vi": "Trạm y tế có bác sĩ giỏi"
+      },
+      {
+        "id": 3101,
+        "vi": "Bác sĩ khám bệnh vào buổi sáng"
+      },
+      {
+        "id": 3102,
+        "vi": "Phòng khám có bàn khám sạch"
+      },
+      {
+        "id": 3103,
+        "vi": "Người dân ăn nhiều rau xanh"
+      },
+      {
+        "id": 3104,
+        "vi": "Bệnh viện có phòng chụp X-quang"
+      },
+      {
+        "id": 3105,
+        "vi": "Y tá kiểm tra nhiệt độ"
+      },
+      {
+        "id": 3106,
+        "vi": "Thuốc được bán theo đơn bác sĩ"
+      },
+      {
+        "id": 3107,
+        "vi": "Mọi người ngủ sớm để khỏe mạnh"
+      },
+      {
+        "id": 3108,
+        "vi": "Trạm y tế mở cửa cả ngày"
+      },
+      {
+        "id": 3109,
+        "vi": "Bác sĩ tư vấn dinh dưỡng"
+      },
+      {
+        "id": 3110,
+        "vi": "Phòng khám có ghế ngồi thoải mái"
+      },
+      {
+        "id": 3111,
+        "vi": "Người dân ăn ít dầu mỡ"
+      },
+      {
+        "id": 3112,
+        "vi": "Bệnh viện có phòng xét nghiệm"
+      },
+      {
+        "id": 3113,
+        "vi": "Y tá chăm sóc người bệnh tận tình"
+      },
+      {
+        "id": 3114,
+        "vi": "Thuốc được để trong tủ kín"
+      },
+      {
+        "id": 3115,
+        "vi": "Mọi người tập hít thở sâu"
+      },
+      {
+        "id": 3116,
+        "vi": "Trạm y tế có thiết bị y tế"
+      },
+      {
+        "id": 3117,
+        "vi": "Bác sĩ khám bệnh cho trẻ nhỏ"
+      },
+      {
+        "id": 3118,
+        "vi": "Phòng khám có bảng thông tin"
+      },
+      {
+        "id": 3119,
+        "vi": "Người dân ăn trái cây tươi"
+      },
+      {
+        "id": 3120,
+        "vi": "Bệnh viện có phòng hồi sức"
+      },
+      {
+        "id": 3121,
+        "vi": "Y tá đo chiều cao bệnh nhân"
+      },
+      {
+        "id": 3122,
+        "vi": "Thuốc được cấp theo liều"
+      },
+      {
+        "id": 3123,
+        "vi": "Mọi người đi bộ để giảm căng thẳng"
+      },
+      {
+        "id": 3124,
+        "vi": "Trạm y tế có phòng sơ cứu"
+      },
+      {
+        "id": 3125,
+        "vi": "Bác sĩ kiểm tra tim mạch"
+      },
+      {
+        "id": 3126,
+        "vi": "Phòng khám có ánh sáng tốt"
+      },
+      {
+        "id": 3127,
+        "vi": "Người dân uống nước lọc sạch"
+      },
+      {
+        "id": 3128,
+        "vi": "Bệnh viện có phòng khám mắt"
+      },
+      {
+        "id": 3129,
+        "vi": "Y tá hướng dẫn chăm sóc sức khỏe"
+      },
+      {
+        "id": 3130,
+        "vi": "Thuốc được giữ ở nơi khô ráo"
+      },
+      {
+        "id": 3131,
+        "vi": "Mọi người tập thể dục mỗi ngày"
+      },
+      {
+        "id": 3132,
+        "vi": "Trạm y tế có bác sĩ trực ca"
+      },
+      {
+        "id": 3133,
+        "vi": "Bác sĩ khám bệnh cho người lớn"
+      },
+      {
+        "id": 3134,
+        "vi": "Phòng khám có không gian sạch sẽ."
       }
     ],
     "shopping": [
@@ -1274,6 +3266,394 @@
       {
         "id": 901,
         "vi": "Tôi chờ chương trình giảm giá."
+      },
+      {
+        "id": 3320,
+        "vi": "Chợ bán rau củ tươi mỗi sáng"
+      },
+      {
+        "id": 3321,
+        "vi": "Quần áo được treo trong cửa hàng"
+      },
+      {
+        "id": 3322,
+        "vi": "Người dân trả tiền bằng tiền mặt"
+      },
+      {
+        "id": 3323,
+        "vi": "Siêu thị mở cửa từ sáng sớm"
+      },
+      {
+        "id": 3324,
+        "vi": "Áo sơ mi có nhiều màu đẹp"
+      },
+      {
+        "id": 3325,
+        "vi": "Tiền được để trong ví nhỏ"
+      },
+      {
+        "id": 3326,
+        "vi": "Cửa hàng giảm giá vào cuối tuần"
+      },
+      {
+        "id": 3327,
+        "vi": "Quần jeans được bán ở quầy"
+      },
+      {
+        "id": 3328,
+        "vi": "Người dân mang giỏ đi chợ"
+      },
+      {
+        "id": 3329,
+        "vi": "Siêu thị có nhiều đồ ăn"
+      },
+      {
+        "id": 3330,
+        "vi": "Áo khoác được mặc vào mùa đông"
+      },
+      {
+        "id": 3331,
+        "vi": "Tiền lẻ được dùng để mua bánh"
+      },
+      {
+        "id": 3332,
+        "vi": "Chợ đông đúc vào buổi sáng"
+      },
+      {
+        "id": 3333,
+        "vi": "Cửa hàng bán giày thể thao"
+      },
+      {
+        "id": 3334,
+        "vi": "Người dân đếm tiền trước khi trả"
+      },
+      {
+        "id": 3335,
+        "vi": "Siêu thị có quầy thanh toán nhanh"
+      },
+      {
+        "id": 3336,
+        "vi": "Áo thun được bày trên kệ"
+      },
+      {
+        "id": 3337,
+        "vi": "Tiền được cất trong túi nhỏ"
+      },
+      {
+        "id": 3338,
+        "vi": "Chợ bán cá tươi mỗi ngày"
+      },
+      {
+        "id": 3339,
+        "vi": "Quần áo được giặt sạch sẽ"
+      },
+      {
+        "id": 3340,
+        "vi": "Người dân trả tiền ở quầy"
+      },
+      {
+        "id": 3341,
+        "vi": "Siêu thị có giỏ hàng tiện lợi"
+      },
+      {
+        "id": 3342,
+        "vi": "Giày được bày ở cửa hàng"
+      },
+      {
+        "id": 3343,
+        "vi": "Tiền xu được dùng ở máy bán hàng"
+      },
+      {
+        "id": 3344,
+        "vi": "Chợ có nhiều rau xanh"
+      },
+      {
+        "id": 3345,
+        "vi": "Áo len được bán vào mùa lạnh"
+      },
+      {
+        "id": 3346,
+        "vi": "Người dân mang tiền đi mua sắm"
+      },
+      {
+        "id": 3347,
+        "vi": "Siêu thị mở cửa đến tối"
+      },
+      {
+        "id": 3348,
+        "vi": "Quần áo được xếp gọn gàng"
+      },
+      {
+        "id": 3349,
+        "vi": "Tiền được để trong hộp nhỏ"
+      },
+      {
+        "id": 3350,
+        "vi": "Chợ bán trái cây tươi ngon"
+      },
+      {
+        "id": 3351,
+        "vi": "Cửa hàng có nhiều áo đẹp"
+      },
+      {
+        "id": 3352,
+        "vi": "Người dân trả tiền bằng thẻ"
+      },
+      {
+        "id": 3353,
+        "vi": "Siêu thị có quầy bán thịt"
+      },
+      {
+        "id": 3354,
+        "vi": "Giày sandal được bán giá rẻ"
+      },
+      {
+        "id": 3355,
+        "vi": "Tiền được cất cẩn thận"
+      },
+      {
+        "id": 3356,
+        "vi": "Chợ mở cửa từ sáng sớm"
+      },
+      {
+        "id": 3357,
+        "vi": "Áo khoác được treo trên giá"
+      },
+      {
+        "id": 3358,
+        "vi": "Người dân kiểm tra tiền trước khi mua"
+      },
+      {
+        "id": 3359,
+        "vi": "Siêu thị có nhiều hàng hóa"
+      },
+      {
+        "id": 3360,
+        "vi": "Quần áo trẻ em được bán ở góc"
+      },
+      {
+        "id": 3361,
+        "vi": "Tiền được để trong két sắt"
+      },
+      {
+        "id": 3362,
+        "vi": "Chợ có quầy bán hoa"
+      },
+      {
+        "id": 3363,
+        "vi": "Cửa hàng bán váy đẹp"
+      },
+      {
+        "id": 3364,
+        "vi": "Người dân mang ví đi chợ"
+      },
+      {
+        "id": 3365,
+        "vi": "Siêu thị có máy quét mã hàng"
+      },
+      {
+        "id": 3366,
+        "vi": "Áo thun được giảm giá"
+      },
+      {
+        "id": 3367,
+        "vi": "Tiền lẻ được để trong túi"
+      },
+      {
+        "id": 3368,
+        "vi": "Chợ bán đồ ăn sáng"
+      },
+      {
+        "id": 3369,
+        "vi": "Quần jeans được thử trước khi mua"
+      },
+      {
+        "id": 3370,
+        "vi": "Người dân trả tiền nhanh chóng"
+      },
+      {
+        "id": 3371,
+        "vi": "Siêu thị có kệ hàng đầy"
+      },
+      {
+        "id": 3372,
+        "vi": "Giày được lau sạch trước khi bán"
+      },
+      {
+        "id": 3373,
+        "vi": "Tiền được cất trong ngăn kéo"
+      },
+      {
+        "id": 3374,
+        "vi": "Chợ có nhiều người mua sắm"
+      },
+      {
+        "id": 3375,
+        "vi": "Áo len được gấp gọn gàng"
+      },
+      {
+        "id": 3376,
+        "vi": "Người dân dùng tiền mặt để mua"
+      },
+      {
+        "id": 3377,
+        "vi": "Siêu thị có quầy bánh mì"
+      },
+      {
+        "id": 3378,
+        "vi": "Cửa hàng bán áo khoác ấm"
+      },
+      {
+        "id": 3379,
+        "vi": "Tiền xu được dùng để trả xe"
+      },
+      {
+        "id": 3380,
+        "vi": "Chợ bán thực phẩm tươi sống"
+      },
+      {
+        "id": 3381,
+        "vi": "Quần áo được treo trên móc"
+      },
+      {
+        "id": 3382,
+        "vi": "Người dân mang tiền lẻ đi chợ"
+      },
+      {
+        "id": 3383,
+        "vi": "Siêu thị có quầy rau sạch"
+      },
+      {
+        "id": 3384,
+        "vi": "Áo thun được bán giá rẻ"
+      },
+      {
+        "id": 3385,
+        "vi": "Tiền được để trong túi áo"
+      },
+      {
+        "id": 3386,
+        "vi": "Chợ có quầy bán cá"
+      },
+      {
+        "id": 3387,
+        "vi": "Cửa hàng bán giày giá tốt"
+      },
+      {
+        "id": 3388,
+        "vi": "Người dân trả tiền ở quầy nhỏ"
+      },
+      {
+        "id": 3389,
+        "vi": "Siêu thị có nhiều đồ uống"
+      },
+      {
+        "id": 3390,
+        "vi": "Quần áo được sắp xếp theo màu"
+      },
+      {
+        "id": 3391,
+        "vi": "Tiền được cất trong ví da"
+      },
+      {
+        "id": 3392,
+        "vi": "Chợ bán trái cây vào buổi chiều"
+      },
+      {
+        "id": 3393,
+        "vi": "Áo khoác được bán ở cửa hàng"
+      },
+      {
+        "id": 3394,
+        "vi": "Người dân đếm tiền trước khi trả"
+      },
+      {
+        "id": 3395,
+        "vi": "Siêu thị có máy tính tiền"
+      },
+      {
+        "id": 3396,
+        "vi": "Giày được bày trên kệ gỗ"
+      },
+      {
+        "id": 3397,
+        "vi": "Tiền lẻ được dùng để mua đồ"
+      },
+      {
+        "id": 3398,
+        "vi": "Chợ có quầy bán thịt"
+      },
+      {
+        "id": 3399,
+        "vi": "Cửa hàng bán váy dài"
+      },
+      {
+        "id": 3400,
+        "vi": "Người dân mang giỏ đi mua sắm"
+      },
+      {
+        "id": 3401,
+        "vi": "Siêu thị có quầy hàng tươi"
+      },
+      {
+        "id": 3402,
+        "vi": "Áo thun được treo ở góc"
+      },
+      {
+        "id": 3403,
+        "vi": "Tiền được để trong túi nhỏ"
+      },
+      {
+        "id": 3404,
+        "vi": "Chợ bán hoa tươi mỗi ngày"
+      },
+      {
+        "id": 3405,
+        "vi": "Quần áo được giặt trước khi bán"
+      },
+      {
+        "id": 3406,
+        "vi": "Người dân trả tiền bằng tiền giấy"
+      },
+      {
+        "id": 3407,
+        "vi": "Siêu thị có kệ hàng đầy ắp"
+      },
+      {
+        "id": 3408,
+        "vi": "Giày được thử trước khi mua"
+      },
+      {
+        "id": 3409,
+        "vi": "Tiền được cất trong hộp"
+      },
+      {
+        "id": 3410,
+        "vi": "Chợ có nhiều quầy hàng"
+      },
+      {
+        "id": 3411,
+        "vi": "Cửa hàng bán áo sơ mi đẹp"
+      },
+      {
+        "id": 3412,
+        "vi": "Người dân mang tiền đi siêu thị"
+      },
+      {
+        "id": 3413,
+        "vi": "Siêu thị có quầy thanh toán"
+      },
+      {
+        "id": 3414,
+        "vi": "Quần áo được bày trên bàn"
+      },
+      {
+        "id": 3415,
+        "vi": "Tiền được để trong ví nhỏ"
+      },
+      {
+        "id": 3416,
+        "vi": "Chợ bán rau củ vào sáng sớm."
       }
     ],
     "entertainment": [
@@ -2766,6 +5146,398 @@
       {
         "id": 209,
         "vi": "Tôi đang dần học cách sống đơn giản và ý nghĩa hơn."
+      },
+      {
+        "id": 1958,
+        "vi": "Buổi sáng ở khu phố luôn rộn ràng tiếng rao hàng"
+      },
+      {
+        "id": 1959,
+        "vi": "Người dân thường tập yoga ở công viên lúc bình minh"
+      },
+      {
+        "id": 1960,
+        "vi": "Bữa sáng thường gồm phở bò hoặc bánh cuốn nóng"
+      },
+      {
+        "id": 1961,
+        "vi": "Trẻ em thích đạp xe quanh khu phố vào chiều muộn"
+      },
+      {
+        "id": 1962,
+        "vi": "Chợ truyền thống tấp nập người mua kẻ bán"
+      },
+      {
+        "id": 1963,
+        "vi": "Cửa hàng tiện lợi luôn đông khách vào giờ tan ca"
+      },
+      {
+        "id": 1964,
+        "vi": "Xe buýt đưa đón học sinh đúng giờ mỗi ngày"
+      },
+      {
+        "id": 1965,
+        "vi": "Vườn rau sau nhà được chăm sóc kỹ lưỡng"
+      },
+      {
+        "id": 1966,
+        "vi": "Bữa trưa gia đình thường có món thịt kho tàu"
+      },
+      {
+        "id": 1967,
+        "vi": "Trẻ con hay xem phim hoạt hình trên máy tính bảng"
+      },
+      {
+        "id": 1968,
+        "vi": "Mẹ thường chuẩn bị cơm hộp cho con đi học"
+      },
+      {
+        "id": 1969,
+        "vi": "Ông lão thích ngồi nhâm nhi cà phê ở quán quen"
+      },
+      {
+        "id": 1970,
+        "vi": "Chó nhà sủa vang khi xe tải chạy qua"
+      },
+      {
+        "id": 1971,
+        "vi": "Hàng xóm thường tụ họp trò chuyện vào cuối tuần"
+      },
+      {
+        "id": 1972,
+        "vi": "Cây xanh trong khu phố được tưới nước đều đặn"
+      },
+      {
+        "id": 1973,
+        "vi": "Đèn đường bật sáng khi hoàng hôn buông xuống"
+      },
+      {
+        "id": 1974,
+        "vi": "Siêu thị luôn đông đúc vào dịp cuối năm"
+      },
+      {
+        "id": 1975,
+        "vi": "Bánh chưng được gói cẩn thận trước ngày Tết"
+      },
+      {
+        "id": 1976,
+        "vi": "Trẻ em thích ăn kem que trong ngày nóng"
+      },
+      {
+        "id": 1977,
+        "vi": "Xe máy được rửa sạch sẽ vào cuối tuần"
+      },
+      {
+        "id": 1978,
+        "vi": "Bữa tối thường có món cá hấp thơm lừng"
+      },
+      {
+        "id": 1979,
+        "vi": "Công viên trở nên yên tĩnh khi đêm về"
+      },
+      {
+        "id": 1980,
+        "vi": "Mưa phùn làm đường phố thêm phần lãng mạn"
+      },
+      {
+        "id": 1981,
+        "vi": "Người dân hay uống trà hoa cúc để thư giãn"
+      },
+      {
+        "id": 1982,
+        "vi": "Trẻ con thích chơi trò ghép hình vào buổi tối"
+      },
+      {
+        "id": 1983,
+        "vi": "Nhà cửa được trang trí rực rỡ trước dịp lễ"
+      },
+      {
+        "id": 1984,
+        "vi": "Mèo con nằm ngủ ngon lành trên thảm"
+      },
+      {
+        "id": 1985,
+        "vi": "Chợ đêm bày bán nhiều món ăn đường phố"
+      },
+      {
+        "id": 1986,
+        "vi": "Người dân thường cầu bình an ở chùa ngày rằm"
+      },
+      {
+        "id": 1987,
+        "vi": "Gà trống gáy báo hiệu một ngày mới"
+      },
+      {
+        "id": 1988,
+        "vi": "Bàn ăn được dọn gọn gàng trước giờ cơm"
+      },
+      {
+        "id": 1989,
+        "vi": "Trẻ em thích chơi bóng rổ ở sân trường"
+      },
+      {
+        "id": 1990,
+        "vi": "Cửa sổ được mở để đón không khí trong lành"
+      },
+      {
+        "id": 1991,
+        "vi": "Mọi người thường đi ngủ sau khi xem tivi"
+      },
+      {
+        "id": 1992,
+        "vi": "Xe đạp được dùng để đi chợ gần nhà"
+      },
+      {
+        "id": 1993,
+        "vi": "Hoa trong vườn nở rộ vào mùa xuân"
+      },
+      {
+        "id": 1994,
+        "vi": "Bếp ga luôn được kiểm tra trước khi nấu"
+      },
+      {
+        "id": 1995,
+        "vi": "Trẻ con thích ăn bánh flan mềm mịn"
+      },
+      {
+        "id": 1996,
+        "vi": "Tin tức thời sự được theo dõi vào buổi tối"
+      },
+      {
+        "id": 1997,
+        "vi": "Đường phố kẹt xe vào giờ cao điểm"
+      },
+      {
+        "id": 1998,
+        "vi": "Chợ cá tấp nập người mua từ sáng sớm"
+      },
+      {
+        "id": 1999,
+        "vi": "Áo len được mặc khi thời tiết se lạnh"
+      },
+      {
+        "id": 2000,
+        "vi": "Hàng xóm tổ chức tiệc ngoài trời dịp sinh nhật"
+      },
+      {
+        "id": 2001,
+        "vi": "Trẻ em thích vẽ tranh phong cảnh"
+      },
+      {
+        "id": 2002,
+        "vi": "Đồng hồ báo thức vang lên đúng 6 giờ sáng"
+      },
+      {
+        "id": 2003,
+        "vi": "Cửa hàng hoa tươi luôn đông khách ngày lễ"
+      },
+      {
+        "id": 2004,
+        "vi": "Người dân thích chạy bộ quanh công viên"
+      },
+      {
+        "id": 2005,
+        "vi": "Bữa cơm gia đình luôn đầy ắp tiếng cười"
+      },
+      {
+        "id": 2006,
+        "vi": "Trẻ con thích thả diều trên cánh đồng"
+      },
+      {
+        "id": 2007,
+        "vi": "Mưa lớn làm đường phố ngập nước nhẹ"
+      },
+      {
+        "id": 2008,
+        "vi": "Tiệm cắt tóc giảm giá vào dịp cuối năm"
+      },
+      {
+        "id": 2009,
+        "vi": "Người lớn hay kể chuyện đời thường cho con nghe"
+      },
+      {
+        "id": 2010,
+        "vi": "Xe tải chở rau củ đến chợ mỗi sáng"
+      },
+      {
+        "id": 2011,
+        "vi": "Chợ quê luôn có nhiều sản vật tươi ngon"
+      },
+      {
+        "id": 2012,
+        "vi": "Trẻ em thích chơi trò nhảy lò cò"
+      },
+      {
+        "id": 2013,
+        "vi": "Mùi thức ăn lan tỏa từ bếp mỗi chiều"
+      },
+      {
+        "id": 2014,
+        "vi": "Người dân hay đi dạo quanh hồ nước"
+      },
+      {
+        "id": 2015,
+        "vi": "Cây cối trong khu phố rợp bóng mát"
+      },
+      {
+        "id": 2016,
+        "vi": "Nước chè xanh được uống để giải nhiệt"
+      },
+      {
+        "id": 2017,
+        "vi": "Trẻ con hát những bài dân ca quen thuộc"
+      },
+      {
+        "id": 2018,
+        "vi": "Đường làng trở nên yên tĩnh vào ban đêm"
+      },
+      {
+        "id": 2019,
+        "vi": "Cửa hàng thời trang thu hút khách trẻ"
+      },
+      {
+        "id": 2020,
+        "vi": "Sân nhà được quét dọn sạch sẽ mỗi ngày"
+      },
+      {
+        "id": 2021,
+        "vi": "Trẻ em thích ăn kẹo sữa ngọt ngào"
+      },
+      {
+        "id": 2022,
+        "vi": "Bầu trời rực rỡ ánh nắng vào buổi trưa"
+      },
+      {
+        "id": 2023,
+        "vi": "Người dân hay chơi cờ vua ở quán cà phê"
+      },
+      {
+        "id": 2024,
+        "vi": "Chợ hoa tấp nập vào dịp Tết"
+      },
+      {
+        "id": 2025,
+        "vi": "Trẻ con thích thổi bong bóng xà phòng"
+      },
+      {
+        "id": 2026,
+        "vi": "Nhà hàng luôn kín chỗ vào cuối tuần"
+      },
+      {
+        "id": 2027,
+        "vi": "Xe đạp điện được dùng để đi học"
+      },
+      {
+        "id": 2028,
+        "vi": "Cây ăn quả trong vườn được thu hoạch đúng mùa"
+      },
+      {
+        "id": 2029,
+        "vi": "Trẻ em thích nghe chuyện cổ tích trước giờ ngủ"
+      },
+      {
+        "id": 2030,
+        "vi": "Đường phố lung linh ánh đèn về đêm"
+      },
+      {
+        "id": 2031,
+        "vi": "Báo chí được đọc để cập nhật tin tức"
+      },
+      {
+        "id": 2032,
+        "vi": "Bữa cơm luôn có món rau luộc dân dã"
+      },
+      {
+        "id": 2033,
+        "vi": "Trẻ con thích chạy nhảy trong công viên"
+      },
+      {
+        "id": 2034,
+        "vi": "Chợ đêm bày bán nhiều món quà lưu niệm"
+      },
+      {
+        "id": 2035,
+        "vi": "Người dân thường cầu nguyện ở đền chùa"
+      },
+      {
+        "id": 2036,
+        "vi": "Xe máy chạy qua cầu vào sáng sớm"
+      },
+      {
+        "id": 2037,
+        "vi": "Trẻ em thích ăn bánh xèo giòn rụm"
+      },
+      {
+        "id": 2038,
+        "vi": "Nhà cửa được sơn mới trước năm mới"
+      },
+      {
+        "id": 2039,
+        "vi": "Radio phát những bài hát quen thuộc"
+      },
+      {
+        "id": 2040,
+        "vi": "Cây xanh được trồng thêm ở công viên"
+      },
+      {
+        "id": 2041,
+        "vi": "Trẻ em thích chơi trò kéo co"
+      },
+      {
+        "id": 2042,
+        "vi": "Đường phố yên bình vào sáng chủ nhật"
+      },
+      {
+        "id": 2043,
+        "vi": "Người dân hay mua sắm ở siêu thị"
+      },
+      {
+        "id": 2044,
+        "vi": "Món canh chua được yêu thích vào mùa hè"
+      },
+      {
+        "id": 2045,
+        "vi": "Trẻ em thích vẽ tranh bằng màu nước"
+      },
+      {
+        "id": 2046,
+        "vi": "Tiệm bánh mì luôn thơm nức mỗi sáng"
+      },
+      {
+        "id": 2047,
+        "vi": "Người dân hay đi bộ để giữ sức khỏe"
+      },
+      {
+        "id": 2048,
+        "vi": "Chợ chiều bán nhiều đồ ăn vặt hấp dẫn"
+      },
+      {
+        "id": 2049,
+        "vi": "Trẻ em thích chơi với đồ chơi lắp ráp"
+      },
+      {
+        "id": 2050,
+        "vi": "Bếp nhà luôn sạch sẽ sau khi nấu ăn"
+      },
+      {
+        "id": 2051,
+        "vi": "Trà thảo mộc được ưa chuộng vào buổi tối"
+      },
+      {
+        "id": 2052,
+        "vi": "Hoa giấy nở rực rỡ trước cổng nhà"
+      },
+      {
+        "id": 2053,
+        "vi": "Trẻ em thích chơi trò bịt mắt bắt dê"
+      },
+      {
+        "id": 2054,
+        "vi": "Đường phố nhộn nhịp vào giờ tan trường"
+      },
+      {
+        "id": 2055,
+        "vi": "Người lớn hay đọc sách để thư giãn."
       }
     ],
     "transportation": [
@@ -2980,6 +5752,394 @@
       {
         "id": 359,
         "vi": "Tôi thường kể cho con về luật đi đường an toàn."
+      },
+      {
+        "id": 2254,
+        "vi": "Xe buýt công cộng dừng ở trạm chính mỗi sáng"
+      },
+      {
+        "id": 2255,
+        "vi": "Đường phố trở nên đông đúc vào giờ cao điểm"
+      },
+      {
+        "id": 2256,
+        "vi": "Xe máy lướt nhanh trên đại lộ rộng lớn"
+      },
+      {
+        "id": 2257,
+        "vi": "Đèn giao thông chuyển màu đỏ tại ngã tư đông người"
+      },
+      {
+        "id": 2258,
+        "vi": "Người đi bộ sử dụng vạch kẻ đường để qua đường"
+      },
+      {
+        "id": 2259,
+        "vi": "Xe đạp là phương tiện phổ biến để đi học"
+      },
+      {
+        "id": 2260,
+        "vi": "Ô tô được đỗ gọn gàng bên lề đường"
+      },
+      {
+        "id": 2261,
+        "vi": "Mọi người luôn đội mũ bảo hiểm khi tham gia giao thông"
+      },
+      {
+        "id": 2262,
+        "vi": "Đường làng trở nên yên ắng khi đêm xuống"
+      },
+      {
+        "id": 2263,
+        "vi": "Xe tải chở hàng hóa qua cầu vào sáng sớm"
+      },
+      {
+        "id": 2264,
+        "vi": "Người đi đường dừng lại chờ đèn giao thông"
+      },
+      {
+        "id": 2265,
+        "vi": "Xe buýt đưa đón học sinh đến trường đúng giờ"
+      },
+      {
+        "id": 2266,
+        "vi": "Đường phố được quét dọn sạch sẽ mỗi ngày"
+      },
+      {
+        "id": 2267,
+        "vi": "Xe máy được rửa kỹ lưỡng tại tiệm gần chợ"
+      },
+      {
+        "id": 2268,
+        "vi": "Người dân đi bộ trên vỉa hè rộng rãi"
+      },
+      {
+        "id": 2269,
+        "vi": "Ô tô giảm tốc độ khi qua khu dân cư"
+      },
+      {
+        "id": 2270,
+        "vi": "Đèn đường chiếu sáng rực rỡ khi trời tối"
+      },
+      {
+        "id": 2271,
+        "vi": "Xe đạp được khóa chắc chắn ở bãi gửi"
+      },
+      {
+        "id": 2272,
+        "vi": "Mọi người đứng chờ xe buýt ở trạm đông đúc"
+      },
+      {
+        "id": 2273,
+        "vi": "Đường phố trơn ướt sau cơn mưa lớn"
+      },
+      {
+        "id": 2274,
+        "vi": "Xe máy được đỗ ngay ngắn trong bãi"
+      },
+      {
+        "id": 2275,
+        "vi": "Người đi đường mang áo mưa khi trời đổ"
+      },
+      {
+        "id": 2276,
+        "vi": "Ô tô phát ra tiếng còi khi đường tắc"
+      },
+      {
+        "id": 2277,
+        "vi": "Xe buýt vận hành đúng lịch trình hàng ngày"
+      },
+      {
+        "id": 2278,
+        "vi": "Đường phố được trồng cây xanh hai bên"
+      },
+      {
+        "id": 2279,
+        "vi": "Xe máy đi chậm qua những con hẻm nhỏ"
+      },
+      {
+        "id": 2280,
+        "vi": "Người dân cẩn thận quan sát trước khi qua đường"
+      },
+      {
+        "id": 2281,
+        "vi": "Đèn giao thông nhấp nháy liên tục vào ban đêm"
+      },
+      {
+        "id": 2282,
+        "vi": "Xe đạp được sơn lại để trông mới hơn"
+      },
+      {
+        "id": 2283,
+        "vi": "Ô tô chở nông sản ra chợ từ sáng sớm"
+      },
+      {
+        "id": 2284,
+        "vi": "Người đi bộ sử dụng cầu vượt để đảm bảo an toàn"
+      },
+      {
+        "id": 2285,
+        "vi": "Xe máy len lỏi qua những con đường làng"
+      },
+      {
+        "id": 2286,
+        "vi": "Đường phố lung linh ánh đèn khi đêm về"
+      },
+      {
+        "id": 2287,
+        "vi": "Mọi người tuân thủ việc đội mũ bảo hiểm"
+      },
+      {
+        "id": 2288,
+        "vi": "Xe buýt chở khách đến bến xe lớn"
+      },
+      {
+        "id": 2289,
+        "vi": "Ô tô chạy ổn định trên đường cao tốc"
+      },
+      {
+        "id": 2290,
+        "vi": "Đường phố yên bình vào những giờ sáng sớm"
+      },
+      {
+        "id": 2291,
+        "vi": "Xe máy được kiểm tra kỹ lưỡng ở tiệm sửa"
+      },
+      {
+        "id": 2292,
+        "vi": "Người đi đường chờ đèn xanh ở ngã tư"
+      },
+      {
+        "id": 2293,
+        "vi": "Xe đạp di chuyển nhẹ nhàng trên lối đi riêng"
+      },
+      {
+        "id": 2294,
+        "vi": "Ô tô dừng lại đổ xăng ở trạm gần đó"
+      },
+      {
+        "id": 2295,
+        "vi": "Đường phố trở nên ồn ào vào giờ tan tầm"
+      },
+      {
+        "id": 2296,
+        "vi": "Xe máy giảm tốc độ khi đường trơn trượt"
+      },
+      {
+        "id": 2297,
+        "vi": "Người dân đi bộ qua đường hầm dưới phố"
+      },
+      {
+        "id": 2298,
+        "vi": "Đèn giao thông hoạt động liên tục cả ngày"
+      },
+      {
+        "id": 2299,
+        "vi": "Xe đạp được cất cẩn thận trong sân nhà"
+      },
+      {
+        "id": 2300,
+        "vi": "Ô tô di chuyển chậm qua khu vực đông người"
+      },
+      {
+        "id": 2301,
+        "vi": "Người đi đường sử dụng áo mưa màu sáng"
+      },
+      {
+        "id": 2302,
+        "vi": "Xe buýt đến trạm đúng giờ quy định"
+      },
+      {
+        "id": 2303,
+        "vi": "Đường phố nhộn nhịp với nhiều loại xe cộ"
+      },
+      {
+        "id": 2304,
+        "vi": "Xe máy được kiểm tra lốp trước khi chạy"
+      },
+      {
+        "id": 2305,
+        "vi": "Người dân chú ý biển báo giao thông"
+      },
+      {
+        "id": 2306,
+        "vi": "Ô tô phát tín hiệu còi khi cần vượt"
+      },
+      {
+        "id": 2307,
+        "vi": "Đường phố được chiếu sáng bằng đèn led"
+      },
+      {
+        "id": 2308,
+        "vi": "Xe đạp đi qua công viên vào buổi chiều"
+      },
+      {
+        "id": 2309,
+        "vi": "Người đi đường quan sát gương chiếu hậu"
+      },
+      {
+        "id": 2310,
+        "vi": "Xe buýt chở khách từ ngoại ô vào thành phố"
+      },
+      {
+        "id": 2311,
+        "vi": "Ô tô đỗ ở bãi gửi xe có bảo vệ"
+      },
+      {
+        "id": 2312,
+        "vi": "Đường phố sạch sẽ nhờ đội vệ sinh"
+      },
+      {
+        "id": 2313,
+        "vi": "Xe máy chạy qua khu chợ đông đúc"
+      },
+      {
+        "id": 2314,
+        "vi": "Người dân tuân thủ luật giao thông"
+      },
+      {
+        "id": 2315,
+        "vi": "Đèn giao thông chuyển xanh đúng thời điểm"
+      },
+      {
+        "id": 2316,
+        "vi": "Xe đạp được trang bị đèn vào ban đêm"
+      },
+      {
+        "id": 2317,
+        "vi": "Ô tô chạy qua cầu vượt hiện đại"
+      },
+      {
+        "id": 2318,
+        "vi": "Người đi đường mang ô khi trời mưa nhẹ"
+      },
+      {
+        "id": 2319,
+        "vi": "Xe buýt chở khách du lịch quanh thành phố"
+      },
+      {
+        "id": 2320,
+        "vi": "Đường phố có nhiều biển chỉ dẫn"
+      },
+      {
+        "id": 2321,
+        "vi": "Xe máy được lau sạch bụi bẩn"
+      },
+      {
+        "id": 2322,
+        "vi": "Người dân đi bộ trên lối đi dành riêng"
+      },
+      {
+        "id": 2323,
+        "vi": "Ô tô dừng lại kiểm tra trước khi khởi hành"
+      },
+      {
+        "id": 2324,
+        "vi": "Đường phố yên tĩnh vào sáng chủ nhật"
+      },
+      {
+        "id": 2325,
+        "vi": "Xe máy đi qua những con đường hẹp"
+      },
+      {
+        "id": 2326,
+        "vi": "Người đi đường chú ý vạch kẻ đường"
+      },
+      {
+        "id": 2327,
+        "vi": "Xe buýt đến bến xe đúng lịch trình"
+      },
+      {
+        "id": 2328,
+        "vi": "Ô tô chạy trên đường quốc lộ"
+      },
+      {
+        "id": 2329,
+        "vi": "Đường phố có nhiều xe máy vào buổi trưa"
+      },
+      {
+        "id": 2330,
+        "vi": "Xe đạp được sửa chữa ở tiệm nhỏ"
+      },
+      {
+        "id": 2331,
+        "vi": "Người dân quan sát kỹ khi qua ngã ba"
+      },
+      {
+        "id": 2332,
+        "vi": "Ô tô phát tín hiệu khi rẽ trái"
+      },
+      {
+        "id": 2333,
+        "vi": "Đường phố sáng rực ánh đèn vào tối"
+      },
+      {
+        "id": 2334,
+        "vi": "Xe máy đi chậm ở khu vực trường học"
+      },
+      {
+        "id": 2335,
+        "vi": "Người đi đường đội mũ bảo hiểm đầy đủ"
+      },
+      {
+        "id": 2336,
+        "vi": "Xe buýt chở học sinh về nhà an toàn"
+      },
+      {
+        "id": 2337,
+        "vi": "Ô tô đỗ ở bãi xe tầng"
+      },
+      {
+        "id": 2338,
+        "vi": "Đường phố được vệ sinh sau ngày lễ"
+      },
+      {
+        "id": 2339,
+        "vi": "Xe máy chạy qua cầu nhỏ ở làng"
+      },
+      {
+        "id": 2340,
+        "vi": "Người dân chú ý biển cấm dừng đỗ"
+      },
+      {
+        "id": 2341,
+        "vi": "Đèn giao thông hoạt động ổn định"
+      },
+      {
+        "id": 2342,
+        "vi": "Xe đạp được để ở góc sân"
+      },
+      {
+        "id": 2343,
+        "vi": "Ô tô chạy qua khu công nghiệp"
+      },
+      {
+        "id": 2344,
+        "vi": "Người đi đường mang áo mưa khi trời đổ"
+      },
+      {
+        "id": 2345,
+        "vi": "Xe buýt chở khách đi ngoại tỉnh"
+      },
+      {
+        "id": 2346,
+        "vi": "Đường phố có nhiều xe cộ vào cuối tuần"
+      },
+      {
+        "id": 2347,
+        "vi": "Xe máy được kiểm tra phanh thường xuyên"
+      },
+      {
+        "id": 2348,
+        "vi": "Người dân đi bộ qua cầu vượt an toàn"
+      },
+      {
+        "id": 2349,
+        "vi": "Ô tô kêu còi khi cần vượt xe khác"
+      },
+      {
+        "id": 2350,
+        "vi": "Đường phố yên bình vào sáng sớm."
       }
     ],
     "education": [
@@ -3194,6 +6354,406 @@
       {
         "id": 508,
         "vi": "Tôi đang tìm phương pháp học phù hợp với mình."
+      },
+      {
+        "id": 2547,
+        "vi": "Học sinh đến trường bằng xe đạp mỗi sáng"
+      },
+      {
+        "id": 2548,
+        "vi": "Lớp học bắt đầu với bài giảng thú vị"
+      },
+      {
+        "id": 2549,
+        "vi": "Giáo viên sử dụng bảng trắng để giảng bài"
+      },
+      {
+        "id": 2550,
+        "vi": "Sân trường rộn ràng tiếng cười giờ ra chơi"
+      },
+      {
+        "id": 2551,
+        "vi": "Sách vở được sắp xếp ngăn nắp trên kệ"
+      },
+      {
+        "id": 2552,
+        "vi": "Trẻ em thích tham gia lớp học vẽ"
+      },
+      {
+        "id": 2553,
+        "vi": "Thầy giáo kể những câu chuyện lịch sử hấp dẫn"
+      },
+      {
+        "id": 2554,
+        "vi": "Bàn ghế trong lớp được giữ sạch sẽ"
+      },
+      {
+        "id": 2555,
+        "vi": "Học sinh mặc đồng phục theo quy định"
+      },
+      {
+        "id": 2556,
+        "vi": "Thư viện trường cung cấp nhiều sách tham khảo"
+      },
+      {
+        "id": 2557,
+        "vi": "Cây xanh trong sân trường tạo không khí trong lành"
+      },
+      {
+        "id": 2558,
+        "vi": "Trống trường vang lên báo hiệu giờ vào lớp"
+      },
+      {
+        "id": 2559,
+        "vi": "Học sinh chăm chỉ làm bài tập về nhà"
+      },
+      {
+        "id": 2560,
+        "vi": "Giáo viên kiểm tra bài tập của cả lớp"
+      },
+      {
+        "id": 2561,
+        "vi": "Lớp học được trang trí bằng tranh vẽ"
+      },
+      {
+        "id": 2562,
+        "vi": "Sân trường được dọn dẹp sau mỗi buổi"
+      },
+      {
+        "id": 2563,
+        "vi": "Học sinh chơi bóng rổ trong giờ thể dục"
+      },
+      {
+        "id": 2564,
+        "vi": "Bảng trắng được lau sạch sau tiết học"
+      },
+      {
+        "id": 2565,
+        "vi": "Giáo viên hướng dẫn học sinh đọc thơ"
+      },
+      {
+        "id": 2566,
+        "vi": "Thư viện mở cửa để học sinh nghiên cứu"
+      },
+      {
+        "id": 2567,
+        "vi": "Học sinh mang cặp sách đầy đủ dụng cụ"
+      },
+      {
+        "id": 2568,
+        "vi": "Cây bàng trước lớp phủ bóng mát"
+      },
+      {
+        "id": 2569,
+        "vi": "Trẻ em thích hát những bài dân ca"
+      },
+      {
+        "id": 2570,
+        "vi": "Giáo viên sử dụng máy chiếu để dạy"
+      },
+      {
+        "id": 2571,
+        "vi": "Học sinh xếp hàng ngay ngắn trước giờ học"
+      },
+      {
+        "id": 2572,
+        "vi": "Sân trường trở nên náo nhiệt khi tan học"
+      },
+      {
+        "id": 2573,
+        "vi": "Sách giáo khoa được phát vào đầu năm học"
+      },
+      {
+        "id": 2574,
+        "vi": "Giáo viên giải thích bài toán phức tạp"
+      },
+      {
+        "id": 2575,
+        "vi": "Lớp học có cửa sổ đón ánh sáng"
+      },
+      {
+        "id": 2576,
+        "vi": "Học sinh chuẩn bị bữa sáng tại căng tin"
+      },
+      {
+        "id": 2577,
+        "vi": "Thầy giáo tổ chức thảo luận nhóm"
+      },
+      {
+        "id": 2578,
+        "vi": "Sân trường có cột cờ trang nghiêm"
+      },
+      {
+        "id": 2579,
+        "vi": "Học sinh vẽ tranh phong cảnh đẹp"
+      },
+      {
+        "id": 2580,
+        "vi": "Giáo viên kể chuyện về danh nhân"
+      },
+      {
+        "id": 2581,
+        "vi": "Thư viện cung cấp sách khoa học thú vị"
+      },
+      {
+        "id": 2582,
+        "vi": "Học sinh mặc đồng phục gọn gàng"
+      },
+      {
+        "id": 2583,
+        "vi": "Cây xanh được tưới nước đều đặn"
+      },
+      {
+        "id": 2584,
+        "vi": "Trống trường báo hiệu giờ nghỉ trưa"
+      },
+      {
+        "id": 2585,
+        "vi": "Học sinh làm bài kiểm tra toán"
+      },
+      {
+        "id": 2586,
+        "vi": "Giáo viên dạy cách viết bài luận"
+      },
+      {
+        "id": 2587,
+        "vi": "Lớp học được trang bị quạt mát"
+      },
+      {
+        "id": 2588,
+        "vi": "Sân trường tổ chức trò chơi dân gian"
+      },
+      {
+        "id": 2589,
+        "vi": "Học sinh chơi cầu lông trong giờ thể dục"
+      },
+      {
+        "id": 2590,
+        "vi": "Bảng trắng được viết bằng bút lông màu"
+      },
+      {
+        "id": 2591,
+        "vi": "Giáo viên khuyến khích học sinh sáng tạo"
+      },
+      {
+        "id": 2592,
+        "vi": "Thư viện có không gian yên tĩnh"
+      },
+      {
+        "id": 2593,
+        "vi": "Học sinh mang bút mực đến lớp"
+      },
+      {
+        "id": 2594,
+        "vi": "Cây hoa trong sân trường nở rực rỡ"
+      },
+      {
+        "id": 2595,
+        "vi": "Trẻ em thích học bài hát truyền thống"
+      },
+      {
+        "id": 2596,
+        "vi": "Giáo viên kiểm tra bài tập văn"
+      },
+      {
+        "id": 2597,
+        "vi": "Học sinh tham gia chào cờ đầu tuần"
+      },
+      {
+        "id": 2598,
+        "vi": "Sân trường yên tĩnh sau giờ tan học"
+      },
+      {
+        "id": 2599,
+        "vi": "Sách vở được giữ cẩn thận trong cặp"
+      },
+      {
+        "id": 2600,
+        "vi": "Giáo viên dạy cách phân tích bài thơ"
+      },
+      {
+        "id": 2601,
+        "vi": "Lớp học có bảng thông báo đẹp"
+      },
+      {
+        "id": 2602,
+        "vi": "Học sinh làm bài tập nhóm nhỏ"
+      },
+      {
+        "id": 2603,
+        "vi": "Thầy giáo kể chuyện về khoa học"
+      },
+      {
+        "id": 2604,
+        "vi": "Thư viện trường có máy tính hỗ trợ"
+      },
+      {
+        "id": 2605,
+        "vi": "Học sinh mặc đồng phục sạch sẽ"
+      },
+      {
+        "id": 2606,
+        "vi": "Cây cối trong trường được chăm sóc kỹ"
+      },
+      {
+        "id": 2607,
+        "vi": "Trống trường kêu vang báo giờ học"
+      },
+      {
+        "id": 2608,
+        "vi": "Học sinh làm bài kiểm tra tiếng Anh"
+      },
+      {
+        "id": 2609,
+        "vi": "Giáo viên hướng dẫn cách viết đoạn văn"
+      },
+      {
+        "id": 2610,
+        "vi": "Lớp học có ánh sáng tự nhiên"
+      },
+      {
+        "id": 2611,
+        "vi": "Sân trường tổ chức hội thao hàng năm"
+      },
+      {
+        "id": 2612,
+        "vi": "Học sinh chơi nhảy dây trong giờ nghỉ"
+      },
+      {
+        "id": 2613,
+        "vi": "Bảng trắng được sử dụng để vẽ sơ đồ"
+      },
+      {
+        "id": 2614,
+        "vi": "Giáo viên kể chuyện về văn hóa dân tộc"
+      },
+      {
+        "id": 2615,
+        "vi": "Thư viện có nhiều sách thiếu nhi"
+      },
+      {
+        "id": 2616,
+        "vi": "Học sinh mang thước kẻ và compa"
+      },
+      {
+        "id": 2617,
+        "vi": "Cây xanh tạo bóng mát cho sân trường"
+      },
+      {
+        "id": 2618,
+        "vi": "Trẻ em thích tham gia lớp nhạc"
+      },
+      {
+        "id": 2619,
+        "vi": "Giáo viên kiểm tra bài tập lịch sử"
+      },
+      {
+        "id": 2620,
+        "vi": "Học sinh xếp hàng vào lớp đúng giờ"
+      },
+      {
+        "id": 2621,
+        "vi": "Sân trường có khu vui chơi mới"
+      },
+      {
+        "id": 2622,
+        "vi": "Sách giáo khoa được bảo quản cẩn thận"
+      },
+      {
+        "id": 2623,
+        "vi": "Giáo viên dạy cách làm bài tập nhóm"
+      },
+      {
+        "id": 2624,
+        "vi": "Lớp học được trang trí bằng tranh tự vẽ"
+      },
+      {
+        "id": 2625,
+        "vi": "Học sinh tham gia câu lạc bộ tiếng Anh"
+      },
+      {
+        "id": 2626,
+        "vi": "Thầy giáo hướng dẫn cách làm thí nghiệm"
+      },
+      {
+        "id": 2627,
+        "vi": "Thư viện có khu vực đọc sách thoải mái"
+      },
+      {
+        "id": 2628,
+        "vi": "Học sinh mặc đồng phục theo mùa"
+      },
+      {
+        "id": 2629,
+        "vi": "Cây hoa được trồng dọc lối đi trường"
+      },
+      {
+        "id": 2630,
+        "vi": "Trống trường báo hiệu giờ ra về"
+      },
+      {
+        "id": 2631,
+        "vi": "Học sinh làm bài tập khoa học"
+      },
+      {
+        "id": 2632,
+        "vi": "Giáo viên dạy cách phân tích văn bản"
+      },
+      {
+        "id": 2633,
+        "vi": "Lớp học có bàn ghế sắp xếp gọn gàng"
+      },
+      {
+        "id": 2634,
+        "vi": "Sân trường tổ chức lễ khai giảng"
+      },
+      {
+        "id": 2635,
+        "vi": "Học sinh chơi bóng chuyền giờ thể dục"
+      },
+      {
+        "id": 2636,
+        "vi": "Bảng trắng được viết công thức toán"
+      },
+      {
+        "id": 2637,
+        "vi": "Giáo viên khuyến khích học sinh đặt câu hỏi"
+      },
+      {
+        "id": 2638,
+        "vi": "Thư viện cung cấp tài liệu học tập"
+      },
+      {
+        "id": 2639,
+        "vi": "Học sinh mang bút chì màu đến lớp"
+      },
+      {
+        "id": 2640,
+        "vi": "Cây xanh trong trường cao lớn"
+      },
+      {
+        "id": 2641,
+        "vi": "Trẻ em thích học vẽ tranh phong cảnh"
+      },
+      {
+        "id": 2642,
+        "vi": "Giáo viên kiểm tra bài tập về nhà"
+      },
+      {
+        "id": 2643,
+        "vi": "Học sinh tham gia lễ chào cờ"
+      },
+      {
+        "id": 2644,
+        "vi": "Sân trường sạch sẽ vào buổi sáng"
+      },
+      {
+        "id": 2645,
+        "vi": "Sách vở được xếp gọn trong ngăn bàn"
+      },
+      {
+        "id": 2646,
+        "vi": "Giáo viên dạy cách học hiệu quả."
       }
     ],
     "public-services": [
@@ -3408,6 +6968,394 @@
       {
         "id": 658,
         "vi": "Tôi được nhắc nhở về thời hạn nộp hồ sơ."
+      },
+      {
+        "id": 2843,
+        "vi": "Xe buýt công cộng dừng ở trạm chính vào giờ cao điểm"
+      },
+      {
+        "id": 2844,
+        "vi": "Đèn đường led chiếu sáng rực rỡ khi đêm xuống"
+      },
+      {
+        "id": 2845,
+        "vi": "Nhân viên vệ sinh đô thị quét dọn đường phố sạch sẽ"
+      },
+      {
+        "id": 2846,
+        "vi": "Nước sạch được cung cấp ổn định cho khu dân cư"
+      },
+      {
+        "id": 2847,
+        "vi": "Bệnh viện công đón tiếp bệnh nhân từ sáng sớm"
+      },
+      {
+        "id": 2848,
+        "vi": "Bưu điện xử lý thư từ và bưu phẩm nhanh chóng"
+      },
+      {
+        "id": 2849,
+        "vi": "Công viên thành phố được chăm sóc cây xanh kỹ lưỡng"
+      },
+      {
+        "id": 2850,
+        "vi": "Xe rác thu gom theo lịch trình cố định mỗi ngày"
+      },
+      {
+        "id": 2851,
+        "vi": "Hệ thống điện hoạt động liên tục để phục vụ dân chúng"
+      },
+      {
+        "id": 2852,
+        "vi": "Trạm y tế địa phương cung cấp dịch vụ khám chữa bệnh cơ bản"
+      },
+      {
+        "id": 2853,
+        "vi": "Chợ truyền thống được dọn dẹp sạch sẽ sau giờ bán"
+      },
+      {
+        "id": 2854,
+        "vi": "Xe buýt chở hành khách đến các bến xe lớn"
+      },
+      {
+        "id": 2855,
+        "vi": "Đèn đường được bảo trì định kỳ để đảm bảo ánh sáng"
+      },
+      {
+        "id": 2856,
+        "vi": "Nhân viên vệ sinh phân loại rác trước khi thu gom"
+      },
+      {
+        "id": 2857,
+        "vi": "Nước máy được kiểm tra chất lượng thường xuyên"
+      },
+      {
+        "id": 2858,
+        "vi": "Bệnh viện có đội ngũ y tá làm việc tận tâm"
+      },
+      {
+        "id": 2859,
+        "vi": "Bưu điện cung cấp dịch vụ chuyển phát nhanh"
+      },
+      {
+        "id": 2860,
+        "vi": "Công viên có lối đi bộ được giữ sạch sẽ"
+      },
+      {
+        "id": 2861,
+        "vi": "Xe rác đi qua các khu phố vào buổi chiều"
+      },
+      {
+        "id": 2862,
+        "vi": "Hệ thống điện được giám sát để tránh sự cố"
+      },
+      {
+        "id": 2863,
+        "vi": "Trạm y tế hỗ trợ tiêm phòng cho trẻ em"
+      },
+      {
+        "id": 2864,
+        "vi": "Chợ được trang bị thùng rác lớn ở nhiều khu vực"
+      },
+      {
+        "id": 2865,
+        "vi": "Xe buýt chạy đúng lịch trình để phục vụ hành khách"
+      },
+      {
+        "id": 2866,
+        "vi": "Đèn đường chiếu sáng các ngã tư đông đúc"
+      },
+      {
+        "id": 2867,
+        "vi": "Nhân viên vệ sinh làm việc chăm chỉ vào ban đêm"
+      },
+      {
+        "id": 2868,
+        "vi": "Nước sạch được cấp cho các trường học và công sở"
+      },
+      {
+        "id": 2869,
+        "vi": "Bệnh viện công có phòng cấp cứu hoạt động 24/7"
+      },
+      {
+        "id": 2870,
+        "vi": "Bưu điện nhận và gửi bưu phẩm quốc tế"
+      },
+      {
+        "id": 2871,
+        "vi": "Công viên có khu vực vui chơi cho trẻ em"
+      },
+      {
+        "id": 2872,
+        "vi": "Xe rác thu gom rác tái chế để bảo vệ môi trường"
+      },
+      {
+        "id": 2873,
+        "vi": "Hệ thống điện được nâng cấp để đáp ứng nhu cầu"
+      },
+      {
+        "id": 2874,
+        "vi": "Trạm y tế cung cấp tư vấn sức khỏe miễn phí"
+      },
+      {
+        "id": 2875,
+        "vi": "Chợ được giữ vệ sinh để đảm bảo an toàn thực phẩm"
+      },
+      {
+        "id": 2876,
+        "vi": "Xe buýt có máy lạnh phục vụ hành khách thoải mái"
+      },
+      {
+        "id": 2877,
+        "vi": "Đèn đường được lắp đặt ở các con hẻm nhỏ"
+      },
+      {
+        "id": 2878,
+        "vi": "Rác thải được thu gom đúng nơi quy định"
+      },
+      {
+        "id": 2879,
+        "vi": "Nước máy chảy ổn định cho các hộ gia đình"
+      },
+      {
+        "id": 2880,
+        "vi": "Bệnh viện có máy móc hiện đại để chẩn đoán"
+      },
+      {
+        "id": 2881,
+        "vi": "Bưu điện cung cấp dịch vụ giao hàng tận nơi"
+      },
+      {
+        "id": 2882,
+        "vi": "Công viên có hồ nước và ghế đá sạch sẽ"
+      },
+      {
+        "id": 2883,
+        "vi": "Xe rác đi qua các khu dân cư đúng giờ"
+      },
+      {
+        "id": 2884,
+        "vi": "Hệ thống điện hoạt động ổn định vào mùa mưa"
+      },
+      {
+        "id": 2885,
+        "vi": "Trạm y tế tổ chức khám sức khỏe định kỳ"
+      },
+      {
+        "id": 2886,
+        "vi": "Chợ được vệ sinh kỹ lưỡng sau giờ đóng cửa"
+      },
+      {
+        "id": 2887,
+        "vi": "Xe buýt chở học sinh đến trường an toàn"
+      },
+      {
+        "id": 2888,
+        "vi": "Đèn đường được kiểm tra để đảm bảo an ninh"
+      },
+      {
+        "id": 2889,
+        "vi": "Nhân viên vệ sinh thu gom rác sinh hoạt đúng cách"
+      },
+      {
+        "id": 2890,
+        "vi": "Nước sạch được cung cấp cho các khu công nghiệp"
+      },
+      {
+        "id": 2891,
+        "vi": "Bệnh viện có xe cứu thương sẵn sàng hoạt động"
+      },
+      {
+        "id": 2892,
+        "vi": "Bưu điện xử lý lượng lớn thư từ mỗi ngày"
+      },
+      {
+        "id": 2893,
+        "vi": "Công viên có cây hoa nở rộ quanh năm"
+      },
+      {
+        "id": 2894,
+        "vi": "Xe rác thu gom rác cồng kềnh định kỳ"
+      },
+      {
+        "id": 2895,
+        "vi": "Hệ thống điện được bảo trì để tránh gián đoạn"
+      },
+      {
+        "id": 2896,
+        "vi": "Trạm y tế cung cấp thuốc cơ bản cho người dân"
+      },
+      {
+        "id": 2897,
+        "vi": "Chợ có khu vực rửa sạch để bán thực phẩm"
+      },
+      {
+        "id": 2898,
+        "vi": "Xe buýt chạy qua các tuyến đường chính"
+      },
+      {
+        "id": 2899,
+        "vi": "Đèn đường sáng rõ ở khu vực đông dân cư"
+      },
+      {
+        "id": 2900,
+        "vi": "Nhân viên vệ sinh làm việc vào giờ sớm"
+      },
+      {
+        "id": 2901,
+        "vi": "Nước máy được kiểm tra để đảm bảo an toàn"
+      },
+      {
+        "id": 2902,
+        "vi": "Bệnh viện có phòng khám chuyên khoa hiện đại"
+      },
+      {
+        "id": 2903,
+        "vi": "Bưu điện cung cấp dịch vụ chuyển tiền nhanh"
+      },
+      {
+        "id": 2904,
+        "vi": "Công viên có đường đi bộ được lát đá đẹp"
+      },
+      {
+        "id": 2905,
+        "vi": "Xe rác thu gom rác đúng lịch trình"
+      },
+      {
+        "id": 2906,
+        "vi": "Hệ thống điện hỗ trợ các cơ sở công cộng"
+      },
+      {
+        "id": 2907,
+        "vi": "Trạm y tế tổ chức tiêm vắc-xin cho cộng đồng"
+      },
+      {
+        "id": 2908,
+        "vi": "Chợ được vệ sinh sạch sẽ vào buổi sáng"
+      },
+      {
+        "id": 2909,
+        "vi": "Xe buýt có ghế ngồi thoải mái cho hành khách"
+      },
+      {
+        "id": 2910,
+        "vi": "Đèn đường được thay mới khi hỏng hóc"
+      },
+      {
+        "id": 2911,
+        "vi": "Rác thải được phân loại để tái chế hiệu quả"
+      },
+      {
+        "id": 2912,
+        "vi": "Nước sạch được cung cấp cho các khu vực xa"
+      },
+      {
+        "id": 2913,
+        "vi": "Bệnh viện có đội ngũ bác sĩ chuyên môn cao"
+      },
+      {
+        "id": 2914,
+        "vi": "Bưu điện nhận bưu phẩm nặng với giá hợp lý"
+      },
+      {
+        "id": 2915,
+        "vi": "Công viên có khu vui chơi được bảo trì thường xuyên"
+      },
+      {
+        "id": 2916,
+        "vi": "Xe rác đi qua các con đường làng"
+      },
+      {
+        "id": 2917,
+        "vi": "Hệ thống điện đảm bảo ánh sáng cho khu chợ"
+      },
+      {
+        "id": 2918,
+        "vi": "Trạm y tế cung cấp dịch vụ sơ cứu kịp thời"
+      },
+      {
+        "id": 2919,
+        "vi": "Chợ có thùng rác ở mọi góc"
+      },
+      {
+        "id": 2920,
+        "vi": "Xe buýt chở khách du lịch quanh thành phố"
+      },
+      {
+        "id": 2921,
+        "vi": "Đèn đường sáng ở các ngõ nhỏ ban đêm"
+      },
+      {
+        "id": 2922,
+        "vi": "Nhân viên vệ sinh làm việc với trang thiết bị hiện đại"
+      },
+      {
+        "id": 2923,
+        "vi": "Nước máy được cấp liên tục cho các hộ nghèo"
+      },
+      {
+        "id": 2924,
+        "vi": "Bệnh viện có phòng mổ đạt chuẩn quốc tế"
+      },
+      {
+        "id": 2925,
+        "vi": "Bưu điện cung cấp dịch vụ giao hàng nhanh"
+      },
+      {
+        "id": 2926,
+        "vi": "Công viên có cây xanh được chăm sóc kỹ"
+      },
+      {
+        "id": 2927,
+        "vi": "Xe rác thu gom rác theo giờ cố định"
+      },
+      {
+        "id": 2928,
+        "vi": "Hệ thống điện hỗ trợ các sự kiện cộng đồng"
+      },
+      {
+        "id": 2929,
+        "vi": "Trạm y tế tư vấn dinh dưỡng cho người dân"
+      },
+      {
+        "id": 2930,
+        "vi": "Chợ được giữ sạch sẽ để thu hút khách"
+      },
+      {
+        "id": 2931,
+        "vi": "Xe buýt chạy qua các khu công nghiệp"
+      },
+      {
+        "id": 2932,
+        "vi": "Đèn đường được lắp đặt ở khu vực mới"
+      },
+      {
+        "id": 2933,
+        "vi": "Rác thải được xử lý đúng quy trình"
+      },
+      {
+        "id": 2934,
+        "vi": "Nước sạch chảy đều đến từng hộ gia đình"
+      },
+      {
+        "id": 2935,
+        "vi": "Bệnh viện có khu vực chờ thoải mái"
+      },
+      {
+        "id": 2936,
+        "vi": "Bưu điện gửi thư đi nước ngoài nhanh chóng"
+      },
+      {
+        "id": 2937,
+        "vi": "Công viên có lối đi bộ được vệ sinh thường xuyên"
+      },
+      {
+        "id": 2938,
+        "vi": "Xe rác thu gom rác đúng quy định"
+      },
+      {
+        "id": 2939,
+        "vi": "Hệ thống điện đảm bảo ánh sáng cho đường phố."
       }
     ],
     "health": [
@@ -3618,6 +7566,378 @@
       {
         "id": 804,
         "vi": "Tôi tập bài thở bụng sâu để thư giãn."
+      },
+      {
+        "id": 3135,
+        "vi": "Bệnh viện công lập đón tiếp bệnh nhân từ sáng sớm"
+      },
+      {
+        "id": 3136,
+        "vi": "Bác sĩ kiểm tra sức khỏe tổng quát cho người dân"
+      },
+      {
+        "id": 3137,
+        "vi": "Trạm y tế địa phương cung cấp thuốc thiết yếu miễn phí"
+      },
+      {
+        "id": 3138,
+        "vi": "Người dân rửa tay bằng xà phòng để phòng bệnh"
+      },
+      {
+        "id": 3139,
+        "vi": "Phòng khám được giữ sạch sẽ và thông thoáng"
+      },
+      {
+        "id": 3140,
+        "vi": "Y tá đo huyết áp với thiết bị hiện đại"
+      },
+      {
+        "id": 3141,
+        "vi": "Thuốc được phân phối theo đơn bác sĩ"
+      },
+      {
+        "id": 3142,
+        "vi": "Mọi người bổ sung rau xanh vào bữa ăn hàng ngày"
+      },
+      {
+        "id": 3143,
+        "vi": "Bệnh viện có khu vực cấp cứu hoạt động 24/7"
+      },
+      {
+        "id": 3144,
+        "vi": "Trẻ em được tiêm phòng định kỳ theo lịch"
+      },
+      {
+        "id": 3145,
+        "vi": "Bác sĩ sử dụng nhiệt kế để kiểm tra thân nhiệt"
+      },
+      {
+        "id": 3146,
+        "vi": "Phòng khám mở cửa phục vụ cả ngày cuối tuần"
+      },
+      {
+        "id": 3147,
+        "vi": "Người dân uống nước sạch để tránh bệnh tật"
+      },
+      {
+        "id": 3148,
+        "vi": "Y tá chăm sóc bệnh nhân với sự tận tâm"
+      },
+      {
+        "id": 3149,
+        "vi": "Bệnh viện có xe cứu thương sẵn sàng hoạt động"
+      },
+      {
+        "id": 3150,
+        "vi": "Nhà thuốc cung cấp thuốc đạt chuẩn chất lượng"
+      },
+      {
+        "id": 3151,
+        "vi": "Mọi người tập thể dục để tăng cường sức khỏe"
+      },
+      {
+        "id": 3152,
+        "vi": "Trạm y tế tổ chức khám sức khỏe miễn phí"
+      },
+      {
+        "id": 3153,
+        "vi": "Bác sĩ kê đơn thuốc dựa trên triệu chứng"
+      },
+      {
+        "id": 3154,
+        "vi": "Phòng khám được trang bị máy đo huyết áp hiện đại"
+      },
+      {
+        "id": 3155,
+        "vi": "Người dân ăn trái cây để bổ sung vitamin"
+      },
+      {
+        "id": 3156,
+        "vi": "Bệnh viện có phòng cấp cứu với thiết bị tiên tiến"
+      },
+      {
+        "id": 3157,
+        "vi": "Y tá thay băng gạc cho bệnh nhân cẩn thận"
+      },
+      {
+        "id": 3158,
+        "vi": "Thuốc được bảo quản trong điều kiện thích hợp"
+      },
+      {
+        "id": 3159,
+        "vi": "Mọi người đi bộ buổi sáng để cải thiện sức khỏe"
+      },
+      {
+        "id": 3160,
+        "vi": "Trạm y tế tư vấn cách phòng ngừa bệnh truyền nhiễm"
+      },
+      {
+        "id": 3161,
+        "vi": "Bác sĩ kiểm tra thị lực cho học sinh định kỳ"
+      },
+      {
+        "id": 3162,
+        "vi": "Phòng khám có khu vực chờ thoải mái"
+      },
+      {
+        "id": 3163,
+        "vi": "Người dân uống đủ nước để duy trì sức khỏe"
+      },
+      {
+        "id": 3164,
+        "vi": "Bệnh viện có phòng khám chuyên khoa tai mũi họng"
+      },
+      {
+        "id": 3165,
+        "vi": "Y tá đo nhịp tim với máy chuyên dụng"
+      },
+      {
+        "id": 3166,
+        "vi": "Thuốc được cấp theo liều lượng chính xác"
+      },
+      {
+        "id": 3167,
+        "vi": "Mọi người ngủ đủ giấc để phục hồi năng lượng"
+      },
+      {
+        "id": 3168,
+        "vi": "Trạm y tế tổ chức các buổi tư vấn dinh dưỡng"
+      },
+      {
+        "id": 3169,
+        "vi": "Bác sĩ khám sức khỏe cho người cao tuổi"
+      },
+      {
+        "id": 3170,
+        "vi": "Phòng khám được vệ sinh sạch sẽ mỗi ngày"
+      },
+      {
+        "id": 3171,
+        "vi": "Người dân ăn thực phẩm giàu chất xơ"
+      },
+      {
+        "id": 3172,
+        "vi": "Bệnh viện có phòng mổ đạt chuẩn quốc tế"
+      },
+      {
+        "id": 3173,
+        "vi": "Y tá hướng dẫn bệnh nhân cách dùng thuốc"
+      },
+      {
+        "id": 3174,
+        "vi": "Thuốc được lưu trữ trong tủ y tế sạch"
+      },
+      {
+        "id": 3175,
+        "vi": "Mọi người tập yoga để giảm căng thẳng"
+      },
+      {
+        "id": 3176,
+        "vi": "Trạm y tế cung cấp dịch vụ sơ cứu nhanh chóng"
+      },
+      {
+        "id": 3177,
+        "vi": "Bác sĩ kiểm tra răng miệng cho trẻ em"
+      },
+      {
+        "id": 3178,
+        "vi": "Phòng khám có bảng hướng dẫn rõ ràng"
+      },
+      {
+        "id": 3179,
+        "vi": "Người dân hạn chế ăn đồ chiên rán"
+      },
+      {
+        "id": 3180,
+        "vi": "Bệnh viện có phòng chụp X-quang hiện đại"
+      },
+      {
+        "id": 3181,
+        "vi": "Y tá theo dõi tình trạng bệnh nhân đều đặn"
+      },
+      {
+        "id": 3182,
+        "vi": "Thuốc được cung cấp với giá cả hợp lý"
+      },
+      {
+        "id": 3183,
+        "vi": "Mọi người chạy bộ để cải thiện tim mạch"
+      },
+      {
+        "id": 3184,
+        "vi": "Trạm y tế có đội ngũ y tá làm việc tận tâm"
+      },
+      {
+        "id": 3185,
+        "vi": "Bác sĩ tư vấn cách chăm sóc sức khỏe tại nhà"
+      },
+      {
+        "id": 3186,
+        "vi": "Phòng khám có không gian thoáng đãng và sạch sẽ"
+      },
+      {
+        "id": 3187,
+        "vi": "Người dân ăn thực phẩm tươi để tăng sức đề kháng"
+      },
+      {
+        "id": 3188,
+        "vi": "Bệnh viện có khu vực chăm sóc trẻ em"
+      },
+      {
+        "id": 3189,
+        "vi": "Y tá đo cân nặng và chiều cao định kỳ"
+      },
+      {
+        "id": 3190,
+        "vi": "Thuốc được cấp theo toa bác sĩ cẩn thận"
+      },
+      {
+        "id": 3191,
+        "vi": "Mọi người tập thể dục ngoài trời để thư giãn"
+      },
+      {
+        "id": 3192,
+        "vi": "Trạm y tế tổ chức tiêm phòng cho cộng đồng"
+      },
+      {
+        "id": 3193,
+        "vi": "Bác sĩ kiểm tra sức khỏe cho công nhân"
+      },
+      {
+        "id": 3194,
+        "vi": "Phòng khám có thiết bị y tế hiện đại"
+      },
+      {
+        "id": 3195,
+        "vi": "Người dân uống trà thảo mộc để thư giãn"
+      },
+      {
+        "id": 3196,
+        "vi": "Bệnh viện có phòng xét nghiệm máu tiên tiến"
+      },
+      {
+        "id": 3197,
+        "vi": "Y tá hướng dẫn bệnh nhân cách chăm sóc vết thương"
+      },
+      {
+        "id": 3198,
+        "vi": "Thuốc được bảo quản ở nhiệt độ thích hợp"
+      },
+      {
+        "id": 3199,
+        "vi": "Mọi người đi bộ để duy trì sức khỏe tốt"
+      },
+      {
+        "id": 3200,
+        "vi": "Trạm y tế có phòng sơ cứu được trang bị đầy đủ"
+      },
+      {
+        "id": 3201,
+        "vi": "Bác sĩ khám bệnh với thái độ chuyên nghiệp"
+      },
+      {
+        "id": 3202,
+        "vi": "Phòng khám có khu vực chờ được vệ sinh thường xuyên"
+      },
+      {
+        "id": 3203,
+        "vi": "Người dân ăn thực phẩm ít muối để bảo vệ tim"
+      },
+      {
+        "id": 3204,
+        "vi": "Bệnh viện có phòng khám mắt hiện đại"
+      },
+      {
+        "id": 3205,
+        "vi": "Y tá hỗ trợ bệnh nhân phục hồi sau phẫu thuật"
+      },
+      {
+        "id": 3206,
+        "vi": "Thuốc được cấp theo đơn của bác sĩ chuyên khoa"
+      },
+      {
+        "id": 3207,
+        "vi": "Mọi người tập hít thở sâu để giảm căng thẳng"
+      },
+      {
+        "id": 3208,
+        "vi": "Trạm y tế cung cấp dịch vụ chăm sóc sức khỏe cơ bản"
+      },
+      {
+        "id": 3209,
+        "vi": "Bác sĩ tư vấn chế độ ăn uống cho bệnh nhân"
+      },
+      {
+        "id": 3210,
+        "vi": "Phòng khám có bảng thông tin về phòng bệnh"
+      },
+      {
+        "id": 3211,
+        "vi": "Người dân bổ sung trái cây vào bữa ăn"
+      },
+      {
+        "id": 3212,
+        "vi": "Bệnh viện có phòng hồi sức với thiết bị tối tân"
+      },
+      {
+        "id": 3213,
+        "vi": "Y tá kiểm tra sức khỏe bệnh nhân mỗi ngày"
+      },
+      {
+        "id": 3214,
+        "vi": "Thuốc được để trong hộp y tế sạch sẽ"
+      },
+      {
+        "id": 3215,
+        "vi": "Mọi người tập thể dục để tăng cường sức đề kháng"
+      },
+      {
+        "id": 3216,
+        "vi": "Trạm y tế có bác sĩ trực ca đêm"
+      },
+      {
+        "id": 3217,
+        "vi": "Bác sĩ khám bệnh với thiết bị hiện đại"
+      },
+      {
+        "id": 3218,
+        "vi": "Phòng khám có không gian yên tĩnh"
+      },
+      {
+        "id": 3219,
+        "vi": "Người dân ăn thực phẩm sạch để bảo vệ sức khỏe"
+      },
+      {
+        "id": 3220,
+        "vi": "Bệnh viện có phòng khám nhi khoa chuyên biệt"
+      },
+      {
+        "id": 3221,
+        "vi": "Y tá hướng dẫn cách dùng thuốc đúng cách"
+      },
+      {
+        "id": 3222,
+        "vi": "Thuốc được bảo quản trong điều kiện an toàn"
+      },
+      {
+        "id": 3223,
+        "vi": "Mọi người đi bộ quanh công viên để thư giãn"
+      },
+      {
+        "id": 3224,
+        "vi": "Trạm y tế tổ chức các buổi kiểm tra sức khỏe"
+      },
+      {
+        "id": 3225,
+        "vi": "Bác sĩ tư vấn cách phòng ngừa bệnh mãn tính"
+      },
+      {
+        "id": 3226,
+        "vi": "Phòng khám có dụng cụ y tế sạch sẽ"
+      },
+      {
+        "id": 3227,
+        "vi": "Người dân ăn uống điều độ để khỏe mạnh."
       }
     ],
     "shopping": [
@@ -3828,6 +8148,382 @@
       {
         "id": 950,
         "vi": "Tôi dùng tính năng “thêm vào giỏ” để suy nghĩ kỹ hơn."
+      },
+      {
+        "id": 3417,
+        "vi": "Chợ truyền thống tấp nập người mua rau củ mỗi sáng"
+      },
+      {
+        "id": 3418,
+        "vi": "Quần áo thời trang được trưng bày bắt mắt trong cửa hàng"
+      },
+      {
+        "id": 3419,
+        "vi": "Người dân sử dụng thẻ ngân hàng để thanh toán nhanh"
+      },
+      {
+        "id": 3420,
+        "vi": "Siêu thị mở cửa sớm để phục vụ khách hàng"
+      },
+      {
+        "id": 3421,
+        "vi": "Áo sơ mi được may cẩn thận với nhiều kích cỡ"
+      },
+      {
+        "id": 3422,
+        "vi": "Tiền được cất trong ví da cao cấp"
+      },
+      {
+        "id": 3423,
+        "vi": "Cửa hàng tổ chức chương trình giảm giá dịp lễ"
+      },
+      {
+        "id": 3424,
+        "vi": "Quần jeans được bày trên kệ với nhiều kiểu dáng"
+      },
+      {
+        "id": 3425,
+        "vi": "Người dân mang giỏ xách đi chợ để giảm rác nhựa"
+      },
+      {
+        "id": 3426,
+        "vi": "Siêu thị cung cấp nhiều loại thực phẩm tươi sạch"
+      },
+      {
+        "id": 3427,
+        "vi": "Áo khoác lông được bán vào mùa đông lạnh giá"
+      },
+      {
+        "id": 3428,
+        "vi": "Tiền lẻ được dùng để mua đồ ăn vặt"
+      },
+      {
+        "id": 3429,
+        "vi": "Chợ trở nên đông đúc vào cuối tuần"
+      },
+      {
+        "id": 3430,
+        "vi": "Cửa hàng giày thể thao thu hút khách trẻ"
+      },
+      {
+        "id": 3431,
+        "vi": "Người dân kiểm tra hóa đơn sau khi trả tiền"
+      },
+      {
+        "id": 3432,
+        "vi": "Siêu thị có quầy thanh toán tự động hiện đại"
+      },
+      {
+        "id": 3433,
+        "vi": "Áo thun được thiết kế với họa tiết độc đáo"
+      },
+      {
+        "id": 3434,
+        "vi": "Tiền được để trong két sắt an toàn"
+      },
+      {
+        "id": 3435,
+        "vi": "Chợ bán trái cây nhập khẩu tươi ngon"
+      },
+      {
+        "id": 3436,
+        "vi": "Quần áo được giặt và ủi trước khi bán"
+      },
+      {
+        "id": 3437,
+        "vi": "Người dân trả tiền bằng ứng dụng di động"
+      },
+      {
+        "id": 3438,
+        "vi": "Siêu thị có xe đẩy tiện lợi cho khách"
+      },
+      {
+        "id": 3439,
+        "vi": "Giày sandal được giảm giá vào mùa hè"
+      },
+      {
+        "id": 3440,
+        "vi": "Tiền xu được dùng ở máy bán nước tự động"
+      },
+      {
+        "id": 3441,
+        "vi": "Chợ có quầy bán hoa tươi rực rỡ"
+      },
+      {
+        "id": 3442,
+        "vi": "Áo len được đan tay bán ở cửa hàng"
+      },
+      {
+        "id": 3443,
+        "vi": "Người dân mang ví tiền đi siêu thị"
+      },
+      {
+        "id": 3444,
+        "vi": "Siêu thị cung cấp thực phẩm hữu cơ chất lượng cao"
+      },
+      {
+        "id": 3445,
+        "vi": "Quần áo trẻ em được may với chất liệu mềm mại"
+      },
+      {
+        "id": 3446,
+        "vi": "Tiền được cất trong ngăn kéo khóa kín"
+      },
+      {
+        "id": 3447,
+        "vi": "Chợ bán cá tươi vào sáng sớm"
+      },
+      {
+        "id": 3448,
+        "vi": "Cửa hàng thời trang trưng bày váy dạ hội"
+      },
+      {
+        "id": 3449,
+        "vi": "Người dân đếm tiền cẩn thận trước khi mua"
+      },
+      {
+        "id": 3450,
+        "vi": "Siêu thị có quầy thịt tươi sạch sẽ"
+      },
+      {
+        "id": 3451,
+        "vi": "Giày thể thao được thử để chọn kích cỡ"
+      },
+      {
+        "id": 3452,
+        "vi": "Tiền được để trong túi có khóa kéo"
+      },
+      {
+        "id": 3453,
+        "vi": "Chợ truyền thống bán nhiều loại thực phẩm"
+      },
+      {
+        "id": 3454,
+        "vi": "Áo khoác được treo ngay ngắn trên giá"
+      },
+      {
+        "id": 3455,
+        "vi": "Người dân sử dụng ví điện tử để thanh toán"
+      },
+      {
+        "id": 3456,
+        "vi": "Siêu thị có kệ hàng đầy ắp đồ uống"
+      },
+      {
+        "id": 3457,
+        "vi": "Quần áo được sắp xếp theo kích thước"
+      },
+      {
+        "id": 3458,
+        "vi": "Tiền được cất trong hộp kim loại"
+      },
+      {
+        "id": 3459,
+        "vi": "Chợ có quầy bán rau sạch hữu cơ"
+      },
+      {
+        "id": 3460,
+        "vi": "Cửa hàng bán áo sơ mi công sở"
+      },
+      {
+        "id": 3461,
+        "vi": "Người dân mang túi vải đi chợ"
+      },
+      {
+        "id": 3462,
+        "vi": "Siêu thị có máy quét mã vạch hiện đại"
+      },
+      {
+        "id": 3463,
+        "vi": "Áo thun được in hình theo yêu cầu"
+      },
+      {
+        "id": 3464,
+        "vi": "Tiền lẻ được để trong túi nhỏ tiện lợi"
+      },
+      {
+        "id": 3465,
+        "vi": "Chợ bán đồ ăn sáng hấp dẫn"
+      },
+      {
+        "id": 3466,
+        "vi": "Quần jeans được giảm giá vào dịp lễ"
+      },
+      {
+        "id": 3467,
+        "vi": "Người dân trả tiền nhanh tại quầy"
+      },
+      {
+        "id": 3468,
+        "vi": "Siêu thị có khu vực bán đồ đông lạnh"
+      },
+      {
+        "id": 3469,
+        "vi": "Giày được lau sạch trước khi trưng bày"
+      },
+      {
+        "id": 3470,
+        "vi": "Tiền được cất trong ví chống thấm"
+      },
+      {
+        "id": 3471,
+        "vi": "Chợ có quầy bán thịt tươi ngon"
+      },
+      {
+        "id": 3472,
+        "vi": "Cửa hàng bán váy thời trang cho giới trẻ"
+      },
+      {
+        "id": 3473,
+        "vi": "Người dân kiểm tra tiền trước khi trả"
+      },
+      {
+        "id": 3474,
+        "vi": "Siêu thị có quầy bánh ngọt thơm ngon"
+      },
+      {
+        "id": 3475,
+        "vi": "Áo thun được xếp gọn trên kệ"
+      },
+      {
+        "id": 3476,
+        "vi": "Tiền được để trong túi có khóa"
+      },
+      {
+        "id": 3477,
+        "vi": "Chợ bán hoa tươi vào buổi chiều"
+      },
+      {
+        "id": 3478,
+        "vi": "Quần áo được treo trên móc gỗ"
+      },
+      {
+        "id": 3479,
+        "vi": "Người dân trả tiền bằng thẻ tín dụng"
+      },
+      {
+        "id": 3480,
+        "vi": "Siêu thị có khu vực bán đồ gia dụng"
+      },
+      {
+        "id": 3481,
+        "vi": "Giày được bày trên kệ sáng bóng"
+      },
+      {
+        "id": 3482,
+        "vi": "Tiền lẻ được dùng để mua đồ nhỏ"
+      },
+      {
+        "id": 3483,
+        "vi": "Chợ có quầy bán cá tươi sống"
+      },
+      {
+        "id": 3484,
+        "vi": "Cửa hàng bán áo khoác mùa đông ấm áp"
+      },
+      {
+        "id": 3485,
+        "vi": "Người dân mang túi đi chợ để bảo vệ môi trường"
+      },
+      {
+        "id": 3486,
+        "vi": "Siêu thị có quầy rau củ sạch"
+      },
+      {
+        "id": 3487,
+        "vi": "Áo len được bán với nhiều màu sắc"
+      },
+      {
+        "id": 3488,
+        "vi": "Tiền được cất trong ví da nhỏ"
+      },
+      {
+        "id": 3489,
+        "vi": "Chợ bán trái cây tươi vào sáng sớm"
+      },
+      {
+        "id": 3490,
+        "vi": "Cửa hàng thời trang có nhiều kiểu váy"
+      },
+      {
+        "id": 3491,
+        "vi": "Người dân trả tiền bằng ứng dụng thanh toán"
+      },
+      {
+        "id": 3492,
+        "vi": "Siêu thị có kệ hàng thực phẩm nhập khẩu"
+      },
+      {
+        "id": 3493,
+        "vi": "Quần áo được sắp xếp theo mùa"
+      },
+      {
+        "id": 3494,
+        "vi": "Tiền được để trong hộp có khóa"
+      },
+      {
+        "id": 3495,
+        "vi": "Chợ có quầy bán thực phẩm tươi"
+      },
+      {
+        "id": 3496,
+        "vi": "Cửa hàng bán giày thời trang giá tốt"
+      },
+      {
+        "id": 3497,
+        "vi": "Người dân mang tiền lẻ đi chợ"
+      },
+      {
+        "id": 3498,
+        "vi": "Siêu thị có quầy thanh toán nhanh gọn"
+      },
+      {
+        "id": 3499,
+        "vi": "Áo thun được thiết kế đơn giản nhưng đẹp"
+      },
+      {
+        "id": 3500,
+        "vi": "Tiền được cất trong túi chống nước"
+      },
+      {
+        "id": 3501,
+        "vi": "Chợ bán đồ ăn sáng mỗi ngày"
+      },
+      {
+        "id": 3502,
+        "vi": "Quần jeans được thử trước khi mua"
+      },
+      {
+        "id": 3503,
+        "vi": "Người dân trả tiền bằng tiền mặt"
+      },
+      {
+        "id": 3504,
+        "vi": "Siêu thị có khu vực bán đồ tươi sống"
+      },
+      {
+        "id": 3505,
+        "vi": "Giày được trưng bày theo kích cỡ"
+      },
+      {
+        "id": 3506,
+        "vi": "Tiền được để trong ví nhỏ gọn"
+      },
+      {
+        "id": 3507,
+        "vi": "Chợ có quầy bán hoa tươi đẹp"
+      },
+      {
+        "id": 3508,
+        "vi": "Cửa hàng bán áo sơ mi giá rẻ"
+      },
+      {
+        "id": 3509,
+        "vi": "Người dân mang giỏ vải đi mua sắm"
+      },
+      {
+        "id": 3510,
+        "vi": "Siêu thị có máy tính tiền hiện đại."
       }
     ],
     "entertainment": [
@@ -5256,6 +9952,398 @@
       {
         "id": 259,
         "vi": "Tôi tin rằng, mỗi người đều có một nhịp điệu riêng và điều quan trọng là tôn trọng nhịp điệu đó."
+      },
+      {
+        "id": 2056,
+        "vi": "Buổi sáng ở khu dân cư vang vọng tiếng rao của người bán hàng rong"
+      },
+      {
+        "id": 2057,
+        "vi": "Người dân thường tập thể dục ở công viên khi ánh bình minh ló dạng"
+      },
+      {
+        "id": 2058,
+        "vi": "Bữa sáng gia đình thường có món bánh cuốn nhân thịt thơm lừng"
+      },
+      {
+        "id": 2059,
+        "vi": "Trẻ em thích đạp xe dạo quanh khu phố vào những chiều mát mẻ"
+      },
+      {
+        "id": 2060,
+        "vi": "Chợ truyền thống luôn nhộn nhịp với tiếng cười nói của người mua bán"
+      },
+      {
+        "id": 2061,
+        "vi": "Cửa hàng tiện lợi trở thành điểm đến quen thuộc sau giờ làm"
+      },
+      {
+        "id": 2062,
+        "vi": "Xe buýt công cộng vận hành trơn tru để phục vụ người dân"
+      },
+      {
+        "id": 2063,
+        "vi": "Khu vườn sau nhà được chăm chút với những luống rau xanh mướt"
+      },
+      {
+        "id": 2064,
+        "vi": "Bữa trưa thường được chuẩn bị cầu kỳ với món thịt kho tàu đậm đà"
+      },
+      {
+        "id": 2065,
+        "vi": "Trẻ em say mê khám phá các trò chơi điện tử trên máy tính bảng"
+      },
+      {
+        "id": 2066,
+        "vi": "Cơm hộp được mẹ chuẩn bị tỉ mỉ cho con mang đến trường"
+      },
+      {
+        "id": 2067,
+        "vi": "Ông lão thích ngồi nhâm nhi cà phê đen và đọc báo sáng"
+      },
+      {
+        "id": 2068,
+        "vi": "Tiếng chó sủa vang lên mỗi khi có người lạ đi ngang qua ngõ"
+      },
+      {
+        "id": 2069,
+        "vi": "Hàng xóm thường tụ họp để chia sẻ những câu chuyện đời thường"
+      },
+      {
+        "id": 2070,
+        "vi": "Hàng cây xanh mát được chăm sóc để tạo bóng râm cho khu phố"
+      },
+      {
+        "id": 2071,
+        "vi": "Đèn đường lung linh thắp sáng khi hoàng hôn dần buông"
+      },
+      {
+        "id": 2072,
+        "vi": "Siêu thị trở nên đông đúc vào những ngày lễ lớn"
+      },
+      {
+        "id": 2073,
+        "vi": "Bánh chưng được gói khéo léo để chuẩn bị cho ngày Tết đoàn viên"
+      },
+      {
+        "id": 2074,
+        "vi": "Kem que mát lạnh là món khoái khẩu của trẻ em trong ngày hè oi ả"
+      },
+      {
+        "id": 2075,
+        "vi": "Xe máy được lau chùi kỹ lưỡng để sẵn sàng cho chuyến đi xa"
+      },
+      {
+        "id": 2076,
+        "vi": "Bữa tối gia đình ấm cúng với món cá hấp gừng thơm phức"
+      },
+      {
+        "id": 2077,
+        "vi": "Công viên trở nên tĩnh lặng khi ánh trăng bắt đầu lấp ló"
+      },
+      {
+        "id": 2078,
+        "vi": "Mưa phùn lất phất làm không khí phố phường thêm phần thơ mộng"
+      },
+      {
+        "id": 2079,
+        "vi": "Trà hoa cúc được nhâm nhi để thư giãn sau một ngày dài"
+      },
+      {
+        "id": 2080,
+        "vi": "Trẻ em thích chơi trò ghép hình để rèn luyện trí óc"
+      },
+      {
+        "id": 2081,
+        "vi": "Nhà cửa được trang hoàng lộng lẫy để đón năm mới"
+      },
+      {
+        "id": 2082,
+        "vi": "Mèo con cuộn tròn ngủ yên bình trên tấm thảm êm ái"
+      },
+      {
+        "id": 2083,
+        "vi": "Chợ đêm rực rỡ ánh đèn và mùi hương của các món ăn đường phố"
+      },
+      {
+        "id": 2084,
+        "vi": "Người dân thường đến chùa cầu an vào những ngày rằm tháng bảy"
+      },
+      {
+        "id": 2085,
+        "vi": "Tiếng gà trống gáy báo hiệu một ngày mới tràn đầy năng lượng"
+      },
+      {
+        "id": 2086,
+        "vi": "Bàn ăn được bày biện chu đáo để cả nhà quây quần bên nhau"
+      },
+      {
+        "id": 2087,
+        "vi": "Trẻ em hào hứng chơi bóng rổ ở sân trường vào giờ ra chơi"
+      },
+      {
+        "id": 2088,
+        "vi": "Cửa sổ được mở rộng để đón luồng gió mát lành từ ngoài trời"
+      },
+      {
+        "id": 2089,
+        "vi": "Mọi người thường chìm vào giấc ngủ sau khi xem một bộ phim"
+      },
+      {
+        "id": 2090,
+        "vi": "Xe đạp là phương tiện yêu thích để khám phá những con đường làng"
+      },
+      {
+        "id": 2091,
+        "vi": "Vườn hoa khoe sắc rực rỡ khi mùa xuân đến"
+      },
+      {
+        "id": 2092,
+        "vi": "Bếp lửa luôn được kiểm tra kỹ lưỡng để đảm bảo an toàn"
+      },
+      {
+        "id": 2093,
+        "vi": "Trẻ em thích thưởng thức bánh flan ngọt ngào vào cuối tuần"
+      },
+      {
+        "id": 2094,
+        "vi": "Tin tức thời sự được theo dõi để nắm bắt tình hình thế giới"
+      },
+      {
+        "id": 2095,
+        "vi": "Giao thông trở nên ùn tắc vào những giờ cao điểm"
+      },
+      {
+        "id": 2096,
+        "vi": "Chợ cá tấp nập người mua bán từ khi mặt trời chưa mọc"
+      },
+      {
+        "id": 2097,
+        "vi": "Áo len được lấy ra khỏi tủ khi tiết trời trở lạnh"
+      },
+      {
+        "id": 2098,
+        "vi": "Tiệc sinh nhật của hàng xóm luôn rộn ràng tiếng nhạc và cười nói"
+      },
+      {
+        "id": 2099,
+        "vi": "Trẻ em say mê vẽ những bức tranh phong cảnh đầy màu sắc"
+      },
+      {
+        "id": 2100,
+        "vi": "Đồng hồ báo thức vang lên đúng giờ để bắt đầu ngày mới"
+      },
+      {
+        "id": 2101,
+        "vi": "Cửa hàng hoa tươi luôn nhộn nhịp vào những dịp đặc biệt"
+      },
+      {
+        "id": 2102,
+        "vi": "Chạy bộ quanh công viên trở thành thói quen của nhiều người"
+      },
+      {
+        "id": 2103,
+        "vi": "Bữa cơm gia đình luôn tràn ngập tình thân và tiếng cười"
+      },
+      {
+        "id": 2104,
+        "vi": "Trẻ em thích thả diều trên cánh đồng lộng gió"
+      },
+      {
+        "id": 2105,
+        "vi": "Mưa lớn khiến đường phố ngập nước và giao thông chậm lại"
+      },
+      {
+        "id": 2106,
+        "vi": "Tiệm cắt tóc thu hút khách hàng với các kiểu tóc thời thượng"
+      },
+      {
+        "id": 2107,
+        "vi": "Những câu chuyện đời thường được kể lại để gắn kết gia đình"
+      },
+      {
+        "id": 2108,
+        "vi": "Xe tải chở hàng hóa tươi ngon đến chợ mỗi buổi sáng"
+      },
+      {
+        "id": 2109,
+        "vi": "Chợ quê luôn tự hào với những sản vật địa phương phong phú"
+      },
+      {
+        "id": 2110,
+        "vi": "Trẻ em thích chơi trò nhảy lò cò để rèn luyện sự khéo léo"
+      },
+      {
+        "id": 2111,
+        "vi": "Hương thơm từ bếp lan tỏa khắp ngôi nhà vào mỗi chiều"
+      },
+      {
+        "id": 2112,
+        "vi": "Người dân thích dạo bộ quanh hồ để tận hưởng không khí trong lành"
+      },
+      {
+        "id": 2113,
+        "vi": "Những hàng cây xanh tạo nên một khung cảnh yên bình cho khu phố"
+      },
+      {
+        "id": 2114,
+        "vi": "Nước chè xanh được pha đậm để tiếp đãi khách quý"
+      },
+      {
+        "id": 2115,
+        "vi": "Trẻ em say mê hát những bài dân ca truyền thống"
+      },
+      {
+        "id": 2116,
+        "vi": "Đường làng trở nên tĩnh lặng khi màn đêm buông xuống"
+      },
+      {
+        "id": 2117,
+        "vi": "Cửa hàng thời trang luôn cập nhật xu hướng mới nhất"
+      },
+      {
+        "id": 2118,
+        "vi": "Sân nhà được quét dọn để đón những ngày lễ quan trọng"
+      },
+      {
+        "id": 2119,
+        "vi": "Kẹo sữa ngọt ngào là món quà yêu thích của trẻ nhỏ"
+      },
+      {
+        "id": 2120,
+        "vi": "Bầu trời rực rỡ ánh nắng làm lòng người thêm phấn chấn"
+      },
+      {
+        "id": 2121,
+        "vi": "Cờ vua được chơi ở quán cà phê như một cách thư giãn"
+      },
+      {
+        "id": 2122,
+        "vi": "Chợ hoa rực rỡ sắc màu vào những ngày giáp Tết"
+      },
+      {
+        "id": 2123,
+        "vi": "Bong bóng xà phòng bay lượn khiến trẻ em thích thú"
+      },
+      {
+        "id": 2124,
+        "vi": "Nhà hàng luôn kín bàn vào những buổi tiệc cuối tuần"
+      },
+      {
+        "id": 2125,
+        "vi": "Xe đạp điện trở thành lựa chọn tiện lợi cho học sinh"
+      },
+      {
+        "id": 2126,
+        "vi": "Cây ăn quả trong vườn được thu hoạch đúng thời vụ"
+      },
+      {
+        "id": 2127,
+        "vi": "Chuyện cổ tích được kể để ru trẻ em vào giấc ngủ"
+      },
+      {
+        "id": 2128,
+        "vi": "Đường phố lung linh ánh đèn như một bức tranh đêm"
+      },
+      {
+        "id": 2129,
+        "vi": "Báo chí được đọc để cập nhật những sự kiện mới nhất"
+      },
+      {
+        "id": 2130,
+        "vi": "Món rau luộc dân dã không thể thiếu trong bữa cơm"
+      },
+      {
+        "id": 2131,
+        "vi": "Trẻ em thích chạy nhảy tự do trong công viên rộng lớn"
+      },
+      {
+        "id": 2132,
+        "vi": "Chợ đêm bày bán những món quà lưu niệm độc đáo"
+      },
+      {
+        "id": 2133,
+        "vi": "Đền chùa trở thành nơi cầu nguyện bình an cho cả gia đình"
+      },
+      {
+        "id": 2134,
+        "vi": "Xe máy lướt qua những cây cầu nhỏ vào sáng sớm"
+      },
+      {
+        "id": 2135,
+        "vi": "Bánh xèo giòn rụm là món ăn vặt được yêu thích"
+      },
+      {
+        "id": 2136,
+        "vi": "Ngôi nhà được sơn mới để đón một năm đầy khởi sắc"
+      },
+      {
+        "id": 2137,
+        "vi": "Radio phát những giai điệu quen thuộc vào mỗi sáng"
+      },
+      {
+        "id": 2138,
+        "vi": "Cây xanh được trồng để bảo vệ môi trường sống"
+      },
+      {
+        "id": 2139,
+        "vi": "Trẻ em thích chơi trò kéo co để tăng tinh thần đồng đội"
+      },
+      {
+        "id": 2140,
+        "vi": "Đường phố yên bình vào những buổi sáng cuối tuần"
+      },
+      {
+        "id": 2141,
+        "vi": "Siêu thị luôn đầy ắp hàng hóa phục vụ người dân"
+      },
+      {
+        "id": 2142,
+        "vi": "Canh chua cá lóc là món ăn đậm chất miền quê"
+      },
+      {
+        "id": 2143,
+        "vi": "Trẻ em thích vẽ tranh bằng màu nước để thể hiện sáng tạo"
+      },
+      {
+        "id": 2144,
+        "vi": "Tiệm bánh mì luôn thơm lừng mùi bánh mới nướng"
+      },
+      {
+        "id": 2145,
+        "vi": "Đi bộ quanh hồ trở thành thói quen để duy trì sức khỏe"
+      },
+      {
+        "id": 2146,
+        "vi": "Chợ chiều rực rỡ với những gian hàng đồ ăn vặt"
+      },
+      {
+        "id": 2147,
+        "vi": "Đồ chơi lắp ráp giúp trẻ em phát triển tư duy logic"
+      },
+      {
+        "id": 2148,
+        "vi": "Bếp nhà luôn sạch sẽ để đảm bảo vệ sinh an toàn"
+      },
+      {
+        "id": 2149,
+        "vi": "Trà thảo mộc được nhâm nhi để thư giãn tinh thần"
+      },
+      {
+        "id": 2150,
+        "vi": "Hoa giấy rực rỡ tô điểm cho ngôi nhà thêm phần sinh động"
+      },
+      {
+        "id": 2151,
+        "vi": "Trò bịt mắt bắt dê mang lại tiếng cười cho trẻ nhỏ"
+      },
+      {
+        "id": 2152,
+        "vi": "Phố phường nhộn nhịp khi học sinh tan trường"
+      },
+      {
+        "id": 2153,
+        "vi": "Sách được đọc để nuôi dưỡng tâm hồn và kiến thức."
       }
     ],
     "transportation": [
@@ -5466,6 +10554,390 @@
       {
         "id": 408,
         "vi": "Tôi luôn nhắc nhở bản thân: đi chậm một phút, còn hơn nhanh một đời."
+      },
+      {
+        "id": 2351,
+        "vi": "Xe buýt công cộng dừng ở trạm chính vào giờ cao điểm"
+      },
+      {
+        "id": 2352,
+        "vi": "Đường phố trở nên ùn tắc khi mọi người đổ ra đường"
+      },
+      {
+        "id": 2353,
+        "vi": "Xe máy lướt qua những con đường rợp bóng cây"
+      },
+      {
+        "id": 2354,
+        "vi": "Đèn giao thông chuyển màu đỏ tại ngã tư sầm uất"
+      },
+      {
+        "id": 2355,
+        "vi": "Người đi bộ sử dụng vạch kẻ đường để đảm bảo an toàn"
+      },
+      {
+        "id": 2356,
+        "vi": "Xe đạp trở thành lựa chọn thân thiện với môi trường"
+      },
+      {
+        "id": 2357,
+        "vi": "Ô tô được đỗ ngay ngắn trong bãi gửi xe hiện đại"
+      },
+      {
+        "id": 2358,
+        "vi": "Mọi người tuân thủ nghiêm ngặt quy định đội mũ bảo hiểm"
+      },
+      {
+        "id": 2359,
+        "vi": "Đường làng tĩnh lặng khi ánh trăng chiếu sáng"
+      },
+      {
+        "id": 2360,
+        "vi": "Xe tải chở hàng hóa nặng qua cầu vào lúc bình minh"
+      },
+      {
+        "id": 2361,
+        "vi": "Người đi đường dừng lại quan sát tín hiệu giao thông"
+      },
+      {
+        "id": 2362,
+        "vi": "Xe buýt đưa đón học sinh theo lộ trình cố định"
+      },
+      {
+        "id": 2363,
+        "vi": "Đường phố được giữ sạch sẽ nhờ đội vệ sinh đô thị"
+      },
+      {
+        "id": 2364,
+        "vi": "Xe máy được bảo dưỡng định kỳ ở tiệm sửa uy tín"
+      },
+      {
+        "id": 2365,
+        "vi": "Người dân di chuyển trên vỉa hè được lát đá cẩn thận"
+      },
+      {
+        "id": 2366,
+        "vi": "Ô tô giảm tốc độ khi đi qua khu vực đông dân cư"
+      },
+      {
+        "id": 2367,
+        "vi": "Đèn đường led chiếu sáng rực rỡ khi đêm xuống"
+      },
+      {
+        "id": 2368,
+        "vi": "Xe đạp được trang bị khóa chống trộm hiện đại"
+      },
+      {
+        "id": 2369,
+        "vi": "Mọi người kiên nhẫn chờ xe buýt ở trạm đông đúc"
+      },
+      {
+        "id": 2370,
+        "vi": "Đường phố trở nên trơn trượt sau cơn mưa lớn"
+      },
+      {
+        "id": 2371,
+        "vi": "Xe máy được xếp gọn gàng trong bãi đỗ có mái che"
+      },
+      {
+        "id": 2372,
+        "vi": "Người đi đường sử dụng áo mưa sáng màu để dễ nhận diện"
+      },
+      {
+        "id": 2373,
+        "vi": "Ô tô phát tín hiệu còi khi cần vượt qua xe khác"
+      },
+      {
+        "id": 2374,
+        "vi": "Xe buýt vận hành đúng lịch trình để phục vụ hành khách"
+      },
+      {
+        "id": 2375,
+        "vi": "Đường phố được tô điểm bằng hàng cây xanh mát"
+      },
+      {
+        "id": 2376,
+        "vi": "Xe máy len lỏi khéo léo qua những con hẻm nhỏ"
+      },
+      {
+        "id": 2377,
+        "vi": "Người dân cẩn thận quan sát biển báo trước khi qua đường"
+      },
+      {
+        "id": 2378,
+        "vi": "Đèn giao thông nhấp nháy liên tục để cảnh báo ban đêm"
+      },
+      {
+        "id": 2379,
+        "vi": "Xe đạp được sơn màu nổi bật để thu hút ánh nhìn"
+      },
+      {
+        "id": 2380,
+        "vi": "Ô tô chở nông sản tươi đến chợ từ sáng sớm"
+      },
+      {
+        "id": 2381,
+        "vi": "Cầu vượt dành cho người đi bộ giúp giảm ùn tắc"
+      },
+      {
+        "id": 2382,
+        "vi": "Xe máy di chuyển nhẹ nhàng qua những con đường làng"
+      },
+      {
+        "id": 2383,
+        "vi": "Đường phố lung linh ánh đèn neon khi đêm buông"
+      },
+      {
+        "id": 2384,
+        "vi": "Mọi người tuân thủ nghiêm chỉnh luật giao thông đường bộ"
+      },
+      {
+        "id": 2385,
+        "vi": "Xe buýt chở khách từ ngoại ô vào trung tâm thành phố"
+      },
+      {
+        "id": 2386,
+        "vi": "Ô tô di chuyển mượt mà trên đường cao tốc hiện đại"
+      },
+      {
+        "id": 2387,
+        "vi": "Đường phố yên ắng vào những giờ sáng sớm cuối tuần"
+      },
+      {
+        "id": 2388,
+        "vi": "Xe máy được kiểm tra kỹ lưỡng tại trung tâm bảo hành"
+      },
+      {
+        "id": 2389,
+        "vi": "Người đi đường chờ tín hiệu đèn xanh ở ngã tư lớn"
+      },
+      {
+        "id": 2390,
+        "vi": "Xe đạp lướt qua công viên trên làn đường riêng"
+      },
+      {
+        "id": 2391,
+        "vi": "Ô tô dừng lại đổ xăng ở trạm dịch vụ tiện nghi"
+      },
+      {
+        "id": 2392,
+        "vi": "Đường phố trở nên nhộn nhịp vào giờ tan tầm buổi chiều"
+      },
+      {
+        "id": 2393,
+        "vi": "Xe máy giảm tốc độ khi đi qua đoạn đường trơn"
+      },
+      {
+        "id": 2394,
+        "vi": "Người dân sử dụng đường hầm để qua đường an toàn"
+      },
+      {
+        "id": 2395,
+        "vi": "Đèn giao thông hoạt động liên tục để điều tiết xe cộ"
+      },
+      {
+        "id": 2396,
+        "vi": "Xe đạp được cất giữ cẩn thận trong gara nhỏ"
+      },
+      {
+        "id": 2397,
+        "vi": "Ô tô di chuyển chậm rãi qua khu vực trường học"
+      },
+      {
+        "id": 2398,
+        "vi": "Người đi đường mang ô che mưa khi trời lất phất"
+      },
+      {
+        "id": 2399,
+        "vi": "Xe buýt chở khách du lịch khám phá thành phố"
+      },
+      {
+        "id": 2400,
+        "vi": "Đường phố được lắp đặt nhiều biển chỉ dẫn rõ ràng"
+      },
+      {
+        "id": 2401,
+        "vi": "Xe máy được lau chùi sạch sẽ sau mỗi chuyến đi"
+      },
+      {
+        "id": 2402,
+        "vi": "Người dân đi bộ trên lối đi dành riêng được bảo vệ"
+      },
+      {
+        "id": 2403,
+        "vi": "Ô tô dừng lại kiểm tra kỹ thuật trước hành trình dài"
+      },
+      {
+        "id": 2404,
+        "vi": "Đường phố trở nên yên bình vào những ngày nghỉ lễ"
+      },
+      {
+        "id": 2405,
+        "vi": "Xe máy lướt qua những cây cầu nhỏ ở vùng quê"
+      },
+      {
+        "id": 2406,
+        "vi": "Người đi đường chú ý tuân thủ biển cấm dừng đỗ"
+      },
+      {
+        "id": 2407,
+        "vi": "Đèn giao thông chuyển màu xanh đúng thời điểm"
+      },
+      {
+        "id": 2408,
+        "vi": "Xe đạp được trang bị đèn phản quang khi đi tối"
+      },
+      {
+        "id": 2409,
+        "vi": "Ô tô chạy qua khu công nghiệp vào giờ cao điểm"
+      },
+      {
+        "id": 2410,
+        "vi": "Người đi đường sử dụng áo mưa chuyên dụng khi trời đổ"
+      },
+      {
+        "id": 2411,
+        "vi": "Xe buýt chở khách đi liên tỉnh theo lịch cố định"
+      },
+      {
+        "id": 2412,
+        "vi": "Đường phố nhộn nhịp với dòng xe cộ vào cuối tuần"
+      },
+      {
+        "id": 2413,
+        "vi": "Xe máy được kiểm tra phanh để đảm bảo an toàn"
+      },
+      {
+        "id": 2414,
+        "vi": "Người dân quan sát kỹ lưỡng khi qua ngã ba đông đúc"
+      },
+      {
+        "id": 2415,
+        "vi": "Ô tô phát tín hiệu xi-nhan khi rẽ trái hoặc phải"
+      },
+      {
+        "id": 2416,
+        "vi": "Đường phố được chiếu sáng bằng hệ thống đèn hiện đại"
+      },
+      {
+        "id": 2417,
+        "vi": "Xe máy di chuyển chậm rãi qua khu vực trường mầm non"
+      },
+      {
+        "id": 2418,
+        "vi": "Người đi đường luôn đội mũ bảo hiểm đạt chuẩn"
+      },
+      {
+        "id": 2419,
+        "vi": "Xe buýt chở học sinh trở về nhà sau giờ học"
+      },
+      {
+        "id": 2420,
+        "vi": "Ô tô đỗ ở bãi gửi xe nhiều tầng hiện đại"
+      },
+      {
+        "id": 2421,
+        "vi": "Đường phố được quét dọn sạch sẽ sau ngày lễ lớn"
+      },
+      {
+        "id": 2422,
+        "vi": "Xe máy chạy qua khu chợ sầm uất vào buổi sáng"
+      },
+      {
+        "id": 2423,
+        "vi": "Người dân chú ý biển báo hạn chế tốc độ"
+      },
+      {
+        "id": 2424,
+        "vi": "Đèn giao thông hoạt động ổn định trong mọi thời tiết"
+      },
+      {
+        "id": 2425,
+        "vi": "Xe đạp được bảo quản trong nhà để tránh mưa"
+      },
+      {
+        "id": 2426,
+        "vi": "Ô tô di chuyển qua cầu vượt mới xây dựng"
+      },
+      {
+        "id": 2427,
+        "vi": "Người đi đường mang áo mưa khi trời chuyển xấu"
+      },
+      {
+        "id": 2428,
+        "vi": "Xe buýt chở khách đến các điểm du lịch nổi tiếng"
+      },
+      {
+        "id": 2429,
+        "vi": "Đường phố được trang bị camera giám sát giao thông"
+      },
+      {
+        "id": 2430,
+        "vi": "Xe máy được kiểm tra lốp để đảm bảo độ bám"
+      },
+      {
+        "id": 2431,
+        "vi": "Người dân đi bộ qua cầu vượt để tránh nguy hiểm"
+      },
+      {
+        "id": 2432,
+        "vi": "Ô tô kêu còi nhẹ khi cần cảnh báo xe khác"
+      },
+      {
+        "id": 2433,
+        "vi": "Đường phố yên tĩnh vào những buổi sáng cuối tuần"
+      },
+      {
+        "id": 2434,
+        "vi": "Xe máy chạy qua những con đường làng lộng gió"
+      },
+      {
+        "id": 2435,
+        "vi": "Người đi đường quan sát gương chiếu hậu cẩn thận"
+      },
+      {
+        "id": 2436,
+        "vi": "Xe buýt đến bến đúng giờ để phục vụ hành khách"
+      },
+      {
+        "id": 2437,
+        "vi": "Ô tô chạy trên tuyến đường quốc lộ mới mở"
+      },
+      {
+        "id": 2438,
+        "vi": "Đường phố có nhiều xe máy vào giờ tan ca"
+      },
+      {
+        "id": 2439,
+        "vi": "Xe đạp được sửa chữa tại tiệm uy tín"
+      },
+      {
+        "id": 2440,
+        "vi": "Người dân chú ý biển báo cấm rẽ trái"
+      },
+      {
+        "id": 2441,
+        "vi": "Ô tô phát tín hiệu khi cần chuyển làn"
+      },
+      {
+        "id": 2442,
+        "vi": "Đường phố sáng rực ánh đèn led vào ban đêm"
+      },
+      {
+        "id": 2443,
+        "vi": "Xe máy đi chậm qua khu vực đông người"
+      },
+      {
+        "id": 2444,
+        "vi": "Người đi đường tuân thủ quy định giao thông"
+      },
+      {
+        "id": 2445,
+        "vi": "Xe buýt chở học sinh đến trường an toàn"
+      },
+      {
+        "id": 2446,
+        "vi": "Ô tô đỗ ở bãi xe được quản lý chặt chẽ."
       }
     ],
     "education": [
@@ -5680,6 +11152,390 @@
       {
         "id": 558,
         "vi": "Tôi học được rằng mục tiêu học tập tốt không phải để đạt điểm cao, mà để hiểu sâu và vận dụng được."
+      },
+      {
+        "id": 2647,
+        "vi": "Học sinh đến trường bằng xe đạp vào mỗi buổi sáng sớm"
+      },
+      {
+        "id": 2648,
+        "vi": "Lớp học bắt đầu với bài giảng sinh động về văn học"
+      },
+      {
+        "id": 2649,
+        "vi": "Giáo viên sử dụng bảng tương tác để trình bày bài học"
+      },
+      {
+        "id": 2650,
+        "vi": "Sân trường rực rỡ tiếng cười trong giờ ra chơi náo nhiệt"
+      },
+      {
+        "id": 2651,
+        "vi": "Sách vở được sắp xếp cẩn thận trên giá sách cá nhân"
+      },
+      {
+        "id": 2652,
+        "vi": "Trẻ em hào hứng tham gia các buổi học mỹ thuật sáng tạo"
+      },
+      {
+        "id": 2653,
+        "vi": "Thầy giáo kể những câu chuyện lịch sử đầy cảm hứng"
+      },
+      {
+        "id": 2654,
+        "vi": "Bàn ghế trong lớp được bố trí khoa học và sạch sẽ"
+      },
+      {
+        "id": 2655,
+        "vi": "Học sinh mặc đồng phục theo đúng quy định trường"
+      },
+      {
+        "id": 2656,
+        "vi": "Thư viện trường cung cấp nguồn tài liệu phong phú"
+      },
+      {
+        "id": 2657,
+        "vi": "Cây xanh trong khuôn viên trường tạo không gian dễ chịu"
+      },
+      {
+        "id": 2658,
+        "vi": "Trống trường vang lên báo hiệu sự khởi đầu của tiết học"
+      },
+      {
+        "id": 2659,
+        "vi": "Học sinh chăm chỉ hoàn thành bài tập về nhà đúng hạn"
+      },
+      {
+        "id": 2660,
+        "vi": "Giáo viên đánh giá bài tập nhóm với tiêu chí rõ ràng"
+      },
+      {
+        "id": 2661,
+        "vi": "Lớp học được trang trí bằng những bức tranh do học sinh vẽ"
+      },
+      {
+        "id": 2662,
+        "vi": "Sân trường được giữ sạch sẽ nhờ đội vệ sinh tích cực"
+      },
+      {
+        "id": 2663,
+        "vi": "Học sinh tham gia các trận bóng rổ sôi động giờ thể dục"
+      },
+      {
+        "id": 2664,
+        "vi": "Bảng tương tác được sử dụng để minh họa bài giảng"
+      },
+      {
+        "id": 2665,
+        "vi": "Giáo viên khuyến khích học sinh phân tích thơ ca"
+      },
+      {
+        "id": 2666,
+        "vi": "Thư viện mở cửa thường xuyên để hỗ trợ nghiên cứu"
+      },
+      {
+        "id": 2667,
+        "vi": "Học sinh mang theo cặp sách đầy đủ dụng cụ học tập"
+      },
+      {
+        "id": 2668,
+        "vi": "Cây bàng lâu năm tạo bóng mát cho sân trường"
+      },
+      {
+        "id": 2669,
+        "vi": "Trẻ em say mê học những bài hát dân gian truyền thống"
+      },
+      {
+        "id": 2670,
+        "vi": "Giáo viên sử dụng công nghệ để dạy các khái niệm phức tạp"
+      },
+      {
+        "id": 2671,
+        "vi": "Học sinh xếp hàng ngay ngắn trước buổi chào cờ"
+      },
+      {
+        "id": 2672,
+        "vi": "Sân trường trở nên rộn ràng khi tiếng chuông tan học vang lên"
+      },
+      {
+        "id": 2673,
+        "vi": "Sách giáo khoa được bảo quản kỹ lưỡng để dùng lâu dài"
+      },
+      {
+        "id": 2674,
+        "vi": "Giáo viên hướng dẫn cách giải bài toán nâng cao"
+      },
+      {
+        "id": 2675,
+        "vi": "Lớp học được thiết kế với ánh sáng tự nhiên tối ưu"
+      },
+      {
+        "id": 2676,
+        "vi": "Học sinh thưởng thức bữa sáng tại căng tin trường"
+      },
+      {
+        "id": 2677,
+        "vi": "Thầy giáo tổ chức các buổi thảo luận nhóm sáng tạo"
+      },
+      {
+        "id": 2678,
+        "vi": "Sân trường có cột cờ trang nghiêm cho lễ chào cờ"
+      },
+      {
+        "id": 2679,
+        "vi": "Học sinh vẽ tranh phong cảnh để thể hiện cảm xúc"
+      },
+      {
+        "id": 2680,
+        "vi": "Giáo viên kể chuyện về các nhà khoa học nổi tiếng"
+      },
+      {
+        "id": 2681,
+        "vi": "Thư viện cung cấp sách nghiên cứu chuyên sâu"
+      },
+      {
+        "id": 2682,
+        "vi": "Học sinh mặc đồng phục được giặt sạch mỗi ngày"
+      },
+      {
+        "id": 2683,
+        "vi": "Cây xanh trong trường được chăm sóc để bảo vệ môi trường"
+      },
+      {
+        "id": 2684,
+        "vi": "Trống trường đánh dấu thời điểm nghỉ giữa giờ"
+      },
+      {
+        "id": 2685,
+        "vi": "Học sinh làm bài kiểm tra định kỳ để đánh giá năng lực"
+      },
+      {
+        "id": 2686,
+        "vi": "Giáo viên hướng dẫn cách viết bài luận có cấu trúc"
+      },
+      {
+        "id": 2687,
+        "vi": "Lớp học được trang bị máy chiếu hiện đại"
+      },
+      {
+        "id": 2688,
+        "vi": "Sân trường tổ chức các hoạt động ngoại khóa thú vị"
+      },
+      {
+        "id": 2689,
+        "vi": "Học sinh tham gia các trận cầu lông kịch tính"
+      },
+      {
+        "id": 2690,
+        "vi": "Bảng tương tác hiển thị các công thức toán học phức tạp"
+      },
+      {
+        "id": 2691,
+        "vi": "Giáo viên khuyến khích học sinh đặt câu hỏi sâu sắc"
+      },
+      {
+        "id": 2692,
+        "vi": "Thư viện có khu vực đọc sách yên tĩnh và thoải mái"
+      },
+      {
+        "id": 2693,
+        "vi": "Học sinh mang theo bộ dụng cụ vẽ chuyên nghiệp"
+      },
+      {
+        "id": 2694,
+        "vi": "Cây hoa trong khuôn viên trường nở rộ vào mùa xuân"
+      },
+      {
+        "id": 2695,
+        "vi": "Trẻ em thích tham gia các lớp học nhạc truyền thống"
+      },
+      {
+        "id": 2696,
+        "vi": "Giáo viên kiểm tra bài tập với nhận xét chi tiết"
+      },
+      {
+        "id": 2697,
+        "vi": "Học sinh tham gia lễ chào cờ với tinh thần trang nghiêm"
+      },
+      {
+        "id": 2698,
+        "vi": "Sân trường trở nên yên ắng khi ngày học kết thúc"
+      },
+      {
+        "id": 2699,
+        "vi": "Sách vở được sắp xếp ngăn nắp trong tủ cá nhân"
+      },
+      {
+        "id": 2700,
+        "vi": "Giáo viên dạy cách phân tích văn bản văn học"
+      },
+      {
+        "id": 2701,
+        "vi": "Lớp học có bảng thông báo với lịch học chi tiết"
+      },
+      {
+        "id": 2702,
+        "vi": "Học sinh hợp tác trong các dự án nhóm sáng tạo"
+      },
+      {
+        "id": 2703,
+        "vi": "Thầy giáo hướng dẫn thực hiện thí nghiệm khoa học"
+      },
+      {
+        "id": 2704,
+        "vi": "Thư viện trường được trang bị máy tính hiện đại"
+      },
+      {
+        "id": 2705,
+        "vi": "Học sinh mặc đồng phục phù hợp với thời tiết"
+      },
+      {
+        "id": 2706,
+        "vi": "Cây cối trong trường được cắt tỉa để giữ mỹ quan"
+      },
+      {
+        "id": 2707,
+        "vi": "Trống trường báo hiệu giờ bắt đầu tiết học mới"
+      },
+      {
+        "id": 2708,
+        "vi": "Học sinh làm bài kiểm tra ngoại ngữ với nhiều dạng câu hỏi"
+      },
+      {
+        "id": 2709,
+        "vi": "Giáo viên hướng dẫn cách viết đoạn văn nghị luận"
+      },
+      {
+        "id": 2710,
+        "vi": "Lớp học được trang trí bằng tranh vẽ của học sinh"
+      },
+      {
+        "id": 2711,
+        "vi": "Sân trường tổ chức hội thao với nhiều môn thể thao"
+      },
+      {
+        "id": 2712,
+        "vi": "Học sinh chơi các trò chơi dân gian trong giờ nghỉ"
+      },
+      {
+        "id": 2713,
+        "vi": "Bảng tương tác hỗ trợ giảng dạy các môn khoa học"
+      },
+      {
+        "id": 2714,
+        "vi": "Giáo viên kể chuyện về giá trị văn hóa dân tộc"
+      },
+      {
+        "id": 2715,
+        "vi": "Thư viện cung cấp sách tham khảo đa dạng chủ đề"
+      },
+      {
+        "id": 2716,
+        "vi": "Học sinh mang theo bút chì màu để học mỹ thuật"
+      },
+      {
+        "id": 2717,
+        "vi": "Cây xanh trong trường tạo không gian học tập lý tưởng"
+      },
+      {
+        "id": 2718,
+        "vi": "Trẻ em tham gia các buổi học nhạc với nhạc cụ"
+      },
+      {
+        "id": 2719,
+        "vi": "Giáo viên đánh giá bài tập dựa trên tiêu chí sáng tạo"
+      },
+      {
+        "id": 2720,
+        "vi": "Học sinh tham gia các câu lạc bộ học thuật"
+      },
+      {
+        "id": 2721,
+        "vi": "Sân trường tổ chức lễ khai giảng đầy màu sắc"
+      },
+      {
+        "id": 2722,
+        "vi": "Học sinh chơi bóng chuyền trong giờ thể dục sôi động"
+      },
+      {
+        "id": 2723,
+        "vi": "Bảng tương tác hiển thị sơ đồ tư duy bài học"
+      },
+      {
+        "id": 2724,
+        "vi": "Giáo viên khuyến khích học sinh tư duy phản biện"
+      },
+      {
+        "id": 2725,
+        "vi": "Thư viện có khu vực học nhóm tiện nghi"
+      },
+      {
+        "id": 2726,
+        "vi": "Học sinh mang theo compa để học hình học"
+      },
+      {
+        "id": 2727,
+        "vi": "Cây hoa được trồng dọc lối đi trong trường"
+      },
+      {
+        "id": 2728,
+        "vi": "Trống trường đánh dấu thời điểm kết thúc ngày học"
+      },
+      {
+        "id": 2729,
+        "vi": "Học sinh làm bài tập nghiên cứu khoa học"
+      },
+      {
+        "id": 2730,
+        "vi": "Giáo viên hướng dẫn cách phân tích tác phẩm văn học"
+      },
+      {
+        "id": 2731,
+        "vi": "Lớp học được trang bị bàn ghế hiện đại"
+      },
+      {
+        "id": 2732,
+        "vi": "Sân trường tổ chức các buổi văn nghệ đặc sắc"
+      },
+      {
+        "id": 2733,
+        "vi": "Học sinh tham gia các trò chơi vận động ngoài trời"
+      },
+      {
+        "id": 2734,
+        "vi": "Bảng tương tác hỗ trợ dạy học đa phương tiện"
+      },
+      {
+        "id": 2735,
+        "vi": "Giáo viên kể chuyện về những tấm gương học tập"
+      },
+      {
+        "id": 2736,
+        "vi": "Thư viện cung cấp tài liệu số hóa tiên tiến"
+      },
+      {
+        "id": 2737,
+        "vi": "Học sinh mang bút mực để luyện viết chữ đẹp"
+      },
+      {
+        "id": 2738,
+        "vi": "Cây xanh trong trường tạo không khí học tập thoải mái"
+      },
+      {
+        "id": 2739,
+        "vi": "Trẻ em thích tham gia các lớp học ngoại khóa"
+      },
+      {
+        "id": 2740,
+        "vi": "Giáo viên kiểm tra bài tập với phản hồi tích cực"
+      },
+      {
+        "id": 2741,
+        "vi": "Học sinh tham gia lễ chào cờ với tinh thần tự hào"
+      },
+      {
+        "id": 2742,
+        "vi": "Sân trường sạch sẽ nhờ công tác vệ sinh thường xuyên."
       }
     ],
     "public-services": [
@@ -5886,6 +11742,386 @@
       {
         "id": 706,
         "vi": "Tôi mong thấy nhiều đổi mới hơn trong các dịch vụ công cấp xã, phường."
+      },
+      {
+        "id": 2940,
+        "vi": "Xe buýt công cộng vận hành theo lịch trình chính xác để phục vụ hành khách"
+      },
+      {
+        "id": 2941,
+        "vi": "Đèn đường led hiện đại chiếu sáng toàn bộ khu phố khi màn đêm buông xuống"
+      },
+      {
+        "id": 2942,
+        "vi": "Nhân viên vệ sinh đô thị cần mẫn quét dọn đường phố để giữ gìn mỹ quan"
+      },
+      {
+        "id": 2943,
+        "vi": "Nước sạch được cung cấp liên tục với chất lượng đảm bảo cho mọi hộ dân"
+      },
+      {
+        "id": 2944,
+        "vi": "Bệnh viện công lập hoạt động 24/7 để đáp ứng nhu cầu y tế khẩn cấp"
+      },
+      {
+        "id": 2945,
+        "vi": "Bưu điện xử lý hàng nghìn thư từ và bưu phẩm với hiệu suất cao"
+      },
+      {
+        "id": 2946,
+        "vi": "Công viên thành phố được chăm sóc kỹ lưỡng để tạo không gian xanh lý tưởng"
+      },
+      {
+        "id": 2947,
+        "vi": "Xe rác thu gom rác thải sinh hoạt theo lịch trình khoa học"
+      },
+      {
+        "id": 2948,
+        "vi": "Hệ thống điện được vận hành ổn định để hỗ trợ đời sống và sản xuất"
+      },
+      {
+        "id": 2949,
+        "vi": "Trạm y tế cộng đồng cung cấp dịch vụ chăm sóc sức khỏe cơ bản cho người dân"
+      },
+      {
+        "id": 2950,
+        "vi": "Chợ truyền thống được vệ sinh sạch sẽ để đảm bảo an toàn vệ sinh thực phẩm"
+      },
+      {
+        "id": 2951,
+        "vi": "Xe buýt hiện đại chở hành khách đến các khu vực trung tâm"
+      },
+      {
+        "id": 2952,
+        "vi": "Đèn đường được bảo trì định kỳ để đảm bảo an ninh đô thị"
+      },
+      {
+        "id": 2953,
+        "vi": "Nhân viên vệ sinh phân loại rác thải để hỗ trợ tái chế hiệu quả"
+      },
+      {
+        "id": 2954,
+        "vi": "Nước máy được kiểm tra chất lượng định kỳ để đảm bảo an toàn"
+      },
+      {
+        "id": 2955,
+        "vi": "Bệnh viện công có đội ngũ y bác sĩ tận tâm phục vụ bệnh nhân"
+      },
+      {
+        "id": 2956,
+        "vi": "Bưu điện cung cấp dịch vụ chuyển phát nhanh với độ tin cậy cao"
+      },
+      {
+        "id": 2957,
+        "vi": "Công viên có các lối đi bộ được thiết kế thẩm mỹ và sạch sẽ"
+      },
+      {
+        "id": 2958,
+        "vi": "Xe rác đi qua các khu dân cư với trang thiết bị hiện đại"
+      },
+      {
+        "id": 2959,
+        "vi": "Hệ thống điện được nâng cấp để đáp ứng nhu cầu ngày càng tăng"
+      },
+      {
+        "id": 2960,
+        "vi": "Trạm y tế tổ chức các chương trình tiêm phòng miễn phí cho trẻ em"
+      },
+      {
+        "id": 2961,
+        "vi": "Chợ được trang bị thùng rác phân loại để khuyến khích ý thức bảo vệ môi trường"
+      },
+      {
+        "id": 2962,
+        "vi": "Xe buýt công cộng đảm bảo dịch vụ tiện nghi với máy lạnh và ghế ngồi thoải mái"
+      },
+      {
+        "id": 2963,
+        "vi": "Đèn đường được lắp đặt ở các khu vực ngoại ô để tăng cường an toàn"
+      },
+      {
+        "id": 2964,
+        "vi": "Nhân viên vệ sinh làm việc vào ban đêm để giữ đường phố sạch sẽ"
+      },
+      {
+        "id": 2965,
+        "vi": "Nước sạch được cung cấp cho các khu vực nông thôn với hệ thống hiện đại"
+      },
+      {
+        "id": 2966,
+        "vi": "Bệnh viện công lập có phòng cấp cứu được trang bị thiết bị tiên tiến"
+      },
+      {
+        "id": 2967,
+        "vi": "Bưu điện xử lý bưu phẩm quốc tế với quy trình chuyên nghiệp"
+      },
+      {
+        "id": 2968,
+        "vi": "Công viên có khu vực vui chơi được thiết kế an toàn cho trẻ em"
+      },
+      {
+        "id": 2969,
+        "vi": "Xe rác thu gom rác cồng kềnh theo lịch trình định kỳ"
+      },
+      {
+        "id": 2970,
+        "vi": "Hệ thống điện được giám sát chặt chẽ để tránh gián đoạn nguồn cung"
+      },
+      {
+        "id": 2971,
+        "vi": "Trạm y tế cung cấp dịch vụ tư vấn sức khỏe và khám bệnh miễn phí"
+      },
+      {
+        "id": 2972,
+        "vi": "Chợ được vệ sinh kỹ lưỡng để đảm bảo môi trường mua bán lành mạnh"
+      },
+      {
+        "id": 2973,
+        "vi": "Xe buýt chở học sinh đến trường với tài xế được đào tạo bài bản"
+      },
+      {
+        "id": 2974,
+        "vi": "Đèn đường led tiết kiệm năng lượng được sử dụng ở các ngã tư lớn"
+      },
+      {
+        "id": 2975,
+        "vi": "Nhân viên vệ sinh sử dụng máy móc hiện đại để thu gom rác thải"
+      },
+      {
+        "id": 2976,
+        "vi": "Nước máy được cung cấp liên tục cho các cơ sở công cộng"
+      },
+      {
+        "id": 2977,
+        "vi": "Bệnh viện có phòng khám chuyên khoa với đội ngũ bác sĩ giàu kinh nghiệm"
+      },
+      {
+        "id": 2978,
+        "vi": "Bưu điện cung cấp dịch vụ chuyển tiền nhanh chóng và an toàn"
+      },
+      {
+        "id": 2979,
+        "vi": "Công viên có hồ nước và cây xanh được chăm sóc để tạo cảnh quan đẹp"
+      },
+      {
+        "id": 2980,
+        "vi": "Xe rác thu gom rác tái chế để giảm thiểu ô nhiễm môi trường"
+      },
+      {
+        "id": 2981,
+        "vi": "Hệ thống điện hỗ trợ các sự kiện cộng đồng với nguồn cung ổn định"
+      },
+      {
+        "id": 2982,
+        "vi": "Trạm y tế tổ chức các buổi tuyên truyền về phòng chống dịch bệnh"
+      },
+      {
+        "id": 2983,
+        "vi": "Chợ được giữ sạch sẽ nhờ đội ngũ vệ sinh làm việc hiệu quả"
+      },
+      {
+        "id": 2984,
+        "vi": "Xe buýt hiện đại phục vụ khách du lịch với các tuyến đường tiện lợi"
+      },
+      {
+        "id": 2985,
+        "vi": "Đèn đường được kiểm tra thường xuyên để đảm bảo hoạt động liên tục"
+      },
+      {
+        "id": 2986,
+        "vi": "Nhân viên vệ sinh phân loại rác thải để tối ưu hóa quy trình xử lý"
+      },
+      {
+        "id": 2987,
+        "vi": "Nước sạch được cấp đến các khu vực xa xôi với hệ thống đường ống mới"
+      },
+      {
+        "id": 2988,
+        "vi": "Bệnh viện công lập có xe cứu thương sẵn sàng hỗ trợ khẩn cấp"
+      },
+      {
+        "id": 2989,
+        "vi": "Bưu điện cung cấp dịch vụ giao hàng tận nơi với thời gian nhanh chóng"
+      },
+      {
+        "id": 2990,
+        "vi": "Công viên có khu vực thể thao được bảo trì để phục vụ cộng đồng"
+      },
+      {
+        "id": 2991,
+        "vi": "Xe rác thu gom rác thải sinh hoạt với tần suất hợp lý"
+      },
+      {
+        "id": 2992,
+        "vi": "Hệ thống điện được tích hợp công nghệ để giám sát từ xa"
+      },
+      {
+        "id": 2993,
+        "vi": "Trạm y tế cung cấp thuốc thiết yếu cho người dân khó khăn"
+      },
+      {
+        "id": 2994,
+        "vi": "Chợ được trang bị hệ thống thoát nước để tránh ngập úng"
+      },
+      {
+        "id": 2995,
+        "vi": "Xe buýt chạy qua các khu công nghiệp để hỗ trợ công nhân"
+      },
+      {
+        "id": 2996,
+        "vi": "Đèn đường được lắp đặt ở các con hẻm để tăng cường an ninh"
+      },
+      {
+        "id": 2997,
+        "vi": "Nhân viên vệ sinh làm việc với tinh thần trách nhiệm cao"
+      },
+      {
+        "id": 2998,
+        "vi": "Nước máy được kiểm tra chất lượng để đáp ứng tiêu chuẩn quốc gia"
+      },
+      {
+        "id": 2999,
+        "vi": "Bệnh viện có khu vực chờ thoải mái cho bệnh nhân và người nhà"
+      },
+      {
+        "id": 3000,
+        "vi": "Bưu điện cung cấp dịch vụ theo dõi bưu phẩm trực tuyến"
+      },
+      {
+        "id": 3001,
+        "vi": "Công viên có đường đi bộ được lát đá và giữ sạch sẽ"
+      },
+      {
+        "id": 3002,
+        "vi": "Xe rác thu gom rác đúng giờ để đảm bảo vệ sinh đô thị"
+      },
+      {
+        "id": 3003,
+        "vi": "Hệ thống điện được bảo trì để hỗ trợ các khu vực đông dân cư"
+      },
+      {
+        "id": 3004,
+        "vi": "Trạm y tế tổ chức các chương trình giáo dục sức khỏe cộng đồng"
+      },
+      {
+        "id": 3005,
+        "vi": "Chợ được vệ sinh kỹ lưỡng để tạo môi trường mua sắm an toàn"
+      },
+      {
+        "id": 3006,
+        "vi": "Xe buýt hiện đại có hệ thống định vị để hỗ trợ hành khách"
+      },
+      {
+        "id": 3007,
+        "vi": "Đèn đường được thiết kế tiết kiệm năng lượng cho khu vực nông thôn"
+      },
+      {
+        "id": 3008,
+        "vi": "Nhân viên vệ sinh sử dụng thiết bị hiện đại để làm sạch đường phố"
+      },
+      {
+        "id": 3009,
+        "vi": "Nước sạch được cung cấp ổn định cho các trường học và bệnh viện"
+      },
+      {
+        "id": 3010,
+        "vi": "Bệnh viện có phòng mổ đạt chuẩn với công nghệ tiên tiến"
+      },
+      {
+        "id": 3011,
+        "vi": "Bưu điện cung cấp dịch vụ giao hàng quốc tế với chi phí hợp lý"
+      },
+      {
+        "id": 3012,
+        "vi": "Công viên có khu vực nghỉ ngơi được bảo trì thường xuyên"
+      },
+      {
+        "id": 3013,
+        "vi": "Xe rác thu gom rác thải lớn theo yêu cầu của người dân"
+      },
+      {
+        "id": 3014,
+        "vi": "Hệ thống điện hỗ trợ các sự kiện văn hóa với nguồn cung ổn định"
+      },
+      {
+        "id": 3015,
+        "vi": "Trạm y tế cung cấp dịch vụ sơ cứu kịp thời cho cộng đồng"
+      },
+      {
+        "id": 3016,
+        "vi": "Chợ được trang bị hệ thống chiếu sáng để hoạt động vào ban đêm"
+      },
+      {
+        "id": 3017,
+        "vi": "Xe buýt chạy qua các tuyến đường du lịch với dịch vụ chất lượng"
+      },
+      {
+        "id": 3018,
+        "vi": "Đèn đường được lắp đặt ở các khu vực mới phát triển"
+      },
+      {
+        "id": 3019,
+        "vi": "Rác thải được xử lý theo quy trình thân thiện với môi trường"
+      },
+      {
+        "id": 3020,
+        "vi": "Nước sạch được cung cấp cho các hộ nghèo với chi phí thấp"
+      },
+      {
+        "id": 3021,
+        "vi": "Bệnh viện có đội ngũ y bác sĩ làm việc với tinh thần trách nhiệm"
+      },
+      {
+        "id": 3022,
+        "vi": "Bưu điện cung cấp dịch vụ chuyển phát nhanh trong ngày"
+      },
+      {
+        "id": 3023,
+        "vi": "Công viên có cây xanh và hồ nước tạo không gian thư giãn"
+      },
+      {
+        "id": 3024,
+        "vi": "Xe rác thu gom rác theo lịch trình tối ưu hóa"
+      },
+      {
+        "id": 3025,
+        "vi": "Hệ thống điện được giám sát để đảm bảo an toàn cho người dân"
+      },
+      {
+        "id": 3026,
+        "vi": "Trạm y tế tổ chức các buổi kiểm tra sức khỏe định kỳ"
+      },
+      {
+        "id": 3027,
+        "vi": "Chợ được giữ sạch sẽ để thu hút khách hàng và người bán"
+      },
+      {
+        "id": 3028,
+        "vi": "Xe buýt hiện đại phục vụ các tuyến đường liên tỉnh"
+      },
+      {
+        "id": 3029,
+        "vi": "Đèn đường led được sử dụng để tiết kiệm năng lượng đô thị"
+      },
+      {
+        "id": 3030,
+        "vi": "Nhân viên vệ sinh làm việc với trang thiết bị chuyên dụng"
+      },
+      {
+        "id": 3031,
+        "vi": "Nước máy được cung cấp liên tục để đáp ứng nhu cầu sinh hoạt"
+      },
+      {
+        "id": 3032,
+        "vi": "Bệnh viện có khu vực chăm sóc đặc biệt cho bệnh nhân nặng"
+      },
+      {
+        "id": 3033,
+        "vi": "Bưu điện cung cấp dịch vụ theo dõi hành trình bưu phẩm"
+      },
+      {
+        "id": 3034,
+        "vi": "Công viên có khu vực vui chơi được thiết kế an toàn và hiện đại."
       }
     ],
     "health": [
@@ -6092,6 +12328,374 @@
       {
         "id": 852,
         "vi": "Tôi học được rằng thay đổi nhỏ hôm nay sẽ tạo ra sự khác biệt lớn về sau."
+      },
+      {
+        "id": 3228,
+        "vi": "Bệnh viện công lập vận hành liên tục để phục vụ nhu cầu y tế cộng đồng"
+      },
+      {
+        "id": 3229,
+        "vi": "Bác sĩ thực hiện khám sức khỏe tổng quát với thiết bị hiện đại"
+      },
+      {
+        "id": 3230,
+        "vi": "Trạm y tế địa phương cung cấp thuốc thiết yếu và tư vấn sức khỏe miễn phí"
+      },
+      {
+        "id": 3231,
+        "vi": "Người dân duy trì thói quen rửa tay bằng xà phòng để phòng ngừa bệnh truyền nhiễm"
+      },
+      {
+        "id": 3232,
+        "vi": "Phòng khám được thiết kế thông thoáng và vệ sinh theo tiêu chuẩn cao"
+      },
+      {
+        "id": 3233,
+        "vi": "Y tá sử dụng thiết bị tiên tiến để đo huyết áp và nhịp tim"
+      },
+      {
+        "id": 3234,
+        "vi": "Thuốc được phân phối theo đơn bác sĩ với liều lượng chính xác"
+      },
+      {
+        "id": 3235,
+        "vi": "Mọi người bổ sung thực phẩm giàu dinh dưỡng để tăng cường sức đề kháng"
+      },
+      {
+        "id": 3236,
+        "vi": "Bệnh viện có khu vực cấp cứu được trang bị công nghệ tối tân"
+      },
+      {
+        "id": 3237,
+        "vi": "Trẻ em được tiêm phòng đầy đủ theo lịch trình quốc gia"
+      },
+      {
+        "id": 3238,
+        "vi": "Bác sĩ sử dụng nhiệt kế điện tử để kiểm tra thân nhiệt chính xác"
+      },
+      {
+        "id": 3239,
+        "vi": "Phòng khám hoạt động hiệu quả cả vào cuối tuần để hỗ trợ người dân"
+      },
+      {
+        "id": 3240,
+        "vi": "Người dân ưu tiên sử dụng nước sạch để bảo vệ sức khỏe"
+      },
+      {
+        "id": 3241,
+        "vi": "Y tá chăm sóc bệnh nhân với sự tận tâm và chuyên nghiệp"
+      },
+      {
+        "id": 3242,
+        "vi": "Bệnh viện có đội xe cứu thương sẵn sàng phục vụ khẩn cấp"
+      },
+      {
+        "id": 3243,
+        "vi": "Nhà thuốc cung cấp thuốc đạt chuẩn chất lượng với giá cả hợp lý"
+      },
+      {
+        "id": 3244,
+        "vi": "Mọi người duy trì thói quen tập thể dục để cải thiện sức khỏe tim mạch"
+      },
+      {
+        "id": 3245,
+        "vi": "Trạm y tế tổ chức các chương trình kiểm tra sức khỏe định kỳ"
+      },
+      {
+        "id": 3246,
+        "vi": "Bác sĩ kê đơn thuốc dựa trên chẩn đoán chi tiết và chính xác"
+      },
+      {
+        "id": 3247,
+        "vi": "Phòng khám được trang bị máy đo huyết áp tự động hiện đại"
+      },
+      {
+        "id": 3248,
+        "vi": "Người dân bổ sung trái cây và rau xanh để tăng cường vitamin"
+      },
+      {
+        "id": 3249,
+        "vi": "Bệnh viện có phòng cấp cứu hoạt động liên tục với đội ngũ chuyên môn cao"
+      },
+      {
+        "id": 3250,
+        "vi": "Y tá thay băng và chăm sóc vết thương theo quy trình chuẩn"
+      },
+      {
+        "id": 3251,
+        "vi": "Thuốc được bảo quản trong tủ lạnh y tế để đảm bảo chất lượng"
+      },
+      {
+        "id": 3252,
+        "vi": "Mọi người tham gia các lớp yoga để giảm căng thẳng và tăng sức khỏe"
+      },
+      {
+        "id": 3253,
+        "vi": "Trạm y tế cung cấp dịch vụ tư vấn phòng ngừa bệnh truyền nhiễm"
+      },
+      {
+        "id": 3254,
+        "vi": "Bác sĩ kiểm tra thị lực với thiết bị chuyên dụng cho học sinh"
+      },
+      {
+        "id": 3255,
+        "vi": "Phòng khám có khu vực chờ được vệ sinh thường xuyên và thoải mái"
+      },
+      {
+        "id": 3256,
+        "vi": "Người dân duy trì thói quen uống đủ nước để hỗ trợ trao đổi chất"
+      },
+      {
+        "id": 3257,
+        "vi": "Bệnh viện có phòng khám chuyên khoa tai mũi họng với công nghệ tiên tiến"
+      },
+      {
+        "id": 3258,
+        "vi": "Y tá theo dõi nhịp tim và huyết áp với thiết bị hiện đại"
+      },
+      {
+        "id": 3259,
+        "vi": "Thuốc được cấp theo toa bác sĩ với hướng dẫn sử dụng rõ ràng"
+      },
+      {
+        "id": 3260,
+        "vi": "Mọi người ngủ đủ giấc để phục hồi năng lượng và tăng sức đề kháng"
+      },
+      {
+        "id": 3261,
+        "vi": "Trạm y tế tổ chức các buổi tuyên truyền về chăm sóc sức khỏe cộng đồng"
+      },
+      {
+        "id": 3262,
+        "vi": "Bác sĩ tư vấn chế độ dinh dưỡng cho người cao tuổi để phòng bệnh"
+      },
+      {
+        "id": 3263,
+        "vi": "Phòng khám được trang bị đầy đủ thiết bị y tế đạt chuẩn"
+      },
+      {
+        "id": 3264,
+        "vi": "Người dân hạn chế tiêu thụ thực phẩm chế biến sẵn để bảo vệ sức khỏe"
+      },
+      {
+        "id": 3265,
+        "vi": "Bệnh viện có phòng mổ hiện đại với quy trình vệ sinh nghiêm ngặt"
+      },
+      {
+        "id": 3266,
+        "vi": "Y tá hỗ trợ bệnh nhân phục hồi sau phẫu thuật với sự tận tâm"
+      },
+      {
+        "id": 3267,
+        "vi": "Thuốc được lưu trữ trong điều kiện tối ưu để đảm bảo hiệu quả"
+      },
+      {
+        "id": 3268,
+        "vi": "Mọi người tham gia chạy bộ để cải thiện sức khỏe tim mạch và tinh thần"
+      },
+      {
+        "id": 3269,
+        "vi": "Trạm y tế cung cấp dịch vụ sơ cứu nhanh chóng cho các trường hợp khẩn cấp"
+      },
+      {
+        "id": 3270,
+        "vi": "Bác sĩ kiểm tra răng miệng định kỳ để phát hiện sớm vấn đề"
+      },
+      {
+        "id": 3271,
+        "vi": "Phòng khám có bảng thông tin chi tiết về các biện pháp phòng bệnh"
+      },
+      {
+        "id": 3272,
+        "vi": "Người dân ưu tiên thực phẩm hữu cơ để tăng cường sức khỏe"
+      },
+      {
+        "id": 3273,
+        "vi": "Bệnh viện có phòng chụp X-quang với thiết bị tiên tiến"
+      },
+      {
+        "id": 3274,
+        "vi": "Y tá theo dõi tình trạng bệnh nhân với hồ sơ y tế chi tiết"
+      },
+      {
+        "id": 3275,
+        "vi": "Thuốc được cung cấp với bao bì rõ ràng và hướng dẫn cụ thể"
+      },
+      {
+        "id": 3276,
+        "vi": "Mọi người tập luyện thể thao ngoài trời để cải thiện sức khỏe toàn diện"
+      },
+      {
+        "id": 3277,
+        "vi": "Trạm y tế tổ chức tiêm phòng vắc-xin cho trẻ em và người lớn"
+      },
+      {
+        "id": 3278,
+        "vi": "Bác sĩ tư vấn cách quản lý bệnh mãn tính như tiểu đường"
+      },
+      {
+        "id": 3279,
+        "vi": "Phòng khám có không gian yên tĩnh và sạch sẽ để bệnh nhân thoải mái"
+      },
+      {
+        "id": 3280,
+        "vi": "Người dân bổ sung thực phẩm giàu chất xơ để hỗ trợ tiêu hóa"
+      },
+      {
+        "id": 3281,
+        "vi": "Bệnh viện có khu vực chăm sóc đặc biệt cho bệnh nhân nặng"
+      },
+      {
+        "id": 3282,
+        "vi": "Y tá hướng dẫn bệnh nhân cách chăm sóc vết thương tại nhà"
+      },
+      {
+        "id": 3283,
+        "vi": "Thuốc được bảo quản trong tủ y tế đạt chuẩn an toàn"
+      },
+      {
+        "id": 3284,
+        "vi": "Mọi người thực hành thiền định để giảm căng thẳng và cải thiện tinh thần"
+      },
+      {
+        "id": 3285,
+        "vi": "Trạm y tế cung cấp dịch vụ khám sức khỏe cho công nhân định kỳ"
+      },
+      {
+        "id": 3286,
+        "vi": "Bác sĩ sử dụng công nghệ hiện đại để chẩn đoán bệnh chính xác"
+      },
+      {
+        "id": 3287,
+        "vi": "Phòng khám có khu vực chờ được trang bị ghế ngồi tiện nghi"
+      },
+      {
+        "id": 3288,
+        "vi": "Người dân hạn chế ăn thực phẩm nhiều muối để bảo vệ tim mạch"
+      },
+      {
+        "id": 3289,
+        "vi": "Bệnh viện có phòng khám mắt với thiết bị kiểm tra thị lực tiên tiến"
+      },
+      {
+        "id": 3290,
+        "vi": "Y tá hỗ trợ bệnh nhân phục hồi chức năng sau phẫu thuật"
+      },
+      {
+        "id": 3291,
+        "vi": "Thuốc được cấp theo liều lượng phù hợp với tình trạng bệnh"
+      },
+      {
+        "id": 3292,
+        "vi": "Mọi người duy trì thói quen đi bộ để tăng cường sức khỏe"
+      },
+      {
+        "id": 3293,
+        "vi": "Trạm y tế tổ chức các buổi giáo dục sức khỏe cho cộng đồng"
+      },
+      {
+        "id": 3294,
+        "vi": "Bác sĩ tư vấn cách phòng ngừa bệnh truyền nhiễm trong mùa mưa"
+      },
+      {
+        "id": 3295,
+        "vi": "Phòng khám có hệ thống thông gió hiện đại để đảm bảo vệ sinh"
+      },
+      {
+        "id": 3296,
+        "vi": "Người dân ăn thực phẩm giàu protein để hỗ trợ cơ bắp"
+      },
+      {
+        "id": 3297,
+        "vi": "Bệnh viện có phòng xét nghiệm máu với kết quả nhanh chóng"
+      },
+      {
+        "id": 3298,
+        "vi": "Y tá hướng dẫn bệnh nhân cách dùng thuốc an toàn tại nhà"
+      },
+      {
+        "id": 3299,
+        "vi": "Thuốc được bảo quản trong điều kiện khô ráo và sạch sẽ"
+      },
+      {
+        "id": 3300,
+        "vi": "Mọi người tham gia các lớp thể dục để cải thiện sức khỏe tổng quát"
+      },
+      {
+        "id": 3301,
+        "vi": "Trạm y tế có đội ngũ bác sĩ trực ca đêm để hỗ trợ khẩn cấp"
+      },
+      {
+        "id": 3302,
+        "vi": "Bác sĩ kiểm tra sức khỏe tim mạch với thiết bị chuyên sâu"
+      },
+      {
+        "id": 3303,
+        "vi": "Phòng khám có bảng hướng dẫn chi tiết về tiêm phòng"
+      },
+      {
+        "id": 3304,
+        "vi": "Người dân ưu tiên thực phẩm ít đường để phòng bệnh tiểu đường"
+      },
+      {
+        "id": 3305,
+        "vi": "Bệnh viện có khu vực hồi sức với đội ngũ y tế chuyên nghiệp"
+      },
+      {
+        "id": 3306,
+        "vi": "Y tá theo dõi sát sao tình trạng bệnh nhân sau điều trị"
+      },
+      {
+        "id": 3307,
+        "vi": "Thuốc được phân phối với bao bì đạt chuẩn y tế"
+      },
+      {
+        "id": 3308,
+        "vi": "Mọi người tập hít thở sâu để cải thiện sức khỏe tinh thần"
+      },
+      {
+        "id": 3309,
+        "vi": "Trạm y tế cung cấp dịch vụ chăm sóc sức khỏe ban đầu hiệu quả"
+      },
+      {
+        "id": 3310,
+        "vi": "Bác sĩ tư vấn chế độ ăn uống lành mạnh cho bệnh nhân"
+      },
+      {
+        "id": 3311,
+        "vi": "Phòng khám có không gian được khử trùng thường xuyên"
+      },
+      {
+        "id": 3312,
+        "vi": "Người dân bổ sung thực phẩm giàu canxi để xương chắc khỏe"
+      },
+      {
+        "id": 3313,
+        "vi": "Bệnh viện có phòng khám nhi khoa với thiết bị hiện đại"
+      },
+      {
+        "id": 3314,
+        "vi": "Y tá hướng dẫn cách chăm sóc sức khỏe cho người cao tuổi"
+      },
+      {
+        "id": 3315,
+        "vi": "Thuốc được bảo quản trong tủ y tế chuyên dụng"
+      },
+      {
+        "id": 3316,
+        "vi": "Mọi người duy trì thói quen tập thể dục để phòng ngừa bệnh tật"
+      },
+      {
+        "id": 3317,
+        "vi": "Trạm y tế tổ chức các buổi kiểm tra sức khỏe cộng đồng"
+      },
+      {
+        "id": 3318,
+        "vi": "Bác sĩ sử dụng công nghệ để theo dõi sức khỏe bệnh nhân từ xa"
+      },
+      {
+        "id": 3319,
+        "vi": "Phòng khám có khu vực chờ được thiết kế thân thiện với bệnh nhân."
       }
     ],
     "shopping": [
@@ -6298,6 +12902,358 @@
       {
         "id": 998,
         "vi": "Tôi tin rằng mỗi quyết định mua hàng đều là một lá phiếu cho thế giới mà mình muốn sống trong tương lai."
+      },
+      {
+        "id": 3511,
+        "vi": "Chợ truyền thống nhộn nhịp với các quầy hàng rau củ tươi sạch mỗi sáng"
+      },
+      {
+        "id": 3512,
+        "vi": "Quần áo thời trang được trưng bày tinh tế trong các cửa hàng cao cấp"
+      },
+      {
+        "id": 3513,
+        "vi": "Người dân sử dụng ví điện tử để thanh toán nhanh chóng và tiện lợi"
+      },
+      {
+        "id": 3514,
+        "vi": "Siêu thị mở cửa từ sớm với hệ thống quản lý hàng hóa hiện đại"
+      },
+      {
+        "id": 3515,
+        "vi": "Áo sơ mi được may tỉ mỉ với chất liệu vải cao cấp"
+      },
+      {
+        "id": 3516,
+        "vi": "Tiền được cất giữ an toàn trong két sắt có mã khóa"
+      },
+      {
+        "id": 3517,
+        "vi": "Cửa hàng thời trang tổ chức chương trình giảm giá hấp dẫn dịp cuối năm"
+      },
+      {
+        "id": 3518,
+        "vi": "Quần jeans được thiết kế đa dạng với nhiều phong cách thời thượng"
+      },
+      {
+        "id": 3519,
+        "vi": "Người dân mang túi vải thân thiện môi trường khi đi chợ"
+      },
+      {
+        "id": 3520,
+        "vi": "Siêu thị cung cấp thực phẩm hữu cơ đạt chứng nhận chất lượng"
+      },
+      {
+        "id": 3521,
+        "vi": "Áo khoác lông cao cấp được bán trong mùa đông lạnh giá"
+      },
+      {
+        "id": 3522,
+        "vi": "Tiền lẻ được sử dụng để mua đồ ăn vặt ở các quầy hàng rong"
+      },
+      {
+        "id": 3523,
+        "vi": "Chợ truyền thống trở nên đông đúc vào những ngày cuối tuần"
+      },
+      {
+        "id": 3524,
+        "vi": "Cửa hàng giày thể thao trưng bày các mẫu mã thời trang và tiện dụng"
+      },
+      {
+        "id": 3525,
+        "vi": "Người dân kiểm tra hóa đơn cẩn thận để đảm bảo tính chính xác"
+      },
+      {
+        "id": 3526,
+        "vi": "Siêu thị triển khai hệ thống thanh toán tự động để tiết kiệm thời gian"
+      },
+      {
+        "id": 3527,
+        "vi": "Áo thun được in họa tiết độc đáo theo yêu cầu khách hàng"
+      },
+      {
+        "id": 3528,
+        "vi": "Tiền được bảo quản trong ví da chống thấm nước chất lượng cao"
+      },
+      {
+        "id": 3529,
+        "vi": "Chợ có quầy bán trái cây nhập khẩu với giá cả hợp lý"
+      },
+      {
+        "id": 3530,
+        "vi": "Quần áo được giặt và ủi phẳng phiu trước khi trưng bày"
+      },
+      {
+        "id": 3531,
+        "vi": "Người dân sử dụng ứng dụng di động để thanh toán không dùng tiền mặt"
+      },
+      {
+        "id": 3532,
+        "vi": "Siêu thị cung cấp xe đẩy và giỏ hàng tiện lợi cho khách mua sắm"
+      },
+      {
+        "id": 3533,
+        "vi": "Giày sandal thời trang được giảm giá mạnh vào mùa hè"
+      },
+      {
+        "id": 3534,
+        "vi": "Tiền xu được sử dụng ở các máy bán hàng tự động hiện đại"
+      },
+      {
+        "id": 3535,
+        "vi": "Chợ truyền thống có khu vực bán hoa tươi rực rỡ sắc màu"
+      },
+      {
+        "id": 3536,
+        "vi": "Áo len được đan tay với các mẫu thiết kế độc quyền"
+      },
+      {
+        "id": 3537,
+        "vi": "Người dân mang ví tiền nhỏ gọn khi đi siêu thị"
+      },
+      {
+        "id": 3538,
+        "vi": "Siêu thị cung cấp thực phẩm nhập khẩu với bao bì đạt chuẩn"
+      },
+      {
+        "id": 3539,
+        "vi": "Quần áo trẻ em được may từ vải cotton mềm mại và an toàn"
+      },
+      {
+        "id": 3540,
+        "vi": "Tiền được cất trong hộp kim loại có khóa bảo mật"
+      },
+      {
+        "id": 3541,
+        "vi": "Chợ có quầy bán cá tươi sống được đánh bắt trong ngày"
+      },
+      {
+        "id": 3542,
+        "vi": "Cửa hàng thời trang trưng bày váy dạ hội lộng lẫy"
+      },
+      {
+        "id": 3543,
+        "vi": "Người dân sử dụng thẻ tín dụng để thanh toán các món hàng lớn"
+      },
+      {
+        "id": 3544,
+        "vi": "Siêu thị có quầy thịt tươi được bảo quản trong tủ lạnh hiện đại"
+      },
+      {
+        "id": 3545,
+        "vi": "Giày thể thao được thử kỹ lưỡng để đảm bảo vừa chân"
+      },
+      {
+        "id": 3546,
+        "vi": "Tiền được để trong ví chống trộm khi đi chợ"
+      },
+      {
+        "id": 3547,
+        "vi": "Chợ truyền thống cung cấp thực phẩm tươi sạch từ nông trại địa phương"
+      },
+      {
+        "id": 3548,
+        "vi": "Áo khoác được thiết kế với lớp lót giữ ấm hiệu quả"
+      },
+      {
+        "id": 3549,
+        "vi": "Người dân kiểm tra số dư tài khoản trước khi mua sắm"
+      },
+      {
+        "id": 3550,
+        "vi": "Siêu thị có khu vực bán đồ đông lạnh với hệ thống làm lạnh tiên tiến"
+      },
+      {
+        "id": 3551,
+        "vi": "Quần áo được sắp xếp theo mùa và phong cách thời trang"
+      },
+      {
+        "id": 3552,
+        "vi": "Tiền được cất trong túi có khóa kéo chống thấm"
+      },
+      {
+        "id": 3553,
+        "vi": "Chợ có quầy bán rau hữu cơ được chứng nhận an toàn"
+      },
+      {
+        "id": 3554,
+        "vi": "Cửa hàng thời trang cung cấp áo sơ mi công sở thanh lịch"
+      },
+      {
+        "id": 3555,
+        "vi": "Người dân mang túi vải tái sử dụng để giảm rác thải nhựa"
+      },
+      {
+        "id": 3556,
+        "vi": "Siêu thị triển khai máy quét mã vạch để thanh toán nhanh chóng"
+      },
+      {
+        "id": 3557,
+        "vi": "Áo thun được thiết kế với chất liệu thoáng mát và bền đẹp"
+      },
+      {
+        "id": 3558,
+        "vi": "Tiền lẻ được để trong túi nhỏ để tiện sử dụng"
+      },
+      {
+        "id": 3559,
+        "vi": "Chợ truyền thống bán các món ăn sáng dân dã và hấp dẫn"
+      },
+      {
+        "id": 3560,
+        "vi": "Quần jeans được giảm giá trong chương trình khuyến mãi đặc biệt"
+      },
+      {
+        "id": 3561,
+        "vi": "Người dân thanh toán qua ứng dụng di động để tiết kiệm thời gian"
+      },
+      {
+        "id": 3562,
+        "vi": "Siêu thị có quầy bánh ngọt với nhiều loại bánh tươi ngon"
+      },
+      {
+        "id": 3563,
+        "vi": "Giày được trưng bày trên kệ gỗ sang trọng và sáng bóng"
+      },
+      {
+        "id": 3564,
+        "vi": "Tiền được cất trong ví da được thiết kế tinh tế"
+      },
+      {
+        "id": 3565,
+        "vi": "Chợ có khu vực bán hoa tươi phục vụ các dịp lễ"
+      },
+      {
+        "id": 3566,
+        "vi": "Quần áo được treo trên móc gỗ với cách bài trí bắt mắt"
+      },
+      {
+        "id": 3567,
+        "vi": "Người dân sử dụng thẻ ngân hàng để mua sắm tiện lợi"
+      },
+      {
+        "id": 3568,
+        "vi": "Siêu thị có khu vực bán đồ gia dụng với nhiều lựa chọn"
+      },
+      {
+        "id": 3569,
+        "vi": "Áo thun được in hình theo xu hướng thời trang mới nhất"
+      },
+      {
+        "id": 3570,
+        "vi": "Tiền được bảo quản trong hộp kim loại có mã số"
+      },
+      {
+        "id": 3571,
+        "vi": "Chợ cung cấp thực phẩm tươi sống với nguồn gốc rõ ràng"
+      },
+      {
+        "id": 3572,
+        "vi": "Cửa hàng thời trang bán váy dài với thiết kế độc đáo"
+      },
+      {
+        "id": 3573,
+        "vi": "Người dân mang giỏ vải để đi chợ nhằm bảo vệ môi trường"
+      },
+      {
+        "id": 3574,
+        "vi": "Siêu thị có quầy rau củ được kiểm tra chất lượng kỹ lưỡng"
+      },
+      {
+        "id": 3575,
+        "vi": "Áo len được bán với nhiều kích cỡ và màu sắc thời trang"
+      },
+      {
+        "id": 3576,
+        "vi": "Tiền được cất trong ví nhỏ gọn và tiện lợi"
+      },
+      {
+        "id": 3577,
+        "vi": "Chợ có quầy bán trái cây tươi theo mùa"
+      },
+      {
+        "id": 3578,
+        "vi": "Cửa hàng giày thời trang cung cấp các mẫu mã đa dạng"
+      },
+      {
+        "id": 3579,
+        "vi": "Người dân kiểm tra hóa đơn để đảm bảo không bị tính sai"
+      },
+      {
+        "id": 3580,
+        "vi": "Siêu thị có khu vực bán đồ uống nhập khẩu cao cấp"
+      },
+      {
+        "id": 3581,
+        "vi": "Quần áo được sắp xếp theo phong cách để dễ lựa chọn"
+      },
+      {
+        "id": 3582,
+        "vi": "Tiền được để trong túi chống nước khi đi mua sắm"
+      },
+      {
+        "id": 3583,
+        "vi": "Chợ có quầy bán thực phẩm tươi sạch từ nông trại"
+      },
+      {
+        "id": 3584,
+        "vi": "Cửa hàng bán áo sơ mi với chất liệu vải thoáng mát"
+      },
+      {
+        "id": 3585,
+        "vi": "Người dân sử dụng ví điện tử để thanh toán nhanh chóng"
+      },
+      {
+        "id": 3586,
+        "vi": "Siêu thị có quầy thanh toán tự động với công nghệ hiện đại"
+      },
+      {
+        "id": 3587,
+        "vi": "Áo thun được thiết kế với họa tiết độc quyền"
+      },
+      {
+        "id": 3588,
+        "vi": "Tiền được cất trong ví da có ngăn riêng biệt"
+      },
+      {
+        "id": 3589,
+        "vi": "Chợ bán hoa tươi để trang trí các dịp đặc biệt"
+      },
+      {
+        "id": 3590,
+        "vi": "Quần áo được giặt sạch và trưng bày bắt mắt"
+      },
+      {
+        "id": 3591,
+        "vi": "Người dân thanh toán bằng thẻ tín dụng để tích điểm"
+      },
+      {
+        "id": 3592,
+        "vi": "Siêu thị cung cấp thực phẩm tươi sống với bao bì an toàn"
+      },
+      {
+        "id": 3593,
+        "vi": "Giày được thử để đảm bảo sự thoải mái khi mang"
+      },
+      {
+        "id": 3594,
+        "vi": "Tiền được cất trong hộp có khóa để đảm bảo an toàn"
+      },
+      {
+        "id": 3595,
+        "vi": "Chợ truyền thống có quầy bán rau củ sạch từ nông trại"
+      },
+      {
+        "id": 3596,
+        "vi": "Cửa hàng thời trang cung cấp áo khoác với thiết kế hiện đại"
+      },
+      {
+        "id": 3597,
+        "vi": "Người dân mang túi vải tái sử dụng để giảm thiểu rác thải"
+      },
+      {
+        "id": 3598,
+        "vi": "Siêu thị có khu vực bán đồ tươi sống được bảo quản cẩn thận."
       }
     ],
     "entertainment": [
