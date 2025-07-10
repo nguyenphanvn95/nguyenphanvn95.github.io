@@ -3864,6 +3864,394 @@
       {
         "id": 1047,
         "vi": "Tôi tham gia văn nghệ lớp."
+      },
+      {
+        "id": 3599,
+        "vi": "Công viên đông người vào cuối tuần"
+      },
+      {
+        "id": 3600,
+        "vi": "Trẻ em chơi trò đuổi bắt ngoài sân"
+      },
+      {
+        "id": 3601,
+        "vi": "Tivi phát phim hoạt hình mỗi tối"
+      },
+      {
+        "id": 3602,
+        "vi": "Người dân đi bộ quanh hồ"
+      },
+      {
+        "id": 3603,
+        "vi": "Sách truyện được đọc trước giờ ngủ"
+      },
+      {
+        "id": 3604,
+        "vi": "Nhạc vang lên từ radio"
+      },
+      {
+        "id": 3605,
+        "vi": "Rạp chiếu phim mở cửa cả ngày"
+      },
+      {
+        "id": 3606,
+        "vi": "Mọi người hát karaoke ở nhà"
+      },
+      {
+        "id": 3607,
+        "vi": "Công viên có cây xanh mát"
+      },
+      {
+        "id": 3608,
+        "vi": "Trẻ em thích xem phim hoạt hình"
+      },
+      {
+        "id": 3609,
+        "vi": "Tivi phát chương trình ca nhạc"
+      },
+      {
+        "id": 3610,
+        "vi": "Người dân đi dạo ở công viên"
+      },
+      {
+        "id": 3611,
+        "vi": "Sách được để trên kệ gỗ"
+      },
+      {
+        "id": 3612,
+        "vi": "Nhạc nhẹ vang lên trong quán cà phê"
+      },
+      {
+        "id": 3613,
+        "vi": "Rạp chiếu phim bán vé giá rẻ"
+      },
+      {
+        "id": 3614,
+        "vi": "Mọi người chơi cờ tướng ở công viên"
+      },
+      {
+        "id": 3615,
+        "vi": "Công viên có ghế đá sạch"
+      },
+      {
+        "id": 3616,
+        "vi": "Trẻ em thích chơi ở sân chơi"
+      },
+      {
+        "id": 3617,
+        "vi": "Tivi phát phim hài vào tối"
+      },
+      {
+        "id": 3618,
+        "vi": "Người dân đi bộ để thư giãn"
+      },
+      {
+        "id": 3619,
+        "vi": "Sách truyện được mượn ở thư viện"
+      },
+      {
+        "id": 3620,
+        "vi": "Nhạc được nghe qua tai nghe"
+      },
+      {
+        "id": 3621,
+        "vi": "Rạp chiếu phim có ghế ngồi thoải mái"
+      },
+      {
+        "id": 3622,
+        "vi": "Mọi người hát ở quán karaoke"
+      },
+      {
+        "id": 3623,
+        "vi": "Công viên có hồ nước đẹp"
+      },
+      {
+        "id": 3624,
+        "vi": "Trẻ em chơi nhảy dây ngoài sân"
+      },
+      {
+        "id": 3625,
+        "vi": "Tivi phát chương trình thiếu nhi"
+      },
+      {
+        "id": 3626,
+        "vi": "Người dân đi dạo vào buổi chiều"
+      },
+      {
+        "id": 3627,
+        "vi": "Sách được đọc ở góc yên tĩnh"
+      },
+      {
+        "id": 3628,
+        "vi": "Nhạc cổ điển vang lên nhẹ nhàng"
+      },
+      {
+        "id": 3629,
+        "vi": "Rạp chiếu phim đông khách cuối tuần"
+      },
+      {
+        "id": 3630,
+        "vi": "Mọi người chơi bài ở nhà"
+      },
+      {
+        "id": 3631,
+        "vi": "Công viên có đường đi bộ"
+      },
+      {
+        "id": 3632,
+        "vi": "Trẻ em thích xem phim siêu anh hùng"
+      },
+      {
+        "id": 3633,
+        "vi": "Tivi phát tin tức giải trí"
+      },
+      {
+        "id": 3634,
+        "vi": "Người dân đi dạo quanh khu phố"
+      },
+      {
+        "id": 3635,
+        "vi": "Sách truyện được để trên bàn"
+      },
+      {
+        "id": 3636,
+        "vi": "Nhạc pop được nghe ở quán nước"
+      },
+      {
+        "id": 3637,
+        "vi": "Rạp chiếu phim có màn hình lớn"
+      },
+      {
+        "id": 3638,
+        "vi": "Mọi người hát karaoke với bạn bè"
+      },
+      {
+        "id": 3639,
+        "vi": "Công viên có cây hoa đẹp"
+      },
+      {
+        "id": 3640,
+        "vi": "Trẻ em chơi bóng ở sân trường"
+      },
+      {
+        "id": 3641,
+        "vi": "Tivi phát phim tình cảm"
+      },
+      {
+        "id": 3642,
+        "vi": "Người dân đi bộ quanh công viên"
+      },
+      {
+        "id": 3643,
+        "vi": "Sách được mượn từ thư viện"
+      },
+      {
+        "id": 3644,
+        "vi": "Nhạc được nghe khi đi xe"
+      },
+      {
+        "id": 3645,
+        "vi": "Rạp chiếu phim bán bỏng ngô"
+      },
+      {
+        "id": 3646,
+        "vi": "Mọi người chơi cờ vua ở công viên"
+      },
+      {
+        "id": 3647,
+        "vi": "Công viên có ghế nghỉ mát"
+      },
+      {
+        "id": 3648,
+        "vi": "Trẻ em thích chơi trò trốn tìm"
+      },
+      {
+        "id": 3649,
+        "vi": "Tivi phát chương trình hài hước"
+      },
+      {
+        "id": 3650,
+        "vi": "Người dân đi dạo để thư giãn"
+      },
+      {
+        "id": 3651,
+        "vi": "Sách được đọc trong phòng"
+      },
+      {
+        "id": 3652,
+        "vi": "Nhạc nhẹ được bật khi ăn tối"
+      },
+      {
+        "id": 3653,
+        "vi": "Rạp chiếu phim có âm thanh tốt"
+      },
+      {
+        "id": 3654,
+        "vi": "Mọi người hát ở nhà hàng"
+      },
+      {
+        "id": 3655,
+        "vi": "Công viên có khu vui chơi"
+      },
+      {
+        "id": 3656,
+        "vi": "Trẻ em chơi bóng chuyền ngoài sân"
+      },
+      {
+        "id": 3657,
+        "vi": "Tivi phát phim hoạt hình mới"
+      },
+      {
+        "id": 3658,
+        "vi": "Người dân đi bộ vào sáng sớm"
+      },
+      {
+        "id": 3659,
+        "vi": "Sách truyện được xếp trên giá"
+      },
+      {
+        "id": 3660,
+        "vi": "Nhạc được nghe qua loa"
+      },
+      {
+        "id": 3661,
+        "vi": "Rạp chiếu phim có vé giảm giá"
+      },
+      {
+        "id": 3662,
+        "vi": "Mọi người chơi trò chơi điện tử"
+      },
+      {
+        "id": 3663,
+        "vi": "Công viên có cây xanh lớn"
+      },
+      {
+        "id": 3664,
+        "vi": "Trẻ em thích xem phim phiêu lưu"
+      },
+      {
+        "id": 3665,
+        "vi": "Tivi phát chương trình âm nhạc"
+      },
+      {
+        "id": 3666,
+        "vi": "Người dân đi dạo quanh hồ nước"
+      },
+      {
+        "id": 3667,
+        "vi": "Sách được đọc ở quán cà phê"
+      },
+      {
+        "id": 3668,
+        "vi": "Nhạc jazz vang lên trong quán"
+      },
+      {
+        "id": 3669,
+        "vi": "Rạp chiếu phim có ghế nằm"
+      },
+      {
+        "id": 3670,
+        "vi": "Mọi người hát karaoke vào tối"
+      },
+      {
+        "id": 3671,
+        "vi": "Công viên có lối đi sạch"
+      },
+      {
+        "id": 3672,
+        "vi": "Trẻ em chơi cầu lông ngoài sân"
+      },
+      {
+        "id": 3673,
+        "vi": "Tivi phát phim khoa học viễn tưởng"
+      },
+      {
+        "id": 3674,
+        "vi": "Người dân đi bộ để thư giãn"
+      },
+      {
+        "id": 3675,
+        "vi": "Sách được để trong túi"
+      },
+      {
+        "id": 3676,
+        "vi": "Nhạc được nghe khi làm việc"
+      },
+      {
+        "id": 3677,
+        "vi": "Rạp chiếu phim có ánh sáng đẹp"
+      },
+      {
+        "id": 3678,
+        "vi": "Mọi người chơi bài với gia đình"
+      },
+      {
+        "id": 3679,
+        "vi": "Công viên có khu vực picnic"
+      },
+      {
+        "id": 3680,
+        "vi": "Trẻ em thích chơi ở công viên"
+      },
+      {
+        "id": 3681,
+        "vi": "Tivi phát chương trình thể thao"
+      },
+      {
+        "id": 3682,
+        "vi": "Người dân đi dạo vào buổi tối"
+      },
+      {
+        "id": 3683,
+        "vi": "Sách truyện được đọc trước khi ngủ"
+      },
+      {
+        "id": 3684,
+        "vi": "Nhạc nhẹ được bật ở nhà"
+      },
+      {
+        "id": 3685,
+        "vi": "Rạp chiếu phim có vé cho học sinh"
+      },
+      {
+        "id": 3686,
+        "vi": "Mọi người hát karaoke ở quán"
+      },
+      {
+        "id": 3687,
+        "vi": "Công viên có cây hoa nở"
+      },
+      {
+        "id": 3688,
+        "vi": "Trẻ em chơi trò kéo co"
+      },
+      {
+        "id": 3689,
+        "vi": "Tivi phát phim hành động"
+      },
+      {
+        "id": 3690,
+        "vi": "Người dân đi bộ quanh khu phố"
+      },
+      {
+        "id": 3691,
+        "vi": "Sách được mượn từ bạn"
+      },
+      {
+        "id": 3692,
+        "vi": "Nhạc được nghe qua điện thoại"
+      },
+      {
+        "id": 3693,
+        "vi": "Rạp chiếu phim có phòng-equal"
+      },
+      {
+        "id": 3694,
+        "vi": "Mọi người chơi cờ tướng ở quán"
+      },
+      {
+        "id": 3695,
+        "vi": "Công viên có ghế đá để nghỉ."
       }
     ],
     "nature": [
@@ -4078,6 +4466,398 @@
       {
         "id": 1193,
         "vi": "Tôi chơi nhặt sỏi bên suối trong."
+      },
+      {
+        "id": 3872,
+        "vi": "Cây xanh mọc quanh công viên"
+      },
+      {
+        "id": 3873,
+        "vi": "Mưa rơi nhẹ vào buổi chiều"
+      },
+      {
+        "id": 3874,
+        "vi": "Sông chảy êm đềm qua làng"
+      },
+      {
+        "id": 3875,
+        "vi": "Người dân trồng cây ở sân nhà"
+      },
+      {
+        "id": 3876,
+        "vi": "Chim hót trên cành cây"
+      },
+      {
+        "id": 3877,
+        "vi": "Rác được bỏ vào thùng"
+      },
+      {
+        "id": 3878,
+        "vi": "Bầu trời xanh vào buổi sáng"
+      },
+      {
+        "id": 3879,
+        "vi": "Hoa nở rực rỡ trong vườn"
+      },
+      {
+        "id": 3880,
+        "vi": "Gió thổi mát vào buổi tối"
+      },
+      {
+        "id": 3881,
+        "vi": "Người dân tưới cây mỗi ngày"
+      },
+      {
+        "id": 3882,
+        "vi": "Cá bơi trong hồ nước"
+      },
+      {
+        "id": 3883,
+        "vi": "Rác được thu gom mỗi sáng"
+      },
+      {
+        "id": 3884,
+        "vi": "Cây cối được trồng ở đường phố"
+      },
+      {
+        "id": 3885,
+        "vi": "Mưa nhỏ làm ướt đường"
+      },
+      {
+        "id": 3886,
+        "vi": "Sông có nước sạch trong"
+      },
+      {
+        "id": 3887,
+        "vi": "Người dân nhặt rác ở công viên"
+      },
+      {
+        "id": 3888,
+        "vi": "Chim bay trên bầu trời"
+      },
+      {
+        "id": 3889,
+        "vi": "Thùng rác được đặt ở góc phố"
+      },
+      {
+        "id": 3890,
+        "vi": "Hoa hồng nở đỏ trong vườn"
+      },
+      {
+        "id": 3891,
+        "vi": "Gió thổi qua cánh đồng"
+      },
+      {
+        "id": 3892,
+        "vi": "Cây xanh được chăm sóc kỹ"
+      },
+      {
+        "id": 3893,
+        "vi": "Cá lội trong ao nhỏ"
+      },
+      {
+        "id": 3894,
+        "vi": "Rác được phân loại tại nhà"
+      },
+      {
+        "id": 3895,
+        "vi": "Bầu trời có mây trắng bay"
+      },
+      {
+        "id": 3896,
+        "vi": "Hoa cỏ mọc bên đường"
+      },
+      {
+        "id": 3897,
+        "vi": "Mưa rơi vào sáng sớm"
+      },
+      {
+        "id": 3898,
+        "vi": "Sông chảy qua khu rừng"
+      },
+      {
+        "id": 3899,
+        "vi": "Người dân trồng cây ở trường học"
+      },
+      {
+        "id": 3900,
+        "vi": "Chim đậu trên cành cao"
+      },
+      {
+        "id": 3901,
+        "vi": "Rác được bỏ đúng nơi"
+      },
+      {
+        "id": 3902,
+        "vi": "Cây cối tạo bóng mát"
+      },
+      {
+        "id": 3903,
+        "vi": "Hoa sen nở trong đầm"
+      },
+      {
+        "id": 3904,
+        "vi": "Gió thổi nhẹ qua làng"
+      },
+      {
+        "id": 3905,
+        "vi": "Người dân dọn rác ở bờ sông"
+      },
+      {
+        "id": 3906,
+        "vi": "Cá bơi trong nước sạch"
+      },
+      {
+        "id": 3907,
+        "vi": "Thùng rác được đặt ở công viên"
+      },
+      {
+        "id": 3908,
+        "vi": "Bầu trời trong xanh ban ngày"
+      },
+      {
+        "id": 3909,
+        "vi": "Hoa cúc nở vàng trong sân"
+      },
+      {
+        "id": 3910,
+        "vi": "Mưa nhẹ làm mát không khí"
+      },
+      {
+        "id": 3911,
+        "vi": "Sông có nước chảy êm"
+      },
+      {
+        "id": 3912,
+        "vi": "Người dân trồng cây quanh nhà"
+      },
+      {
+        "id": 3913,
+        "vi": "Chim hót líu lo buổi sáng"
+      },
+      {
+        "id": 3914,
+        "vi": "Rác được thu gom đúng giờ"
+      },
+      {
+        "id": 3915,
+        "vi": "Cây xanh được tưới nước"
+      },
+      {
+        "id": 3916,
+        "vi": "Hoa mọc trên đồi nhỏ"
+      },
+      {
+        "id": 3917,
+        "vi": "Gió thổi qua cánh đồng lúa"
+      },
+      {
+        "id": 3918,
+        "vi": "Người dân nhặt rác ở bãi biển"
+      },
+      {
+        "id": 3919,
+        "vi": "Cá lội trong hồ công viên"
+      },
+      {
+        "id": 3920,
+        "vi": "Thùng rác được đặt ở trường học"
+      },
+      {
+        "id": 3921,
+        "vi": "Bầu trời có ánh nắng đẹp"
+      },
+      {
+        "id": 3922,
+        "vi": "Hoa cỏ mọc khắp cánh đồng"
+      },
+      {
+        "id": 3923,
+        "vi": "Mưa rơi làm ướt cây cối"
+      },
+      {
+        "id": 3924,
+        "vi": "Sông chảy qua khu phố"
+      },
+      {
+        "id": 3925,
+        "vi": "Người dân trồng cây ở vỉa hè"
+      },
+      {
+        "id": 3926,
+        "vi": "Chim bay qua cánh đồng"
+      },
+      {
+        "id": 3927,
+        "vi": "Rác được bỏ vào túi"
+      },
+      {
+        "id": 3928,
+        "vi": "Cây xanh che mát đường phố"
+      },
+      {
+        "id": 3929,
+        "vi": "Hoa nở trong vườn nhỏ"
+      },
+      {
+        "id": 3930,
+        "vi": "Gió thổi mát vào ban đêm"
+      },
+      {
+        "id": 3931,
+        "vi": "Người dân dọn rác ở công viên"
+      },
+      {
+        "id": 3932,
+        "vi": "Cá bơi trong ao làng"
+      },
+      {
+        "id": 3933,
+        "vi": "Thùng rác được đặt ở chợ"
+      },
+      {
+        "id": 3934,
+        "vi": "Bầu trời có mây trôi chậm"
+      },
+      {
+        "id": 3935,
+        "vi": "Hoa cúc được trồng ở sân"
+      },
+      {
+        "id": 3936,
+        "vi": "Mưa nhỏ rơi vào buổi tối"
+      },
+      {
+        "id": 3937,
+        "vi": "Sông chảy qua cánh đồng"
+      },
+      {
+        "id": 3938,
+        "vi": "Người dân trồng cây ở bãi đất trống"
+      },
+      {
+        "id": 3939,
+        "vi": "Chim hót trên cây cao"
+      },
+      {
+        "id": 3940,
+        "vi": "Rác được thu gom mỗi ngày"
+      },
+      {
+        "id": 3941,
+        "vi": "Cây xanh được cắt tỉa gọn"
+      },
+      {
+        "id": 3942,
+        "vi": "Hoa mọc bên bờ sông"
+      },
+      {
+        "id": 3943,
+        "vi": "Gió thổi qua khu rừng"
+      },
+      {
+        "id": 3944,
+        "vi": "Người dân nhặt rác ở đường phố"
+      },
+      {
+        "id": 3945,
+        "vi": "Cá lội trong hồ nước trong"
+      },
+      {
+        "id": 3946,
+        "vi": "Thùng rác được đặt ở ngõ nhỏ"
+      },
+      {
+        "id": 3947,
+        "vi": "Bầu trời xanh vào buổi chiều"
+      },
+      {
+        "id": 3948,
+        "vi": "Hoa cỏ mọc ở công viên"
+      },
+      {
+        "id": 3949,
+        "vi": "Mưa rơi làm sạch đường"
+      },
+      {
+        "id": 3950,
+        "vi": "Sông có nước trong veo"
+      },
+      {
+        "id": 3951,
+        "vi": "Người dân trồng cây ở khu phố"
+      },
+      {
+        "id": 3952,
+        "vi": "Chim bay trên cánh đồng lúa"
+      },
+      {
+        "id": 3953,
+        "vi": "Rác được bỏ đúng thùng"
+      },
+      {
+        "id": 3954,
+        "vi": "Cây xanh được tưới mỗi sáng"
+      },
+      {
+        "id": 3955,
+        "vi": "Hoa nở rực rỡ ở vườn"
+      },
+      {
+        "id": 3956,
+        "vi": "Gió thổi nhẹ qua công viên"
+      },
+      {
+        "id": 3957,
+        "vi": "Người dân dọn rác ở bờ hồ"
+      },
+      {
+        "id": 3958,
+        "vi": "Cá bơi trong ao sạch"
+      },
+      {
+        "id": 3959,
+        "vi": "Thùng rác được đặt ở góc đường"
+      },
+      {
+        "id": 3960,
+        "vi": "Bầu trời có nắng ấm"
+      },
+      {
+        "id": 3961,
+        "vi": "Hoa cúc nở vàng trong vườn"
+      },
+      {
+        "id": 3962,
+        "vi": "Mưa nhẹ làm mát cây cối"
+      },
+      {
+        "id": 3963,
+        "vi": "Sông chảy qua làng nhỏ"
+      },
+      {
+        "id": 3964,
+        "vi": "Người dân trồng cây ở sân trường"
+      },
+      {
+        "id": 3965,
+        "vi": "Chim hót vào sáng sớm"
+      },
+      {
+        "id": 3966,
+        "vi": "Rác được thu gom đúng nơi"
+      },
+      {
+        "id": 3967,
+        "vi": "Cây xanh tạo không khí mát"
+      },
+      {
+        "id": 3968,
+        "vi": "Hoa mọc bên đường làng"
+      },
+      {
+        "id": 3969,
+        "vi": "Gió thổi qua cánh đồng xanh."
       }
     ],
     "science": [
@@ -4288,6 +5068,398 @@
       {
         "id": 1337,
         "vi": "Tôi học về sự hòa tan của đường trong nước."
+      },
+      {
+        "id": 4141,
+        "vi": "Máy tính được dùng ở trường học"
+      },
+      {
+        "id": 4142,
+        "vi": "Điện thoại thông minh có màn hình lớn"
+      },
+      {
+        "id": 4143,
+        "vi": "Internet kết nối mọi người"
+      },
+      {
+        "id": 4144,
+        "vi": "Robot giúp dọn nhà"
+      },
+      {
+        "id": 4145,
+        "vi": "Xe điện chạy trên đường"
+      },
+      {
+        "id": 4146,
+        "vi": "Máy in in giấy nhanh"
+      },
+      {
+        "id": 4147,
+        "vi": "Công nghệ giúp học online"
+      },
+      {
+        "id": 4148,
+        "vi": "Tivi phát hình ảnh rõ nét"
+      },
+      {
+        "id": 4149,
+        "vi": "Máy lạnh làm mát phòng"
+      },
+      {
+        "id": 4150,
+        "vi": "Điện thoại có camera đẹp"
+      },
+      {
+        "id": 4151,
+        "vi": "Internet được dùng ở quán cà phê"
+      },
+      {
+        "id": 4152,
+        "vi": "Robot hút bụi hoạt động tốt"
+      },
+      {
+        "id": 4153,
+        "vi": "Xe điện được sạc mỗi tối"
+      },
+      {
+        "id": 4154,
+        "vi": "Máy in in màu sắc nét"
+      },
+      {
+        "id": 4155,
+        "vi": "Công nghệ giúp làm việc nhanh"
+      },
+      {
+        "id": 4156,
+        "vi": "Tivi có màn hình lớn"
+      },
+      {
+        "id": 4157,
+        "vi": "Máy lạnh được bật vào mùa hè"
+      },
+      {
+        "id": 4158,
+        "vi": "Điện thoại giúp gọi video"
+      },
+      {
+        "id": 4159,
+        "vi": "Internet có tốc độ cao"
+      },
+      {
+        "id": 4160,
+        "vi": "Robot làm việc ở nhà máy"
+      },
+      {
+        "id": 4161,
+        "vi": "Xe điện tiết kiệm năng lượng"
+      },
+      {
+        "id": 4162,
+        "vi": "Máy in được dùng ở văn phòng"
+      },
+      {
+        "id": 4163,
+        "vi": "Công nghệ giúp học sinh học"
+      },
+      {
+        "id": 4164,
+        "vi": "Tivi phát chương trình khoa học"
+      },
+      {
+        "id": 4165,
+        "vi": "Máy lạnh giữ phòng mát mẻ"
+      },
+      {
+        "id": 4166,
+        "vi": "Điện thoại có pin lâu"
+      },
+      {
+        "id": 4167,
+        "vi": "Internet được dùng ở nhà"
+      },
+      {
+        "id": 4168,
+        "vi": "Robot giúp nấu ăn đơn giản"
+      },
+      {
+        "id": 4169,
+        "vi": "Xe điện chạy êm trên đường"
+      },
+      {
+        "id": 4170,
+        "vi": "Máy in in tài liệu nhanh"
+      },
+      {
+        "id": 4171,
+        "vi": "Công nghệ giúp liên lạc dễ"
+      },
+      {
+        "id": 4172,
+        "vi": "Tivi có hình ảnh sắc nét"
+      },
+      {
+        "id": 4173,
+        "vi": "Máy lạnh hoạt động êm ái"
+      },
+      {
+        "id": 4174,
+        "vi": "Điện thoại chụp ảnh đẹp"
+      },
+      {
+        "id": 4175,
+        "vi": "Internet kết nối cả thế giới"
+      },
+      {
+        "id": 4176,
+        "vi": "Robot dọn rác ở công viên"
+      },
+      {
+        "id": 4177,
+        "vi": "Xe điện được dùng ở thành phố"
+      },
+      {
+        "id": 4178,
+        "vi": "Máy in in giấy tiết kiệm mực"
+      },
+      {
+        "id": 4179,
+        "vi": "Công nghệ giúp học ngoại ngữ"
+      },
+      {
+        "id": 4180,
+        "vi": "Tivi phát phim khoa học"
+      },
+      {
+        "id": 4181,
+        "vi": "Máy lạnh làm mát cả ngày"
+      },
+      {
+        "id": 4182,
+        "vi": "Điện thoại có ứng dụng hay"
+      },
+      {
+        "id": 4183,
+        "vi": "Internet được dùng ở trường"
+      },
+      {
+        "id": 4184,
+        "vi": "Robot giúp làm việc nhà"
+      },
+      {
+        "id": 4185,
+        "vi": "Xe điện không gây khói bụi"
+      },
+      {
+        "id": 4186,
+        "vi": "Máy in in sách nhanh"
+      },
+      {
+        "id": 4187,
+        "vi": "Công nghệ giúp tiết kiệm thời gian"
+      },
+      {
+        "id": 4188,
+        "vi": "Tivi có màn hình phẳng"
+      },
+      {
+        "id": 4189,
+        "vi": "Máy lạnh được sửa định kỳ"
+      },
+      {
+        "id": 4190,
+        "vi": "Điện thoại có màn hình cảm ứng"
+      },
+      {
+        "id": 4191,
+        "vi": "Internet giúp tìm thông tin"
+      },
+      {
+        "id": 4192,
+        "vi": "Robot làm việc ở nhà máy lớn"
+      },
+      {
+        "id": 4193,
+        "vi": "Xe điện được sạc ở trạm"
+      },
+      {
+        "id": 4194,
+        "vi": "Máy in in tài liệu rõ ràng"
+      },
+      {
+        "id": 4195,
+        "vi": "Công nghệ giúp học sinh giỏi"
+      },
+      {
+        "id": 4196,
+        "vi": "Tivi phát chương trình công nghệ"
+      },
+      {
+        "id": 4197,
+        "vi": "Máy lạnh giữ phòng mát"
+      },
+      {
+        "id": 4198,
+        "vi": "Điện thoại có nhiều ứng dụng"
+      },
+      {
+        "id": 4199,
+        "vi": "Internet kết nối ở công viên"
+      },
+      {
+        "id": 4200,
+        "vi": "Robot giúp chăm sóc vườn"
+      },
+      {
+        "id": 4201,
+        "vi": "Xe điện chạy trên đường nhỏ"
+      },
+      {
+        "id": 4202,
+        "vi": "Máy in in giấy tiết kiệm"
+      },
+      {
+        "id": 4203,
+        "vi": "Công nghệ giúp làm việc tại nhà"
+      },
+      {
+        "id": 4204,
+        "vi": "Tivi có âm thanh tốt"
+      },
+      {
+        "id": 4205,
+        "vi": "Máy lạnh hoạt động cả ngày"
+      },
+      {
+        "id": 4206,
+        "vi": "Điện thoại giúp gửi tin nhắn"
+      },
+      {
+        "id": 4207,
+        "vi": "Internet được dùng ở văn phòng"
+      },
+      {
+        "id": 4208,
+        "vi": "Robot dọn nhà tự động"
+      },
+      {
+        "id": 4209,
+        "vi": "Xe điện tiết kiệm chi phí"
+      },
+      {
+        "id": 4210,
+        "vi": "Máy in in hình ảnh đẹp"
+      },
+      {
+        "id": 4211,
+        "vi": "Công nghệ giúp học dễ dàng"
+      },
+      {
+        "id": 4212,
+        "vi": "Tivi phát tin tức khoa học"
+      },
+      {
+        "id": 4213,
+        "vi": "Máy lạnh làm mát phòng khách"
+      },
+      {
+        "id": 4214,
+        "vi": "Điện thoại có camera sắc nét"
+      },
+      {
+        "id": 4215,
+        "vi": "Internet giúp học online"
+      },
+      {
+        "id": 4216,
+        "vi": "Robot làm việc ở nhà máy nhỏ"
+      },
+      {
+        "id": 4217,
+        "vi": "Xe điện được dùng ở trường"
+      },
+      {
+        "id": 4218,
+        "vi": "Máy in in tài liệu học tập"
+      },
+      {
+        "id": 4219,
+        "vi": "Công nghệ giúp liên lạc nhanh"
+      },
+      {
+        "id": 4220,
+        "vi": "Tivi có màn hình hiện đại"
+      },
+      {
+        "id": 4221,
+        "vi": "Máy lạnh giữ không khí mát"
+      },
+      {
+        "id": 4222,
+        "vi": "Điện thoại giúp xem video"
+      },
+      {
+        "id": 4223,
+        "vi": "Internet được dùng ở nhà hàng"
+      },
+      {
+        "id": 4224,
+        "vi": "Robot giúp tưới cây"
+      },
+      {
+        "id": 4225,
+        "vi": "Xe điện chạy không tiếng ồn"
+      },
+      {
+        "id": 4226,
+        "vi": "Máy in in giấy nhanh chóng"
+      },
+      {
+        "id": 4227,
+        "vi": "Công nghệ giúp làm việc hiệu quả"
+      },
+      {
+        "id": 4228,
+        "vi": "Tivi phát phim công nghệ"
+      },
+      {
+        "id": 4229,
+        "vi": "Máy lạnh hoạt động bền bỉ"
+      },
+      {
+        "id": 4230,
+        "vi": "Điện thoại có pin sạc nhanh"
+      },
+      {
+        "id": 4231,
+        "vi": "Internet giúp tìm kiếm nhanh"
+      },
+      {
+        "id": 4232,
+        "vi": "Robot dọn nhà mỗi ngày"
+      },
+      {
+        "id": 4233,
+        "vi": "Xe điện được sạc ở nhà"
+      },
+      {
+        "id": 4234,
+        "vi": "Máy in in màu rõ nét"
+      },
+      {
+        "id": 4235,
+        "vi": "Công nghệ giúp học sinh học tốt"
+      },
+      {
+        "id": 4236,
+        "vi": "Tivi có hình ảnh đẹp"
+      },
+      {
+        "id": 4237,
+        "vi": "Máy lạnh làm mát phòng ngủ"
+      },
+      {
+        "id": 4238,
+        "vi": "Điện thoại giúp gọi điện miễn phí."
       }
     ],
     "government": [
@@ -4498,6 +5670,402 @@
       {
         "id": 1474,
         "vi": "Chính phủ lập đường dây nóng hỗ trợ dân."
+      },
+      {
+        "id": 4424,
+        "vi": "Chính phủ họp ở tòa nhà lớn"
+      },
+      {
+        "id": 4425,
+        "vi": "Người dân bầu cử vào cuối năm"
+      },
+      {
+        "id": 4426,
+        "vi": "Cán bộ làm việc ở văn phòng"
+      },
+      {
+        "id": 4427,
+        "vi": "Chính sách mới được công bố"
+      },
+      {
+        "id": 4428,
+        "vi": "Quốc hội họp mỗi năm"
+      },
+      {
+        "id": 4429,
+        "vi": "Người dân đi bầu ở trường học"
+      },
+      {
+        "id": 4430,
+        "vi": "Chính phủ xây đường mới"
+      },
+      {
+        "id": 4431,
+        "vi": "Cán bộ giúp dân làm giấy tờ"
+      },
+      {
+        "id": 4432,
+        "vi": "Luật được áp dụng ở thành phố"
+      },
+      {
+        "id": 4433,
+        "vi": "Người dân nộp thuế đúng hạn"
+      },
+      {
+        "id": 4434,
+        "vi": "Chính phủ hỗ trợ người nghèo"
+      },
+      {
+        "id": 4435,
+        "vi": "Bầu cử diễn ra ở địa phương"
+      },
+      {
+        "id": 4436,
+        "vi": "Cán bộ giải đáp câu hỏi dân"
+      },
+      {
+        "id": 4437,
+        "vi": "Chính sách giúp nông dân"
+      },
+      {
+        "id": 4438,
+        "vi": "Quốc hội thảo luận về luật"
+      },
+      {
+        "id": 4439,
+        "vi": "Người dân đi bầu cử đông đủ"
+      },
+      {
+        "id": 4440,
+        "vi": "Chính phủ xây trường học mới"
+      },
+      {
+        "id": 4441,
+        "vi": "Cán bộ làm việc cả ngày"
+      },
+      {
+        "id": 4442,
+        "vi": "Luật được treo ở bảng thông tin"
+      },
+      {
+        "id": 4443,
+        "vi": "Người dân đóng thuế ở phường"
+      },
+      {
+        "id": 4444,
+        "vi": "Chính phủ hỗ trợ học sinh"
+      },
+      {
+        "id": 4445,
+        "vi": "Bầu cử được tổ chức công bằng"
+      },
+      {
+        "id": 4446,
+        "vi": "Cán bộ giúp dân làm chứng minh thư"
+      },
+      {
+        "id": 4447,
+        "vi": "Chính sách hỗ trợ việc làm"
+      },
+      {
+        "id": 4448,
+        "vi": "Quốc hội họp ở thủ đô"
+      },
+      {
+        "id": 4449,
+        "vi": "Người dân đi bầu ở điểm bầu cử"
+      },
+      {
+        "id": 4450,
+        "vi": "Chính phủ sửa đường phố"
+      },
+      {
+        "id": 4451,
+        "vi": "Cán bộ làm việc ở ủy ban"
+      },
+      {
+        "id": 4452,
+        "vi": "Luật bảo vệ môi trường được ban hành"
+      },
+      {
+        "id": 4453,
+        "vi": "Người dân nộp thuế qua ngân hàng"
+      },
+      {
+        "id": 4454,
+        "vi": "Chính phủ xây bệnh viện mới"
+      },
+      {
+        "id": 4455,
+        "vi": "Bầu cử diễn ra đúng giờ"
+      },
+      {
+        "id": 4456,
+        "vi": "Cán bộ hỗ trợ người dân"
+      },
+      {
+        "id": 4457,
+        "vi": "Chính sách giúp người cao tuổi"
+      },
+      {
+        "id": 4458,
+        "vi": "Quốc hội thảo luận về giáo dục"
+      },
+      {
+        "id": 4459,
+        "vi": "Người dân đi bầu cử sáng sớm"
+      },
+      {
+        "id": 4460,
+        "vi": "Chính phủ cải tạo công viên"
+      },
+      {
+        "id": 4461,
+        "vi": "Cán bộ làm việc ở xã"
+      },
+      {
+        "id": 4462,
+        "vi": "Luật được công bố trên báo"
+      },
+      {
+        "id": 4463,
+        "vi": "Người dân đóng thuế hàng năm"
+      },
+      {
+        "id": 4464,
+        "vi": "Chính phủ hỗ trợ người khó khăn"
+      },
+      {
+        "id": 4465,
+        "vi": "Bầu cử được tổ chức ở làng"
+      },
+      {
+        "id": 4466,
+        "vi": "Cán bộ hướng dẫn làm giấy tờ"
+      },
+      {
+        "id": 4467,
+        "vi": "Chính sách hỗ trợ y tế"
+      },
+      {
+        "id": 4468,
+        "vi": "Quốc hội họp để bàn luật mới"
+      },
+      {
+        "id": 4469,
+        "vi": "Người dân đi bầu ở trường"
+      },
+      {
+        "id": 4470,
+        "vi": "Chính phủ xây cầu mới"
+      },
+      {
+        "id": 4471,
+        "vi": "Cán bộ giúp dân ở phường"
+      },
+      {
+        "id": 4472,
+        "vi": "Luật giao thông được áp dụng"
+      },
+      {
+        "id": 4473,
+        "vi": "Người dân nộp thuế đúng thời gian"
+      },
+      {
+        "id": 4474,
+        "vi": "Chính phủ hỗ trợ nông nghiệp"
+      },
+      {
+        "id": 4475,
+        "vi": "Bầu cử diễn ra ở khu phố"
+      },
+      {
+        "id": 4476,
+        "vi": "Cán bộ làm việc ở văn phòng xã"
+      },
+      {
+        "id": 4477,
+        "vi": "Chính sách giúp người dân nghèo"
+      },
+      {
+        "id": 4478,
+        "vi": "Quốc hội thảo luận về ngân sách"
+      },
+      {
+        "id": 4479,
+        "vi": "Người dân đi bầu ở hội trường"
+      },
+      {
+        "id": 4480,
+        "vi": "Chính phủ xây đường cao tốc"
+      },
+      {
+        "id": 4481,
+        "vi": "Cán bộ hỗ trợ làm giấy phép"
+      },
+      {
+        "id": 4482,
+        "vi": "Luật được treo ở văn phòng"
+      },
+      {
+        "id": 4483,
+        "vi": "Người dân đóng thuế ở ngân hàng"
+      },
+      {
+        "id": 4484,
+        "vi": "Chính phủ xây nhà văn hóa"
+      },
+      {
+        "id": 4485,
+        "vi": "Bầu cử được tổ chức ở xã"
+      },
+      {
+        "id": 4486,
+        "vi": "Cán bộ giúp dân làm hộ khẩu"
+      },
+      {
+        "id": 4487,
+        "vi": "Chính sách hỗ trợ giáo dục"
+      },
+      {
+        "id": 4488,
+        "vi": "Quốc hội họp vào mùa thu"
+      },
+      {
+        "id": 4489,
+        "vi": "Người dân đi bầu cử đúng giờ"
+      },
+      {
+        "id": 4490,
+        "vi": "Chính phủ cải tạo trường học"
+      },
+      {
+        "id": 4491,
+        "vi": "Cán bộ làm việc ở huyện"
+      },
+      {
+        "id": 4492,
+        "vi": "Luật bảo vệ trẻ em được ban hành"
+      },
+      {
+        "id": 4493,
+        "vi": "Người dân nộp thuế qua mạng"
+      },
+      {
+        "id": 4494,
+        "vi": "Chính phủ hỗ trợ người thất nghiệp"
+      },
+      {
+        "id": 4495,
+        "vi": "Bầu cử diễn ra ở trường học"
+      },
+      {
+        "id": 4496,
+        "vi": "Cán bộ giải đáp thắc mắc dân"
+      },
+      {
+        "id": 4497,
+        "vi": "Chính sách giúp người dân trồng cây"
+      },
+      {
+        "id": 4498,
+        "vi": "Quốc hội thảo luận về môi trường"
+      },
+      {
+        "id": 4499,
+        "vi": "Người dân đi bầu ở điểm trường"
+      },
+      {
+        "id": 4500,
+        "vi": "Chính phủ xây công viên mới"
+      },
+      {
+        "id": 4501,
+        "vi": "Cán bộ hỗ trợ ở ủy ban xã"
+      },
+      {
+        "id": 4502,
+        "vi": "Luật được công bố ở phường"
+      },
+      {
+        "id": 4503,
+        "vi": "Người dân đóng thuế đúng quy định"
+      },
+      {
+        "id": 4504,
+        "vi": "Chính phủ hỗ trợ người dân nghèo"
+      },
+      {
+        "id": 4505,
+        "vi": "Bầu cử được tổ chức công khai"
+      },
+      {
+        "id": 4506,
+        "vi": "Cán bộ làm việc ở văn phòng phường"
+      },
+      {
+        "id": 4507,
+        "vi": "Chính sách hỗ trợ sức khỏe"
+      },
+      {
+        "id": 4508,
+        "vi": "Quốc hội họp để bàn về y tế"
+      },
+      {
+        "id": 4509,
+        "vi": "Người dân đi bầu ở hội trường làng"
+      },
+      {
+        "id": 4510,
+        "vi": "Chính phủ xây bệnh viện lớn"
+      },
+      {
+        "id": 4511,
+        "vi": "Cán bộ giúp dân làm giấy phép xây dựng"
+      },
+      {
+        "id": 4512,
+        "vi": "Luật được áp dụng ở làng"
+      },
+      {
+        "id": 4513,
+        "vi": "Người dân nộp thuế ở xã"
+      },
+      {
+        "id": 4514,
+        "vi": "Chính phủ hỗ trợ nông dân nghèo"
+      },
+      {
+        "id": 4515,
+        "vi": "Bầu cử diễn ra ở khu dân cư"
+      },
+      {
+        "id": 4516,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận"
+      },
+      {
+        "id": 4517,
+        "vi": "Chính sách giúp người dân học nghề"
+      },
+      {
+        "id": 4518,
+        "vi": "Quốc hội thảo luận về luật mới"
+      },
+      {
+        "id": 4519,
+        "vi": "Người dân đi bầu ở trường tiểu học"
+      },
+      {
+        "id": 4520,
+        "vi": "Chính phủ xây đường ở làng"
+      },
+      {
+        "id": 4521,
+        "vi": "Cán bộ làm việc ở văn phòng huyện"
+      },
+      {
+        "id": 4522,
+        "vi": "Luật bảo vệ môi trường được treo."
       }
     ],
     "history": [
@@ -4712,6 +6280,394 @@
       {
         "id": 1619,
         "vi": "Tôi học về các cuộc khởi nghĩa trong lịch sử."
+      },
+      {
+        "id": 4703,
+        "vi": "Sông Hương chảy qua thành phố Huế"
+      },
+      {
+        "id": 4704,
+        "vi": "Vua Hùng dựng nước Văn Lang"
+      },
+      {
+        "id": 4705,
+        "vi": "Núi cao nhất là Fansipan"
+      },
+      {
+        "id": 4706,
+        "vi": "Lịch sử Việt Nam có nhiều anh hùng"
+      },
+      {
+        "id": 4707,
+        "vi": "Hà Nội là thủ đô Việt Nam"
+      },
+      {
+        "id": 4708,
+        "vi": "Vịnh Hạ Long có nhiều đảo đẹp"
+      },
+      {
+        "id": 4709,
+        "vi": "Triều Nguyễn trị vì ở Huế"
+      },
+      {
+        "id": 4710,
+        "vi": "Sông Cửu Long chảy qua miền Nam"
+      },
+      {
+        "id": 4711,
+        "vi": "Đền Hùng nằm ở Phú Thọ"
+      },
+      {
+        "id": 4712,
+        "vi": "Lịch sử ghi lại chiến thắng Điện Biên"
+      },
+      {
+        "id": 4713,
+        "vi": "Đà Nẵng có bãi biển đẹp"
+      },
+      {
+        "id": 4714,
+        "vi": "Vua Quang Trung đánh giặc Thanh"
+      },
+      {
+        "id": 4715,
+        "vi": "Núi Bà Đen nằm ở Tây Ninh"
+      },
+      {
+        "id": 4716,
+        "vi": "Sông Tiền chảy qua đồng bằng"
+      },
+      {
+        "id": 4717,
+        "vi": "Lịch sử Việt Nam rất lâu đời"
+      },
+      {
+        "id": 4718,
+        "vi": "Hà Giang có cao nguyên đá"
+      },
+      {
+        "id": 4719,
+        "vi": "Vua Lê Lợi khởi nghĩa Lam Sơn"
+      },
+      {
+        "id": 4720,
+        "vi": "Vịnh Hạ Long là kỳ quan thiên nhiên"
+      },
+      {
+        "id": 4721,
+        "vi": "Sài Gòn có nhà thờ Đức Bà"
+      },
+      {
+        "id": 4722,
+        "vi": "Lịch sử ghi lại chiến thắng Bạch Đằng"
+      },
+      {
+        "id": 4723,
+        "vi": "Đà Lạt có nhiều đồi thông"
+      },
+      {
+        "id": 4724,
+        "vi": "Vua Trần Nhân Tông lãnh đạo quân dân"
+      },
+      {
+        "id": 4725,
+        "vi": "Sông Hậu chảy qua miền Tây"
+      },
+      {
+        "id": 4726,
+        "vi": "Đền Ngọc Sơn nằm ở Hà Nội"
+      },
+      {
+        "id": 4727,
+        "vi": "Lịch sử Việt Nam có nhiều vương triều"
+      },
+      {
+        "id": 4728,
+        "vi": "Phú Quốc có bãi biển dài"
+      },
+      {
+        "id": 4729,
+        "vi": "Vua Lý Thái Tổ dời đô về Hà Nội"
+      },
+      {
+        "id": 4730,
+        "vi": "Núi Yên Tử là nơi thiêng liêng"
+      },
+      {
+        "id": 4731,
+        "vi": "Sông Đà chảy qua miền Bắc"
+      },
+      {
+        "id": 4732,
+        "vi": "Lịch sử ghi lại chiến tranh chống Pháp"
+      },
+      {
+        "id": 4733,
+        "vi": "Huế có kinh thành cổ"
+      },
+      {
+        "id": 4734,
+        "vi": "Vua Nguyễn Huệ đánh giặc ngoại xâm"
+      },
+      {
+        "id": 4735,
+        "vi": "Vịnh Hạ Long thu hút khách du lịch"
+      },
+      {
+        "id": 4736,
+        "vi": "Hà Nội có hồ Hoàn Kiếm"
+      },
+      {
+        "id": 4737,
+        "vi": "Lịch sử Việt Nam có nhiều chiến công"
+      },
+      {
+        "id": 4738,
+        "vi": "Đà Nẵng có cầu Rồng đẹp"
+      },
+      {
+        "id": 4739,
+        "vi": "Vua Trần Hưng Đạo đánh quân Nguyên"
+      },
+      {
+        "id": 4740,
+        "vi": "Sông Cửu Long có nhiều phù sa"
+      },
+      {
+        "id": 4741,
+        "vi": "Đền Hùng thu hút người viếng"
+      },
+      {
+        "id": 4742,
+        "vi": "Lịch sử kể về Bà Triệu"
+      },
+      {
+        "id": 4743,
+        "vi": "Phú Quốc có nước mắm ngon"
+      },
+      {
+        "id": 4744,
+        "vi": "Vua Lê Đại Hành trị vì đất nước"
+      },
+      {
+        "id": 4745,
+        "vi": "Núi Fansipan thu hút người leo núi"
+      },
+      {
+        "id": 4746,
+        "vi": "Sông Hương có màu xanh đẹp"
+      },
+      {
+        "id": 4747,
+        "vi": "Lịch sử ghi lại chiến thắng chống Mỹ"
+      },
+      {
+        "id": 4748,
+        "vi": "Huế có lăng tẩm cổ"
+      },
+      {
+        "id": 4749,
+        "vi": "Vua Quang Trung là anh hùng dân tộc"
+      },
+      {
+        "id": 4750,
+        "vi": "Vịnh Hạ Long có hang động đẹp"
+      },
+      {
+        "id": 4751,
+        "vi": "Hà Nội có Văn Miếu lâu đời"
+      },
+      {
+        "id": 4752,
+        "vi": "Lịch sử Việt Nam rất phong phú"
+      },
+      {
+        "id": 4753,
+        "vi": "Đà Lạt có khí hậu mát mẻ"
+      },
+      {
+        "id": 4754,
+        "vi": "Vua Trần Nhân Tông xây chùa Yên Tử"
+      },
+      {
+        "id": 4755,
+        "vi": "Sông Tiền chảy qua nhiều tỉnh"
+      },
+      {
+        "id": 4756,
+        "vi": "Đền Ngọc Sơn nằm bên hồ"
+      },
+      {
+        "id": 4757,
+        "vi": "Lịch sử kể về cuộc khởi nghĩa Tây Sơn"
+      },
+      {
+        "id": 4758,
+        "vi": "Phú Quốc là đảo ngọc"
+      },
+      {
+        "id": 4759,
+        "vi": "Vua Lý Thái Tổ xây dựng kinh đô"
+      },
+      {
+        "id": 4760,
+        "vi": "Núi Bà Đen có chùa cổ"
+      },
+      {
+        "id": 4761,
+        "vi": "Sông Hậu mang phù sa màu mỡ"
+      },
+      {
+        "id": 4762,
+        "vi": "Lịch sử ghi lại chiến thắng Khe Sanh"
+      },
+      {
+        "id": 4763,
+        "vi": "Huế có cầu Trường Tiền"
+      },
+      {
+        "id": 4764,
+        "vi": "Vua Lê Lợi lãnh đạo quân dân"
+      },
+      {
+        "id": 4765,
+        "vi": "Vịnh Hạ Long có nước xanh"
+      },
+      {
+        "id": 4766,
+        "vi": "Hà Nội có phố cổ lâu đời"
+      },
+      {
+        "id": 4767,
+        "vi": "Lịch sử Việt Nam có nhiều vua"
+      },
+      {
+        "id": 4768,
+        "vi": "Đà Nẵng có núi Ngũ Hành Sơn"
+      },
+      {
+        "id": 4769,
+        "vi": "Vua Trần Hưng Đạo là anh hùng"
+      },
+      {
+        "id": 4770,
+        "vi": "Sông Cửu Long có nhiều nhánh"
+      },
+      {
+        "id": 4771,
+        "vi": "Đền Hùng là nơi thờ cúng"
+      },
+      {
+        "id": 4772,
+        "vi": "Lịch sử kể về Bà Trưng"
+      },
+      {
+        "id": 4773,
+        "vi": "Phú Quốc có bãi biển sạch"
+      },
+      {
+        "id": 4774,
+        "vi": "Vua Nguyễn Huệ lãnh đạo khởi nghĩa"
+      },
+      {
+        "id": 4775,
+        "vi": "Núi Fansipan có mây trắng"
+      },
+      {
+        "id": 4776,
+        "vi": "Sông Hương chảy qua kinh thành"
+      },
+      {
+        "id": 4777,
+        "vi": "Lịch sử ghi lại chiến tranh chống Tống"
+      },
+      {
+        "id": 4778,
+        "vi": "Huế có chùa Thiên Mụ"
+      },
+      {
+        "id": 4779,
+        "vi": "Vua Quang Trung đánh giặc nhanh"
+      },
+      {
+        "id": 4780,
+        "vi": "Vịnh Hạ Long là di sản thế giới"
+      },
+      {
+        "id": 4781,
+        "vi": "Hà Nội có hồ Gươm đẹp"
+      },
+      {
+        "id": 4782,
+        "vi": "Lịch sử Việt Nam có nhiều sự kiện"
+      },
+      {
+        "id": 4783,
+        "vi": "Đà Lạt có hồ Xuân Hương"
+      },
+      {
+        "id": 4784,
+        "vi": "Vua Trần Nhân Tông xây chùa lớn"
+      },
+      {
+        "id": 4785,
+        "vi": "Sông Tiền chảy qua đồng lúa"
+      },
+      {
+        "id": 4786,
+        "vi": "Đền Ngọc Sơn có cầu đỏ"
+      },
+      {
+        "id": 4787,
+        "vi": "Lịch sử kể về chiến thắng Ngọc Hồi"
+      },
+      {
+        "id": 4788,
+        "vi": "Phú Quốc có san hô đẹp"
+      },
+      {
+        "id": 4789,
+        "vi": "Vua Lý Thái Tổ xây thành Thăng Long"
+      },
+      {
+        "id": 4790,
+        "vi": "Núi Bà Đen thu hút khách tham quan"
+      },
+      {
+        "id": 4791,
+        "vi": "Sông Hậu có nước trong"
+      },
+      {
+        "id": 4792,
+        "vi": "Lịch sử ghi lại chiến tranh chống Nhật"
+      },
+      {
+        "id": 4793,
+        "vi": "Huế có cung điện cổ"
+      },
+      {
+        "id": 4794,
+        "vi": "Vua Lê Lợi đánh giặc Minh"
+      },
+      {
+        "id": 4795,
+        "vi": "Vịnh Hạ Long có đảo đá đẹp"
+      },
+      {
+        "id": 4796,
+        "vi": "Hà Nội có cầu Long Biên"
+      },
+      {
+        "id": 4797,
+        "vi": "Lịch sử Việt Nam rất tự hào"
+      },
+      {
+        "id": 4798,
+        "vi": "Đà Nẵng có bãi biển Mỹ Khê"
+      },
+      {
+        "id": 4799,
+        "vi": "Vua Trần Hưng Đạo lãnh đạo giỏi."
       }
     ],
     "sports": [
@@ -4926,6 +6882,390 @@
       {
         "id": 1764,
         "vi": "Trang phục thể thao cần thoải mái và phù hợp."
+      },
+      {
+        "id": 4983,
+        "vi": "Trẻ em chơi bóng đá ở sân trường"
+      },
+      {
+        "id": 4984,
+        "vi": "Người dân chạy bộ trong công viên"
+      },
+      {
+        "id": 4985,
+        "vi": "Phòng gym có máy chạy bộ"
+      },
+      {
+        "id": 4986,
+        "vi": "Bóng rổ được chơi ở sân nhỏ"
+      },
+      {
+        "id": 4987,
+        "vi": "Mọi người tập yoga ở nhà"
+      },
+      {
+        "id": 4988,
+        "vi": "Hồ bơi mở cửa vào mùa hè"
+      },
+      {
+        "id": 4989,
+        "vi": "Người dân đi bộ mỗi sáng"
+      },
+      {
+        "id": 4990,
+        "vi": "Trẻ em chơi cầu lông ở sân"
+      },
+      {
+        "id": 4991,
+        "vi": "Phòng gym có tạ để tập"
+      },
+      {
+        "id": 4992,
+        "vi": "Bóng đá thu hút nhiều khán giả"
+      },
+      {
+        "id": 4993,
+        "vi": "Mọi người tập thể dục buổi chiều"
+      },
+      {
+        "id": 4994,
+        "vi": "Hồ bơi có nước sạch"
+      },
+      {
+        "id": 4995,
+        "vi": "Người dân chạy bộ quanh hồ"
+      },
+      {
+        "id": 4996,
+        "vi": "Trẻ em chơi bóng chuyền ở trường"
+      },
+      {
+        "id": 4997,
+        "vi": "Phòng gym mở cửa cả ngày"
+      },
+      {
+        "id": 4998,
+        "vi": "Bóng rổ được chơi vào cuối tuần"
+      },
+      {
+        "id": 4999,
+        "vi": "Mọi người tập yoga để thư giãn"
+      },
+      {
+        "id": 5000,
+        "vi": "Hồ bơi có huấn luyện viên"
+      },
+      {
+        "id": 5001,
+        "vi": "Người dân đi bộ ở công viên"
+      },
+      {
+        "id": 5002,
+        "vi": "Trẻ em chơi bóng đá ở sân cỏ"
+      },
+      {
+        "id": 5003,
+        "vi": "Phòng gym có máy tập bụng"
+      },
+      {
+        "id": 5004,
+        "vi": "Bóng đá được xem trên tivi"
+      },
+      {
+        "id": 5005,
+        "vi": "Mọi người tập thể dục để khỏe"
+      },
+      {
+        "id": 5006,
+        "vi": "Hồ bơi đông người vào mùa hè"
+      },
+      {
+        "id": 5007,
+        "vi": "Người dân chạy bộ vào sáng sớm"
+      },
+      {
+        "id": 5008,
+        "vi": "Trẻ em chơi cầu lông ngoài sân"
+      },
+      {
+        "id": 5009,
+        "vi": "Phòng gym có gương lớn"
+      },
+      {
+        "id": 5010,
+        "vi": "Bóng rổ thu hút học sinh"
+      },
+      {
+        "id": 5011,
+        "vi": "Mọi người tập yoga trong phòng"
+      },
+      {
+        "id": 5012,
+        "vi": "Hồ bơi có làn bơi riêng"
+      },
+      {
+        "id": 5013,
+        "vi": "Người dân đi bộ để thư giãn"
+      },
+      {
+        "id": 5014,
+        "vi": "Trẻ em chơi bóng chuyền ở bãi biển"
+      },
+      {
+        "id": 5015,
+        "vi": "Phòng gym có máy tập chân"
+      },
+      {
+        "id": 5016,
+        "vi": "Bóng đá được chơi ở sân lớn"
+      },
+      {
+        "id": 5017,
+        "vi": "Mọi người tập thể dục mỗi ngày"
+      },
+      {
+        "id": 5018,
+        "vi": "Hồ bơi mở cửa đến tối"
+      },
+      {
+        "id": 5019,
+        "vi": "Người dân chạy bộ ở đường phố"
+      },
+      {
+        "id": 5020,
+        "vi": "Trẻ em chơi bóng rổ ở sân trường"
+      },
+      {
+        "id": 5021,
+        "vi": "Phòng gym có máy tập tay"
+      },
+      {
+        "id": 5022,
+        "vi": "Bóng đá có nhiều cổ động viên"
+      },
+      {
+        "id": 5023,
+        "vi": "Mọi người tập yoga để khỏe mạnh"
+      },
+      {
+        "id": 5024,
+        "vi": "Hồ bơi có nước ấm"
+      },
+      {
+        "id": 5025,
+        "vi": "Người dân đi bộ quanh khu phố"
+      },
+      {
+        "id": 5026,
+        "vi": "Trẻ em chơi cầu lông vào chiều"
+      },
+      {
+        "id": 5027,
+        "vi": "Phòng gym có huấn luyện viên"
+      },
+      {
+        "id": 5028,
+        "vi": "Bóng rổ được chơi ở công viên"
+      },
+      {
+        "id": 5029,
+        "vi": "Mọi người tập thể dục ở sân"
+      },
+      {
+        "id": 5030,
+        "vi": "Hồ bơi có ghế nghỉ"
+      },
+      {
+        "id": 5031,
+        "vi": "Người dân chạy bộ để giữ sức khỏe"
+      },
+      {
+        "id": 5032,
+        "vi": "Trẻ em chơi bóng đá ở sân nhỏ"
+      },
+      {
+        "id": 5033,
+        "vi": "Phòng gym có máy tập toàn thân"
+      },
+      {
+        "id": 5034,
+        "vi": "Bóng đá được chiếu trên tivi"
+      },
+      {
+        "id": 5035,
+        "vi": "Mọi người tập yoga ở công viên"
+      },
+      {
+        "id": 5036,
+        "vi": "Hồ bơi có khu vực cho trẻ em"
+      },
+      {
+        "id": 5037,
+        "vi": "Người dân đi bộ vào buổi tối"
+      },
+      {
+        "id": 5038,
+        "vi": "Trẻ em chơi bóng chuyền ở sân"
+      },
+      {
+        "id": 5039,
+        "vi": "Phòng gym có máy chạy bộ mới"
+      },
+      {
+        "id": 5040,
+        "vi": "Bóng rổ thu hút người trẻ"
+      },
+      {
+        "id": 5041,
+        "vi": "Mọi người tập thể dục để giảm cân"
+      },
+      {
+        "id": 5042,
+        "vi": "Hồ bơi sạch sẽ và an toàn"
+      },
+      {
+        "id": 5043,
+        "vi": "Người dân chạy bộ quanh công viên"
+      },
+      {
+        "id": 5044,
+        "vi": "Trẻ em chơi cầu lông ở sân nhà"
+      },
+      {
+        "id": 5045,
+        "vi": "Phòng gym có tạ nặng"
+      },
+      {
+        "id": 5046,
+        "vi": "Bóng đá là môn thể thao phổ biến"
+      },
+      {
+        "id": 5047,
+        "vi": "Mọi người tập yoga để giảm căng thẳng"
+      },
+      {
+        "id": 5048,
+        "vi": "Hồ bơi có nước trong"
+      },
+      {
+        "id": 5049,
+        "vi": "Người dân đi bộ để khỏe mạnh"
+      },
+      {
+        "id": 5050,
+        "vi": "Trẻ em chơi bóng rổ ở sân nhỏ"
+      },
+      {
+        "id": 5051,
+        "vi": "Phòng gym có máy tập hiện đại"
+      },
+      {
+        "id": 5052,
+        "vi": "Bóng đá được chơi vào cuối tuần"
+      },
+      {
+        "id": 5053,
+        "vi": "Mọi người tập thể dục ở nhà"
+      },
+      {
+        "id": 5054,
+        "vi": "Hồ bơi có người cứu hộ"
+      },
+      {
+        "id": 5055,
+        "vi": "Người dân chạy bộ ở công viên lớn"
+      },
+      {
+        "id": 5056,
+        "vi": "Trẻ em chơi bóng chuyền ngoài sân"
+      },
+      {
+        "id": 5057,
+        "vi": "Phòng gym có không gian rộng"
+      },
+      {
+        "id": 5058,
+        "vi": "Bóng rổ được chơi ở trường học"
+      },
+      {
+        "id": 5059,
+        "vi": "Mọi người tập yoga vào sáng sớm"
+      },
+      {
+        "id": 5060,
+        "vi": "Hồ bơi có khu vực bơi sâu"
+      },
+      {
+        "id": 5061,
+        "vi": "Người dân đi bộ để thư giãn"
+      },
+      {
+        "id": 5062,
+        "vi": "Trẻ em chơi bóng đá ở sân cỏ nhân tạo"
+      },
+      {
+        "id": 5063,
+        "vi": "Phòng gym có máy tập cơ bắp"
+      },
+      {
+        "id": 5064,
+        "vi": "Bóng đá thu hút nhiều người xem"
+      },
+      {
+        "id": 5065,
+        "vi": "Mọi người tập thể dục để khỏe"
+      },
+      {
+        "id": 5066,
+        "vi": "Hồ bơi có nước sạch và mát"
+      },
+      {
+        "id": 5067,
+        "vi": "Người dân chạy bộ để cải thiện sức khỏe"
+      },
+      {
+        "id": 5068,
+        "vi": "Trẻ em chơi cầu lông ở công viên"
+      },
+      {
+        "id": 5069,
+        "vi": "Phòng gym có gương lớn sạch"
+      },
+      {
+        "id": 5070,
+        "vi": "Bóng rổ là môn thể thao thú vị"
+      },
+      {
+        "id": 5071,
+        "vi": "Mọi người tập yoga để cân bằng"
+      },
+      {
+        "id": 5072,
+        "vi": "Hồ bơi mở cửa vào cuối tuần"
+      },
+      {
+        "id": 5073,
+        "vi": "Người dân đi bộ quanh hồ nước"
+      },
+      {
+        "id": 5074,
+        "vi": "Trẻ em chơi bóng chuyền ở bãi biển"
+      },
+      {
+        "id": 5075,
+        "vi": "Phòng gym có máy tập đa năng"
+      },
+      {
+        "id": 5076,
+        "vi": "Bóng đá được chơi ở sân lớn"
+      },
+      {
+        "id": 5077,
+        "vi": "Mọi người tập thể dục mỗi sáng"
+      },
+      {
+        "id": 5078,
+        "vi": "Hồ bơi có khu vực nghỉ ngơi."
       }
     ]
   },
@@ -8734,6 +11074,374 @@
       {
         "id": 1096,
         "vi": "Tôi thi hát trong cuộc thi văn nghệ lớp."
+      },
+      {
+        "id": 3696,
+        "vi": "Công viên thành phố nhộn nhịp với người đi dạo vào cuối tuần"
+      },
+      {
+        "id": 3697,
+        "vi": "Trẻ em thích chơi các trò chơi dân gian ngoài sân"
+      },
+      {
+        "id": 3698,
+        "vi": "Tivi phát những bộ phim hoạt hình được yêu thích"
+      },
+      {
+        "id": 3699,
+        "vi": "Người dân thư giãn bằng cách đi bộ quanh hồ"
+      },
+      {
+        "id": 3700,
+        "vi": "Sách văn học được đọc ở góc yên tĩnh"
+      },
+      {
+        "id": 3701,
+        "vi": "Nhạc acoustic vang lên trong quán cà phê nhỏ"
+      },
+      {
+        "id": 3702,
+        "vi": "Rạp chiếu phim thu hút đông đảo khán giả trẻ"
+      },
+      {
+        "id": 3703,
+        "vi": "Mọi người tụ tập hát karaoke vào tối thứ bảy"
+      },
+      {
+        "id": 3704,
+        "vi": "Công viên có những con đường đi bộ rợp bóng cây"
+      },
+      {
+        "id": 3705,
+        "vi": "Trẻ em say mê xem phim hoạt hình trên màn hình lớn"
+      },
+      {
+        "id": 3706,
+        "vi": "Tivi phát chương trình ca nhạc vào buổi tối"
+      },
+      {
+        "id": 3707,
+        "vi": "Người dân đi dạo quanh công viên để thư giãn"
+      },
+      {
+        "id": 3708,
+        "vi": "Sách truyện được sắp xếp ngay ngắn trên kệ gỗ"
+      },
+      {
+        "id": 3709,
+        "vi": "Nhạc nhẹ giúp không khí quán cà phê thêm thư giãn"
+      },
+      {
+        "id": 3710,
+        "vi": "Rạp chiếu phim cung cấp vé giá ưu đãi cho học sinh"
+      },
+      {
+        "id": 3711,
+        "vi": "Mọi người chơi cờ vua dưới bóng cây công viên"
+      },
+      {
+        "id": 3712,
+        "vi": "Công viên có khu vực picnic được giữ sạch sẽ"
+      },
+      {
+        "id": 3713,
+        "vi": "Trẻ em chơi cầu lông trong sân trường"
+      },
+      {
+        "id": 3714,
+        "vi": "Tivi phát những bộ phim hài hước vào cuối tuần"
+      },
+      {
+        "id": 3715,
+        "vi": "Người dân đi bộ quanh hồ để tận hưởng không khí trong lành"
+      },
+      {
+        "id": 3716,
+        "vi": "Sách khoa học được đọc trong thư viện yên tĩnh"
+      },
+      {
+        "id": 3717,
+        "vi": "Nhạc jazz tạo không khí thoải mái trong quán ăn"
+      },
+      {
+        "id": 3718,
+        "vi": "Rạp chiếu phim có hệ thống âm thanh hiện đại"
+      },
+      {
+        "id": 3719,
+        "vi": "Mọi người hát karaoke với bạn bè tại nhà hàng"
+      },
+      {
+        "id": 3720,
+        "vi": "Công viên có hồ nước lung linh ánh đèn vào ban đêm"
+      },
+      {
+        "id": 3721,
+        "vi": "Trẻ em thích chơi trò trốn tìm trong sân"
+      },
+      {
+        "id": 3722,
+        "vi": "Tivi phát chương trình giải trí vào buổi tối"
+      },
+      {
+        "id": 3723,
+        "vi": "Người dân đi dạo quanh khu phố vào chiều muộn"
+      },
+      {
+        "id": 3724,
+        "vi": "Sách truyện được mượn từ thư viện công cộng"
+      },
+      {
+        "id": 3725,
+        "vi": "Nhạc cổ điển được bật trong không gian yên tĩnh"
+      },
+      {
+        "id": 3726,
+        "vi": "Rạp chiếu phim có ghế ngồi thoải mái và tiện nghi"
+      },
+      {
+        "id": 3727,
+        "vi": "Mọi người chơi trò chơi điện tử tại nhà"
+      },
+      {
+        "id": 3728,
+        "vi": "Công viên có khu vực vui chơi cho trẻ em"
+      },
+      {
+        "id": 3729,
+        "vi": "Trẻ em tham gia các trò chơi vận động ngoài trời"
+      },
+      {
+        "id": 3730,
+        "vi": "Tivi phát phim tình cảm vào ban đêm"
+      },
+      {
+        "id": 3731,
+        "vi": "Người dân đi bộ để giảm căng thẳng"
+      },
+      {
+        "id": 3732,
+        "vi": "Sách văn học được đọc ở quán cà phê"
+      },
+      {
+        "id": 3733,
+        "vi": "Nhạc pop được nghe qua tai nghe không dây"
+      },
+      {
+        "id": 3734,
+        "vi": "Rạp chiếu phim có màn hình lớn và sắc nét"
+      },
+      {
+        "id": 3735,
+        "vi": "Mọi người tụ họp chơi bài vào dịp lễ"
+      },
+      {
+        "id": 3736,
+        "vi": "Công viên có ghế đá được đặt dưới bóng cây"
+      },
+      {
+        "id": 3737,
+        "vi": "Trẻ em thích chơi bóng rổ trong sân trường"
+      },
+      {
+        "id": 3738,
+        "vi": "Tivi phát chương trình âm nhạc trực tiếp"
+      },
+      {
+        "id": 3739,
+        "vi": "Người dân đi dạo quanh công viên vào sáng sớm"
+      },
+      {
+        "id": 3740,
+        "vi": "Sách khoa học được để trên bàn làm việc"
+      },
+      {
+        "id": 3741,
+        "vi": "Nhạc acoustic tạo cảm giác thư giãn khi ăn tối"
+      },
+      {
+        "id": 3742,
+        "vi": "Rạp chiếu phim có khu vực bán đồ ăn nhẹ"
+      },
+      {
+        "id": 3743,
+        "vi": "Mọi người hát karaoke để giải trí sau giờ làm"
+      },
+      {
+        "id": 3744,
+        "vi": "Công viên có đường đi bộ được lát đá sạch sẽ"
+      },
+      {
+        "id": 3745,
+        "vi": "Trẻ em chơi nhảy dây trong giờ ra chơi"
+      },
+      {
+        "id": 3746,
+        "vi": "Tivi phát phim phiêu lưu hấp dẫn"
+      },
+      {
+        "id": 3747,
+        "vi": "Người dân đi bộ quanh hồ để tận hưởng không khí mát mẻ"
+      },
+      {
+        "id": 3748,
+        "vi": "Sách truyện được cất trong túi vải"
+      },
+      {
+        "id": 3749,
+        "vi": "Nhạc nhẹ được bật trong phòng khách"
+      },
+      {
+        "id": 3750,
+        "vi": "Rạp chiếu phim có hệ thống ánh sáng hiện đại"
+      },
+      {
+        "id": 3751,
+        "vi": "Mọi người chơi cờ tướng để thư giãn"
+      },
+      {
+        "id": 3752,
+        "vi": "Công viên có khu vực tổ chức sự kiện ngoài trời"
+      },
+      {
+        "id": 3753,
+        "vi": "Trẻ em thích chơi trò kéo co trong sân"
+      },
+      {
+        "id": 3754,
+        "vi": "Tivi phát chương trình thể thao vào cuối tuần"
+      },
+      {
+        "id": 3755,
+        "vi": "Người dân đi dạo để thư giãn tinh thần"
+      },
+      {
+        "id": 3756,
+        "vi": "Sách văn học được đọc trong góc yên tĩnh"
+      },
+      {
+        "id": 3757,
+        "vi": "Nhạc jazz được nghe qua loa chất lượng cao"
+      },
+      {
+        "id": 3758,
+        "vi": "Rạp chiếu phim có vé dành cho gia đình"
+      },
+      {
+        "id": 3759,
+        "vi": "Mọi người chơi trò chơi điện tử với bạn bè"
+      },
+      {
+        "id": 3760,
+        "vi": "Công viên có khu vực nghỉ ngơi thoải mái"
+      },
+      {
+        "id": 3761,
+        "vi": "Trẻ em tham gia các trò chơi dân gian"
+      },
+      {
+        "id": 3762,
+        "vi": "Tivi phát phim hài vào buổi tối"
+      },
+      {
+        "id": 3763,
+        "vi": "Người dân đi bộ quanh khu phố để thư giãn"
+      },
+      {
+        "id": 3764,
+        "vi": "Sách được đọc ở ghế đá công viên"
+      },
+      {
+        "id": 3765,
+        "vi": "Nhạc cổ điển tạo không khí thư giãn trong nhà"
+      },
+      {
+        "id": 3766,
+        "vi": "Rạp chiếu phim có không gian hiện đại"
+      },
+      {
+        "id": 3767,
+        "vi": "Mọi người hát karaoke tại quán nhỏ"
+      },
+      {
+        "id": 3768,
+        "vi": "Công viên có khu vui chơi được bảo trì thường xuyên"
+      },
+      {
+        "id": 3769,
+        "vi": "Trẻ em chơi bóng chuyền ngoài sân"
+      },
+      {
+        "id": 3770,
+        "vi": "Tivi phát chương trình ca nhạc vào ban đêm"
+      },
+      {
+        "id": 3771,
+        "vi": "Người dân đi dạo để tận hưởng không gian xanh"
+      },
+      {
+        "id": 3772,
+        "vi": "Sách khoa học được mượn từ thư viện trường"
+      },
+      {
+        "id": 3773,
+        "vi": "Nhạc pop được nghe trong quán cà phê"
+      },
+      {
+        "id": 3774,
+        "vi": "Rạp chiếu phim có ghế nằm thoải mái"
+      },
+      {
+        "id": 3775,
+        "vi": "Mọi người chơi bài để giải trí vào tối"
+      },
+      {
+        "id": 3776,
+        "vi": "Công viên có hồ nước đẹp vào ban đêm"
+      },
+      {
+        "id": 3777,
+        "vi": "Trẻ em thích chơi trò bịt mắt bắt dê"
+      },
+      {
+        "id": 3778,
+        "vi": "Tivi phát phim hành động mới"
+      },
+      {
+        "id": 3779,
+        "vi": "Người dân đi bộ quanh công viên để thư giãn"
+      },
+      {
+        "id": 3780,
+        "vi": "Sách truyện được đọc trước giờ đi ngủ"
+      },
+      {
+        "id": 3781,
+        "vi": "Nhạc nhẹ được bật khi làm việc"
+      },
+      {
+        "id": 3782,
+        "vi": "Rạp chiếu phim có vé giá rẻ cho học sinh"
+      },
+      {
+        "id": 3783,
+        "vi": "Mọi người tụ tập hát karaoke vào cuối tuần"
+      },
+      {
+        "id": 3784,
+        "vi": "Công viên có cây hoa nở rộ"
+      },
+      {
+        "id": 3785,
+        "vi": "Trẻ em chơi các trò chơi vận động"
+      },
+      {
+        "id": 3786,
+        "vi": "Tivi phát chương trình giải trí thú vị"
+      },
+      {
+        "id": 3787,
+        "vi": "Người dân đi dạo để giảm căng thẳng."
       }
     ],
     "nature": [
@@ -8944,6 +11652,374 @@
       {
         "id": 1242,
         "vi": "Tôi tin rằng thiên nhiên là người thầy lớn nhất của con người."
+      },
+      {
+        "id": 3970,
+        "vi": "Công viên thành phố rợp bóng cây xanh mát mẻ"
+      },
+      {
+        "id": 3971,
+        "vi": "Mưa phùn rơi nhẹ làm không khí thêm trong lành"
+      },
+      {
+        "id": 3972,
+        "vi": "Dòng sông chảy êm đềm qua những cánh đồng lúa"
+      },
+      {
+        "id": 3973,
+        "vi": "Người dân tích cực trồng cây để bảo vệ môi trường"
+      },
+      {
+        "id": 3974,
+        "vi": "Chim chóc hót vang trên những cành cây cao"
+      },
+      {
+        "id": 3975,
+        "vi": "Rác thải được phân loại cẩn thận trước khi thu gom"
+      },
+      {
+        "id": 3976,
+        "vi": "Bầu trời xanh thẳm trải dài vào buổi sáng sớm"
+      },
+      {
+        "id": 3977,
+        "vi": "Hoa cỏ dại mọc rực rỡ dọc con đường làng"
+      },
+      {
+        "id": 3978,
+        "vi": "Gió mát thổi qua những cánh đồng lúa chín"
+      },
+      {
+        "id": 3979,
+        "vi": "Cây cối được chăm sóc kỹ lưỡng trong khu dân cư"
+      },
+      {
+        "id": 3980,
+        "vi": "Cá bơi lội tung tăng trong hồ nước trong veo"
+      },
+      {
+        "id": 3981,
+        "vi": "Thùng rác được đặt ở các ngã tư đông đúc"
+      },
+      {
+        "id": 3982,
+        "vi": "Bầu trời điểm xuyết vài đám mây trắng nhẹ"
+      },
+      {
+        "id": 3983,
+        "vi": "Hoa sen nở rộ trong đầm nước yên bình"
+      },
+      {
+        "id": 3984,
+        "vi": "Mưa nhỏ làm ướt những con đường đất đỏ"
+      },
+      {
+        "id": 3985,
+        "vi": "Dòng sông được giữ sạch nhờ công tác vệ sinh"
+      },
+      {
+        "id": 3986,
+        "vi": "Người dân trồng cây xanh quanh khu phố để giảm ô nhiễm"
+      },
+      {
+        "id": 3987,
+        "vi": "Chim bay lượn tự do trên bầu trời trong xanh"
+      },
+      {
+        "id": 3988,
+        "vi": "Rác được thu gom theo lịch trình cố định"
+      },
+      {
+        "id": 3989,
+        "vi": "Cây xanh tạo bóng mát cho công viên thành phố"
+      },
+      {
+        "id": 3990,
+        "vi": "Hoa hồng được trồng trong khu vườn nhỏ"
+      },
+      {
+        "id": 3991,
+        "vi": "Gió thổi nhẹ qua những hàng cây ven sông"
+      },
+      {
+        "id": 3992,
+        "vi": "Người dân tham gia dọn rác ở bãi biển địa phương"
+      },
+      {
+        "id": 3993,
+        "vi": "Cá lội trong ao nước được làm sạch thường xuyên"
+      },
+      {
+        "id": 3994,
+        "vi": "Thùng rác phân loại được đặt ở trường học"
+      },
+      {
+        "id": 3995,
+        "vi": "Bầu trời rực rỡ ánh nắng vào buổi trưa"
+      },
+      {
+        "id": 3996,
+        "vi": "Hoa cúc vàng nở rộ trong sân nhà"
+      },
+      {
+        "id": 3997,
+        "vi": "Mưa phùn làm không khí thêm mát mẻ"
+      },
+      {
+        "id": 3998,
+        "vi": "Dòng sông chảy qua khu rừng xanh mướt"
+      },
+      {
+        "id": 3999,
+        "vi": "Người dân trồng cây ở công viên để bảo vệ thiên nhiên"
+      },
+      {
+        "id": 4000,
+        "vi": "Chim hót líu lo trên những cành cây cổ thụ"
+      },
+      {
+        "id": 4001,
+        "vi": "Rác thải được xử lý đúng cách tại khu dân cư"
+      },
+      {
+        "id": 4002,
+        "vi": "Cây xanh được tưới nước đều đặn mỗi ngày"
+      },
+      {
+        "id": 4003,
+        "vi": "Hoa cỏ mọc tự nhiên trên những ngọn đồi"
+      },
+      {
+        "id": 4004,
+        "vi": "Gió thổi qua cánh đồng tạo cảm giác yên bình"
+      },
+      {
+        "id": 4005,
+        "vi": "Người dân nhặt rác ở bờ sông để giữ sạch môi trường"
+      },
+      {
+        "id": 4006,
+        "vi": "Cá bơi trong hồ nước được bảo vệ cẩn thận"
+      },
+      {
+        "id": 4007,
+        "vi": "Thùng rác được đặt ở các con hẻm nhỏ"
+      },
+      {
+        "id": 4008,
+        "vi": "Bầu trời có mây trắng trôi lững lờ"
+      },
+      {
+        "id": 4009,
+        "vi": "Hoa hướng dương nở rực rỡ trong vườn"
+      },
+      {
+        "id": 4010,
+        "vi": "Mưa nhẹ làm sạch lá cây xanh"
+      },
+      {
+        "id": 4011,
+        "vi": "Dòng sông chảy qua làng quê yên ả"
+      },
+      {
+        "id": 4012,
+        "vi": "Người dân trồng cây ở vỉa hè để giảm khói bụi"
+      },
+      {
+        "id": 4013,
+        "vi": "Chim bay qua những cánh đồng lúa chín vàng"
+      },
+      {
+        "id": 4014,
+        "vi": "Rác được phân loại để tái chế hiệu quả"
+      },
+      {
+        "id": 4015,
+        "vi": "Cây xanh được cắt tỉa để giữ mỹ quan đô thị"
+      },
+      {
+        "id": 4016,
+        "vi": "Hoa cỏ dại mọc dọc con đường nông thôn"
+      },
+      {
+        "id": 4017,
+        "vi": "Gió thổi mát qua khu rừng nhỏ"
+      },
+      {
+        "id": 4018,
+        "vi": "Người dân dọn rác ở công viên vào cuối tuần"
+      },
+      {
+        "id": 4019,
+        "vi": "Cá lội tung tăng trong ao nước sạch"
+      },
+      {
+        "id": 4020,
+        "vi": "Thùng rác được đặt ở khu chợ đông đúc"
+      },
+      {
+        "id": 4021,
+        "vi": "Bầu trời trong xanh vào những ngày nắng đẹp"
+      },
+      {
+        "id": 4022,
+        "vi": "Hoa cúc được trồng trong chậu nhỏ"
+      },
+      {
+        "id": 4023,
+        "vi": "Mưa phùn làm mát không khí thành phố"
+      },
+      {
+        "id": 4024,
+        "vi": "Dòng sông được bảo vệ để giữ nước trong"
+      },
+      {
+        "id": 4025,
+        "vi": "Người dân trồng cây ở sân trường để tạo bóng mát"
+      },
+      {
+        "id": 4026,
+        "vi": "Chim chóc hót vang trong khu rừng"
+      },
+      {
+        "id": 4027,
+        "vi": "Rác thải được thu gom bằng xe chuyên dụng"
+      },
+      {
+        "id": 4028,
+        "vi": "Cây xanh được chăm sóc để chống ô nhiễm"
+      },
+      {
+        "id": 4029,
+        "vi": "Hoa sen nở đẹp trong đầm nước làng"
+      },
+      {
+        "id": 4030,
+        "vi": "Gió thổi qua cánh đồng lúa tạo sóng nhẹ"
+      },
+      {
+        "id": 4031,
+        "vi": "Người dân nhặt rác ở bãi biển để bảo vệ môi trường"
+      },
+      {
+        "id": 4032,
+        "vi": "Cá bơi trong hồ nước công viên sạch sẽ"
+      },
+      {
+        "id": 4033,
+        "vi": "Thùng rác được đặt ở các khu dân cư"
+      },
+      {
+        "id": 4034,
+        "vi": "Bầu trời có ánh nắng dịu vào buổi chiều"
+      },
+      {
+        "id": 4035,
+        "vi": "Hoa cỏ mọc tự nhiên trên cánh đồng"
+      },
+      {
+        "id": 4036,
+        "vi": "Mưa nhẹ làm sạch không khí đô thị"
+      },
+      {
+        "id": 4037,
+        "vi": "Dòng sông chảy qua khu phố yên bình"
+      },
+      {
+        "id": 4038,
+        "vi": "Người dân trồng cây ở công viên để giảm nhiệt độ"
+      },
+      {
+        "id": 4039,
+        "vi": "Chim bay lượn trên bầu trời xanh thẳm"
+      },
+      {
+        "id": 4040,
+        "vi": "Rác được phân loại trước khi đưa đi xử lý"
+      },
+      {
+        "id": 4041,
+        "vi": "Cây xanh được tưới nước bằng hệ thống tự động"
+      },
+      {
+        "id": 4042,
+        "vi": "Hoa hồng nở rộ trong khu vườn nhỏ"
+      },
+      {
+        "id": 4043,
+        "vi": "Gió thổi qua những hàng cây ven đường"
+      },
+      {
+        "id": 4044,
+        "vi": "Người dân tham gia dọn rác ở bờ hồ"
+      },
+      {
+        "id": 4045,
+        "vi": "Cá lội trong ao nước được bảo vệ kỹ lưỡng"
+      },
+      {
+        "id": 4046,
+        "vi": "Thùng rác được đặt ở các điểm công cộng"
+      },
+      {
+        "id": 4047,
+        "vi": "Bầu trời có mây trắng bay vào buổi sáng"
+      },
+      {
+        "id": 4048,
+        "vi": "Hoa cúc nở vàng rực trong sân trường"
+      },
+      {
+        "id": 4049,
+        "vi": "Mưa phùn làm mát cây cối trong công viên"
+      },
+      {
+        "id": 4050,
+        "vi": "Dòng sông được giữ sạch bằng các biện pháp bảo vệ"
+      },
+      {
+        "id": 4051,
+        "vi": "Người dân trồng cây ở đường phố để giảm ô nhiễm"
+      },
+      {
+        "id": 4052,
+        "vi": "Chim hót trên những cành cây xanh"
+      },
+      {
+        "id": 4053,
+        "vi": "Rác thải được thu gom đúng lịch trình"
+      },
+      {
+        "id": 4054,
+        "vi": "Cây xanh tạo không khí trong lành cho khu phố"
+      },
+      {
+        "id": 4055,
+        "vi": "Hoa cỏ mọc khắp cánh đồng lúa"
+      },
+      {
+        "id": 4056,
+        "vi": "Gió thổi nhẹ qua công viên thành phố"
+      },
+      {
+        "id": 4057,
+        "vi": "Người dân dọn rác ở bãi biển vào sáng sớm"
+      },
+      {
+        "id": 4058,
+        "vi": "Cá bơi trong hồ nước sạch trong công viên"
+      },
+      {
+        "id": 4059,
+        "vi": "Thùng rác được đặt ở các góc phố nhỏ"
+      },
+      {
+        "id": 4060,
+        "vi": "Bầu trời có ánh nắng ấm áp vào ban ngày"
+      },
+      {
+        "id": 4061,
+        "vi": "Hoa hướng dương nở rực trong khu vườn."
       }
     ],
     "science": [
@@ -9122,6 +12198,386 @@
       {
         "id": 1378,
         "vi": "Tôi đọc tiểu sử các nhà khoa học nổi tiếng như Newton và Curie."
+      },
+      {
+        "id": 4239,
+        "vi": "Máy tính được sử dụng rộng rãi trong các lớp học hiện đại"
+      },
+      {
+        "id": 4240,
+        "vi": "Điện thoại thông minh hỗ trợ nhiều ứng dụng học tập"
+      },
+      {
+        "id": 4241,
+        "vi": "Internet kết nối người dùng trên toàn cầu với tốc độ cao"
+      },
+      {
+        "id": 4242,
+        "vi": "Robot tự động hóa giúp tăng hiệu suất trong nhà máy"
+      },
+      {
+        "id": 4243,
+        "vi": "Xe điện được sạc bằng năng lượng mặt trời"
+      },
+      {
+        "id": 4244,
+        "vi": "Máy in 3D tạo ra các mô hình chi tiết"
+      },
+      {
+        "id": 4245,
+        "vi": "Công nghệ hỗ trợ học trực tuyến hiệu quả"
+      },
+      {
+        "id": 4246,
+        "vi": "Tivi thông minh phát hình ảnh chất lượng cao"
+      },
+      {
+        "id": 4247,
+        "vi": "Máy lạnh tiết kiệm điện được dùng ở văn phòng"
+      },
+      {
+        "id": 4248,
+        "vi": "Điện thoại có camera chụp ảnh chuyên nghiệp"
+      },
+      {
+        "id": 4249,
+        "vi": "Internet được triển khai ở các khu vực nông thôn"
+      },
+      {
+        "id": 4250,
+        "vi": "Robot hút bụi di chuyển thông minh trong nhà"
+      },
+      {
+        "id": 4251,
+        "vi": "Xe điện giảm thiểu khí thải độc hại"
+      },
+      {
+        "id": 4252,
+        "vi": "Máy in in tài liệu với tốc độ nhanh"
+      },
+      {
+        "id": 4253,
+        "vi": "Công nghệ giúp tối ưu hóa công việc hàng ngày"
+      },
+      {
+        "id": 4254,
+        "vi": "Tivi thông minh kết nối với internet"
+      },
+      {
+        "id": 4255,
+        "vi": "Máy lạnh được điều khiển bằng điện thoại"
+      },
+      {
+        "id": 4256,
+        "vi": "Điện thoại hỗ trợ gọi video chất lượng cao"
+      },
+      {
+        "id": 4257,
+        "vi": "Internet giúp tìm kiếm thông tin khoa học"
+      },
+      {
+        "id": 4258,
+        "vi": "Robot hỗ trợ chăm sóc bệnh nhân ở bệnh viện"
+      },
+      {
+        "id": 4259,
+        "vi": "Xe điện được sử dụng trong giao thông công cộng"
+      },
+      {
+        "id": 4260,
+        "vi": "Máy in 3D in các bộ phận y tế"
+      },
+      {
+        "id": 4261,
+        "vi": "Công nghệ giúp học sinh học ngoại ngữ dễ dàng"
+      },
+      {
+        "id": 4262,
+        "vi": "Tivi thông minh phát các chương trình khoa học"
+      },
+      {
+        "id": 4263,
+        "vi": "Máy lạnh sử dụng công nghệ tiết kiệm năng lượng"
+      },
+      {
+        "id": 4264,
+        "vi": "Điện thoại có màn hình cảm ứng mượt mà"
+      },
+      {
+        "id": 4265,
+        "vi": "Internet cung cấp dữ liệu nhanh chóng cho nghiên cứu"
+      },
+      {
+        "id": 4266,
+        "vi": "Robot tự động hóa làm việc ở dây chuyền sản xuất"
+      },
+      {
+        "id": 4267,
+        "vi": "Xe điện được sạc tại các trạm công cộng"
+      },
+      {
+        "id": 4268,
+        "vi": "Máy in in tài liệu với độ chính xác cao"
+      },
+      {
+        "id": 4269,
+        "vi": "Công nghệ hỗ trợ giảng dạy trực tuyến hiệu quả"
+      },
+      {
+        "id": 4270,
+        "vi": "Tivi thông minh có giao diện thân thiện"
+      },
+      {
+        "id": 4271,
+        "vi": "Máy lạnh hoạt động êm ái trong phòng họp"
+      },
+      {
+        "id": 4272,
+        "vi": "Điện thoại hỗ trợ các ứng dụng công nghệ mới"
+      },
+      {
+        "id": 4273,
+        "vi": "Internet kết nối các thiết bị thông minh"
+      },
+      {
+        "id": 4274,
+        "vi": "Robot dọn dẹp nhà cửa với cảm biến hiện đại"
+      },
+      {
+        "id": 4275,
+        "vi": "Xe điện giúp giảm ô nhiễm không khí"
+      },
+      {
+        "id": 4276,
+        "vi": "Máy in 3D tạo ra sản phẩm tùy chỉnh"
+      },
+      {
+        "id": 4277,
+        "vi": "Công nghệ giúp tối ưu hóa quy trình làm việc"
+      },
+      {
+        "id": 4278,
+        "vi": "Tivi thông minh phát phim khoa học viễn tưởng"
+      },
+      {
+        "id": 4279,
+        "vi": "Máy lạnh được điều chỉnh nhiệt độ từ xa"
+      },
+      {
+        "id": 4280,
+        "vi": "Điện thoại có tính năng bảo mật cao"
+      },
+      {
+        "id": 4281,
+        "vi": "Internet hỗ trợ nghiên cứu khoa học tiên tiến"
+      },
+      {
+        "id": 4282,
+        "vi": "Robot hỗ trợ phẫu thuật ở bệnh viện"
+      },
+      {
+        "id": 4283,
+        "vi": "Xe điện được sử dụng trong các khu du lịch"
+      },
+      {
+        "id": 4284,
+        "vi": "Máy in in tài liệu học tập số lượng lớn"
+      },
+      {
+        "id": 4285,
+        "vi": "Công nghệ giúp học sinh học qua video"
+      },
+      {
+        "id": 4286,
+        "vi": "Tivi thông minh kết nối với loa ngoài"
+      },
+      {
+        "id": 4287,
+        "vi": "Máy lạnh sử dụng năng lượng tái tạo"
+      },
+      {
+        "id": 4288,
+        "vi": "Điện thoại có camera zoom xa"
+      },
+      {
+        "id": 4289,
+        "vi": "Internet giúp chia sẻ thông tin nhanh chóng"
+      },
+      {
+        "id": 4290,
+        "vi": "Robot tự động tưới cây trong vườn"
+      },
+      {
+        "id": 4291,
+        "vi": "Xe điện được thiết kế với kiểu dáng hiện đại"
+      },
+      {
+        "id": 4292,
+        "vi": "Máy in 3D in mô hình kiến trúc"
+      },
+      {
+        "id": 4293,
+        "vi": "Công nghệ hỗ trợ làm việc từ xa hiệu quả"
+      },
+      {
+        "id": 4294,
+        "vi": "Tivi thông minh phát chương trình công nghệ mới"
+      },
+      {
+        "id": 4295,
+        "vi": "Máy lạnh được bảo trì định kỳ"
+      },
+      {
+        "id": 4296,
+        "vi": "Điện thoại hỗ trợ ứng dụng học tập trực tuyến"
+      },
+      {
+        "id": 4297,
+        "vi": "Internet kết nối các thiết bị trong nhà"
+      },
+      {
+        "id": 4298,
+        "vi": "Robot giúp dọn rác ở công viên"
+      },
+      {
+        "id": 4299,
+        "vi": "Xe điện chạy êm ái trên đường phố"
+      },
+      {
+        "id": 4300,
+        "vi": "Máy in in tài liệu với chất lượng cao"
+      },
+      {
+        "id": 4301,
+        "vi": "Công nghệ giúp học sinh học qua ứng dụng"
+      },
+      {
+        "id": 4302,
+        "vi": "Tivi thông minh có màn hình siêu nét"
+      },
+      {
+        "id": 4303,
+        "vi": "Máy lạnh tiết kiệm điện năng tối đa"
+      },
+      {
+        "id": 4304,
+        "vi": "Điện thoại hỗ trợ công nghệ 5G"
+      },
+      {
+        "id": 4305,
+        "vi": "Internet giúp truy cập tài liệu khoa học"
+      },
+      {
+        "id": 4306,
+        "vi": "Robot hỗ trợ chăm sóc người cao tuổi"
+      },
+      {
+        "id": 4307,
+        "vi": "Xe điện được sử dụng ở khu công nghiệp"
+      },
+      {
+        "id": 4308,
+        "vi": "Máy in 3D in sản phẩm y tế chính xác"
+      },
+      {
+        "id": 4309,
+        "vi": "Công nghệ giúp tối ưu hóa quy trình giảng dạy"
+      },
+      {
+        "id": 4310,
+        "vi": "Tivi thông minh phát nội dung theo yêu cầu"
+      },
+      {
+        "id": 4311,
+        "vi": "Máy lạnh được điều khiển bằng giọng nói"
+      },
+      {
+        "id": 4312,
+        "vi": "Điện thoại có pin sạc nhanh hiện đại"
+      },
+      {
+        "id": 4313,
+        "vi": "Internet hỗ trợ nghiên cứu khoa học toàn cầu"
+      },
+      {
+        "id": 4314,
+        "vi": "Robot tự động hóa giúp sản xuất nhanh hơn"
+      },
+      {
+        "id": 4315,
+        "vi": "Xe điện giảm chi phí vận hành"
+      },
+      {
+        "id": 4316,
+        "vi": "Máy in in màu với độ sắc nét cao"
+      },
+      {
+        "id": 4317,
+        "vi": "Công nghệ giúp học sinh học qua thực tế ảo"
+      },
+      {
+        "id": 4318,
+        "vi": "Tivi thông minh kết nối với thiết bị khác"
+      },
+      {
+        "id": 4319,
+        "vi": "Máy lạnh sử dụng công nghệ thân thiện môi trường"
+      },
+      {
+        "id": 4320,
+        "vi": "Điện thoại có camera quay video chất lượng"
+      },
+      {
+        "id": 4321,
+        "vi": "Internet giúp chia sẻ dữ liệu khoa học"
+      },
+      {
+        "id": 4322,
+        "vi": "Robot hỗ trợ làm việc trong nhà máy"
+      },
+      {
+        "id": 4323,
+        "vi": "Xe điện được sạc bằng năng lượng sạch"
+      },
+      {
+        "id": 4324,
+        "vi": "Máy in 3D in mô hình giáo dục"
+      },
+      {
+        "id": 4325,
+        "vi": "Công nghệ hỗ trợ nghiên cứu khoa học hiện đại"
+      },
+      {
+        "id": 4326,
+        "vi": "Tivi thông minh phát chương trình về công nghệ"
+      },
+      {
+        "id": 4327,
+        "vi": "Máy lạnh hoạt động bền bỉ trong mùa hè"
+      },
+      {
+        "id": 4328,
+        "vi": "Điện thoại hỗ trợ ứng dụng trí tuệ nhân tạo"
+      },
+      {
+        "id": 4329,
+        "vi": "Internet kết nối các thiết bị thông minh trong nhà"
+      },
+      {
+        "id": 4330,
+        "vi": "Robot tự động dọn nhà với cảm biến thông minh"
+      },
+      {
+        "id": 4331,
+        "vi": "Xe điện giúp bảo vệ môi trường đô thị"
+      },
+      {
+        "id": 4332,
+        "vi": "Máy in in tài liệu với tốc độ cao"
+      },
+      {
+        "id": 4333,
+        "vi": "Công nghệ giúp học sinh học hiệu quả hơn."
       }
     ],
     "government": [
@@ -9328,6 +12784,382 @@
       {
         "id": 1522,
         "vi": "Chính phủ yêu cầu báo cáo định kỳ từ các bộ ngành."
+      },
+      {
+        "id": 4523,
+        "vi": "Chính phủ tổ chức hội nghị tại trung tâm hành chính"
+      },
+      {
+        "id": 4524,
+        "vi": "Người dân tham gia bầu cử để chọn lãnh đạo địa phương"
+      },
+      {
+        "id": 4525,
+        "vi": "Cán bộ hỗ trợ giải quyết thủ tục hành chính tại ủy ban"
+      },
+      {
+        "id": 4526,
+        "vi": "Chính sách mới được công bố để hỗ trợ nông nghiệp"
+      },
+      {
+        "id": 4527,
+        "vi": "Quốc hội thảo luận về các dự luật quan trọng"
+      },
+      {
+        "id": 4528,
+        "vi": "Người dân xếp hàng tại điểm bầu cử vào sáng sớm"
+      },
+      {
+        "id": 4529,
+        "vi": "Chính phủ đầu tư xây dựng cơ sở hạ tầng hiện đại"
+      },
+      {
+        "id": 4530,
+        "vi": "Cán bộ hướng dẫn người dân làm chứng minh nhân dân"
+      },
+      {
+        "id": 4531,
+        "vi": "Luật bảo vệ môi trường được triển khai tại các tỉnh"
+      },
+      {
+        "id": 4532,
+        "vi": "Người dân nộp thuế thu nhập cá nhân đúng hạn"
+      },
+      {
+        "id": 4533,
+        "vi": "Chính phủ hỗ trợ tài chính cho các hộ nghèo"
+      },
+      {
+        "id": 4534,
+        "vi": "Bầu cử diễn ra công khai và minh bạch tại địa phương"
+      },
+      {
+        "id": 4535,
+        "vi": "Cán bộ giải đáp thắc mắc về thủ tục đất đai"
+      },
+      {
+        "id": 4536,
+        "vi": "Chính sách khuyến khích trồng cây xanh được ban hành"
+      },
+      {
+        "id": 4537,
+        "vi": "Quốc hội họp để thông qua ngân sách quốc gia"
+      },
+      {
+        "id": 4538,
+        "vi": "Người dân tham gia bầu cử tại các điểm trường học"
+      },
+      {
+        "id": 4539,
+        "vi": "Chính phủ xây dựng đường cao tốc để phát triển giao thông"
+      },
+      {
+        "id": 4540,
+        "vi": "Cán bộ hỗ trợ đăng ký giấy phép kinh doanh"
+      },
+      {
+        "id": 4541,
+        "vi": "Luật giao thông đường bộ được áp dụng nghiêm ngặt"
+      },
+      {
+        "id": 4542,
+        "vi": "Người dân nộp thuế qua hệ thống trực tuyến"
+      },
+      {
+        "id": 4543,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ y tế cộng đồng"
+      },
+      {
+        "id": 4544,
+        "vi": "Bầu cử được tổ chức với sự giám sát chặt chẽ"
+      },
+      {
+        "id": 4545,
+        "vi": "Cán bộ giúp người dân làm hộ khẩu tại ủy ban xã"
+      },
+      {
+        "id": 4546,
+        "vi": "Chính sách hỗ trợ giáo dục được áp dụng rộng rãi"
+      },
+      {
+        "id": 4547,
+        "vi": "Quốc hội thảo luận về các vấn đề xã hội cấp bách"
+      },
+      {
+        "id": 4548,
+        "vi": "Người dân đi bầu cử tại hội trường khu phố"
+      },
+      {
+        "id": 4549,
+        "vi": "Chính phủ đầu tư cải tạo hệ thống cấp nước sạch"
+      },
+      {
+        "id": 4550,
+        "vi": "Cán bộ hỗ trợ người dân làm giấy khai sinh"
+      },
+      {
+        "id": 4551,
+        "vi": "Luật bảo vệ trẻ em được công bố trên báo chí"
+      },
+      {
+        "id": 4552,
+        "vi": "Người dân nộp thuế giá trị gia tăng đúng quy định"
+      },
+      {
+        "id": 4553,
+        "vi": "Chính phủ hỗ trợ người dân bị ảnh hưởng bởi thiên tai"
+      },
+      {
+        "id": 4554,
+        "vi": "Bầu cử diễn ra tại các khu dân cư với sự tham gia đông đảo"
+      },
+      {
+        "id": 4555,
+        "vi": "Cán bộ hướng dẫn thủ tục đăng ký xe máy"
+      },
+      {
+        "id": 4556,
+        "vi": "Chính sách hỗ trợ việc làm được triển khai ở nông thôn"
+      },
+      {
+        "id": 4557,
+        "vi": "Quốc hội họp để bàn về cải cách giáo dục"
+      },
+      {
+        "id": 4558,
+        "vi": "Người dân tham gia bầu cử tại các điểm công cộng"
+      },
+      {
+        "id": 4559,
+        "vi": "Chính phủ xây dựng công viên xanh cho thành phố"
+      },
+      {
+        "id": 4560,
+        "vi": "Cán bộ hỗ trợ làm giấy phép xây dựng nhà ở"
+      },
+      {
+        "id": 4561,
+        "vi": "Luật môi trường được áp dụng tại các khu công nghiệp"
+      },
+      {
+        "id": 4562,
+        "vi": "Người dân nộp thuế qua ứng dụng di động"
+      },
+      {
+        "id": 4563,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người cao tuổi"
+      },
+      {
+        "id": 4564,
+        "vi": "Bầu cử được tổ chức với quy trình minh bạch"
+      },
+      {
+        "id": 4565,
+        "vi": "Cán bộ giải đáp thắc mắc về chính sách bảo hiểm"
+      },
+      {
+        "id": 4566,
+        "vi": "Chính sách khuyến khích tái chế rác được công bố"
+      },
+      {
+        "id": 4567,
+        "vi": "Quốc hội thảo luận về các biện pháp bảo vệ môi trường"
+      },
+      {
+        "id": 4568,
+        "vi": "Người dân đi bầu cử tại trường tiểu học địa phương"
+      },
+      {
+        "id": 4569,
+        "vi": "Chính phủ đầu tư xây dựng bệnh viện hiện đại"
+      },
+      {
+        "id": 4570,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận quyền sử dụng đất"
+      },
+      {
+        "id": 4571,
+        "vi": "Luật giao thông được tuyên truyền rộng rãi"
+      },
+      {
+        "id": 4572,
+        "vi": "Người dân nộp thuế tại ngân hàng hoặc trực tuyến"
+      },
+      {
+        "id": 4573,
+        "vi": "Chính phủ hỗ trợ học sinh nghèo vượt khó"
+      },
+      {
+        "id": 4574,
+        "vi": "Bầu cử diễn ra công bằng tại các khu vực nông thôn"
+      },
+      {
+        "id": 4575,
+        "vi": "Cán bộ hướng dẫn thủ tục làm giấy phép kinh doanh"
+      },
+      {
+        "id": 4576,
+        "vi": "Chính sách hỗ trợ y tế được áp dụng ở vùng sâu"
+      },
+      {
+        "id": 4577,
+        "vi": "Quốc hội họp để bàn về các dự án phát triển kinh tế"
+      },
+      {
+        "id": 4578,
+        "vi": "Người dân tham gia bầu cử tại hội trường làng"
+      },
+      {
+        "id": 4579,
+        "vi": "Chính phủ cải tạo hệ thống thoát nước đô thị"
+      },
+      {
+        "id": 4580,
+        "vi": "Cán bộ hỗ trợ người dân làm giấy khai tử"
+      },
+      {
+        "id": 4581,
+        "vi": "Luật bảo vệ động vật được công bố trên truyền thông"
+      },
+      {
+        "id": 4582,
+        "vi": "Người dân nộp thuế đúng thời hạn qua mạng"
+      },
+      {
+        "id": 4583,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ nông dân"
+      },
+      {
+        "id": 4584,
+        "vi": "Bầu cử được tổ chức với sự giám sát của cơ quan chức năng"
+      },
+      {
+        "id": 4585,
+        "vi": "Cán bộ giải đáp thắc mắc về chính sách nhà ở"
+      },
+      {
+        "id": 4586,
+        "vi": "Chính sách hỗ trợ học nghề được triển khai ở thành phố"
+      },
+      {
+        "id": 4587,
+        "vi": "Quốc hội thảo luận về các vấn đề y tế công cộng"
+      },
+      {
+        "id": 4588,
+        "vi": "Người dân đi bầu cử tại các điểm trường học"
+      },
+      {
+        "id": 4589,
+        "vi": "Chính phủ xây dựng cầu vượt để giảm ùn tắc"
+      },
+      {
+        "id": 4590,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận kết hôn"
+      },
+      {
+        "id": 4591,
+        "vi": "Luật bảo vệ môi trường được áp dụng ở khu dân cư"
+      },
+      {
+        "id": 4592,
+        "vi": "Người dân nộp thuế qua hệ thống ngân hàng"
+      },
+      {
+        "id": 4593,
+        "vi": "Chính phủ hỗ trợ người dân sau lũ lụt"
+      },
+      {
+        "id": 4594,
+        "vi": "Bầu cử diễn ra tại khu phố với sự tham gia tích cực"
+      },
+      {
+        "id": 4595,
+        "vi": "Cán bộ hướng dẫn làm giấy phép lái xe"
+      },
+      {
+        "id": 4596,
+        "vi": "Chính sách hỗ trợ giáo dục được triển khai ở vùng xa"
+      },
+      {
+        "id": 4597,
+        "vi": "Quốc hội họp để thông qua các dự luật mới"
+      },
+      {
+        "id": 4598,
+        "vi": "Người dân tham gia bầu cử tại hội trường xã"
+      },
+      {
+        "id": 4599,
+        "vi": "Chính phủ xây dựng công viên cho trẻ em"
+      },
+      {
+        "id": 4600,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận quyền sử dụng đất"
+      },
+      {
+        "id": 4601,
+        "vi": "Luật giao thông được tuyên truyền qua truyền hình"
+      },
+      {
+        "id": 4602,
+        "vi": "Người dân nộp thuế đúng quy định tại phường"
+      },
+      {
+        "id": 4603,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người thất nghiệp"
+      },
+      {
+        "id": 4604,
+        "vi": "Bầu cử được tổ chức tại các khu vực công cộng"
+      },
+      {
+        "id": 4605,
+        "vi": "Cán bộ giải đáp thắc mắc về chính sách bảo hiểm y tế"
+      },
+      {
+        "id": 4606,
+        "vi": "Chính sách khuyến khích năng lượng tái tạo được công bố"
+      },
+      {
+        "id": 4607,
+        "vi": "Quốc hội thảo luận về cải cách hành chính"
+      },
+      {
+        "id": 4608,
+        "vi": "Người dân đi bầu cử tại điểm bầu cử địa phương"
+      },
+      {
+        "id": 4609,
+        "vi": "Chính phủ đầu tư xây dựng đường nông thôn"
+      },
+      {
+        "id": 4610,
+        "vi": "Cán bộ hỗ trợ làm giấy phép xây dựng công trình"
+      },
+      {
+        "id": 4611,
+        "vi": "Luật bảo vệ môi trường được áp dụng tại các nhà máy"
+      },
+      {
+        "id": 4612,
+        "vi": "Người dân nộp thuế qua ứng dụng trực tuyến"
+      },
+      {
+        "id": 4613,
+        "vi": "Chính phủ hỗ trợ người dân trồng rừng"
+      },
+      {
+        "id": 4614,
+        "vi": "Bầu cử diễn ra tại trường học với quy trình minh bạch"
+      },
+      {
+        "id": 4615,
+        "vi": "Cán bộ hướng dẫn làm giấy chứng nhận hộ khẩu"
+      },
+      {
+        "id": 4616,
+        "vi": "Chính sách hỗ trợ sức khỏe được triển khai ở nông thôn."
       }
     ],
     "history": [
@@ -9530,6 +13362,382 @@
       {
         "id": 1666,
         "vi": "Tôi biết rằng lịch sử giúp ta tránh lặp lại sai lầm trong tương lai."
+      },
+      {
+        "id": 4800,
+        "vi": "Sông Hương chảy qua kinh thành Huế thơ mộng"
+      },
+      {
+        "id": 4801,
+        "vi": "Vua Hùng Vương đặt nền móng cho nước Văn Lang"
+      },
+      {
+        "id": 4802,
+        "vi": "Núi Fansipan là đỉnh cao nhất Đông Dương"
+      },
+      {
+        "id": 4803,
+        "vi": "Lịch sử Việt Nam ghi dấu nhiều chiến công oanh liệt"
+      },
+      {
+        "id": 4804,
+        "vi": "Hà Nội là trung tâm chính trị và văn hóa"
+      },
+      {
+        "id": 4805,
+        "vi": "Vịnh Hạ Long được UNESCO công nhận di sản thế giới"
+      },
+      {
+        "id": 4806,
+        "vi": "Triều Nguyễn xây dựng kinh thành ở Huế"
+      },
+      {
+        "id": 4807,
+        "vi": "Sông Cửu Long mang phù sa nuôi dưỡng đồng bằng"
+      },
+      {
+        "id": 4808,
+        "vi": "Đền Hùng là nơi thờ cúng các vua Hùng"
+      },
+      {
+        "id": 4809,
+        "vi": "Chiến thắng Điện Biên Phủ làm chấn động thế giới"
+      },
+      {
+        "id": 4810,
+        "vi": "Đà Nẵng nổi tiếng với những bãi biển tuyệt đẹp"
+      },
+      {
+        "id": 4811,
+        "vi": "Vua Quang Trung lãnh đạo quân Tây Sơn đánh giặc Thanh"
+      },
+      {
+        "id": 4812,
+        "vi": "Núi Bà Đen ở Tây Ninh thu hút khách hành hương"
+      },
+      {
+        "id": 4813,
+        "vi": "Sông Tiền chảy qua những cánh đồng lúa miền Tây"
+      },
+      {
+        "id": 4814,
+        "vi": "Lịch sử Việt Nam kể về các triều đại phong kiến"
+      },
+      {
+        "id": 4815,
+        "vi": "Hà Giang có cao nguyên đá Đồng Văn độc đáo"
+      },
+      {
+        "id": 4816,
+        "vi": "Vua Lê Lợi lãnh đạo khởi nghĩa Lam Sơn thắng lợi"
+      },
+      {
+        "id": 4817,
+        "vi": "Vịnh Hạ Long có hàng ngàn đảo đá kỳ vĩ"
+      },
+      {
+        "id": 4818,
+        "vi": "Sài Gòn có nhà thờ Đức Bà mang kiến trúc Pháp"
+      },
+      {
+        "id": 4819,
+        "vi": "Chiến thắng Bạch Đằng là kỳ tích lịch sử"
+      },
+      {
+        "id": 4820,
+        "vi": "Đà Lạt nổi tiếng với khí hậu mát mẻ quanh năm"
+      },
+      {
+        "id": 4821,
+        "vi": "Vua Trần Nhân Tông sáng lập thiền phái Trúc Lâm"
+      },
+      {
+        "id": 4822,
+        "vi": "Sông Hậu cung cấp nước cho nông nghiệp miền Tây"
+      },
+      {
+        "id": 4823,
+        "vi": "Đền Ngọc Sơn nằm bên hồ Hoàn Kiếm thơ mộng"
+      },
+      {
+        "id": 4824,
+        "vi": "Lịch sử ghi lại cuộc khởi nghĩa của Hai Bà Trưng"
+      },
+      {
+        "id": 4825,
+        "vi": "Phú Quốc là hòn đảo ngọc của Việt Nam"
+      },
+      {
+        "id": 4826,
+        "vi": "Vua Lý Thái Tổ dời đô từ Hoa Lư về Thăng Long"
+      },
+      {
+        "id": 4827,
+        "vi": "Núi Yên Tử là trung tâm Phật giáo nổi tiếng"
+      },
+      {
+        "id": 4828,
+        "vi": "Sông Đà cung cấp nước cho thủy điện lớn"
+      },
+      {
+        "id": 4829,
+        "vi": "Chiến thắng chống Pháp là niềm tự hào dân tộc"
+      },
+      {
+        "id": 4830,
+        "vi": "Huế có lăng tẩm của các vua Nguyễn"
+      },
+      {
+        "id": 4831,
+        "vi": "Vua Nguyễn Huệ đánh bại quân Thanh ở Ngọc Hồi"
+      },
+      {
+        "id": 4832,
+        "vi": "Vịnh Hạ Long thu hút hàng triệu du khách mỗi năm"
+      },
+      {
+        "id": 4833,
+        "vi": "Hà Nội có Văn Miếu là trường đại học đầu tiên"
+      },
+      {
+        "id": 4834,
+        "vi": "Lịch sử Việt Nam phong phú với nhiều sự kiện lớn"
+      },
+      {
+        "id": 4835,
+        "vi": "Đà Nẵng có cầu Rồng phun lửa độc đáo"
+      },
+      {
+        "id": 4836,
+        "vi": "Vua Trần Hưng Đạo lãnh đạo quân dân chống quân Nguyên"
+      },
+      {
+        "id": 4837,
+        "vi": "Sông Cửu Long chia thành nhiều nhánh ở miền Nam"
+      },
+      {
+        "id": 4838,
+        "vi": "Đền Hùng là biểu tượng văn hóa tâm linh"
+      },
+      {
+        "id": 4839,
+        "vi": "Lịch sử kể về sự dũng cảm của Bà Triệu"
+      },
+      {
+        "id": 4840,
+        "vi": "Phú Quốc có bãi biển dài và nước trong xanh"
+      },
+      {
+        "id": 4841,
+        "vi": "Vua Lê Đại Hành củng cố nền độc lập đất nước"
+      },
+      {
+        "id": 4842,
+        "vi": "Núi Fansipan là điểm đến cho người yêu leo núi"
+      },
+      {
+        "id": 4843,
+        "vi": "Sông Hương mang vẻ đẹp thơ mộng cho Huế"
+      },
+      {
+        "id": 4844,
+        "vi": "Chiến thắng chống Mỹ là mốc son lịch sử"
+      },
+      {
+        "id": 4845,
+        "vi": "Huế có chùa Thiên Mụ cổ kính bên sông"
+      },
+      {
+        "id": 4846,
+        "vi": "Vua Quang Trung lãnh đạo quân dân với chiến lược tài tình"
+      },
+      {
+        "id": 4847,
+        "vi": "Vịnh Hạ Long có các hang động đá vôi tuyệt đẹp"
+      },
+      {
+        "id": 4848,
+        "vi": "Hà Nội có phố cổ với lịch sử lâu đời"
+      },
+      {
+        "id": 4849,
+        "vi": "Lịch sử Việt Nam ghi dấu nhiều cuộc kháng chiến"
+      },
+      {
+        "id": 4850,
+        "vi": "Đà Lạt có hồ Xuân Hương thơ mộng"
+      },
+      {
+        "id": 4851,
+        "vi": "Vua Trần Nhân Tông xây dựng chùa Yên Tử nổi tiếng"
+      },
+      {
+        "id": 4852,
+        "vi": "Sông Tiền chảy qua những cánh đồng lúa màu mỡ"
+      },
+      {
+        "id": 4853,
+        "vi": "Đền Ngọc Sơn thu hút du khách đến Hà Nội"
+      },
+      {
+        "id": 4854,
+        "vi": "Chiến thắng Tây Sơn là biểu tượng của lòng yêu nước"
+      },
+      {
+        "id": 4855,
+        "vi": "Phú Quốc nổi tiếng với ngành sản xuất nước mắm"
+      },
+      {
+        "id": 4856,
+        "vi": "Vua Lý Thái Tổ đặt tên kinh đô là Thăng Long"
+      },
+      {
+        "id": 4857,
+        "vi": "Núi Bà Đen có ngôi chùa linh thiêng"
+      },
+      {
+        "id": 4858,
+        "vi": "Sông Hậu cung cấp phù sa cho nông nghiệp"
+      },
+      {
+        "id": 4859,
+        "vi": "Lịch sử ghi lại chiến thắng Khe Sanh oanh liệt"
+      },
+      {
+        "id": 4860,
+        "vi": "Huế có cầu Trường Tiền nối hai bờ sông Hương"
+      },
+      {
+        "id": 4861,
+        "vi": "Vua Lê Lợi lãnh đạo khởi nghĩa với thanh gươm thần"
+      },
+      {
+        "id": 4862,
+        "vi": "Vịnh Hạ Long là kỳ quan thiên nhiên thế giới"
+      },
+      {
+        "id": 4863,
+        "vi": "Hà Nội có cầu Long Biên mang dấu ấn lịch sử"
+      },
+      {
+        "id": 4864,
+        "vi": "Lịch sử Việt Nam kể về các triều đại thịnh vượng"
+      },
+      {
+        "id": 4865,
+        "vi": "Đà Nẵng có núi Ngũ Hành Sơn với hang động đẹp"
+      },
+      {
+        "id": 4866,
+        "vi": "Vua Trần Hưng Đạo để lại Hịch Tướng Sĩ"
+      },
+      {
+        "id": 4867,
+        "vi": "Sông Cửu Long là nguồn sống của miền Tây"
+      },
+      {
+        "id": 4868,
+        "vi": "Đền Hùng tổ chức lễ hội hằng năm"
+      },
+      {
+        "id": 4869,
+        "vi": "Lịch sử kể về cuộc khởi nghĩa của Bà Trưng"
+      },
+      {
+        "id": 4870,
+        "vi": "Phú Quốc có rạn san hô đa dạng"
+      },
+      {
+        "id": 4871,
+        "vi": "Vua Nguyễn Huệ lãnh đạo quân Tây Sơn thắng lớn"
+      },
+      {
+        "id": 4872,
+        "vi": "Núi Fansipan có khí hậu mát mẻ quanh năm"
+      },
+      {
+        "id": 4873,
+        "vi": "Sông Hương là biểu tượng của thành phố Huế"
+      },
+      {
+        "id": 4874,
+        "vi": "Chiến thắng chống Tống ghi dấu trong lịch sử"
+      },
+      {
+        "id": 4875,
+        "vi": "Huế có cung điện cổ của triều Nguyễn"
+      },
+      {
+        "id": 4876,
+        "vi": "Vua Quang Trung đánh giặc với chiến thuật độc đáo"
+      },
+      {
+        "id": 4877,
+        "vi": "Vịnh Hạ Long có nước biển xanh ngọc bích"
+      },
+      {
+        "id": 4878,
+        "vi": "Hà Nội có hồ Gươm là biểu tượng văn hóa"
+      },
+      {
+        "id": 4879,
+        "vi": "Lịch sử Việt Nam tự hào với nhiều anh hùng"
+      },
+      {
+        "id": 4880,
+        "vi": "Đà Lạt có đồi thông xanh mướt"
+      },
+      {
+        "id": 4881,
+        "vi": "Vua Trần Nhân Tông là nhà lãnh đạo tài ba"
+      },
+      {
+        "id": 4882,
+        "vi": "Sông Tiền mang phù sa cho đồng bằng"
+      },
+      {
+        "id": 4883,
+        "vi": "Đền Ngọc Sơn có cầu Thê Húc đỏ thắm"
+      },
+      {
+        "id": 4884,
+        "vi": "Lịch sử kể về chiến thắng Ngọc Hồi vang dội"
+      },
+      {
+        "id": 4885,
+        "vi": "Phú Quốc có bãi biển sạch và đẹp"
+      },
+      {
+        "id": 4886,
+        "vi": "Vua Lý Thái Tổ xây dựng nền móng Thăng Long"
+      },
+      {
+        "id": 4887,
+        "vi": "Núi Bà Đen là điểm đến tâm linh nổi tiếng"
+      },
+      {
+        "id": 4888,
+        "vi": "Sông Hậu chảy qua các tỉnh miền Tây"
+      },
+      {
+        "id": 4889,
+        "vi": "Lịch sử ghi lại chiến tranh chống Nhật"
+      },
+      {
+        "id": 4890,
+        "vi": "Huế có lăng tẩm được UNESCO công nhận"
+      },
+      {
+        "id": 4891,
+        "vi": "Vua Lê Lợi lãnh đạo quân dân đánh giặc Minh"
+      },
+      {
+        "id": 4892,
+        "vi": "Vịnh Hạ Long có đảo đá độc đáo"
+      },
+      {
+        "id": 4893,
+        "vi": "Hà Nội có cầu Long Biên với lịch sử lâu đời."
       }
     ],
     "sports": [
@@ -9736,6 +13944,378 @@
       {
         "id": 1812,
         "vi": "Trải nghiệm thể thao mang lại sự tự tin cho người trẻ."
+      },
+      {
+        "id": 5079,
+        "vi": "Trẻ em chơi bóng đá trên sân cỏ nhân tạo vào cuối tuần"
+      },
+      {
+        "id": 5080,
+        "vi": "Người dân chạy bộ quanh công viên để cải thiện sức khỏe"
+      },
+      {
+        "id": 5081,
+        "vi": "Phòng gym được trang bị máy chạy bộ hiện đại"
+      },
+      {
+        "id": 5082,
+        "vi": "Bóng rổ thu hút học sinh tại các sân trường"
+      },
+      {
+        "id": 5083,
+        "vi": "Mọi người tập yoga để tăng cường sự linh hoạt"
+      },
+      {
+        "id": 5084,
+        "vi": "Hồ bơi công cộng mở cửa với nước sạch và an toàn"
+      },
+      {
+        "id": 5085,
+        "vi": "Người dân đi bộ trên các con đường xanh mát"
+      },
+      {
+        "id": 5086,
+        "vi": "Trẻ em chơi cầu lông trong sân trường vào buổi chiều"
+      },
+      {
+        "id": 5087,
+        "vi": "Phòng gym có huấn luyện viên hướng dẫn bài tập"
+      },
+      {
+        "id": 5088,
+        "vi": "Bóng đá được phát sóng trực tiếp trên truyền hình"
+      },
+      {
+        "id": 5089,
+        "vi": "Mọi người tập thể dục để duy trì vóc dáng"
+      },
+      {
+        "id": 5090,
+        "vi": "Hồ bơi có làn bơi dành riêng cho người lớn"
+      },
+      {
+        "id": 5091,
+        "vi": "Người dân chạy bộ quanh hồ nước vào sáng sớm"
+      },
+      {
+        "id": 5092,
+        "vi": "Trẻ em chơi bóng chuyền trên bãi biển với tinh thần vui vẻ"
+      },
+      {
+        "id": 5093,
+        "vi": "Phòng gym cung cấp các bài tập tăng cơ bắp"
+      },
+      {
+        "id": 5094,
+        "vi": "Bóng rổ được tổ chức thành giải đấu ở trường"
+      },
+      {
+        "id": 5095,
+        "vi": "Mọi người tập yoga để giảm căng thẳng sau giờ làm"
+      },
+      {
+        "id": 5096,
+        "vi": "Hồ bơi có khu vực bơi nông cho trẻ em"
+      },
+      {
+        "id": 5097,
+        "vi": "Người dân đi bộ trên các con đường rợp bóng cây"
+      },
+      {
+        "id": 5098,
+        "vi": "Trẻ em chơi bóng đá ở sân nhỏ gần nhà"
+      },
+      {
+        "id": 5099,
+        "vi": "Phòng gym có máy tập bụng và cơ lưng"
+      },
+      {
+        "id": 5100,
+        "vi": "Bóng đá thu hút hàng ngàn cổ động viên"
+      },
+      {
+        "id": 5101,
+        "vi": "Mọi người tập thể dục để cải thiện sức khỏe tim mạch"
+      },
+      {
+        "id": 5102,
+        "vi": "Hồ bơi được giữ sạch sẽ với hệ thống lọc nước"
+      },
+      {
+        "id": 5103,
+        "vi": "Người dân chạy bộ trên đường phố vào buổi tối"
+      },
+      {
+        "id": 5104,
+        "vi": "Trẻ em chơi cầu lông với bạn bè ở công viên"
+      },
+      {
+        "id": 5105,
+        "vi": "Phòng gym có không gian thoáng đãng và hiện đại"
+      },
+      {
+        "id": 5106,
+        "vi": "Bóng rổ được chơi trong các giải đấu địa phương"
+      },
+      {
+        "id": 5107,
+        "vi": "Mọi người tập yoga trong không gian yên tĩnh"
+      },
+      {
+        "id": 5108,
+        "vi": "Hồ bơi có người cứu hộ làm việc cả ngày"
+      },
+      {
+        "id": 5109,
+        "vi": "Người dân đi bộ để thư giãn tinh thần"
+      },
+      {
+        "id": 5110,
+        "vi": "Trẻ em chơi bóng chuyền trên sân cỏ nhân tạo"
+      },
+      {
+        "id": 5111,
+        "vi": "Phòng gym có máy tập chân và tay đa năng"
+      },
+      {
+        "id": 5112,
+        "vi": "Bóng đá được tổ chức thành các giải đấu lớn"
+      },
+      {
+        "id": 5113,
+        "vi": "Mọi người tập thể dục để tăng sức bền"
+      },
+      {
+        "id": 5114,
+        "vi": "Hồ bơi có khu vực nghỉ ngơi thoải mái"
+      },
+      {
+        "id": 5115,
+        "vi": "Người dân chạy bộ quanh công viên để giữ sức khỏe"
+      },
+      {
+        "id": 5116,
+        "vi": "Trẻ em chơi bóng rổ với tinh thần đồng đội"
+      },
+      {
+        "id": 5117,
+        "vi": "Phòng gym có huấn luyện viên cá nhân hỗ trợ"
+      },
+      {
+        "id": 5118,
+        "vi": "Bóng đá thu hút khán giả xem trực tiếp"
+      },
+      {
+        "id": 5119,
+        "vi": "Mọi người tập yoga để cải thiện tư thế"
+      },
+      {
+        "id": 5120,
+        "vi": "Hồ bơi có nước ấm vào mùa đông"
+      },
+      {
+        "id": 5121,
+        "vi": "Người dân đi bộ trên các con đường sạch sẽ"
+      },
+      {
+        "id": 5122,
+        "vi": "Trẻ em chơi cầu lông ở sân trường vào cuối tuần"
+      },
+      {
+        "id": 5123,
+        "vi": "Phòng gym có máy tập toàn thân hiện đại"
+      },
+      {
+        "id": 5124,
+        "vi": "Bóng rổ được chơi trong các giải đấu học sinh"
+      },
+      {
+        "id": 5125,
+        "vi": "Mọi người tập thể dục để giảm cân hiệu quả"
+      },
+      {
+        "id": 5126,
+        "vi": "Hồ bơi có hệ thống lọc nước tiên tiến"
+      },
+      {
+        "id": 5127,
+        "vi": "Người dân chạy bộ để cải thiện sức khỏe tinh thần"
+      },
+      {
+        "id": 5128,
+        "vi": "Trẻ em chơi bóng đá trên sân cỏ lớn"
+      },
+      {
+        "id": 5129,
+        "vi": "Phòng gym có gương lớn để kiểm tra tư thế"
+      },
+      {
+        "id": 5130,
+        "vi": "Bóng đá được phát trên các kênh thể thao"
+      },
+      {
+        "id": 5131,
+        "vi": "Mọi người tập yoga để cân bằng cơ thể"
+      },
+      {
+        "id": 5132,
+        "vi": "Hồ bơi có khu vực bơi sâu cho người lớn"
+      },
+      {
+        "id": 5133,
+        "vi": "Người dân đi bộ quanh hồ để thư giãn"
+      },
+      {
+        "id": 5134,
+        "vi": "Trẻ em chơi bóng chuyền với bạn bè ở bãi biển"
+      },
+      {
+        "id": 5135,
+        "vi": "Phòng gym có máy tập với màn hình theo dõi"
+      },
+      {
+        "id": 5136,
+        "vi": "Bóng rổ thu hút người trẻ tham gia giải đấu"
+      },
+      {
+        "id": 5137,
+        "vi": "Mọi người tập thể dục để tăng cường sức khỏe"
+      },
+      {
+        "id": 5138,
+        "vi": "Hồ bơi được vệ sinh thường xuyên"
+      },
+      {
+        "id": 5139,
+        "vi": "Người dân chạy bộ trên đường phố sạch sẽ"
+      },
+      {
+        "id": 5140,
+        "vi": "Trẻ em chơi cầu lông trong sân công viên"
+      },
+      {
+        "id": 5141,
+        "vi": "Phòng gym có không gian rộng rãi và thoáng"
+      },
+      {
+        "id": 5142,
+        "vi": "Bóng đá là môn thể thao được yêu thích nhất"
+      },
+      {
+        "id": 5143,
+        "vi": "Mọi người tập yoga để cải thiện tinh thần"
+      },
+      {
+        "id": 5144,
+        "vi": "Hồ bơi có khu vực nghỉ ngơi với ghế dài"
+      },
+      {
+        "id": 5145,
+        "vi": "Người dân đi bộ để giảm căng thẳng sau giờ làm"
+      },
+      {
+        "id": 5146,
+        "vi": "Trẻ em chơi bóng rổ ở sân trường với huấn luyện viên"
+      },
+      {
+        "id": 5147,
+        "vi": "Phòng gym có máy tập đa năng và hiện đại"
+      },
+      {
+        "id": 5148,
+        "vi": "Bóng đá được tổ chức với các đội chuyên nghiệp"
+      },
+      {
+        "id": 5149,
+        "vi": "Mọi người tập thể dục để duy trì sức khỏe lâu dài"
+      },
+      {
+        "id": 5150,
+        "vi": "Hồ bơi có hệ thống nước sạch và an toàn"
+      },
+      {
+        "id": 5151,
+        "vi": "Người dân chạy bộ quanh công viên vào buổi sáng"
+      },
+      {
+        "id": 5152,
+        "vi": "Trẻ em chơi cầu lông với tinh thần vui vẻ"
+      },
+      {
+        "id": 5153,
+        "vi": "Phòng gym có huấn luyện viên hướng dẫn kỹ thuật"
+      },
+      {
+        "id": 5154,
+        "vi": "Bóng rổ được chơi trong các giải đấu khu vực"
+      },
+      {
+        "id": 5155,
+        "vi": "Mọi người tập yoga để tăng cường sự dẻo dai"
+      },
+      {
+        "id": 5156,
+        "vi": "Hồ bơi có khu vực bơi nông cho trẻ nhỏ"
+      },
+      {
+        "id": 5157,
+        "vi": "Người dân đi bộ trên các con đường rợp cây xanh"
+      },
+      {
+        "id": 5158,
+        "vi": "Trẻ em chơi bóng chuyền trên sân cỏ nhân tạo"
+      },
+      {
+        "id": 5159,
+        "vi": "Phòng gym có máy tập với công nghệ mới"
+      },
+      {
+        "id": 5160,
+        "vi": "Bóng đá thu hút khán giả qua truyền hình"
+      },
+      {
+        "id": 5161,
+        "vi": "Mọi người tập thể dục để cải thiện sức khỏe tổng quát"
+      },
+      {
+        "id": 5162,
+        "vi": "Hồ bơi có người cứu hộ đảm bảo an toàn"
+      },
+      {
+        "id": 5163,
+        "vi": "Người dân chạy bộ để tăng cường sức bền"
+      },
+      {
+        "id": 5164,
+        "vi": "Trẻ em chơi bóng đá ở sân trường vào chiều muộn"
+      },
+      {
+        "id": 5165,
+        "vi": "Phòng gym có không gian sạch sẽ và hiện đại"
+      },
+      {
+        "id": 5166,
+        "vi": "Bóng rổ được tổ chức thành giải đấu lớn"
+      },
+      {
+        "id": 5167,
+        "vi": "Mọi người tập yoga để thư giãn cơ thể"
+      },
+      {
+        "id": 5168,
+        "vi": "Hồ bơi có nước sạch và trong veo"
+      },
+      {
+        "id": 5169,
+        "vi": "Người dân đi bộ quanh hồ nước để thư giãn"
+      },
+      {
+        "id": 5170,
+        "vi": "Trẻ em chơi cầu lông ở sân nhỏ gần nhà"
+      },
+      {
+        "id": 5171,
+        "vi": "Phòng gym có máy tập cơ bắp đa năng."
       }
     ]
   },
@@ -13456,6 +18036,342 @@
       {
         "id": 1143,
         "vi": "Tôi nhận ra rằng giải trí cũng cần có giới hạn để không ảnh hưởng đến cuộc sống thường ngày."
+      },
+      {
+        "id": 3788,
+        "vi": "Công viên thành phố thu hút đông đảo người dân đi dạo vào buổi chiều"
+      },
+      {
+        "id": 3789,
+        "vi": "Trẻ em hào hứng tham gia các trò chơi dân gian trong sân trường"
+      },
+      {
+        "id": 3790,
+        "vi": "Tivi trình chiếu những bộ phim hoạt hình được yêu thích trên màn hình lớn"
+      },
+      {
+        "id": 3791,
+        "vi": "Người dân tận hưởng không khí trong lành khi đi bộ quanh hồ"
+      },
+      {
+        "id": 3792,
+        "vi": "Sách văn học cổ điển được đọc trong không gian yên tĩnh"
+      },
+      {
+        "id": 3793,
+        "vi": "Nhạc acoustic tạo nên bầu không khí thư giãn trong quán cà phê nhỏ"
+      },
+      {
+        "id": 3794,
+        "vi": "Rạp chiếu phim hiện đại thu hút khán giả với công nghệ tiên tiến"
+      },
+      {
+        "id": 3795,
+        "vi": "Mọi người tụ họp hát karaoke để giải tỏa căng thẳng sau giờ làm"
+      },
+      {
+        "id": 3796,
+        "vi": "Công viên được chăm sóc kỹ lưỡng với những con đường rợp bóng cây xanh"
+      },
+      {
+        "id": 3797,
+        "vi": "Trẻ em say mê xem những bộ phim phiêu lưu kịch tính"
+      },
+      {
+        "id": 3798,
+        "vi": "Tivi phát sóng các chương trình ca nhạc trực tiếp đầy cảm hứng"
+      },
+      {
+        "id": 3799,
+        "vi": "Người dân đi dạo quanh công viên để tận hưởng không gian xanh mát"
+      },
+      {
+        "id": 3800,
+        "vi": "Sách khoa học được sắp xếp cẩn thận trên giá sách cá nhân"
+      },
+      {
+        "id": 3801,
+        "vi": "Nhạc jazz tạo cảm giác thư giãn trong những quán ăn sang trọng"
+      },
+      {
+        "id": 3802,
+        "vi": "Rạp chiếu phim cung cấp trải nghiệm xem phim với âm thanh vòm sống động"
+      },
+      {
+        "id": 3803,
+        "vi": "Mọi người chơi cờ vua dưới bóng cây công viên để thư giãn"
+      },
+      {
+        "id": 3804,
+        "vi": "Công viên có khu vực picnic được thiết kế thoải mái và sạch sẽ"
+      },
+      {
+        "id": 3805,
+        "vi": "Trẻ em tham gia các trò chơi vận động ngoài trời đầy hứng thú"
+      },
+      {
+        "id": 3806,
+        "vi": "Tivi phát những bộ phim hài hước mang lại tiếng cười sảng khoái"
+      },
+      {
+        "id": 3807,
+        "vi": "Người dân đi bộ quanh hồ nước để giải tỏa căng thẳng"
+      },
+      {
+        "id": 3808,
+        "vi": "Sách văn học được đọc trong ánh sáng dịu nhẹ của quán cà phê"
+      },
+      {
+        "id": 3809,
+        "vi": "Nhạc cổ điển được phát qua hệ thống loa cao cấp trong nhà"
+      },
+      {
+        "id": 3810,
+        "vi": "Rạp chiếu phim có ghế ngồi tiện nghi và màn hình sắc nét"
+      },
+      {
+        "id": 3811,
+        "vi": "Mọi người tổ chức buổi hát karaoke tại nhà hàng để gắn kết tình bạn"
+      },
+      {
+        "id": 3812,
+        "vi": "Công viên có hồ nước lung linh ánh đèn vào buổi tối"
+      },
+      {
+        "id": 3813,
+        "vi": "Trẻ em thích chơi trò trốn tìm trong khuôn viên rộng rãi"
+      },
+      {
+        "id": 3814,
+        "vi": "Tivi phát chương trình giải trí với nội dung phong phú"
+      },
+      {
+        "id": 3815,
+        "vi": "Người dân đi dạo quanh khu phố để tận hưởng không khí yên bình"
+      },
+      {
+        "id": 3816,
+        "vi": "Sách khoa học được đọc trong không gian thư viện hiện đại"
+      },
+      {
+        "id": 3817,
+        "vi": "Nhạc pop hiện đại được nghe qua tai nghe không dây chất lượng cao"
+      },
+      {
+        "id": 3818,
+        "vi": "Rạp chiếu phim có vé ưu đãi dành cho gia đình vào cuối tuần"
+      },
+      {
+        "id": 3819,
+        "vi": "Mọi người chơi bài với bạn bè để tạo không khí vui vẻ"
+      },
+      {
+        "id": 3820,
+        "vi": "Công viên có khu vực tổ chức sự kiện ngoài trời đầy màu sắc"
+      },
+      {
+        "id": 3821,
+        "vi": "Trẻ em tham gia các trò chơi dân gian như kéo co trong sân trường"
+      },
+      {
+        "id": 3822,
+        "vi": "Tivi phát những bộ phim tình cảm lãng mạn vào ban đêm"
+      },
+      {
+        "id": 3823,
+        "vi": "Người dân đi bộ để cải thiện sức khỏe tinh thần và thể chất"
+      },
+      {
+        "id": 3824,
+        "vi": "Sách truyện được cất trong túi vải thời trang"
+      },
+      {
+        "id": 3825,
+        "vi": "Nhạc acoustic được bật trong phòng khách để thư giãn"
+      },
+      {
+        "id": 3826,
+        "vi": "Rạp chiếu phim có hệ thống ánh sáng và âm thanh tối tân"
+      },
+      {
+        "id": 3827,
+        "vi": "Mọi người hát karaoke tại quán với hệ thống âm thanh chuyên nghiệp"
+      },
+      {
+        "id": 3828,
+        "vi": "Công viên có những con đường đi bộ được lát đá sạch sẽ"
+      },
+      {
+        "id": 3829,
+        "vi": "Trẻ em chơi bóng rổ trong sân trường với tinh thần sôi nổi"
+      },
+      {
+        "id": 3830,
+        "vi": "Tivi phát chương trình âm nhạc với các nghệ sĩ nổi tiếng"
+      },
+      {
+        "id": 3831,
+        "vi": "Người dân đi dạo quanh công viên để tận hưởng không khí trong lành"
+      },
+      {
+        "id": 3832,
+        "vi": "Sách văn học cổ điển được đọc trong không gian yên tĩnh"
+      },
+      {
+        "id": 3833,
+        "vi": "Nhạc jazz tạo nên bầu không khí thư giãn trong nhà hàng"
+      },
+      {
+        "id": 3834,
+        "vi": "Rạp chiếu phim có khu vực bán đồ ăn nhẹ tiện lợi"
+      },
+      {
+        "id": 3835,
+        "vi": "Mọi người chơi trò chơi điện tử hiện đại để giải trí"
+      },
+      {
+        "id": 3836,
+        "vi": "Công viên có khu vực nghỉ ngơi được trang bị ghế đá thoải mái"
+      },
+      {
+        "id": 3837,
+        "vi": "Trẻ em tham gia các trò chơi vận động như nhảy dây ngoài sân"
+      },
+      {
+        "id": 3838,
+        "vi": "Tivi phát phim khoa học viễn tưởng với hiệu ứng hình ảnh ấn tượng"
+      },
+      {
+        "id": 3839,
+        "vi": "Người dân đi bộ quanh hồ để tận hưởng không gian thanh bình"
+      },
+      {
+        "id": 3840,
+        "vi": "Sách khoa học được đọc trong thư viện với ánh sáng tự nhiên"
+      },
+      {
+        "id": 3841,
+        "vi": "Nhạc cổ điển được phát qua loa để tạo không khí thư giãn"
+      },
+      {
+        "id": 3842,
+        "vi": "Rạp chiếu phim có ghế nằm hiện đại cho trải nghiệm thoải mái"
+      },
+      {
+        "id": 3843,
+        "vi": "Mọi người tụ tập chơi cờ tướng tại quán cà phê để thư giãn"
+      },
+      {
+        "id": 3844,
+        "vi": "Công viên có khu vực tổ chức tiệc ngoài trời đầy màu sắc"
+      },
+      {
+        "id": 3845,
+        "vi": "Trẻ em chơi trò bịt mắt bắt dê với tiếng cười rộn ràng"
+      },
+      {
+        "id": 3846,
+        "vi": "Tivi phát chương trình thể thao với các trận đấu hấp dẫn"
+      },
+      {
+        "id": 3847,
+        "vi": "Người dân đi dạo quanh khu phố để thư giãn sau giờ làm"
+      },
+      {
+        "id": 3848,
+        "vi": "Sách văn học được đọc trong góc yên tĩnh của quán cà phê"
+      },
+      {
+        "id": 3849,
+        "vi": "Nhạc pop được nghe qua hệ thống âm thanh cao cấp"
+      },
+      {
+        "id": 3850,
+        "vi": "Rạp chiếu phim có vé giá rẻ dành cho học sinh và sinh viên"
+      },
+      {
+        "id": 3851,
+        "vi": "Mọi người hát karaoke để giải trí trong không gian ấm cúng"
+      },
+      {
+        "id": 3852,
+        "vi": "Công viên có khu vui chơi được thiết kế an toàn cho trẻ em"
+      },
+      {
+        "id": 3853,
+        "vi": "Trẻ em chơi bóng chuyền ngoài sân với tinh thần đồng đội"
+      },
+      {
+        "id": 3854,
+        "vi": "Tivi phát chương trình giải trí với nội dung sáng tạo"
+      },
+      {
+        "id": 3855,
+        "vi": "Người dân đi bộ quanh công viên để cải thiện sức khỏe tinh thần"
+      },
+      {
+        "id": 3856,
+        "vi": "Sách khoa học được mượn từ thư viện công cộng hiện đại"
+      },
+      {
+        "id": 3857,
+        "vi": "Nhạc acoustic tạo không khí thư giãn trong bữa tối gia đình"
+      },
+      {
+        "id": 3858,
+        "vi": "Rạp chiếu phim có màn hình lớn với độ phân giải cao"
+      },
+      {
+        "id": 3859,
+        "vi": "Mọi người chơi bài để tạo không khí vui vẻ vào dịp lễ"
+      },
+      {
+        "id": 3860,
+        "vi": "Công viên có hồ nước và cây hoa nở rộ vào mùa xuân"
+      },
+      {
+        "id": 3861,
+        "vi": "Trẻ em tham gia các trò chơi dân gian trong sân trường"
+      },
+      {
+        "id": 3862,
+        "vi": "Tivi phát phim hài với nội dung dí dỏm và thú vị"
+      },
+      {
+        "id": 3863,
+        "vi": "Người dân đi dạo để tận hưởng không gian xanh mát của công viên"
+      },
+      {
+        "id": 3864,
+        "vi": "Sách truyện được đọc trong ánh sáng dịu nhẹ của đèn bàn"
+      },
+      {
+        "id": 3865,
+        "vi": "Nhạc jazz được phát trong không gian nhà hàng sang trọng"
+      },
+      {
+        "id": 3866,
+        "vi": "Rạp chiếu phim có khu vực chờ được thiết kế hiện đại"
+      },
+      {
+        "id": 3867,
+        "vi": "Mọi người tụ họp hát karaoke để gắn kết tình cảm gia đình"
+      },
+      {
+        "id": 3868,
+        "vi": "Công viên có những con đường đi bộ được giữ sạch sẽ"
+      },
+      {
+        "id": 3869,
+        "vi": "Trẻ em chơi các trò chơi vận động để rèn luyện sức khỏe"
+      },
+      {
+        "id": 3870,
+        "vi": "Tivi phát chương trình ca nhạc với các tiết mục đặc sắc"
+      },
+      {
+        "id": 3871,
+        "vi": "Người dân đi dạo quanh hồ để thư giãn và tận hưởng không khí trong lành."
       }
     ],
     "nature": [
@@ -13654,6 +18570,322 @@
       {
         "id": 1288,
         "vi": "Tôi biết rằng, trong thế giới đầy biến động, thiên nhiên luôn là nơi để trở về."
+      },
+      {
+        "id": 4062,
+        "vi": "Công viên thành phố rợp bóng cây xanh tạo không gian thư giãn lý tưởng"
+      },
+      {
+        "id": 4063,
+        "vi": "Mưa phùn lất phất mang lại cảm giác mát mẻ cho khu dân cư"
+      },
+      {
+        "id": 4064,
+        "vi": "Dòng sông chảy êm đềm qua những cánh đồng lúa bát ngát"
+      },
+      {
+        "id": 4065,
+        "vi": "Người dân tích cực tham gia trồng cây để bảo vệ hệ sinh thái"
+      },
+      {
+        "id": 4066,
+        "vi": "Chim chóc hót vang trên những cành cây cổ thụ trong rừng"
+      },
+      {
+        "id": 4067,
+        "vi": "Rác thải được phân loại kỹ lưỡng để hỗ trợ tái chế hiệu quả"
+      },
+      {
+        "id": 4068,
+        "vi": "Bầu trời trong xanh trải dài với những đám mây trắng nhẹ nhàng"
+      },
+      {
+        "id": 4069,
+        "vi": "Hoa cỏ dại khoe sắc rực rỡ dọc các con đường nông thôn"
+      },
+      {
+        "id": 4070,
+        "vi": "Gió mát thổi qua những cánh đồng lúa tạo nên sóng xanh mướt"
+      },
+      {
+        "id": 4071,
+        "vi": "Cây xanh được chăm sóc cẩn thận để giảm thiểu ô nhiễm đô thị"
+      },
+      {
+        "id": 4072,
+        "vi": "Cá tung tăng bơi lội trong hồ nước trong veo của công viên"
+      },
+      {
+        "id": 4073,
+        "vi": "Thùng rác phân loại được bố trí hợp lý tại các khu vực công cộng"
+      },
+      {
+        "id": 4074,
+        "vi": "Bầu trời điểm xuyết những đám mây trôi lững lờ vào buổi sáng"
+      },
+      {
+        "id": 4075,
+        "vi": "Hoa sen nở rộ trong đầm nước yên bình của làng quê"
+      },
+      {
+        "id": 4076,
+        "vi": "Mưa phùn làm tươi mới không khí và lá cây xanh mướt"
+      },
+      {
+        "id": 4077,
+        "vi": "Dòng sông được bảo vệ nghiêm ngặt để duy trì nguồn nước sạch"
+      },
+      {
+        "id": 4078,
+        "vi": "Người dân trồng cây xanh quanh khu phố để cải thiện chất lượng không khí"
+      },
+      {
+        "id": 4079,
+        "vi": "Chim bay lượn tự do trên bầu trời xanh thẳm không khói bụi"
+      },
+      {
+        "id": 4080,
+        "vi": "Rác thải được thu gom bằng xe chuyên dụng theo lịch trình cố định"
+      },
+      {
+        "id": 4081,
+        "vi": "Cây xanh tạo bóng mát và không gian trong lành cho công viên"
+      },
+      {
+        "id": 4082,
+        "vi": "Hoa hồng được chăm sóc kỹ lưỡng trong khu vườn biệt thự"
+      },
+      {
+        "id": 4083,
+        "vi": "Gió thổi nhẹ qua những hàng cây ven sông tạo cảm giác yên bình"
+      },
+      {
+        "id": 4084,
+        "vi": "Người dân tham gia chiến dịch dọn rác ở bãi biển để bảo vệ đại dương"
+      },
+      {
+        "id": 4085,
+        "vi": "Cá lội trong ao nước được làm sạch bằng công nghệ hiện đại"
+      },
+      {
+        "id": 4086,
+        "vi": "Thùng rác được thiết kế hiện đại để khuyến khích phân loại rác"
+      },
+      {
+        "id": 4087,
+        "vi": "Bầu trời rực rỡ ánh nắng vàng vào những ngày mùa xuân"
+      },
+      {
+        "id": 4088,
+        "vi": "Hoa cúc nở rộ trong khu vườn nhỏ tạo khung cảnh thơ mộng"
+      },
+      {
+        "id": 4089,
+        "vi": "Mưa nhẹ làm sạch không khí đô thị sau những ngày nắng nóng"
+      },
+      {
+        "id": 4090,
+        "vi": "Dòng sông chảy qua khu rừng được bảo tồn để duy trì hệ sinh thái"
+      },
+      {
+        "id": 4091,
+        "vi": "Người dân trồng cây ở các khu vực công cộng để giảm hiệu ứng nhà kính"
+      },
+      {
+        "id": 4092,
+        "vi": "Chim chóc hót líu lo trên những cành cây cao trong công viên"
+      },
+      {
+        "id": 4093,
+        "vi": "Rác thải được xử lý theo quy trình thân thiện với môi trường"
+      },
+      {
+        "id": 4094,
+        "vi": "Cây xanh được tưới nước bằng hệ thống tự động để tiết kiệm tài nguyên"
+      },
+      {
+        "id": 4095,
+        "vi": "Hoa cỏ dại mọc tự nhiên trên những ngọn đồi xanh mướt"
+      },
+      {
+        "id": 4096,
+        "vi": "Gió thổi qua cánh đồng lúa tạo nên những con sóng xanh dịu dàng"
+      },
+      {
+        "id": 4097,
+        "vi": "Người dân nhặt rác ở bờ sông để bảo vệ nguồn nước sạch"
+      },
+      {
+        "id": 4098,
+        "vi": "Cá bơi trong hồ nước được bảo vệ để duy trì đa dạng sinh học"
+      },
+      {
+        "id": 4099,
+        "vi": "Thùng rác phân loại được đặt ở các trường học để giáo dục ý thức"
+      },
+      {
+        "id": 4100,
+        "vi": "Bầu trời trong xanh với ánh nắng dịu nhẹ vào buổi chiều"
+      },
+      {
+        "id": 4101,
+        "vi": "Hoa hướng dương nở rực rỡ trong khu vườn nông thôn"
+      },
+      {
+        "id": 4102,
+        "vi": "Mưa phùn làm mát không khí và làm sạch lá cây xanh"
+      },
+      {
+        "id": 4103,
+        "vi": "Dòng sông được giữ sạch nhờ các chương trình bảo vệ môi trường"
+      },
+      {
+        "id": 4104,
+        "vi": "Người dân trồng cây ở vỉa hè để giảm thiểu khói bụi đô thị"
+      },
+      {
+        "id": 4105,
+        "vi": "Chim bay qua những cánh đồng lúa chín vàng rực rỡ"
+      },
+      {
+        "id": 4106,
+        "vi": "Rác thải được thu gom và xử lý để giảm ô nhiễm môi trường"
+      },
+      {
+        "id": 4107,
+        "vi": "Cây xanh được cắt tỉa định kỳ để giữ mỹ quan cho khu phố"
+      },
+      {
+        "id": 4108,
+        "vi": "Hoa sen nở đẹp trong đầm nước được bảo vệ cẩn thận"
+      },
+      {
+        "id": 4109,
+        "vi": "Gió thổi qua khu rừng tạo nên âm thanh xào xạc êm tai"
+      },
+      {
+        "id": 4110,
+        "vi": "Người dân tham gia dọn rác ở công viên để bảo vệ không gian xanh"
+      },
+      {
+        "id": 4111,
+        "vi": "Cá lội trong hồ nước công viên được chăm sóc kỹ lưỡng"
+      },
+      {
+        "id": 4112,
+        "vi": "Thùng rác được đặt ở các con hẻm để giữ vệ sinh đô thị"
+      },
+      {
+        "id": 4113,
+        "vi": "Bầu trời có những đám mây trắng bay lững lờ vào ban ngày"
+      },
+      {
+        "id": 4114,
+        "vi": "Hoa cúc vàng rực rỡ trong khu vườn được chăm sóc tỉ mỉ"
+      },
+      {
+        "id": 4115,
+        "vi": "Mưa nhẹ làm sạch không khí và mang lại cảm giác dễ chịu"
+      },
+      {
+        "id": 4116,
+        "vi": "Dòng sông chảy qua làng quê được bảo vệ để duy trì nguồn nước"
+      },
+      {
+        "id": 4117,
+        "vi": "Người dân trồng cây ở các khu công nghiệp để giảm ô nhiễm"
+      },
+      {
+        "id": 4118,
+        "vi": "Chim chóc hót vang trên những cành cây trong khu bảo tồn"
+      },
+      {
+        "id": 4119,
+        "vi": "Rác thải được phân loại và tái chế để tiết kiệm tài nguyên"
+      },
+      {
+        "id": 4120,
+        "vi": "Cây xanh được trồng dọc các tuyến đường để cải thiện môi trường"
+      },
+      {
+        "id": 4121,
+        "vi": "Hoa cỏ mọc tự nhiên trên cánh đồng tạo khung cảnh thơ mộng"
+      },
+      {
+        "id": 4122,
+        "vi": "Gió thổi qua công viên mang theo hương thơm của cây cỏ"
+      },
+      {
+        "id": 4123,
+        "vi": "Người dân dọn rác ở bãi biển để bảo vệ hệ sinh thái biển"
+      },
+      {
+        "id": 4124,
+        "vi": "Cá bơi trong ao nước sạch được duy trì bởi cộng đồng"
+      },
+      {
+        "id": 4125,
+        "vi": "Thùng rác được thiết kế hiện đại để khuyến khích bảo vệ môi trường"
+      },
+      {
+        "id": 4126,
+        "vi": "Bầu trời rực rỡ ánh nắng với không khí trong lành"
+      },
+      {
+        "id": 4127,
+        "vi": "Hoa hồng nở rộ trong khu vườn được chăm sóc kỹ lưỡng"
+      },
+      {
+        "id": 4128,
+        "vi": "Mưa phùn làm mát không khí đô thị và làm sạch đường phố"
+      },
+      {
+        "id": 4129,
+        "vi": "Dòng sông được bảo vệ để duy trì nguồn nước cho nông nghiệp"
+      },
+      {
+        "id": 4130,
+        "vi": "Người dân trồng cây ở sân trường để giáo dục ý thức bảo vệ môi trường"
+      },
+      {
+        "id": 4131,
+        "vi": "Chim bay lượn trên bầu trời xanh không khói bụi"
+      },
+      {
+        "id": 4132,
+        "vi": "Rác thải được thu gom và xử lý theo tiêu chuẩn môi trường"
+      },
+      {
+        "id": 4133,
+        "vi": "Cây xanh được chăm sóc để tạo không gian sống bền vững"
+      },
+      {
+        "id": 4134,
+        "vi": "Hoa cỏ dại mọc khắp cánh đồng lúa tạo cảnh quan đẹp mắt"
+      },
+      {
+        "id": 4135,
+        "vi": "Gió thổi nhẹ qua khu rừng mang theo không khí trong lành"
+      },
+      {
+        "id": 4136,
+        "vi": "Người dân nhặt rác ở bờ hồ để bảo vệ nguồn nước sạch"
+      },
+      {
+        "id": 4137,
+        "vi": "Cá lội trong hồ nước công viên được bảo tồn cẩn thận"
+      },
+      {
+        "id": 4138,
+        "vi": "Thùng rác phân loại được đặt ở các khu vực đông dân cư"
+      },
+      {
+        "id": 4139,
+        "vi": "Bầu trời trong xanh với ánh nắng ấm áp vào buổi sáng"
+      },
+      {
+        "id": 4140,
+        "vi": "Hoa cúc nở rực rỡ trong khu vườn được chăm sóc chu đáo."
       }
     ],
     "science": [
@@ -13856,6 +19088,366 @@
       {
         "id": 1425,
         "vi": "Tôi tin rằng sự tiến bộ của khoa học cần đi kèm với giáo dục đại chúng."
+      },
+      {
+        "id": 4334,
+        "vi": "Máy tính hiện đại được sử dụng để phân tích dữ liệu khoa học phức tạp"
+      },
+      {
+        "id": 4335,
+        "vi": "Điện thoại thông minh tích hợp trí tuệ nhân tạo để hỗ trợ người dùng"
+      },
+      {
+        "id": 4336,
+        "vi": "Internet tốc độ cao kết nối các nhà khoa học trên toàn cầu"
+      },
+      {
+        "id": 4337,
+        "vi": "Robot tự động hóa nâng cao hiệu suất sản xuất trong các nhà máy"
+      },
+      {
+        "id": 4338,
+        "vi": "Xe điện sử dụng năng lượng tái tạo để giảm thiểu khí thải"
+      },
+      {
+        "id": 4339,
+        "vi": "Máy in 3D tạo ra các bộ phận y tế với độ chính xác cao"
+      },
+      {
+        "id": 4340,
+        "vi": "Công nghệ thực tế ảo hỗ trợ giảng dạy trực quan trong trường học"
+      },
+      {
+        "id": 4341,
+        "vi": "Tivi thông minh tích hợp trợ lý ảo để điều khiển bằng giọng nói"
+      },
+      {
+        "id": 4342,
+        "vi": "Máy lạnh sử dụng công nghệ tiết kiệm năng lượng tối ưu"
+      },
+      {
+        "id": 4343,
+        "vi": "Điện thoại có camera tích hợp công nghệ quay video 4K"
+      },
+      {
+        "id": 4344,
+        "vi": "Internet 5G cung cấp kết nối siêu nhanh cho nghiên cứu"
+      },
+      {
+        "id": 4345,
+        "vi": "Robot hút bụi thông minh di chuyển theo cảm biến hiện đại"
+      },
+      {
+        "id": 4346,
+        "vi": "Xe điện được sạc bằng hệ thống năng lượng mặt trời tiên tiến"
+      },
+      {
+        "id": 4347,
+        "vi": "Máy in 3D in các mô hình kiến trúc với chi tiết tinh xảo"
+      },
+      {
+        "id": 4348,
+        "vi": "Công nghệ blockchain bảo mật dữ liệu trong các giao dịch số"
+      },
+      {
+        "id": 4349,
+        "vi": "Tivi thông minh hiển thị hình ảnh với độ phân giải siêu cao"
+      },
+      {
+        "id": 4350,
+        "vi": "Máy lạnh được điều khiển từ xa qua ứng dụng di động"
+      },
+      {
+        "id": 4351,
+        "vi": "Điện thoại tích hợp các ứng dụng trí tuệ nhân tạo tiên tiến"
+      },
+      {
+        "id": 4352,
+        "vi": "Internet hỗ trợ chia sẻ tài liệu khoa học với tốc độ cao"
+      },
+      {
+        "id": 4353,
+        "vi": "Robot phẫu thuật hỗ trợ bác sĩ trong các ca mổ phức tạp"
+      },
+      {
+        "id": 4354,
+        "vi": "Xe điện được thiết kế để tối ưu hóa hiệu suất năng lượng"
+      },
+      {
+        "id": 4355,
+        "vi": "Máy in 3D sản xuất các sản phẩm tùy chỉnh theo nhu cầu"
+      },
+      {
+        "id": 4356,
+        "vi": "Công nghệ thực tế tăng cường giúp học sinh học qua trải nghiệm thực tế"
+      },
+      {
+        "id": 4357,
+        "vi": "Tivi thông minh kết nối với các thiết bị gia đình thông minh"
+      },
+      {
+        "id": 4358,
+        "vi": "Máy lạnh sử dụng năng lượng tái tạo để bảo vệ môi trường"
+      },
+      {
+        "id": 4359,
+        "vi": "Điện thoại hỗ trợ công nghệ 5G với tốc độ vượt trội"
+      },
+      {
+        "id": 4360,
+        "vi": "Internet kết nối các thiết bị IoT trong nhà thông minh"
+      },
+      {
+        "id": 4361,
+        "vi": "Robot tự động hóa hỗ trợ sản xuất trong các ngành công nghiệp nặng"
+      },
+      {
+        "id": 4362,
+        "vi": "Xe điện được sạc tại các trạm công cộng với công nghệ nhanh"
+      },
+      {
+        "id": 4363,
+        "vi": "Máy in 3D tạo ra các mô hình giáo dục với độ chính xác cao"
+      },
+      {
+        "id": 4364,
+        "vi": "Công nghệ trí tuệ nhân tạo hỗ trợ nghiên cứu khoa học tiên tiến"
+      },
+      {
+        "id": 4365,
+        "vi": "Tivi thông minh phát nội dung theo yêu cầu với chất lượng cao"
+      },
+      {
+        "id": 4366,
+        "vi": "Máy lạnh tích hợp cảm biến để điều chỉnh nhiệt độ tự động"
+      },
+      {
+        "id": 4367,
+        "vi": "Điện thoại có camera tích hợp công nghệ AI để chụp ảnh chuyên nghiệp"
+      },
+      {
+        "id": 4368,
+        "vi": "Internet 5G hỗ trợ truyền dữ liệu khoa học thời gian thực"
+      },
+      {
+        "id": 4369,
+        "vi": "Robot chăm sóc sức khỏe hỗ trợ người cao tuổi tại nhà"
+      },
+      {
+        "id": 4370,
+        "vi": "Xe điện được sử dụng rộng rãi trong giao thông công cộng đô thị"
+      },
+      {
+        "id": 4371,
+        "vi": "Máy in 3D in các bộ phận y tế với vật liệu sinh học"
+      },
+      {
+        "id": 4372,
+        "vi": "Công nghệ thực tế ảo giúp học sinh trải nghiệm các thí nghiệm khoa học"
+      },
+      {
+        "id": 4373,
+        "vi": "Tivi thông minh tích hợp trợ lý ảo để điều khiển thiết bị"
+      },
+      {
+        "id": 4374,
+        "vi": "Máy lạnh sử dụng công nghệ thân thiện môi trường với hiệu suất cao"
+      },
+      {
+        "id": 4375,
+        "vi": "Điện thoại hỗ trợ các ứng dụng học tập dựa trên trí tuệ nhân tạo"
+      },
+      {
+        "id": 4376,
+        "vi": "Internet kết nối các hệ thống nhà thông minh với độ bảo mật cao"
+      },
+      {
+        "id": 4377,
+        "vi": "Robot tự động hóa giúp tối ưu hóa dây chuyền sản xuất"
+      },
+      {
+        "id": 4378,
+        "vi": "Xe điện được thiết kế với hệ thống pin tiên tiến"
+      },
+      {
+        "id": 4379,
+        "vi": "Máy in 3D in các sản phẩm công nghiệp với độ chính xác cao"
+      },
+      {
+        "id": 4380,
+        "vi": "Công nghệ AI hỗ trợ phân tích dữ liệu trong nghiên cứu khoa học"
+      },
+      {
+        "id": 4381,
+        "vi": "Tivi thông minh có giao diện thân thiện và dễ sử dụng"
+      },
+      {
+        "id": 4382,
+        "vi": "Máy lạnh được điều khiển bằng giọng nói qua trợ lý ảo"
+      },
+      {
+        "id": 4383,
+        "vi": "Điện thoại tích hợp công nghệ bảo mật sinh trắc học"
+      },
+      {
+        "id": 4384,
+        "vi": "Internet 5G hỗ trợ các ứng dụng công nghệ thời gian thực"
+      },
+      {
+        "id": 4385,
+        "vi": "Robot hỗ trợ phẫu thuật với độ chính xác cao trong bệnh viện"
+      },
+      {
+        "id": 4386,
+        "vi": "Xe điện giảm thiểu ô nhiễm không khí ở các thành phố lớn"
+      },
+      {
+        "id": 4387,
+        "vi": "Máy in 3D sản xuất các mô hình y tế để hỗ trợ giảng dạy"
+      },
+      {
+        "id": 4388,
+        "vi": "Công nghệ thực tế tăng cường tạo trải nghiệm học tập sinh động"
+      },
+      {
+        "id": 4389,
+        "vi": "Tivi thông minh phát các chương trình khoa học với hình ảnh chân thực"
+      },
+      {
+        "id": 4390,
+        "vi": "Máy lạnh sử dụng năng lượng tái tạo để giảm tiêu thụ điện"
+      },
+      {
+        "id": 4391,
+        "vi": "Điện thoại có camera tích hợp công nghệ quay video siêu chậm"
+      },
+      {
+        "id": 4392,
+        "vi": "Internet kết nối các thiết bị thông minh trong các khu công nghiệp"
+      },
+      {
+        "id": 4393,
+        "vi": "Robot tự động tưới cây với cảm biến thông minh trong vườn"
+      },
+      {
+        "id": 4394,
+        "vi": "Xe điện được sạc nhanh tại các trạm công cộng hiện đại"
+      },
+      {
+        "id": 4395,
+        "vi": "Máy in 3D in các bộ phận máy móc với vật liệu bền vững"
+      },
+      {
+        "id": 4396,
+        "vi": "Công nghệ AI hỗ trợ dự đoán xu hướng trong nghiên cứu khoa học"
+      },
+      {
+        "id": 4397,
+        "vi": "Tivi thông minh tích hợp các ứng dụng giải trí đa phương tiện"
+      },
+      {
+        "id": 4398,
+        "vi": "Máy lạnh được thiết kế để tiết kiệm năng lượng tối đa"
+      },
+      {
+        "id": 4399,
+        "vi": "Điện thoại hỗ trợ công nghệ 5G với kết nối ổn định"
+      },
+      {
+        "id": 4400,
+        "vi": "Internet cung cấp dữ liệu cho các dự án nghiên cứu toàn cầu"
+      },
+      {
+        "id": 4401,
+        "vi": "Robot hỗ trợ chăm sóc bệnh nhân trong các cơ sở y tế"
+      },
+      {
+        "id": 4402,
+        "vi": "Xe điện được sử dụng trong các khu du lịch sinh thái"
+      },
+      {
+        "id": 4403,
+        "vi": "Máy in 3D in các sản phẩm y tế với độ chính xác cao"
+      },
+      {
+        "id": 4404,
+        "vi": "Công nghệ thực tế ảo hỗ trợ mô phỏng các thí nghiệm khoa học"
+      },
+      {
+        "id": 4405,
+        "vi": "Tivi thông minh phát nội dung công nghệ với chất lượng 4K"
+      },
+      {
+        "id": 4406,
+        "vi": "Máy lạnh sử dụng công nghệ tiên tiến để giảm khí thải"
+      },
+      {
+        "id": 4407,
+        "vi": "Điện thoại tích hợp các ứng dụng học tập dựa trên AI"
+      },
+      {
+        "id": 4408,
+        "vi": "Internet 5G hỗ trợ truyền dữ liệu cho các thiết bị IoT"
+      },
+      {
+        "id": 4409,
+        "vi": "Robot tự động hóa giúp tăng hiệu suất trong các nhà máy lớn"
+      },
+      {
+        "id": 4410,
+        "vi": "Xe điện được thiết kế để giảm chi phí vận hành lâu dài"
+      },
+      {
+        "id": 4411,
+        "vi": "Máy in 3D in các mô hình giáo dục với vật liệu thân thiện môi trường"
+      },
+      {
+        "id": 4412,
+        "vi": "Công nghệ trí tuệ nhân tạo hỗ trợ phân tích dữ liệu khoa học"
+      },
+      {
+        "id": 4413,
+        "vi": "Tivi thông minh có màn hình siêu nét với độ phân giải cao"
+      },
+      {
+        "id": 4414,
+        "vi": "Máy lạnh được điều khiển thông minh qua ứng dụng di động"
+      },
+      {
+        "id": 4415,
+        "vi": "Điện thoại hỗ trợ công nghệ bảo mật vân tay và khuôn mặt"
+      },
+      {
+        "id": 4416,
+        "vi": "Internet kết nối các hệ thống nhà thông minh với độ an toàn cao"
+      },
+      {
+        "id": 4417,
+        "vi": "Robot tự động dọn dẹp nhà cửa với công nghệ tiên tiến"
+      },
+      {
+        "id": 4418,
+        "vi": "Xe điện được sạc bằng năng lượng mặt trời để bảo vệ môi trường"
+      },
+      {
+        "id": 4419,
+        "vi": "Máy in 3D tạo ra các sản phẩm tùy chỉnh với chi phí thấp"
+      },
+      {
+        "id": 4420,
+        "vi": "Công nghệ AI hỗ trợ nghiên cứu khoa học với độ chính xác cao"
+      },
+      {
+        "id": 4421,
+        "vi": "Tivi thông minh phát các chương trình công nghệ với âm thanh sống động"
+      },
+      {
+        "id": 4422,
+        "vi": "Máy lạnh sử dụng công nghệ tiết kiệm năng lượng hiện đại"
+      },
+      {
+        "id": 4423,
+        "vi": "Điện thoại có camera tích hợp công nghệ AI để quay video chất lượng cao."
       }
     ],
     "government": [
@@ -14058,6 +19650,350 @@
       {
         "id": 1569,
         "vi": "Chính phủ cần đảm bảo mọi quyết sách đều hướng đến lợi ích chung lâu dài."
+      },
+      {
+        "id": 4617,
+        "vi": "Chính phủ tổ chức hội nghị cấp cao tại trung tâm hành chính quốc gia"
+      },
+      {
+        "id": 4618,
+        "vi": "Người dân tích cực tham gia bầu cử để lựa chọn lãnh đạo địa phương"
+      },
+      {
+        "id": 4619,
+        "vi": "Cán bộ hành chính hỗ trợ giải quyết thủ tục đất đai một cách minh bạch"
+      },
+      {
+        "id": 4620,
+        "vi": "Chính sách khuyến khích phát triển nông nghiệp bền vững được công bố rộng rãi"
+      },
+      {
+        "id": 4621,
+        "vi": "Quốc hội họp phiên toàn thể để thảo luận về các dự luật quan trọng"
+      },
+      {
+        "id": 4622,
+        "vi": "Người dân xếp hàng tại các điểm bầu cử với tinh thần trách nhiệm cao"
+      },
+      {
+        "id": 4623,
+        "vi": "Chính phủ đầu tư mạnh mẽ vào cơ sở hạ tầng giao thông hiện đại"
+      },
+      {
+        "id": 4624,
+        "vi": "Cán bộ hướng dẫn người dân hoàn thành thủ tục đăng ký hộ khẩu nhanh chóng"
+      },
+      {
+        "id": 4625,
+        "vi": "Luật bảo vệ môi trường được triển khai nghiêm ngặt tại các khu công nghiệp"
+      },
+      {
+        "id": 4626,
+        "vi": "Người dân nộp thuế thu nhập cá nhân qua hệ thống trực tuyến hiện đại"
+      },
+      {
+        "id": 4627,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ tài chính cho các hộ gia đình khó khăn"
+      },
+      {
+        "id": 4628,
+        "vi": "Bầu cử được tổ chức công khai với sự giám sát chặt chẽ của cơ quan chức năng"
+      },
+      {
+        "id": 4629,
+        "vi": "Cán bộ giải đáp chi tiết các thắc mắc về chính sách bảo hiểm xã hội"
+      },
+      {
+        "id": 4630,
+        "vi": "Chính sách khuyến khích sử dụng năng lượng tái tạo được áp dụng rộng rãi"
+      },
+      {
+        "id": 4631,
+        "vi": "Quốc hội thảo luận sôi nổi về các biện pháp cải cách giáo dục quốc gia"
+      },
+      {
+        "id": 4632,
+        "vi": "Người dân tham gia bầu cử tại các điểm trường học với sự chuẩn bị chu đáo"
+      },
+      {
+        "id": 4633,
+        "vi": "Chính phủ đầu tư xây dựng hệ thống đường cao tốc để thúc đẩy kinh tế"
+      },
+      {
+        "id": 4634,
+        "vi": "Cán bộ hỗ trợ người dân đăng ký giấy phép kinh doanh với quy trình đơn giản"
+      },
+      {
+        "id": 4635,
+        "vi": "Luật giao thông đường bộ được tuyên truyền qua nhiều kênh truyền thông"
+      },
+      {
+        "id": 4636,
+        "vi": "Người dân nộp thuế giá trị gia tăng qua ứng dụng di động tiện lợi"
+      },
+      {
+        "id": 4637,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ y tế cộng đồng ở vùng sâu vùng xa"
+      },
+      {
+        "id": 4638,
+        "vi": "Bầu cử diễn ra minh bạch với sự tham gia của các tổ chức giám sát"
+      },
+      {
+        "id": 4639,
+        "vi": "Cán bộ hướng dẫn người dân làm giấy chứng nhận quyền sử dụng đất"
+      },
+      {
+        "id": 4640,
+        "vi": "Chính sách hỗ trợ giáo dục được thiết kế để giúp học sinh nghèo vượt khó"
+      },
+      {
+        "id": 4641,
+        "vi": "Quốc hội họp để thông qua ngân sách quốc gia với sự đồng thuận cao"
+      },
+      {
+        "id": 4642,
+        "vi": "Người dân đi bầu cử tại các hội trường làng với tinh thần dân chủ"
+      },
+      {
+        "id": 4643,
+        "vi": "Chính phủ cải tạo hệ thống cấp nước sạch để nâng cao chất lượng cuộc sống"
+      },
+      {
+        "id": 4644,
+        "vi": "Cán bộ hỗ trợ người dân làm giấy khai sinh với thủ tục nhanh gọn"
+      },
+      {
+        "id": 4645,
+        "vi": "Luật bảo vệ trẻ em được công bố trên các phương tiện truyền thông đại chúng"
+      },
+      {
+        "id": 4646,
+        "vi": "Người dân nộp thuế đúng hạn qua các nền tảng ngân hàng số"
+      },
+      {
+        "id": 4647,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người dân bị ảnh hưởng bởi thiên tai"
+      },
+      {
+        "id": 4648,
+        "vi": "Bầu cử được tổ chức tại các khu dân cư với quy trình công bằng"
+      },
+      {
+        "id": 4649,
+        "vi": "Cán bộ giải đáp chi tiết về chính sách nhà ở xã hội cho người dân"
+      },
+      {
+        "id": 4650,
+        "vi": "Chính sách khuyến khích tái chế rác thải được triển khai ở các thành phố lớn"
+      },
+      {
+        "id": 4651,
+        "vi": "Quốc hội thảo luận về các biện pháp bảo vệ môi trường và ứng phó biến đổi khí hậu"
+      },
+      {
+        "id": 4652,
+        "vi": "Người dân tham gia bầu cử tại các điểm công cộng với sự nhiệt tình"
+      },
+      {
+        "id": 4653,
+        "vi": "Chính phủ đầu tư xây dựng bệnh viện hiện đại để nâng cao chất lượng y tế"
+      },
+      {
+        "id": 4654,
+        "vi": "Cán bộ hỗ trợ làm giấy phép xây dựng với quy trình minh bạch"
+      },
+      {
+        "id": 4655,
+        "vi": "Luật bảo vệ động vật hoang dã được áp dụng nghiêm ngặt tại các khu bảo tồn"
+      },
+      {
+        "id": 4656,
+        "vi": "Người dân nộp thuế qua hệ thống trực tuyến để tiết kiệm thời gian"
+      },
+      {
+        "id": 4657,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người cao tuổi với các chính sách cụ thể"
+      },
+      {
+        "id": 4658,
+        "vi": "Bầu cử diễn ra tại các khu vực nông thôn với sự tham gia đông đảo"
+      },
+      {
+        "id": 4659,
+        "vi": "Cán bộ hướng dẫn làm giấy phép lái xe với thủ tục rõ ràng"
+      },
+      {
+        "id": 4660,
+        "vi": "Chính sách hỗ trợ học nghề được triển khai để giảm tỷ lệ thất nghiệp"
+      },
+      {
+        "id": 4661,
+        "vi": "Quốc hội họp để bàn về các dự án phát triển kinh tế bền vững"
+      },
+      {
+        "id": 4662,
+        "vi": "Người dân tham gia bầu cử tại các trường học với tinh thần trách nhiệm"
+      },
+      {
+        "id": 4663,
+        "vi": "Chính phủ xây dựng công viên xanh để cải thiện môi trường đô thị"
+      },
+      {
+        "id": 4664,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận kết hôn với dịch vụ tận tâm"
+      },
+      {
+        "id": 4665,
+        "vi": "Luật giao thông được tuyên truyền qua các chương trình truyền hình"
+      },
+      {
+        "id": 4666,
+        "vi": "Người dân nộp thuế đúng quy định qua các ứng dụng ngân hàng"
+      },
+      {
+        "id": 4667,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ nông dân trồng rừng bền vững"
+      },
+      {
+        "id": 4668,
+        "vi": "Bầu cử được tổ chức với sự giám sát của các tổ chức quốc tế"
+      },
+      {
+        "id": 4669,
+        "vi": "Cán bộ giải đáp thắc mắc về chính sách bảo hiểm y tế một cách chi tiết"
+      },
+      {
+        "id": 4670,
+        "vi": "Chính sách khuyến khích sử dụng năng lượng sạch được áp dụng ở các tỉnh"
+      },
+      {
+        "id": 4671,
+        "vi": "Quốc hội thảo luận về cải cách hành chính để nâng cao hiệu quả quản lý"
+      },
+      {
+        "id": 4672,
+        "vi": "Người dân tham gia bầu cử tại các hội trường xã với sự chuẩn bị kỹ lưỡng"
+      },
+      {
+        "id": 4673,
+        "vi": "Chính phủ đầu tư xây dựng hệ thống thoát nước để giảm ngập úng đô thị"
+      },
+      {
+        "id": 4674,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận quyền sử dụng đất với thủ tục nhanh gọn"
+      },
+      {
+        "id": 4675,
+        "vi": "Luật bảo vệ môi trường được triển khai với các biện pháp cụ thể"
+      },
+      {
+        "id": 4676,
+        "vi": "Người dân nộp thuế qua hệ thống trực tuyến với giao diện thân thiện"
+      },
+      {
+        "id": 4677,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người thất nghiệp với các khóa học nghề"
+      },
+      {
+        "id": 4678,
+        "vi": "Bầu cử diễn ra tại các khu vực công cộng với quy trình minh bạch"
+      },
+      {
+        "id": 4679,
+        "vi": "Cán bộ hướng dẫn làm giấy phép kinh doanh với sự hỗ trợ tận tình"
+      },
+      {
+        "id": 4680,
+        "vi": "Chính sách hỗ trợ y tế được triển khai ở các vùng sâu vùng xa"
+      },
+      {
+        "id": 4681,
+        "vi": "Quốc hội họp để thông qua các dự luật về phát triển kinh tế xanh"
+      },
+      {
+        "id": 4682,
+        "vi": "Người dân tham gia bầu cử tại các điểm trường học với tinh thần dân chủ"
+      },
+      {
+        "id": 4683,
+        "vi": "Chính phủ xây dựng cầu vượt để giảm ùn tắc giao thông đô thị"
+      },
+      {
+        "id": 4684,
+        "vi": "Cán bộ hỗ trợ làm giấy khai tử với thủ tục đơn giản"
+      },
+      {
+        "id": 4685,
+        "vi": "Luật bảo vệ động vật được tuyên truyền qua các kênh truyền thông"
+      },
+      {
+        "id": 4686,
+        "vi": "Người dân nộp thuế qua ứng dụng di động với độ bảo mật cao"
+      },
+      {
+        "id": 4687,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ người dân sau thiên tai"
+      },
+      {
+        "id": 4688,
+        "vi": "Bầu cử được tổ chức với sự tham gia của các tổ chức giám sát độc lập"
+      },
+      {
+        "id": 4689,
+        "vi": "Cán bộ giải đáp thắc mắc về chính sách nhà ở với thông tin chi tiết"
+      },
+      {
+        "id": 4690,
+        "vi": "Chính sách khuyến khích tái chế được triển khai để bảo vệ môi trường"
+      },
+      {
+        "id": 4691,
+        "vi": "Quốc hội thảo luận về các biện pháp ứng phó với biến đổi khí hậu"
+      },
+      {
+        "id": 4692,
+        "vi": "Người dân tham gia bầu cử tại các hội trường làng với sự nhiệt tình"
+      },
+      {
+        "id": 4693,
+        "vi": "Chính phủ đầu tư xây dựng đường nông thôn để phát triển kinh tế"
+      },
+      {
+        "id": 4694,
+        "vi": "Cán bộ hỗ trợ làm giấy chứng nhận quyền sử dụng đất với dịch vụ chuyên nghiệp"
+      },
+      {
+        "id": 4695,
+        "vi": "Luật giao thông đường bộ được áp dụng nghiêm ngặt để đảm bảo an toàn"
+      },
+      {
+        "id": 4696,
+        "vi": "Người dân nộp thuế đúng hạn qua các nền tảng ngân hàng số"
+      },
+      {
+        "id": 4697,
+        "vi": "Chính phủ triển khai chương trình hỗ trợ giáo dục cho học sinh nghèo"
+      },
+      {
+        "id": 4698,
+        "vi": "Bầu cử diễn ra tại các khu dân cư với sự giám sát chặt chẽ"
+      },
+      {
+        "id": 4699,
+        "vi": "Cán bộ hướng dẫn làm giấy phép xây dựng với quy trình minh bạch"
+      },
+      {
+        "id": 4700,
+        "vi": "Chính sách hỗ trợ sức khỏe được triển khai với các chương trình cụ thể"
+      },
+      {
+        "id": 4701,
+        "vi": "Quốc hội họp để bàn về các dự luật cải cách hành chính"
+      },
+      {
+        "id": 4702,
+        "vi": "Người dân tham gia bầu cử tại các điểm công cộng với tinh thần trách nhiệm cao."
       }
     ],
     "history": [
@@ -14264,6 +20200,362 @@
       {
         "id": 1714,
         "vi": "Tôi tin rằng người trẻ cần biết lịch sử để biết mình là ai và đến từ đâu."
+      },
+      {
+        "id": 4894,
+        "vi": "Sông Hương uốn lượn qua kinh thành Huế, tạo nên vẻ đẹp thơ mộng"
+      },
+      {
+        "id": 4895,
+        "vi": "Vua Hùng Vương đặt nền móng cho nước Văn Lang, mở đầu lịch sử Việt Nam"
+      },
+      {
+        "id": 4896,
+        "vi": "Núi Fansipan, đỉnh cao nhất Đông Dương, thu hút những nhà thám hiểm"
+      },
+      {
+        "id": 4897,
+        "vi": "Lịch sử Việt Nam ghi dấu những chiến công oanh liệt qua hàng ngàn năm"
+      },
+      {
+        "id": 4898,
+        "vi": "Hà Nội, thủ đô nghìn năm văn hiến, là trung tâm chính trị và văn hóa"
+      },
+      {
+        "id": 4899,
+        "vi": "Vịnh Hạ Long, di sản thế giới UNESCO, nổi bật với hàng ngàn đảo đá"
+      },
+      {
+        "id": 4900,
+        "vi": "Triều Nguyễn xây dựng kinh thành Huế với kiến trúc độc đáo"
+      },
+      {
+        "id": 4901,
+        "vi": "Sông Cửu Long cung cấp phù sa, nuôi dưỡng đồng bằng Nam Bộ trù phú"
+      },
+      {
+        "id": 4902,
+        "vi": "Đền Hùng ở Phú Thọ là biểu tượng tâm linh của dân tộc Việt"
+      },
+      {
+        "id": 4903,
+        "vi": "Chiến thắng Điện Biên Phủ năm 1954 làm chấn động lịch sử thế giới"
+      },
+      {
+        "id": 4904,
+        "vi": "Đà Nẵng nổi tiếng với những bãi biển cát trắng và cảnh quan tuyệt đẹp"
+      },
+      {
+        "id": 4905,
+        "vi": "Vua Quang Trung lãnh đạo quân Tây Sơn đánh bại quân Thanh ở Ngọc Hồi"
+      },
+      {
+        "id": 4906,
+        "vi": "Núi Bà Đen, linh thiêng ở Tây Ninh, thu hút hàng triệu khách hành hương"
+      },
+      {
+        "id": 4907,
+        "vi": "Sông Tiền chảy qua đồng bằng, mang lại nguồn sống cho nông nghiệp"
+      },
+      {
+        "id": 4908,
+        "vi": "Lịch sử Việt Nam phong phú với các triều đại và cuộc kháng chiến"
+      },
+      {
+        "id": 4909,
+        "vi": "Hà Giang có cao nguyên đá Đồng Văn, di sản địa chất toàn cầu"
+      },
+      {
+        "id": 4910,
+        "vi": "Vua Lê Lợi lãnh đạo khởi nghĩa Lam Sơn, giành lại độc lập dân tộc"
+      },
+      {
+        "id": 4911,
+        "vi": "Vịnh Hạ Long với các hang động đá vôi là kỳ quan thiên nhiên độc đáo"
+      },
+      {
+        "id": 4912,
+        "vi": "Sài Gòn có nhà thờ Đức Bà, biểu tượng kiến trúc thời Pháp thuộc"
+      },
+      {
+        "id": 4913,
+        "vi": "Chiến thắng Bạch Đằng năm 938 là mốc son trong lịch sử chống ngoại xâm"
+      },
+      {
+        "id": 4914,
+        "vi": "Đà Lạt nổi tiếng với khí hậu mát mẻ và cảnh quan đồi thông thơ mộng"
+      },
+      {
+        "id": 4915,
+        "vi": "Vua Trần Nhân Tông sáng lập thiền phái Trúc Lâm tại Yên Tử"
+      },
+      {
+        "id": 4916,
+        "vi": "Sông Hậu mang phù sa màu mỡ, hỗ trợ nông nghiệp miền Tây"
+      },
+      {
+        "id": 4917,
+        "vi": "Đền Ngọc Sơn bên hồ Hoàn Kiếm là di tích lịch sử văn hóa nổi tiếng"
+      },
+      {
+        "id": 4918,
+        "vi": "Lịch sử ghi lại cuộc khởi nghĩa Hai Bà Trưng chống ách đô hộ nhà Hán"
+      },
+      {
+        "id": 4919,
+        "vi": "Phú Quốc, hòn đảo ngọc, nổi tiếng với bãi biển và san hô rực rỡ"
+      },
+      {
+        "id": 4920,
+        "vi": "Vua Lý Thái Tổ dời đô về Thăng Long, đánh dấu thời kỳ thịnh trị"
+      },
+      {
+        "id": 4921,
+        "vi": "Núi Yên Tử là trung tâm Phật giáo với chùa Đồng linh thiêng"
+      },
+      {
+        "id": 4922,
+        "vi": "Sông Đà cung cấp nước cho các nhà máy thủy điện lớn"
+      },
+      {
+        "id": 4923,
+        "vi": "Chiến thắng chống Pháp năm 1954 là biểu tượng của lòng yêu nước"
+      },
+      {
+        "id": 4924,
+        "vi": "Huế có lăng tẩm các vua Nguyễn, di sản văn hóa thế giới"
+      },
+      {
+        "id": 4925,
+        "vi": "Vua Nguyễn Huệ lãnh đạo quân Tây Sơn với chiến thuật quân sự tài ba"
+      },
+      {
+        "id": 4926,
+        "vi": "Vịnh Hạ Long thu hút du khách quốc tế với cảnh quan hùng vĩ"
+      },
+      {
+        "id": 4927,
+        "vi": "Hà Nội có Văn Miếu, trường đại học đầu tiên của Việt Nam"
+      },
+      {
+        "id": 4928,
+        "vi": "Lịch sử Việt Nam ghi dấu nhiều cuộc kháng chiến bảo vệ độc lập"
+      },
+      {
+        "id": 4929,
+        "vi": "Đà Nẵng có cầu Rồng, biểu tượng hiện đại của thành phố"
+      },
+      {
+        "id": 4930,
+        "vi": "Vua Trần Hưng Đạo để lại Hịch Tướng Sĩ, khích lệ tinh thần yêu nước"
+      },
+      {
+        "id": 4931,
+        "vi": "Sông Cửu Long với nhiều nhánh sông là huyết mạch của miền Nam"
+      },
+      {
+        "id": 4932,
+        "vi": "Đền Hùng tổ chức lễ hội hằng năm để tưởng nhớ các vua Hùng"
+      },
+      {
+        "id": 4933,
+        "vi": "Lịch sử kể về sự dũng cảm của Bà Triệu chống quân Ngô"
+      },
+      {
+        "id": 4934,
+        "vi": "Phú Quốc nổi tiếng với ngành sản xuất nước mắm truyền thống"
+      },
+      {
+        "id": 4935,
+        "vi": "Vua Lê Đại Hành củng cố nền độc lập sau khi đánh bại quân Tống"
+      },
+      {
+        "id": 4936,
+        "vi": "Núi Fansipan là điểm đến lý tưởng cho những người yêu thiên nhiên"
+      },
+      {
+        "id": 4937,
+        "vi": "Sông Hương là nguồn cảm hứng cho thơ ca và nhạc họa"
+      },
+      {
+        "id": 4938,
+        "vi": "Chiến thắng chống Mỹ năm 1975 thống nhất đất nước"
+      },
+      {
+        "id": 4939,
+        "vi": "Huế có chùa Thiên Mụ, biểu tượng văn hóa tâm linh lâu đời"
+      },
+      {
+        "id": 4940,
+        "vi": "Vua Quang Trung áp dụng chiến thuật thần tốc để đánh giặc"
+      },
+      {
+        "id": 4941,
+        "vi": "Vịnh Hạ Long có hệ sinh thái biển đa dạng và phong phú"
+      },
+      {
+        "id": 4942,
+        "vi": "Hà Nội có phố cổ với những con đường mang đậm dấu ấn lịch sử"
+      },
+      {
+        "id": 4943,
+        "vi": "Lịch sử Việt Nam tự hào với các triều đại phong kiến thịnh vượng"
+      },
+      {
+        "id": 4944,
+        "vi": "Đà Lạt có hồ Xuân Hương, điểm nhấn thơ mộng của cao nguyên"
+      },
+      {
+        "id": 4945,
+        "vi": "Vua Trần Nhân Tông xây dựng thiền phái Trúc Lâm với tư tưởng hòa bình"
+      },
+      {
+        "id": 4946,
+        "vi": "Sông Tiền mang phù sa, tạo nên vựa lúa lớn nhất cả nước"
+      },
+      {
+        "id": 4947,
+        "vi": "Đền Ngọc Sơn có cầu Thê Húc đỏ thắm nối với hồ Hoàn Kiếm"
+      },
+      {
+        "id": 4948,
+        "vi": "Chiến thắng Ngọc Hồi năm 1789 là kỳ tích của quân Tây Sơn"
+      },
+      {
+        "id": 4949,
+        "vi": "Phú Quốc có rạn san hô đa dạng, thu hút các nhà nghiên cứu biển"
+      },
+      {
+        "id": 4950,
+        "vi": "Vua Lý Thái Tổ đặt tên Thăng Long, biểu tượng cho sự phát triển"
+      },
+      {
+        "id": 4951,
+        "vi": "Núi Bà Đen là điểm hành hương tâm linh với ngôi chùa cổ kính"
+      },
+      {
+        "id": 4952,
+        "vi": "Sông Hậu cung cấp nguồn nước dồi dào cho nông nghiệp miền Tây"
+      },
+      {
+        "id": 4953,
+        "vi": "Lịch sử ghi lại chiến thắng Khe Sanh trong cuộc kháng chiến chống Mỹ"
+      },
+      {
+        "id": 4954,
+        "vi": "Huế có kinh thành Nguyễn với kiến trúc độc đáo và cổ kính"
+      },
+      {
+        "id": 4955,
+        "vi": "Vua Lê Lợi lãnh đạo khởi nghĩa với tinh thần bất khuất"
+      },
+      {
+        "id": 4956,
+        "vi": "Vịnh Hạ Long là di sản thiên nhiên với các đảo đá độc đáo"
+      },
+      {
+        "id": 4957,
+        "vi": "Hà Nội có cầu Long Biên, chứng nhân lịch sử của thủ đô"
+      },
+      {
+        "id": 4958,
+        "vi": "Lịch sử Việt Nam ghi dấu nhiều anh hùng dân tộc qua các thời kỳ"
+      },
+      {
+        "id": 4959,
+        "vi": "Đà Nẵng có núi Ngũ Hành Sơn với hệ thống hang động kỳ bí"
+      },
+      {
+        "id": 4960,
+        "vi": "Vua Trần Hưng Đạo lãnh đạo quân dân với chiến lược tài ba"
+      },
+      {
+        "id": 4961,
+        "vi": "Sông Cửu Long là nguồn sống của hàng triệu người dân miền Tây"
+      },
+      {
+        "id": 4962,
+        "vi": "Đền Hùng là nơi tổ chức lễ giỗ tổ với ý nghĩa tâm linh sâu sắc"
+      },
+      {
+        "id": 4963,
+        "vi": "Lịch sử kể về cuộc khởi nghĩa Bà Trưng với tinh thần yêu nước"
+      },
+      {
+        "id": 4964,
+        "vi": "Phú Quốc có bãi biển sạch, là điểm đến du lịch nổi tiếng"
+      },
+      {
+        "id": 4965,
+        "vi": "Vua Nguyễn Huệ lãnh đạo quân Tây Sơn với chiến thuật thần tốc"
+      },
+      {
+        "id": 4966,
+        "vi": "Núi Fansipan có khí hậu mát mẻ và cảnh quan hùng vĩ"
+      },
+      {
+        "id": 4967,
+        "vi": "Sông Hương là biểu tượng văn hóa của thành phố Huế"
+      },
+      {
+        "id": 4968,
+        "vi": "Chiến thắng chống Tống là dấu mốc quan trọng trong lịch sử"
+      },
+      {
+        "id": 4969,
+        "vi": "Huế có cung điện cổ, di sản văn hóa được bảo tồn cẩn thận"
+      },
+      {
+        "id": 4970,
+        "vi": "Vua Quang Trung đánh bại quân Thanh với chiến lược sáng tạo"
+      },
+      {
+        "id": 4971,
+        "vi": "Vịnh Hạ Long có hệ sinh thái biển phong phú và độc đáo"
+      },
+      {
+        "id": 4972,
+        "vi": "Hà Nội có hồ Gươm, biểu tượng văn hóa của thủ đô"
+      },
+      {
+        "id": 4973,
+        "vi": "Lịch sử Việt Nam là câu chuyện về lòng kiên cường và bất khuất"
+      },
+      {
+        "id": 4974,
+        "vi": "Đà Lạt có đồi thông xanh, tạo nên vẻ đẹp thơ mộng"
+      },
+      {
+        "id": 4975,
+        "vi": "Vua Trần Nhân Tông để lại di sản văn hóa với thiền phái Trúc Lâm"
+      },
+      {
+        "id": 4976,
+        "vi": "Sông Tiền chảy qua các tỉnh, mang phù sa cho đồng lúa"
+      },
+      {
+        "id": 4977,
+        "vi": "Đền Ngọc Sơn là điểm đến tâm linh của người dân Hà Nội"
+      },
+      {
+        "id": 4978,
+        "vi": "Lịch sử ghi lại chiến thắng Ngọc Hồi với tinh thần đoàn kết"
+      },
+      {
+        "id": 4979,
+        "vi": "Phú Quốc có hệ sinh thái biển đa dạng với san hô rực rỡ"
+      },
+      {
+        "id": 4980,
+        "vi": "Vua Lý Thái Tổ xây dựng kinh đô Thăng Long, đánh dấu thời kỳ thịnh trị"
+      },
+      {
+        "id": 4981,
+        "vi": "Núi Bà Đen thu hút khách hành hương với vẻ đẹp tâm linh"
+      },
+      {
+        "id": 4982,
+        "vi": "Sông Hậu là nguồn sống của nông nghiệp và ngư nghiệp miền Tây."
       }
     ],
     "sports": [
@@ -14466,6 +20758,362 @@
       {
         "id": 1859,
         "vi": "Những biểu tượng thể thao toàn cầu truyền cảm hứng cho thế hệ trẻ."
+      },
+      {
+        "id": 5172,
+        "vi": "Trẻ em tham gia các giải bóng đá trên sân cỏ nhân tạo với tinh thần thi đấu sôi nổi"
+      },
+      {
+        "id": 5173,
+        "vi": "Người dân chạy bộ quanh công viên để cải thiện sức khỏe tim mạch và tinh thần"
+      },
+      {
+        "id": 5174,
+        "vi": "Phòng gym được trang bị các thiết bị hiện đại với công nghệ theo dõi sức khỏe"
+      },
+      {
+        "id": 5175,
+        "vi": "Bóng rổ thu hút giới trẻ với các giải đấu được tổ chức chuyên nghiệp"
+      },
+      {
+        "id": 5176,
+        "vi": "Mọi người tập yoga trong không gian yên tĩnh để tăng cường sự linh hoạt"
+      },
+      {
+        "id": 5177,
+        "vi": "Hồ bơi công cộng được duy trì sạch sẽ với hệ thống lọc nước tiên tiến"
+      },
+      {
+        "id": 5178,
+        "vi": "Người dân duy trì thói quen đi bộ trên các con đường rợp bóng cây xanh"
+      },
+      {
+        "id": 5179,
+        "vi": "Trẻ em chơi cầu lông trong các giải đấu học đường với kỹ thuật điêu luyện"
+      },
+      {
+        "id": 5180,
+        "vi": "Phòng gym cung cấp các chương trình huấn luyện cá nhân hóa tối ưu"
+      },
+      {
+        "id": 5181,
+        "vi": "Bóng đá được phát sóng trực tiếp với bình luận viên chuyên nghiệp"
+      },
+      {
+        "id": 5182,
+        "vi": "Mọi người tập thể dục hàng ngày để duy trì vóc dáng và sức khỏe"
+      },
+      {
+        "id": 5183,
+        "vi": "Hồ bơi có các làn bơi được thiết kế cho cả người lớn và trẻ em"
+      },
+      {
+        "id": 5184,
+        "vi": "Người dân chạy bộ quanh hồ nước để tận hưởng không khí trong lành"
+      },
+      {
+        "id": 5185,
+        "vi": "Trẻ em tham gia các trận bóng chuyền trên bãi biển với tinh thần đồng đội"
+      },
+      {
+        "id": 5186,
+        "vi": "Phòng gym tích hợp các máy tập đa năng với màn hình theo dõi tiến độ"
+      },
+      {
+        "id": 5187,
+        "vi": "Bóng rổ được tổ chức thành các giải đấu khu vực với sự tham gia đông đảo"
+      },
+      {
+        "id": 5188,
+        "vi": "Mọi người tập yoga để cải thiện tư thế và giảm căng thẳng tinh thần"
+      },
+      {
+        "id": 5189,
+        "vi": "Hồ bơi được trang bị hệ thống nước ấm để sử dụng quanh năm"
+      },
+      {
+        "id": 5190,
+        "vi": "Người dân đi bộ trên các con đường xanh để thư giãn sau giờ làm"
+      },
+      {
+        "id": 5191,
+        "vi": "Trẻ em chơi bóng đá trên sân cỏ nhân tạo với huấn luyện viên hướng dẫn"
+      },
+      {
+        "id": 5192,
+        "vi": "Phòng gym có không gian thoáng đãng với các thiết bị công nghệ cao"
+      },
+      {
+        "id": 5193,
+        "vi": "Bóng đá thu hút hàng triệu khán giả qua các kênh truyền hình thể thao"
+      },
+      {
+        "id": 5194,
+        "vi": "Mọi người tập thể dục để tăng cường sức bền và cải thiện sức khỏe tổng quát"
+      },
+      {
+        "id": 5195,
+        "vi": "Hồ bơi được vệ sinh thường xuyên để đảm bảo an toàn cho người sử dụng"
+      },
+      {
+        "id": 5196,
+        "vi": "Người dân chạy bộ trên các con đường phố với thiết bị theo dõi sức khỏe"
+      },
+      {
+        "id": 5197,
+        "vi": "Trẻ em chơi cầu lông trong các giải đấu với tinh thần thi đấu cao"
+      },
+      {
+        "id": 5198,
+        "vi": "Phòng gym có huấn luyện viên cá nhân hỗ trợ các bài tập chuyên sâu"
+      },
+      {
+        "id": 5199,
+        "vi": "Bóng rổ được tổ chức với các đội chuyên nghiệp tại các sân vận động lớn"
+      },
+      {
+        "id": 5200,
+        "vi": "Mọi người tập yoga trong không gian yên bình để cân bằng cơ thể và tâm trí"
+      },
+      {
+        "id": 5201,
+        "vi": "Hồ bơi có khu vực bơi sâu dành cho các vận động viên luyện tập"
+      },
+      {
+        "id": 5202,
+        "vi": "Người dân đi bộ trên các con đường rợp cây để cải thiện sức khỏe tinh thần"
+      },
+      {
+        "id": 5203,
+        "vi": "Trẻ em tham gia các trận bóng chuyền trên sân cỏ nhân tạo với kỹ thuật tốt"
+      },
+      {
+        "id": 5204,
+        "vi": "Phòng gym tích hợp các máy tập hiện đại với công nghệ theo dõi thông minh"
+      },
+      {
+        "id": 5205,
+        "vi": "Bóng đá được tổ chức thành các giải đấu quốc gia với sự tham gia sôi nổi"
+      },
+      {
+        "id": 5206,
+        "vi": "Mọi người tập thể dục để duy trì sức khỏe lâu dài và vóc dáng cân đối"
+      },
+      {
+        "id": 5207,
+        "vi": "Hồ bơi có hệ thống lọc nước tiên tiến đảm bảo chất lượng nước sạch"
+      },
+      {
+        "id": 5208,
+        "vi": "Người dân chạy bộ quanh công viên với thiết bị đo nhịp tim hiện đại"
+      },
+      {
+        "id": 5209,
+        "vi": "Trẻ em chơi bóng rổ trong các giải đấu học đường với tinh thần đồng đội"
+      },
+      {
+        "id": 5210,
+        "vi": "Phòng gym cung cấp các bài tập cá nhân hóa để tối ưu hóa kết quả"
+      },
+      {
+        "id": 5211,
+        "vi": "Bóng đá thu hút khán giả qua các nền tảng phát sóng trực tuyến"
+      },
+      {
+        "id": 5212,
+        "vi": "Mọi người tập yoga để cải thiện sự dẻo dai và giảm căng thẳng"
+      },
+      {
+        "id": 5213,
+        "vi": "Hồ bơi có khu vực nghỉ ngơi được thiết kế thoải mái và tiện nghi"
+      },
+      {
+        "id": 5214,
+        "vi": "Người dân đi bộ trên các con đường xanh để tận hưởng không gian trong lành"
+      },
+      {
+        "id": 5215,
+        "vi": "Trẻ em chơi cầu lông trong các giải đấu với trang thiết bị chuyên nghiệp"
+      },
+      {
+        "id": 5216,
+        "vi": "Phòng gym có các máy tập tích hợp công nghệ theo dõi sức khỏe"
+      },
+      {
+        "id": 5217,
+        "vi": "Bóng rổ được tổ chức thành các giải đấu quốc tế với sự tham gia nhiệt tình"
+      },
+      {
+        "id": 5218,
+        "vi": "Mọi người tập thể dục để tăng cường sức khỏe tim mạch và sức bền"
+      },
+      {
+        "id": 5219,
+        "vi": "Hồ bơi được duy trì với hệ thống nước sạch và an toàn quanh năm"
+      },
+      {
+        "id": 5220,
+        "vi": "Người dân chạy bộ trên các tuyến đường phố với thiết bị công nghệ cao"
+      },
+      {
+        "id": 5221,
+        "vi": "Trẻ em chơi bóng đá trên sân cỏ nhân tạo với chiến thuật được huấn luyện"
+      },
+      {
+        "id": 5222,
+        "vi": "Phòng gym có không gian hiện đại với các thiết bị tập luyện tiên tiến"
+      },
+      {
+        "id": 5223,
+        "vi": "Bóng đá được phát sóng với chất lượng hình ảnh sắc nét và âm thanh sống động"
+      },
+      {
+        "id": 5224,
+        "vi": "Mọi người tập yoga để cải thiện sức khỏe tinh thần và thể chất"
+      },
+      {
+        "id": 5225,
+        "vi": "Hồ bơi có các làn bơi được thiết kế cho các vận động viên chuyên nghiệp"
+      },
+      {
+        "id": 5226,
+        "vi": "Người dân đi bộ quanh hồ nước để thư giãn và tận hưởng không khí mát mẻ"
+      },
+      {
+        "id": 5227,
+        "vi": "Trẻ em tham gia các giải bóng chuyền với kỹ thuật thi đấu điêu luyện"
+      },
+      {
+        "id": 5228,
+        "vi": "Phòng gym cung cấp các bài tập chuyên sâu với huấn luyện viên cá nhân"
+      },
+      {
+        "id": 5229,
+        "vi": "Bóng rổ thu hút giới trẻ qua các giải đấu được tổ chức quy mô"
+      },
+      {
+        "id": 5230,
+        "vi": "Mọi người tập thể dục để duy trì sức khỏe và phòng ngừa bệnh tật"
+      },
+      {
+        "id": 5231,
+        "vi": "Hồ bơi có khu vực bơi nông được thiết kế an toàn cho trẻ em"
+      },
+      {
+        "id": 5232,
+        "vi": "Người dân chạy bộ trên các con đường rợp cây xanh với thiết bị theo dõi"
+      },
+      {
+        "id": 5233,
+        "vi": "Trẻ em chơi cầu lông trong các sân công viên với tinh thần vui vẻ"
+      },
+      {
+        "id": 5234,
+        "vi": "Phòng gym có các máy tập đa năng với công nghệ hỗ trợ tối ưu"
+      },
+      {
+        "id": 5235,
+        "vi": "Bóng đá được tổ chức với các đội chuyên nghiệp tại các sân vận động lớn"
+      },
+      {
+        "id": 5236,
+        "vi": "Mọi người tập yoga trong không gian yên tĩnh để cân bằng tinh thần"
+      },
+      {
+        "id": 5237,
+        "vi": "Hồ bơi có hệ thống nước ấm và sạch để sử dụng vào mùa đông"
+      },
+      {
+        "id": 5238,
+        "vi": "Người dân đi bộ trên các con đường phố để cải thiện sức khỏe tổng quát"
+      },
+      {
+        "id": 5239,
+        "vi": "Trẻ em chơi bóng rổ với huấn luyện viên hướng dẫn kỹ thuật chuyên sâu"
+      },
+      {
+        "id": 5240,
+        "vi": "Phòng gym có không gian hiện đại với các thiết bị tập luyện tiên tiến"
+      },
+      {
+        "id": 5241,
+        "vi": "Bóng đá thu hút khán giả qua các kênh phát sóng thể thao chuyên nghiệp"
+      },
+      {
+        "id": 5242,
+        "vi": "Mọi người tập thể dục để tăng cường sức khỏe và duy trì vóc dáng"
+      },
+      {
+        "id": 5243,
+        "vi": "Hồ bơi được trang bị hệ thống lọc nước hiện đại để đảm bảo an toàn"
+      },
+      {
+        "id": 5244,
+        "vi": "Người dân chạy bộ quanh công viên với thiết bị đo nhịp tim thông minh"
+      },
+      {
+        "id": 5245,
+        "vi": "Trẻ em chơi cầu lông trong các giải đấu với tinh thần thi đấu cao"
+      },
+      {
+        "id": 5246,
+        "vi": "Phòng gym cung cấp các bài tập cá nhân hóa với công nghệ theo dõi"
+      },
+      {
+        "id": 5247,
+        "vi": "Bóng rổ được tổ chức thành các giải đấu khu vực với sự tham gia đông đảo"
+      },
+      {
+        "id": 5248,
+        "vi": "Mọi người tập yoga để cải thiện sự dẻo dai và sức khỏe tinh thần"
+      },
+      {
+        "id": 5249,
+        "vi": "Hồ bơi có khu vực nghỉ ngơi được thiết kế hiện đại và thoải mái"
+      },
+      {
+        "id": 5250,
+        "vi": "Người dân đi bộ trên các con đường xanh để thư giãn và cải thiện sức khỏe"
+      },
+      {
+        "id": 5251,
+        "vi": "Trẻ em chơi bóng chuyền trên sân cỏ nhân tạo với kỹ thuật điêu luyện"
+      },
+      {
+        "id": 5252,
+        "vi": "Phòng gym có các máy tập tích hợp công nghệ theo dõi sức khỏe"
+      },
+      {
+        "id": 5253,
+        "vi": "Bóng đá được phát sóng trực tiếp với bình luận viên chuyên nghiệp"
+      },
+      {
+        "id": 5254,
+        "vi": "Mọi người tập thể dục để duy trì sức khỏe lâu dài và vóc dáng cân đối"
+      },
+      {
+        "id": 5255,
+        "vi": "Hồ bơi có hệ thống nước sạch và an toàn để sử dụng quanh năm"
+      },
+      {
+        "id": 5256,
+        "vi": "Người dân chạy bộ trên các tuyến đường phố với thiết bị công nghệ cao"
+      },
+      {
+        "id": 5257,
+        "vi": "Trẻ em chơi bóng đá trên sân cỏ nhân tạo với chiến thuật được huấn luyện"
+      },
+      {
+        "id": 5258,
+        "vi": "Phòng gym có không gian thoáng đãng với các thiết bị hiện đại"
+      },
+      {
+        "id": 5259,
+        "vi": "Bóng rổ thu hút giới trẻ qua các giải đấu được tổ chức quy mô lớn"
+      },
+      {
+        "id": 5260,
+        "vi": "Mọi người tập yoga để cải thiện sức khỏe và giảm căng thẳng tinh thần."
       }
     ]
   }
