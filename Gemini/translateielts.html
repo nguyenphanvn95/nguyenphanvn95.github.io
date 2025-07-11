@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* CSS chung */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,6 +32,7 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px solid #eaeaea;
+            position: relative;
         }
         
         .logo {
@@ -55,72 +55,107 @@
         .subtitle {
             color: #7f8c8d;
             font-size: 1.1rem;
+            margin-bottom: 15px;
         }
         
-        /* Phần API Key */
+        /* Nút quản lý API */
+        .api-key-manager {
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+        
+        .api-key-btn {
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.2);
+        }
+        
+        .api-key-btn:hover {
+            background-color: #3367d6;
+            transform: translateY(-2px);
+        }
+        
+        .api-key-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* Phần cài đặt API */
         .api-key-container {
             background-color: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .api-key-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        
-        .api-key-content {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 30px;
+            max-width: 600px;
             display: none;
         }
         
-        .api-key-content.expanded {
+        .api-key-container.visible {
             display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .api-key-input {
             display: flex;
             gap: 10px;
-            margin: 10px 0;
+            margin: 15px 0;
         }
         
         .api-key-input input {
             flex: 1;
-            padding: 10px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 1rem;
         }
         
         .api-key-input button {
-            padding: 10px 15px;
-            background-color: #4285f4;
+            padding: 12px 20px;
+            background-color: #34a853;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             transition: background-color 0.3s;
         }
         
         .api-key-input button:hover {
-            background-color: #3367d6;
+            background-color: #2d9247;
         }
         
         .error-message {
             color: #e74c3c;
-            margin-top: 5px;
+            margin-top: 8px;
             display: none;
+        }
+        
+        .close-api-btn {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s;
+        }
+        
+        .close-api-btn:hover {
+            color: #e74c3c;
         }
         
         /* Phần chọn Task */
@@ -133,18 +168,18 @@
         
         .task-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 25px;
             width: 300px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
         }
         
         .task-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
         
         .task-card.selected {
@@ -160,6 +195,7 @@
         
         .task-card h2 {
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         
         .task-card p {
@@ -170,14 +206,21 @@
         .exercises-section {
             display: none;
             background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
         
         .section-title {
-            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -185,6 +228,23 @@
         
         .section-title i {
             color: #4285f4;
+        }
+        
+        .back-btn {
+            padding: 8px 16px;
+            background-color: #f1f3f4;
+            color: #5f6368;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background-color: #e8eaed;
         }
         
         .exercises-list {
@@ -195,15 +255,17 @@
         
         .exercise-card {
             background-color: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 20px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
+            border: 1px solid #eee;
         }
         
         .exercise-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: #4285f4;
         }
         
         .exercise-card.selected {
@@ -216,6 +278,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #2c3e50;
         }
         
         .exercise-card h3 i {
@@ -231,9 +294,9 @@
         .exercise-tag {
             background-color: #e8f4ff;
             color: #4285f4;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
         }
         
@@ -260,31 +323,11 @@
         .practice-section {
             display: none;
             background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
             position: relative;
-        }
-        
-        .back-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 15px;
-            background-color: #95a5a6;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .back-btn:hover {
-            background-color: #7f8c8d;
         }
         
         .practice-header {
@@ -297,21 +340,24 @@
         .exercise-title {
             font-size: 1.5rem;
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         
         .full-description {
             background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
             line-height: 1.6;
+            border: 1px solid #eee;
         }
         
         .full-description img {
             max-width: 100%;
             border-radius: 8px;
-            margin: 10px 0;
-            border: 1px solid #eee;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
         
         .original-section, .translation-section {
@@ -321,23 +367,24 @@
         .english-text {
             background-color: #f8f9fa;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             white-space: pre-wrap;
             line-height: 1.8;
+            border: 1px solid #eee;
         }
         
         .current-sentence {
             font-weight: bold;
             margin: 15px 0;
-            padding: 10px;
+            padding: 12px;
             background-color: #f0f7ff;
-            border-left: 3px solid #4285f4;
-            border-radius: 0 4px 4px 0;
+            border-left: 4px solid #4285f4;
+            border-radius: 0 6px 6px 0;
         }
         
         .translation-input {
             width: 100%;
-            min-height: 100px;
+            min-height: 120px;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -345,24 +392,32 @@
             line-height: 1.6;
             margin-bottom: 15px;
             resize: vertical;
+            font-family: inherit;
+        }
+        
+        .translation-input:focus {
+            outline: none;
+            border-color: #4285f4;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
         }
         
         .translation-actions {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 20px;
         }
         
         .translation-btn {
-            padding: 10px 15px;
+            padding: 10px 18px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
         .hint-btn {
@@ -372,6 +427,7 @@
         
         .hint-btn:hover {
             background-color: #e67e22;
+            transform: translateY(-2px);
         }
         
         .submit-btn {
@@ -381,6 +437,7 @@
         
         .submit-btn:hover {
             background-color: #27ae60;
+            transform: translateY(-2px);
         }
         
         .next-btn {
@@ -390,14 +447,16 @@
         
         .next-btn:hover {
             background-color: #3367d6;
+            transform: translateY(-2px);
         }
         
         .feedback-section {
             background-color: #f8f9fa;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-top: 20px;
             display: none;
+            border: 1px solid #eee;
         }
         
         .feedback-title {
@@ -418,9 +477,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
-            padding: 10px;
+            padding: 15px 0;
         }
         
         .pagination-btn {
@@ -428,27 +487,30 @@
             background-color: #4285f4;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
         }
         
         .pagination-btn:disabled {
-            background-color: #95a5a6;
+            background-color: #bdc3c7;
             cursor: not-allowed;
+            opacity: 0.7;
         }
         
         .pagination-btn:not(:disabled):hover {
             background-color: #3367d6;
+            transform: translateY(-2px);
         }
         
         #page-info {
             font-weight: bold;
             min-width: 80px;
             text-align: center;
+            color: #2c3e50;
         }
         
         /* Phím tắt */
@@ -459,6 +521,10 @@
             margin-bottom: 15px;
             font-size: 0.9rem;
             color: #7f8c8d;
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
         
         .shortcut-hint div {
@@ -469,7 +535,7 @@
         
         .key {
             background-color: #eaeaea;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-family: monospace;
             font-weight: bold;
@@ -485,9 +551,15 @@
             border-radius: 8px;
             color: white;
             font-weight: bold;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: none;
             z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
         
         /* Loading */
@@ -517,6 +589,7 @@
             white-space: pre-wrap;
             max-height: 300px;
             overflow-y: auto;
+            display: none;
         }
         
         .debug-toggle {
@@ -540,21 +613,34 @@
         .results-summary {
             display: none;
             background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
         }
         
         .results-title {
             margin-bottom: 20px;
             text-align: center;
+            color: #2c3e50;
         }
         
         .results-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
+        }
+        
+        .original-text, .translated-text {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        
+        .original-text h3, .translated-text h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
         
         @media (max-width: 768px) {
@@ -565,6 +651,11 @@
             .task-selection {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .task-card {
+                width: 100%;
+                max-width: 400px;
             }
             
             .exercises-list {
@@ -581,24 +672,29 @@
                 <h1>Luyện Dịch IELTS</h1>
             </div>
             <p class="subtitle">Nâng cao kỹ năng dịch thuật với trí tuệ nhân tạo Gemini</p>
+            
+            <!-- Nút quản lý API -->
+            <div class="api-key-manager">
+                <button class="api-key-btn" id="api-key-btn">
+                    <i class="fas fa-key"></i> Quản lý API Key
+                </button>
+            </div>
         </header>
 
-        <div class="api-key-container">
-            <button class="api-key-toggle" id="api-key-toggle">
-                <i class="fas fa-key"></i> Mở API Key
-            </button>
-            <div class="api-key-content" id="api-key-content">
-                <label for="api-key">Gemini API Key:</label>
-                <div class="api-key-input">
-                    <input type="password" id="api-key" placeholder="Nhập API key của bạn...">
-                    <button id="save-api-key"><i class="fas fa-save"></i> Lưu</button>
-                </div>
-                <p><small>Bạn cần API key để sử dụng ứng dụng. Lấy key tại <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</small></p>
-                <div class="error-message" id="api-key-error"></div>
+        <!-- Phần cài đặt API -->
+        <div class="api-key-container" id="api-key-container">
+            <button class="close-api-btn" id="close-api-btn">&times;</button>
+            <h3><i class="fas fa-key"></i> Cài đặt Gemini API Key</h3>
+            <p>Bạn cần API key để sử dụng ứng dụng. Lấy key tại <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</p>
+            
+            <div class="api-key-input">
+                <input type="password" id="api-key" placeholder="Nhập API key của bạn...">
+                <button id="save-api-key"><i class="fas fa-save"></i> Lưu</button>
             </div>
+            <div class="error-message" id="api-key-error"></div>
         </div>
 
-        <div class="debug-panel" id="debug-panel" style="display:none;">
+        <div class="debug-panel" id="debug-panel">
             <button class="debug-toggle" id="debug-toggle">
                 <i class="fas fa-bug"></i> Hiển thị thông tin gỡ lỗi
             </button>
@@ -618,14 +714,19 @@
             </div>
         </div>
 
-        <div class="exercises-section" id="exercises-section" style="display: none;">
-            <h2 class="section-title"><i class="fas fa-list"></i> Chọn Bài Mẫu:</h2>
+        <div class="exercises-section" id="exercises-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-list"></i> Chọn Bài Mẫu:</h2>
+                <button class="back-btn" id="back-to-task-btn">
+                    <i class="fas fa-arrow-left"></i> Chọn Task khác
+                </button>
+            </div>
             <div class="exercises-list" id="exercises-list">
                 <!-- Bài tập sẽ được thêm động ở đây -->
             </div>
             
             <!-- Phần phân trang -->
-            <div class="pagination" id="pagination" style="display: none;">
+            <div class="pagination" id="pagination">
                 <button id="prev-page" class="pagination-btn">
                     <i class="fas fa-chevron-left"></i> Trang trước
                 </button>
@@ -742,10 +843,11 @@
 
     <script>
         // DOM Elements
+        const apiKeyBtn = document.getElementById('api-key-btn');
+        const apiKeyContainer = document.getElementById('api-key-container');
+        const closeApiBtn = document.getElementById('close-api-btn');
         const apiKeyInput = document.getElementById('api-key');
         const saveApiKeyBtn = document.getElementById('save-api-key');
-        const apiKeyToggle = document.getElementById('api-key-toggle');
-        const apiKeyContent = document.getElementById('api-key-content');
         const taskCards = document.querySelectorAll('.task-card');
         const exercisesSection = document.getElementById('exercises-section');
         const exercisesList = document.getElementById('exercises-list');
@@ -779,6 +881,7 @@
         const nextPageBtn = document.getElementById('next-page');
         const pageInfo = document.getElementById('page-info');
         const backBtn = document.getElementById('back-btn');
+        const backToTaskBtn = document.getElementById('back-to-task-btn');
         const taskSelection = document.getElementById('task-selection');
         
         // App State
@@ -815,11 +918,12 @@
         }
 
         // Toggle API key section
-        apiKeyToggle.addEventListener('click', () => {
-            const isExpanded = apiKeyContent.classList.toggle('expanded');
-            apiKeyToggle.innerHTML = isExpanded 
-                ? '<i class="fas fa-key"></i> Thu API Key' 
-                : '<i class="fas fa-key"></i> Mở API Key';
+        apiKeyBtn.addEventListener('click', () => {
+            apiKeyContainer.classList.toggle('visible');
+        });
+
+        closeApiBtn.addEventListener('click', () => {
+            apiKeyContainer.classList.remove('visible');
         });
 
         // Process image links in descriptions
@@ -880,6 +984,7 @@
                 localStorage.setItem('gemini_api_key', apiKey);
                 apiKeyError.style.display = 'none';
                 showNotification('API key đã được lưu thành công!', false);
+                apiKeyContainer.classList.remove('visible');
             } else {
                 apiKeyError.textContent = 'Vui lòng nhập API key hợp lệ.';
                 apiKeyError.style.display = 'block';
@@ -898,11 +1003,18 @@
             });
         });
 
-        // Back button
+        // Back button in practice section
         backBtn.addEventListener('click', () => {
             practiceSection.style.display = 'none';
             exercisesSection.style.display = 'block';
             exercisesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Back to task selection button
+        backToTaskBtn.addEventListener('click', () => {
+            exercisesSection.style.display = 'none';
+            taskSelection.style.display = 'flex';
+            taskSelection.scrollIntoView({ behavior: 'smooth' });
         });
 
         // Load exercises for selected task
