@@ -1,14 +1,16 @@
 [
-    {
-        "title": "Lợi ích của giáo dục đại học",
-        "description": "Bài luận về giá trị của giáo dục đại học [[https://i.imgur.com/ghi789.png]]",
-        "band": "8.5",
-        "englishText": "Some people argue that university education is no longer necessary in today's world. However, I strongly believe that higher education still provides significant benefits. Firstly, it equips students with specialized knowledge and skills that are valuable in the job market. Secondly, university is a place where students develop critical thinking and problem-solving abilities. Finally, the social networks formed during university years can be invaluable for future career opportunities."
-    },
-    {
-        "title": "Ảnh hưởng của toàn cầu hóa",
-        "description": "Bài luận về tác động của toàn cầu hóa [[https://i.imgur.com/jkl012.png]]",
-        "band": "9.0",
-        "englishText": "Globalization has brought about profound changes to societies around the world. On the positive side, it has facilitated cultural exchange and economic growth. However, critics argue that it has also led to the erosion of local traditions and increased inequality. In my view, while globalization is inevitable, governments should implement policies to mitigate its negative effects and ensure that its benefits are distributed more equitably."
-    }
+  {
+    "id": "1752197185786",
+    "title": "Foreign visitors should pay more than local visitors for cultural and historical attractions?",
+    "band": "8.0",
+    "description": "Foreign visitors should pay more than local visitors for cultural and historical attractions.\nTo what extent do you agree or disagree with this opinion?\n",
+    "englishText": "It is sometimes argued that tourists from overseas should be charged more than local residents to visit important sites and monuments. I completely disagree with this idea.\n\nThe argument in favour of higher prices for foreign tourists would be that cultural or historical attractions often depend on state subsidies to keep them going, which means that the resident population already pays money to these sites through the tax system. However, I believe this to be a very shortsighted view. Foreign tourists contribute to the economy of the host country with the money they spend on a wide range of goods and services, including food, souvenirs, accommodation and travel. The governments and inhabitants of every country should be happy to subsidise important tourist sites and encourage people from the rest of the world to visit them.\n\nIf travellers realised that they would have to pay more to visit historical and cultural attractions in a particular nation, they would perhaps decide not to go to that country on holiday. To take the UK as an example, the tourism industry and many related jobs rely on visitors coming to the country to see places like Windsor Castle or Saint Paul's Cathedral. These two sites charge the same price regardless of nationality, and this helps to promote the nation's cultural heritage. If overseas tourists stopped coming due to higher prices, there would be a risk of insufficient funding for the maintenance of these important buildings.\n\nIn conclusion, I believe that every effort should be made to attract tourists from overseas, and it would be counterproductive to make them pay more than local residents.\n"
+  },
+  {
+    "id": "1752197260717",
+    "title": "Families who send their children to private schools should not be required to pay taxes?",
+    "band": "8.0",
+    "description": "Families who send their children to private schools should not be required to pay taxes that support the state education system. To what extent do you agree or disagree with this statement?",
+    "englishText": "Some people believe that parents of children who attend private schools should not need to contribute to state schools through taxes. Personally, I completely disagree with this view.\n\nFor a variety of reasons, it would be wrong to reduce taxes for families who pay for private education. Firstly, it would be difficult to calculate the correct amount of tax reduction for these families, and staff would be required to manage this complex process. Secondly, we all pay a certain amount of tax for public services that we may not use. For example, most people are fortunate enough not to have to call the police or fire brigade at any time in their lives, but they would not expect a tax reduction for this. Finally, if wealthy families were given a tax discount for sending their children to private schools, we might have a situation where poorer people pay higher taxes than the rich.\n\nIn my opinion, we should all be happy to pay our share of the money that supports public schools. It is beneficial for all members of society to have a high quality education system with equal opportunities for all young people. This will result in a well-educated workforce, and in turn a more productive and prosperous nation. Parents of children in private schools may also see the advantages of this in their own lives. For example, a company owner will need well qualified and competent  staff and a well-funded education system  can provide such employees.\n\nIn conclusion, I do not believe that any financial concessions should be made for people who choose private education."
+  }
 ]
