@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Manager - Quản lý học tập & chấm điểm IELTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a2a6c, #3a7bd5);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .decorative-line {
+            height: 4px;
+            width: 80px;
+            background: #FFD700;
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+
+        .main-content {
+            padding: 50px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            transition: all 0.4s ease;
+            border: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: #3a7bd5;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .feature-description {
+            color: #555;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #1a2a6c, #3a7bd5);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(26, 42, 108, 0.3);
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #3a7bd5, #1a2a6c);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(26, 42, 108, 0.4);
+        }
+
+        .btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        footer {
+            background: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            
+            .feature-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>IELTS Manager</h1>
+                <div class="subtitle">Công cụ hỗ trợ luyện dịch & chấm điểm IELTS</div>
+                <div class="decorative-line"></div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h2 class="feature-title">Luyện dịch IELTS</h2>
+                <p class="feature-description">
+                    Dịch các bài luyện tập theo chủ đề:<br>
+                    Listening, Reading, Writing.
+                </p>
+                <a href="translateielts.html" class="btn">Bắt đầu Luyện dịch <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="feature-title">Chấm điểm IELTS</h2>
+                <p class="feature-description">
+                    Gửi bài viết, nhận phản hồi và điểm số theo thang IELTS.
+                </p>
+                <a href="checkielts.html" class="btn">Chấm điểm ngay <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="feature-title">Quản lý dữ liệu IELTS</h2>
+                <p class="feature-description">
+                    Quản lý các bài viết mẫu luyện dịch Task 1, Task 2.
+                </p>
+                <a href="ielts_manager.html" class="btn">Quản lý dữ liệu <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <p>IELTS Manager - Công cụ toàn diện giúp bạn chinh phục kỳ thi IELTS</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-info-circle"></i> Giới thiệu</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="#"><i class="fas fa-shield-alt"></i> Chính sách</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 IELTS Manager. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
