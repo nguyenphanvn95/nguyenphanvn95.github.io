@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Dịch Tiếng Anh - Gemini Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+<body>
+    <div class="container">
+      <header>
+  <div class="header-content">
+    <div class="logo">
+      <i class="fas fa-language"></i>
+      <b>Luyện Dịch Tiếng Anh</b>
+    </div>
+    <div class="nav-links">
+      <a href="https://nguyenphanvn95.github.io/Gemini/title_manager.html" class="active"><i class="fas fa-pencil-alt"></i> Luyện dịch</a>
+      <a href="https://nguyenphanvn95.github.io/Gemini/sentence_practice.html"><i class="fas fa-book"></i> Luyện viết câu</a>
+      <a href="https://nguyenphanvn95.github.io/Gemini/ai-generator-card.html"><i class="fas fa-folder-open"></i> Thẻ từ vựng</a>
+    </div>
+  </div>
+</header>
+        <button id="toggle-api-settings" class="action-btn" style="margin: 1.25rem auto; display: block;">
+  <i class="fas fa-cog"></i> Cài đặt Gemini API
+</button>
+
+<div class="api-key-container" id="api-key-container" style="display: none;">
+            <h2><i class="fas fa-key"></i> Cài đặt Gemini API</h2>
+            <div class="api-key-input">
+                <input type="password" id="api-key" placeholder="Nhập API key của bạn...">
+                <button id="save-api-key"><i class="fas fa-save"></i> Lưu</button>
+            </div>
+            <p><small>Bạn cần API key để sử dụng ứng dụng. Lấy key tại <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</small></p>
+            <div class="error-message" id="api-key-error"></div>
+        </div>
+
+        <div class="debug-panel" id="debug-panel" style="display:none;">
+            <button class="debug-toggle" id="debug-toggle">
+                <i class="fas fa-bug"></i> Hiển thị thông tin gỡ lỗi
+            </button>
+            <div class="debug-content" id="debug-content"></div>
+        </div> 
+
+        <div class="selection-section">
+            <div class="selection-card">
+                <h2><i class="fas fa-chart-line"></i> Chọn Mức Độ</h2>
+                <div class="level-options">
+                    <div class="option" data-level="beginner">
+                        <div class="option-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Beginner</h3>
+                            <p>Hoàn hảo cho người mới bắt đầu. Câu đơn giản và từ vựng cơ bản.</p>
+                            <span class="time-indicator">15-20 phút/bài</span>
+                        </div>
+                    </div>
+                    <div class="option" data-level="intermediate">
+                        <div class="option-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Intermediate</h3>
+                            <p>Cho người học sẵn sàng với câu phức tạp hơn và từ vựng đa dạng.</p>
+                            <span class="time-indicator">20-30 phút/bài</span>
+                        </div>
+                    </div>
+                    <div class="option" data-level="advanced">
+                        <div class="option-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Advanced</h3>
+                            <p>Thử thách bản thân với văn bản phức tạp và từ vựng chuyên nghiệp.</p>
+                            <span class="time-indicator">30-40 phút/bài</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="selection-card">
+                <h2><i class="fas fa-file-alt"></i> Chọn Thể Loại</h2>
+                <div class="type-options">
+                    <div class="option" data-type="emails">
+                        <div class="option-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Emails</h3>
+                            <p>Thư từ công việc và cá nhân</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="diaries">
+                        <div class="option-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Diaries</h3>
+                            <p>Suy ngẫm và trải nghiệm cá nhân</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="essays">
+                        <div class="option-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Essays</h3>
+                            <p>Bài viết học thuật và quan điểm</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="articles">
+                        <div class="option-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Articles</h3>
+                            <p>Nội dung báo chí và tạp chí</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="stories">
+                        <div class="option-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Stories</h3>
+                            <p>Truyện ngắn và tường thuật</p>
+                        </div>
+                    </div>
+                    <div class="option" data-type="reports">
+                        <div class="option-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="option-details">
+                            <h3>Reports</h3>
+                            <p>Báo cáo kinh doanh và nghiên cứu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-btn-container">
+            <button id="start-practice" class="start-btn" disabled>
+                <i class="fas fa-play"></i> Tải Bài Tập
+            </button>
+        </div>
+
+        <div class="exercises-section" id="exercises-section" style="display: none;">
+<!-- Thêm nút quay lại ở đây -->
+    <div class="start-btn-container" style="margin-bottom: 20px;">
+        <button id="back-to-selection" class="start-btn">
+            <i class="fas fa-arrow-left"></i> Quay lại
+        </button>
+    </div>
+    <h2 class="section-title"><i class="fas fa-list"></i> Chọn Bài Tập:</h2>
+    <div class="exercises-list" id="exercises-list">
+        <!-- Bài tập sẽ được thêm động ở đây -->
+    </div>
+    
+    <!--  phần phân trang -->
+    <div class="pagination" id="pagination" style="display: none;">
+        <button id="prev-page" class="pagination-btn">
+            <i class="fas fa-chevron-left"></i> Trang trước
+        </button>
+        <span id="page-info">Trang 1/1</span>
+        <button id="next-page" class="pagination-btn">
+            Trang sau <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+        <div class="practice-section" id="practice-section">
+<!-- THÊM NÚT QUAY LẠI TRONG PHẦN LUYỆN VIẾT -->
+    <div class="start-btn-container">
+        <button id="back-to-exercises" class="start-btn" style="background: linear-gradient(to right, #e74c3c, #c0392b);">
+            <i class="fas fa-arrow-left"></i> Quay lại danh sách bài tập
+        </button>
+    </div>
+            <div class="practice-header">
+                <div class="exercise-title" id="exercise-title">Đang tạo bài tập...</div>
+                <div class="exercise-meta">
+                    <div class="exercise-tag" id="exercise-level">...</div>
+                    <div class="exercise-tag" id="exercise-type">...</div>
+                </div>
+            </div>
+            
+            <div class="practice-container">
+                <div class="original-section">
+                    <h3 class="section-title"><i class="fas fa-book"></i> Bài viết mẫu:</h3>
+                    <div class="vietnamese-text" id="vietnamese-text">
+                        Đang tải nội dung...
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Câu 0/0</div>
+                
+                <div class="translation-section">
+                    <div id="current-sentence-container">
+                        <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
+                        <div class="current-sentence" id="current-sentence"></div>
+                    </div>
+                    
+                    <div class="translation-container">
+                        <h3 class="section-title"><i class="fas fa-exchange-alt"></i> Dịch sang tiếng Anh:</h3>
+                        <textarea class="translation-input" id="current-translation" placeholder="Nhập bản dịch của bạn..."></textarea>
+                        
+                        <!-- Thêm phần hiển thị phím tắt -->
+                        <div class="shortcut-hint">
+                            <div>
+                                <span class="key">H</span> Gợi ý từ khóa
+                            </div>
+                            <div>
+                                <span class="key">Enter</span> Kiểm tra
+                            </div>
+                            <div>
+                                <span class="key">Shift</span> + <span class="key">Enter</span> Câu tiếp
+                            </div>
+                            <div>
+                                <span class="key">Tab</span> Focus ô dịch
+                            </div>
+                        </div>
+                        
+                        <div class="translation-actions">
+                            <button class="translation-btn hint-btn" id="hint-btn">
+                                <i class="fas fa-lightbulb"></i> Gợi ý từ khóa
+                            </button>
+                            <button class="translation-btn submit-btn" id="submit-btn">
+                                <i class="fas fa-check"></i> Kiểm tra
+                            </button>
+                            <button class="translation-btn next-btn" id="next-btn">
+                                <i class="fas fa-arrow-right"></i> Câu tiếp
+                            </button>
+                        </div>
+                        
+                        <div class="feedback-section" id="feedback-section">
+                            <div class="feedback-title"><i class="fas fa-comment-alt"></i> Nhận xét:</div>
+                            <div class="feedback-content markdown-content" id="feedback-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overall-feedback-container" id="overall-feedback-container">
+                <h3 class="overall-title"><i class="fas fa-star"></i> Đánh Giá Tổng Thể</h3>
+                <div class="overall-feedback markdown-content" id="overall-feedback">
+                    Nhấn "Gửi đánh giá" để nhận nhận xét tổng thể từ AI về bản dịch của bạn.
+                </div>
+                <div class="overall-actions">
+                    <button class="action-btn new-exercise-btn" id="new-exercise-btn">
+                        <i class="fas fa-sync-alt"></i> Bài Tập Mới
+                    </button>
+                    <button class="action-btn submit-all-btn" id="submit-all-btn">
+                        <i class="fas fa-paper-plane"></i> Gửi Đánh Giá
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-summary" id="results-summary">
+            <h2 class="results-title">Kết Quả Tổng Hợp</h2>
+            <div class="results-content">
+                <div class="original-text">
+                    <h3>Bài viết gốc:</h3>
+                    <div id="original-summary"></div>
+                </div>
+                <div class="translated-text">
+                    <h3>Bản dịch của bạn:</h3>
+                    <div id="translation-summary"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notification" id="notification"></div>
+    </div>
+
+   <script src="gemini_practice.js"></script>
+</body>
+</html>
