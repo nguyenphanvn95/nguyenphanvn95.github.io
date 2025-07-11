@@ -9,16 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        :root {
-            --primary-color: #4285f4;
-            --secondary-color: #34a853;
-            --danger-color: #ea4335;
-            --warning-color: #fbbc05;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --border-color: #dee2e6;
-        }
-        
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,11 +17,9 @@
         }
         
         body {
-            background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+            background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
         }
         
         .container {
@@ -40,94 +28,36 @@
             padding: 20px;
         }
         
-      /* === HEADER === */
-header {
-    background: linear-gradient(120deg, #4285f4, #34a853);
-    color: white;
-    padding: 25px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.logo i {
-    font-size: 2.8rem;
-    color: white;
-}
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-.header-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: white;
-}
-.subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-.header-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-a.btn {
-    text-decoration: none;
-}
-
-/* === FOOTER === */
-footer {
-    background: linear-gradient(120deg, #2c3e50, #34495e);
-    color: white;
-    padding: 40px 20px 25px;
-    text-align: center;
-}
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.footer-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    line-height: 1.4;
-}
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-}
-.footer-links a {
-    color: #bdc3c7;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s;
-}
-.footer-links a:hover {
-    color: white;
-}
-.footer-links i {
-    font-size: 0.9em;
-}
-.footer-copyright {
-    color: #95a5a6;
-    font-size: 0.95rem;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: #4285f4;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
         
         /* Nút quản lý API */
         .api-key-manager {
@@ -389,35 +319,7 @@ footer {
             height: 20px;
             background: linear-gradient(to bottom, rgba(248, 249, 250, 0), #f8f9fa);
         }
-         .btn {
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-        }
         
-        .btn-sm {
-            padding: 8px 14px;
-            font-size: 0.9rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(120deg, #4285f4, #5b9bf8);
-            color: white;
-            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.25);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(120deg, #3b78e0, #4f8df0);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
-        }
         /* Phần luyện dịch */
         .practice-section {
             display: none;
@@ -761,51 +663,25 @@ footer {
                 grid-template-columns: 1fr;
             }
         }
-.app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-            .btn-secondary {
-            background: linear-gradient(120deg, #34a853, #48c76d);
-            color: white;
-            box-shadow: 0 3px 10px rgba(52, 168, 83, 0.25);
-        }
-        
-        .btn-secondary:hover {
-            background: linear-gradient(120deg, #2d9447, #3db35c);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.35);
-        }
     </style>
 </head>
 <body>
-    <div class="app-container">
-<header>
-    <div class="logo">
-        <i class="fas fa-language"></i>
-        <div class="logo-text">
-            <h1 class="header-title">Luyện Dịch IELTS</h1>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-language"></i>
+                <h1>Luyện Dịch IELTS</h1>
+            </div>
             <p class="subtitle">Nâng cao kỹ năng dịch thuật với trí tuệ nhân tạo Gemini</p>
-        </div>
-    </div>
-    
-    <div class="header-actions">
-        <a href="ielts_manager.html" class="btn btn-secondary">
-           <i class="fas fa-database"></i> Quản lý dữ liệu IELTS
-        </a>
-        <a href="checkielts.html" class="btn btn-secondary">
-            <i class="fas fa-check-circle"></i> Chấm điểm IELTS
-        </a>
-    </div>
-</header>
-<div class="api-key-manager">
+            
+            <!-- Nút quản lý API -->
+            <div class="api-key-manager">
                 <button class="api-key-btn" id="api-key-btn">
                     <i class="fas fa-key"></i> Quản lý API Key
                 </button>
             </div>
+        </header>
+
         <!-- Phần cài đặt API -->
         <div class="api-key-container" id="api-key-container">
             <button class="close-api-btn" id="close-api-btn">&times;</button>
@@ -964,21 +840,8 @@ footer {
         </div>
         
         <div class="notification" id="notification"></div>
- 
-<footer>
-    <div class="footer-content">
-        <p class="footer-title">IELTS Manager - Công cụ toàn diện giúp bạn chinh phục kỳ thi IELTS</p>
-        <div class="footer-links">
-            <a href="#"><i class="far fa-square"></i> Giới thiệu</a>
-            <a href="#"><i class="fas fa-check-square"></i> Liên hệ</a>
-            <a href="#"><i class="far fa-square"></i> Chính sách</a>
-        </div>
-        <p class="footer-copyright">
-            © 2025 IELTS Manager. Tất cả quyền được bảo lưu.
-        </p>
     </div>
-</footer>
-   </div>
+
     <script>
         // DOM Elements
         const apiKeyBtn = document.getElementById('api-key-btn');
