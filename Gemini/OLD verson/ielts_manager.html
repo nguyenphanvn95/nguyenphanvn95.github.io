@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Dữ Liệu IELTS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="ielts.png">
+<link rel="icon" href="ielts.png">
     <style>
         :root {
             --primary-color: #4285f4;
@@ -25,119 +25,88 @@
         }
         
         body {
-            background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+            background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
-            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
         
-        .app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* New header style */
         header {
-            background: linear-gradient(120deg, #4285f4, #34a853);
-            color: white;
-            padding: 25px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .logo {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 15px;
+            margin-bottom: 10px;
         }
         
         .logo i {
-            font-size: 2.8rem;
-            color: white;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
+            font-size: 2.5rem;
+            color: var(--primary-color);
         }
         
         h1, h2, h3, h4 {
             color: var(--dark-color);
         }
         
-        .header-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: white;
-        }
-        
         .subtitle {
+            color: #6c757d;
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .header-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
         
         /* Tab navigation */
         .nav-tabs {
             display: flex;
-            background-color: white;
-            padding: 0 20px;
             border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
         }
         
         .nav-tab {
-            padding: 15px 25px;
+            padding: 12px 20px;
             cursor: pointer;
-            border: none;
-            background: none;
-            font-weight: 500;
-            font-size: 1.05rem;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
             transition: all 0.3s;
-            position: relative;
-            color: #666;
+            font-weight: 500;
         }
         
         .nav-tab:hover {
-            color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.1);
         }
         
         .nav-tab.active {
+            background-color: white;
+            border-color: var(--border-color);
+            border-bottom-color: white;
             color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .nav-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: var(--primary-color);
         }
         
         /* Main content */
         .tab-content {
             display: none;
             background-color: white;
-            padding: 30px;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.4s ease-out;
+            animation: fadeIn 0.3s ease-out;
         }
         
         @keyframes fadeIn {
@@ -149,91 +118,80 @@
         .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
         }
         
         .data-table th, .data-table td {
-            padding: 15px 20px;
+            padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
         
         .data-table th {
-            background-color: #f5f9ff;
+            background-color: var(--light-color);
             font-weight: 600;
-            color: #4285f4;
         }
         
         .data-table tr:hover {
-            background-color: rgba(66, 133, 244, 0.03);
+            background-color: rgba(66, 133, 244, 0.05);
         }
         
         /* Buttons */
         .btn {
-            padding: 10px 18px;
+            padding: 8px 16px;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
+            gap: 6px;
         }
         
         .btn-sm {
-            padding: 8px 14px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            font-size: 0.85rem;
         }
         
         .btn-primary {
-            background: linear-gradient(120deg, #4285f4, #5b9bf8);
+            background-color: var(--primary-color);
             color: white;
-            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.25);
         }
         
         .btn-primary:hover {
-            background: linear-gradient(120deg, #3b78e0, #4f8df0);
+            background-color: #3367d6;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
         }
         
         .btn-secondary {
-            background: linear-gradient(120deg, #34a853, #48c76d);
+            background-color: var(--secondary-color);
             color: white;
-            box-shadow: 0 3px 10px rgba(52, 168, 83, 0.25);
         }
         
         .btn-secondary:hover {
-            background: linear-gradient(120deg, #2d9447, #3db35c);
+            background-color: #2d9247;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.35);
         }
         
         .btn-danger {
-            background: linear-gradient(120deg, #ea4335, #f06d62);
+            background-color: var(--danger-color);
             color: white;
-            box-shadow: 0 3px 10px rgba(234, 67, 53, 0.25);
         }
         
         .btn-danger:hover {
-            background: linear-gradient(120deg, #d33426, #e55b4f);
+            background-color: #d33426;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(234, 67, 53, 0.35);
         }
         
         .btn-warning {
-            background: linear-gradient(120deg, #fbbc05, #fcd34d);
+            background-color: var(--warning-color);
             color: #333;
-            box-shadow: 0 3px 10px rgba(251, 188, 5, 0.25);
         }
         
         .btn-warning:hover {
-            background: linear-gradient(120deg, #e6ac00, #fbc62e);
+            background-color: #e6ac00;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(251, 188, 5, 0.35);
         }
         
         .btn-light {
@@ -248,35 +206,31 @@
         
         /* Form styles */
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .form-label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 500;
-            color: #555;
         }
         
         .form-control {
             width: 100%;
-            padding: 12px 18px;
-            border: 1px solid #dbe2e8;
-            border-radius: 8px;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
             font-size: 1rem;
-            transition: all 0.3s;
-            background-color: #f9fbfd;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
-            background-color: white;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
         }
         
         textarea.form-control {
-            min-height: 140px;
+            min-height: 120px;
             resize: vertical;
         }
         
@@ -288,28 +242,28 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             overflow-y: auto;
         }
         
         .modal-content {
             background-color: white;
-            margin: 80px auto;
+            margin: 50px auto;
             max-width: 800px;
             width: 90%;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-            animation: modalFadeIn 0.4s ease-out;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s ease-out;
         }
         
         @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         .modal-header {
-            padding: 20px 25px;
+            padding: 20px;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -317,43 +271,37 @@
         }
         
         .modal-body {
-            padding: 25px;
+            padding: 20px;
         }
         
         .modal-footer {
-            padding: 20px 25px;
+            padding: 20px;
             border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: flex-end;
-            gap: 15px;
+            gap: 10px;
         }
         
         .close-btn {
             background: none;
             border: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
             color: #6c757d;
-            transition: color 0.2s;
-        }
-        
-        .close-btn:hover {
-            color: var(--danger-color);
         }
         
         /* Preview section */
         .preview-section {
-            background-color: #f8fafd;
+            background-color: var(--light-color);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 5px;
             margin-top: 20px;
-            border: 1px solid #e3eaf3;
+            border: 1px solid var(--border-color);
         }
         
         .preview-title {
             margin-bottom: 15px;
-            color: #4285f4;
-            font-weight: 600;
+            color: var(--dark-color);
         }
         
         /* File input */
@@ -363,18 +311,16 @@
         
         .file-input-label {
             display: inline-block;
-            padding: 12px 20px;
-            background: linear-gradient(120deg, #f8f9fa, #e9ecef);
-            border: 2px dashed #ced4da;
-            border-radius: 8px;
+            padding: 10px 15px;
+            background-color: var(--light-color);
+            border: 1px dashed var(--border-color);
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
-            font-weight: 500;
         }
         
         .file-input-label:hover {
-            background: linear-gradient(120deg, #e9ecef, #dee2e6);
-            border-color: #adb5bd;
+            background-color: #e9ecef;
         }
         
         .file-input {
@@ -383,13 +329,9 @@
         
         /* Alert */
         .alert {
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
         }
         
         .alert-success {
@@ -404,138 +346,66 @@
             border: 1px solid #f5c6cb;
         }
         
-        /* Footer */
-        footer {
-            background: linear-gradient(120deg, #2c3e50, #34495e);
-            color: white;
-            padding: 40px 20px 25px;
+        /* Utilities */
+        .text-center {
             text-align: center;
         }
         
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .mb-3 {
+            margin-bottom: 15px;
         }
         
-        .footer-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            line-height: 1.4;
+        .mb-4 {
+            margin-bottom: 20px;
         }
         
-        .footer-links {
+        .d-flex {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
         }
         
-        .footer-links a {
-            color: #bdc3c7;
-            text-decoration: none;
-            display: flex;
+        .justify-content-between {
+            justify-content: space-between;
+        }
+        
+        .align-items-center {
             align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
         }
         
-        .footer-links a:hover {
-            color: white;
+        .gap-2 {
+            gap: 10px;
         }
         
-        .footer-links i {
-            font-size: 0.9em;
-        }
-        
-        .footer-copyright {
-            color: #95a5a6;
-            font-size: 0.95rem;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .gap-3 {
+            gap: 15px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            header {
-                padding: 20px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-            
-            .header-actions {
-                width: 100%;
-                flex-direction: column;
-            }
-            
             .nav-tabs {
-                overflow-x: auto;
-                padding: 0;
+                flex-direction: column;
             }
             
             .nav-tab {
-                padding: 15px 20px;
-                white-space: nowrap;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid var(--border-color);
             }
             
-            .tab-content {
-                padding: 20px;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
+            .data-table {
+                display: block;
+                overflow-x: auto;
             }
         }
-        
-        /* Card styles */
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            margin-bottom: 25px;
-        }
-        
-        .card-body {
-            padding: 25px;
-        }
-        
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        
-        .col-md-6 {
-            flex: 1 1 calc(50% - 25px);
-            min-width: 300px;
-        }
-a {
-    text-decoration: none;
-}
     </style>
 </head>
 <body>
-    <div class="app-container">
+    <div class="container">
         <header>
             <div class="logo">
                 <i class="fas fa-database"></i>
-                <div class="logo-text">
-                    <h1 class="header-title">Quản Lý Dữ Liệu IELTS</h1>
-                    <p class="subtitle">Quản lý, chỉnh sửa và xuất nhập dữ liệu bài tập IELTS</p>
-                </div>
+                <h1>Quản Lý Dữ Liệu IELTS</h1>
             </div>
-            
-            <div class="header-actions">
-                
-                    <a href="translateielts.html" class="btn btn-secondary"><i class="fas fa-language"></i> Bắt đầu Luyện dịch</a>
-                    <a href="checkielts.html" class="btn btn-secondary"><i class="fas fa-check-circle"></i> Chấm điểm ngay</a>
-            </div>
+            <p class="subtitle">Quản lý, chỉnh sửa và xuất nhập dữ liệu bài tập IELTS</p>
         </header>
 
         <div class="nav-tabs">
@@ -596,7 +466,7 @@ a {
         <div class="tab-content" id="import-export-content">
             <h3 class="mb-4">Nhập/Xuất dữ liệu</h3>
             
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -705,19 +575,6 @@ a {
                 </div>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <p class="footer-title">IELTS Manager - Công cụ toàn diện giúp bạn chinh phục kỳ thi IELTS</p>
-                <div class="footer-links">
-                    <a href="#"><i class="far fa-square"></i> Giới thiệu</a>
-                    <a href="#"><i class="fas fa-check-square"></i> Liên hệ</a>
-                    <a href="#"><i class="far fa-square"></i> Chính sách</a>
-                </div>
-                <p class="footer-copyright">© 2025 IELTS Manager. Tất cả quyền được bảo lưu.</p>
-            </div>
-        </footer>
     </div>
 
     <script>
@@ -775,45 +632,13 @@ a {
             if (savedTask1) {
                 currentData.task1 = JSON.parse(savedTask1);
             } else {
-                // Sample data for demonstration
-                currentData.task1 = [
-                    {
-                        id: '1',
-                        title: 'Biểu đồ dân số từ 1990-2020',
-                        band: '7.0',
-                        description: 'Phân tích biểu đồ dân số tại các khu vực châu Á',
-                        englishText: 'The chart illustrates population growth in Asia from 1990 to 2020...'
-                    },
-                    {
-                        id: '2',
-                        title: 'Quy trình sản xuất giấy',
-                        band: '6.5',
-                        description: 'Mô tả quy trình sản xuất giấy từ gỗ',
-                        englishText: 'The diagram shows how paper is manufactured from wood...'
-                    }
-                ];
+                currentData.task1 = [];
             }
             
             if (savedTask2) {
                 currentData.task2 = JSON.parse(savedTask2);
             } else {
-                // Sample data for demonstration
-                currentData.task2 = [
-                    {
-                        id: '1',
-                        title: 'Lợi ích của giáo dục đại học',
-                        band: '8.0',
-                        description: 'Thảo luận về giá trị của giáo dục đại học trong xã hội hiện đại',
-                        englishText: 'Higher education has long been considered a gateway to better career opportunities...'
-                    },
-                    {
-                        id: '2',
-                        title: 'Ảnh hưởng của mạng xã hội',
-                        band: '7.5',
-                        description: 'Phân tích tác động tích cực và tiêu cực của mạng xã hội',
-                        englishText: 'Social media has revolutionized the way we communicate and access information...'
-                    }
-                ];
+                currentData.task2 = [];
             }
             
             renderTables();
@@ -850,7 +675,7 @@ a {
                 
                 row.innerHTML = `
                     <td>${exercise.title}</td>
-                    <td><span class="badge" style="background: #e3f2fd; color: #1976d2; padding: 5px 10px; border-radius: 20px; font-weight: 600;">${exercise.band}</span></td>
+                    <td>${exercise.band}</td>
                     <td>${shortDescription}</td>
                     <td>
                         <button class="btn btn-sm btn-warning edit-btn" data-index="${index}">
