@@ -284,7 +284,7 @@ async function generateSentences(level, category) {
     
     Yêu cầu:
     - Mỗi câu phải phù hợp với mức độ ${level} và chủ đề ${category}
-    - Các câu phải đa dạng 6-8 từ, không trùng lặp, không bắt đầu với Tôi...
+    - Các câu phải đa dạng, không trùng lặp, không bắt đầu với Tôi...
     - Trả về kết quả dưới dạng mảng JSON với cấu trúc: [{"vi": "Câu tiếng Việt 1"}, {"vi": "Câu tiếng Việt 2"}, ...]
     - Chỉ trả về mảng JSON, không có bất kỳ văn bản nào khác`;
     
