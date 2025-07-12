@@ -280,11 +280,11 @@ async function generateSentences(level, category) {
         'advanced': 'phức tạp, sử dụng từ vựng nâng cao và cấu trúc ngữ pháp phức tạp'
     }[level] || 'đơn giản, ngắn gọn';
     
-    const prompt = `Bạn là một giáo viên dạy tiếng Anh. Hãy tạo 10 câu tiếng Việt thuộc chủ đề "${getCategoryName(category)}" với mức độ ${levelDescription}.
+    const prompt = `Bạn là một giáo viên dạy tiếng Anh. Hãy tạo 20 câu tiếng Việt thuộc chủ đề "${getCategoryName(category)}" với mức độ ${levelDescription}.
     
     Yêu cầu:
     - Mỗi câu phải phù hợp với mức độ ${level} và chủ đề ${category}
-    - Các câu phải đa dạng, không trùng lặp, không bắt đầu với Tôi...
+    - Các câu phải đa dạng 6-8 từ, không trùng lặp, không bắt đầu với Tôi...
     - Trả về kết quả dưới dạng mảng JSON với cấu trúc: [{"vi": "Câu tiếng Việt 1"}, {"vi": "Câu tiếng Việt 2"}, ...]
     - Chỉ trả về mảng JSON, không có bất kỳ văn bản nào khác`;
     
