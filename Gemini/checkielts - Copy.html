@@ -324,73 +324,47 @@
             font-size: 1rem;
         }
         
-        /* Cải tiến hiển thị từ vựng */
         .vocabulary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
             transition: opacity 0.3s ease;
+        }
+        
+        .vocabulary-grid.hidden {
+            display: none;
         }
         
         .vocab-card {
             background: #f8fafd;
-            border-radius: 10px;
-            padding: 14px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
             border-left: 4px solid var(--secondary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            min-height: 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         
-        .vocab-card.compact {
-            min-height: 70px;
-            padding: 12px;
+        .vocab-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-color);
         }
         
-        .vocab-card.compact .vocab-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
         }
         
-        .vocab-card.compact .vocab-word {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .vocab-card h4 {
             color: var(--primary-color);
-            line-height: 1.3;
-        }
-        
-        .vocab-card.compact .vocab-pos {
-            font-size: 0.85rem;
-            color: #5f6368;
-            font-style: italic;
-            background: rgba(0, 0, 0, 0.05);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        
-        .vocab-card.compact .vocab-meaning {
-            font-size: 0.9rem;
-            color: var(--dark-color);
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .vocabulary-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
+            margin-bottom: 8px;
+            font-size: 1.15rem;
         }
         
         .pos {
@@ -1055,7 +1029,7 @@ Hãy trả lời dưới dạng HTML đẹp mắt để hiển thị trên web.`
         async function generateVocabularyWithGemini(apiKey, topic) {
             try {
                 // Tạo prompt cho Gemini
-                const prompt = `Hãy cung cấp một danh sách 10 từ vựng học thuật liên quan đến chủ đề "${topic}" cho bài thi IELTS. 
+                const prompt = `Hãy cung cấp một danh sách 8 từ vựng học thuật liên quan đến chủ đề "${topic}" cho bài thi IELTS. 
 Mỗi từ vựng cần bao gồm: 
 - Từ vựng (tiếng Anh)
 - Loại từ (viết tắt: n, v, adj, adv)
@@ -1137,7 +1111,7 @@ Trả lời theo định dạng JSON như sau:
                 vocabHTML += `
                     <div class="vocab-card">
                         <h4>${item.word}</h4>
-                        <div class="pos" style ="display:none">${getFullPOS(item.pos)}</div>
+                        <div class="pos">${getFullPOS(item.pos)}</div>
                         <div class="meaning">${item.meaning}</div>
                     </div>
                 `;
