@@ -418,6 +418,17 @@ footer {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
         }
+/* THÊM VÀO PHẦN STYLE */
+.overall-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.overall-actions .btn {
+    flex: 1;
+    text-align: center;
+}
         /* Phần luyện dịch */
         .practice-section {
             display: none;
@@ -1056,13 +1067,13 @@ footer {
                     Nhấn "Gửi đánh giá" để nhận nhận xét tổng thể từ AI về bản dịch của bạn.
                 </div>
                 <div class="overall-actions">
-                    <button class="action-btn new-exercise-btn" id="new-exercise-btn">
-                        <i class="fas fa-sync-alt"></i> Bài Tập Mới
-                    </button>
-                    <button class="action-btn submit-all-btn" id="submit-all-btn">
-                        <i class="fas fa-paper-plane"></i> Gửi Đánh Giá
-                    </button>
-                </div>
+    <button class="btn btn-secondary action-btn new-exercise-btn" id="new-exercise-btn">
+        <i class="fas fa-sync-alt"></i> Bài Tập Mới
+    </button>
+    <button class="btn btn-primary action-btn submit-all-btn" id="submit-all-btn">
+        <i class="fas fa-paper-plane"></i> Gửi Đánh Giá
+    </button>
+</div>
             </div>
         </div>
 
