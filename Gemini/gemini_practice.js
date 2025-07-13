@@ -352,8 +352,8 @@
             feedbackSection.style.display = 'none';
             feedbackContentEl.innerHTML = '';
             // Thay đổi cách highlight câu
-    vietnameseTextEl.textContent = currentText;
-    currentSentenceEl.textContent = sentence;
+   // vietnameseTextEl.textContent = currentText;
+  //  currentSentenceEl.textContent = sentence;
             // Update progress
             const progressPercent = ((currentSentenceIndex + 1) / sentences.length) * 100;
             progressBar.style.width = `${progressPercent}%`;
