@@ -1097,3 +1097,45 @@ header {
         min-height: 200px;
     }
 }
+
+/* Thêm vào cuối file CSS */
+
+/* Highlight câu đang dịch trong bài viết mẫu */
+.vietnamese-text .current-sentence {
+    background-color: #fff3cd !important;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #d35400;
+    border: 1px solid #ffc107;
+}
+
+/* Hiệu ứng khi di chuột qua câu */
+.vietnamese-text .current-sentence:hover {
+    background-color: #ffecb3 !important;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* Làm nổi bật hơn phần câu đang dịch riêng */
+#current-sentence-container {
+    background: #e8f4fc;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#current-sentence {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #2c3e50;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 6px;
+}
