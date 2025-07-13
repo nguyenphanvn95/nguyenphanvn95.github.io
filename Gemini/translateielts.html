@@ -859,6 +859,12 @@ footer {
         min-height: 200px;
     }
 }
+
+/* SỬA LẠI PHẦN NÀY */
+#progress-section {
+    display: block; /* Thay đổi từ none thành block */
+    margin-bottom: 15px;
+}
     </style>
 </head>
 <body>
@@ -972,10 +978,12 @@ footer {
     
     <!-- Cột phải: Câu đang dịch + Dịch + Feedback -->
     <div class="right-column">
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
-        </div>
-        <div class="progress-text" id="progress-text">Câu 0/0</div>
+        <div id="progress-section">
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+    </div>
+    <div class="progress-text" id="progress-text">Câu 0/0</div>
+</div>
         
         <div id="current-sentence-container" style="display:none;">
             <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
@@ -1341,7 +1349,8 @@ footer {
             exerciseTitle.textContent = exercise.title;
             exerciseTask.textContent = selectedTask.toUpperCase();
             exerciseBand.textContent = `Band ${exercise.band}`;
-            
+            document.getElementById('progress-section').style.display = 'block';
+            updateProgress(); // Gọi hàm cập nhật tiến trình
             try {
                 // Process full description with images
                 const processedDescription = processImageLinks(exercise.description);
@@ -1381,7 +1390,13 @@ footer {
                 logDebugInfo("Lỗi tạo nội dung bài tập", error.message);
             }
         }
-
+function updateProgress() {
+    const progressText = `Câu ${currentSentenceIndex + 1}/${sentences.length}`;
+    document.getElementById('progress-text').textContent = progressText;
+    
+    const progressPercent = ((currentSentenceIndex + 1) / sentences.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+}
         // Display current sentence
         function displayCurrentSentence() {
             // Highlight current sentence in the text
@@ -1402,7 +1417,7 @@ footer {
             // Clear feedback
             feedbackSection.style.display = 'none';
             feedbackContentEl.innerHTML = '';
-            
+            updateProgress();
             // Scroll to current sentence
             const currentSentenceElement = englishTextEl.querySelector('.current-sentence');
             if (currentSentenceElement) {
