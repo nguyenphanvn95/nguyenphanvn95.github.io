@@ -810,94 +810,61 @@ a {
         let exerciseToDelete = null;
 
         // Initialize
-        document.addEventListener('DOMContentLoaded', async () => {
-            await loadData();
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
             setupEventListeners();
-            renderTables();
         });
 
-        // Load data from JSON files
-        async function loadData() {
-            try {
-                // Load Task 1 data
-                const task1Response = await fetch('task1Data.json');
-                if (task1Response.ok) {
-                    currentData.task1 = await task1Response.json();
-                    localStorage.setItem('ielts_task1_data', JSON.stringify(currentData.task1));
-                } else {
-                    throw new Error('Không tìm thấy file task1Data.json');
-                }
-                
-                // Load Task 2 data
-                const task2Response = await fetch('task2Data.json');
-                if (task2Response.ok) {
-                    currentData.task2 = await task2Response.json();
-                    localStorage.setItem('ielts_task2_data', JSON.stringify(currentData.task2));
-                } else {
-                    throw new Error('Không tìm thấy file task2Data.json');
-                }
-            } catch (error) {
-                console.warn('Lỗi khi tải dữ liệu:', error.message, 'Sử dụng dữ liệu từ localStorage');
-                
-                // Fallback to localStorage if available
-                const savedTask1 = localStorage.getItem('ielts_task1_data');
-                const savedTask2 = localStorage.getItem('ielts_task2_data');
-                
-                if (savedTask1) {
-                    currentData.task1 = JSON.parse(savedTask1);
-                } else {
-                    // Sample data for demonstration
-                    currentData.task1 = getSampleTask1Data();
-                }
-                
-                if (savedTask2) {
-                    currentData.task2 = JSON.parse(savedTask2);
-                } else {
-                    // Sample data for demonstration
-                    currentData.task2 = getSampleTask2Data();
-                }
+        // Load data from localStorage
+        function loadData() {
+            const savedTask1 = localStorage.getItem('ielts_task1_data');
+            const savedTask2 = localStorage.getItem('ielts_task2_data');
+            
+            if (savedTask1) {
+                currentData.task1 = JSON.parse(savedTask1);
+            } else {
+                // Sample data for demonstration
+                currentData.task1 = [
+                    {
+                        id: '1',
+                        title: 'Biểu đồ dân số từ 1990-2020',
+                        band: '7.0',
+                        description: 'Phân tích biểu đồ dân số tại các khu vực châu Á',
+                        englishText: 'The chart illustrates population growth in Asia from 1990 to 2020...'
+                    },
+                    {
+                        id: '2',
+                        title: 'Quy trình sản xuất giấy',
+                        band: '6.5',
+                        description: 'Mô tả quy trình sản xuất giấy từ gỗ',
+                        englishText: 'The diagram shows how paper is manufactured from wood...'
+                    }
+                ];
             }
             
-            // Save to localStorage for future use
-            saveData();
-        }
-
-        function getSampleTask1Data() {
-            return [
-                {
-                    id: '1',
-                    title: 'Biểu đồ dân số từ 1990-2020',
-                    band: '7.0',
-                    description: 'Phân tích biểu đồ dân số tại các khu vực châu Á',
-                    englishText: 'The chart illustrates population growth in Asia from 1990 to 2020...'
-                },
-                {
-                    id: '2',
-                    title: 'Quy trình sản xuất giấy',
-                    band: '6.5',
-                    description: 'Mô tả quy trình sản xuất giấy từ gỗ',
-                    englishText: 'The diagram shows how paper is manufactured from wood...'
-                }
-            ];
-        }
-
-        function getSampleTask2Data() {
-            return [
-                {
-                    id: '1',
-                    title: 'Lợi ích của giáo dục đại học',
-                    band: '8.0',
-                    description: 'Thảo luận về giá trị của giáo dục đại học trong xã hội hiện đại',
-                    englishText: 'Higher education has long been considered a gateway to better career opportunities...'
-                },
-                {
-                    id: '2',
-                    title: 'Ảnh hưởng của mạng xã hội',
-                    band: '7.5',
-                    description: 'Phân tích tác động tích cực và tiêu cực của mạng xã hội',
-                    englishText: 'Social media has revolutionized the way we communicate and access information...'
-                }
-            ];
+            if (savedTask2) {
+                currentData.task2 = JSON.parse(savedTask2);
+            } else {
+                // Sample data for demonstration
+                currentData.task2 = [
+                    {
+                        id: '1',
+                        title: 'Lợi ích của giáo dục đại học',
+                        band: '8.0',
+                        description: 'Thảo luận về giá trị của giáo dục đại học trong xã hội hiện đại',
+                        englishText: 'Higher education has long been considered a gateway to better career opportunities...'
+                    },
+                    {
+                        id: '2',
+                        title: 'Ảnh hưởng của mạng xã hội',
+                        band: '7.5',
+                        description: 'Phân tích tác động tích cực và tiêu cực của mạng xã hội',
+                        englishText: 'Social media has revolutionized the way we communicate and access information...'
+                    }
+                ];
+            }
+            
+            renderTables();
         }
 
         // Save data to localStorage
