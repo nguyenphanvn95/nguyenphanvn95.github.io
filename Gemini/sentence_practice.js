@@ -327,7 +327,7 @@ async function generateSentences(level, category) {
         console.error('Error parsing generated sentences:', e);
         // Fallback sentences if parsing fails
         return [
-            { vi: "Xin chào, hôm nay bạn thế nào?" },
+            { vi: "Chào buổi sáng, hôm nay bạn thế nào?" },
             { vi: "Bạn có thể giúp tôi một chút được không?" },
             { vi: "Tôi muốn học tiếng Anh để đi du lịch." },
             { vi: "Thời tiết hôm nay thật đẹp phải không?" },
