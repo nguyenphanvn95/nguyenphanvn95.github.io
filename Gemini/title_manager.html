@@ -746,7 +746,7 @@ copyright {
     
     <script>
         // Dữ liệu mẫu ban đầu rỗng với 2 thể loại mới
-        const exerciseDataold = {
+        const exerciseData = {
             "beginner": {
                 "emails": [],
                 "essays": [],
@@ -866,12 +866,6 @@ async function initApp() {
     setupEventListeners();
     updateStats();
 }
-        // Khởi tạo ứng dụng
-        function initApp() {
-            renderArticles();
-            setupEventListeners();
-            updateStats();
-        }
 
         // Render danh sách bài viết
         function renderArticles(level = 'all', type = 'all', searchTerm = '') {
