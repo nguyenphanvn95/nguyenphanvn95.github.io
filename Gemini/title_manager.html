@@ -423,6 +423,75 @@
             font-style: italic;
         }
     </style>
+<!-- Thêm vào phần CSS -->
+<style>
+    /* Thêm vào phần CSS hiện có */
+    .search-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .search-results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 300px;
+        overflow-y: auto;
+        background: white;
+        border: 1px solid #e0e6ed;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 100;
+        display: none;
+    }
+    
+    .search-result-item {
+        padding: 10px 15px;
+        border-bottom: 1px solid #f0f4f8;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    
+    .search-result-item:hover {
+        background: #f7fafc;
+    }
+    
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+    
+    .search-result-title {
+        font-weight: 500;
+        color: #2d3748;
+    }
+    
+    .search-result-info {
+        font-size: 12px;
+        color: #718096;
+        margin-top: 3px;
+    }
+    
+    .search-result-level {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-size: 11px;
+        margin-right: 5px;
+    }
+    
+    .search-result-type {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+    
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -476,10 +545,14 @@
                     </select>
                 </div>
                 
-                <div class="filter-group">
-                    <label for="search">Tìm kiếm</label>
-                    <input type="text" id="search" placeholder="Nhập từ khóa...">
-                </div>
+                <!-- Thay đổi phần search input trong controls -->
+<div class="filter-group search-container">
+    <label for="search">Tìm kiếm tiêu đề</label>
+    <input type="text" id="search" placeholder="Nhập từ khóa...">
+    <div class="search-results" id="search-results"></div>
+</div>
+
+
                 
                 <div class="button-group">
                     <button class="btn-success" id="add-article-btn">
@@ -1045,63 +1118,195 @@
             reader.readAsText(file);
         }
 
-        // Xác nhận nhập dữ liệu
-        function confirmImport() {
-            if (!currentImportedData) {
-                alert('Không có dữ liệu hợp lệ để nhập');
-                return;
+       // Thay thế hàm confirmImport hiện tại bằng hàm mới này
+function confirmImport() {
+    if (!currentImportedData) {
+        alert('Không có dữ liệu hợp lệ để nhập');
+        return;
+    }
+    
+    try {
+        // Kiểm tra cấu trúc dữ liệu cơ bản
+        if (!currentImportedData.beginner || !currentImportedData.intermediate || !currentImportedData.advanced) {
+            alert('Dữ liệu không đúng định dạng. Vui lòng kiểm tra lại.');
+            return;
+        }
+        
+        // Đảm bảo tất cả các thể loại đều có trong dữ liệu nhập
+        const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "articles"];
+        const allLevels = ["beginner", "intermediate", "advanced"];
+        
+        // Tạo bản sao của dữ liệu hiện tại để kiểm tra ID
+        const existingIds = new Set();
+        allLevels.forEach(level => {
+            allTypes.forEach(type => {
+                exerciseData[level][type].forEach(article => {
+                    existingIds.add(article.id);
+                });
+            });
+        });
+        
+        // Xử lý từng bài viết trong dữ liệu nhập
+        allLevels.forEach(level => {
+            if (!currentImportedData[level]) {
+                currentImportedData[level] = {};
             }
             
-            try {
-                // Kiểm tra cấu trúc dữ liệu cơ bản
-                if (!currentImportedData.beginner || !currentImportedData.intermediate || !currentImportedData.advanced) {
-                    alert('Dữ liệu không đúng định dạng. Vui lòng kiểm tra lại.');
-                    return;
+            allTypes.forEach(type => {
+                if (!currentImportedData[level][type]) {
+                    currentImportedData[level][type] = [];
                 }
                 
-                // Đảm bảo tất cả các thể loại đều có trong dữ liệu nhập
-                const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "article"];
-                const allLevels = ["beginner", "intermediate", "advanced"];
-                
-                allLevels.forEach(level => {
-                    if (!currentImportedData[level]) {
-                        currentImportedData[level] = {};
-                    }
+                // Tạo ID mới cho từng bài viết nhập
+                const importedArticles = currentImportedData[level][type];
+                for (let i = 0; i < importedArticles.length; i++) {
+                    const article = importedArticles[i];
                     
-                    allTypes.forEach(type => {
-                        if (!currentImportedData[level][type]) {
-                            currentImportedData[level][type] = [];
+                    // Tạo ID mới duy nhất
+                    let newId;
+                    let attempt = 0;
+                    do {
+                        attempt++;
+                        // Tạo ID theo định dạng: type_level_timestamp_random
+                        const timestamp = Date.now();
+                        const random = Math.floor(Math.random() * 1000);
+                        newId = `${type}_${level}_${timestamp}_${random}`;
+                        
+                        // Nếu sau 5 lần vẫn trùng, thử cách khác
+                        if (attempt > 5) {
+                            newId = `${type}_${level}_${timestamp}_${i}_${random}`;
                         }
-                    });
-                });
-                
-                // Cập nhật dữ liệu
-                Object.keys(currentImportedData).forEach(level => {
-                    if (exerciseData[level]) {
-                        Object.keys(currentImportedData[level]).forEach(type => {
-                            if (exerciseData[level][type]) {
-                                exerciseData[level][type] = [...currentImportedData[level][type]];
-                            }
-                        });
-                    }
-                });
-                
-                // Render lại danh sách
-                renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
-                
-                alert('Nhập dữ liệu thành công!');
-                importModal.style.display = 'none';
-                currentImportedData = null;
-                jsonUpload.value = '';
-                importPreview.textContent = '';
-            } catch (error) {
-                alert('Lỗi khi nhập dữ liệu: ' + error.message);
-            }
-        }
+                    } while (existingIds.has(newId));
+                    
+                    // Thêm ID mới vào tập hợp ID hiện có
+                    existingIds.add(newId);
+                    
+                    // Cập nhật ID mới cho bài viết
+                    article.id = newId;
+                    
+                    // Thêm bài viết vào dữ liệu hiện tại
+                    exerciseData[level][type].push(article);
+                }
+            });
+        });
+        
+        // Render lại danh sách
+        renderArticles(levelFilter.value, typeFilter.value, searchInput.value);
+        
+        alert(`Nhập dữ liệu thành công! Đã thêm ${countImportedArticles(currentImportedData)} bài viết mới.`);
+        importModal.style.display = 'none';
+        currentImportedData = null;
+        jsonUpload.value = '';
+        importPreview.textContent = '';
+    } catch (error) {
+        alert('Lỗi khi nhập dữ liệu: ' + error.message);
+        console.error(error);
+    }
+}
 
+// Hàm đếm tổng số bài viết trong dữ liệu nhập
+function countImportedArticles(data) {
+    let count = 0;
+    const allLevels = ["beginner", "intermediate", "advanced"];
+    const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "articles"];
+    
+    allLevels.forEach(level => {
+        allTypes.forEach(type => {
+            if (data[level] && data[level][type]) {
+                count += data[level][type].length;
+            }
+        });
+    });
+    
+    return count;
+}
         // Khởi động ứng dụng
         document.addEventListener('DOMContentLoaded', initApp);
     </script>
+<!-- Thêm vào phần JavaScript -->
+<script>
+    // Thêm vào phần setupEventListeners()
+    searchInput.addEventListener('input', handleSearchInput);
+    
+    // Thêm hàm xử lý tìm kiếm
+    function handleSearchInput() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
+        
+        if (searchTerm.length === 0) {
+            resultsContainer.style.display = 'none';
+            return;
+        }
+        
+        // Tìm kiếm tất cả bài viết
+        const allResults = [];
+        
+        for (const [level, types] of Object.entries(exerciseData)) {
+            for (const [type, articles] of Object.entries(types)) {
+                for (const article of articles) {
+                    if (article.title.toLowerCase().includes(searchTerm)) {
+                        allResults.push({
+                            level,
+                            type,
+                            article
+                        });
+                    }
+                }
+            }
+        }
+        
+        // Hiển thị kết quả
+        if (allResults.length > 0) {
+            resultsContainer.innerHTML = '';
+            
+            allResults.forEach(result => {
+                const { level, type, article } = result;
+                
+                // Highlight từ khóa trong tiêu đề
+                const titleLower = article.title.toLowerCase();
+                const searchTermLower = searchTerm.toLowerCase();
+                let highlightedTitle = article.title;
+                
+                if (searchTermLower.length > 0) {
+                    const regex = new RegExp(searchTermLower, 'gi');
+                    highlightedTitle = article.title.replace(regex, match => 
+                        `<span class="highlight">${match}</span>`
+                    );
+                }
+                
+                const resultElement = document.createElement('div');
+                resultElement.className = 'search-result-item';
+                resultElement.innerHTML = `
+                    <div class="search-result-title">${highlightedTitle}</div>
+                    <div class="search-result-info">
+                        <span class="search-result-level ${level}">${levelNames[level]}</span>
+                        <span class="search-result-type ${type}">${typeNames[type]}</span>
+                    </div>
+                `;
+                
+                // Khi click vào kết quả, hiển thị bài viết tương ứng
+                resultElement.addEventListener('click', () => {
+                    editArticle(level, type, article.id);
+                    resultsContainer.style.display = 'none';
+                });
+                
+                resultsContainer.appendChild(resultElement);
+            });
+            
+            resultsContainer.style.display = 'block';
+        } else {
+            resultsContainer.innerHTML = '<div class="search-result-item">Không tìm thấy kết quả</div>';
+            resultsContainer.style.display = 'block';
+        }
+    }
+    
+    // Ẩn kết quả tìm kiếm khi click ra ngoài
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-container')) {
+            document.getElementById('search-results').style.display = 'none';
+        }
+    });
+</script>
 <!-- Gemini Chat Bubble -->
     <div id="gemini-bubble-container">
         <div id="gemini-icon">
