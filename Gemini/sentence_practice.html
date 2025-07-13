@@ -8,6 +8,75 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="style_sentence.css"> 
     <link rel="icon" href="icon.png">
+<style>
+footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 1.1rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+footer.footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-content p {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.footer-links i {
+    font-size: 1.2rem;
+}
+
+copyright {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+</style>
 </head>
 <body>
     <!-- Header -->
@@ -207,6 +276,19 @@
                 </div>
             </div>
         </div>
+<footer class ="footer">
+            <div class="footer-content">
+                <p>Học, học nữa, học mãi - V.I. Lenin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
     </div>
 <!-- Gemini Chat Bubble -->
     <div id="gemini-bubble-container">

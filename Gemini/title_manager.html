@@ -422,6 +422,73 @@
             color: #718096;
             font-style: italic;
         }
+footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 1.1rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+footer.footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-content p {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.footer-links i {
+    font-size: 1.2rem;
+}
+
+copyright {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
     </style>
 <!-- Thêm vào phần CSS -->
 <style>
@@ -662,8 +729,18 @@
             </div>
         </div>
         
-        <footer>
-            <p>Ứng dụng Quản lý Bài viết &copy; 2025 - Chạy hoàn toàn trên trình duyệt</p>
+        <footer class ="footer">
+            <div class="footer-content">
+                <p>Học, học nữa, học mãi - V.I. Lenin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
         </footer>
     </div>
     
@@ -747,7 +824,48 @@
         const bulkInput = document.getElementById('bulk-input');
         const articleTitlesBulk = document.getElementById('article-titles-bulk');
         const bulkCount = document.getElementById('bulk-count');
+// Hàm load dữ liệu từ file JSON
+async function loadInitialData() {
+    try {
+        const response = await fetch('exerciseData.json');
+        if (!response.ok) {
+            throw new Error('Không thể tải file dữ liệu');
+        }
+        const data = await response.json();
+        
+        // Kiểm tra cấu trúc dữ liệu
+        if (!data.beginner || !data.intermediate || !data.advanced) {
+            console.warn('File dữ liệu không đúng định dạng, sử dụng dữ liệu mẫu');
+            return;
+        }
+        
+        // Đảm bảo tất cả các thể loại đều tồn tại
+        const allTypes = ["emails", "essays", "reports", "summaries", "stories", "diaries", "articles"];
+        const allLevels = ["beginner", "intermediate", "advanced"];
+        
+        allLevels.forEach(level => {
+            if (!data[level]) data[level] = {};
+            allTypes.forEach(type => {
+                if (!data[level][type]) data[level][type] = [];
+            });
+        });
+        
+        // Gán dữ liệu đã load vào exerciseData
+        Object.assign(exerciseData, data);
+        
+        console.log('Đã tải dữ liệu từ exerciseData.json');
+    } catch (error) {
+        console.warn('Lỗi khi tải dữ liệu:', error.message, 'Sử dụng dữ liệu mẫu');
+    }
+}
 
+// Sửa hàm initApp thành async
+async function initApp() {
+    await loadInitialData();
+    renderArticles();
+    setupEventListeners();
+    updateStats();
+}
         // Khởi tạo ứng dụng
         function initApp() {
             renderArticles();
@@ -1220,8 +1338,8 @@ function countImportedArticles(data) {
     
     return count;
 }
-        // Khởi động ứng dụng
-        document.addEventListener('DOMContentLoaded', initApp);
+        // Sửa phần khởi động ứng dụng
+document.addEventListener('DOMContentLoaded', initApp);
     </script>
 <!-- Thêm vào phần JavaScript -->
 <script>
