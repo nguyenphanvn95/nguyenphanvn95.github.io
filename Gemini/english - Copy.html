@@ -189,68 +189,64 @@
                 </div>
             </div>
             
-           <div class="practice-container">
-    <!-- Cột trái: Bài viết mẫu + Câu hiện tại -->
-    <div class="left-column">
-        <div class="original-section">
-            <h3 class="section-title"><i class="fas fa-book"></i> Bài viết mẫu:</h3>
-            <div class="vietnamese-text" id="vietnamese-text">
-                Đang tải nội dung...
-            </div>
-        </div>
-        
-        <div id="current-sentence-container">
-            <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
-            <div class="current-sentence" id="current-sentence"></div>
-        </div>
-    </div>
-    
-    <!-- Cột phải: Dịch + Feedback -->
-    <div class="right-column">
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
-        </div>
-        <div class="progress-text" id="progress-text">Câu 0/0</div>
-        
-        <div class="translation-container">
-            <h3 class="section-title"><i class="fas fa-exchange-alt"></i> Dịch sang tiếng Anh:</h3>
-            <textarea class="translation-input" id="current-translation" placeholder="Nhập bản dịch của bạn..."></textarea>
-            
-            <!-- Thêm phần hiển thị phím tắt -->
-            <div class="shortcut-hint">
-                <div>
-                    <span class="key">H</span> Gợi ý từ khóa
+            <div class="practice-container">
+                <div class="original-section">
+                    <h3 class="section-title"><i class="fas fa-book"></i> Bài viết mẫu:</h3>
+                    <div class="vietnamese-text" id="vietnamese-text">
+                        Đang tải nội dung...
+                    </div>
                 </div>
-                <div>
-                    <span class="key">Enter</span> Kiểm tra
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
                 </div>
-                <div>
-                    <span class="key">Shift</span> + <span class="key">Enter</span> Câu tiếp
-                </div>
-                <div>
-                    <span class="key">Tab</span> Focus ô dịch
+                <div class="progress-text" id="progress-text">Câu 0/0</div>
+                
+                <div class="translation-section">
+                    <div id="current-sentence-container" style="display:none;>
+                        <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
+                        <div class="current-sentence" id="current-sentence"></div>
+                    </div>
+                    
+                    <div class="translation-container">
+                        <h3 class="section-title"><i class="fas fa-exchange-alt"></i> Dịch sang tiếng Anh:</h3>
+                        <textarea class="translation-input" id="current-translation" placeholder="Nhập bản dịch của bạn..."></textarea>
+                        
+                        <!-- Thêm phần hiển thị phím tắt -->
+                        <div class="shortcut-hint">
+                            <div>
+                                <span class="key">H</span> Gợi ý từ khóa
+                            </div>
+                            <div>
+                                <span class="key">Enter</span> Kiểm tra
+                            </div>
+                            <div>
+                                <span class="key">Shift</span> + <span class="key">Enter</span> Câu tiếp
+                            </div>
+                            <div>
+                                <span class="key">Tab</span> Focus ô dịch
+                            </div>
+                        </div>
+                        
+                        <div class="translation-actions">
+                            <button class="translation-btn hint-btn" id="hint-btn">
+                                <i class="fas fa-lightbulb"></i> Gợi ý từ khóa
+                            </button>
+                            <button class="translation-btn submit-btn" id="submit-btn">
+                                <i class="fas fa-check"></i> Kiểm tra
+                            </button>
+                            <button class="translation-btn next-btn" id="next-btn">
+                                <i class="fas fa-arrow-right"></i> Câu tiếp
+                            </button>
+                        </div>
+                        
+                        <div class="feedback-section" id="feedback-section">
+                            <div class="feedback-title"><i class="fas fa-comment-alt"></i> Nhận xét:</div>
+                            <div class="feedback-content markdown-content" id="feedback-content"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="translation-actions">
-                <button class="translation-btn hint-btn" id="hint-btn">
-                    <i class="fas fa-lightbulb"></i> Gợi ý từ khóa
-                </button>
-                <button class="translation-btn submit-btn" id="submit-btn">
-                    <i class="fas fa-check"></i> Kiểm tra
-                </button>
-                <button class="translation-btn next-btn" id="next-btn">
-                    <i class="fas fa-arrow-right"></i> Câu tiếp
-                </button>
-            </div>
-            
-            <div class="feedback-section" id="feedback-section">
-                <div class="feedback-title"><i class="fas fa-comment-alt"></i> Nhận xét:</div>
-                <div class="feedback-content markdown-content" id="feedback-content"></div>
-            </div>
-        </div>
-    </div>
-</div>
             
             <div class="overall-feedback-container" id="overall-feedback-container">
                 <h3 class="overall-title"><i class="fas fa-star"></i> Đánh Giá Tổng Thể</h3>
