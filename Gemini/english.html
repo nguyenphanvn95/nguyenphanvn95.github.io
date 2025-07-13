@@ -190,7 +190,7 @@
             </div>
             
            <div class="practice-container">
-    <!-- Cột trái: Bài viết mẫu + Câu hiện tại -->
+    <!-- Cột trái: Bài viết mẫu -->
     <div class="left-column">
         <div class="original-section">
             <h3 class="section-title"><i class="fas fa-book"></i> Bài viết mẫu:</h3>
@@ -198,25 +198,24 @@
                 Đang tải nội dung...
             </div>
         </div>
-        
-        <div id="current-sentence-container">
-            <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
-            <div class="current-sentence" id="current-sentence"></div>
-        </div>
     </div>
     
-    <!-- Cột phải: Dịch + Feedback -->
+    <!-- Cột phải: Câu đang dịch + Dịch + Feedback -->
     <div class="right-column">
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
         </div>
         <div class="progress-text" id="progress-text">Câu 0/0</div>
         
+        <div id="current-sentence-container">
+            <h3 class="section-title"><i class="fas fa-pencil-alt"></i> Câu đang dịch:</h3>
+            <div class="current-sentence" id="current-sentence"></div>
+        </div>
+        
         <div class="translation-container">
             <h3 class="section-title"><i class="fas fa-exchange-alt"></i> Dịch sang tiếng Anh:</h3>
             <textarea class="translation-input" id="current-translation" placeholder="Nhập bản dịch của bạn..."></textarea>
             
-            <!-- Thêm phần hiển thị phím tắt -->
             <div class="shortcut-hint">
                 <div>
                     <span class="key">H</span> Gợi ý từ khóa

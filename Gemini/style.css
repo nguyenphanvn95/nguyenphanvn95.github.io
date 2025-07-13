@@ -1055,20 +1055,22 @@ header {
     gap: 20px;
 }
 
-/* Điều chỉnh kích thước các phần tử */
-.vietnamese-text {
-    min-height: 250px;
+/* Hiển thị nổi bật câu đang dịch trong bài viết */
+.vietnamese-text .current-sentence {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
 }
 
-.translation-input {
-    min-height: 150px;
-}
-
+/* Phần câu đang dịch riêng */
 #current-sentence-container {
     background: #e8f4fc;
     border-left: 3px solid #3498db;
     padding: 15px;
     border-radius: 0 6px 6px 0;
+    margin-bottom: 15px;
 }
 
 #current-sentence {
@@ -1076,9 +1078,13 @@ header {
     line-height: 1.6;
 }
 
-/* Điều chỉnh vị trí progress bar */
-.progress-container {
-    margin: 0 0 15px;
+/* Điều chỉnh kích thước các phần tử */
+.vietnamese-text {
+    min-height: 250px;
+}
+
+.translation-input {
+    min-height: 150px;
 }
 
 /* Responsive cho mobile */

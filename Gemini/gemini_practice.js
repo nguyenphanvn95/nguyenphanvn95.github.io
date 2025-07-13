@@ -333,38 +333,37 @@
 
         // Display current sentence
         function displayCurrentSentence() {
-            // Highlight current sentence in the text
-            const sentence = sentences[currentSentenceIndex];
-            const highlightedText = sentences.map((s, i) => {
-                if (i === currentSentenceIndex) {
-                    return `<span class="current-sentence">${s}</span>`;
-                }
-                return s;
-            }).join(' ');
-            
-            vietnameseTextEl.innerHTML = highlightedText;
-            
-            // Display current sentence for translation
-            currentSentenceEl.textContent = sentence;
-            currentTranslationEl.value = userTranslations[currentSentenceIndex] || '';
-            
-            // Clear feedback
-            feedbackSection.style.display = 'none';
-            feedbackContentEl.innerHTML = '';
-            // Thay đổi cách highlight câu
-   // vietnameseTextEl.textContent = currentText;
-  //  currentSentenceEl.textContent = sentence;
-            // Update progress
-            const progressPercent = ((currentSentenceIndex + 1) / sentences.length) * 100;
-            progressBar.style.width = `${progressPercent}%`;
-            progressText.textContent = `Câu ${currentSentenceIndex + 1}/${sentences.length}`;
-            
-            // Scroll to current sentence
-            const currentSentenceElement = vietnameseTextEl.querySelector('.current-sentence');
-            if (currentSentenceElement) {
-                currentSentenceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
+    const sentence = sentences[currentSentenceIndex];
+    
+    // Highlight current sentence in the text
+    const highlightedText = sentences.map((s, i) => {
+        if (i === currentSentenceIndex) {
+            return `<span class="current-sentence">${s}</span>`;
         }
+        return s;
+    }).join(' ');
+    
+    vietnameseTextEl.innerHTML = highlightedText;
+    
+    // Display current sentence for translation
+    currentSentenceEl.textContent = sentence;
+    currentTranslationEl.value = userTranslations[currentSentenceIndex] || '';
+    
+    // Clear feedback
+    feedbackSection.style.display = 'none';
+    feedbackContentEl.innerHTML = '';
+    
+    // Update progress
+    const progressPercent = ((currentSentenceIndex + 1) / sentences.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+    progressText.textContent = `Câu ${currentSentenceIndex + 1}/${sentences.length}`;
+    
+    // Scroll to current sentence
+    const currentSentenceElement = vietnameseTextEl.querySelector('.current-sentence');
+    if (currentSentenceElement) {
+        currentSentenceElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
 
         // Call Gemini API
         async function callGeminiAPI(prompt) {
