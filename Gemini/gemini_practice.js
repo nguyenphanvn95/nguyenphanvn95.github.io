@@ -416,7 +416,7 @@
                 const prompt = `Hãy đưa ra gợi ý dịch câu sau sang tiếng Anh: "${sentence}". 
                 Gợi ý chỉ nên là các từ khóa, cụm từ quan trọng (tối đa 3-5 từ/cụm từ) cần dùng để dịch câu này, 
                 không đưa ra cả câu dịch hoàn chỉnh. 
-                Trả lời bằng một mảng JSON: { "hints": [ "từ 1", "từ 2", ... ] }`;
+                Trả lời bằng một mảng JSON: { [ "từ 1", "từ 2", ... ] }`;
                 
                 const response = await callGeminiAPI(prompt);
                 
