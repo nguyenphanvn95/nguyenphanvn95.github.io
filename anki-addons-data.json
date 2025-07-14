@@ -1,5 +1,23 @@
 [
   {
+    "id": 2,
+    "name": "Gemini Practice - Luyện tập đặt câu cùng Gemini",
+    "icon": "fas fa-brain",
+    "description": "\n## 🌐 Giới thiệu\n\n**Gemini Practice** là một addon dành cho phần mềm **Anki**, giúp bạn **luyện tập đặt câu** và **hiểu nghĩa từ vựng sâu hơn** với sự hỗ trợ của mô hình ngôn ngữ **Gemini API** (by Google). Addon này tích hợp khả năng gợi ý định nghĩa, ví dụ và đánh giá câu sử dụng từ vựng – tất cả hiển thị đẹp mắt ngay trong giao diện Anki.\n\n![Giao diện Gemini Practice](https://live.staticflickr.com/65535/54654677203_2e3cbe6142_c.jpg)\n\n\n---\n\n## 🚀 Tính năng nổi bật\n\n- **Tự động tra nghĩa từ vựng** bằng mô hình Gemini, hiển thị theo định dạng Markdown đẹp mắt.\n- **Luyện đặt câu trực tiếp** trên Anki và nhận phản hồi chi tiết về:\n  - Ngữ pháp  \n  - Ngữ cảnh sử dụng từ  \n  - Gợi ý cải thiện\n- **Tùy chỉnh cấu hình dễ dàng**: API Key, prompt định nghĩa, prompt đánh giá...\n- **Hỗ trợ markdown** được tối ưu cho hiển thị trong Qt/Anki.\n- **Phím tắt tiện lợi**: Nhấn `P` hoặc `Alt+P` để mở giao diện luyện tập ngay khi đang học bài.\n\n---\n\n## 📦 Cài đặt\n\n1. Tải source code addon và đặt vào thư mục:\n\n    ```\n    <Anki addons folder>/gemini_practice\n    ```\n\n2. Mở **Anki** → vào menu `Tools`:\n   - Khi học một thẻ ->Chọn **\"Luyện tập đặt câu (P/Alt+P)\"** để bắt đầu sử dụng.\n   - Chọn **\"Cấu hình Gemini Practice\"** để điền API Key và chỉnh sửa prompt theo ý bạn.\n\n---\n\n## 🔧 Cấu hình\n\nFile cấu hình sẽ được tạo tự động tại:\n\n```\n<Anki addons folder>/gemini_practice/gemini_practice_config.json\n```\n\n### Các trường cần thiết\n\n| Trường               | Mô tả                                                                 |\n|----------------------|----------------------------------------------------------------------|\n| `api_key`            | API key từ Google Gemini (https://makersuite.google.com/app)         |\n| `api_url`            | Endpoint đầy đủ để gọi API Gemini (bao gồm `?key=...`)               |\n| `prompt_definition`  | Prompt cho phần gợi ý định nghĩa từ vựng                              |\n| `prompt_evaluation`  | Prompt cho phần đánh giá câu bạn đặt                                  |\n\n> Mặc định, addon đã có sẵn API Key demo – **bạn nên thay bằng key của riêng bạn để đảm bảo ổn định.**\n\n---\n\n## 💡 Cách sử dụng\n\n1. Trong khi học bài trên Anki, nhấn `P` hoặc `Alt+P` để mở khung luyện tập.  \n2. Chọn trường từ vựng (ví dụ: \"Vocabulary\").  \n3. Xem định nghĩa gợi ý từ Gemini.  \n4. Nhập câu bạn muốn đặt vào khung **\"Luyện đặt câu\"**.  \n5. Nhấn **Gửi đánh giá** để xem phản hồi chi tiết.\n\n![Ảnh 1: Hướng dẫn cài đặt](https://live.staticflickr.com/65535/54654709953_0ea0207193_c.jpg)\n\n![Ảnh 2: Cấu hình addon](https://live.staticflickr.com/65535/54654713749_cf2f2e07e2_z.jpg)",
+    "links": [
+      {
+        "text": "Link Addon",
+        "url": "https://ankiweb.net/shared/info/727020416?cb=1751941527487",
+        "icon": "fas fa-download"
+      },
+      {
+        "text": "Link Github",
+        "url": "https://github.com/nguyenphanvn95/gemini-practice",
+        "icon": "fas fa-download"
+      }
+    ]
+  },
+  {
     "id": 1,
     "name": "Additional Card Fields",
     "icon": "fas fa-plus-circle",
@@ -9,24 +27,6 @@
         "text": "Add-on page",
         "url": "https://ankiweb.net/shared/info/12345",
         "icon": "fas fa-external-link-alt"
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Anki Simulator",
-    "icon": "fas fa-brain",
-    "description": "Mô phỏng quá trình học Anki với nhiều tính năng nâng cao",
-    "links": [
-      {
-        "text": "Tải về",
-        "url": "https://ankiweb.net/shared/info/67890",
-        "icon": "fas fa-download"
-      },
-      {
-        "text": "Hướng dẫn",
-        "url": "#",
-        "icon": "fas fa-book"
       }
     ]
   },
@@ -44,28 +44,10 @@
     ]
   },
   {
-    "id": 5,
-    "name": "Tiện ích nổi bật khác",
-    "icon": "fas fa-star",
-    "description": "Tuyển tập các tiện ích hữu ích khác cho Anki",
-    "links": [
-      {
-        "text": "Xem tất cả",
-        "url": "#",
-        "icon": "fas fa-list"
-      },
-      {
-        "text": "ok",
-        "url": "ksdf",
-        "icon": "fa-solid fa-layer-group"
-      }
-    ]
-  },
-  {
     "id": 4,
     "name": "Puppy Reinforcement",
     "icon": "fas fa-paw",
-    "description": "Hệ thống phần thưởng với hình ảnh chóHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thương con dễ thương !(http://jdkfajsdlk)[asdlf]",
+    "description": "hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ ầ",
     "links": [
       {
         "text": "Tải về",
