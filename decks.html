@@ -24,7 +24,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        body {
+         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
             color: var(--dark);
             line-height: 1.6;
@@ -32,7 +32,7 @@
             padding: 20px;
         }
         
-       .container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             background-color: rgba(255, 255, 255, 0.95);
@@ -63,10 +63,90 @@
         }
 
         
+        .folder-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .folder-breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .folder-crumb {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .folder-crumb:hover {
+            background: #f0f7ff;
+        }
+        
+        .folder-crumb i {
+            margin: 0 8px;
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+        
+        .folder-crumb:last-child {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .folder-crumb:last-child i {
+            display: none;
+        }
+        
+        .nav-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 5px;
+        }
+        
+        .nav-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f5f5f5;
+            color: var(--gray);
+        }
+        
+        .nav-btn:disabled:hover {
+            background: #f5f5f5;
+            color: var(--gray);
+            border-color: #ddd;
+        }
+        
         .search-container {
             display: flex;
             max-width: 600px;
-            margin: 30px auto;
+            margin: 20px auto;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             border-radius: 50px;
             overflow: hidden;
@@ -111,7 +191,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 20px 0 30px;
+            margin: 15px 0 20px;
         }
         
         .filter-btn {
@@ -150,6 +230,17 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            cursor: pointer;
+        }
+        
+        .file-card.folder {
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .file-card.folder:hover {
+            border-color: var(--warning);
+            transform: translateY(-5px);
         }
         
         .file-card:hover {
@@ -206,6 +297,11 @@
             margin-bottom: 10px;
             font-size: 1.1rem;
             color: var(--dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .file-details {
@@ -290,6 +386,7 @@
             margin-bottom: 15px;
         }
         
+        .folder-icon { background: #fff8e1; color: var(--warning); }
         .pdf { background: #ffebee; color: var(--danger); }
         .image { background: #e3f2fd; color: var(--primary); }
         .document { background: #e8f5e9; color: var(--secondary); }
@@ -304,7 +401,7 @@
             background: white;
             padding: 15px 25px;
             border-radius: 12px;
-            margin: 25px 0;
+            margin: 20px 0;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             flex-wrap: wrap;
         }
@@ -326,7 +423,7 @@
             color: var(--gray);
         }
         
-        footer {
+       footer {
             text-align: center;
             padding: 25px;
             background: #2c3e50;
@@ -363,6 +460,7 @@
             font-size: 0.95rem;
         }
 
+        
         @media (max-width: 768px) {
             .files-container {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -376,6 +474,11 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            .folder-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -385,6 +488,10 @@
             
             .search-container button {
                 padding: 0 20px;
+            }
+            
+            .file-card {
+                max-width: 100%;
             }
         }
     </style>
@@ -398,7 +505,20 @@
                 <div class="header-subtitle">Chia sẻ các bộ Deck hữu ích cho học tập với ứng dụng Anki</div>
             </div>
         </header>
-        
+            <div class="folder-nav">
+                <button id="back-btn" class="nav-btn" disabled>
+                    <i class="fas fa-arrow-left"></i> Quay lại
+                </button>
+                
+                <div class="folder-breadcrumb" id="folder-breadcrumb">
+                    <div class="folder-crumb" data-folder-id="root">
+                        <span>Thư mục gốc</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+ 
+    
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Tìm kiếm tập tin...">
             <span class="search-indicator" id="search-indicator">
@@ -411,6 +531,9 @@
             <button class="filter-btn active" data-filter="all">
                 <i class="fas fa-layer-group"></i> Tất cả
             </button>
+            <button class="filter-btn" data-filter="folder">
+                <i class="fas fa-folder"></i> Thư mục
+            </button>
             <button class="filter-btn" data-filter="image">
                 <i class="fas fa-image"></i> Hình ảnh
             </button>
@@ -420,27 +543,24 @@
             <button class="filter-btn" data-filter="pdf">
                 <i class="fas fa-file-pdf"></i> PDF
             </button>
-            <button class="filter-btn" data-filter="video">
-                <i class="fas fa-video"></i> Video
-            </button>
         </div>
         
         <div class="stats-bar" id="stats-bar">
             <div class="stat-item">
                 <div class="stat-value" id="total-files">0</div>
-                <div class="stat-label">Tổng số tập tin</div>
+                <div class="stat-label">Tổng số mục</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="total-size">0MB</div>
                 <div class="stat-label">Tổng dung lượng</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value" id="image-count">0</div>
-                <div class="stat-label">Hình ảnh</div>
+                <div class="stat-value" id="folder-count">0</div>
+                <div class="stat-label">Thư mục</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value" id="document-count">0</div>
-                <div class="stat-label">Tài liệu</div>
+                <div class="stat-value" id="file-count">0</div>
+                <div class="stat-label">Tập tin</div>
             </div>
         </div>
         
@@ -469,13 +589,16 @@
 <script src="back-to-top.js"></script>
     <script>
         // Cấu hình API
-        const API_KEY = 'AIzaSyBXK90TrspcZJTpUZ_3nZ12fiV_XA-qheo'; // Thay thế bằng API key của bạn
-        const FOLDER_ID = '19Kka515ezFZic5-BX4PjYCo3i3p7YVxX'; // ID thư mục của bạn
+        // Cấu hình API
+        const API_KEY = 'AIzaSyBXK90TrspcZJTpUZ_3nZ12fiV_XA-qheo'; // API Google Drive
+        const FOLDER_ID = '19Kka515ezFZic5-BX4PjYCo3i3p7YVxX'; // ID thư mục anki decks
         
         // Biến toàn cục lưu trữ dữ liệu
         let allFiles = [];
         let filteredFiles = [];
         let searchTimeout = null;
+        let currentFolderId = ROOT_FOLDER_ID;
+        let folderStack = [];
         
         // Định dạng kích thước file
         function formatFileSize(bytes) {
@@ -490,6 +613,7 @@
         function getFileType(mimeType) {
             if (!mimeType) return 'other';
             
+            if (mimeType === 'application/vnd.google-apps.folder') return 'folder';
             if (mimeType.includes('image/')) return 'image';
             if (mimeType.includes('video/')) return 'video';
             if (mimeType.includes('audio/')) return 'audio';
@@ -512,12 +636,12 @@
         }
         
         // Lấy dữ liệu từ Google Drive API
-        async function loadDriveFiles() {
+        async function loadDriveFiles(folderId = ROOT_FOLDER_ID) {
             try {
                 showLoading();
                 
                 const response = await fetch(
-                    `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id,name,mimeType,size,createdTime,thumbnailLink,webContentLink,webViewLink)`
+                    `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${API_KEY}&fields=files(id,name,mimeType,size,createdTime,thumbnailLink,webContentLink,webViewLink)`
                 );
                 
                 if (!response.ok) {
@@ -534,10 +658,10 @@
         }
         
         // Xử lý và hiển thị file
-        function processAndDisplayFiles(files) {
+        function processAndDisplayFiles(files, folderName = 'Thư mục gốc') {
             allFiles = files.map(file => {
                 const fileType = getFileType(file.mimeType);
-                const size = file.size ? formatFileSize(parseInt(file.size)) : 'Không xác định';
+                const size = file.size ? formatFileSize(parseInt(file.size)) : 'Thư mục';
                 const date = new Date(file.createdTime).toLocaleDateString('vi-VN');
                 
                 return {
@@ -549,7 +673,8 @@
                     mimeType: file.mimeType,
                     thumbnail: file.thumbnailLink || null,
                     downloadUrl: file.webContentLink || `https://drive.google.com/uc?export=download&id=${file.id}`,
-                    viewUrl: file.webViewLink || `https://drive.google.com/file/d/${file.id}/view`
+                    viewUrl: file.webViewLink || `https://drive.google.com/file/d/${file.id}/view`,
+                    isFolder: fileType === 'folder'
                 };
             });
             
@@ -560,9 +685,15 @@
             // Cập nhật thống kê
             updateStats();
             
+            // Cập nhật breadcrumb
+            updateBreadcrumb(folderName);
+            
+            // Cập nhật nút quay lại
+            updateBackButton();
+            
             // Cập nhật footer
             document.getElementById('last-updated').textContent = 
-                `© ${new Date().getFullYear()} Nguyễn Văn Phán | Tải lần cuối: ${new Date().toLocaleString('vi-VN')}`;
+                `© ${new Date().getFullYear()} Trình xem nội dung Google Drive | Tải lần cuối: ${new Date().toLocaleString('vi-VN')}`;
         }
         
         // Hiển thị file lên giao diện
@@ -574,8 +705,8 @@
                 container.innerHTML = `
                     <div class="no-files">
                         <i class="fas fa-folder-open" style="font-size: 4rem; margin-bottom: 20px; color: #ccc;"></i>
-                        <h3>Không tìm thấy tập tin nào</h3>
-                        <p>Hãy thử tìm kiếm với từ khóa khác hoặc thay đổi bộ lọc</p>
+                        <h3>Thư mục trống</h3>
+                        <p>Không có tập tin hoặc thư mục con nào trong thư mục này</p>
                     </div>
                 `;
                 return;
@@ -583,11 +714,18 @@
             
             files.forEach(file => {
                 const fileCard = document.createElement('div');
-                fileCard.className = 'file-card';
+                fileCard.className = `file-card ${file.type === 'folder' ? 'folder' : ''}`;
+                fileCard.dataset.id = file.id;
+                fileCard.dataset.type = file.type;
                 
                 // Xác định icon và màu sắc dựa trên loại file
                 let iconClass, iconText, fileTypeClass;
                 switch(file.type) {
+                    case 'folder':
+                        iconClass = 'fas fa-folder';
+                        iconText = 'Thư mục';
+                        fileTypeClass = 'folder-icon';
+                        break;
                     case 'pdf':
                         iconClass = 'fas fa-file-pdf';
                         iconText = 'PDF';
@@ -627,7 +765,7 @@
                 // Xây dựng nội dung cho file card
                 fileCard.innerHTML = `
                     <div class="file-thumbnail">
-                        ${file.thumbnail ? 
+                        ${file.thumbnail && file.type !== 'folder' ? 
                             `<img src="${file.thumbnail}" alt="${file.name}" class="image-thumb">` : 
                             `<div class="file-icon ${fileTypeClass}">
                                 <i class="${iconClass}"></i>
@@ -642,6 +780,7 @@
                             <span>${file.date}</span>
                         </div>
                     </div>
+                    ${file.type !== 'folder' ? `
                     <div class="file-actions">
                         <a href="${file.viewUrl}" target="_blank" class="action-btn" title="Xem trước">
                             <i class="fas fa-eye"></i>
@@ -653,7 +792,15 @@
                             <i class="fas fa-share-alt"></i>
                         </a>
                     </div>
+                    ` : ''}
                 `;
+                
+                // Thêm sự kiện click cho thư mục
+                if (file.type === 'folder') {
+                    fileCard.addEventListener('click', () => {
+                        openFolder(file.id, file.name);
+                    });
+                }
                 
                 container.appendChild(fileCard);
             });
@@ -661,18 +808,17 @@
         
         // Cập nhật thống kê
         function updateStats() {
+            const folders = allFiles.filter(f => f.type === 'folder');
+            const files = allFiles.filter(f => f.type !== 'folder');
+            
             document.getElementById('total-files').textContent = allFiles.length;
+            document.getElementById('folder-count').textContent = folders.length;
+            document.getElementById('file-count').textContent = files.length;
             
-            const imageCount = allFiles.filter(f => f.type === 'image').length;
-            const documentCount = allFiles.filter(f => f.type === 'document' || f.type === 'pdf').length;
-            
-            document.getElementById('image-count').textContent = imageCount;
-            document.getElementById('document-count').textContent = documentCount;
-            
-            // Tính tổng dung lượng
+            // Tính tổng dung lượng (bỏ qua thư mục)
             let totalBytes = 0;
-            allFiles.forEach(file => {
-                if (file.size !== 'Không xác định' && file.size) {
+            files.forEach(file => {
+                if (file.size !== 'Thư mục' && file.size) {
                     const sizeParts = file.size.split(' ');
                     const value = parseFloat(sizeParts[0]);
                     const unit = sizeParts[1];
@@ -738,7 +884,9 @@
                 </div>
             `;
             
-            document.getElementById('retry-btn').addEventListener('click', initApp);
+            document.getElementById('retry-btn').addEventListener('click', () => {
+                loadFolder(currentFolderId);
+            });
         }
         
         // Hiển thị trạng thái loading
@@ -752,19 +900,89 @@
             `;
         }
         
-        // Khởi tạo ứng dụng
-        async function initApp() {
+        // Mở thư mục
+        async function openFolder(folderId, folderName) {
+            // Lưu thư mục hiện tại vào stack
+            folderStack.push({
+                id: currentFolderId,
+                name: document.querySelector('.folder-crumb:last-child span').textContent
+            });
+            
+            currentFolderId = folderId;
+            await loadFolder(folderId, folderName);
+        }
+        
+        // Quay lại thư mục trước
+        async function goBack() {
+            if (folderStack.length > 0) {
+                const prevFolder = folderStack.pop();
+                currentFolderId = prevFolder.id;
+                await loadFolder(prevFolder.id, prevFolder.name);
+            }
+        }
+        
+        // Tải thư mục
+        async function loadFolder(folderId, folderName = 'Thư mục gốc') {
             try {
                 showLoading();
-                const files = await loadDriveFiles();
+                const files = await loadDriveFiles(folderId);
                 if (files.length > 0) {
-                    processAndDisplayFiles(files);
+                    processAndDisplayFiles(files, folderName);
                 } else {
-                    showError('Không tìm thấy tập tin nào trong thư mục này.');
+                    processAndDisplayFiles([], folderName);
                 }
             } catch (error) {
                 showError(error.message || 'Đã xảy ra lỗi khi tải dữ liệu.');
             }
+        }
+        
+        // Cập nhật breadcrumb
+        function updateBreadcrumb(folderName) {
+            const breadcrumb = document.getElementById('folder-breadcrumb');
+            breadcrumb.innerHTML = '';
+            
+            // Thêm breadcrumb cho các thư mục trong stack
+            folderStack.forEach((folder, index) => {
+                const crumb = document.createElement('div');
+                crumb.className = 'folder-crumb';
+                crumb.dataset.folderId = folder.id;
+                crumb.innerHTML = `
+                    <span>${folder.name}</span>
+                    <i class="fas fa-chevron-right"></i>
+                `;
+                
+                crumb.addEventListener('click', async () => {
+                    // Lấy lại stack đến thư mục này
+                    const backSteps = folderStack.length - index;
+                    for (let i = 0; i < backSteps; i++) {
+                        folderStack.pop();
+                    }
+                    currentFolderId = folder.id;
+                    await loadFolder(folder.id, folder.name);
+                });
+                
+                breadcrumb.appendChild(crumb);
+            });
+            
+            // Thêm breadcrumb cho thư mục hiện tại
+            const currentCrumb = document.createElement('div');
+            currentCrumb.className = 'folder-crumb';
+            currentCrumb.innerHTML = `
+                <span>${folderName}</span>
+                <i class="fas fa-chevron-right"></i>
+            `;
+            breadcrumb.appendChild(currentCrumb);
+        }
+        
+        // Cập nhật nút quay lại
+        function updateBackButton() {
+            const backBtn = document.getElementById('back-btn');
+            backBtn.disabled = folderStack.length === 0;
+        }
+        
+        // Khởi tạo ứng dụng
+        async function initApp() {
+            await loadFolder(ROOT_FOLDER_ID, 'Thư mục gốc');
         }
         
         // Khởi tạo sự kiện sau khi tải trang
@@ -807,6 +1025,9 @@
                     filterFiles(filter);
                 });
             });
+            
+            // Sự kiện cho nút quay lại
+            document.getElementById('back-btn').addEventListener('click', goBack);
         });
     </script>
 </body>
