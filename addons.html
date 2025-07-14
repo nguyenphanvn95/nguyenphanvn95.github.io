@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Quản lý Addon Anki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #34495e;
+            line-height: 1.7;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #2980b9, #1c6ea4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-alt {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+        }
+        
+        .btn-alt:hover {
+            background: linear-gradient(to right, #27ae60, #219653);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, #e67e22, #d35400);
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(to right, #d35400, #ba4a00);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(to right, #c0392b, #a93226);
+        }
+        
+        .btn-info {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+        }
+        
+        .btn-info:hover {
+            background: linear-gradient(to right, #8e44ad, #7d3c98);
+        }
+        
+        .btn-purple {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        
+        .btn-purple:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+
+        .loading i {
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .search-container {
+            margin: 20px 0;
+            position: relative;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        #search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 2px solid #3498db;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .no-data i {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .no-data h2 {
+            color: #e74c3c;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-puzzle-piece"></i> ADDONS ANKI</h1>
+                <div class="header-subtitle">Chia sẻ các tiện ích mở rộng hữu ích cho ứng dụng học tập Anki</div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm addon...">
+              <!--  <div class="info-badge">Chế độ chỉ xem</div> -->
+            </div>
+            
+            <div id="addons-container">
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <p>Đang tải dữ liệu addon...</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <h3>Học, học nữa, học mãi - V.I. Lenin</h3>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+		 <a href="addons-manager.html"><i class="fas fa-tools"></i> Quản lý Addons</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Biến toàn cục
+        let addonsData = [];
+
+        // Hàm tải dữ liệu từ file JSON
+        function loadAddonsData() {
+            fetch('anki-addons-data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Không thể tải dữ liệu');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Kiểm tra xem dữ liệu có phải là mảng không
+                    if (Array.isArray(data)) {
+                        addonsData = data;
+                        displayAddons(addonsData);
+                    } else {
+                        throw new Error('Dữ liệu không hợp lệ');
+                    }
+                })
+                .catch(error => {
+                    console.error('Lỗi khi tải dữ liệu:', error);
+                    showNoDataMessage();
+                });
+        }
+
+        // Hàm hiển thị thông báo không có dữ liệu
+        function showNoDataMessage() {
+            const container = document.getElementById('addons-container');
+            container.innerHTML = `
+                <div class="no-data">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Không có dữ liệu</h2>
+                    <p>Không thể tải dữ liệu addon từ file JSON.</p>
+                    <p>Vui lòng kiểm tra đường dẫn file hoặc định dạng dữ liệu.</p>
+                </div>
+            `;
+        }
+
+        // Hàm hiển thị addons
+        function displayAddons(addons) {
+            const container = document.getElementById('addons-container');
+            
+            if (!addons || addons.length === 0) {
+                container.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-info-circle"></i>
+                        <h2>Không có dữ liệu</h2>
+                        <p>Hiện không có addon nào để hiển thị.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            addons.forEach((addon) => {
+                let addonHtml = `
+                    <div class="section" data-id="${addon.id}">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <h2><i class="${addon.icon || 'fas fa-cube'}"></i> ${addon.name}</h2>
+                            </div>
+                        </div>
+                        <p>${addon.description || 'Không có mô tả'}</p>
+                `;
+                
+                // Hiển thị các liên kết chính
+                if (addon.links && addon.links.length > 0) {
+                    addonHtml += `<div class="buttons">`;
+                    addon.links.forEach(link => {
+                        addonHtml += `
+                            <a href="${link.url}" class="btn ${link.class || ''}" target="_blank">
+                                <i class="${link.icon || 'fas fa-link'}"></i> ${link.text}
+                            </a>
+                        `;
+                    });
+                    addonHtml += `</div>`;
+                }
+                
+                addonHtml += `</div>`;
+                container.innerHTML += addonHtml;
+            });
+        }
+        
+        // Hàm tìm kiếm addon
+        function searchAddons(query) {
+            if (!query) return addonsData;
+            
+            const lowerQuery = query.toLowerCase();
+            return addonsData.filter(addon => {
+                // Tìm kiếm theo tên và mô tả
+                if (addon.name.toLowerCase().includes(lowerQuery) || 
+                    (addon.description && addon.description.toLowerCase().includes(lowerQuery))) {
+                    return true;
+                }
+                
+                return false;
+            });
+        }
+        
+        // Khởi tạo khi trang được tải
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tải dữ liệu từ file JSON
+            loadAddonsData();
+            
+            // Thêm sự kiện tìm kiếm
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', () => {
+                const results = searchAddons(searchInput.value);
+                displayAddons(results);
+            });
+        });
+    </script>
+</body>
+</html>
