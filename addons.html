@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trình Quản lý Addon Anki</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -293,6 +293,144 @@
             font-size: 0.85rem;
             margin-left: 10px;
         }
+        
+        .detail-btn {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+            background: #f1f1f1;
+        }
+        
+        .modal h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .modal-icon {
+            font-size: 1.8rem;
+            color: #3498db;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e3f2fd;
+            border-radius: 50%;
+        }
+        
+        .addon-description {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
+            line-height: 1.7;
+        }
+        
+        .addon-description h3,
+        .addon-description h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px;
+        }
+        
+        .addon-description p {
+            margin-bottom: 10px;
+        }
+        
+        .addon-description ul,
+        .addon-description ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .addon-description li {
+            margin-bottom: 5px;
+        }
+        
+        .addon-description pre {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .addon-description code {
+            background: #e3f2fd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .truncated-description {
+            position: relative;
+            max-height: 4.5em; /* 3 lines */
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .truncated-description::after {
+            content: "...";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: white;
+            padding-left: 5px;
+        }
+        
+        .modal-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
 
         @media (max-width: 768px) {
             .container {
@@ -326,6 +464,15 @@
             .search-container {
                 flex-direction: column;
             }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .modal h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -341,7 +488,7 @@
         <div class="content">
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Tìm kiếm addon...">
-              <!--  <div class="info-badge">Chế độ chỉ xem</div> -->
+               <!-- <div class="info-badge">Chế độ chỉ xem</div> -->
             </div>
             
             <div id="addons-container">
@@ -359,7 +506,7 @@
                     <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
                     <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
                     <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
-		 <a href="addons-manager.html"><i class="fas fa-tools"></i> Quản lý Addons</a>
+		<a href="addons-manager.html"><i class="fas fa-tools"></i> Quản lý Addons</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
@@ -367,10 +514,30 @@
             </div>
         </footer>
     </div>
+    
+    <!-- Modal chi tiết -->
+    <div class="modal" id="detail-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-detail-modal">&times;</span>
+            <h2>
+                <div class="modal-icon" id="detail-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <span id="detail-title">Tên Addon</span>
+            </h2>
+            <div class="addon-description" id="detail-description"></div>
+            
+            <div class="modal-footer">
+                <h3>Liên kết:</h3>
+                <div class="buttons" id="detail-links"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Biến toàn cục
         let addonsData = [];
+        let currentDetailAddon = null;
 
         // Hàm tải dữ liệu từ file JSON
         function loadAddonsData() {
@@ -427,6 +594,11 @@
             container.innerHTML = '';
             
             addons.forEach((addon) => {
+                // Tạo mô tả rút gọn (chỉ hiển thị 150 ký tự đầu tiên)
+                const shortDesc = addon.description && addon.description.length > 150 
+                    ? addon.description.substring(0, 150) + '...' 
+                    : addon.description || 'Không có mô tả';
+                
                 let addonHtml = `
                     <div class="section" data-id="${addon.id}">
                         <div class="section-header">
@@ -434,12 +606,23 @@
                                 <h2><i class="${addon.icon || 'fas fa-cube'}"></i> ${addon.name}</h2>
                             </div>
                         </div>
-                        <p>${addon.description || 'Không có mô tả'}</p>
+                        <div class="truncated-description">
+                            <p>${shortDesc}</p>
+                        </div>
                 `;
                 
                 // Hiển thị các liên kết chính
                 if (addon.links && addon.links.length > 0) {
                     addonHtml += `<div class="buttons">`;
+                    
+                    // Thêm nút "Xem chi tiết"
+                    addonHtml += `
+                        <button class="btn detail-btn" onclick="openDetailModal(${addon.id})">
+                            <i class="fas fa-info-circle"></i> Xem chi tiết
+                        </button>
+                    `;
+                    
+                    // Thêm các liên kết khác
                     addon.links.forEach(link => {
                         addonHtml += `
                             <a href="${link.url}" class="btn ${link.class || ''}" target="_blank">
@@ -471,6 +654,53 @@
             });
         }
         
+        // Hàm mở modal chi tiết
+        function openDetailModal(id) {
+            const addon = addonsData.find(a => a.id === id);
+            if (!addon) return;
+            
+            currentDetailAddon = addon;
+            
+            // Cập nhật tiêu đề và icon
+            document.getElementById('detail-title').textContent = addon.name;
+            const iconEl = document.getElementById('detail-icon');
+            iconEl.innerHTML = `<i class="${addon.icon || 'fas fa-cube'}"></i>`;
+            
+            // Chuyển đổi mô tả Markdown sang HTML
+            const descriptionEl = document.getElementById('detail-description');
+            if (addon.description) {
+                descriptionEl.innerHTML = marked.parse(addon.description);
+            } else {
+                descriptionEl.innerHTML = '<p>Không có mô tả chi tiết</p>';
+            }
+            
+            // Hiển thị các liên kết
+            const linksContainer = document.getElementById('detail-links');
+            linksContainer.innerHTML = '';
+            
+            if (addon.links && addon.links.length > 0) {
+                addon.links.forEach(link => {
+                    const linkBtn = document.createElement('a');
+                    linkBtn.className = `btn ${link.class || ''}`;
+                    linkBtn.href = link.url;
+                    linkBtn.target = '_blank';
+                    linkBtn.innerHTML = `<i class="${link.icon || 'fas fa-link'}"></i> ${link.text}`;
+                    linksContainer.appendChild(linkBtn);
+                });
+            } else {
+                linksContainer.innerHTML = '<p>Không có liên kết nào</p>';
+            }
+            
+            // Hiển thị modal
+            document.getElementById('detail-modal').style.display = 'flex';
+        }
+        
+        // Hàm đóng modal chi tiết
+        function closeDetailModal() {
+            document.getElementById('detail-modal').style.display = 'none';
+            currentDetailAddon = null;
+        }
+        
         // Khởi tạo khi trang được tải
         document.addEventListener('DOMContentLoaded', () => {
             // Tải dữ liệu từ file JSON
@@ -482,10 +712,17 @@
                 const results = searchAddons(searchInput.value);
                 displayAddons(results);
             });
+            
+            // Sự kiện đóng modal
+            document.getElementById('close-detail-modal').addEventListener('click', closeDetailModal);
+            
+            // Đóng modal khi click bên ngoài
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    closeDetailModal();
+                }
+            });
         });
     </script>
- <!-- Gemini Chat Bubble and Scrollable -->
-<script src="assistant.js"></script>
-<script src="back-to-top.js"></script>
 </body>
 </html>
