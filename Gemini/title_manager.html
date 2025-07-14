@@ -632,9 +632,6 @@ copyright {
                     <button class="btn-dark" id="import-btn">
                         <i class="fas fa-file-import"></i> Nhập JSON
                     </button>
-<button class="btn-success" id="upload-drive-btn">
-        <i class="fab fa-google-drive"></i> Lưu lên Drive
-    </button>
                 </div>
             </div>
             
@@ -705,19 +702,7 @@ copyright {
                 </div>
             </div>
         </div>
-        <!-- Thêm modal cho upload drive -->
-<div class="modal" id="drive-modal">
-    <div class="modal-content">
-        <span class="close-modal" id="close-drive">&times;</span>
-        <h3 class="modal-title">Lưu dữ liệu lên Google Drive</h3>
-        <div id="drive-status" style="margin: 20px 0; padding: 15px; border-radius: 8px; background: #f7fafc;">
-            <p id="status-text">Đang chuẩn bị...</p>
-        </div>
-        <button class="btn-success" id="start-upload" style="width: 100%;">
-            <i class="fas fa-cloud-upload-alt"></i> Bắt đầu Upload
-        </button>
-    </div>
-</div>
+        
         <div class="modal" id="export-modal">
             <div class="modal-content">
                 <span class="close-modal" id="close-export">&times;</span>
@@ -835,60 +820,7 @@ copyright {
         const articleType = document.getElementById('article-type');
         const articleTitle = document.getElementById('article-title');
         
-
-// Thêm biến mới
-const uploadDriveBtn = document.getElementById('upload-drive-btn');
-const driveModal = document.getElementById('drive-modal');
-const closeDriveBtn = document.getElementById('close-drive');
-const driveStatus = document.getElementById('drive-status');
-const statusText = document.getElementById('status-text');
-const startUploadBtn = document.getElementById('start-upload');
-
-// Thêm sự kiện cho nút mới
-uploadDriveBtn.addEventListener('click', () => {
-    driveModal.style.display = 'flex';
-    statusText.textContent = 'Sẵn sàng lưu dữ liệu lên Google Drive';
-});
-
-closeDriveBtn.addEventListener('click', () => {
-    driveModal.style.display = 'none';
-});
-
-// Thay thế hàm upload trong startUploadBtn
-startUploadBtn.addEventListener('click', async () => {
-    statusText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang kết nối...';
-    
-    try {
-        // Tạo dữ liệu JSON
-        const jsonData = JSON.stringify(exerciseData);
-        
-        // Gửi yêu cầu đến Google Apps Script
-        statusText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang tải lên...';
-        
-        // THAY URL_GOOGLE_SCRIPT BẰNG URL CỦA BẠN
-        const response = await fetch('https://script.google.com/macros/s/AKfycbzj5-ANqpQrfK9XRcJqlzHzQ73JsB2FHkL6Ilg6yCbLbagBVYkPwk0mWAkjI8qoNbYK/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                data: jsonData,
-                fileName: `exerciseData_${Date.now()}.json`
-            })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            statusText.innerHTML = `<i class="fas fa-check-circle"></i> Thành công! File đã được lưu tại: 
-                <a href="${result.fileUrl}" target="_blank">${result.fileName}</a>`;
-        } else {
-            statusText.innerHTML = `<i class="fas fa-times-circle"></i> Lỗi: ${result.error}`;
-        }
-    } catch (error) {
-        statusText.innerHTML = `<i class="fas fa-times-circle"></i> Lỗi kết nối: ${error.message}`;
-    }
-});        // New elements for bulk input
+        // New elements for bulk input
         const toggleBulkBtn = document.getElementById('toggle-bulk');
         const bulkInput = document.getElementById('bulk-input');
         const articleTitlesBulk = document.getElementById('article-titles-bulk');
