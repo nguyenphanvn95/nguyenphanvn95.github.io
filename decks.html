@@ -567,7 +567,7 @@
         <div class="files-container" id="files-container">
             <div class="loading">
                 <i class="fas fa-spinner"></i>
-                <p>Đang tải nội dung từ Google Drive...</p>
+                <p>Đang tải nội dung ...</p>
             </div>
         </div>
 
@@ -675,7 +675,7 @@
                 return data.files || [];
             } catch (error) {
                 console.error('Lỗi khi tải dữ liệu:', error);
-                showError('Không thể tải dữ liệu từ Google Drive. Vui lòng kiểm tra API key và ID thư mục.');
+                showError('Không thể tải dữ liệu. Vui lòng kiểm tra API key và ID thư mục.');
                 return [];
             }
         }
@@ -716,7 +716,7 @@
             
             // Cập nhật footer
             document.getElementById('last-updated').textContent = 
-                `© ${new Date().getFullYear()} Trình xem nội dung Google Drive | Tải lần cuối: ${new Date().toLocaleString('vi-VN')}`;
+                `© ${new Date().getFullYear()} Nguyễn Văn Phán | Tải lần cuối: ${new Date().toLocaleString('vi-VN')}`;
         }
         
         // Hiển thị file lên giao diện
@@ -918,7 +918,7 @@
             container.innerHTML = `
                 <div class="loading">
                     <i class="fas fa-spinner"></i>
-                    <p>Đang tải nội dung từ Google Drive...</p>
+                    <p>Đang tải nội dung ...</p>
                 </div>
             `;
         }
