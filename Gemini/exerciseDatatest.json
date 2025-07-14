@@ -1,0 +1,3598 @@
+{
+  "beginner": {
+    "emails": [
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_1752525331675_516"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_1752525331675_145"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_beginner_1752525331675_17"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_beginner_1752525331675_580"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_beginner_1752525331675_267"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_beginner_1752525331675_71"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_beginner_1752525331675_744"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_beginner_1752525331675_740"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_1752525331675_193"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_beginner_1752525331675_429"
+      },
+      {
+        "id": "emails_beginner_1752525331675_775",
+        "title": "Gửi lời cảm ơn đến giáo viên"
+      },
+      {
+        "id": "emails_beginner_1752525331675_593",
+        "title": "Xin nghỉ học một buổi"
+      },
+      {
+        "id": "emails_beginner_1752525331675_782",
+        "title": "Hỏi về lịch kiểm tra tuần tới"
+      },
+      {
+        "id": "emails_beginner_1752525331675_221",
+        "title": "Gửi bài tập trễ hạn"
+      },
+      {
+        "id": "emails_beginner_1752525331675_875",
+        "title": "Nhờ bạn gửi tài liệu giúp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_954",
+        "title": "Xin phép vắng mặt buổi họp nhóm"
+      },
+      {
+        "id": "emails_beginner_1752525331675_105",
+        "title": "Thông báo đã nộp bài tập"
+      },
+      {
+        "id": "emails_beginner_1752525331675_609",
+        "title": "Hỏi thăm sức khỏe bạn cùng lớp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_654",
+        "title": "Xin lỗi vì đến trễ"
+      },
+      {
+        "id": "emails_beginner_1752525331675_951",
+        "title": "Hỏi đường đến trường mới"
+      },
+      {
+        "id": "emails_beginner_1752525331675_919",
+        "title": "Cảm ơn cô giáo đã giúp đỡ"
+      },
+      {
+        "id": "emails_beginner_1752525331675_60",
+        "title": "Đặt câu hỏi về bài học hôm qua"
+      },
+      {
+        "id": "emails_beginner_1752525331675_487",
+        "title": "Đăng ký tham gia câu lạc bộ"
+      },
+      {
+        "id": "emails_beginner_1752525331675_651",
+        "title": "Gửi lời chúc sinh nhật bạn"
+      },
+      {
+        "id": "emails_beginner_1752525331675_530",
+        "title": "Xin đổi nhóm học tập"
+      },
+      {
+        "id": "emails_beginner_1752525331675_559",
+        "title": "Gửi thư làm quen với bạn mới"
+      },
+      {
+        "id": "emails_beginner_1752525331675_245",
+        "title": "Báo nghỉ học vì ốm"
+      },
+      {
+        "id": "emails_beginner_1752525331675_465",
+        "title": "Xác nhận thời gian gặp mặt"
+      },
+      {
+        "id": "emails_beginner_1752525331675_258",
+        "title": "Hỏi về tài liệu ôn tập"
+      },
+      {
+        "id": "emails_beginner_1752525331675_280",
+        "title": "Nhờ kiểm tra lại điểm"
+      },
+      {
+        "id": "emails_beginner_1752525331675_445",
+        "title": "Gửi lời mời họp lớp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_203",
+        "title": "Báo mất đồ trong lớp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_207",
+        "title": "Hỏi về lịch trình buổi tham quan"
+      },
+      {
+        "id": "emails_beginner_1752525331675_860",
+        "title": "Xin nghỉ phép một ngày"
+      },
+      {
+        "id": "emails_beginner_1752525331675_489",
+        "title": "Nhắc bạn mang đồ giúp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_198",
+        "title": "Gửi lại bài tập bị lỗi"
+      },
+      {
+        "id": "emails_beginner_1752525331675_829",
+        "title": "Đăng ký tiết học phụ đạo"
+      },
+      {
+        "id": "emails_beginner_1752525331675_393",
+        "title": "Gửi lời chúc cuối tuần"
+      },
+      {
+        "id": "emails_beginner_1752525331675_587",
+        "title": "Gửi bài viết dự thi"
+      },
+      {
+        "id": "emails_beginner_1752525331675_979",
+        "title": "Hỏi mượn sách thư viện"
+      },
+      {
+        "id": "emails_beginner_1752525331675_633",
+        "title": "Gửi thông tin cá nhân để đăng ký"
+      },
+      {
+        "id": "emails_beginner_1752525331675_661",
+        "title": "Gửi thư cảm ơn ban tổ chức sự kiện"
+      },
+      {
+        "id": "emails_beginner_1752525331675_832",
+        "title": "Xin đổi giờ trực nhật"
+      },
+      {
+        "id": "emails_beginner_1752525331675_688",
+        "title": "Hỏi về buổi học bù"
+      },
+      {
+        "id": "emails_beginner_1752525331675_463",
+        "title": "Nhờ bạn giúp đỡ làm bài tập"
+      },
+      {
+        "id": "emails_beginner_1752525331675_737",
+        "title": "Báo bạn cùng làm bài nhóm bị ốm"
+      },
+      {
+        "id": "emails_beginner_1752525331675_479",
+        "title": "Xác nhận tham gia buổi dã ngoại"
+      },
+      {
+        "id": "emails_beginner_1752525331675_467",
+        "title": "Gửi bài thuyết trình nhóm"
+      },
+      {
+        "id": "emails_beginner_1752525331675_449",
+        "title": "Hỏi về thời hạn nộp bài"
+      },
+      {
+        "id": "emails_beginner_1752525331675_802",
+        "title": "Xin ý kiến về bài viết"
+      },
+      {
+        "id": "emails_beginner_1752525331675_762",
+        "title": "Gửi link bài làm trực tuyến"
+      },
+      {
+        "id": "emails_beginner_1752525331675_730",
+        "title": "Gửi lại file bị lỗi"
+      },
+      {
+        "id": "emails_beginner_1752525331675_121",
+        "title": "Xin nghỉ vì có việc gia đình"
+      },
+      {
+        "id": "emails_beginner_1752525331675_347",
+        "title": "Hỏi đường đi đến phòng giáo vụ"
+      },
+      {
+        "id": "emails_beginner_1752525331675_187",
+        "title": "Đăng ký tiết học ngoại khóa"
+      },
+      {
+        "id": "emails_beginner_1752525331675_319",
+        "title": "Báo vắng họp vì bận việc đột xuất"
+      },
+      {
+        "id": "emails_beginner_1752525331675_927",
+        "title": "Gửi ảnh nhóm lớp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_521",
+        "title": "Gửi lời chào thầy cô đầu năm học"
+      },
+      {
+        "id": "emails_beginner_1752525331675_362",
+        "title": "Gửi danh sách nhóm trưởng các lớp"
+      },
+      {
+        "id": "emails_beginner_1752525331675_99",
+        "title": "Hỏi cách sử dụng thư viện trường."
+      }
+    ],
+    "essays": [
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_beginner_1752525331675_287"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_1752525331675_798"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_1752525331675_256"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_beginner_1752525331675_840"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_1752525331675_981"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_1752525331675_747"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_beginner_1752525331675_248"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_beginner_1752525331675_83"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_1752525331675_402"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_beginner_1752525331675_961"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_beginner_1752525331675_865"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_1752525331675_261"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_beginner_1752525331675_106"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_1752525331675_426"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_1752525331675_754"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_beginner_1752525331675_475"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_beginner_1752525331675_403"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_beginner_1752525331675_64"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_beginner_1752525331675_146"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_beginner_1752525331675_660"
+      },
+      {
+        "id": "essays_beginner_1752525331675_542",
+        "title": "Gia đình em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_225",
+        "title": "Người bạn thân của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_224",
+        "title": "Môn học em yêu thích"
+      },
+      {
+        "id": "essays_beginner_1752525331675_127",
+        "title": "Ngôi trường của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_90",
+        "title": "Thầy cô mà em quý nhất"
+      },
+      {
+        "id": "essays_beginner_1752525331675_288",
+        "title": "Một ngày đi học của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_806",
+        "title": "Món ăn em thích nhất"
+      },
+      {
+        "id": "essays_beginner_1752525331675_10",
+        "title": "Kỳ nghỉ hè vừa qua"
+      },
+      {
+        "id": "essays_beginner_1752525331675_419",
+        "title": "Thú cưng của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_978",
+        "title": "Một lần em giúp đỡ người khác"
+      },
+      {
+        "id": "essays_beginner_1752525331675_664",
+        "title": "Cảnh bình minh ở quê em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_552",
+        "title": "Tết trong mắt em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_979",
+        "title": "Ước mơ của em sau này"
+      },
+      {
+        "id": "essays_beginner_1752525331675_241",
+        "title": "Cách em chuẩn bị cho một buổi học"
+      },
+      {
+        "id": "essays_beginner_1752525331675_66",
+        "title": "Em học bài như thế nào"
+      },
+      {
+        "id": "essays_beginner_1752525331675_449",
+        "title": "Em làm gì vào cuối tuần"
+      },
+      {
+        "id": "essays_beginner_1752525331675_896",
+        "title": "Một ngày lễ đáng nhớ"
+      },
+      {
+        "id": "essays_beginner_1752525331675_843",
+        "title": "Một lần em đi thăm ông bà"
+      },
+      {
+        "id": "essays_beginner_1752525331675_262",
+        "title": "Em thích làm việc gì khi rảnh"
+      },
+      {
+        "id": "essays_beginner_1752525331675_350",
+        "title": "Một bộ phim em từng xem"
+      },
+      {
+        "id": "essays_beginner_1752525331675_47",
+        "title": "Một cuốn sách em yêu thích"
+      },
+      {
+        "id": "essays_beginner_1752525331675_492",
+        "title": "Em thấy gì khi trời mưa"
+      },
+      {
+        "id": "essays_beginner_1752525331675_711",
+        "title": "Buổi sáng đầu tuần của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_173",
+        "title": "Cách em giữ gìn vệ sinh cá nhân"
+      },
+      {
+        "id": "essays_beginner_1752525331675_785",
+        "title": "Người thân mà em yêu quý nhất"
+      },
+      {
+        "id": "essays_beginner_1752525331675_382",
+        "title": "Một chuyến dã ngoại với lớp"
+      },
+      {
+        "id": "essays_beginner_1752525331675_817",
+        "title": "Em giúp mẹ làm việc nhà"
+      },
+      {
+        "id": "essays_beginner_1752525331675_539",
+        "title": "Một lần em đi sở thú"
+      },
+      {
+        "id": "essays_beginner_1752525331675_111",
+        "title": "Mùa xuân trong mắt em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_458",
+        "title": "Em làm gì khi bị ốm"
+      },
+      {
+        "id": "essays_beginner_1752525331675_521",
+        "title": "Một lần em mắc lỗi và sửa sai"
+      },
+      {
+        "id": "essays_beginner_1752525331675_848",
+        "title": "Em cảm thấy thế nào khi được khen"
+      },
+      {
+        "id": "essays_beginner_1752525331675_120",
+        "title": "Một món quà em từng nhận"
+      },
+      {
+        "id": "essays_beginner_1752525331675_613",
+        "title": "Em chăm sóc cây như thế nào"
+      },
+      {
+        "id": "essays_beginner_1752525331675_887",
+        "title": "Một trò chơi dân gian em biết"
+      },
+      {
+        "id": "essays_beginner_1752525331675_876",
+        "title": "Con đường đến trường của em"
+      },
+      {
+        "id": "essays_beginner_1752525331675_62",
+        "title": "Em học được điều gì từ sách"
+      },
+      {
+        "id": "essays_beginner_1752525331675_574",
+        "title": "Một câu chuyện cổ tích em thích"
+      },
+      {
+        "id": "essays_beginner_1752525331675_326",
+        "title": "Lý do em yêu mến trường học"
+      },
+      {
+        "id": "essays_beginner_1752525331675_22",
+        "title": "Em mong ước điều gì cho gia đình"
+      },
+      {
+        "id": "essays_beginner_1752525331675_416",
+        "title": "Cách em chuẩn bị đồ dùng học tập"
+      },
+      {
+        "id": "essays_beginner_1752525331675_749",
+        "title": "Một tiết học thú vị"
+      },
+      {
+        "id": "essays_beginner_1752525331675_634",
+        "title": "Em làm gì vào buổi tối"
+      },
+      {
+        "id": "essays_beginner_1752525331675_204",
+        "title": "Em và bạn thân thường làm gì"
+      },
+      {
+        "id": "essays_beginner_1752525331675_651",
+        "title": "Một ngày chủ nhật đáng nhớ"
+      },
+      {
+        "id": "essays_beginner_1752525331675_555",
+        "title": "Em đã thay đổi thế nào sau một chuyến đi"
+      },
+      {
+        "id": "essays_beginner_1752525331675_627",
+        "title": "Một việc tốt em từng làm"
+      },
+      {
+        "id": "essays_beginner_1752525331675_490",
+        "title": "Em cảm thấy thế nào khi chia tay lớp cũ"
+      },
+      {
+        "id": "essays_beginner_1752525331675_881",
+        "title": "Một mùa em yêu thích nhất"
+      },
+      {
+        "id": "essays_beginner_1752525331675_354",
+        "title": "Em muốn trở thành ai trong tương lai."
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_beginner_1752525331675_636"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_beginner_1752525331675_955"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_1752525331675_399"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_1752525331675_200"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_1752525331675_868"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_1752525331675_759"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_1752525331675_910"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_beginner_1752525331675_444"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_1752525331675_487"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_beginner_1752525331675_747"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_1752525331675_111"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_1752525331675_165"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_1752525331675_975"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_beginner_1752525331675_81"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_beginner_1752525331675_1"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_1752525331675_516"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_1752525331675_189"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_1752525331675_284"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_beginner_1752525331675_415"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_beginner_1752525331675_621"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1752525331675_553"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_1752525331675_354"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1752525331675_81"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_1752525331675_829"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1752525331675_272"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_1752525331675_281"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_beginner_1752525331675_837"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_1752525331675_370"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_1752525331675_612"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_beginner_1752525331675_873"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1752525331675_481"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_beginner_1752525331675_505"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_beginner_1752525331675_694"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_1752525331675_579"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_beginner_1752525331675_792"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_1752525331675_952"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_beginner_1752525331675_735"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_beginner_1752525331675_64"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_beginner_1752525331675_855"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_beginner_1752525331675_593"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1752525331675_546"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_beginner_1752525331675_403"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_1752525331675_114"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_beginner_1752525331675_748"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_1752525331675_751"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1752525331675_260"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1752525331675_618"
+      },
+      {
+        "title": "Kể lại một buổi thuyết trình đáng nhớ",
+        "id": "stories_beginner_1752525331675_226"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_beginner_1752525331675_231"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1752525331675_158"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_beginner_1752525331675_406"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_beginner_1752525331675_676"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_beginner_1752525331675_100"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_1752525331675_284"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_1752525331675_321"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_1752525331675_243"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_beginner_1752525331675_399"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_beginner_1752525331675_595"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_beginner_1752525331675_765"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_beginner_1752525331675_660"
+      }
+    ],
+    "diaries": [
+      {
+        "id": "diaries_beginner_1752525331675_312",
+        "title": "Hôm nay trời nắng đẹp"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_741",
+        "title": "Ngày đầu tiên đi học"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_755",
+        "title": "Bữa ăn trưa cùng gia đình"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_44",
+        "title": "Một buổi sáng yên bình"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_354",
+        "title": "Đi chơi công viên cuối tuần"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_510",
+        "title": "Lần đầu được điểm 10"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_14",
+        "title": "Em gái làm em cười"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_371",
+        "title": "Ngày chủ nhật ở nhà"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_97",
+        "title": "Một trận mưa bất ngờ"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_727",
+        "title": "Giấc mơ kỳ lạ tối qua"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_528",
+        "title": "Tớ thích bánh mì"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_454",
+        "title": "Cô giáo khen trước lớp"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_624",
+        "title": "Con mèo nhà hàng xóm"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_309",
+        "title": "Hôm nay không có bài tập"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_161",
+        "title": "Một bức tranh tự vẽ"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_991",
+        "title": "Buổi chiều cùng bà ngoại"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_546",
+        "title": "Cảm giác khi được khen"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_57",
+        "title": "Bố đưa đi xem phim"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_918",
+        "title": "Lần đầu biết đi xe đạp"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_255",
+        "title": "Ngày đầu có bạn mới"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_725",
+        "title": "Món ăn mẹ nấu"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_883",
+        "title": "Một buổi sáng đi chợ"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_865",
+        "title": "Trò chơi em yêu thích"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_199",
+        "title": "Mưa rơi cả ngày"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_780",
+        "title": "Con chó con vừa nhận nuôi"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_358",
+        "title": "Một bài hát em thích"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_239",
+        "title": "Cảm xúc khi được tặng quà"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_736",
+        "title": "Đi sinh nhật bạn thân"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_753",
+        "title": "Cây bút mực mới mua"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_197",
+        "title": "Hôm nay thấy cầu vồng"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_965",
+        "title": "Một buổi học thú vị"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_560",
+        "title": "Cùng mẹ trồng rau"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_972",
+        "title": "Lần đầu nấu cơm"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_288",
+        "title": "Một buổi sáng dọn phòng"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_992",
+        "title": "Ngày mai kiểm tra"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_222",
+        "title": "Một bài văn em đã viết"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_660",
+        "title": "Tập thể dục buổi sáng"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_946",
+        "title": "Một chuyến đi chơi xa"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_182",
+        "title": "Lúc bị cảm lạnh"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_350",
+        "title": "Lần đầu viết nhật ký"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_611",
+        "title": "Một bức thư từ bạn cũ"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_572",
+        "title": "Món đồ chơi yêu thích"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_613",
+        "title": "Cùng anh chơi cờ vua"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_220",
+        "title": "Cảm giác khi xin lỗi"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_566",
+        "title": "Một ngày ở thư viện"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_841",
+        "title": "Ngày em không muốn đến lớp"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_352",
+        "title": "Trò chơi ngoài sân trường"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_281",
+        "title": "Khi được điểm cao"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_784",
+        "title": "Giấc mơ gặp người nổi tiếng"
+      },
+      {
+        "id": "diaries_beginner_1752525331675_268",
+        "title": "Hôm nay em thấy vui."
+      }
+    ],
+    "articles": [
+      {
+        "id": "articles_beginner_1752525331675_367",
+        "title": "Trường học tổ chức lễ khai giảng"
+      },
+      {
+        "id": "articles_beginner_1752525331675_875",
+        "title": "Mùa hè đến cùng tiếng ve"
+      },
+      {
+        "id": "articles_beginner_1752525331675_540",
+        "title": "Cách giữ sức khỏe trong mùa lạnh"
+      },
+      {
+        "id": "articles_beginner_1752525331675_62",
+        "title": "Bé học lớp Một lần đầu"
+      },
+      {
+        "id": "articles_beginner_1752525331675_250",
+        "title": "Chuyến tham quan bảo tàng lịch sử"
+      },
+      {
+        "id": "articles_beginner_1752525331675_75",
+        "title": "Tết Nguyên Đán là dịp đoàn tụ gia đình"
+      },
+      {
+        "id": "articles_beginner_1752525331675_703",
+        "title": "Cách trồng rau tại nhà đơn giản"
+      },
+      {
+        "id": "articles_beginner_1752525331675_764",
+        "title": "Bảo vệ môi trường bắt đầu từ những việc nhỏ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_275",
+        "title": "Một ngày làm việc của bác sĩ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_4",
+        "title": "Cách chăm sóc cây xanh dễ nhất"
+      },
+      {
+        "id": "articles_beginner_1752525331675_320",
+        "title": "Hội chợ quê tổ chức cuối tuần"
+      },
+      {
+        "id": "articles_beginner_1752525331675_102",
+        "title": "Các bạn nhỏ tham gia nhặt rác"
+      },
+      {
+        "id": "articles_beginner_1752525331675_438",
+        "title": "5 món ăn sáng nhanh gọn"
+      },
+      {
+        "id": "articles_beginner_1752525331675_280",
+        "title": "Trò chơi dân gian được yêu thích"
+      },
+      {
+        "id": "articles_beginner_1752525331675_441",
+        "title": "Học sinh lớp 5 giành giải viết chữ đẹp"
+      },
+      {
+        "id": "articles_beginner_1752525331675_878",
+        "title": "Những cuốn sách nên đọc dịp hè"
+      },
+      {
+        "id": "articles_beginner_1752525331675_159",
+        "title": "Một buổi sáng ở chợ truyền thống"
+      },
+      {
+        "id": "articles_beginner_1752525331675_371",
+        "title": "Học sinh học online tại nhà"
+      },
+      {
+        "id": "articles_beginner_1752525331675_916",
+        "title": "Cách chuẩn bị cho ngày đầu đi học"
+      },
+      {
+        "id": "articles_beginner_1752525331675_995",
+        "title": "Mẹo học thuộc bài nhanh"
+      },
+      {
+        "id": "articles_beginner_1752525331675_930",
+        "title": "Sức khỏe và tầm quan trọng của thể dục"
+      },
+      {
+        "id": "articles_beginner_1752525331675_526",
+        "title": "Gia đình cùng nhau dọn nhà cuối tuần"
+      },
+      {
+        "id": "articles_beginner_1752525331675_407",
+        "title": "Lễ hội trung thu rực rỡ sắc màu"
+      },
+      {
+        "id": "articles_beginner_1752525331675_489",
+        "title": "Chú chó trung thành giúp chủ đi chợ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_671",
+        "title": "Làm đồ chơi bằng giấy tái chế"
+      },
+      {
+        "id": "articles_beginner_1752525331675_862",
+        "title": "Cách làm món sữa chua ngon"
+      },
+      {
+        "id": "articles_beginner_1752525331675_973",
+        "title": "Mẹo giữ gìn sách vở sạch sẽ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_158",
+        "title": "Bé lớp 3 tập viết nhật ký"
+      },
+      {
+        "id": "articles_beginner_1752525331675_632",
+        "title": "10 việc nên làm mỗi buổi sáng"
+      },
+      {
+        "id": "articles_beginner_1752525331675_357",
+        "title": "Bé lớp 4 vẽ tranh tặng thầy cô"
+      },
+      {
+        "id": "articles_beginner_1752525331675_104",
+        "title": "Cách gấp quần áo gọn gàng"
+      },
+      {
+        "id": "articles_beginner_1752525331675_40",
+        "title": "Làm thế nào để bé đi ngủ đúng giờ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_911",
+        "title": "Thư viện trường mở cửa trở lại"
+      },
+      {
+        "id": "articles_beginner_1752525331675_661",
+        "title": "Bé học cách xin lỗi khi sai"
+      },
+      {
+        "id": "articles_beginner_1752525331675_766",
+        "title": "Học sinh tham gia thi cờ vua"
+      },
+      {
+        "id": "articles_beginner_1752525331675_85",
+        "title": "Những món đồ chơi yêu thích của bé trai"
+      },
+      {
+        "id": "articles_beginner_1752525331675_173",
+        "title": "Trường tiểu học tổ chức ngày hội đọc sách"
+      },
+      {
+        "id": "articles_beginner_1752525331675_82",
+        "title": "Làm quen với tiền và cách tiêu đúng"
+      },
+      {
+        "id": "articles_beginner_1752525331675_684",
+        "title": "Học toán bằng trò chơi vui nhộn"
+      },
+      {
+        "id": "articles_beginner_1752525331675_411",
+        "title": "Cách giúp bé nhớ từ mới tiếng Anh"
+      },
+      {
+        "id": "articles_beginner_1752525331675_598",
+        "title": "Bé lớp 2 học bơi trong hè"
+      },
+      {
+        "id": "articles_beginner_1752525331675_63",
+        "title": "Lễ hội đèn lồng tại phố cổ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_752",
+        "title": "Cách tự làm bánh quy tại nhà"
+      },
+      {
+        "id": "articles_beginner_1752525331675_794",
+        "title": "Tập thể dục buổi sáng cùng gia đình"
+      },
+      {
+        "id": "articles_beginner_1752525331675_454",
+        "title": "Bé lớp 1 kể chuyện trước lớp"
+      },
+      {
+        "id": "articles_beginner_1752525331675_822",
+        "title": "Lớp học năng khiếu cuối tuần"
+      },
+      {
+        "id": "articles_beginner_1752525331675_580",
+        "title": "Cách chăm sóc thú cưng đúng cách"
+      },
+      {
+        "id": "articles_beginner_1752525331675_197",
+        "title": "Những hoạt động vui chơi ngoài trời"
+      },
+      {
+        "id": "articles_beginner_1752525331675_880",
+        "title": "Cách giữ vệ sinh cá nhân cho trẻ"
+      },
+      {
+        "id": "articles_beginner_1752525331675_939",
+        "title": "Các loại rau dễ trồng tại nhà."
+      }
+    ]
+  },
+  "intermediate": {
+    "emails": [
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_1752525331675_77"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_intermediate_1752525331675_350"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_intermediate_1752525331675_543"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_1752525331675_800"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_1752525331675_432"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_1752525331675_128"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_intermediate_1752525331675_103"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_1752525331675_546"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_intermediate_1752525331675_684"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_1752525331675_528"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_intermediate_1752525331675_946"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_1752525331675_891"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_intermediate_1752525331675_679"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_intermediate_1752525331675_262"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_1752525331675_145"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_intermediate_1752525331675_711"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_1752525331675_192"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_intermediate_1752525331675_559"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_intermediate_1752525331675_845"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_intermediate_1752525331675_429"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_401",
+        "title": "Xin xác nhận lịch phỏng vấn"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_64",
+        "title": "Hỏi về yêu cầu hồ sơ xin việc"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_563",
+        "title": "Gửi thư giới thiệu bản thân"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_531",
+        "title": "Gửi CV ứng tuyển vị trí thực tập"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_358",
+        "title": "Cập nhật thông tin cá nhân đã thay đổi"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_707",
+        "title": "Gửi lại hợp đồng đã ký"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_566",
+        "title": "Xin gia hạn thời gian nộp bài"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_812",
+        "title": "Thắc mắc về điểm số kỳ trước"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_868",
+        "title": "Đề nghị đổi thời gian hẹn gặp"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_572",
+        "title": "Xác nhận tham gia khóa đào tạo"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_512",
+        "title": "Phản hồi về chất lượng dịch vụ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_439",
+        "title": "Gửi đề xuất cải tiến quy trình làm việc"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_889",
+        "title": "Gửi báo cáo tiến độ công việc tuần này"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_837",
+        "title": "Hỏi về thủ tục đăng ký khóa học"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_190",
+        "title": "Gửi lời mời tham dự hội thảo"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_186",
+        "title": "Gửi thư xin lỗi vì sai sót công việc"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_111",
+        "title": "Nhờ xác nhận đơn xin nghỉ phép"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_939",
+        "title": "Hỏi về lịch làm việc mới"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_513",
+        "title": "Gửi bảng khảo sát người dùng"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_911",
+        "title": "Xin xác nhận thanh toán thành công"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_627",
+        "title": "Gửi đề nghị mua thiết bị mới"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_639",
+        "title": "Nhắc lịch họp nhóm dự án"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_672",
+        "title": "Gửi thư góp ý cho phòng dịch vụ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_363",
+        "title": "Hỏi về chính sách bảo hành sản phẩm"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_311",
+        "title": "Gửi thư xác nhận địa chỉ giao hàng"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_894",
+        "title": "Gửi đề xuất làm việc từ xa"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_715",
+        "title": "Thông báo chuyển lịch trình công tác"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_860",
+        "title": "Gửi bản báo giá dịch vụ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_917",
+        "title": "Gửi thư giới thiệu sản phẩm mới"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_722",
+        "title": "Xác nhận thông tin đăng ký sự kiện"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_326",
+        "title": "Gửi lời cảm ơn sau buổi gặp"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_43",
+        "title": "Yêu cầu hoàn tiền đơn hàng"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_217",
+        "title": "Thắc mắc về đơn hàng bị trễ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_554",
+        "title": "Gửi yêu cầu thay đổi thông tin đăng ký"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_652",
+        "title": "Đề nghị hỗ trợ kỹ thuật từ xa"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_203",
+        "title": "Gửi thư xác nhận tham gia phỏng vấn"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_585",
+        "title": "Nhờ gửi chứng chỉ bản mềm"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_282",
+        "title": "Gửi thông tin thanh toán chi tiết"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_663",
+        "title": "Báo cáo lỗi hệ thống"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_198",
+        "title": "Gửi phản hồi người dùng về ứng dụng"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_237",
+        "title": "Hỏi về lịch tư vấn định kỳ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_234",
+        "title": "Thông báo kết quả khảo sát nội bộ"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_539",
+        "title": "Gửi đề xuất hợp tác truyền thông"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_582",
+        "title": "Đặt lịch gặp mặt đối tác"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_691",
+        "title": "Yêu cầu hỗ trợ khẩn cấp"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_969",
+        "title": "Gửi thư xác nhận tham gia cuộc họp"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_651",
+        "title": "Gửi thông tin công tác trong tuần"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_328",
+        "title": "Xin lỗi vì gửi thiếu tài liệu"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_688",
+        "title": "Gửi yêu cầu cập nhật trang web"
+      },
+      {
+        "id": "emails_intermediate_1752525331675_131",
+        "title": "Gửi thư xác nhận đã hoàn tất nghĩa vụ."
+      }
+    ],
+    "essays": [
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_1752525331675_599"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_1752525331675_485"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_1752525331675_366"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_intermediate_1752525331675_541"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_intermediate_1752525331675_686"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_1752525331675_456"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_intermediate_1752525331675_658"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_1752525331675_25"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_intermediate_1752525331675_145"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_intermediate_1752525331675_59"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_intermediate_1752525331675_362"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_intermediate_1752525331675_627"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_1752525331675_859"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_intermediate_1752525331675_839"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_1752525331675_894"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_intermediate_1752525331675_988"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_intermediate_1752525331675_354"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_intermediate_1752525331675_128"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_intermediate_1752525331675_882"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_intermediate_1752525331675_505"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_259",
+        "title": "Tầm quan trọng của việc đọc sách"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_184",
+        "title": "Vì sao cần học ngoại ngữ sớm"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_729",
+        "title": "Ý nghĩa của tình bạn trong cuộc sống học sinh"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_513",
+        "title": "Vai trò của gia đình trong sự trưởng thành của em"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_696",
+        "title": "Suy nghĩ của em về việc học online"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_418",
+        "title": "Học giỏi có phải là yếu tố quan trọng nhất?"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_855",
+        "title": "Vì sao nên giữ gìn môi trường học tập sạch đẹp"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_339",
+        "title": "Cách em đối mặt với thất bại"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_251",
+        "title": "Một sự thay đổi lớn trong cuộc sống của em"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_220",
+        "title": "Điều gì làm em tự hào về bản thân"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_84",
+        "title": "Những bài học từ sai lầm"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_712",
+        "title": "Vai trò của thể thao với học sinh"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_957",
+        "title": "Một người truyền cảm hứng cho em"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_952",
+        "title": "Em làm gì khi bị căng thẳng"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_302",
+        "title": "Cách em quản lý thời gian học tập"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_48",
+        "title": "Em học được điều gì từ một người bạn"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_298",
+        "title": "Em nghĩ gì về việc sử dụng mạng xã hội"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_648",
+        "title": "Em thấy gì khi tham gia hoạt động thiện nguyện"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_183",
+        "title": "Sự khác biệt giữa học lý thuyết và thực hành"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_432",
+        "title": "Một lần em vượt qua nỗi sợ"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_39",
+        "title": "Em mong muốn điều gì cho lớp học của mình"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_829",
+        "title": "Cách em học nhóm hiệu quả"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_955",
+        "title": "Vai trò của sự kiên trì trong học tập"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_474",
+        "title": "Em sẽ làm gì nếu có một ngày không internet"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_170",
+        "title": "Điều gì làm em hạnh phúc mỗi ngày"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_321",
+        "title": "Em học được gì từ một chuyến đi thực tế"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_156",
+        "title": "Em nghĩ gì về áp lực điểm số"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_514",
+        "title": "Em có tin rằng ai cũng có tài năng riêng?"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_665",
+        "title": "Một kỹ năng mềm em muốn rèn luyện thêm"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_98",
+        "title": "Nếu em là hiệu trưởng một ngày"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_870",
+        "title": "Làm thế nào để học sinh học vui hơn"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_944",
+        "title": "Em thay đổi ra sao sau khi đọc một cuốn sách hay"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_29",
+        "title": "Vai trò của kỷ luật bản thân trong học tập"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_886",
+        "title": "Em nghĩ gì về việc học qua dự án"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_317",
+        "title": "Một người bạn đã thay đổi cách em suy nghĩ"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_820",
+        "title": "Vì sao nên biết ơn những điều nhỏ bé"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_116",
+        "title": "Em học được gì từ một lần làm việc nhóm thất bại"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_425",
+        "title": "Làm thế nào để cân bằng giữa học và chơi"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_790",
+        "title": "Một lần em tự giải quyết vấn đề"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_558",
+        "title": "Em sẽ làm gì nếu bạn bị bắt nạt"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_363",
+        "title": "Nếu em là người tổ chức hội chợ trường"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_199",
+        "title": "Cảm nhận của em về mùa chia tay cuối cấp"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_938",
+        "title": "Một bài học từ thiên nhiên"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_149",
+        "title": "Em mong muốn gì cho thế giới tương lai"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_697",
+        "title": "Làm thế nào để học sinh yêu thích học tập hơn"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_569",
+        "title": "Em nghĩ gì về văn hóa đọc trong giới trẻ"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_221",
+        "title": "Vai trò của nghệ thuật trong trường học"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_247",
+        "title": "Em sẽ làm gì để lớp học gắn kết hơn"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_848",
+        "title": "Em nghĩ gì về việc du học trong tương lai"
+      },
+      {
+        "id": "essays_intermediate_1752525331675_878",
+        "title": "Một sự kiện em không thể quên."
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_1752525331675_829"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_intermediate_1752525331675_143"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_1752525331675_467"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_1752525331675_496"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_intermediate_1752525331675_359"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_1752525331675_344"
+      },
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_intermediate_1752525331675_854"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_intermediate_1752525331675_898"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_1752525331675_47"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_1752525331675_270"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_1752525331675_260"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_1752525331675_618"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_intermediate_1752525331675_412"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_intermediate_1752525331675_225"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_1752525331675_413"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_1752525331675_976"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_intermediate_1752525331675_206"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_intermediate_1752525331675_92"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_intermediate_1752525331675_784"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_intermediate_1752525331675_712"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_intermediate_1752525331675_71"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_intermediate_1752525331675_599"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_intermediate_1752525331675_670"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_intermediate_1752525331675_338"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_intermediate_1752525331675_375"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_intermediate_1752525331675_474"
+      },
+      {
+        "title": "Tóm tắt tài liệu học thuật về đánh giá năng lực",
+        "id": "summaries_intermediate_1752525331675_952"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_1752525331675_753"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_1752525331675_918"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_intermediate_1752525331675_895"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_1752525331675_826"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_1752525331675_977"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_intermediate_1752525331675_660"
+      },
+      {
+        "title": "Tóm tắt tài liệu học thuật về đánh giá năng lực",
+        "id": "summaries_intermediate_1752525331675_9"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_1752525331675_654"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_intermediate_1752525331675_462"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_intermediate_1752525331675_838"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_intermediate_1752525331675_748"
+      },
+      {
+        "title": "Tóm tắt bài viết học thuật về biến đổi khí hậu",
+        "id": "summaries_intermediate_1752525331675_552"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_intermediate_1752525331675_860"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_1752525331675_825"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_1752525331675_524"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_intermediate_1752525331675_368"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_intermediate_1752525331675_530"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_intermediate_1752525331675_175"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_1752525331675_892"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_1752525331675_26"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_intermediate_1752525331675_829"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_intermediate_1752525331675_551"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_1752525331675_549"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_intermediate_1752525331675_329"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_intermediate_1752525331675_210"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_intermediate_1752525331675_889"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_1752525331675_111"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_intermediate_1752525331675_859"
+      },
+      {
+        "title": "Kể chuyện cùng bạn học thức trắng đêm ôn thi",
+        "id": "stories_intermediate_1752525331675_981"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_intermediate_1752525331675_959"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_intermediate_1752525331675_941"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_intermediate_1752525331675_604"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_intermediate_1752525331675_913"
+      }
+    ],
+    "diaries": [
+      {
+        "id": "diaries_intermediate_1752525331675_523",
+        "title": "Những cảm xúc trong ngày thi"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_927",
+        "title": "Hôm nay mình đã học được điều gì mới"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_928",
+        "title": "Trận cãi vã với bạn thân"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_572",
+        "title": "Một ngày nhiều cảm xúc lẫn lộn"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_83",
+        "title": "Khoảnh khắc bình yên sau cơn mưa"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_971",
+        "title": "Mình thấy mình đang thay đổi"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_402",
+        "title": "Bài học từ một lần thất bại"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_945",
+        "title": "Câu chuyện phía sau nụ cười"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_834",
+        "title": "Một quyết định nhỏ nhưng ý nghĩa"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_135",
+        "title": "Suy nghĩ khi nhìn lại ảnh cũ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_301",
+        "title": "Điều mình biết ơn nhất hôm nay"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_167",
+        "title": "Một bức thư không gửi"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_734",
+        "title": "Ngày không mạng xã hội"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_575",
+        "title": "Cảm giác khi làm điều tốt"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_777",
+        "title": "Cuộc gặp gỡ tình cờ trên đường"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_12",
+        "title": "Mình đã vượt qua nỗi sợ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_16",
+        "title": "Ngày cuối cùng của kỳ nghỉ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_364",
+        "title": "Mình nhận ra ai thực sự quan tâm"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_49",
+        "title": "Một buổi chiều không tiếng ồn"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_47",
+        "title": "Cảm xúc khi nghe lại bài hát cũ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_636",
+        "title": "Hôm nay đã dũng cảm nói ra"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_140",
+        "title": "Một ước mơ nhỏ bé"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_293",
+        "title": "Trời mưa và những kỷ niệm xưa"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_738",
+        "title": "Cuộc trò chuyện thay đổi tâm trạng"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_5",
+        "title": "Khi mình buông bỏ được một điều gì đó"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_166",
+        "title": "Một người lạ tốt bụng"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_249",
+        "title": "Thử làm điều mới lần đầu"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_915",
+        "title": "Mình đã bật khóc"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_70",
+        "title": "Tập chấp nhận sự không hoàn hảo"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_122",
+        "title": "Một cuộc hẹn bị hủy"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_46",
+        "title": "Cảm xúc khi nhìn thấy biển"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_529",
+        "title": "Một sáng chủ nhật không đặt báo thức"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_537",
+        "title": "Mình học cách tha thứ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_162",
+        "title": "Lần đầu nói lời cảm ơn với bố"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_596",
+        "title": "Hành trình đọc hết một quyển sách"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_310",
+        "title": "Một chuyện cũ bỗng ùa về"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_305",
+        "title": "Khi mình học cách im lặng"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_843",
+        "title": "Một câu chuyện khiến mình suy nghĩ mãi"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_592",
+        "title": "Lần đầu viết thư tay sau nhiều năm"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_463",
+        "title": "Một ngày sống chậm lại"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_730",
+        "title": "Một tin nhắn làm mình mỉm cười"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_2",
+        "title": "Cảm giác sau buổi phỏng vấn"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_682",
+        "title": "Một chuyện nhỏ nhưng làm mình ấm lòng"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_959",
+        "title": "Mình đã thử tắt điện thoại cả ngày"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_673",
+        "title": "Một lần làm hòa với bạn"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_207",
+        "title": "Sáng nay bỗng thấy yêu cuộc sống hơn"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_204",
+        "title": "Mình đã làm người khác vui"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_568",
+        "title": "Một chuyến xe buýt đáng nhớ"
+      },
+      {
+        "id": "diaries_intermediate_1752525331675_885",
+        "title": "Khi nỗi buồn không còn làm mình sợ."
+      }
+    ],
+    "articles": [
+      {
+        "id": "articles_intermediate_1752525331675_434",
+        "title": "Tại sao học sinh cần rèn luyện kỹ năng mềm"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_893",
+        "title": "Những thay đổi lớn trong giáo dục trực tuyến"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_516",
+        "title": "Tác động của mạng xã hội đến học sinh cấp hai"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_213",
+        "title": "Vai trò của đọc sách trong việc phát triển tư duy"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_525",
+        "title": "Mùa hè: Học sinh nên học thêm hay nghỉ ngơi"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_377",
+        "title": "7 thói quen giúp học sinh học giỏi hơn"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_117",
+        "title": "Lễ hội văn hóa thu hút hàng nghìn người tham dự"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_548",
+        "title": "Ngày hội thể thao cấp quận: Nơi gắn kết cộng đồng"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_588",
+        "title": "5 bước để học sinh vượt qua nỗi sợ thuyết trình"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_965",
+        "title": "Những phát minh khoa học do học sinh tạo ra"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_66",
+        "title": "Học sinh trung học tham gia trồng rừng phòng hộ"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_16",
+        "title": "Câu chuyện cảm động về người thầy vùng cao"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_774",
+        "title": "Học sinh lập nhóm dạy kèm miễn phí cho bạn khó khăn"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_721",
+        "title": "Phụ huynh nói gì về việc con dùng điện thoại"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_430",
+        "title": "Sự cần thiết của giáo dục giới tính trong nhà trường"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_475",
+        "title": "Vì sao học sinh cần biết quản lý tài chính cá nhân"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_259",
+        "title": "Trường học tổ chức khóa học sơ cứu cho học sinh"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_77",
+        "title": "Thời khóa biểu lý tưởng cho học sinh THCS"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_400",
+        "title": "Vai trò của âm nhạc trong phát triển cảm xúc tuổi teen"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_910",
+        "title": "Học sinh lớp 9 phát minh hệ thống tưới cây thông minh"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_846",
+        "title": "Thử thách 30 ngày không dùng mạng xã hội"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_832",
+        "title": "Câu lạc bộ tiếng Anh tổ chức hội thảo kỹ năng nói"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_992",
+        "title": "Mùa thi đến gần: Làm sao để giảm căng thẳng"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_807",
+        "title": "Học sinh viết báo tường chào mừng 20/11"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_361",
+        "title": "Cách ứng phó với bắt nạt học đường"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_187",
+        "title": "Ý nghĩa của việc tham gia hoạt động tình nguyện"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_438",
+        "title": "10 điều học sinh nên làm trước khi tốt nghiệp"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_202",
+        "title": "Lớp học kỹ năng sống thu hút đông đảo học sinh"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_176",
+        "title": "Học sinh thành công nhờ học qua dự án"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_869",
+        "title": "Tại sao cần học cách thất bại"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_139",
+        "title": "Những thói quen xấu khi học online"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_429",
+        "title": "Trường tổ chức lớp học không điểm số"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_288",
+        "title": "Học sinh làm báo cáo khoa học đầu tiên"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_656",
+        "title": "Chuyện hậu trường của đội văn nghệ trường"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_595",
+        "title": "Học sinh học lập trình từ năm lớp 6"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_287",
+        "title": "Ứng dụng công nghệ trong việc quản lý lớp học"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_805",
+        "title": "Chương trình trao đổi học sinh với nước bạn"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_255",
+        "title": "Học sinh học qua trò chơi nhập vai"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_460",
+        "title": "Làm thế nào để học sinh tự học hiệu quả hơn"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_59",
+        "title": "Góc học tập lý tưởng của học sinh giỏi"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_539",
+        "title": "Thời đại công nghệ và áp lực học đường"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_662",
+        "title": "Trường học mở lớp dạy kỹ năng ứng xử"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_227",
+        "title": "Những bài học cuộc sống từ sân trường"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_655",
+        "title": "Chương trình giáo dục STEAM là gì"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_975",
+        "title": "Vì sao học sinh cần học làm việc nhóm"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_168",
+        "title": "Học sinh lập blog chia sẻ kinh nghiệm học tập"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_881",
+        "title": "Kỹ năng phản biện – thiếu hụt của học sinh Việt"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_99",
+        "title": "Ứng xử khi bị điểm kém"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_309",
+        "title": "Từ suy sụp đến hành động"
+      },
+      {
+        "id": "articles_intermediate_1752525331675_748",
+        "title": "5 cuốn sách giúp học sinh thay đổi tư duy."
+      }
+    ]
+  },
+  "advanced": {
+    "emails": [
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_advanced_1752525331675_225"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_advanced_1752525331675_926"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_1752525331675_144"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_1752525331675_760"
+      },
+      {
+        "title": "Email xác nhận tham gia chương trình trao đổi sinh viên",
+        "id": "emails_advanced_1752525331675_218"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_1752525331675_879"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_advanced_1752525331675_258"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_advanced_1752525331675_363"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_1752525331675_476"
+      },
+      {
+        "title": "Email xin lỗi vì không thể tham dự hội thảo",
+        "id": "emails_advanced_1752525331675_83"
+      },
+      {
+        "title": "Email đề xuất cải tiến hoạt động ngoại khóa",
+        "id": "emails_advanced_1752525331675_833"
+      },
+      {
+        "title": "Email xin phép nghỉ học vì lý do cá nhân",
+        "id": "emails_advanced_1752525331675_13"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_1752525331675_916"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_advanced_1752525331675_899"
+      },
+      {
+        "title": "Email hỏi về lịch thi IELTS",
+        "id": "emails_advanced_1752525331675_15"
+      },
+      {
+        "title": "Email chúc mừng bạn cùng lớp đạt điểm cao",
+        "id": "emails_advanced_1752525331675_201"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_1752525331675_688"
+      },
+      {
+        "title": "Email phàn nàn về chất lượng dịch vụ học tập",
+        "id": "emails_advanced_1752525331675_680"
+      },
+      {
+        "title": "Email mời tham gia buổi hội thảo học thuật",
+        "id": "emails_advanced_1752525331675_277"
+      },
+      {
+        "title": "Email cảm ơn giáo viên sau khóa học",
+        "id": "emails_advanced_1752525331675_146"
+      },
+      {
+        "id": "emails_advanced_1752525331675_730",
+        "title": "Đề xuất chiến lược truyền thông cho quý tới"
+      },
+      {
+        "id": "emails_advanced_1752525331675_537",
+        "title": "Gửi phân tích hiệu suất sau chiến dịch quảng bá"
+      },
+      {
+        "id": "emails_advanced_1752525331675_999",
+        "title": "Đề xuất hợp tác song phương giữa hai đơn vị"
+      },
+      {
+        "id": "emails_advanced_1752525331675_98",
+        "title": "Gửi báo cáo tài chính kèm phân tích rủi ro"
+      },
+      {
+        "id": "emails_advanced_1752525331675_382",
+        "title": "Phản hồi về kế hoạch kinh doanh đã thảo luận"
+      },
+      {
+        "id": "emails_advanced_1752525331675_3",
+        "title": "Gửi biên bản ghi nhớ sau cuộc họp cấp cao"
+      },
+      {
+        "id": "emails_advanced_1752525331675_745",
+        "title": "Trình bày đề xuất ngân sách cho năm mới"
+      },
+      {
+        "id": "emails_advanced_1752525331675_995",
+        "title": "Gửi thư xin tài trợ cho dự án cộng đồng"
+      },
+      {
+        "id": "emails_advanced_1752525331675_555",
+        "title": "Phân tích SWOT của sản phẩm sắp ra mắt"
+      },
+      {
+        "id": "emails_advanced_1752525331675_738",
+        "title": "Đề xuất cải tiến quy trình tuyển dụng nhân sự"
+      },
+      {
+        "id": "emails_advanced_1752525331675_557",
+        "title": "Phản hồi chi tiết về hợp đồng hợp tác"
+      },
+      {
+        "id": "emails_advanced_1752525331675_122",
+        "title": "Gửi kế hoạch đào tạo nhân viên theo quý"
+      },
+      {
+        "id": "emails_advanced_1752525331675_482",
+        "title": "Gửi góp ý chiến lược phát triển bền vững"
+      },
+      {
+        "id": "emails_advanced_1752525331675_797",
+        "title": "Gửi thư đánh giá năng lực nhân sự thử việc"
+      },
+      {
+        "id": "emails_advanced_1752525331675_522",
+        "title": "Thư xác nhận thông tin đầu tư từ đối tác"
+      },
+      {
+        "id": "emails_advanced_1752525331675_422",
+        "title": "Gửi đề nghị thay đổi điều khoản hợp đồng"
+      },
+      {
+        "id": "emails_advanced_1752525331675_335",
+        "title": "Gửi phản hồi sau buổi đánh giá nội bộ"
+      },
+      {
+        "id": "emails_advanced_1752525331675_981",
+        "title": "Đề xuất chính sách phúc lợi mới cho nhân viên"
+      },
+      {
+        "id": "emails_advanced_1752525331675_325",
+        "title": "Gửi báo cáo khảo sát trải nghiệm khách hàng"
+      },
+      {
+        "id": "emails_advanced_1752525331675_694",
+        "title": "Gửi thư mời tham dự hội nghị chuyên đề quốc tế"
+      },
+      {
+        "id": "emails_advanced_1752525331675_124",
+        "title": "Gửi đề xuất xây dựng hệ thống CRM mới"
+      },
+      {
+        "id": "emails_advanced_1752525331675_608",
+        "title": "Gửi thư xác nhận thời hạn cam kết tài chính"
+      },
+      {
+        "id": "emails_advanced_1752525331675_539",
+        "title": "Gửi kế hoạch truyền thông khủng hoảng"
+      },
+      {
+        "id": "emails_advanced_1752525331675_367",
+        "title": "Trình bày phương án thay đổi nhân sự cấp quản lý"
+      },
+      {
+        "id": "emails_advanced_1752525331675_875",
+        "title": "Gửi báo cáo rủi ro môi trường theo ISO"
+      },
+      {
+        "id": "emails_advanced_1752525331675_10",
+        "title": "Thư trao đổi về quyền sở hữu trí tuệ"
+      },
+      {
+        "id": "emails_advanced_1752525331675_700",
+        "title": "Thư mời hợp tác phát triển thương hiệu song phương"
+      },
+      {
+        "id": "emails_advanced_1752525331675_272",
+        "title": "Gửi đề xuất chiến dịch CSR năm tới"
+      },
+      {
+        "id": "emails_advanced_1752525331675_917",
+        "title": "Thư trao đổi về mở rộng thị phần khu vực ASEAN"
+      },
+      {
+        "id": "emails_advanced_1752525331675_14",
+        "title": "Phân tích thị trường mục tiêu năm 2026"
+      },
+      {
+        "id": "emails_advanced_1752525331675_558",
+        "title": "Gửi thư xác nhận đối tác phân phối độc quyền"
+      },
+      {
+        "id": "emails_advanced_1752525331675_673",
+        "title": "Đề xuất tổ chức hội thảo chuyên ngành"
+      },
+      {
+        "id": "emails_advanced_1752525331675_611",
+        "title": "Thư mời phát biểu tại hội nghị quốc tế"
+      },
+      {
+        "id": "emails_advanced_1752525331675_471",
+        "title": "Gửi biên bản ký kết ghi nhớ hợp tác"
+      },
+      {
+        "id": "emails_advanced_1752525331675_820",
+        "title": "Phản hồi chính thức về vi phạm điều khoản bảo mật"
+      },
+      {
+        "id": "emails_advanced_1752525331675_72",
+        "title": "Gửi đề xuất tài chính cho vòng gọi vốn Series A"
+      },
+      {
+        "id": "emails_advanced_1752525331675_177",
+        "title": "Gửi thư xin xác nhận thời gian kiểm toán"
+      },
+      {
+        "id": "emails_advanced_1752525331675_920",
+        "title": "Gửi thư xác minh thông tin pháp lý của đối tác"
+      },
+      {
+        "id": "emails_advanced_1752525331675_112",
+        "title": "Đề xuất tổ chức sự kiện kết nối chuyên gia khu vực"
+      },
+      {
+        "id": "emails_advanced_1752525331675_37",
+        "title": "Gửi thư kiến nghị điều chỉnh chiến lược phát triển vùng"
+      },
+      {
+        "id": "emails_advanced_1752525331675_343",
+        "title": "Gửi thông tin hoàn thuế cho tổ chức phi lợi nhuận"
+      },
+      {
+        "id": "emails_advanced_1752525331675_991",
+        "title": "Gửi thư phản biện báo cáo nội bộ"
+      },
+      {
+        "id": "emails_advanced_1752525331675_945",
+        "title": "Thư xác nhận cam kết tuân thủ tiêu chuẩn đạo đức kinh doanh"
+      },
+      {
+        "id": "emails_advanced_1752525331675_675",
+        "title": "Đề xuất chiến lược nhân sự trong giai đoạn tái cấu trúc"
+      },
+      {
+        "id": "emails_advanced_1752525331675_643",
+        "title": "Gửi kế hoạch quản trị rủi ro năm tài chính mới"
+      },
+      {
+        "id": "emails_advanced_1752525331675_458",
+        "title": "Gửi thư hợp tác truyền thông liên ngành"
+      },
+      {
+        "id": "emails_advanced_1752525331675_26",
+        "title": "Gửi đề xuất xây dựng trung tâm đổi mới sáng tạo"
+      },
+      {
+        "id": "emails_advanced_1752525331675_758",
+        "title": "Phản hồi chất vấn từ cổ đông"
+      },
+      {
+        "id": "emails_advanced_1752525331675_30",
+        "title": "Gửi thư đề nghị xác nhận thông tin pháp lý liên kết ngân hàng."
+      }
+    ],
+    "essays": [
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_advanced_1752525331675_399"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_advanced_1752525331675_891"
+      },
+      {
+        "title": "Học online hay học trực tiếp hiệu quả hơn?",
+        "id": "essays_advanced_1752525331676_754"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_advanced_1752525331676_423"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_1752525331676_493"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_1752525331676_625"
+      },
+      {
+        "title": "Lợi ích và thách thức của học song bằng",
+        "id": "essays_advanced_1752525331676_743"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_1752525331676_425"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_advanced_1752525331676_51"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_1752525331676_854"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_1752525331676_215"
+      },
+      {
+        "title": "Trí tuệ nhân tạo có thay thế được giáo viên?",
+        "id": "essays_advanced_1752525331676_165"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_advanced_1752525331676_372"
+      },
+      {
+        "title": "Vai trò của giáo dục môi trường trong nhà trường",
+        "id": "essays_advanced_1752525331676_543"
+      },
+      {
+        "title": "Ảnh hưởng của áp lực thi cử đến sức khỏe tâm thần",
+        "id": "essays_advanced_1752525331676_787"
+      },
+      {
+        "title": "Giáo dục kỹ năng sống có quan trọng hơn kiến thức sách vở?",
+        "id": "essays_advanced_1752525331676_531"
+      },
+      {
+        "title": "Tác động của du học đối với phát triển cá nhân",
+        "id": "essays_advanced_1752525331676_789"
+      },
+      {
+        "title": "Việc học đại học có còn cần thiết trong thế kỷ 21?",
+        "id": "essays_advanced_1752525331676_608"
+      },
+      {
+        "title": "Có nên cấm điện thoại trong lớp học?",
+        "id": "essays_advanced_1752525331676_255"
+      },
+      {
+        "title": "Phân tích tác động của mạng xã hội đến sinh viên",
+        "id": "essays_advanced_1752525331676_340"
+      },
+      {
+        "id": "essays_advanced_1752525331676_986",
+        "title": "Giáo dục nên rèn luyện tư duy phản biện hay ghi nhớ kiến thức?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_5",
+        "title": "Vai trò của thất bại trong quá trình trưởng thành"
+      },
+      {
+        "id": "essays_advanced_1752525331676_567",
+        "title": "Học sinh có nên được quyền chọn môn học theo sở thích?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_74",
+        "title": "Tác động của công nghệ đến khả năng tập trung của giới trẻ"
+      },
+      {
+        "id": "essays_advanced_1752525331676_455",
+        "title": "Vì sao lòng biết ơn là nền tảng của một cuộc sống ý nghĩa"
+      },
+      {
+        "id": "essays_advanced_1752525331676_96",
+        "title": "Sự khác biệt giữa học để thi và học để sống"
+      },
+      {
+        "id": "essays_advanced_1752525331676_710",
+        "title": "Nên khuyến khích học sinh tranh luận hay tuân thủ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_991",
+        "title": "Mạng xã hội: công cụ kết nối hay nguyên nhân chia rẽ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_320",
+        "title": "Tự học có thể thay thế hoàn toàn việc học trên lớp?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_809",
+        "title": "Áp lực thành công có đang làm hỏng tuổi trẻ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_510",
+        "title": "Sự cạnh tranh có làm con người tốt hơn?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_513",
+        "title": "Làm thế nào để sống có trách nhiệm trong xã hội hiện đại?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_232",
+        "title": "Định nghĩa “trưởng thành” dưới góc nhìn của học sinh"
+      },
+      {
+        "id": "essays_advanced_1752525331676_268",
+        "title": "Tự do cá nhân và giới hạn trong môi trường học đường"
+      },
+      {
+        "id": "essays_advanced_1752525331676_935",
+        "title": "Học sinh nên được dạy về thất bại ngay từ nhỏ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_617",
+        "title": "Điều gì quan trọng hơn: điểm số hay kỹ năng sống?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_178",
+        "title": "Thế hệ Z đang đối mặt với khủng hoảng giá trị nào?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_877",
+        "title": "Trí tuệ nhân tạo sẽ thay đổi cách chúng ta học ra sao?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_632",
+        "title": "Nghệ thuật có vai trò gì trong việc nuôi dưỡng tâm hồn?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_802",
+        "title": "Có nên dạy thiền và chánh niệm trong nhà trường?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_730",
+        "title": "Định nghĩa hạnh phúc trong một thế giới luôn thay đổi"
+      },
+      {
+        "id": "essays_advanced_1752525331676_498",
+        "title": "Vai trò của giáo viên trong thời đại công nghệ"
+      },
+      {
+        "id": "essays_advanced_1752525331676_407",
+        "title": "Cần xem lại mô hình thi cử hiện nay?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_996",
+        "title": "Làm sao để vượt qua cảm giác bị so sánh?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_460",
+        "title": "Giá trị thật của thành công là gì?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_964",
+        "title": "Tình bạn trong thế giới số liệu và KPI"
+      },
+      {
+        "id": "essays_advanced_1752525331676_282",
+        "title": "Tư duy phản biện có đang bị hạn chế trong môi trường học thuật?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_848",
+        "title": "Sáng tạo có thể rèn luyện hay là bẩm sinh?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_662",
+        "title": "Vì sao cần học cách đặt câu hỏi"
+      },
+      {
+        "id": "essays_advanced_1752525331676_602",
+        "title": "Học sinh có cần học về tài chính cá nhân không?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_796",
+        "title": "Điều gì làm nên một con người văn minh?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_678",
+        "title": "Giới hạn nào cho sự tự do biểu đạt của học sinh?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_679",
+        "title": "Làm sao để sống ý nghĩa trong một thế giới hỗn loạn?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_606",
+        "title": "Một xã hội biết lắng nghe sẽ thay đổi điều gì?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_696",
+        "title": "Khi “công nghệ hóa” làm lu mờ cảm xúc thật"
+      },
+      {
+        "id": "essays_advanced_1752525331676_774",
+        "title": "Người trẻ nên sống chậm hay sống nhanh?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_14",
+        "title": "Giá trị đạo đức có thể dạy qua sách vở?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_829",
+        "title": "Tại sao cần học từ những điều không hoàn hảo"
+      },
+      {
+        "id": "essays_advanced_1752525331676_315",
+        "title": "Truyền thông đang dẫn dắt hay thao túng nhận thức?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_360",
+        "title": "Sự phát triển nội tâm có quan trọng bằng phát triển trí tuệ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_405",
+        "title": "Làm thế nào để học sinh tự định nghĩa thành công?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_53",
+        "title": "Vai trò của sự im lặng trong cuộc sống hiện đại"
+      },
+      {
+        "id": "essays_advanced_1752525331676_213",
+        "title": "Nghệ thuật giao tiếp trong thời đại số"
+      },
+      {
+        "id": "essays_advanced_1752525331676_631",
+        "title": "Học sinh nên học cách thấu cảm từ khi còn nhỏ?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_801",
+        "title": "Thói quen tiêu dùng có phản ánh nhân cách?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_366",
+        "title": "Sự cô đơn có phải là một phần tất yếu để trưởng thành?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_229",
+        "title": "Khi mọi thứ đều được đo bằng thành tích – ta mất gì?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_106",
+        "title": "Thế giới cần người giỏi hay người tử tế?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_523",
+        "title": "Làm thế nào để sống thật giữa một xã hội nhiều áp lực?"
+      },
+      {
+        "id": "essays_advanced_1752525331676_941",
+        "title": "Trường học nên là nơi đào tạo con người hay nhân lực?"
+      }
+    ],
+    "reports": [
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_1752525331676_909"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_advanced_1752525331676_282"
+      },
+      {
+        "title": "Báo cáo thống kê tình hình tham gia lớp học trực tuyến",
+        "id": "reports_advanced_1752525331676_608"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_1752525331676_650"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_1752525331676_868"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_1752525331676_846"
+      },
+      {
+        "title": "Báo cáo đánh giá mô hình học tích cực",
+        "id": "reports_advanced_1752525331676_18"
+      },
+      {
+        "title": "Báo cáo kết quả khảo sát ý kiến sinh viên về thư viện",
+        "id": "reports_advanced_1752525331676_675"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_1752525331676_199"
+      },
+      {
+        "title": "Báo cáo tiến độ thực hiện đề tài nghiên cứu",
+        "id": "reports_advanced_1752525331676_24"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_advanced_1752525331676_222"
+      },
+      {
+        "title": "Báo cáo phân tích hiệu quả học nhóm",
+        "id": "reports_advanced_1752525331676_787"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_1752525331676_755"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_1752525331676_852"
+      },
+      {
+        "title": "Báo cáo so sánh giữa hai phương pháp học từ vựng",
+        "id": "reports_advanced_1752525331676_882"
+      },
+      {
+        "title": "Báo cáo phản hồi từ sinh viên về giảng viên",
+        "id": "reports_advanced_1752525331676_754"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_1752525331676_343"
+      },
+      {
+        "title": "Báo cáo kết quả thi thử IELTS học kỳ 1",
+        "id": "reports_advanced_1752525331676_365"
+      },
+      {
+        "title": "Báo cáo về hoạt động ngoại khóa tháng 4",
+        "id": "reports_advanced_1752525331676_238"
+      },
+      {
+        "title": "Báo cáo tổng kết hội thảo kỹ năng mềm",
+        "id": "reports_advanced_1752525331676_552"
+      }
+    ],
+    "summaries": [
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_1752525331676_158"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_1752525331676_777"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_advanced_1752525331676_659"
+      },
+      {
+        "title": "Tóm tắt khóa học online về kỹ năng học tập",
+        "id": "summaries_advanced_1752525331676_719"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_advanced_1752525331676_262"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_1752525331676_948"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_1752525331676_812"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_1752525331676_180"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_1752525331676_533"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_1752525331676_421"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_advanced_1752525331676_317"
+      },
+      {
+        "title": "Tóm tắt bài phỏng vấn chuyên gia về du học",
+        "id": "summaries_advanced_1752525331676_833"
+      },
+      {
+        "title": "Tóm tắt bài giảng về tư duy phản biện",
+        "id": "summaries_advanced_1752525331676_312"
+      },
+      {
+        "title": "Tóm tắt báo cáo nghiên cứu về trí nhớ ngắn hạn",
+        "id": "summaries_advanced_1752525331676_916"
+      },
+      {
+        "title": "Tóm tắt nội dung video kỹ năng thuyết trình",
+        "id": "summaries_advanced_1752525331676_200"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_advanced_1752525331676_5"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_1752525331676_264"
+      },
+      {
+        "title": "Tóm tắt một buổi thảo luận về giáo dục khai phóng",
+        "id": "summaries_advanced_1752525331676_769"
+      },
+      {
+        "title": "Tóm tắt buổi hội thảo về đổi mới giáo dục",
+        "id": "summaries_advanced_1752525331676_532"
+      },
+      {
+        "title": "Tóm tắt chương sách nói về quản lý thời gian",
+        "id": "summaries_advanced_1752525331676_883"
+      }
+    ],
+    "stories": [
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1752525331676_865"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_1752525331676_11"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_1752525331676_692"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_1752525331676_324"
+      },
+      {
+        "title": "Một trải nghiệm khó quên trong lớp học kỹ năng sống",
+        "id": "stories_advanced_1752525331676_656"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_1752525331676_540"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1752525331676_377"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_1752525331676_728"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1752525331676_223"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_advanced_1752525331676_268"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_advanced_1752525331676_546"
+      },
+      {
+        "title": "Kể chuyện lần đầu tham dự cuộc thi học thuật",
+        "id": "stories_advanced_1752525331676_300"
+      },
+      {
+        "title": "Kể lại một buổi thuyết trình đáng nhớ",
+        "id": "stories_advanced_1752525331676_687"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1752525331676_467"
+      },
+      {
+        "title": "Kể lại trải nghiệm khi học nhóm thất bại",
+        "id": "stories_advanced_1752525331676_765"
+      },
+      {
+        "title": "Câu chuyện về lần bị điểm kém và bài học nhận được",
+        "id": "stories_advanced_1752525331676_331"
+      },
+      {
+        "title": "Chuyện về một người bạn giúp mình vượt khó trong học tập",
+        "id": "stories_advanced_1752525331676_746"
+      },
+      {
+        "title": "Kể lại khoảnh khắc tự hào khi đạt học bổng",
+        "id": "stories_advanced_1752525331676_474"
+      },
+      {
+        "title": "Kể về một giáo viên truyền cảm hứng học tập",
+        "id": "stories_advanced_1752525331676_545"
+      },
+      {
+        "title": "Câu chuyện khi lạc đề trong bài thi cuối kỳ",
+        "id": "stories_advanced_1752525331676_766"
+      }
+    ],
+    "diaries": [
+      {
+        "id": "diaries_advanced_1752525331676_287",
+        "title": "Khi sự im lặng trở thành lời hồi đáp"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_63",
+        "title": "Những điều chưa từng dám đối diện"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_170",
+        "title": "Bài học từ những giấc mơ lập đi lập lại"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_333",
+        "title": "Hành trình chữa lành không có đường tắt"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_495",
+        "title": "Ngày mình đối thoại với nỗi cô đơn"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_685",
+        "title": "Những câu hỏi chưa có lời giải"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_579",
+        "title": "Cuộc sống khi mình ngừng cố gắng làm hài lòng người khác"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_367",
+        "title": "Khi tổn thương trở thành động lực"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_386",
+        "title": "Cảm giác khi không còn là chính mình"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_95",
+        "title": "Một khoảng lặng dài hơn dự kiến"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_812",
+        "title": "Mình nhận ra giá trị của sự kiên nhẫn"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_90",
+        "title": "Khi tình cảm không được đáp lại"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_421",
+        "title": "Những đoạn hội thoại trong tâm trí"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_695",
+        "title": "Mình chọn tha thứ – không phải vì họ, mà vì mình"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_487",
+        "title": "Nỗi sợ lớn nhất – không phải thất bại, mà là không thử"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_329",
+        "title": "Khoảnh khắc mình ngừng chạy và bắt đầu lắng nghe"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_557",
+        "title": "Khi mình không còn cố kiểm soát mọi thứ"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_102",
+        "title": "Một ngày không đặt kỳ vọng"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_361",
+        "title": "Cảm giác bị bỏ lại phía sau"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_803",
+        "title": "Mình chấp nhận rằng ai đó đã thay đổi"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_657",
+        "title": "Một bức thư cho người từng là tất cả"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_578",
+        "title": "Khi thành công không làm mình hạnh phúc như nghĩ"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_281",
+        "title": "Mình học được cách ở một mình mà không cô đơn"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_636",
+        "title": "Từ bỏ không phải là yếu đuối"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_915",
+        "title": "Một lần chấp nhận sự mất mát"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_614",
+        "title": "Khi mình cảm thấy vô hình"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_174",
+        "title": "Hành trình đi tìm ý nghĩa cuộc sống"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_481",
+        "title": "Mình đã mất bao lâu để nhận ra mình cần gì"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_243",
+        "title": "Khi mối quan hệ đi đến hồi kết"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_538",
+        "title": "Một đêm dài trăn trở về lựa chọn"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_150",
+        "title": "Sự thật đôi khi rất nhẹ nhưng cũng rất đau"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_422",
+        "title": "Mình bắt đầu hành trình tự yêu bản thân"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_930",
+        "title": "Cảm xúc khi đối diện với quá khứ"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_990",
+        "title": "Mình học cách đặt ranh giới"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_788",
+        "title": "Một ngày mình dừng lại để thở"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_582",
+        "title": "Khi giấc mơ không còn giống xưa"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_719",
+        "title": "Trải nghiệm rơi tự do giữa những mối quan hệ hời hợt"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_164",
+        "title": "Một lần đứng lên từ tuyệt vọng"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_353",
+        "title": "Khi người mình tin tưởng nhất khiến mình tổn thương"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_198",
+        "title": "Bản ngã và cái tôi trong những lần tranh cãi"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_960",
+        "title": "Mình hiểu ra rằng không phải ai cũng cần giữ lại"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_885",
+        "title": "Một ký ức ám ảnh nhưng mình đang dần buông"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_671",
+        "title": "Lúc mình thôi tìm kiếm người hiểu mình"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_7",
+        "title": "Mình không còn sợ sai nữa"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_873",
+        "title": "Một lần dám nói không"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_91",
+        "title": "Cảm giác khi tìm thấy chính mình trong cô độc"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_320",
+        "title": "Một cái ôm không kịp nói lời xin lỗi"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_215",
+        "title": "Hành trình trở về với sự thật bên trong"
+      },
+      {
+        "id": "diaries_advanced_1752525331676_709",
+        "title": "Khi mình không cần ai xác nhận giá trị của mình nữa."
+      }
+    ],
+    "articles": [
+      {
+        "id": "articles_advanced_1752525331676_249",
+        "title": "Tác động lâu dài của trí tuệ nhân tạo lên giáo dục phổ thông"
+      },
+      {
+        "id": "articles_advanced_1752525331676_335",
+        "title": "Học sinh thế hệ Alpha sẽ học như thế nào trong 20 năm tới"
+      },
+      {
+        "id": "articles_advanced_1752525331676_902",
+        "title": "Khi học sinh trở thành người kiến tạo nội dung số"
+      },
+      {
+        "id": "articles_advanced_1752525331676_32",
+        "title": "Hệ quả của văn hóa thành tích trong học đường hiện đại"
+      },
+      {
+        "id": "articles_advanced_1752525331676_642",
+        "title": "Giáo dục khai phóng: Xu hướng hay trào lưu nhất thời"
+      },
+      {
+        "id": "articles_advanced_1752525331676_419",
+        "title": "Chuyển đổi số trong giáo dục: Cơ hội và thách thức"
+      },
+      {
+        "id": "articles_advanced_1752525331676_989",
+        "title": "Từ điểm số đến năng lực: Một cách nhìn mới về thành công"
+      },
+      {
+        "id": "articles_advanced_1752525331676_99",
+        "title": "Học sinh học gì từ thất bại của người nổi tiếng"
+      },
+      {
+        "id": "articles_advanced_1752525331676_562",
+        "title": "Giáo dục cảm xúc: Mảnh ghép còn thiếu trong trường học Việt"
+      },
+      {
+        "id": "articles_advanced_1752525331676_107",
+        "title": "Tầm quan trọng của việc hiểu bản thân ở tuổi mới lớn"
+      },
+      {
+        "id": "articles_advanced_1752525331676_426",
+        "title": "Tương lai của lớp học không bảng, không phấn"
+      },
+      {
+        "id": "articles_advanced_1752525331676_561",
+        "title": "Sự phân hóa cơ hội học tập giữa thành thị và nông thôn"
+      },
+      {
+        "id": "articles_advanced_1752525331676_710",
+        "title": "Hệ thống đánh giá học sinh cần công bằng hơn"
+      },
+      {
+        "id": "articles_advanced_1752525331676_819",
+        "title": "Vai trò của phụ huynh trong giáo dục hiện đại"
+      },
+      {
+        "id": "articles_advanced_1752525331676_199",
+        "title": "Khi học sinh trở thành người hướng dẫn cho chính mình"
+      },
+      {
+        "id": "articles_advanced_1752525331676_676",
+        "title": "Giá trị của một “ngày không bài tập về nhà”"
+      },
+      {
+        "id": "articles_advanced_1752525331676_770",
+        "title": "Học sinh và cuộc khủng hoảng bản sắc thời công nghệ"
+      },
+      {
+        "id": "articles_advanced_1752525331676_643",
+        "title": "Trường học lý tưởng trong mắt học sinh hiện đại"
+      },
+      {
+        "id": "articles_advanced_1752525331676_120",
+        "title": "Bàn về việc thay thế kỳ thi tốt nghiệp bằng dự án cá nhân"
+      },
+      {
+        "id": "articles_advanced_1752525331676_131",
+        "title": "Tác động của mô hình giáo dục Phần Lan đến học sinh châu Á"
+      },
+      {
+        "id": "articles_advanced_1752525331676_390",
+        "title": "Khi trường học dạy học sinh cách... nghỉ ngơi"
+      },
+      {
+        "id": "articles_advanced_1752525331676_556",
+        "title": "Giáo viên thế hệ mới: Người truyền cảm hứng hay nhà quản lý kỹ năng"
+      },
+      {
+        "id": "articles_advanced_1752525331676_501",
+        "title": "Những nghịch lý trong hệ thống thi cử hiện nay"
+      },
+      {
+        "id": "articles_advanced_1752525331676_480",
+        "title": "Tại sao việc học nên dựa trên đam mê"
+      },
+      {
+        "id": "articles_advanced_1752525331676_793",
+        "title": "Học sinh Việt và bài toán “học nhiều nhưng thiếu kỹ năng”"
+      },
+      {
+        "id": "articles_advanced_1752525331676_763",
+        "title": "Giáo dục không thể là “một khuôn mẫu cho tất cả”"
+      },
+      {
+        "id": "articles_advanced_1752525331676_628",
+        "title": "Làm thế nào để đánh giá tư duy sáng tạo của học sinh"
+      },
+      {
+        "id": "articles_advanced_1752525331676_84",
+        "title": "Khi ChatGPT bước vào lớp học: Nỗi lo hay cơ hội"
+      },
+      {
+        "id": "articles_advanced_1752525331676_258",
+        "title": "Học sinh và quyền được nói “không” với kỳ vọng"
+      },
+      {
+        "id": "articles_advanced_1752525331676_246",
+        "title": "Học sinh nghỉ học vì căng thẳng: Một lời cảnh báo từ thực tế"
+      },
+      {
+        "id": "articles_advanced_1752525331676_316",
+        "title": "Vai trò của mindfulness trong giáo dục học sinh trung học"
+      },
+      {
+        "id": "articles_advanced_1752525331676_962",
+        "title": "Giá trị thật của bằng cấp trong thời đại số"
+      },
+      {
+        "id": "articles_advanced_1752525331676_990",
+        "title": "Học sinh cần học kỹ năng ra quyết định từ sớm"
+      },
+      {
+        "id": "articles_advanced_1752525331676_217",
+        "title": "Tại sao “biết lắng nghe” là kỹ năng sống quan trọng nhất"
+      },
+      {
+        "id": "articles_advanced_1752525331676_407",
+        "title": "Khi điểm số không còn là trung tâm của lớp học"
+      },
+      {
+        "id": "articles_advanced_1752525331676_142",
+        "title": "Học sinh – người tiêu dùng hay người đồng kiến tạo tri thức"
+      },
+      {
+        "id": "articles_advanced_1752525331676_202",
+        "title": "Sự cần thiết của giáo dục giới tính toàn diện"
+      },
+      {
+        "id": "articles_advanced_1752525331676_133",
+        "title": "Vì sao học sinh nên học về tài chính cá nhân từ cấp 2"
+      },
+      {
+        "id": "articles_advanced_1752525331676_114",
+        "title": "Trường học tương lai: Không gian mở, linh hoạt và kết nối"
+      },
+      {
+        "id": "articles_advanced_1752525331676_278",
+        "title": "Học sinh nói gì về việc học suốt đời"
+      },
+      {
+        "id": "articles_advanced_1752525331676_795",
+        "title": "Những mâu thuẫn giữa học để sống và học để thi"
+      },
+      {
+        "id": "articles_advanced_1752525331676_825",
+        "title": "Tại sao giáo dục nghệ thuật lại bị coi nhẹ"
+      },
+      {
+        "id": "articles_advanced_1752525331676_119",
+        "title": "Một ngày học không điện thoại"
+      },
+      {
+        "id": "articles_advanced_1752525331676_222",
+        "title": "Trải nghiệm thay đổi nhận thức"
+      },
+      {
+        "id": "articles_advanced_1752525331676_158",
+        "title": "Khi học sinh được quyền chọn giáo viên của mình"
+      },
+      {
+        "id": "articles_advanced_1752525331676_671",
+        "title": "Giấc mơ về một nền giáo dục nhân bản"
+      },
+      {
+        "id": "articles_advanced_1752525331676_540",
+        "title": "Học sinh học gì từ các mô hình học tập của người lớn"
+      },
+      {
+        "id": "articles_advanced_1752525331676_523",
+        "title": "Những bài học tự do đầu tiên trong lớp học dân chủ"
+      },
+      {
+        "id": "articles_advanced_1752525331676_484",
+        "title": "Học sinh và trách nhiệm xã hội: Giáo dục vì cộng đồng"
+      },
+      {
+        "id": "articles_advanced_1752525331676_916",
+        "title": "Khi trường học là nơi khơi dậy nhân cách, không chỉ tri thức."
+      }
+    ]
+  }
+}
