@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Dữ Liệu IELTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" href="ielts.png">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --warning-color: #fbbc05;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --border-color: #dee2e6;
+            --github-color: #333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* New header style */
+        header {
+            background: linear-gradient(120deg, #4285f4, #34a853);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.8rem;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--dark-color);
+        }
+        
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        /* Tab navigation */
+        .nav-tabs {
+            display: flex;
+            background-color: white;
+            padding: 0 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            position: relative;
+            color: #666;
+        }
+        
+        .nav-tab:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-tab.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Main content */
+        .tab-content {
+            display: none;
+            background-color: white;
+            padding: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .data-table th, .data-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .data-table th {
+            background-color: #f5f9ff;
+            font-weight: 600;
+            color: #4285f4;
+        }
+        
+        .data-table tr:hover {
+            background-color: rgba(66, 133, 244, 0.03);
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .btn-sm {
+            padding: 8px 14px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(120deg, #4285f4, #5b9bf8);
+            color: white;
+            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(120deg, #3b78e0, #4f8df0);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(120deg, #34a853, #48c76d);
+            color: white;
+            box-shadow: 0 3px 10px rgba(52, 168, 83, 0.25);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(120deg, #2d9447, #3db35c);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.35);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(120deg, #ea4335, #f06d62);
+            color: white;
+            box-shadow: 0 3px 10px rgba(234, 67, 53, 0.25);
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(120deg, #d33426, #e55b4f);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(234, 67, 53, 0.35);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(120deg, #fbbc05, #fcd34d);
+            color: #333;
+            box-shadow: 0 3px 10px rgba(251, 188, 5, 0.25);
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(120deg, #e6ac00, #fbc62e);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(251, 188, 5, 0.35);
+        }
+        
+        .btn-light {
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+        .btn-light:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .btn-github {
+            background: var(--github-color);
+            color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-github:hover {
+            background: #222;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Form styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #dbe2e8;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: #f9fbfd;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+            background-color: white;
+        }
+        
+        textarea.form-control {
+            min-height: 140px;
+            resize: vertical;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 80px auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            animation: modalFadeIn 0.4s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-body {
+            padding: 25px;
+        }
+        
+        .modal-footer {
+            padding: 20px 25px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #6c757d;
+            transition: color 0.2s;
+        }
+        
+        .close-btn:hover {
+            color: var(--danger-color);
+        }
+        
+        /* Preview section */
+        .preview-section {
+            background-color: #f8fafd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #e3eaf3;
+        }
+        
+        .preview-title {
+            margin-bottom: 15px;
+            color: #4285f4;
+            font-weight: 600;
+        }
+        
+        /* File input */
+        .file-input-container {
+            margin-bottom: 20px;
+        }
+        
+        .file-input-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(120deg, #f8f9fa, #e9ecef);
+            border: 2px dashed #ced4da;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .file-input-label:hover {
+            background: linear-gradient(120deg, #e9ecef, #dee2e6);
+            border-color: #adb5bd;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        /* Alert */
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(120deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px 20px 25px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-links i {
+            font-size: 0.9em;
+        }
+        
+        .footer-copyright {
+            color: #95a5a6;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .header-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .nav-tabs {
+                overflow-x: auto;
+                padding: 0;
+            }
+            
+            .nav-tab {
+                padding: 15px 20px;
+                white-space: nowrap;
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* Card styles */
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .col-md-6 {
+            flex: 1 1 calc(50% - 25px);
+            min-width: 300px;
+        }
+
+        .col-md-12 {
+            flex: 1 1 100%;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        /* GitHub Info Box */
+        .github-info-box {
+            background-color: #f0f8ff;
+            border-left: 4px solid #4285f4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .github-info-box h4 {
+            color: #4285f4;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .github-info-box ol {
+            padding-left: 25px;
+        }
+        
+        .github-info-box li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .github-info-box a {
+            color: #4285f4;
+            text-decoration: underline;
+        }
+        
+        .github-info-box a:hover {
+            color: #0d47a1;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #34a853, #48c76d);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-text {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-database"></i>
+                <div class="logo-text">
+                    <h1 class="header-title">Quản Lý Dữ Liệu IELTS</h1>
+                    <p class="subtitle">Quản lý, chỉnh sửa và xuất nhập dữ liệu bài tập IELTS</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <a href="translateielts.html" class="btn btn-secondary"><i class="fas fa-language"></i> Bắt đầu Luyện dịch</a>
+                <a href="checkielts.html" class="btn btn-secondary"><i class="fas fa-check-circle"></i> Chấm điểm ngay</a>
+            </div>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="task1">Task 1</div>
+            <div class="nav-tab" data-tab="task2">Task 2</div>
+            <div class="nav-tab" data-tab="import-export">Nhập/Xuất</div>
+        </div>
+
+        <!-- Task 1 Tab -->
+        <div class="tab-content active" id="task1-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>Danh sách bài tập Task 1</h3>
+                <button class="btn btn-primary" id="add-task1-btn">
+                    <i class="fas fa-plus"></i> Thêm bài mới
+                </button>
+            </div>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tiêu đề</th>
+                        <th>Band</th>
+                        <th>Mô tả</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="task1-table-body">
+                    <!-- Dữ liệu sẽ được thêm động -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Task 2 Tab -->
+        <div class="tab-content" id="task2-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>Danh sách bài tập Task 2</h3>
+                <button class="btn btn-primary" id="add-task2-btn">
+                    <i class="fas fa-plus"></i> Thêm bài mới
+                </button>
+            </div>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tiêu đề</th>
+                        <th>Band</th>
+                        <th>Mô tả</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="task2-table-body">
+                    <!-- Dữ liệu sẽ được thêm động -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Import/Export Tab -->
+        <div class="tab-content" id="import-export-content">
+            <h3 class="mb-4">Nhập/Xuất dữ liệu</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mb-3"><i class="fas fa-file-import"></i> Nhập dữ liệu</h4>
+                            <div class="file-input-container">
+                                <label class="file-input-label">
+                                    <i class="fas fa-upload"></i> Chọn file JSON
+                                    <input type="file" id="import-file" class="file-input" accept=".json">
+                                </label>
+                                <span id="import-file-name">Chưa chọn file</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Chọn loại dữ liệu:</label>
+                                <select id="import-type" class="form-control">
+                                    <option value="task1">Task 1</option>
+                                    <option value="task2">Task 2</option>
+                                </select>
+                            </div>
+                            <button id="import-btn" class="btn btn-secondary">
+                                <i class="fas fa-file-import"></i> Nhập dữ liệu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mb-3"><i class="fas fa-file-export"></i> Xuất dữ liệu</h4>
+                            <div class="form-group">
+                                <label class="form-label">Chọn loại dữ liệu:</label>
+                                <select id="export-type" class="form-control">
+                                    <option value="task1">Task 1</option>
+                                    <option value="task2">Task 2</option>
+                                </select>
+                            </div>
+                            <button id="export-btn" class="btn btn-primary">
+                                <i class="fas fa-file-export"></i> Xuất dữ liệu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Upload Section -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mb-3"><i class="fab fa-github"></i> Upload dữ liệu lên GitHub</h4>
+                             
+                        <div class="form-group">
+                            <label class="form-label">GitHub Personal Access Token</label>
+                            <input type="password" id="github-token" class="form-control" placeholder="Nhập token của bạn" value = "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">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tên Repository (định dạng: username/repo)</label>
+                            <input type="text" id="github-repo" class="form-control" value ="nguyenphanvn95/nguyenphanvn95.github.io" placeholder="vd: nguyenphanvn95/nguyenphanvn95.github.io">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Tên Branch</label>
+                            <input type="text" id="github-branch" class="form-control" value="main">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Đường dẫn file (Gemini/task1.json hoặc Gemini/task2.json)</label>
+                            <input type="text" id="github-file" class="form-control" value="Gemini/task1.json">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Commit message</label>
+                            <input type="text" id="github-commit" class="form-control" value="Update IELTS data">
+                        </div>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="upload-progress"></div>
+                            </div>
+                            <div class="progress-text" id="upload-status">Chuẩn bị upload...</div>
+                        </div>
+                        
+                        <button id="github-upload-btn" class="btn btn-github">
+                            <i class="fab fa-github"></i> Upload lên GitHub
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="import-export-alert" class="alert" style="display: none;"></div>
+        </div>
+
+        <!-- Add/Edit Modal -->
+        <div class="modal" id="exercise-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="modal-title">Thêm bài tập mới</h4>
+                    <button class="close-btn" id="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="exercise-form">
+                        <input type="hidden" id="exercise-id">
+                        <input type="hidden" id="exercise-task-type">
+                        
+                        <div class="form-group">
+                            <label for="exercise-title" class="form-label">Tiêu đề</label>
+                            <input type="text" id="exercise-title" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exercise-band" class="form-label">Band điểm</label>
+                            <input type="text" id="exercise-band" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exercise-description" class="form-label">Mô tả (có thể chèn hình ảnh với [[URL]])</label>
+                            <textarea id="exercise-description" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exercise-content" class="form-label">Nội dung tiếng Anh</label>
+                            <textarea id="exercise-content" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="preview-section">
+                            <h4 class="preview-title"><i class="fas fa-eye"></i> Xem trước mô tả</h4>
+                            <div id="description-preview"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" id="cancel-btn">Hủy</button>
+                    <button class="btn btn-primary" id="save-btn">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div class="modal" id="delete-modal">
+            <div class="modal-content" style="max-width: 500px;">
+                <div class="modal-header">
+                    <h4>Xác nhận xóa</h4>
+                    <button class="close-btn" id="close-delete-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa bài tập này? Hành động này không thể hoàn tác.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" id="cancel-delete-btn">Hủy</button>
+                    <button class="btn btn-danger" id="confirm-delete-btn">Xóa</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p class="footer-title">Học, học nữa, học mãi - V.I. Lê nin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <p class="footer-copyright">© 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </footer>
+    </div>
+   <!--  Gemini Chat Bubble & Scroll Ball -->
+<script src="../assistant.js"></script>
+<script src="../back-to-top.js"></script>
+    <script>
+        // DOM Elements
+        const tabContents = document.querySelectorAll('.tab-content');
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const task1TableBody = document.getElementById('task1-table-body');
+        const task2TableBody = document.getElementById('task2-table-body');
+        const addTask1Btn = document.getElementById('add-task1-btn');
+        const addTask2Btn = document.getElementById('add-task2-btn');
+        const exerciseModal = document.getElementById('exercise-modal');
+        const deleteModal = document.getElementById('delete-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const saveBtn = document.getElementById('save-btn');
+        const closeDeleteModalBtn = document.getElementById('close-delete-modal');
+        const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
+        const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+        const exerciseForm = document.getElementById('exercise-form');
+        const modalTitle = document.getElementById('modal-title');
+        const exerciseIdInput = document.getElementById('exercise-id');
+        const exerciseTaskTypeInput = document.getElementById('exercise-task-type');
+        const exerciseTitleInput = document.getElementById('exercise-title');
+        const exerciseBandInput = document.getElementById('exercise-band');
+        const exerciseDescriptionInput = document.getElementById('exercise-description');
+        const exerciseContentInput = document.getElementById('exercise-content');
+        const descriptionPreview = document.getElementById('description-preview');
+        const importFileInput = document.getElementById('import-file');
+        const importFileName = document.getElementById('import-file-name');
+        const importTypeSelect = document.getElementById('import-type');
+        const exportTypeSelect = document.getElementById('export-type');
+        const importBtn = document.getElementById('import-btn');
+        const exportBtn = document.getElementById('export-btn');
+        const importExportAlert = document.getElementById('import-export-alert');
+        const githubTokenInput = document.getElementById('github-token');
+        const githubRepoInput = document.getElementById('github-repo');
+        const githubBranchInput = document.getElementById('github-branch');
+        const githubFileInput = document.getElementById('github-file');
+        const githubCommitInput = document.getElementById('github-commit');
+        const githubUploadBtn = document.getElementById('github-upload-btn');
+        const uploadProgress = document.getElementById('upload-progress');
+        const uploadStatus = document.getElementById('upload-status');
+
+        // App State
+        let currentData = {
+            task1: [],
+            task2: []
+        };
+        
+        let exerciseToDelete = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadData();
+            setupEventListeners();
+            renderTables();
+        });
+
+        // Load data from JSON files
+        async function loadData() {
+            try {
+                // Load Task 1 data
+                const task1Response = await fetch('task1Data.json');
+                if (task1Response.ok) {
+                    currentData.task1 = await task1Response.json();
+                    localStorage.setItem('ielts_task1_data', JSON.stringify(currentData.task1));
+                } else {
+                    throw new Error('Không tìm thấy file task1Data.json');
+                }
+                
+                // Load Task 2 data
+                const task2Response = await fetch('task2Data.json');
+                if (task2Response.ok) {
+                    currentData.task2 = await task2Response.json();
+                    localStorage.setItem('ielts_task2_data', JSON.stringify(currentData.task2));
+                } else {
+                    throw new Error('Không tìm thấy file task2Data.json');
+                }
+            } catch (error) {
+                console.warn('Lỗi khi tải dữ liệu:', error.message, 'Sử dụng dữ liệu từ localStorage');
+                
+                // Fallback to localStorage if available
+                const savedTask1 = localStorage.getItem('ielts_task1_data');
+                const savedTask2 = localStorage.getItem('ielts_task2_data');
+                
+                if (savedTask1) {
+                    currentData.task1 = JSON.parse(savedTask1);
+                } else {
+                    // Sample data for demonstration
+                    currentData.task1 = getSampleTask1Data();
+                }
+                
+                if (savedTask2) {
+                    currentData.task2 = JSON.parse(savedTask2);
+                } else {
+                    // Sample data for demonstration
+                    currentData.task2 = getSampleTask2Data();
+                }
+            }
+            
+            // Save to localStorage for future use
+            saveData();
+        }
+
+        function getSampleTask1Data() {
+            return [
+                {
+                    id: '1',
+                    title: 'Biểu đồ dân số từ 1990-2020',
+                    band: '7.0',
+                    description: 'Phân tích biểu đồ dân số tại các khu vực châu Á',
+                    englishText: 'The chart illustrates population growth in Asia from 1990 to 2020...'
+                },
+                {
+                    id: '2',
+                    title: 'Quy trình sản xuất giấy',
+                    band: '6.5',
+                    description: 'Mô tả quy trình sản xuất giấy từ gỗ',
+                    englishText: 'The diagram shows how paper is manufactured from wood...'
+                }
+            ];
+        }
+
+        function getSampleTask2Data() {
+            return [
+                {
+                    id: '1',
+                    title: 'Lợi ích của giáo dục đại học',
+                    band: '8.0',
+                    description: 'Thảo luận về giá trị của giáo dục đại học trong xã hội hiện đại',
+                    englishText: 'Higher education has long been considered a gateway to better career opportunities...'
+                },
+                {
+                    id: '2',
+                    title: 'Ảnh hưởng của mạng xã hội',
+                    band: '7.5',
+                    description: 'Phân tích tác động tích cực và tiêu cực của mạng xã hội',
+                    englishText: 'Social media has revolutionized the way we communicate and access information...'
+                }
+            ];
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('ielts_task1_data', JSON.stringify(currentData.task1));
+            localStorage.setItem('ielts_task2_data', JSON.stringify(currentData.task2));
+        }
+
+        // Render data tables
+        function renderTables() {
+            renderTaskTable(task1TableBody, currentData.task1);
+            renderTaskTable(task2TableBody, currentData.task2);
+        }
+
+        // Render a single task table
+        function renderTaskTable(tableBody, data) {
+            tableBody.innerHTML = '';
+            
+            if (data.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td colspan="4" class="text-center">Không có dữ liệu</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+            
+            data.forEach((exercise, index) => {
+                const row = document.createElement('tr');
+                const shortDescription = exercise.description.length > 50 
+                    ? exercise.description.substring(0, 50) + '...' 
+                    : exercise.description;
+                
+                row.innerHTML = `
+                    <td>${exercise.title}</td>
+                    <td><span class="badge" style="background: #e3f2fd; color: #1976d2; padding: 5px 10px; border-radius: 20px; font-weight: 600;">${exercise.band}</span></td>
+                    <td>${shortDescription}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning edit-btn" data-index="${index}">
+                            <i class="fas fa-edit"></i> Sửa
+                        </button>
+                        <button class="btn btn-sm btn-danger delete-btn" data-index="${index}">
+                            <i class="fas fa-trash"></i> Xóa
+                        </button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Tab navigation
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(`${tab.dataset.tab}-content`).classList.add('active');
+                });
+            });
+            
+            // Add new exercise buttons
+            addTask1Btn.addEventListener('click', () => openExerciseModal('task1'));
+            addTask2Btn.addEventListener('click', () => openExerciseModal('task2'));
+            
+            // Modal buttons
+            closeModalBtn.addEventListener('click', closeExerciseModal);
+            cancelBtn.addEventListener('click', closeExerciseModal);
+            saveBtn.addEventListener('click', saveExercise);
+            
+            closeDeleteModalBtn.addEventListener('click', closeDeleteModal);
+            cancelDeleteBtn.addEventListener('click', closeDeleteModal);
+            confirmDeleteBtn.addEventListener('click', confirmDelete);
+            
+            // Description preview
+            exerciseDescriptionInput.addEventListener('input', updateDescriptionPreview);
+            
+            // Import/Export
+            importFileInput.addEventListener('change', handleFileSelect);
+            importBtn.addEventListener('click', importData);
+            exportBtn.addEventListener('click', exportData);
+            
+            // GitHub Upload
+            githubUploadBtn.addEventListener('click', handleGithubUpload);
+            
+            // Edit/Delete buttons (delegated)
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('edit-btn') || e.target.closest('.edit-btn')) {
+                    const btn = e.target.classList.contains('edit-btn') 
+                        ? e.target 
+                        : e.target.closest('.edit-btn');
+                    const index = parseInt(btn.dataset.index);
+                    const taskType = btn.closest('.tab-content').id.includes('task1') 
+                        ? 'task1' 
+                        : 'task2';
+                    editExercise(taskType, index);
+                }
+                
+                if (e.target.classList.contains('delete-btn') || e.target.closest('.delete-btn')) {
+                    const btn = e.target.classList.contains('delete-btn') 
+                        ? e.target 
+                        : e.target.closest('.delete-btn');
+                    const index = parseInt(btn.dataset.index);
+                    const taskType = btn.closest('.tab-content').id.includes('task1') 
+                        ? 'task1' 
+                        : 'task2';
+                    confirmDeleteExercise(taskType, index);
+                }
+            });
+        }
+
+        // Open exercise modal
+        function openExerciseModal(taskType, exercise = null) {
+            exerciseTaskTypeInput.value = taskType;
+            
+            if (exercise) {
+                // Edit mode
+                modalTitle.textContent = 'Chỉnh sửa bài tập';
+                exerciseIdInput.value = exercise.id || '';
+                exerciseTitleInput.value = exercise.title;
+                exerciseBandInput.value = exercise.band;
+                exerciseDescriptionInput.value = exercise.description;
+                exerciseContentInput.value = exercise.englishText || exercise.content;
+            } else {
+                // Add mode
+                modalTitle.textContent = `Thêm bài tập ${taskType.toUpperCase()}`;
+                exerciseForm.reset();
+                exerciseIdInput.value = '';
+            }
+            
+            updateDescriptionPreview();
+            exerciseModal.style.display = 'block';
+        }
+
+        // Close exercise modal
+        function closeExerciseModal() {
+            exerciseModal.style.display = 'none';
+        }
+
+        // Open delete confirmation modal
+        function confirmDeleteExercise(taskType, index) {
+            exerciseToDelete = { taskType, index };
+            deleteModal.style.display = 'block';
+        }
+
+        // Close delete confirmation modal
+        function closeDeleteModal() {
+            deleteModal.style.display = 'none';
+            exerciseToDelete = null;
+        }
+
+        // Save exercise
+        function saveExercise() {
+            if (!exerciseForm.checkValidity()) {
+                alert('Vui lòng điền đầy đủ thông tin');
+                return;
+            }
+            
+            const taskType = exerciseTaskTypeInput.value;
+            const exerciseData = {
+                id: exerciseIdInput.value || Date.now().toString(),
+                title: exerciseTitleInput.value,
+                band: exerciseBandInput.value,
+                description: exerciseDescriptionInput.value,
+                englishText: exerciseContentInput.value
+            };
+            
+            if (exerciseIdInput.value) {
+                // Update existing exercise
+                const index = currentData[taskType].findIndex(e => e.id === exerciseIdInput.value);
+                if (index !== -1) {
+                    currentData[taskType][index] = exerciseData;
+                }
+            } else {
+                // Add new exercise
+                currentData[taskType].push(exerciseData);
+            }
+            
+            saveData();
+            renderTables();
+            closeExerciseModal();
+            
+            showAlert('success', 'Lưu bài tập thành công!');
+        }
+
+        // Edit exercise
+        function editExercise(taskType, index) {
+            const exercise = currentData[taskType][index];
+            openExerciseModal(taskType, exercise);
+        }
+
+        // Confirm delete
+        function confirmDelete() {
+            if (!exerciseToDelete) return;
+            
+            const { taskType, index } = exerciseToDelete;
+            currentData[taskType].splice(index, 1);
+            
+            saveData();
+            renderTables();
+            closeDeleteModal();
+            
+            showAlert('success', 'Xóa bài tập thành công!');
+        }
+
+        // Update description preview
+        function updateDescriptionPreview() {
+            let description = exerciseDescriptionInput.value;
+            
+            // Replace [[URL]] with image tags
+            description = description.replace(
+                /\[\[(https?:\/\/[^\]]+)\]\]/g, 
+                '<img src="$1" style="max-width: 100%; border-radius: 4px; margin: 10px 0;">'
+            );
+            
+            descriptionPreview.innerHTML = description || '<em>Xem trước sẽ hiển thị ở đây</em>';
+        }
+
+        // Handle file selection
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                importFileName.textContent = file.name;
+            } else {
+                importFileName.textContent = 'Chưa chọn file';
+            }
+        }
+
+        // Import data
+        function importData() {
+            const file = importFileInput.files[0];
+            const taskType = importTypeSelect.value;
+            
+            if (!file) {
+                showAlert('danger', 'Vui lòng chọn file JSON để nhập');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    if (!Array.isArray(data)) {
+                        showAlert('danger', 'Dữ liệu không hợp lệ. File JSON phải chứa một mảng các bài tập.');
+                        return;
+                    }
+                    
+                    // Validate data structure
+                    const isValid = data.every(item => 
+                        item.title && item.band && item.description && item.englishText
+                    );
+                    
+                    if (!isValid) {
+                        showAlert('danger', 'Dữ liệu không hợp lệ. Mỗi bài tập phải có title, band, description và englishText.');
+                        return;
+                    }
+                    
+                    // Merge with existing data
+                    currentData[taskType] = [...currentData[taskType], ...data];
+                    saveData();
+                    renderTables();
+                    
+                    showAlert('success', `Nhập thành công ${data.length} bài tập ${taskType.toUpperCase()}!`);
+                    
+                    // Reset file input
+                    importFileInput.value = '';
+                    importFileName.textContent = 'Chưa chọn file';
+                } catch (error) {
+                    showAlert('danger', 'Lỗi khi đọc file JSON: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Export data
+        function exportData() {
+            const taskType = exportTypeSelect.value;
+            const data = currentData[taskType];
+            
+            if (data.length === 0) {
+                showAlert('danger', `Không có dữ liệu ${taskType.toUpperCase()} để xuất`);
+                return;
+            }
+            
+            const jsonStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ielts_${taskType}_data_${new Date().toISOString().slice(0,10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showAlert('success', `Xuất thành công ${data.length} bài tập ${taskType.toUpperCase()}!`);
+        }
+
+        // Handle GitHub upload
+        async function handleGithubUpload() {
+            const token = githubTokenInput.value;
+            const repo = githubRepoInput.value;
+            const branch = githubBranchInput.value;
+            const filePath = githubFileInput.value;
+            const commitMessage = githubCommitInput.value;
+            const taskType = exportTypeSelect.value;
+            
+            if (!token || !repo || !branch || !filePath || !commitMessage) {
+                showAlert('danger', 'Vui lòng điền đầy đủ thông tin GitHub');
+                return;
+            }
+            
+            try {
+                // Update upload status
+                uploadStatus.textContent = 'Đang chuẩn bị dữ liệu...';
+                uploadProgress.style.width = '20%';
+                
+                // Get data for selected task type
+                const data = currentData[taskType];
+                
+                if (data.length === 0) {
+                    showAlert('danger', `Không có dữ liệu ${taskType.toUpperCase()} để upload`);
+                    resetUploadProgress();
+                    return;
+                }
+                
+                // Prepare JSON content
+                const jsonContent = JSON.stringify(data, null, 2);
+                const base64Content = btoa(unescape(encodeURIComponent(jsonContent)));
+                
+                // Update upload status
+                uploadStatus.textContent = 'Đang kết nối với GitHub...';
+                uploadProgress.style.width = '40%';
+                
+                // Create payload
+                const payload = {
+                    message: commitMessage,
+                    content: base64Content,
+                    branch: branch
+                };
+                
+                // Check if file exists to get SHA
+                let sha = null;
+                try {
+                    const response = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`, {
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const fileInfo = await response.json();
+                        sha = fileInfo.sha;
+                        uploadStatus.textContent = 'Tìm thấy file hiện có, đang cập nhật...';
+                    }
+                } catch (error) {
+                    // File doesn't exist, will create new
+                    uploadStatus.textContent = 'Tạo file mới...';
+                }
+                
+                // If file exists, add SHA to update it
+                if (sha) {
+                    payload.sha = sha;
+                }
+                
+                // Update upload status
+                uploadStatus.textContent = 'Đang upload dữ liệu...';
+                uploadProgress.style.width = '70%';
+                
+                // Perform upload
+                const uploadResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                // Update upload status
+                uploadStatus.textContent = 'Đang xử lý kết quả...';
+                uploadProgress.style.width = '90%';
+                
+                const result = await uploadResponse.json();
+                
+                if (uploadResponse.ok) {
+                    uploadStatus.textContent = 'Upload thành công!';
+                    uploadProgress.style.width = '100%';
+                    
+                    // Create link to GitHub file
+                    const githubLink = `https://github.com/${repo}/blob/${branch}/${filePath}`;
+                    
+                    setTimeout(() => {
+                        showAlert('success', `Dữ liệu đã được upload thành công!<br>Bạn có thể xem tại: <a href="${githubLink}" target="_blank">${githubLink}</a>`);
+                        resetUploadProgress();
+                    }, 1000);
+                } else {
+                    throw new Error(result.message || 'Upload thất bại');
+                }
+            } catch (error) {
+                uploadStatus.textContent = `Lỗi: ${error.message}`;
+                uploadProgress.style.width = '100%';
+                uploadProgress.style.background = '#ea4335';
+                
+                showAlert('danger', `Lỗi khi upload: ${error.message}`);
+                console.error('GitHub Upload Error:', error);
+            }
+        }
+
+        // Reset upload progress
+        function resetUploadProgress() {
+            setTimeout(() => {
+                uploadProgress.style.width = '0%';
+                uploadProgress.style.background = '';
+                uploadStatus.textContent = 'Chuẩn bị upload...';
+            }, 2000);
+        }
+
+        // Show alert message
+        function showAlert(type, message) {
+            importExportAlert.textContent = '';
+            importExportAlert.innerHTML = message;
+            importExportAlert.className = `alert alert-${type}`;
+            importExportAlert.style.display = 'block';
+            
+            setTimeout(() => {
+                importExportAlert.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
