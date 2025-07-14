@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "name": "Additional Card Fields",
+    "icon": "fas fa-plus-circle",
+    "description": "Tiện ích này cho phép bạn thêm các trường thông tin đặc biệt vào mẫu thẻ để lưu trữ nhiều loại thông tin khác nhau.",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/12345",
+        "icon": "fas fa-external-link-alt"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Anki Simulator",
+    "icon": "fas fa-brain",
+    "description": "Mô phỏng quá trình học Anki với nhiều tính năng nâng cao",
+    "links": [
+      {
+        "text": "Tải về",
+        "url": "https://ankiweb.net/shared/info/67890",
+        "icon": "fas fa-download"
+      },
+      {
+        "text": "Hướng dẫn",
+        "url": "#",
+        "icon": "fas fa-book"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mini Format Pack",
+    "icon": "fas fa-wrench",
+    "description": "Bộ công cụ định dạng thẻ học đơn giản nhưng mạnh mẽ",
+    "links": [
+      {
+        "text": "Tài liệu",
+        "url": "#",
+        "icon": "fas fa-file-alt"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Tiện ích nổi bật khác",
+    "icon": "fas fa-star",
+    "description": "Tuyển tập các tiện ích hữu ích khác cho Anki",
+    "links": [
+      {
+        "text": "Xem tất cả",
+        "url": "#",
+        "icon": "fas fa-list"
+      },
+      {
+        "text": "ok",
+        "url": "ksdf",
+        "icon": "fa-solid fa-layer-group"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Puppy Reinforcement",
+    "icon": "fas fa-paw",
+    "description": "Hệ thống phần thưởng với hình ảnh chóHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thươngHệ thống phần thưởng với hình ảnh chó con dễ thương con dễ thương !(http://jdkfajsdlk)[asdlf]",
+    "links": [
+      {
+        "text": "Tải về",
+        "url": "https://ankiweb.net/shared/info/98765",
+        "icon": "fas fa-download"
+      },
+      {
+        "text": "Bình luận",
+        "url": "#",
+        "icon": "fas fa-comments"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Addon Mới",
+    "icon": "fas fa-star",
+    "description": "Mô tả addon mới",
+    "links": [
+      {
+        "text": "tes",
+        "url": "kd",
+        "icon": "fa-solid fa-circle-user"
+      }
+    ]
+  }
+]
