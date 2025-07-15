@@ -8,12 +8,12 @@
       {
         "text": "Add-on page",
         "url": "https://ankiweb.net/shared/info/727020416?cb=1751941527487",
-        "icon": "fas fa-download"
+        "icon": "fas fa-external-link-alt"
       },
       {
         "text": "Github page",
         "url": "https://github.com/nguyenphanvn95/gemini-practice",
-        "icon": "fas fa-download"
+        "icon": "fas fa-external-link-alt"
       }
     ]
   },
