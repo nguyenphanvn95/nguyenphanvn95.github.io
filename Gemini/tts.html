@@ -418,7 +418,6 @@
     </div>
 
     <script>
-        // Kiểm tra trình duyệt hỗ trợ
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         
         if (!SpeechRecognition) {
@@ -427,8 +426,8 @@
             const recognition = new SpeechRecognition();
             recognition.continuous = true;
             recognition.interimResults = true;
-            recognition.lang = 'vi-VN'; // Mặc định là tiếng Việt
-            
+            recognition.lang = 'vi-VN';
+
             const textOutput = document.getElementById('textOutput');
             const startBtn = document.getElementById('startBtn');
             const stopBtn = document.getElementById('stopBtn');
@@ -449,26 +448,21 @@
                 'es-ES': 'Tiếng Tây Ban Nha',
                 'de-DE': 'Tiếng Đức'
             };
-            
-            // Xử lý sự kiện chọn ngôn ngữ
+
+            // QUAN TRỌNG: Thêm biến lưu trữ bản ghi
+            let finalTranscript = '';
+            let interimTranscript = '';
+
             langCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    // Xóa class active từ tất cả các card
                     langCards.forEach(c => c.classList.remove('active'));
-                    
-                    // Thêm class active cho card được chọn
                     card.classList.add('active');
-                    
-                    // Cập nhật ngôn ngữ
                     currentLang = card.dataset.lang;
                     recognition.lang = currentLang;
-                    
-                    // Cập nhật trạng thái
                     updateStatus();
                 });
             });
             
-            // Cập nhật trạng thái ngôn ngữ
             function updateStatus() {
                 const statusText = isRecording ? 
                     `Đang ghi âm - Ngôn ngữ: ${langNames[currentLang]} <span class="counter">●</span>` : 
@@ -477,7 +471,6 @@
                 status.innerHTML = `<i class="fas fa-circle"></i> ${statusText}`;
             }
             
-            // Xử lý sự kiện bắt đầu ghi âm
             startBtn.addEventListener('click', () => {
                 try {
                     recognition.start();
@@ -493,7 +486,6 @@
                 }
             });
             
-            // Xử lý sự kiện dừng ghi âm
             stopBtn.addEventListener('click', () => {
                 recognition.stop();
                 isRecording = false;
@@ -503,24 +495,32 @@
                 updateStatus();
                 status.classList.remove('status-active');
                 status.classList.add('status-inactive');
+                
+                // QUAN TRỌNG: Chuyển interim thành final khi dừng
+                finalTranscript += interimTranscript;
+                interimTranscript = '';
+                textOutput.value = finalTranscript;
             });
             
-            // Xử lý kết quả nhận diện
+            // CẢI THIỆN: Xử lý kết quả chính xác hơn
             recognition.onresult = (event) => {
-                let transcript = '';
+                interimTranscript = '';
+                
                 for (let i = event.resultIndex; i < event.results.length; i++) {
+                    const transcript = event.results[i][0].transcript;
+                    
                     if (event.results[i].isFinal) {
-                        transcript += event.results[i][0].transcript;
+                        finalTranscript += transcript + ' ';
                     } else {
-                        transcript += event.results[i][0].transcript;
+                        interimTranscript = transcript;
                     }
                 }
-                textOutput.value += transcript;
-                // Tự động cuộn xuống dòng mới nhất
+                
+                // Chỉ hiển thị kết quả tạm thời khi cần thiết
+                textOutput.value = finalTranscript + interimTranscript;
                 textOutput.scrollTop = textOutput.scrollHeight;
             };
             
-            // Xử lý lỗi
             recognition.onerror = (event) => {
                 console.error('Lỗi nhận diện giọng nói:', event.error);
                 if (event.error === 'no-speech') {
@@ -539,24 +539,22 @@
                 isRecording = false;
             };
             
-            // Xử lý khi kết thúc nhận diện
             recognition.onend = () => {
                 if (isRecording) {
                     recognition.start();
                 }
             };
             
-            // Xóa nội dung
             clearBtn.addEventListener('click', () => {
+                // QUAN TRỌNG: Reset cả bản ghi
+                finalTranscript = '';
+                interimTranscript = '';
                 textOutput.value = '';
             });
             
-            // Sao chép nội dung
             copyBtn.addEventListener('click', () => {
                 textOutput.select();
                 document.execCommand('copy');
-                
-                // Hiển thị thông báo
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
                 setTimeout(() => {
@@ -564,7 +562,6 @@
                 }, 2000);
             });
             
-            // Khởi tạo trạng thái
             updateStatus();
         }
     </script>
