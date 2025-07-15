@@ -23,40 +23,39 @@
             align-items: center;
         }
         
+      
         .container {
             max-width: 900px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            margin: 30px 0;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
-        
         header {
             text-align: center;
             margin-bottom: 30px;
         }
+          header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+        }
         
         h1 {
             font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #6a11cb, #2575fc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .subtitle {
+        .header-subtitle {
             font-size: 1.1rem;
-            color: #7f8c8d;
-            max-width: 600px;
+            opacity: 0.9;
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.6;
         }
-        
         .language-selector {
             display: flex;
             flex-wrap: wrap;
@@ -268,13 +267,43 @@
             margin-bottom: 10px;
         }
         
-        .footer {
+         footer {
             text-align: center;
-            color: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            background: #2c3e50;
+            color: #ecf0f1;
             margin-top: 20px;
-            padding: 20px;
-            font-size: 0.9rem;
         }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
         
         @media (max-width: 768px) {
             .container {
@@ -315,11 +344,12 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1><i class="fas fa-microphone-alt"></i> Nhận Diện Giọng Nói Đa Ngôn Ngữ</h1>
-            <p class="subtitle">Sử dụng công nghệ Google Speech Recognition - Chọn ngôn ngữ, nói và văn bản sẽ xuất hiện ngay lập tức</p>
+         <header>
+            <div class="header-content">
+                <h1><i class="fas fa-microphone-alt"></i> Nhận Diện Giọng Nói Đa Ngôn Ngữ</h1>
+                <div class="header-subtitle">Sử dụng công nghệ Google Speech Recognition - Thích hợp dùng Chorme hoặc Edge.</div>
+            </div>
         </header>
-        
         <!-- Bộ chọn ngôn ngữ -->
         <div class="language-selector">
             <div class="lang-card active" data-lang="vi-VN">
@@ -411,12 +441,22 @@
                 <li>Nhấn <strong>"Xóa Văn Bản"</strong> để xóa nội dung và bắt đầu mới</li>
             </ol>
         </div>
-    </div>
-    
-    <div class="footer">
-        <p>Công nghệ Google Speech Recognition | © 2023 Công Cụ Chuyển Giọng Nói Thành Văn Bản</p>
-    </div>
 
+    
+    <footer>
+            <div class="footer-content">
+                <h3>Học, học nữa, học mãi - V.I. Lenin</h3>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán | Toàn quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
     <script>
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         
