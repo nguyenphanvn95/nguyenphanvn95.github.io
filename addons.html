@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chia sẻ Addon Anki</title>
+    <title>Trình Quản lý Addon Anki</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="icon" href="icon.png">
     <style>
         * {
             margin: 0;
@@ -413,9 +412,10 @@
         
         .truncated-description {
             position: relative;
-            max-height: 4.5em; /* 3 lines */
+            max-height: 6em; /* 4 lines */
             overflow: hidden;
             margin-bottom: 15px;
+            line-height: 1.5;
         }
         
         .truncated-description::after {
@@ -431,6 +431,70 @@
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid #eee;
+        }
+
+        .markdown-preview {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: #f9f9f9;
+            margin-bottom: 15px;
+        }
+
+        .markdown-preview h1, 
+        .markdown-preview h2, 
+        .markdown-preview h3 {
+            color: #2c3e50;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .markdown-preview ul, 
+        .markdown-preview ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .markdown-preview li {
+            margin-bottom: 5px;
+        }
+
+        .markdown-preview code {
+            background: #e3f2fd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .markdown-preview pre {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .markdown-preview pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .markdown-preview blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .markdown-preview a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .markdown-preview a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -474,6 +538,10 @@
             .modal h2 {
                 font-size: 1.5rem;
             }
+            
+            .truncated-description {
+                max-height: 9em; /* 6 lines on mobile */
+            }
         }
     </style>
 </head>
@@ -481,7 +549,7 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <h1><i class="fas fa-puzzle-piece"></i> ADDONS ANKI</h1>
+                <h1><i class="fas fa-puzzle-piece"></i> TRÌNH QUẢN LÝ ADDON ANKI</h1>
                 <div class="header-subtitle">Chia sẻ các tiện ích mở rộng hữu ích cho ứng dụng học tập Anki</div>
             </div>
         </header>
@@ -507,7 +575,6 @@
                     <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
                     <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
                     <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
-		<a href="addons-manager.html"><i class="fas fa-tools"></i> Quản lý Addons</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
@@ -526,7 +593,9 @@
                 </div>
                 <span id="detail-title">Tên Addon</span>
             </h2>
-            <div class="addon-description" id="detail-description"></div>
+            <div class="addon-description">
+                <div class="markdown-preview" id="detail-description"></div>
+            </div>
             
             <div class="modal-footer">
                 <h3>Liên kết:</h3>
@@ -595,10 +664,17 @@
             container.innerHTML = '';
             
             addons.forEach((addon) => {
-                // Tạo mô tả rút gọn (chỉ hiển thị 150 ký tự đầu tiên)
-                const shortDesc = addon.description && addon.description.length > 150 
-                    ? addon.description.substring(0, 150) + '...' 
-                    : addon.description || 'Không có mô tả';
+                // Tạo mô tả rút gọn (hiển thị 300 ký tự đầu tiên)
+                let shortDesc = addon.description || 'Không có mô tả';
+                let isTruncated = false;
+                
+                if (shortDesc.length > 300) {
+                    shortDesc = shortDesc.substring(0, 300) + '...';
+                    isTruncated = true;
+                }
+                
+                // Tạo HTML cho phần mô tả
+                const descHtml = marked.parse(shortDesc);
                 
                 let addonHtml = `
                     <div class="section" data-id="${addon.id}">
@@ -607,8 +683,9 @@
                                 <h2><i class="${addon.icon || 'fas fa-cube'}"></i> ${addon.name}</h2>
                             </div>
                         </div>
-                        <div class="truncated-description">
-                            <p>${shortDesc}</p>
+                        <div class="truncated-description markdown-preview">
+                            ${descHtml}
+                            ${isTruncated ? '<p class="read-more">...</p>' : ''}
                         </div>
                 `;
                 
@@ -725,8 +802,8 @@
             });
         });
     </script>
-    <!-- Gemini Chat Bubble & Scroll Ball -->
-    <script src="../assistant.js"></script>
-    <script src="../back-to-top.js"></script>
+ <!-- Gemini Chat Bubble and Scrollable -->
+<script src="assistant.js"></script>
+<script src="back-to-top.js"></script>
 </body>
 </html>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trình Quản lý Addon Anki</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -93,6 +92,44 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        
+        .section-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .action-btn {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+        
+        .edit-btn:hover {
+            color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        
+        .delete-btn:hover {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        .move-btn:hover {
+            color: #198754;
+            border-color: #198754;
         }
         
         p {
@@ -263,6 +300,266 @@
             font-size: 1.2rem;
         }
         
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .modal h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .form-actions .btn {
+            flex: 1;
+        }
+        
+        .dragging {
+            opacity: 0.7;
+            transform: scale(0.98);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .drag-handle {
+            cursor: move;
+        }
+        
+        .add-section {
+            margin-top: 30px;
+            background: #f8f9fa;
+            border: 2px dashed #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-section:hover {
+            background: #e3f2fd;
+            border-color: #2980b9;
+        }
+        
+        .add-section i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+        
+        .link-container {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .link-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .link-item input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .link-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .link-type {
+            width: 120px;
+        }
+        
+        .icon-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .export-data {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .copy-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .copy-success.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .import-success {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2ecc71;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .import-success.show {
+            opacity: 1;
+        }
+        
+        .import-file-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #3498db;
+        }
+        
+        .import-file-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: #e3f2fd;
+            border: 2px dashed #3498db;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .import-file-btn:hover {
+            background: #d1e7ff;
+        }
+        
+        .import-file-btn i {
+            margin-right: 10px;
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .file-name {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        #import-file {
+            display: none;
+        }
+        
         .no-data {
             text-align: center;
             padding: 40px;
@@ -282,219 +579,6 @@
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 15px;
-        }
-
-        .info-badge {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-left: 10px;
-        }
-        
-        .detail-btn {
-            background: linear-gradient(to right, #9b59b6, #8e44ad);
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            overflow: auto;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 30px;
-            position: relative;
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #777;
-            transition: color 0.3s;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
-        .close-btn:hover {
-            color: #333;
-            background: #f1f1f1;
-        }
-        
-        .modal h2 {
-            margin-top: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .modal-icon {
-            font-size: 1.8rem;
-            color: #3498db;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e3f2fd;
-            border-radius: 50%;
-        }
-        
-        .addon-description {
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            margin: 20px 0;
-            line-height: 1.7;
-        }
-        
-        .addon-description h3,
-        .addon-description h4 {
-            color: #2c3e50;
-            margin: 15px 0 10px;
-        }
-        
-        .addon-description p {
-            margin-bottom: 10px;
-        }
-        
-        .addon-description ul,
-        .addon-description ol {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .addon-description li {
-            margin-bottom: 5px;
-        }
-        
-        .addon-description pre {
-            background: #2c3e50;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-        
-        .addon-description code {
-            background: #e3f2fd;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        
-        .truncated-description {
-            position: relative;
-            max-height: 6em; /* 4 lines */
-            overflow: hidden;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .truncated-description::after {
-            content: "...";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: white;
-            padding-left: 5px;
-        }
-        
-        .modal-footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .markdown-preview {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            background: #f9f9f9;
-            margin-bottom: 15px;
-        }
-
-        .markdown-preview h1, 
-        .markdown-preview h2, 
-        .markdown-preview h3 {
-            color: #2c3e50;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-
-        .markdown-preview ul, 
-        .markdown-preview ol {
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-
-        .markdown-preview li {
-            margin-bottom: 5px;
-        }
-
-        .markdown-preview code {
-            background: #e3f2fd;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-
-        .markdown-preview pre {
-            background: #2c3e50;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 15px 0;
-        }
-
-        .markdown-preview pre code {
-            background: none;
-            padding: 0;
-            border-radius: 0;
-        }
-
-        .markdown-preview blockquote {
-            border-left: 4px solid #3498db;
-            padding-left: 15px;
-            margin: 15px 0;
-            color: #555;
-        }
-
-        .markdown-preview a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        .markdown-preview a:hover {
-            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -526,21 +610,16 @@
                 gap: 15px;
             }
             
+            .section-actions {
+                align-self: flex-end;
+            }
+            
             .search-container {
                 flex-direction: column;
             }
             
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-            }
-            
-            .modal h2 {
-                font-size: 1.5rem;
-            }
-            
-            .truncated-description {
-                max-height: 9em; /* 6 lines on mobile */
+            .link-item {
+                flex-direction: column;
             }
         }
     </style>
@@ -550,14 +629,22 @@
         <header>
             <div class="header-content">
                 <h1><i class="fas fa-puzzle-piece"></i> TRÌNH QUẢN LÝ ADDON ANKI</h1>
-                <div class="header-subtitle">Chia sẻ các tiện ích mở rộng hữu ích cho ứng dụng học tập Anki</div>
+                <div class="header-subtitle">Quản lý, chỉnh sửa và sắp xếp các tiện ích mở rộng cho ứng dụng học tập</div>
             </div>
         </header>
         
         <div class="content">
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Tìm kiếm addon...">
-                <div class="info-badge">Chế độ chỉ xem</div>
+                <button class="btn btn-warning" id="add-addon-btn">
+                    <i class="fas fa-plus-circle"></i> Thêm Addon Mới
+                </button>
+                <button class="btn btn-info" id="export-btn">
+                    <i class="fas fa-download"></i> Xuất dữ liệu
+                </button>
+                <button class="btn btn-purple" id="import-btn">
+                    <i class="fas fa-upload"></i> Nhập dữ liệu
+                </button>
             </div>
             
             <div id="addons-container">
@@ -565,6 +652,11 @@
                     <i class="fas fa-spinner"></i>
                     <p>Đang tải dữ liệu addon...</p>
                 </div>
+            </div>
+            
+            <div class="add-section" id="add-section-btn">
+                <i class="fas fa-plus"></i>
+                <span>Thêm mục mới</span>
             </div>
         </div>
         
@@ -575,6 +667,7 @@
                     <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
                     <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
                     <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+		<a href="addons.html"><i class="fas fa-puzzle-piece"></i> Addons</a>
                 </div>
                 <div class="copyright">
                     &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
@@ -583,31 +676,114 @@
         </footer>
     </div>
     
-    <!-- Modal chi tiết -->
-    <div class="modal" id="detail-modal">
+    <!-- Modal chỉnh sửa -->
+    <div class="modal" id="edit-modal">
         <div class="modal-content">
-            <span class="close-btn" id="close-detail-modal">&times;</span>
-            <h2>
-                <div class="modal-icon" id="detail-icon">
-                    <i class="fas fa-cube"></i>
+            <span class="close-btn" id="close-edit-modal">&times;</span>
+            <h2><i class="fas fa-edit"></i> <span id="modal-title">Chỉnh sửa Addon</span></h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <input type="hidden" id="edit-type">
+                
+                <div class="form-group">
+                    <label for="edit-name">Tên Addon:</label>
+                    <input type="text" id="edit-name" required>
                 </div>
-                <span id="detail-title">Tên Addon</span>
-            </h2>
-            <div class="addon-description">
-                <div class="markdown-preview" id="detail-description"></div>
-            </div>
-            
-            <div class="modal-footer">
-                <h3>Liên kết:</h3>
-                <div class="buttons" id="detail-links"></div>
+                
+                <div class="form-group">
+                    <label for="edit-icon">Biểu tượng (Font Awesome):</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="icon-preview">
+                            <i id="icon-preview" class="fas fa-star"></i>
+                        </div>
+                        <input type="text" id="edit-icon" placeholder="fas fa-icon-name" oninput="updateIconPreview()">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-description">Mô tả:</label>
+                    <textarea id="edit-description"></textarea>
+                </div>
+                
+                <div class="form-group" id="link-container">
+                    <label>Liên kết:</label>
+                    <div id="link-list" class="link-container"></div>
+                    <button type="button" class="btn btn-alt" id="add-link-btn" style="margin-top: 10px;">
+                        <i class="fas fa-plus"></i> Thêm liên kết
+                    </button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-danger" id="cancel-edit-btn">Hủy bỏ</button>
+                    <button type="submit" class="btn">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal xác nhận xóa -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-delete-modal">&times;</span>
+            <h2><i class="fas fa-trash"></i> Xác nhận xóa</h2>
+            <p id="delete-message">Bạn có chắc chắn muốn xóa addon này?</p>
+            <div class="form-actions">
+                <button type="button" class="btn btn-warning" id="cancel-delete-btn">Hủy bỏ</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">Xóa</button>
             </div>
         </div>
     </div>
+    
+    <!-- Modal xuất dữ liệu -->
+    <div class="modal" id="export-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-export-modal">&times;</span>
+            <h2><i class="fas fa-file-export"></i> Dữ liệu Addon</h2>
+            <p>Dữ liệu đã được sắp xếp theo thứ tự hiển thị:</p>
+            <div class="export-data" id="export-data"></div>
+            <div class="form-actions">
+                <button type="button" class="btn" id="copy-export-btn">Sao chép</button>
+                <button type="button" class="btn btn-alt" id="download-export-btn">Tải xuống</button>
+                <button type="button" class="btn btn-warning" id="close-export-btn">Đóng</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal nhập dữ liệu -->
+    <div class="modal" id="import-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-import-modal">&times;</span>
+            <h2><i class="fas fa-file-import"></i> Nhập dữ liệu từ JSON</h2>
+            <p>Chọn file JSON chứa dữ liệu addon để nhập vào hệ thống:</p>
+            
+            <div class="import-file-container">
+                <div class="import-file-btn" id="import-file-btn">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Chọn file JSON</span>
+                </div>
+                <div class="file-name" id="file-name">Chưa chọn file</div>
+                <input type="file" id="import-file" accept=".json">
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-warning" id="cancel-import-btn">Hủy bỏ</button>
+                <button type="button" class="btn btn-purple" id="confirm-import-btn">Nhập dữ liệu</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-success" id="copy-success">Đã sao chép vào clipboard!</div>
+    <div class="import-success" id="import-success">Nhập dữ liệu thành công!</div>
 
     <script>
         // Biến toàn cục
         let addonsData = [];
-        let currentDetailAddon = null;
+        let currentEditId = null;
+        let currentDeleteId = null;
+        let currentDeleteType = null;
+        let currentEditIndex = null;
+        let currentEditItemIndex = null;
+        let selectedFile = null;
 
         // Hàm tải dữ liệu từ file JSON
         function loadAddonsData() {
@@ -642,6 +818,9 @@
                     <h2>Không có dữ liệu</h2>
                     <p>Không thể tải dữ liệu addon từ file JSON.</p>
                     <p>Vui lòng kiểm tra đường dẫn file hoặc định dạng dữ liệu.</p>
+                    <button class="btn" onclick="location.reload()" style="margin-top: 20px;">
+                        <i class="fas fa-sync-alt"></i> Tải lại trang
+                    </button>
                 </div>
             `;
         }
@@ -656,6 +835,7 @@
                         <i class="fas fa-info-circle"></i>
                         <h2>Không có dữ liệu</h2>
                         <p>Hiện không có addon nào để hiển thị.</p>
+                        <p>Hãy thêm mới hoặc nhập dữ liệu từ file JSON.</p>
                     </div>
                 `;
                 return;
@@ -663,44 +843,31 @@
             
             container.innerHTML = '';
             
-            addons.forEach((addon) => {
-                // Tạo mô tả rút gọn (hiển thị 300 ký tự đầu tiên)
-                let shortDesc = addon.description || 'Không có mô tả';
-                let isTruncated = false;
-                
-                if (shortDesc.length > 300) {
-                    shortDesc = shortDesc.substring(0, 300) + '...';
-                    isTruncated = true;
-                }
-                
-                // Tạo HTML cho phần mô tả
-                const descHtml = marked.parse(shortDesc);
-                
+            addons.forEach((addon, index) => {
                 let addonHtml = `
-                    <div class="section" data-id="${addon.id}">
+                    <div class="section" data-id="${addon.id}" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" ondragend="dragEnd(event)">
                         <div class="section-header">
                             <div class="section-title">
                                 <h2><i class="${addon.icon || 'fas fa-cube'}"></i> ${addon.name}</h2>
                             </div>
+                            <div class="section-actions">
+                                <div class="action-btn move-btn drag-handle" title="Di chuyển" draggable="true">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </div>
+                                <div class="action-btn edit-btn" title="Sửa" onclick="openEditModal(${addon.id}, 'addon', ${index})">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="action-btn delete-btn" title="Xóa" onclick="openDeleteModal(${addon.id}, 'addon', ${index})">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="truncated-description markdown-preview">
-                            ${descHtml}
-                            ${isTruncated ? '<p class="read-more">...</p>' : ''}
-                        </div>
+                        <p>${addon.description || 'Không có mô tả'}</p>
                 `;
                 
                 // Hiển thị các liên kết chính
                 if (addon.links && addon.links.length > 0) {
                     addonHtml += `<div class="buttons">`;
-                    
-                    // Thêm nút "Xem chi tiết"
-                    addonHtml += `
-                        <button class="btn detail-btn" onclick="openDetailModal(${addon.id})">
-                            <i class="fas fa-info-circle"></i> Xem chi tiết
-                        </button>
-                    `;
-                    
-                    // Thêm các liên kết khác
                     addon.links.forEach(link => {
                         addonHtml += `
                             <a href="${link.url}" class="btn ${link.class || ''}" target="_blank">
@@ -714,6 +881,9 @@
                 addonHtml += `</div>`;
                 container.innerHTML += addonHtml;
             });
+            
+            // Khởi tạo sắp xếp
+            initDragAndDrop();
         }
         
         // Hàm tìm kiếm addon
@@ -732,51 +902,372 @@
             });
         }
         
-        // Hàm mở modal chi tiết
-        function openDetailModal(id) {
+        // Hàm mở modal chỉnh sửa
+        function openEditModal(id, type, index) {
+            currentEditId = id;
+            currentEditType = type;
+            currentEditIndex = index;
+            
             const addon = addonsData.find(a => a.id === id);
             if (!addon) return;
             
-            currentDetailAddon = addon;
+            document.getElementById('modal-title').textContent = type === 'addon' ? 'Chỉnh sửa Addon' : 'Chỉnh sửa Mục';
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-type').value = type;
+            document.getElementById('edit-name').value = addon.name;
+            document.getElementById('edit-icon').value = addon.icon || 'fas fa-star';
+            document.getElementById('edit-description').value = addon.description || '';
+            updateIconPreview();
             
-            // Cập nhật tiêu đề và icon
-            document.getElementById('detail-title').textContent = addon.name;
-            const iconEl = document.getElementById('detail-icon');
-            iconEl.innerHTML = `<i class="${addon.icon || 'fas fa-cube'}"></i>`;
+            // Hiển thị liên kết
+            const linkList = document.getElementById('link-list');
+            linkList.innerHTML = '';
             
-            // Chuyển đổi mô tả Markdown sang HTML
-            const descriptionEl = document.getElementById('detail-description');
-            if (addon.description) {
-                descriptionEl.innerHTML = marked.parse(addon.description);
-            } else {
-                descriptionEl.innerHTML = '<p>Không có mô tả chi tiết</p>';
-            }
-            
-            // Hiển thị các liên kết
-            const linksContainer = document.getElementById('detail-links');
-            linksContainer.innerHTML = '';
-            
-            if (addon.links && addon.links.length > 0) {
-                addon.links.forEach(link => {
-                    const linkBtn = document.createElement('a');
-                    linkBtn.className = `btn ${link.class || ''}`;
-                    linkBtn.href = link.url;
-                    linkBtn.target = '_blank';
-                    linkBtn.innerHTML = `<i class="${link.icon || 'fas fa-link'}"></i> ${link.text}`;
-                    linksContainer.appendChild(linkBtn);
+            if (addon.links) {
+                addon.links.forEach((link, linkIndex) => {
+                    const linkDiv = document.createElement('div');
+                    linkDiv.className = 'link-item';
+                    linkDiv.innerHTML = `
+                        <input type="text" placeholder="Tên liên kết" value="${link.text}" class="link-text" data-index="${linkIndex}">
+                        <input type="text" placeholder="URL" value="${link.url}" class="link-url" data-index="${linkIndex}">
+                        <input type="text" placeholder="Icon" value="${link.icon || ''}" class="link-icon" data-index="${linkIndex}">
+                        <div class="link-actions">
+                            <div class="action-btn delete-btn" onclick="removeLinkInput(${linkIndex})">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    `;
+                    linkList.appendChild(linkDiv);
                 });
-            } else {
-                linksContainer.innerHTML = '<p>Không có liên kết nào</p>';
             }
             
-            // Hiển thị modal
-            document.getElementById('detail-modal').style.display = 'flex';
+            document.getElementById('edit-modal').style.display = 'flex';
         }
         
-        // Hàm đóng modal chi tiết
-        function closeDetailModal() {
-            document.getElementById('detail-modal').style.display = 'none';
-            currentDetailAddon = null;
+        // Hàm cập nhật xem trước icon
+        function updateIconPreview() {
+            const iconValue = document.getElementById('edit-icon').value;
+            const preview = document.getElementById('icon-preview');
+            
+            if (iconValue) {
+                preview.className = iconValue;
+            } else {
+                preview.className = 'fas fa-star';
+            }
+        }
+        
+        // Hàm thêm liên kết
+        function addLinkInput() {
+            const linkList = document.getElementById('link-list');
+            const newLinkDiv = document.createElement('div');
+            newLinkDiv.className = 'link-item';
+            newLinkDiv.innerHTML = `
+                <input type="text" placeholder="Tên liên kết" class="link-text">
+                <input type="text" placeholder="URL" class="link-url">
+                <input type="text" placeholder="Icon" class="link-icon">
+                <div class="link-actions">
+                    <div class="action-btn delete-btn" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                </div>
+            `;
+            linkList.appendChild(newLinkDiv);
+        }
+        
+        // Hàm xóa liên kết
+        function removeLinkInput(index) {
+            const links = document.querySelectorAll('.link-item');
+            if (links[index]) {
+                links[index].remove();
+            }
+        }
+        
+        // Hàm xử lý form chỉnh sửa
+        function handleEditFormSubmit(e) {
+            e.preventDefault();
+            
+            const id = parseInt(document.getElementById('edit-id').value);
+            const type = document.getElementById('edit-type').value;
+            const name = document.getElementById('edit-name').value;
+            const icon = document.getElementById('edit-icon').value;
+            const description = document.getElementById('edit-description').value;
+            
+            // Lấy thông tin liên kết
+            const links = [];
+            const linkItems = document.querySelectorAll('.link-item');
+            linkItems.forEach(item => {
+                const text = item.querySelector('.link-text').value;
+                const url = item.querySelector('.link-url').value;
+                const icon = item.querySelector('.link-icon').value;
+                
+                if (text && url) {
+                    links.push({
+                        text,
+                        url,
+                        icon
+                    });
+                }
+            });
+            
+            const addonIndex = addonsData.findIndex(a => a.id === id);
+            if (addonIndex !== -1) {
+                addonsData[addonIndex].name = name;
+                addonsData[addonIndex].icon = icon;
+                addonsData[addonIndex].description = description;
+                addonsData[addonIndex].links = links;
+            }
+            
+            displayAddons(addonsData);
+            closeEditModal();
+        }
+        
+        // Hàm đóng modal chỉnh sửa
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+            currentEditId = null;
+            currentEditType = null;
+            currentEditIndex = null;
+            currentEditItemIndex = null;
+        }
+        
+        // Hàm mở modal xóa
+        function openDeleteModal(id, type, index) {
+            currentDeleteId = id;
+            currentDeleteType = type;
+            currentEditIndex = index;
+            
+            const addon = addonsData.find(a => a.id === id);
+            if (!addon) return;
+            
+            document.getElementById('delete-message').textContent = 
+                `Bạn có chắc chắn muốn xóa addon "${addon.name}"? Hành động này không thể hoàn tác.`;
+            
+            document.getElementById('delete-modal').style.display = 'flex';
+        }
+        
+        // Hàm xóa addon
+        function deleteAddon() {
+            if (currentDeleteId !== null) {
+                const index = addonsData.findIndex(a => a.id === currentDeleteId);
+                if (index !== -1) {
+                    addonsData.splice(index, 1);
+                    displayAddons(addonsData);
+                }
+            }
+            closeDeleteModal();
+        }
+        
+        // Hàm đóng modal xóa
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').style.display = 'none';
+            currentDeleteId = null;
+            currentDeleteType = null;
+        }
+        
+        // Hàm thêm addon mới
+        function addNewAddon() {
+            const newId = Math.max(...addonsData.map(a => a.id), 0) + 1;
+            const newAddon = {
+                id: newId,
+                name: "Addon Mới",
+                icon: "fas fa-star",
+                description: "Mô tả addon mới",
+                links: []
+            };
+            
+            addonsData.push(newAddon);
+            displayAddons(addonsData);
+            
+            // Mở modal chỉnh sửa ngay sau khi thêm
+            setTimeout(() => openEditModal(newId, 'addon', addonsData.length - 1), 100);
+        }
+        
+        // Hàm thêm section mới
+        function addNewSection() {
+            const newId = Math.max(...addonsData.map(a => a.id), 0) + 1;
+            const newAddon = {
+                id: newId,
+                name: "Tiện ích Mới",
+                icon: "fas fa-cube",
+                description: "Mô tả tiện ích mới",
+                links: []
+            };
+            
+            addonsData.push(newAddon);
+            displayAddons(addonsData);
+            
+            // Mở modal chỉnh sửa ngay sau khi thêm
+            setTimeout(() => openEditModal(newId, 'addon', addonsData.length - 1), 100);
+        }
+        
+        // Hàm xuất dữ liệu
+        function exportData() {
+            const exportModal = document.getElementById('export-modal');
+            const exportDataEl = document.getElementById('export-data');
+            
+            // Format dữ liệu JSON đẹp
+            const formattedData = JSON.stringify(addonsData, null, 2);
+            exportDataEl.textContent = formattedData;
+            
+            exportModal.style.display = 'flex';
+        }
+        
+        // Hàm sao chép dữ liệu
+        function copyExportData() {
+            const exportData = document.getElementById('export-data').textContent;
+            navigator.clipboard.writeText(exportData).then(() => {
+                const copySuccess = document.getElementById('copy-success');
+                copySuccess.classList.add('show');
+                
+                setTimeout(() => {
+                    copySuccess.classList.remove('show');
+                }, 2000);
+            });
+        }
+        
+        // Hàm tải xuống dữ liệu dưới dạng file JSON
+        function downloadExportData() {
+            const dataStr = JSON.stringify(addonsData, null, 2);
+            const blob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'anki-addons-data.json';
+            document.body.appendChild(a);
+            a.click();
+            
+            // Dọn dẹp
+            setTimeout(() => {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }, 0);
+        }
+        
+        // Hàm đóng modal xuất dữ liệu
+        function closeExportModal() {
+            document.getElementById('export-modal').style.display = 'none';
+        }
+        
+        // Hàm mở modal nhập dữ liệu
+        function openImportModal() {
+            document.getElementById('import-modal').style.display = 'flex';
+            document.getElementById('file-name').textContent = 'Chưa chọn file';
+            selectedFile = null;
+        }
+        
+        // Hàm đóng modal nhập dữ liệu
+        function closeImportModal() {
+            document.getElementById('import-modal').style.display = 'none';
+        }
+        
+        // Hàm xử lý chọn file để nhập
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            selectedFile = file;
+            document.getElementById('file-name').textContent = file.name;
+        }
+        
+        // Hàm nhập dữ liệu từ file JSON
+        function importData() {
+            if (!selectedFile) {
+                alert('Vui lòng chọn file JSON trước khi nhập!');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    
+                    // Kiểm tra xem dữ liệu có phải là mảng không
+                    if (Array.isArray(importedData)) {
+                        // Kiểm tra sơ bộ: mỗi phần tử có thuộc tính id, name?
+                        if (importedData.length > 0 && importedData[0].id && importedData[0].name) {
+                            // Cập nhật dữ liệu
+                            addonsData = importedData;
+                            displayAddons(addonsData);
+                            
+                            // Hiển thị thông báo thành công
+                            const importSuccess = document.getElementById('import-success');
+                            importSuccess.classList.add('show');
+                            
+                            setTimeout(() => {
+                                importSuccess.classList.remove('show');
+                            }, 3000);
+                            
+                            closeImportModal();
+                        } else {
+                            alert('Dữ liệu không đúng định dạng. Cần có id và name.');
+                        }
+                    } else {
+                        alert('Dữ liệu phải là một mảng.');
+                    }
+                } catch (error) {
+                    alert('Lỗi khi đọc file: ' + error.message);
+                }
+            };
+            reader.readAsText(selectedFile);
+        }
+        
+        // Hàm kéo thả
+        let dragSrcEl = null;
+        
+        function dragStart(e) {
+            if (e.target.classList.contains('drag-handle') || e.target.closest('.drag-handle')) {
+                dragSrcEl = e.target.closest('.section');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', dragSrcEl.innerHTML);
+                dragSrcEl.classList.add('dragging');
+            }
+        }
+        
+        function dragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+        
+        function drop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            if (dragSrcEl !== e.target.closest('.section')) {
+                const container = document.getElementById('addons-container');
+                const sections = Array.from(container.querySelectorAll('.section'));
+                const srcIndex = sections.indexOf(dragSrcEl);
+                const destIndex = sections.indexOf(e.target.closest('.section'));
+                
+                if (srcIndex !== -1 && destIndex !== -1) {
+                    // Di chuyển trong mảng dữ liệu
+                    const [movedItem] = addonsData.splice(srcIndex, 1);
+                    addonsData.splice(destIndex, 0, movedItem);
+                    
+                    // Cập nhật hiển thị
+                    displayAddons(addonsData);
+                }
+            }
+            
+            return false;
+        }
+        
+        function dragEnd() {
+            if (dragSrcEl) {
+                dragSrcEl.classList.remove('dragging');
+                dragSrcEl = null;
+            }
+        }
+        
+        function initDragAndDrop() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('dragstart', dragStart);
+                section.addEventListener('dragover', dragOver);
+                section.addEventListener('drop', drop);
+                section.addEventListener('dragend', dragEnd);
+            });
         }
         
         // Khởi tạo khi trang được tải
@@ -791,13 +1282,49 @@
                 displayAddons(results);
             });
             
-            // Sự kiện đóng modal
-            document.getElementById('close-detail-modal').addEventListener('click', closeDetailModal);
+            // Sự kiện nút thêm addon
+            document.getElementById('add-addon-btn').addEventListener('click', addNewAddon);
+            
+            // Sự kiện nút thêm section
+            document.getElementById('add-section-btn').addEventListener('click', addNewSection);
+            
+            // Sự kiện nút xuất dữ liệu
+            document.getElementById('export-btn').addEventListener('click', exportData);
+            
+            // Sự kiện nút nhập dữ liệu
+            document.getElementById('import-btn').addEventListener('click', openImportModal);
+            
+            // Sự kiện modal
+            document.getElementById('edit-form').addEventListener('submit', handleEditFormSubmit);
+            document.getElementById('close-edit-modal').addEventListener('click', closeEditModal);
+            document.getElementById('cancel-edit-btn').addEventListener('click', closeEditModal);
+            document.getElementById('close-delete-modal').addEventListener('click', closeDeleteModal);
+            document.getElementById('cancel-delete-btn').addEventListener('click', closeDeleteModal);
+            document.getElementById('confirm-delete-btn').addEventListener('click', deleteAddon);
+            document.getElementById('add-link-btn').addEventListener('click', addLinkInput);
+            
+            // Sự kiện modal xuất dữ liệu
+            document.getElementById('copy-export-btn').addEventListener('click', copyExportData);
+            document.getElementById('download-export-btn').addEventListener('click', downloadExportData);
+            document.getElementById('close-export-btn').addEventListener('click', closeExportModal);
+            document.getElementById('close-export-modal').addEventListener('click', closeExportModal);
+            
+            // Sự kiện modal nhập dữ liệu
+            document.getElementById('import-file-btn').addEventListener('click', () => {
+                document.getElementById('import-file').click();
+            });
+            document.getElementById('import-file').addEventListener('change', handleFileSelect);
+            document.getElementById('close-import-modal').addEventListener('click', closeImportModal);
+            document.getElementById('cancel-import-btn').addEventListener('click', closeImportModal);
+            document.getElementById('confirm-import-btn').addEventListener('click', importData);
             
             // Đóng modal khi click bên ngoài
             window.addEventListener('click', (e) => {
                 if (e.target.classList.contains('modal')) {
-                    closeDetailModal();
+                    closeEditModal();
+                    closeDeleteModal();
+                    closeExportModal();
+                    closeImportModal();
                 }
             });
         });
