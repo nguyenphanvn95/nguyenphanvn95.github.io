@@ -1490,7 +1490,7 @@
             
             // Sự kiện nút xuất dữ liệu
             document.getElementById('export-btn').addEventListener('click', exportData);
-            / Sự kiện nút GitHub
+            // Sự kiện nút GitHub
             document.getElementById('github-btn').addEventListener('click', openGitHubModal);
             // Sự kiện nút nhập dữ liệu
             document.getElementById('import-btn').addEventListener('click', openImportModal);
@@ -1518,17 +1518,12 @@
             document.getElementById('close-import-modal').addEventListener('click', closeImportModal);
             document.getElementById('cancel-import-btn').addEventListener('click', closeImportModal);
             document.getElementById('confirm-import-btn').addEventListener('click', importData);
-            / Sự kiện modal GitHub
+            // Sự kiện modal GitHub
             document.getElementById('github-form').addEventListener('submit', uploadToGitHub);
             document.getElementById('close-github-modal').addEventListener('click', closeGitHubModal);
             document.getElementById('cancel-github-btn').addEventListener('click', closeGitHubModal);
             
-            // Đóng modal GitHub khi click bên ngoài
-            window.addEventListener('click', (e) => {
-                if (e.target.classList.contains('modal')) {
-                    closeGitHubModal();
-                }
-            
+      
             // Đóng modal khi click bên ngoài
             window.addEventListener('click', (e) => {
                 if (e.target.classList.contains('modal')) {
@@ -1536,6 +1531,7 @@
                     closeDeleteModal();
                     closeExportModal();
                     closeImportModal();
+		   closeGitHubModal();
                 }
             });
         });
