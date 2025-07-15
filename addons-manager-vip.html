@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Quản lý Addon Anki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .action-btn {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background: #e9ecef;
+            transform: scale(1.05);
+        }
+        
+        .edit-btn:hover {
+            color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        
+        .delete-btn:hover {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        .move-btn:hover {
+            color: #198754;
+            border-color: #198754;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #34495e;
+            line-height: 1.7;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #2980b9, #1c6ea4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-alt {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+        }
+        
+        .btn-alt:hover {
+            background: linear-gradient(to right, #27ae60, #219653);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, #e67e22, #d35400);
+        }
+        
+        .btn-warning:hover {
+            background: linear-gradient(to right, #d35400, #ba4a00);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, #e74c3c, #c0392b);
+        }
+        
+        .btn-danger:hover {
+            background: linear-gradient(to right, #c0392b, #a93226);
+        }
+        
+        .btn-info {
+            background: linear-gradient(to right, #9b59b6, #8e44ad);
+        }
+        
+        .btn-info:hover {
+            background: linear-gradient(to right, #8e44ad, #7d3c98);
+        }
+        
+        .btn-purple {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        
+        .btn-purple:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+
+        .loading i {
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .search-container {
+            margin: 20px 0;
+            position: relative;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        #search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 2px solid #3498db;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .modal h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .form-actions .btn {
+            flex: 1;
+        }
+        
+        .dragging {
+            opacity: 0.7;
+            transform: scale(0.98);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .drag-handle {
+            cursor: move;
+        }
+        
+        .add-section {
+            margin-top: 30px;
+            background: #f8f9fa;
+            border: 2px dashed #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-section:hover {
+            background: #e3f2fd;
+            border-color: #2980b9;
+        }
+        
+        .add-section i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+        
+        .link-container {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .link-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .link-item input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .link-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .link-type {
+            width: 120px;
+        }
+        
+        .icon-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .export-data {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .copy-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .copy-success.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .import-success {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2ecc71;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .import-success.show {
+            opacity: 1;
+        }
+        
+        .import-file-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #3498db;
+        }
+        
+        .import-file-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: #e3f2fd;
+            border: 2px dashed #3498db;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .import-file-btn:hover {
+            background: #d1e7ff;
+        }
+        
+        .import-file-btn i {
+            margin-right: 10px;
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .file-name {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        #import-file {
+            display: none;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .no-data i {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .no-data h2 {
+            color: #e74c3c;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .section-actions {
+                align-self: flex-end;
+            }
+            
+            .search-container {
+                flex-direction: column;
+            }
+            
+            .link-item {
+                flex-direction: column;
+            }
+        }
+/* Thêm style cho modal GitHub */
+        .github-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .github-info {
+            background: #f0f8ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .github-info h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .github-info p {
+            margin-bottom: 10px;
+        }
+        
+        .github-steps {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .github-steps li {
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-puzzle-piece"></i> TRÌNH QUẢN LÝ ADDON ANKI</h1>
+                <div class="header-subtitle">Quản lý, chỉnh sửa và sắp xếp các tiện ích mở rộng cho ứng dụng học tập</div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm addon...">
+                <button class="btn btn-warning" id="add-addon-btn">
+                    <i class="fas fa-plus-circle"></i> Thêm Addon Mới
+                </button>
+                <button class="btn btn-info" id="export-btn">
+                    <i class="fas fa-download"></i> Xuất dữ liệu
+                </button>
+                <button class="btn btn-purple" id="import-btn">
+                    <i class="fas fa-upload"></i> Nhập dữ liệu
+                </button>
+                <!-- Nút mới: Upload lên GitHub -->
+                <button class="btn" id="github-btn" style="background: linear-gradient(to right, #333, #555);">
+                    <i class="fab fa-github"></i> Upload lên GitHub
+                </button>
+            </div>
+            
+            <div id="addons-container">
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <p>Đang tải dữ liệu addon...</p>
+                </div>
+            </div>
+            
+            <div class="add-section" id="add-section-btn">
+                <i class="fas fa-plus"></i>
+                <span>Thêm mục mới</span>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <h3>Học, học nữa, học mãi - V.I. Lenin</h3>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                    <a href="addons.html"><i class="fas fa-puzzle-piece"></i> Addons</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Modal chỉnh sửa -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-edit-modal">&times;</span>
+            <h2><i class="fas fa-edit"></i> <span id="modal-title">Chỉnh sửa Addon</span></h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <input type="hidden" id="edit-type">
+                
+                <div class="form-group">
+                    <label for="edit-name">Tên Addon:</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-icon">Biểu tượng (Font Awesome):</label>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="icon-preview">
+                            <i id="icon-preview" class="fas fa-star"></i>
+                        </div>
+                        <input type="text" id="edit-icon" placeholder="fas fa-icon-name" oninput="updateIconPreview()">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-description">Mô tả:</label>
+                    <textarea id="edit-description"></textarea>
+                </div>
+                
+                <div class="form-group" id="link-container">
+                    <label>Liên kết:</label>
+                    <div id="link-list" class="link-container"></div>
+                    <button type="button" class="btn btn-alt" id="add-link-btn" style="margin-top: 10px;">
+                        <i class="fas fa-plus"></i> Thêm liên kết
+                    </button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-danger" id="cancel-edit-btn">Hủy bỏ</button>
+                    <button type="submit" class="btn">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal mới: Cấu hình GitHub -->
+    <div class="modal" id="github-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-github-modal">&times;</span>
+            <h2><i class="fab fa-github"></i> Upload dữ liệu lên GitHub</h2>
+            
+            <div class="github-info">
+                <h3><i class="fas fa-info-circle"></i> Hướng dẫn cấu hình</h3>
+                <p>Để upload dữ liệu lên GitHub, bạn cần:</p>
+                <ol class="github-steps">
+                    <li>Tạo Personal Access Token trên GitHub với quyền <code>repo</code></li>
+                    <li>Nhập token và thông tin repository bên dưới</li>
+                    <li>Xác nhận để upload dữ liệu lên GitHub</li>
+                </ol>
+                <p><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token" target="_blank">Hướng dẫn tạo token GitHub</a></p>
+            </div>
+            
+            <form id="github-form" class="github-form">
+                <div class="form-group">
+                    <label for="github-token">GitHub Token:</label>
+                    <input type="password" id="github-token" required placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                </div>
+                
+                <div class="form-group">
+                    <label for="github-repo">Repository:</label>
+                    <input type="text" id="github-repo" required placeholder="nguyenphanvn95/nguyenphanvn95.github.io" value ="nguyenphanvn95/nguyenphanvn95.github.io">
+                </div>
+                
+                <div class="form-group">
+                    <label for="github-branch">Branch:</label>
+                    <input type="text" id="github-branch" value="main" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="github-file">Tên file:</label>
+                    <input type="text" id="github-file" value="anki-addons-data.json" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="github-commit">Commit message:</label>
+                    <input type="text" id="github-commit" value="Cập nhật dữ liệu addon từ trình quản lý">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-warning" id="cancel-github-btn">Hủy bỏ</button>
+                    <button type="submit" class="btn" id="confirm-github-btn">Upload lên GitHub</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="copy-success" id="copy-success">Đã sao chép vào clipboard!</div>
+    <div class="import-success" id="import-success">Nhập dữ liệu thành công!</div>
+    <!-- Thông báo mới cho GitHub -->
+    <div class="import-success" id="github-success">Upload lên GitHub thành công!</div>
+    <div class="copy-success" id="github-error" style="background: #e74c3c;">Lỗi khi upload lên GitHub!</div>
+    <!-- Modal xác nhận xóa -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-delete-modal">&times;</span>
+            <h2><i class="fas fa-trash"></i> Xác nhận xóa</h2>
+            <p id="delete-message">Bạn có chắc chắn muốn xóa addon này?</p>
+            <div class="form-actions">
+                <button type="button" class="btn btn-warning" id="cancel-delete-btn">Hủy bỏ</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete-btn">Xóa</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal xuất dữ liệu -->
+    <div class="modal" id="export-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-export-modal">&times;</span>
+            <h2><i class="fas fa-file-export"></i> Dữ liệu Addon</h2>
+            <p>Dữ liệu đã được sắp xếp theo thứ tự hiển thị:</p>
+            <div class="export-data" id="export-data"></div>
+            <div class="form-actions">
+                <button type="button" class="btn" id="copy-export-btn">Sao chép</button>
+                <button type="button" class="btn btn-alt" id="download-export-btn">Tải xuống</button>
+                <button type="button" class="btn btn-warning" id="close-export-btn">Đóng</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal nhập dữ liệu -->
+    <div class="modal" id="import-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-import-modal">&times;</span>
+            <h2><i class="fas fa-file-import"></i> Nhập dữ liệu từ JSON</h2>
+            <p>Chọn file JSON chứa dữ liệu addon để nhập vào hệ thống:</p>
+            
+            <div class="import-file-container">
+                <div class="import-file-btn" id="import-file-btn">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Chọn file JSON</span>
+                </div>
+                <div class="file-name" id="file-name">Chưa chọn file</div>
+                <input type="file" id="import-file" accept=".json">
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-warning" id="cancel-import-btn">Hủy bỏ</button>
+                <button type="button" class="btn btn-purple" id="confirm-import-btn">Nhập dữ liệu</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-success" id="copy-success">Đã sao chép vào clipboard!</div>
+    <div class="import-success" id="import-success">Nhập dữ liệu thành công!</div>
+
+    <script>
+        // Biến toàn cục
+        let addonsData = [];
+        let currentEditId = null;
+        let currentDeleteId = null;
+        let currentDeleteType = null;
+        let currentEditIndex = null;
+        let currentEditItemIndex = null;
+        let selectedFile = null;
+
+        // Hàm tải dữ liệu từ file JSON
+        function loadAddonsData() {
+            fetch('anki-addons-data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Không thể tải dữ liệu');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Kiểm tra xem dữ liệu có phải là mảng không
+                    if (Array.isArray(data)) {
+                        addonsData = data;
+                        displayAddons(addonsData);
+                    } else {
+                        throw new Error('Dữ liệu không hợp lệ');
+                    }
+                })
+                .catch(error => {
+                    console.error('Lỗi khi tải dữ liệu:', error);
+                    showNoDataMessage();
+                });
+        }
+
+        // Hàm hiển thị thông báo không có dữ liệu
+        function showNoDataMessage() {
+            const container = document.getElementById('addons-container');
+            container.innerHTML = `
+                <div class="no-data">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Không có dữ liệu</h2>
+                    <p>Không thể tải dữ liệu addon từ file JSON.</p>
+                    <p>Vui lòng kiểm tra đường dẫn file hoặc định dạng dữ liệu.</p>
+                    <button class="btn" onclick="location.reload()" style="margin-top: 20px;">
+                        <i class="fas fa-sync-alt"></i> Tải lại trang
+                    </button>
+                </div>
+            `;
+        }
+
+        // Hàm hiển thị addons
+        function displayAddons(addons) {
+            const container = document.getElementById('addons-container');
+            
+            if (!addons || addons.length === 0) {
+                container.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-info-circle"></i>
+                        <h2>Không có dữ liệu</h2>
+                        <p>Hiện không có addon nào để hiển thị.</p>
+                        <p>Hãy thêm mới hoặc nhập dữ liệu từ file JSON.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            addons.forEach((addon, index) => {
+                let addonHtml = `
+                    <div class="section" data-id="${addon.id}" draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)" ondragend="dragEnd(event)">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <h2><i class="${addon.icon || 'fas fa-cube'}"></i> ${addon.name}</h2>
+                            </div>
+                            <div class="section-actions">
+                                <div class="action-btn move-btn drag-handle" title="Di chuyển" draggable="true">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </div>
+                                <div class="action-btn edit-btn" title="Sửa" onclick="openEditModal(${addon.id}, 'addon', ${index})">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="action-btn delete-btn" title="Xóa" onclick="openDeleteModal(${addon.id}, 'addon', ${index})">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>${addon.description || 'Không có mô tả'}</p>
+                `;
+                
+                // Hiển thị các liên kết chính
+                if (addon.links && addon.links.length > 0) {
+                    addonHtml += `<div class="buttons">`;
+                    addon.links.forEach(link => {
+                        addonHtml += `
+                            <a href="${link.url}" class="btn ${link.class || ''}" target="_blank">
+                                <i class="${link.icon || 'fas fa-link'}"></i> ${link.text}
+                            </a>
+                        `;
+                    });
+                    addonHtml += `</div>`;
+                }
+                
+                addonHtml += `</div>`;
+                container.innerHTML += addonHtml;
+            });
+            
+            // Khởi tạo sắp xếp
+            initDragAndDrop();
+        }
+        
+        // Hàm tìm kiếm addon
+        function searchAddons(query) {
+            if (!query) return addonsData;
+            
+            const lowerQuery = query.toLowerCase();
+            return addonsData.filter(addon => {
+                // Tìm kiếm theo tên và mô tả
+                if (addon.name.toLowerCase().includes(lowerQuery) || 
+                    (addon.description && addon.description.toLowerCase().includes(lowerQuery))) {
+                    return true;
+                }
+                
+                return false;
+            });
+        }
+        
+        // Hàm mở modal chỉnh sửa
+        function openEditModal(id, type, index) {
+            currentEditId = id;
+            currentEditType = type;
+            currentEditIndex = index;
+            
+            const addon = addonsData.find(a => a.id === id);
+            if (!addon) return;
+            
+            document.getElementById('modal-title').textContent = type === 'addon' ? 'Chỉnh sửa Addon' : 'Chỉnh sửa Mục';
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-type').value = type;
+            document.getElementById('edit-name').value = addon.name;
+            document.getElementById('edit-icon').value = addon.icon || 'fas fa-star';
+            document.getElementById('edit-description').value = addon.description || '';
+            updateIconPreview();
+            
+            // Hiển thị liên kết
+            const linkList = document.getElementById('link-list');
+            linkList.innerHTML = '';
+            
+            if (addon.links) {
+                addon.links.forEach((link, linkIndex) => {
+                    const linkDiv = document.createElement('div');
+                    linkDiv.className = 'link-item';
+                    linkDiv.innerHTML = `
+                        <input type="text" placeholder="Tên liên kết" value="${link.text}" class="link-text" data-index="${linkIndex}">
+                        <input type="text" placeholder="URL" value="${link.url}" class="link-url" data-index="${linkIndex}">
+                        <input type="text" placeholder="Icon" value="${link.icon || ''}" class="link-icon" data-index="${linkIndex}">
+                        <div class="link-actions">
+                            <div class="action-btn delete-btn" onclick="removeLinkInput(${linkIndex})">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    `;
+                    linkList.appendChild(linkDiv);
+                });
+            }
+            
+            document.getElementById('edit-modal').style.display = 'flex';
+        }
+        
+        // Hàm cập nhật xem trước icon
+        function updateIconPreview() {
+            const iconValue = document.getElementById('edit-icon').value;
+            const preview = document.getElementById('icon-preview');
+            
+            if (iconValue) {
+                preview.className = iconValue;
+            } else {
+                preview.className = 'fas fa-star';
+            }
+        }
+        
+        // Hàm thêm liên kết
+        function addLinkInput() {
+            const linkList = document.getElementById('link-list');
+            const newLinkDiv = document.createElement('div');
+            newLinkDiv.className = 'link-item';
+            newLinkDiv.innerHTML = `
+                <input type="text" placeholder="Tên liên kết" class="link-text">
+                <input type="text" placeholder="URL" class="link-url">
+                <input type="text" placeholder="Icon" class="link-icon">
+                <div class="link-actions">
+                    <div class="action-btn delete-btn" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                </div>
+            `;
+            linkList.appendChild(newLinkDiv);
+        }
+        
+        // Hàm xóa liên kết
+        function removeLinkInput(index) {
+            const links = document.querySelectorAll('.link-item');
+            if (links[index]) {
+                links[index].remove();
+            }
+        }
+        
+        // Hàm xử lý form chỉnh sửa
+        function handleEditFormSubmit(e) {
+            e.preventDefault();
+            
+            const id = parseInt(document.getElementById('edit-id').value);
+            const type = document.getElementById('edit-type').value;
+            const name = document.getElementById('edit-name').value;
+            const icon = document.getElementById('edit-icon').value;
+            const description = document.getElementById('edit-description').value;
+            
+            // Lấy thông tin liên kết
+            const links = [];
+            const linkItems = document.querySelectorAll('.link-item');
+            linkItems.forEach(item => {
+                const text = item.querySelector('.link-text').value;
+                const url = item.querySelector('.link-url').value;
+                const icon = item.querySelector('.link-icon').value;
+                
+                if (text && url) {
+                    links.push({
+                        text,
+                        url,
+                        icon
+                    });
+                }
+            });
+            
+            const addonIndex = addonsData.findIndex(a => a.id === id);
+            if (addonIndex !== -1) {
+                addonsData[addonIndex].name = name;
+                addonsData[addonIndex].icon = icon;
+                addonsData[addonIndex].description = description;
+                addonsData[addonIndex].links = links;
+            }
+            
+            displayAddons(addonsData);
+            closeEditModal();
+        }
+        
+        // Hàm đóng modal chỉnh sửa
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+            currentEditId = null;
+            currentEditType = null;
+            currentEditIndex = null;
+            currentEditItemIndex = null;
+        }
+        
+        // Hàm mở modal xóa
+        function openDeleteModal(id, type, index) {
+            currentDeleteId = id;
+            currentDeleteType = type;
+            currentEditIndex = index;
+            
+            const addon = addonsData.find(a => a.id === id);
+            if (!addon) return;
+            
+            document.getElementById('delete-message').textContent = 
+                `Bạn có chắc chắn muốn xóa addon "${addon.name}"? Hành động này không thể hoàn tác.`;
+            
+            document.getElementById('delete-modal').style.display = 'flex';
+        }
+        
+        // Hàm xóa addon
+        function deleteAddon() {
+            if (currentDeleteId !== null) {
+                const index = addonsData.findIndex(a => a.id === currentDeleteId);
+                if (index !== -1) {
+                    addonsData.splice(index, 1);
+                    displayAddons(addonsData);
+                }
+            }
+            closeDeleteModal();
+        }
+        
+        // Hàm đóng modal xóa
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').style.display = 'none';
+            currentDeleteId = null;
+            currentDeleteType = null;
+        }
+        
+        // Hàm thêm addon mới
+        function addNewAddon() {
+            const newId = Math.max(...addonsData.map(a => a.id), 0) + 1;
+            const newAddon = {
+                id: newId,
+                name: "Addon Mới",
+                icon: "fas fa-star",
+                description: "Mô tả addon mới",
+                links: []
+            };
+            
+            addonsData.push(newAddon);
+            displayAddons(addonsData);
+            
+            // Mở modal chỉnh sửa ngay sau khi thêm
+            setTimeout(() => openEditModal(newId, 'addon', addonsData.length - 1), 100);
+        }
+        
+        // Hàm thêm section mới
+        function addNewSection() {
+            const newId = Math.max(...addonsData.map(a => a.id), 0) + 1;
+            const newAddon = {
+                id: newId,
+                name: "Tiện ích Mới",
+                icon: "fas fa-cube",
+                description: "Mô tả tiện ích mới",
+                links: []
+            };
+            
+            addonsData.push(newAddon);
+            displayAddons(addonsData);
+            
+            // Mở modal chỉnh sửa ngay sau khi thêm
+            setTimeout(() => openEditModal(newId, 'addon', addonsData.length - 1), 100);
+        }
+        
+        // Hàm xuất dữ liệu
+        function exportData() {
+            const exportModal = document.getElementById('export-modal');
+            const exportDataEl = document.getElementById('export-data');
+            
+            // Format dữ liệu JSON đẹp
+            const formattedData = JSON.stringify(addonsData, null, 2);
+            exportDataEl.textContent = formattedData;
+            
+            exportModal.style.display = 'flex';
+        }
+        
+        // Hàm sao chép dữ liệu
+        function copyExportData() {
+            const exportData = document.getElementById('export-data').textContent;
+            navigator.clipboard.writeText(exportData).then(() => {
+                const copySuccess = document.getElementById('copy-success');
+                copySuccess.classList.add('show');
+                
+                setTimeout(() => {
+                    copySuccess.classList.remove('show');
+                }, 2000);
+            });
+        }
+        
+        // Hàm tải xuống dữ liệu dưới dạng file JSON
+        function downloadExportData() {
+            const dataStr = JSON.stringify(addonsData, null, 2);
+            const blob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'anki-addons-data.json';
+            document.body.appendChild(a);
+            a.click();
+            
+            // Dọn dẹp
+            setTimeout(() => {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }, 0);
+        }
+        
+        // Hàm đóng modal xuất dữ liệu
+        function closeExportModal() {
+            document.getElementById('export-modal').style.display = 'none';
+        }
+        
+        // Hàm mở modal nhập dữ liệu
+        function openImportModal() {
+            document.getElementById('import-modal').style.display = 'flex';
+            document.getElementById('file-name').textContent = 'Chưa chọn file';
+            selectedFile = null;
+        }
+        
+        // Hàm đóng modal nhập dữ liệu
+        function closeImportModal() {
+            document.getElementById('import-modal').style.display = 'none';
+        }
+        
+        // Hàm xử lý chọn file để nhập
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            selectedFile = file;
+            document.getElementById('file-name').textContent = file.name;
+        }
+        
+        // Hàm nhập dữ liệu từ file JSON
+        function importData() {
+            if (!selectedFile) {
+                alert('Vui lòng chọn file JSON trước khi nhập!');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    
+                    // Kiểm tra xem dữ liệu có phải là mảng không
+                    if (Array.isArray(importedData)) {
+                        // Kiểm tra sơ bộ: mỗi phần tử có thuộc tính id, name?
+                        if (importedData.length > 0 && importedData[0].id && importedData[0].name) {
+                            // Cập nhật dữ liệu
+                            addonsData = importedData;
+                            displayAddons(addonsData);
+                            
+                            // Hiển thị thông báo thành công
+                            const importSuccess = document.getElementById('import-success');
+                            importSuccess.classList.add('show');
+                            
+                            setTimeout(() => {
+                                importSuccess.classList.remove('show');
+                            }, 3000);
+                            
+                            closeImportModal();
+                        } else {
+                            alert('Dữ liệu không đúng định dạng. Cần có id và name.');
+                        }
+                    } else {
+                        alert('Dữ liệu phải là một mảng.');
+                    }
+                } catch (error) {
+                    alert('Lỗi khi đọc file: ' + error.message);
+                }
+            };
+            reader.readAsText(selectedFile);
+        }
+        
+        // Hàm kéo thả
+        let dragSrcEl = null;
+        
+        function dragStart(e) {
+            if (e.target.classList.contains('drag-handle') || e.target.closest('.drag-handle')) {
+                dragSrcEl = e.target.closest('.section');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', dragSrcEl.innerHTML);
+                dragSrcEl.classList.add('dragging');
+            }
+        }
+        
+        function dragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+        
+        function drop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            if (dragSrcEl !== e.target.closest('.section')) {
+                const container = document.getElementById('addons-container');
+                const sections = Array.from(container.querySelectorAll('.section'));
+                const srcIndex = sections.indexOf(dragSrcEl);
+                const destIndex = sections.indexOf(e.target.closest('.section'));
+                
+                if (srcIndex !== -1 && destIndex !== -1) {
+                    // Di chuyển trong mảng dữ liệu
+                    const [movedItem] = addonsData.splice(srcIndex, 1);
+                    addonsData.splice(destIndex, 0, movedItem);
+                    
+                    // Cập nhật hiển thị
+                    displayAddons(addonsData);
+                }
+            }
+            
+            return false;
+        }
+        
+        function dragEnd() {
+            if (dragSrcEl) {
+                dragSrcEl.classList.remove('dragging');
+                dragSrcEl = null;
+            }
+        }
+        
+        function initDragAndDrop() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('dragstart', dragStart);
+                section.addEventListener('dragover', dragOver);
+                section.addEventListener('drop', drop);
+                section.addEventListener('dragend', dragEnd);
+            });
+        }
+        // Hàm mở modal GitHub
+        function openGitHubModal() {
+            document.getElementById('github-modal').style.display = 'flex';
+            
+            // Khôi phục cài đặt đã lưu nếu có
+            const savedToken = localStorage.getItem('githubToken');
+            const savedRepo = localStorage.getItem('githubRepo');
+            const savedBranch = localStorage.getItem('githubBranch');
+            const savedFile = localStorage.getItem('githubFile');
+            
+            if (savedToken) document.getElementById('github-token').value = savedToken;
+            if (savedRepo) document.getElementById('github-repo').value = savedRepo;
+            if (savedBranch) document.getElementById('github-branch').value = savedBranch;
+            if (savedFile) document.getElementById('github-file').value = savedFile;
+        }
+        
+        // Hàm đóng modal GitHub
+        function closeGitHubModal() {
+            document.getElementById('github-modal').style.display = 'none';
+        }
+        
+        // Hàm upload dữ liệu lên GitHub
+        function uploadToGitHub(e) {
+            e.preventDefault();
+            
+            const token = document.getElementById('github-token').value;
+            const repo = document.getElementById('github-repo').value;
+            const branch = document.getElementById('github-branch').value;
+            const file = document.getElementById('github-file').value;
+            const commitMsg = document.getElementById('github-commit').value;
+            
+            // Lưu cài đặt
+            localStorage.setItem('githubToken', token);
+            localStorage.setItem('githubRepo', repo);
+            localStorage.setItem('githubBranch', branch);
+            localStorage.setItem('githubFile', file);
+            
+            // Chuẩn bị dữ liệu
+            const data = JSON.stringify(addonsData, null, 2);
+            const content = btoa(unescape(encodeURIComponent(data)));
+            
+            // Tạo payload cho GitHub API
+            const payload = {
+                message: commitMsg,
+                content: content,
+                branch: branch
+            };
+            
+            // Thử lấy SHA nếu file đã tồn tại (để cập nhật)
+            fetch(`https://api.github.com/repos/${repo}/contents/${file}?ref=${branch}`, {
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            })
+            .then(response => response.json())
+            .then(existingFile => {
+                if (existingFile.sha) {
+                    payload.sha = existingFile.sha;
+                }
+                return uploadFile(payload, repo, file, token);
+            })
+            .catch(error => {
+                // Nếu file chưa tồn tại, tải lên bình thường
+                return uploadFile(payload, repo, file, token);
+            });
+        }
+        
+        // Hàm thực hiện upload file
+        function uploadFile(payload, repo, file, token) {
+            return fetch(`https://api.github.com/repos/${repo}/contents/${file}`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hiển thị thông báo thành công
+                const successEl = document.getElementById('github-success');
+                successEl.textContent = "Dữ liệu đã được upload thành công!";
+                successEl.classList.add('show');
+                
+                setTimeout(() => {
+                    successEl.classList.remove('show');
+                    closeGitHubModal();
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Lỗi khi upload lên GitHub:', error);
+                
+                // Hiển thị thông báo lỗi
+                const errorEl = document.getElementById('github-error');
+                errorEl.textContent = `Lỗi: ${error.message || "Không thể upload dữ liệu"}`;
+                errorEl.classList.add('show');
+                
+                setTimeout(() => {
+                    errorEl.classList.remove('show');
+                }, 5000);
+            });
+        }
+        // Khởi tạo khi trang được tải
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tải dữ liệu từ file JSON
+            loadAddonsData();
+            
+            // Thêm sự kiện tìm kiếm
+            const searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('input', () => {
+                const results = searchAddons(searchInput.value);
+                displayAddons(results);
+            });
+            
+            // Sự kiện nút thêm addon
+            document.getElementById('add-addon-btn').addEventListener('click', addNewAddon);
+            
+            // Sự kiện nút thêm section
+            document.getElementById('add-section-btn').addEventListener('click', addNewSection);
+            
+            // Sự kiện nút xuất dữ liệu
+            document.getElementById('export-btn').addEventListener('click', exportData);
+            / Sự kiện nút GitHub
+            document.getElementById('github-btn').addEventListener('click', openGitHubModal);
+            // Sự kiện nút nhập dữ liệu
+            document.getElementById('import-btn').addEventListener('click', openImportModal);
+            
+            // Sự kiện modal
+            document.getElementById('edit-form').addEventListener('submit', handleEditFormSubmit);
+            document.getElementById('close-edit-modal').addEventListener('click', closeEditModal);
+            document.getElementById('cancel-edit-btn').addEventListener('click', closeEditModal);
+            document.getElementById('close-delete-modal').addEventListener('click', closeDeleteModal);
+            document.getElementById('cancel-delete-btn').addEventListener('click', closeDeleteModal);
+            document.getElementById('confirm-delete-btn').addEventListener('click', deleteAddon);
+            document.getElementById('add-link-btn').addEventListener('click', addLinkInput);
+            
+            // Sự kiện modal xuất dữ liệu
+            document.getElementById('copy-export-btn').addEventListener('click', copyExportData);
+            document.getElementById('download-export-btn').addEventListener('click', downloadExportData);
+            document.getElementById('close-export-btn').addEventListener('click', closeExportModal);
+            document.getElementById('close-export-modal').addEventListener('click', closeExportModal);
+            
+            // Sự kiện modal nhập dữ liệu
+            document.getElementById('import-file-btn').addEventListener('click', () => {
+                document.getElementById('import-file').click();
+            });
+            document.getElementById('import-file').addEventListener('change', handleFileSelect);
+            document.getElementById('close-import-modal').addEventListener('click', closeImportModal);
+            document.getElementById('cancel-import-btn').addEventListener('click', closeImportModal);
+            document.getElementById('confirm-import-btn').addEventListener('click', importData);
+            / Sự kiện modal GitHub
+            document.getElementById('github-form').addEventListener('submit', uploadToGitHub);
+            document.getElementById('close-github-modal').addEventListener('click', closeGitHubModal);
+            document.getElementById('cancel-github-btn').addEventListener('click', closeGitHubModal);
+            
+            // Đóng modal GitHub khi click bên ngoài
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    closeGitHubModal();
+                }
+            
+            // Đóng modal khi click bên ngoài
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    closeEditModal();
+                    closeDeleteModal();
+                    closeExportModal();
+                    closeImportModal();
+                }
+            });
+        });
+    </script>
+ <!-- Gemini Chat Bubble and Scrollable -->
+<script src="assistant.js"></script>
+<script src="back-to-top.js"></script>
+</body>
+</html>
