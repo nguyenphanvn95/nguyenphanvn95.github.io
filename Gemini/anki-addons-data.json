@@ -1,0 +1,115 @@
+[
+  {
+    "id": 2,
+    "name": "Gemini Practice - Luyện tập đặt câu cùng Gemini",
+    "icon": "fas fa-brain",
+    "description": "\n## 🌐 Giới thiệu\n\n**Gemini Practice** là một addon dành cho phần mềm **Anki**, giúp bạn **luyện tập đặt câu** và **hiểu nghĩa từ vựng sâu hơn** với sự hỗ trợ của mô hình ngôn ngữ **Gemini API** (by Google). Addon này tích hợp khả năng gợi ý định nghĩa, ví dụ và đánh giá câu sử dụng từ vựng – tất cả hiển thị đẹp mắt ngay trong giao diện Anki.\n\n![Giao diện Gemini Practice](https://live.staticflickr.com/65535/54654677203_2e3cbe6142_c.jpg)\n\n\n---\n\n## 🚀 Tính năng nổi bật\n\n- **Tự động tra nghĩa từ vựng** bằng mô hình Gemini, hiển thị theo định dạng Markdown đẹp mắt.\n- **Luyện đặt câu trực tiếp** trên Anki và nhận phản hồi chi tiết về:\n  - Ngữ pháp  \n  - Ngữ cảnh sử dụng từ  \n  - Gợi ý cải thiện\n- **Tùy chỉnh cấu hình dễ dàng**: API Key, prompt định nghĩa, prompt đánh giá...\n- **Hỗ trợ markdown** được tối ưu cho hiển thị trong Qt/Anki.\n- **Phím tắt tiện lợi**: Nhấn `P` hoặc `Alt+P` để mở giao diện luyện tập ngay khi đang học bài.\n\n---\n\n## 📦 Cài đặt\n\n1. Tải source code addon và đặt vào thư mục:\n\n    ```\n    <Anki addons folder>/gemini_practice\n    ```\n\n2. Mở **Anki** → vào menu `Tools`:\n   - Khi học một thẻ ->Chọn **\"Luyện tập đặt câu (P/Alt+P)\"** để bắt đầu sử dụng.\n   - Chọn **\"Cấu hình Gemini Practice\"** để điền API Key và chỉnh sửa prompt theo ý bạn.\n\n---\n\n## 🔧 Cấu hình\n\nFile cấu hình sẽ được tạo tự động tại:\n\n```\n<Anki addons folder>/gemini_practice/gemini_practice_config.json\n```\n\n### Các trường cần thiết\n\n| Trường               | Mô tả                                                                 |\n|----------------------|----------------------------------------------------------------------|\n| `api_key`            | API key từ Google Gemini (https://makersuite.google.com/app)         |\n| `api_url`            | Endpoint đầy đủ để gọi API Gemini (bao gồm `?key=...`)               |\n| `prompt_definition`  | Prompt cho phần gợi ý định nghĩa từ vựng                              |\n| `prompt_evaluation`  | Prompt cho phần đánh giá câu bạn đặt                                  |\n\n> Mặc định, addon đã có sẵn API Key demo – **bạn nên thay bằng key của riêng bạn để đảm bảo ổn định.**\n\n---\n\n## 💡 Cách sử dụng\n\n1. Trong khi học bài trên Anki, nhấn `P` hoặc `Alt+P` để mở khung luyện tập.  \n2. Chọn trường từ vựng (ví dụ: \"Vocabulary\").  \n3. Xem định nghĩa gợi ý từ Gemini.  \n4. Nhập câu bạn muốn đặt vào khung **\"Luyện đặt câu\"**.  \n5. Nhấn **Gửi đánh giá** để xem phản hồi chi tiết.\n\n![Ảnh 1: Hướng dẫn cài đặt](https://live.staticflickr.com/65535/54654709953_0ea0207193_c.jpg)\n\n![Ảnh 2: Cấu hình addon](https://live.staticflickr.com/65535/54654713749_cf2f2e07e2_z.jpg)",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/727020416?cb=1751941527487",
+        "icon": "fas fa-download"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/gemini-practice",
+        "icon": "fas fa-download"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Gemini Flashcard Generator for Anki",
+    "icon": "fas fa-plus-circle",
+    "description": "**Tự động tạo nội dung thẻ ghi nhớ (flashcard) từ một từ vựng duy nhất – chỉ cần nhập \"Vocabulary\", phần còn lại Gemini sẽ lo!**\n\n---\n\n## ✨ Tính năng chính\n\n- 🔑 **Tự động phân tích từ vựng** bằng AI Gemini:\n  - Phiên âm (Phonetic)\n  - Loại từ (Part of speech)\n  - Nghĩa (Meaning)\n  - Từ đồng nghĩa (Synonyms)\n  - Ví dụ minh họa (Example)\n  - Giải nghĩa ví dụ (Example meaning)\n  - Gợi ý đoán từ (Hint)\n\n- ✅ **Tùy chọn bật/tắt tự động điền các trường còn thiếu.**\n- 🛠️ **Tuỳ chỉnh API Key và Model Gemini** ngay trong giao diện Anki.\n- 🔍 **Log lỗi chi tiết** nếu có vấn đề từ hệ thống hoặc phản hồi Gemini.\n\n---\n\n## 📦 Cách sử dụng\n\n1. Vào **Tools → Gemini Flashcard Settings**.\n2. Điền **API Key** và chọn **Model Gemini**:\n   - `gemini-pro`, `gemini-1.5-pro-latest`, hoặc `gemini-2.0-flash`.\n3. Tạo thẻ mới với trường \"Vocabulary\" chứa 1 từ vựng bất kỳ.\n4. Khi bạn xem thẻ lần đầu, addon sẽ tự động gọi Gemini API để điền các trường còn lại.\n\n---\n\n## 🧩 Yêu cầu\n\n- Anki 2.1.65 trở lên.\n- Kết nối internet.\n- Tài khoản Google đã tạo API Key tại [makersuite.google.com](https://makersuite.google.com/app/apikey).\n\n---\n\n## 🔗 Hướng dẫn chi tiết\n\nXem thêm tại:  \n👉 [❓ Hướng dẫn lấy API Key & chọn Model Gemini](http://nguyenphanvn95.github.io/Anki/Gemini.html)\n\n---\n![Ảnh 1](https://live.staticflickr.com/65535/54653649632_d4cafd2d60_w.jpg)\n![Ảnh 2](https://live.staticflickr.com/65535/54654489001_0327edffcd_w.jpg)\n\n## 💡 Ví dụ\n\nChỉ cần nhập:\n\n```\nVocabulary: implement\n```\n\nAddon sẽ tự động điền vào các trường:\n\n```\nPhonetic: /ˈɪmplɪˌmɛnt/\nPart of speech: (Động từ)\nMeaning: thực hiện, thi hành\nSynonyms: carry out, execute, apply\nExample: The company implemented a new strategy.\nExample meaning: Công ty đã thực hiện một chiến lược mới.\nHint: i_____t\n```\n\n---\n\n## 🚨 Ghi chú\n\n- Addon **không lưu API Key lên mạng**, chỉ lưu cục bộ trên máy.\n- Nên sử dụng tài khoản phụ để lấy API Key vì quota giới hạn.\n- [📺 Xem video trên YouTube](https://youtu.be/9BVuXncwkU4)\n",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/147430828?cb=1751702601866",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/Geminiflashcardgenerator",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Sample Card",
+        "url": "https://nguyenphanvn95.github.io/Anki/Template.apkg",
+        "icon": "fas fa-download"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Backup and Restore All Decks with one click",
+    "icon": "fas fa-wrench",
+    "description": "# 📦 Anki Add-on: Backup / Restore All Decks\n\n## 🧩 Mô tả\n\nAdd-on này giúp bạn **sao lưu (backup)** hoặc **khôi phục (restore)** tất cả các bộ thẻ trong Anki chỉ với một cú nhấp chuột. Giao diện đơn giản, dễ dùng, hỗ trợ lựa chọn thư mục và tùy chọn ghi đè file khi cần.\n![Ảnh minh họa](https://live.staticflickr.com/65535/54654831370_7e28583bdf.jpg)\n\n![ Ảnh minh họa 2](https://live.staticflickr.com/65535/54654745834_6f8478d936.jpg)\n\n---\n\n## ⚙️ Tính năng chính\n\n- 🗂 Backup toàn bộ bộ thẻ hiện có trong tài khoản Anki.\n- 💾 Khôi phục các bộ thẻ từ thư mục chứa file `.apkg`.\n- 🔁 Tùy chọn ghi đè các bộ thẻ cũ khi restore.\n- 📁 Hỗ trợ chọn thư mục đích hoặc nguồn dễ dàng qua giao diện.\n- ✅ Giao diện thân thiện, tích hợp ngay trong menu **Tools** của Anki.\n\n---\n\n## 📋 Cách sử dụng\n\n1. Mở **Anki**\n2. Vào menu **Tools → 📦 Backup / Restore all decks**\n3. Trong cửa sổ hiện ra:\n   - Chọn **Backup** hoặc **Restore**\n   - Chọn **thư mục đích/nguồn**\n   - (Tùy chọn) Tích chọn **Ghi đè nếu trùng**\n   - Nhấn nút **🚀 Tiến hành**\n\n---\n\n## 📁 Cấu trúc backup\n\n- Mỗi bộ thẻ sẽ được lưu thành một file `.apkg`\n- Tên file sẽ được chuẩn hóa từ tên bộ thẻ (thay `::` bằng `__`, thay khoảng trắng bằng `_`)\n\n---\n\n## 💡 Ví dụ\n\n| Tên bộ thẻ      | Tên file được lưu     |\n|------------------|------------------------|\n| TOEIC::Reading   | `TOEIC__Reading.apkg`  |\n| IELTS Writing    | `IELTS_Writing.apkg`   |\n\n---\n\n## 🛠 Yêu cầu hệ thống\n\n- Anki 2.1.65 trở lên\n- Python 3.9+\n\n---\n\n## 📌 Lưu ý\n\n- Add-on chỉ sao lưu nội dung bộ thẻ, **không bao gồm lịch sử học (scheduler)**.\n- Khi **Restore**, các bộ thẻ cũ có thể bị ghi đè nếu bạn chọn đúng tùy chọn này.\n\n---\n\n## 👨‍💻 Tác giả\n\n- Tác giả: [Nguyễn Văn Phán](mailto:nguyenphanvn95@gmail.com)\n- Phiên bản: 1.0\n- License: MIT",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/1065343000?cb=1751870673021",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/oneclickbackuprestorealldeck",
+        "icon": "fas fa-external-link-alt"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Multiple Choice Question with Deck Selected",
+    "icon": "fa-solid fa-question",
+    "description": "Addon này giúp bạn luyện tập trắc nghiệm nhiều lựa chọn (MCQ) trực tiếp trên Anki bằng cách lấy dữ liệu từ bộ thẻ hiện có. Giao diện trực quan, phản hồi nhanh.\n\n🚀 Tính năng nổi bật:  \n✅ Sinh câu hỏi trắc nghiệm 4 đáp án từ các trường bạn chọn (Vocabulary – Meaning hoặc ngược lại).  \n✅ Phản hồi đúng/sai trực quan: hiển thị màu sắc, dấu ✔ và ✘ ngay sau khi chọn.  \n✅ Chỉ chọn được 1 lần duy nhất/mỗi câu, giúp tránh tình trạng đoán mò.  \n✅ Thống kê số câu đúng/sai và tỷ lệ chính xác sau mỗi bài kiểm tra.  \n✅ Phân trang bài thi theo số lượng câu/trang (tuỳ chỉnh).\n\n🛠 Cách sử dụng:  \n- Chọn Deck/Subdeck bạn muốn luyện.  \n- Chọn Note Type và chỉ định trường dữ liệu để tạo câu hỏi.  \n- Chọn chế độ luyện tập (ví dụ: hỏi xuôi hoặc hỏi ngược).  \n- Nhấn \"Bắt đầu kiểm tra\" và bắt đầu luyện tập.\n\n📌 Yêu cầu lưu ý:  \n- Cần có ít nhất 4 thẻ trong bộ với các trường giống nhau để tạo đủ phương án gây nhiễu.  \n- Addon hỗ trợ tốt nhất với các thẻ từ vựng, định nghĩa, thuật ngữ.\n![Giao diện luyện MCQ trên Anki](https://live.staticflickr.com/65535/54654768798_010c6d961c_c.jpg)\n\n[📺 Xem video hướng dẫn trên YouTube](https://youtu.be/d1nnTC8zkjY)\n",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/1457759918",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/MCQAnkitest",
+        "icon": "fas fa-external-link-alt"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Matching Question Game with Selected Deck/Subdeck",
+    "icon": "fa-solid fa-quote-right",
+    "description": "🧠 **Matching Question Game – Trò chơi ghép từ và nghĩa trong Anki**\n\nAddon này giúp bạn luyện tập ghi nhớ từ vựng bằng cách ghép từ với nghĩa tương ứng theo phong cách Matching Game – nay đã tích hợp ngay trong Anki.\n\n---\n\n🔥 **Tính năng nổi bật:**  \n\n🎮 Giao diện trò chơi tương tác: chọn từ bên trái, chọn nghĩa bên phải, nhấn **Ghép** để kiểm tra.  \n✅ Hiển thị đúng/sai ngay lập tức với hiệu ứng dấu ✔/✘ và tô màu.  \n♻️ Ghép được nhiều cặp mỗi lượt, hỗ trợ luyện tập theo nhóm từ.  \n📝 Thống kê kết quả chi tiết: số cặp đúng/sai, tỷ lệ chính xác sau mỗi lượt chơi.  \n🔁 Phân trang tự động nếu có quá nhiều cặp, bạn có thể điều chỉnh số lượng từ/trang.  \n⏱️ Chế độ hẹn giờ (Timed Mode): rèn luyện tốc độ tư duy với giới hạn thời gian.\n\n---\n\n**🛠 Hướng dẫn sử dụng:**  \n\n1. Mở addon, chọn Deck/Subdeck và Note Type bạn muốn luyện.  \n2. Chọn trường Vocabulary và Meaning để tạo cặp ghép.  \n3. Chọn số lượng từ mỗi lượt (ví dụ: 5, 10, 15...).  \n4. Nhấn **Bắt đầu** để chơi. Kết quả sẽ được hiển thị sau mỗi lượt.\n\n---\n\n**📌 Lưu ý:**  \n- Mỗi cặp sẽ được sinh ngẫu nhiên và không lặp lại trong cùng một lượt.  \n- Addon lý tưởng để luyện từ vựng IELTS, GRE, TOEFL, chuyên ngành...\n\n![Ảnh 1: Giao diện luyện tập](https://live.staticflickr.com/65535/54654777248_f1842fe41e_z.jpg)\n\n![Ảnh 2: Kết quả thống kê](https://live.staticflickr.com/65535/54654869570_89bd239f5a_z.jpg)\n\n[📺 Xem video hướng dẫn trên YouTube](https://youtu.be/BBSFo03zEk0)\n",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/2065832262",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/Matchingaddon",
+        "icon": "fas fa-external-link-alt"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Replace Toolbar Icon - Tùy chỉnh giao diện thanh công cụ",
+    "icon": "fa-solid fa-face-smile",
+    "description": "# 📚 Replace Toolbar Icon – Anki Addon\n\n**Replace Toolbar Icon** là một addon nhẹ, đơn giản nhưng hữu ích, giúp bạn **tùy biến lại các biểu tượng trên thanh công cụ (toolbar) chính của Anki** theo phong cách riêng. Bạn có thể chuyển từ giao diện văn bản truyền thống sang các biểu tượng cảm xúc (emoji) dễ nhận biết, hoặc kết hợp cả hai — tất cả chỉ với vài cú click chuột.\n\n---\n\n## 🎯 Tính năng nổi bật\n\n- ✅ **Thay đổi biểu tượng các nút trên toolbar**: Decks, Add, Browse, Stats, Sync.\n- ✅ **Chế độ hiển thị tùy chọn**:\n  - **Chỉ Icon (emoji)** – tinh gọn, hiện đại\n  - **Icon + Văn bản** – dễ hiểu, thân thiện\n  - **Khôi phục mặc định** – quay lại giao diện Anki gốc\n- ✅ **Thay đổi áp dụng ngay lập tức** – không cần khởi động lại Anki\n- ✅ **Giao diện cấu hình đơn giản, tích hợp trong menu Tools**\n\n---\n\n## 🚀 Hướng dẫn sử dụng\n\n1. Mở Anki, vào menu `Tools → Add-ons → Install from file`\n2. Chọn file `top_toolbar_icons.zip` hoặc `.ankiaddon` để cài\n3. Sau khi cài đặt thành công, vào `Tools → Replace Toolbar Icon`\n4. Chọn một trong các chế độ hiển thị:\n   - \"Chỉ icon\"\n   - \"Icon + Text\"\n   - \"Khôi phục mặc định\"\n5. Nhấn **OK** để áp dụng thay đổi ngay lập tức\n\n---\n\n## 🛠️ Kỹ thuật\n\n- Tương thích với: **Anki 2.1.65+ / Anki 25+**, Python 3.9, PyQt 6.6+\n\n---\n\n## 💡 Ghi chú\n\n- Addon không xung đột với hệ thống gốc của Anki\n- Nếu bạn đang sử dụng addon khác tùy chỉnh toolbar (như Fastbar, Custom Gear Icon...), hãy kiểm tra độ tương thích.\n\n---\n\n## 👨‍💻 Tác giả\n\nNguyễn Văn Phán\n![Ảnh 1: Giao diện chọn cặp từ](https://live.staticflickr.com/65535/54654559346_923a196a54_z.jpg)\n\n![Ảnh 2: Kết quả sau lượt chơi](https://live.staticflickr.com/65535/54654560056_97558a6162_z.jpg)\n\n[📺 Xem video hướng dẫn Matching Question Game trên YouTube](https://youtu.be/ZZ7SPZAiBNk)\n",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/1129145267?cb=1751438768671",
+        "icon": "fas fa-external-link-alt"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/ReplaceToolBarIcon",
+        "icon": "fas fa-external-link-alt"
+      }
+    ]
+  }
+]
