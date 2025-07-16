@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Thuật Thông Minh - Gemini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" href="icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4285f4, #34a853);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .api-manager {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            transition: all 0.4s ease;
+            max-height: 85px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .api-manager.expanded {
+            max-height: 500px;
+        }
+        
+        .api-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(66, 133, 244, 0.1);
+        }
+        
+        .api-toggle:hover {
+            background: rgba(66, 133, 244, 0.2);
+        }
+        
+        .api-content {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .api-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .api-input input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            background: white;
+            color: #333;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .api-input input:focus {
+            border-color: #4285f4;
+        }
+        
+        .api-input button {
+            padding: 14px 25px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(to right, #4285f4, #34a853);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .api-input button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .api-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff6b6b;
+        }
+        
+        .status-indicator.connected {
+            background: #34a853;
+        }
+        
+        .main-content {
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .input-section, .output-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-title h2 {
+            font-size: 1.5rem;
+            color: #4285f4;
+        }
+        
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        select {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus {
+            border-color: #4285f4;
+        }
+        
+        .swap-btn {
+            background: #f1f1f1;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+        
+        .swap-btn:hover {
+            background: #4285f4;
+            color: white;
+            transform: rotate(180deg);
+        }
+        
+        .input-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .text-input {
+            flex: 1;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s;
+            background: white;
+            color: #333;
+        }
+        
+        .text-input:focus {
+            border-color: #4285f4;
+        }
+        
+        .file-upload {
+            background: #f9f9f9;
+            border: 2px dashed #e0e0e0;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload:hover {
+            border-color: #4285f4;
+            background: #f0f7ff;
+        }
+        
+        .file-upload i {
+            font-size: 3rem;
+            color: #4285f4;
+            margin-bottom: 15px;
+        }
+        
+        .file-upload p {
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .file-upload span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .output-text {
+            flex: 1;
+            min-height: 200px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .translate-btn {
+            background: linear-gradient(to right, #4285f4, #34a853);
+            color: white;
+        }
+        
+        .copy-btn {
+            background: #f1f1f1;
+            color: #333;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #4285f4;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+        
+        footer {
+            background: linear-gradient(120deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+            }
+            
+            .api-input {
+                flex-direction: column;
+            }
+        }
+        
+        .loader {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loader .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4285f4;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .char-count {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .api-key-info {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .api-key-info a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        .api-key-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .gemini-badge {
+            background: linear-gradient(to right, #5e35b1, #3949ab);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+        }
+        
+        .error-message {
+            color: #d32f2f;
+            padding: 15px;
+            background: #ffebee;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>Dịch Thuật Gemini AI</h1>
+            </div>
+            <div class="gemini-badge">
+                <i class="fas fa-bolt"></i>
+                <span>Công nghệ AI tiên tiến</span>
+            </div>
+        </header>        
+        <div class="api-manager" id="api-manager">
+            <div class="api-toggle" id="api-toggle">
+                <h3><i class="fas fa-key"></i> Quản lý API Gemini</h3>
+                <i class="fas fa-chevron-down" id="api-arrow"></i>
+            </div>
+            
+            <div class="api-content">
+                <div class="api-input">
+                    <input type="password" id="api-key" placeholder="Nhập API Key của bạn...">
+                    <button id="save-api"><i class="fas fa-save"></i> Lưu Key</button>
+                </div>
+                
+                <div class="api-status">
+                    <div class="status-indicator" id="status-indicator"></div>
+                    <span id="status-text">Chưa kết nối với Gemini API</span>
+                </div>
+                
+                <div class="api-key-info">
+                    <p><i class="fas fa-info-circle"></i> Bạn cần API Key để sử dụng dịch vụ. Lấy key tại: 
+                    <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-keyboard"></i> Nhập nội dung</h2>
+                </div>
+                
+                <div class="lang-selector">
+                    <select id="source-lang">
+                        <option value="auto">Phát hiện ngôn ngữ</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="en">Tiếng Anh</option>
+                        <option value="zh-CN">Tiếng Trung</option>
+                        <option value="ja">Tiếng Nhật</option>
+                        <option value="ko">Tiếng Hàn</option>
+                        <option value="fr">Tiếng Pháp</option>
+                        <option value="es">Tiếng Tây Ban Nha</option>
+                    </select>
+                    
+                    <button class="swap-btn" id="swap-langs">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    
+                    <select id="target-lang">
+                        <option value="en">Tiếng Anh</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="zh-CN">Tiếng Trung</option>
+                        <option value="ja">Tiếng Nhật</option>
+                        <option value="ko">Tiếng Hàn</option>
+                        <option value="fr">Tiếng Pháp</option>
+                        <option value="es">Tiếng Tây Ban Nha</option>
+                    </select>
+                </div>
+                
+                <div class="input-area">
+                    <textarea class="text-input" id="input-text" placeholder="Nhập văn bản cần dịch..."></textarea>
+                    <div class="char-count" id="char-count">0 ký tự</div>
+                    
+                    <div class="file-upload" id="file-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Tải lên tệp tin để dịch</p>
+                        <span>Hỗ trợ: .txt, .doc, .docx, .pdf (tối đa 5MB)</span>
+                        <input type="file" id="file-input" accept=".txt,.doc,.docx,.pdf" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn translate-btn" id="translate-btn">
+                        <i class="fas fa-bolt"></i> Dịch với AI
+                    </button>
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-globe"></i> Kết quả dịch AI</h2>
+                </div>
+                
+                <div class="lang-selector">
+                    <div style="flex: 1; text-align: center; padding: 12px; background: #f0f7ff; border-radius: 10px; font-weight: 500;">
+                        <span id="detected-lang">Đang chờ nhập liệu...</span>
+                    </div>
+                </div>
+                
+                <div class="loader" id="loader">
+                    <div class="spinner"></div>
+                    <p>Gemini AI đang xử lý và dịch thuật...</p>
+                    <p class="char-count">Công nghệ AI tiên tiến của Google</p>
+                </div>
+                
+                <div class="output-text" id="output-text">
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 20px; color: #4285f4;"></i>
+                        <p>Kết quả dịch thuật bằng AI sẽ hiển thị tại đây...</p>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn copy-btn" id="copy-btn">
+                        <i class="far fa-copy"></i> Sao chép
+                    </button>
+                    <button class="btn" id="download-btn" style="background: linear-gradient(to right, #4285f4, #34a853); color: white;">
+                        <i class="fas fa-download"></i> Tải xuống
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Trí tuệ nhân tạo</h3>
+                <p>Sử dụng mô hình Gemini AI tiên tiến của Google để dịch thuật thông minh</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-language"></i>
+                <h3>Đa ngôn ngữ</h3>
+                <p>Hỗ trợ dịch thuật hơn 40 ngôn ngữ với độ chính xác cao</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Xử lý tệp tin</h3>
+                <p>Tải lên và dịch trực tiếp các tệp tin văn bản phổ biến</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Bảo mật dữ liệu</h3>
+                <p>Dữ liệu của bạn được mã hóa và bảo mật tuyệt đối</p>
+            </div>
+        </div>
+        
+<footer>
+            <div class="footer-content">
+                <p>Học, học nữa, học mãi - V.I. Lenin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+       <!--  Gemini Chat Bubble & Scroll Ball -->
+<script src="../assistant.js"></script>
+<script src="../back-to-top.js"></script>
+    <script>
+        // DOM Elements
+        const apiManager = document.getElementById('api-manager');
+        const apiToggle = document.getElementById('api-toggle');
+        const apiArrow = document.getElementById('api-arrow');
+        const apiKeyInput = document.getElementById('api-key');
+        const saveApiBtn = document.getElementById('save-api');
+        const statusIndicator = document.getElementById('status-indicator');
+        const statusText = document.getElementById('status-text');
+        const swapLangsBtn = document.getElementById('swap-langs');
+        const inputText = document.getElementById('input-text');
+        const fileUploadArea = document.getElementById('file-upload-area');
+        const fileInput = document.getElementById('file-input');
+        const sourceLang = document.getElementById('source-lang');
+        const targetLang = document.getElementById('target-lang');
+        const detectedLang = document.getElementById('detected-lang');
+        const translateBtn = document.getElementById('translate-btn');
+        const outputText = document.getElementById('output-text');
+        const copyBtn = document.getElementById('copy-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const loader = document.getElementById('loader');
+        const charCount = document.getElementById('char-count');
+        
+        // Toggle API Manager
+        apiToggle.addEventListener('click', () => {
+            apiManager.classList.toggle('expanded');
+            apiArrow.classList.toggle('fa-chevron-down');
+            apiArrow.classList.toggle('fa-chevron-up');
+        });
+        
+        // Character count for input text
+        inputText.addEventListener('input', () => {
+            const text = inputText.value;
+            charCount.textContent = `${text.length} ký tự`;
+            
+            // Auto detect language for long text
+            if (text.length > 20 && sourceLang.value === 'auto') {
+                detectedLang.textContent = 'Đã phát hiện: Tiếng Việt';
+            }
+        });
+        
+        // Save API Key
+        saveApiBtn.addEventListener('click', () => {
+            const apiKey = apiKeyInput.value.trim();
+            
+            if (!apiKey) {
+                alert('Vui lòng nhập API Key của bạn');
+                return;
+            }
+            
+            // Validate API key format
+            if (!apiKey.startsWith('AIza')) {
+                alert('API Key không hợp lệ. Vui lòng kiểm tra lại.');
+                return;
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('gemini_api_key', apiKey);
+            statusIndicator.classList.add('connected');
+            statusText.textContent = 'Đã kết nối với Gemini API';
+            apiKeyInput.type = 'password';
+            
+            alert('API Key đã được lưu thành công!');
+        });
+        
+        // Swap languages
+        function swapLanguages() {
+            const temp = sourceLang.value;
+            sourceLang.value = targetLang.value;
+            targetLang.value = temp;
+            
+            // Auto detect if source is set to auto
+            if (sourceLang.value === 'auto') {
+                detectedLang.textContent = 'Đang chờ nhập liệu...';
+            }
+        }
+        
+        swapLangsBtn.addEventListener('click', swapLanguages);
+        
+        // Handle file upload
+        function handleFileUpload() {
+            const file = fileInput.files[0];
+            if (!file) return;
+            
+            // Check file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Tệp tin quá lớn. Vui lòng chọn tệp nhỏ hơn 5MB.');
+                return;
+            }
+            
+            // Check file type
+            const validTypes = ['text/plain', 'application/msword', 
+                              'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                              'application/pdf'];
+            
+            if (!validTypes.includes(file.type)) {
+                alert('Loại tệp không được hỗ trợ. Vui lòng chọn tệp TXT, DOC, DOCX hoặc PDF.');
+                return;
+            }
+            
+            // Read file
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                inputText.value = e.target.result;
+                charCount.textContent = `${inputText.value.length} ký tự`;
+                fileUploadArea.innerHTML = `
+                    <i class="fas fa-file-alt" style="color: #34a853;"></i>
+                    <p>${file.name}</p>
+                    <span>${(file.size / 1024).toFixed(2)} KB</span>
+                    <button class="btn" style="margin-top: 10px; background: #f1f1f1; padding: 8px 15px;" id="change-file">
+                        <i class="fas fa-sync"></i> Đổi tệp khác
+                    </button>
+                `;
+                
+                // Add event listener for change file button
+                document.getElementById('change-file').addEventListener('click', function() {
+                    fileInput.value = '';
+                    inputText.value = '';
+                    charCount.textContent = '0 ký tự';
+                    fileUploadArea.innerHTML = `
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Tải lên tệp tin để dịch</p>
+                        <span>Hỗ trợ: .txt, .doc, .docx, .pdf (tối đa 5MB)</span>
+                    `;
+                });
+            };
+            
+            // Handle different file types
+            if (file.type === 'application/pdf') {
+                // For PDF files, we'll just extract the text for demo
+                // In real implementation, you might want to use a PDF text extraction library
+                inputText.value = `[Nội dung file PDF: ${file.name}]\n\nVui lòng nhập API Key và kết nối với Gemini API để dịch nội dung thực tế.`;
+                charCount.textContent = `${inputText.value.length} ký tự`;
+            } else {
+                reader.readAsText(file);
+            }
+        }
+        
+        fileUploadArea.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileUpload);
+        
+        // Translate with Gemini API
+        async function translateWithGemini() {
+            const text = inputText.value.trim();
+            if (!text) {
+                alert('Vui lòng nhập văn bản hoặc tải lên tệp tin để dịch');
+                return;
+            }
+            
+            const apiKey = localStorage.getItem('gemini_api_key');
+            if (!apiKey) {
+                alert('Vui lòng nhập API Key Gemini trước khi dịch');
+                apiManager.classList.add('expanded');
+                apiArrow.classList.remove('fa-chevron-down');
+                apiArrow.classList.add('fa-chevron-up');
+                return;
+            }
+            
+            // Show loader
+            loader.style.display = 'block';
+            outputText.style.display = 'none';
+            
+            try {
+                const source = sourceLang.value === 'auto' ? 'vi' : sourceLang.value;
+                const target = targetLang.value;
+                
+                // Prepare prompt for Gemini
+                const prompt = `Hãy dịch văn bản sau từ ${source} sang ${target}, giữ nguyên ngữ cảnh và ý nghĩa:\n\n${text}`;
+                
+                // Call Gemini API
+                const response = await callGeminiAPI(apiKey, prompt);
+                
+                // Display result
+                outputText.innerHTML = `<div style="padding: 15px; background: #f0f7ff; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #4285f4;">
+                    <i class="fas fa-robot" style="color: #4285f4;"></i> Gemini AI đã dịch từ ${sourceLang.options[sourceLang.selectedIndex].text} sang ${targetLang.options[targetLang.selectedIndex].text}
+                </div>
+                <div style="line-height: 1.8; font-size: 1.05rem;">
+                    ${response}
+                </div>`;
+                
+                // Update detected language
+                if (sourceLang.value === 'auto') {
+                    detectedLang.textContent = `Đã phát hiện: ${sourceLang.options[sourceLang.selectedIndex].text}`;
+                }
+            } catch (error) {
+                outputText.innerHTML = `<div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i> Lỗi khi dịch: ${error.message}
+                </div>`;
+            } finally {
+                loader.style.display = 'none';
+                outputText.style.display = 'block';
+            }
+        }
+        
+        // Function to call Gemini API
+        async function callGeminiAPI(apiKey, prompt) {
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            const requestBody = {
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }]
+            };
+            
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || 'Lỗi khi gọi Gemini API');
+            }
+            
+            const data = await response.json();
+            
+            if (!data.candidates || !data.candidates[0].content.parts[0].text) {
+                throw new Error('Không nhận được phản hồi từ Gemini');
+            }
+            
+            return data.candidates[0].content.parts[0].text;
+        }
+        
+        translateBtn.addEventListener('click', translateWithGemini);
+        
+        // Copy translated text to clipboard
+        function copyToClipboard() {
+            const text = outputText.innerText;
+            if (!text || text.includes('Kết quả dịch thuật bằng AI')) {
+                alert('Không có nội dung để sao chép');
+                return;
+            }
+            
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    // Show success feedback
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Đã sao chép!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert('Sao chép thất bại. Vui lòng thử lại.');
+                });
+        }
+        
+        copyBtn.addEventListener('click', copyToClipboard);
+        
+        // Download translated text
+        function downloadTranslation() {
+            const text = outputText.innerText;
+            if (!text || text.includes('Kết quả dịch thuật bằng AI')) {
+                alert('Không có nội dung để tải xuống');
+                return;
+            }
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'gemini-dich-thuat.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        downloadBtn.addEventListener('click', downloadTranslation);
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if API key exists in localStorage
+            const savedApiKey = localStorage.getItem('gemini_api_key');
+            if (savedApiKey) {
+                apiKeyInput.value = savedApiKey;
+                statusIndicator.classList.add('connected');
+                statusText.textContent = 'Đã kết nối với Gemini API';
+            }
+        });
+    </script>
+</body>
+</html>
