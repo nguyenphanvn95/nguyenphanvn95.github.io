@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Speaking Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #14bdad;
+            --secondary-color: #0c9a92;
+            --part1-color: #3498db;
+            --part2-color: #9b59b6;
+            --part3-color: #e74c3c;
+            --bg-color: #f1f5f8;
+            --text-color: #333;
+            --light-text-color: #666;
+            --card-bg: #ffffff;
+            --border-color: #ddd;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --error-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #7ed9d9 0%, #6a8bc7 100%);
+            color: var(--text-color);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .header-title {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-title::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--part1-color), var(--part2-color), var(--part3-color));
+        }
+
+        .settings-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+	padding: 0; /* loại bỏ nếu có */
+    aspect-ratio: 1 / 1;
+        }
+
+        .settings-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+        }
+
+        .settings-panel {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: var(--shadow);
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .settings-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .settings-panel label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .settings-panel input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .settings-panel button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .settings-panel button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .part-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+        }
+
+        .part-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .part-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .part-btn::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transition: height 0.3s ease;
+        }
+
+        .part-btn:hover::after {
+            height: 8px;
+        }
+
+        .part-btn.active {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .part-btn.active::after {
+            height: 8px;
+        }
+
+        .part1-btn {
+            background-color: var(--part1-color);
+        }
+
+        .part1-btn::after {
+            background-color: darken(var(--part1-color), 10%);
+        }
+
+        .part2-btn {
+            background-color: var(--part2-color);
+        }
+
+        .part2-btn::after {
+            background-color: darken(var(--part2-color), 10%);
+        }
+
+        .part3-btn {
+            background-color: var(--part3-color);
+        }
+
+        .part3-btn::after {
+            background-color: darken(var(--part3-color), 10%);
+        }
+
+        .topic-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        select, button {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            background-color: white;
+        }
+
+        select {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        button i {
+            margin-right: 8px;
+        }
+
+        .question-box {
+            background-color: #e8f4f3;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .clues-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .clue-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .clue-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .clue-card i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        .outline-container {
+            margin-top: 20px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .outline-container.active {
+            display: block;
+        }
+
+        .outline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .outline-content {
+            white-space: pre-line;
+            line-height: 1.6;
+        }
+
+        .recording-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.4s ease;
+        }
+
+        .recording-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .record-btn {
+            background-color: var(--error-color);
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            min-width: 200px;
+        }
+
+        .record-btn.recording {
+            background-color: var(--success-color);
+        }
+
+        .text-box-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .text-box {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 150px;
+            font-size: 16px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+.clear-btn i, .settings-btn i {
+    font-size: 16px;
+    line-height: 1;
+}
+
+        .clear-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+	spect-ratio: 1 / 1;
+        }
+
+        .clear-btn:hover {
+            background: rgba(231, 76, 60, 0.2);
+            color: var(--error-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            min-width: 180px;
+        }
+
+        .improved-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.4s ease;
+        }
+
+        .result-container {
+            margin-top: 15px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 150px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .result-container p {
+            margin-bottom: 10px;
+        }
+
+        .result-container ul, .result-container ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .result-container li {
+            margin-bottom: 8px;
+        }
+
+        .result-container strong {
+            color: var(--primary-color);
+        }
+
+        .status-message {
+            text-align: center;
+            padding: 20px;
+            color: var(--light-text-color);
+            font-style: italic;
+        }
+
+        .mic-icon {
+            margin-right: 8px;
+        }
+
+        .part-description {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--light-text-color);
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .clues-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .part-selector {
+                flex-direction: column;
+            }
+            
+            select, button {
+                width: 100%;
+            }
+        }
+
+footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 1.1rem;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+footer.footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-content p {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+.footer-links i {
+    font-size: 1.2rem;
+}
+
+copyright {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <i class="fas fa-microphone-alt"></i> IELTS SPEAKING PRACTICE
+                <button class="settings-btn" id="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+            
+            <div class="settings-panel" id="settings-panel">
+                <label for="api-key">Gemini API Key:</label>
+                <input type="password" id="api-key" placeholder="Enter your Gemini API key">
+                <button id="save-api-key">Save</button>
+            </div>
+        </header>
+
+        <section class="part-section">
+            <h2 class="section-title"><i class="fas fa-layer-group"></i> SELECT SPEAKING PART</h2>
+            
+            <div class="part-selector">
+                <button class="part-btn part1-btn active" data-part="1">
+                    <i class="fas fa-user"></i> Part 1
+                </button>
+                <button class="part-btn part2-btn" data-part="2">
+                    <i class="fas fa-comments"></i> Part 2
+                </button>
+                <button class="part-btn part3-btn" data-part="3">
+                    <i class="fas fa-brain"></i> Part 3
+                </button>
+            </div>
+            
+            <div class="part-description" id="part-description">
+                Part 1: Introduction and Interview (4-5 minutes) - Answer questions about yourself, your home, work, studies, and familiar topics.
+            </div>
+        </section>
+
+        <section class="topic-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> TOPIC & QUESTION</h2>
+            
+            <div class="controls">
+                <select id="topic-selector">
+                    <option value="Technology">Technology</option>
+                    <option value="Education">Education</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Health">Health</option>
+                    <option value="Culture">Culture</option>
+                    <option value="Work">Work</option>
+                    <option value="Hobbies">Hobbies</option>
+                </select>
+                
+                <button id="new-question-btn">
+                    <i class="fas fa-sync-alt"></i> New Question
+                </button>
+            </div>
+            
+            <div class="question-box">
+                <div class="question-text" id="question-display">
+                    Select a topic and click "New Question" to begin
+                </div>
+                
+                <div class="clues-container" id="clues-container">
+                    <!-- Clues will be inserted here -->
+                </div>
+                
+                <div class="controls" style="margin-top: 15px;">
+                    <button id="outline-btn" class="action-btn">
+                        <i class="fas fa-list-ol"></i> Generate Outline
+                    </button>
+                    <button id="toggle-outline-btn" class="action-btn" style="display: none;">
+                        <i class="fas fa-eye-slash"></i> Hide Outline
+                    </button>
+                </div>
+                
+                <div class="outline-container" id="outline-container">
+                    <div class="outline-header">
+                        <h3><i class="fas fa-list-alt"></i> Speaking Outline</h3>
+                    </div>
+                    <div class="outline-content" id="outline-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recording-section">
+            <h2 class="section-title"><i class="fas fa-microphone"></i> RECORD YOUR SPEECH</h2>
+            
+            <div class="recording-controls">
+                <button id="record-btn" class="record-btn">
+                    <i class="fas fa-microphone mic-icon"></i> Start Recording
+                </button>
+                <button id="clear-btn" class="action-btn">
+                    <i class="fas fa-trash-alt"></i> Clear Text
+                </button>
+            </div>
+            
+            <div class="text-box-container">
+                <div class="text-box" id="transcript" contenteditable="true">
+                    Your speech content will appear here...
+                </div>
+                <button class="clear-btn" id="quick-clear-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="correct-btn" class="action-btn">
+                    <i class="fas fa-edit"></i> Improve Speech
+                </button>
+                <button id="upgrade-btn" class="action-btn">
+                    <i class="fas fa-chart-line"></i> Upgrade to Band 8
+                </button>
+            </div>
+        </section>
+
+        <section class="improved-section">
+            <h2 class="section-title"><i class="fas fa-magic"></i> IMPROVED SPEECH</h2>
+            
+            <div class="result-container" id="corrected-text">
+                <div class="status-message">Your improved speech will appear here</div>
+            </div>
+        </section>
+<footer class ="footer">
+            <div class="footer-content">
+                <p>Học, học nữa, học mãi - V.I. Lenin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // DOM Elements
+        const settingsBtn = document.getElementById('settings-btn');
+        const settingsPanel = document.getElementById('settings-panel');
+        const apiKeyInput = document.getElementById('api-key');
+        const saveApiKeyBtn = document.getElementById('save-api-key');
+        const partButtons = document.querySelectorAll('.part-btn');
+        const partDescription = document.getElementById('part-description');
+        const topicSelector = document.getElementById('topic-selector');
+        const newQuestionBtn = document.getElementById('new-question-btn');
+        const questionDisplay = document.getElementById('question-display');
+        const cluesContainer = document.getElementById('clues-container');
+        const outlineBtn = document.getElementById('outline-btn');
+        const toggleOutlineBtn = document.getElementById('toggle-outline-btn');
+        const outlineContainer = document.getElementById('outline-container');
+        const outlineContent = document.getElementById('outline-content');
+        const recordBtn = document.getElementById('record-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const quickClearBtn = document.getElementById('quick-clear-btn');
+        const transcriptEl = document.getElementById('transcript');
+        const correctBtn = document.getElementById('correct-btn');
+        const upgradeBtn = document.getElementById('upgrade-btn');
+        const correctedTextEl = document.getElementById('corrected-text');
+
+        // Global variables
+        let recognition;
+        let isRecording = false;
+        let currentPart = 1; // Default to Part 1
+        let currentTopic = "Technology";
+        let geminiApiKey = localStorage.getItem('geminiApiKey') || '';
+        let lastFinalTranscript = '';
+
+        // Part descriptions
+        const partDescriptions = {
+            1: "Part 1: Introduction and Interview (4-5 minutes) - Answer questions about yourself, your home, work, studies, and familiar topics.",
+            2: "Part 2: Long Turn (3-4 minutes) - Speak for 1-2 minutes on a given topic. You'll have 1 minute to prepare and make notes.",
+            3: "Part 3: Discussion (4-5 minutes) - Discuss more abstract ideas and issues related to the Part 2 topic."
+        };
+
+        // Initialize
+        function init() {
+            // Load saved API key if exists
+            if (geminiApiKey) {
+                apiKeyInput.value = geminiApiKey;
+            }
+            
+            // Initialize speech recognition
+            initSpeechRecognition();
+            
+            // Load first question
+            getQuestionAndClues(currentPart, currentTopic);
+        }
+
+        // Initialize Web Speech API (English only)
+        function initSpeechRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            
+            if (SpeechRecognition) {
+                recognition = new SpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.lang = 'en-US';
+                
+                recognition.onresult = (event) => {
+                    let interimTranscript = '';
+                    let finalTranscript = '';
+                    
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        const transcript = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) {
+                            finalTranscript += transcript + ' ';
+                        } else {
+                            interimTranscript += transcript;
+                        }
+                    }
+                    
+                    // Update only new final transcript to avoid duplication
+                    if (finalTranscript) {
+                        lastFinalTranscript += finalTranscript;
+                        transcriptEl.textContent = lastFinalTranscript + interimTranscript;
+                    } else {
+                        transcriptEl.textContent = lastFinalTranscript + interimTranscript;
+                    }
+                };
+                
+                recognition.onerror = (event) => {
+                    console.error('Speech recognition error', event.error);
+                    if (event.error === 'no-speech') {
+                        alert('No speech was detected. Please try again.');
+                    }
+                };
+                
+                recognition.onend = () => {
+                    if (isRecording) {
+                        recognition.start(); // Restart recognition if still recording
+                    }
+                };
+            } else {
+                alert('Your browser does not support speech recognition. Please use Chrome or Edge.');
+            }
+        }
+
+        // Get question and clues from Gemini API based on part
+        async function getQuestionAndClues(part, topic) {
+            if (!geminiApiKey) {
+                showApiKeyWarning();
+                return;
+            }
+            
+            questionDisplay.textContent = "Loading question...";
+            cluesContainer.innerHTML = "";
+            outlineContainer.classList.remove('active');
+            toggleOutlineBtn.style.display = 'none';
+            
+            try {
+                let prompt;
+                
+                switch(part) {
+                    case 1:
+                        prompt = `Generate 3 IELTS Speaking Part 1 questions about ${topic} in English. Format as JSON: {"questions": ["Question 1", "Question 2", "Question 3"]}`;
+                        break;
+                    case 2:
+                        prompt = `Generate an IELTS Speaking Part 2 cue card about ${topic} in English with 4 clues. Format as JSON: {"question": "Describe...", "clues": ["Clue 1", "Clue 2", "Clue 3", "Clue 4"]}`;
+                        break;
+                    case 3:
+                        prompt = `Generate 3 IELTS Speaking Part 3 discussion questions about ${topic} in English. Format as JSON: {"questions": ["Question 1", "Question 2", "Question 3"]}`;
+                        break;
+                }
+                
+                const response = await callGeminiAPI(prompt);
+                const responseText = response.data.candidates[0].content.parts[0].text;
+                
+                // Try to extract JSON from response
+                try {
+                    const jsonStart = responseText.indexOf('{');
+                    const jsonEnd = responseText.lastIndexOf('}') + 1;
+                    const jsonString = responseText.substring(jsonStart, jsonEnd);
+                    const data = JSON.parse(jsonString);
+                    
+                    // Display question(s)
+                    if (part === 1 || part === 3) {
+                        questionDisplay.innerHTML = data.questions.map((q, i) => 
+                            `<div style="margin-bottom: 10px;">${i+1}. ${q}</div>`
+                        ).join('');
+                    } else {
+                        questionDisplay.textContent = data.question;
+                        
+                        // Display clues
+                        cluesContainer.innerHTML = "";
+                        data.clues.forEach((clue, index) => {
+                            const clueCard = document.createElement('div');
+                            clueCard.className = 'clue-card';
+                            clueCard.innerHTML = `<i class="fas fa-lightbulb"></i> ${clue}`;
+                            cluesContainer.appendChild(clueCard);
+                        });
+                    }
+                } catch (e) {
+                    console.error("Error parsing JSON:", e);
+                    displayDefaultQuestion(part, topic);
+                }
+            } catch (error) {
+                console.error("Error getting question:", error);
+                displayDefaultQuestion(part, topic);
+            }
+        }
+
+        // Generate outline using Gemini API
+        async function generateOutline() {
+            if (!geminiApiKey) {
+                showApiKeyWarning();
+                return;
+            }
+            
+            const question = questionDisplay.textContent;
+            
+            outlineContent.textContent = "Generating outline...";
+            outlineContainer.classList.add('active');
+            toggleOutlineBtn.style.display = 'inline-flex';
+            toggleOutlineBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Outline';
+            
+            try {
+                let prompt;
+                
+                switch(currentPart) {
+                    case 1:
+                        prompt = `Create a brief outline for answering these IELTS Speaking Part 1 questions. Provide key phrases and vocabulary for each question:
+                        
+                        Questions: 
+                        ${question}
+                        
+                        Outline:`;
+                        break;
+                    case 2:
+                        prompt = `Create a detailed outline for an IELTS Speaking Part 2 answer based on this cue card. Use clear structure with introduction, main points, and conclusion. Include key vocabulary and phrases:
+                        
+                        Cue Card: 
+                        ${question}
+                        
+                        Outline:`;
+                        break;
+                    case 3:
+                        prompt = `Create an outline for answering these IELTS Speaking Part 3 discussion questions. Provide key arguments, examples, and vocabulary for each question:
+                        
+                        Questions: 
+                        ${question}
+                        
+                        Outline:`;
+                        break;
+                }
+                
+                const response = await callGeminiAPI(prompt);
+                const outline = response.data.candidates[0].content.parts[0].text;
+                outlineContent.innerHTML = marked.parse(outline);
+            } catch (error) {
+                console.error("Error generating outline:", error);
+                outlineContent.textContent = "Failed to generate outline. Please try again.";
+            }
+        }
+
+        // Improve speech using Gemini API
+        async function improveSpeech() {
+            const speechText = transcriptEl.textContent.trim();
+            
+            if (!speechText) {
+                alert("Please record your speech first");
+                return;
+            }
+            
+            if (!geminiApiKey) {
+                showApiKeyWarning();
+                return;
+            }
+            
+            correctedTextEl.innerHTML = '<div class="status-message"><i class="fas fa-spinner fa-spin"></i> Improving your speech...</div>';
+            
+            try {
+                let prompt;
+                
+                switch(currentPart) {
+                    case 1:
+                        prompt = `Improve these IELTS Speaking Part 1 answers to make them more fluent, grammatically correct, and natural. Keep the original meaning but enhance vocabulary and structure. Return the improved answers in markdown format:
+                        
+                        Original Answers: 
+                        ${speechText}
+                        
+                        Improved Answers:`;
+                        break;
+                    case 2:
+                        prompt = `Improve this IELTS Speaking Part 2 response to make it more fluent, coherent, and natural. Enhance vocabulary and grammatical range while maintaining the original content. Return the improved version in markdown format:
+                        
+                        Original: 
+                        ${speechText}
+                        
+                        Improved Version:`;
+                        break;
+                    case 3:
+                        prompt = `Improve these IELTS Speaking Part 3 discussion answers to make them more analytical, coherent, and sophisticated. Enhance vocabulary and grammatical structures. Return the improved answers in markdown format:
+                        
+                        Original Answers: 
+                        ${speechText}
+                        
+                        Improved Answers:`;
+                        break;
+                }
+                
+                const response = await callGeminiAPI(prompt);
+                const correctedText = response.data.candidates[0].content.parts[0].text;
+                correctedTextEl.innerHTML = marked.parse(correctedText);
+            } catch (error) {
+                console.error("Error improving speech:", error);
+                correctedTextEl.innerHTML = '<div class="status-message">Error improving speech. Please try again.</div>';
+            }
+        }
+
+        // Upgrade speech to band 8 using Gemini API
+        async function upgradeToBand8() {
+            let speechText = transcriptEl.textContent.trim();
+            
+            if (!speechText) {
+                alert("Please record your speech first");
+                return;
+            }
+            
+            if (!geminiApiKey) {
+                showApiKeyWarning();
+                return;
+            }
+            
+            // If already improved, use that version
+            const correctedContent = correctedTextEl.querySelector('p, div');
+            if (correctedContent) {
+                speechText = correctedContent.textContent;
+            }
+            
+            correctedTextEl.innerHTML = '<div class="status-message"><i class="fas fa-spinner fa-spin"></i> Upgrading to band 8...</div>';
+            
+            try {
+                let prompt;
+                
+                switch(currentPart) {
+                    case 1:
+                        prompt = `Upgrade these IELTS Speaking Part 1 answers to band 8 level by using more sophisticated vocabulary, idiomatic expressions, and complex structures while maintaining naturalness. Return the upgraded answers in markdown format:
+                        
+                        Original: 
+                        ${speechText}
+                        
+                        Band 8 Answers:`;
+                        break;
+                    case 2:
+                        prompt = `Upgrade this IELTS Speaking Part 2 response to band 8 level by using more sophisticated vocabulary, complex grammatical structures, cohesive devices, and native-like expressions. Return the upgraded version in markdown format:
+                        
+                        Original: 
+                        ${speechText}
+                        
+                        Band 8 Version:`;
+                        break;
+                    case 3:
+                        prompt = `Upgrade these IELTS Speaking Part 3 discussion answers to band 8 level by making them more analytical, using advanced vocabulary, complex sentence structures, and sophisticated discourse markers. Return the upgraded answers in markdown format:
+                        
+                        Original: 
+                        ${speechText}
+                        
+                        Band 8 Answers:`;
+                        break;
+                }
+                
+                const response = await callGeminiAPI(prompt);
+                const upgradedText = response.data.candidates[0].content.parts[0].text;
+                correctedTextEl.innerHTML = marked.parse(upgradedText);
+            } catch (error) {
+                console.error("Error upgrading speech:", error);
+                correctedTextEl.innerHTML = '<div class="status-message">Error upgrading speech. Please try again.</div>';
+            }
+        }
+
+        // Call Gemini API helper function
+        async function callGeminiAPI(prompt) {
+            const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
+            
+            return await axios.post(GEMINI_API_URL, {
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }]
+            });
+        }
+
+        // Display default question when API fails
+        function displayDefaultQuestion(part, topic) {
+            const defaultQuestions = {
+                1: {
+                    "Technology": [
+                        "How often do you use technology in your daily life?",
+                        "What technology device is most important to you?",
+                        "Do you think technology makes our lives easier?"
+                    ],
+                    "Education": [
+                        "What subject did you enjoy most in school?",
+                        "Do you think homework is important for students?",
+                        "What makes a good teacher in your opinion?"
+                    ]
+                },
+                2: {
+                    "Technology": "Describe a piece of technology you use regularly. You should say:\n- What it is\n- How you use it\n- How often you use it\n- And explain why it's important to you",
+                    "Education": "Describe a subject you enjoyed studying in school. You should say:\n- What the subject was\n- Who taught it\n- What you learned\n- And explain why you enjoyed it"
+                },
+                3: {
+                    "Technology": [
+                        "How has technology changed the way people work?",
+                        "Do you think technology always improves our quality of life?",
+                        "What are the potential dangers of relying too much on technology?"
+                    ],
+                    "Education": [
+                        "How important is formal education compared to practical experience?",
+                        "What changes would you like to see in the education system?",
+                        "Do you think online learning will replace traditional classrooms?"
+                    ]
+                }
+            };
+            
+            const defaultClues = {
+                2: {
+                    "Technology": [
+                        "What the technology is",
+                        "How you use it",
+                        "How often you use it",
+                        "Why it's important to you"
+                    ],
+                    "Education": [
+                        "What the subject was",
+                        "Who taught it",
+                        "What you learned",
+                        "Why you enjoyed it"
+                    ]
+                }
+            };
+            
+            if (part === 1 || part === 3) {
+                const questions = defaultQuestions[part][topic] || [
+                    "What do you think about this topic?",
+                    "How has this changed in recent years?",
+                    "What are the main challenges related to this?"
+                ];
+                
+                questionDisplay.innerHTML = questions.map((q, i) => 
+                    `<div style="margin-bottom: 10px;">${i+1}. ${q}</div>`
+                ).join('');
+            } else {
+                questionDisplay.textContent = defaultQuestions[part][topic] || 
+                    "Describe something important to you. You should say:\n- What it is\n- How you got it\n- Why it's important\n- And explain how it affects your life";
+                
+                if (defaultClues[part][topic]) {
+                    cluesContainer.innerHTML = "";
+                    defaultClues[part][topic].forEach((clue, index) => {
+                        const clueCard = document.createElement('div');
+                        clueCard.className = 'clue-card';
+                        clueCard.innerHTML = `<i class="fas fa-lightbulb"></i> ${clue}`;
+                        cluesContainer.appendChild(clueCard);
+                    });
+                }
+            }
+        }
+
+        // Show API key warning
+        function showApiKeyWarning() {
+            alert("Please enter your Gemini API key in the settings first.");
+            settingsPanel.classList.add('active');
+            apiKeyInput.focus();
+        }
+
+        // Clear transcript content
+        function clearTranscript() {
+            transcriptEl.textContent = "";
+            lastFinalTranscript = "";
+        }
+
+        // Toggle outline visibility
+        function toggleOutline() {
+            const isVisible = outlineContainer.classList.contains('active');
+            outlineContainer.classList.toggle('active');
+            toggleOutlineBtn.innerHTML = isVisible ? 
+                '<i class="fas fa-eye"></i> Show Outline' : 
+                '<i class="fas fa-eye-slash"></i> Hide Outline';
+        }
+
+        // Event listeners
+        settingsBtn.addEventListener('click', () => {
+            settingsPanel.classList.toggle('active');
+        });
+
+        saveApiKeyBtn.addEventListener('click', () => {
+            geminiApiKey = apiKeyInput.value.trim();
+            if (geminiApiKey) {
+                localStorage.setItem('geminiApiKey', geminiApiKey);
+                settingsPanel.classList.remove('active');
+                alert("API key saved successfully!");
+            } else {
+                alert("Please enter a valid API key");
+            }
+        });
+
+        // Handle part selection
+        partButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update UI
+                partButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update current part
+                currentPart = parseInt(btn.dataset.part);
+                partDescription.textContent = partDescriptions[currentPart];
+                
+                // Update topic selector based on part
+                updateTopicSelector(currentPart);
+                
+                // Load new question
+                lastFinalTranscript = '';
+                transcriptEl.textContent = "Your speech content will appear here...";
+                getQuestionAndClues(currentPart, currentTopic);
+            });
+        });
+
+        // Update topic selector based on part
+        function updateTopicSelector(part) {
+            // In a real app, you might have different topics for different parts
+            // For simplicity, we'll keep the same topics but you can customize
+            topicSelector.innerHTML = `
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Environment">Environment</option>
+                <option value="Travel">Travel</option>
+                <option value="Health">Health</option>
+                <option value="Culture">Culture</option>
+                <option value="Work">Work</option>
+                <option value="Hobbies">Hobbies</option>
+            `;
+        }
+
+        newQuestionBtn.addEventListener('click', () => {
+            currentTopic = topicSelector.value;
+            lastFinalTranscript = '';
+            transcriptEl.textContent = "Your speech content will appear here...";
+            getQuestionAndClues(currentPart, currentTopic);
+        });
+
+        outlineBtn.addEventListener('click', generateOutline);
+        toggleOutlineBtn.addEventListener('click', toggleOutline);
+
+        recordBtn.addEventListener('click', () => {
+            if (!recognition) {
+                initSpeechRecognition();
+            }
+            
+            if (isRecording) {
+                recognition.stop();
+                recordBtn.innerHTML = '<i class="fas fa-microphone mic-icon"></i> Start Recording';
+                recordBtn.classList.remove('recording');
+                isRecording = false;
+            } else {
+                recognition.start();
+                recordBtn.innerHTML = '<i class="fas fa-stop mic-icon"></i> Stop Recording';
+                recordBtn.classList.add('recording');
+                lastFinalTranscript = '';
+                transcriptEl.textContent = "";
+                isRecording = true;
+            }
+        });
+
+        clearBtn.addEventListener('click', clearTranscript);
+        quickClearBtn.addEventListener('click', clearTranscript);
+
+        correctBtn.addEventListener('click', improveSpeech);
+        upgradeBtn.addEventListener('click', upgradeToBand8);
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
