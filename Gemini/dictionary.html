@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ Điển Online - Gemini AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" href="icon.png">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #ddd;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4285f4, #34a853);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 15px;
+        }
+        
+        .api-settings {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            margin: 0 auto 25px;
+            display: none;
+        }
+        
+        .api-settings.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .api-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .api-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .api-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+        
+        .api-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #f1f3f4;
+            color: #555;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary:hover {
+            background: #3367d6;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .toggle-api {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 20px auto;
+        }
+        
+        .search-container {
+            max-width: 700px;
+            margin: 20px auto 40px;
+            position: relative;
+        }
+        
+        .search-box {
+            display: flex;
+            height: 60px;
+            box-shadow: var(--shadow);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        #word-input {
+            flex: 1;
+            padding: 0 25px;
+            font-size: 1.1rem;
+            border: none;
+            outline: none;
+            background: white;
+        }
+        
+        #search-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        #search-btn:hover {
+            background: #3367d6;
+        }
+        
+        .suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-top: 5px;
+            z-index: 100;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .suggestion-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background: var(--light-bg);
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .dictionary-result {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            position: relative;
+            min-height: 500px;
+            transition: all 0.3s;
+        }
+        
+        .word-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .word-title {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+        
+        .phonetics {
+            display: flex;
+            gap: 30px;
+            margin: 15px 0;
+        }
+        
+        .phonetic {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .phonetic span {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .phonetic-text {
+            background: var(--light-bg);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+        
+        .play-btn {
+            background: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .part-of-speech {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .meaning-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+        
+        .meaning-content {
+            padding-left: 15px;
+        }
+        
+        .meaning-text {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .language {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .synonyms-antonyms {
+            display: flex;
+            gap: 40px;
+            margin-top: 10px;
+        }
+        
+        .synonyms, .antonyms {
+            flex: 1;
+        }
+        
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .word-item {
+            background: var(--light-bg);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .word-item:hover {
+            background: #e0e7ff;
+            transform: translateY(-2px);
+        }
+        
+        .examples {
+            margin-top: 5px;
+        }
+        
+        .example {
+            padding: 10px 15px;
+            background: var(--light-bg);
+            border-left: 3px solid var(--primary-color);
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+            transition: all 0.2s;
+        }
+        
+        .example:hover {
+            transform: translateX(5px);
+        }
+        
+        .example-en {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .example-vi {
+            color: #555;
+        }
+        
+        .recent-searches {
+            width: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            height: fit-content;
+        }
+        
+        .recent-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .recent-list {
+            list-style: none;
+        }
+        
+        .recent-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        
+        .recent-item:last-child {
+            border-bottom: none;
+        }
+        
+        .recent-item:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px 0;
+            color: #666;
+        }
+        
+        .loading i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            color: var(--accent-color);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.1rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #777;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        
+        footer {
+            background: linear-gradient(120deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+  .gemini-badge {
+            background: linear-gradient(to right, #5e35b1, #3949ab);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .recent-searches {
+                width: 100%;
+            }
+            
+            .phonetics {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .synonyms-antonyms {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+ <header>
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <h1>Từ Điển thông minh cùng Gemini</h1>
+            </div>
+            <div class="gemini-badge">
+                <i class="fas fa-bolt"></i>
+                <span>Công nghệ AI tiên tiến</span>
+            </div>
+        </header>     
+
+            <div class="api-settings" id="api-settings">
+                <div class="api-header">
+                    <h3 class="api-title">Cài đặt API Key</h3>
+                </div>
+                <div class="api-form">
+                    <div class="form-group">
+                        <label for="gemini-api-key">Gemini API Key</label>
+                        <input type="password" id="gemini-api-key" placeholder="Nhập API Key của bạn...">
+                        <small>API Key được lưu trữ cục bộ trên trình duyệt của bạn</small>
+                    </div>
+                    <div class="api-buttons">
+                        <button class="btn btn-primary" id="save-api-btn">Lưu API Key</button>
+                        <button class="btn btn-secondary" id="close-api-btn">Đóng</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="toggle-api" id="toggle-api">
+                <i class="fas fa-key"></i> Cài đặt API
+            </button>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="word-input" placeholder="Nhập từ tiếng Anh cần tra cứu...">
+                    <button id="search-btn"><i class="fas fa-search"></i> Tra Từ</button>
+                </div>
+                <div class="suggestions" id="suggestions">
+                    <!-- Suggestions will be populated here -->
+                </div>
+            </div>
+        
+        <div class="main-content">
+            <div class="dictionary-result" id="dictionary-result">
+                <div class="empty-state">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Bắt đầu tra cứu từ điển</h3>
+                    <p>Nhập từ tiếng Anh vào ô tìm kiếm để xem định nghĩa, phát âm và ví dụ</p>
+                    <div style="margin-top: 30px; background: #eef7ff; padding: 20px; border-radius: 10px; max-width: 500px; margin: 30px auto 0;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> Mẹo sử dụng</h4>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Nhập API Key Gemini của bạn để sử dụng dịch vụ</li>
+                            <li>Nhấn Enter hoặc nút "Tra Từ" để tìm kiếm</li>
+                            <li>Nhấn nút phát âm để nghe cách phát âm</li>
+                            <li>Các từ đã tra sẽ được lưu trong "Từ tra gần đây"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-searches">
+                <h2 class="recent-title">Từ tra gần đây</h2>
+                <ul class="recent-list" id="recent-list">
+                    <!-- Recent searches will be populated here -->
+                </ul>
+            </div>
+        </div>
+ <footer>
+            <div class="footer-content">
+                <p>Học, học nữa, học mãi - V.I. Lenin</p>
+                <div class="footer-links">
+                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
+                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </footer>
+    </div>
+           <!--  Gemini Chat Bubble & Scroll Ball -->
+<script src="../assistant.js"></script>
+<script src="../back-to-top.js"></script>
+    <script>
+        // DOM elements
+        const wordInput = document.getElementById('word-input');
+        const searchBtn = document.getElementById('search-btn');
+        const dictionaryResult = document.getElementById('dictionary-result');
+        const suggestions = document.getElementById('suggestions');
+        const recentList = document.getElementById('recent-list');
+        const apiSettings = document.getElementById('api-settings');
+        const toggleApiBtn = document.getElementById('toggle-api');
+        const geminiApiInput = document.getElementById('gemini-api-key');
+        const saveApiBtn = document.getElementById('save-api-btn');
+        const closeApiBtn = document.getElementById('close-api-btn');
+        
+        // Load saved API key and recent searches
+        function loadSavedData() {
+            const savedApiKey = localStorage.getItem('geminiApiKey');
+            if (savedApiKey) {
+                geminiApiInput.value = savedApiKey;
+            }
+            
+            const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            renderRecentSearches(recentSearches);
+        }
+        
+        // Render recent searches
+        function renderRecentSearches(searches) {
+            recentList.innerHTML = '';
+            
+            if (searches.length === 0) {
+                recentList.innerHTML = '<li class="recent-item">Chưa có từ nào được tra</li>';
+                return;
+            }
+            
+            searches.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.className = 'recent-item';
+                listItem.innerHTML = `<span>${item.word}</span><span>${item.meaning.substring(0, 20)}${item.meaning.length > 20 ? '...' : ''}</span>`;
+                
+                listItem.addEventListener('click', () => {
+                    wordInput.value = item.word;
+                    searchWord(item.word);
+                });
+                
+                recentList.appendChild(listItem);
+            });
+        }
+        
+        // Add to recent searches
+        function addToRecentSearches(word, meaning) {
+            let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            
+            // Remove if already exists
+            recentSearches = recentSearches.filter(item => item.word !== word);
+            
+            // Add to the top
+            recentSearches.unshift({
+                word: word,
+                meaning: meaning
+            });
+            
+            // Limit to 10 items
+            if (recentSearches.length > 10) {
+                recentSearches.pop();
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+            
+            // Update UI
+            renderRecentSearches(recentSearches);
+        }
+        
+        // Search for a word using Gemini API
+        async function searchWord(word) {
+            const apiKey = localStorage.getItem('geminiApiKey');
+            
+            if (!apiKey) {
+                dictionaryResult.innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>API Key chưa được cài đặt</h3>
+                        <p>Vui lòng nhập API Key Gemini AI để sử dụng dịch vụ</p>
+                        <button class="btn btn-primary" style="margin-top: 20px;" id="setup-api-btn">
+                            <i class="fas fa-key"></i> Cài đặt API Key
+                        </button>
+                    </div>
+                `;
+                
+                document.getElementById('setup-api-btn').addEventListener('click', () => {
+                    apiSettings.classList.add('active');
+                    toggleApiBtn.textContent = "Ẩn cài đặt";
+                });
+                
+                return;
+            }
+            
+            // Show loading state
+            dictionaryResult.innerHTML = `
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <p>Đang tìm kiếm định nghĩa của "${word}"...</p>
+                </div>
+            `;
+            
+            try {
+                // Create the prompt for Gemini
+                const prompt = `
+                    Hãy cung cấp thông tin từ vựng cho từ "${word}" dưới dạng JSON với cấu trúc sau:
+                    {
+                      "word": "từ gốc",
+                      "phonetics": {
+                        "uk": "phiên âm Anh-Anh",
+                        "us": "phiên âm Anh-Mỹ"
+                      },
+                      "partOfSpeech": "loại từ",
+                      "meanings": {
+                        "en": "giải thích tiếng Anh",
+                        "vi": "giải thích tiếng Việt"
+                      },
+                      "synonyms": ["từ đồng nghĩa 1", "từ đồng nghĩa 2"],
+                      "antonyms": ["từ trái nghĩa 1", "từ trái nghĩa 2"],
+                      "examples": [
+                        {
+                          "en": "câu ví dụ tiếng Anh 1",
+                          "vi": "bản dịch tiếng Việt 1"
+                        },
+                        {
+                          "en": "câu ví dụ tiếng Anh 2",
+                          "vi": "bản dịch tiếng Việt 2"
+                        }
+                      ]
+                    }
+                    
+                    Lưu ý:
+                    - Chỉ trả về dữ liệu JSON, không có bất kỳ nội dung nào khác
+                    - Nếu không tìm thấy từ, trả về JSON với thuộc tính "error"
+                `;
+                
+                // Make request to Gemini API
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: prompt
+                            }]
+                        }]
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Extract JSON from the response
+                const textResponse = data.candidates[0].content.parts[0].text;
+                const jsonStart = textResponse.indexOf('{');
+                const jsonEnd = textResponse.lastIndexOf('}') + 1;
+                const jsonString = textResponse.substring(jsonStart, jsonEnd);
+                const wordData = JSON.parse(jsonString);
+                
+                // Check for error
+                if (wordData.error) {
+                    throw new Error(wordData.error);
+                }
+                
+                // Render the word data
+                renderWordData(wordData);
+                
+                // Add to recent searches
+                addToRecentSearches(wordData.word, wordData.meanings.vi);
+                
+            } catch (error) {
+                console.error('Error fetching word data:', error);
+                dictionaryResult.innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Không tìm thấy từ "${word}"</h3>
+                        <p>Vui lòng kiểm tra lại chính tả hoặc thử với từ khác</p>
+                        <p style="margin-top: 15px; font-size: 0.9rem;">Lỗi chi tiết: ${error.message || 'Không xác định'}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Render word data
+        function renderWordData(data) {
+            dictionaryResult.innerHTML = `
+                <div class="word-header">
+                    <h2 class="word-title">${data.word}</h2>
+                </div>
+                
+                <div class="phonetics">
+                    <div class="phonetic">
+                        <span>Anh-Anh:</span>
+                        <div class="phonetic-text">${data.phonetics.uk}</div>
+                        <div class="play-btn" data-lang="en-GB">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                    </div>
+                    <div class="phonetic">
+                        <span>Anh-Mỹ:</span>
+                        <div class="phonetic-text">${data.phonetics.us}</div>
+                        <div class="play-btn" data-lang="en-US">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-of-speech">${data.partOfSpeech}</div>
+                
+                <div class="meaning-section">
+                    <h3 class="section-title">Định nghĩa</h3>
+                    <div class="meaning-content">
+                        <p class="meaning-text"><span class="language">Tiếng Anh:</span> ${data.meanings.en}</p>
+                        <p class="meaning-text"><span class="language">Tiếng Việt:</span> ${data.meanings.vi}</p>
+                    </div>
+                </div>
+                
+                <div class="synonyms-antonyms">
+                    <div class="synonyms">
+                        <h3 class="section-title">Từ đồng nghĩa</h3>
+                        <div class="word-list">
+                            ${data.synonyms.map(syn => `<div class="word-item">${syn}</div>`).join('')}
+                        </div>
+                    </div>
+                    <div class="antonyms">
+                        <h3 class="section-title">Từ trái nghĩa</h3>
+                        <div class="word-list">
+                            ${data.antonyms.length > 0 
+                                ? data.antonyms.map(ant => `<div class="word-item">${ant}</div>`).join('')
+                                : '<div class="word-item">Không có</div>'}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="meaning-section">
+                    <h3 class="section-title">Ví dụ</h3>
+                    <div class="examples">
+                        ${data.examples.map(ex => `
+                            <div class="example">
+                                <p class="example-en">${ex.en}</p>
+                                <p class="example-vi">${ex.vi}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners to play buttons
+            document.querySelectorAll('.play-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    speakWord(data.word, lang);
+                });
+            });
+            
+            // Add event listeners to synonyms/antonyms
+            document.querySelectorAll('.word-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    wordInput.value = item.textContent;
+                    searchWord(item.textContent);
+                });
+            });
+        }
+        
+        // Speak word using Web Speech API
+        function speakWord(word, lang) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = lang;
+            synth.speak(utterance);
+        }
+        
+        // Show suggestions
+        function showSuggestions() {
+            const input = wordInput.value.toLowerCase();
+            if (!input) {
+                suggestions.style.display = 'none';
+                return;
+            }
+            
+            // In a real app, this would come from an API
+            const commonWords = [
+                "hello", "world", "computer", "dictionary", 
+                "language", "education", "knowledge", "science",
+                "technology", "programming", "development", "application",
+                "beautiful", "intelligent", "important", "different"
+            ];
+            
+            const matchedWords = commonWords.filter(
+                word => word.startsWith(input)
+            );
+            
+            if (matchedWords.length > 0) {
+                suggestions.innerHTML = matchedWords.map(word => `
+                    <div class="suggestion-item">${word}</div>
+                `).join('');
+                
+                suggestions.style.display = 'block';
+                
+                // Add click events to suggestions
+                document.querySelectorAll('.suggestion-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        wordInput.value = item.textContent;
+                        suggestions.style.display = 'none';
+                        searchWord(item.textContent);
+                    });
+                });
+            } else {
+                suggestions.style.display = 'none';
+            }
+        }
+        
+        // Event listeners
+        searchBtn.addEventListener('click', () => {
+            const word = wordInput.value.trim();
+            if (word) {
+                searchWord(word);
+            }
+        });
+        
+        wordInput.addEventListener('input', showSuggestions);
+        
+        wordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const word = wordInput.value.trim();
+                if (word) {
+                    searchWord(word);
+                }
+            }
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!suggestions.contains(e.target) && e.target !== wordInput) {
+                suggestions.style.display = 'none';
+            }
+        });
+        
+        toggleApiBtn.addEventListener('click', () => {
+            apiSettings.classList.toggle('active');
+            toggleApiBtn.innerHTML = apiSettings.classList.contains('active') 
+                ? '<i class="fas fa-eye-slash"></i> Ẩn cài đặt' 
+                : '<i class="fas fa-key"></i> Cài đặt API';
+        });
+        
+        saveApiBtn.addEventListener('click', () => {
+            const apiKey = geminiApiInput.value.trim();
+            if (apiKey) {
+                localStorage.setItem('geminiApiKey', apiKey);
+                alert('API Key đã được lưu thành công!');
+            } else {
+                alert('Vui lòng nhập API Key');
+            }
+        });
+        
+        closeApiBtn.addEventListener('click', () => {
+            apiSettings.classList.remove('active');
+            toggleApiBtn.innerHTML = '<i class="fas fa-key"></i> Cài đặt API';
+        });
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            loadSavedData();
+            
+            // Try to search for "hello" if API key exists
+            const apiKey = localStorage.getItem('geminiApiKey');
+            if (apiKey) {
+                searchWord('hello');
+            }
+        });
+    </script>
+</body>
+</html>
