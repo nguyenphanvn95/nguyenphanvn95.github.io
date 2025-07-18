@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENedu | Viết Bài IELTS với Gemini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .handdraw-button {
+            font-family: 'Comic Sans MS', 'Patrick Hand', cursive, sans-serif;
+            font-size: 1rem;
+            background: #7ed9d9;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid black;
+            border-radius: 255px 20px 225px 20px/20px 225px 20px 255px;
+            box-shadow: 4px 4px 0px 0px black;
+            transition: all 0.3s;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .handdraw-button:hover {
+            background: #0eaab5;
+            box-shadow: 0 0 0 0 black;
+            transform: translateY(2px);
+        }
+
+        .handdraw-button:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        .small-button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            transform: scale(0.85);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .small-button:hover {
+            background: #0eaab5;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            transform: scale(0.9);
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            background: #fff;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea, .output {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Nunito', sans-serif;
+            min-height: 150px;
+        }
+
+        textarea {
+            background-color: #eef7f7;
+        }
+
+        .output {
+            background-color: #f9f9f9;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #15a496;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #61d2c5;
+        }
+
+        #essaySelector {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+        }
+
+        .exercise-tabs {
+            margin-top: 20px;
+        }
+
+        .tab-label {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .tab-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .tab-list-item {
+            margin: 0 5px 5px;
+            border: 2px solid #14bdad;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            font-weight: bold;
+        }
+
+        .tab-list-item.active, .tab-list-item:hover {
+            background-color: #14bdad;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .gemini-response {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+            border-left: 4px solid #15a496;
+        }
+
+        .gemini-response h3 {
+            color: #15a496;
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #15a496;
+        }
+
+        .loading i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 10px 15px;
+            }
+            
+            .logo {
+                width: 120px;
+            }
+            
+            .header-right {
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+            
+            .handdraw-button {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="https://genedu.vn/wp-content/uploads/2025/01/7e483cb2-cce6-4328-8ddc-1cc0b3da0552-e1737278736552.png" class="logo" alt="GENedu Logo">
+        </div>
+        <div class="header-right">
+            <a href="#" class="handdraw-button small-button">Trang chủ</a>
+            <a href="#" class="handdraw-button small-button">Tài liệu</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-column">
+            <select id="essaySelector"></select>
+            <div id="essayContent"></div>
+        </div>
+
+        <div class="right-column">
+            <div class="exercise-tabs" style="display: none;">
+                <div class="tab-label">Bài tập</div>
+                <ul class="tab-list" id="exerciseTabs"></ul>
+            </div>
+            
+            <div id="exerciseContent" class="exercise-content">
+                <div class="gemini-response">
+                    <h3><i class="fas fa-comment-alt"></i> Phản hồi từ Gemini</h3>
+                    <div class="output" id="apiResponse">
+                        Bài viết của bạn sẽ được đánh giá tại đây...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Biến toàn cục
+        let essaysContent = [];
+        let currentEssayIndex = 0;
+        const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"; // Thay thế bằng API key thật của bạn
+        const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+
+        // Khởi tạo trang
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDocxFile();
+            
+            // Thiết lập sự kiện cho dropdown
+            const essaySelector = document.getElementById('essaySelector');
+            essaySelector.addEventListener('change', function() {
+                currentEssayIndex = parseInt(this.value);
+                displaySelectedEssay(currentEssayIndex);
+            });
+        });
+
+        // Tải file DOCX
+        function loadDocxFile() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'essays.docx', true);
+            xhr.responseType = 'arraybuffer';
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    mammoth.extractRawText({arrayBuffer: xhr.response})
+                        .then(function(result) {
+                            essaysContent = parseContent(result.value);
+                            populateEssayDropdown(essaysContent);
+                            handleInitialSlugSelection();
+                        })
+                        .catch(function(error) {
+                            console.error('Error processing document:', error);
+                        });
+                } else {
+                    console.error('Failed to load essay document:', xhr.status);
+                }
+            };
+            
+            xhr.onerror = function() {
+                console.error('Error loading the document');
+            };
+            
+            xhr.send();
+        }
+
+        // Phân tích nội dung từ file DOCX
+        function parseContent(text) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = text;
+            
+            const essays = [];
+            const headings = Array.from(tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+            
+            headings.forEach((heading, index) => {
+                let content = '';
+                let nextElement = heading.nextElementSibling;
+                
+                // Thu thập nội dung cho đến khi gặp heading tiếp theo
+                while (nextElement && !/^H[1-6]$/i.test(nextElement.tagName)) {
+                    content += nextElement.outerHTML;
+                    nextElement = nextElement.nextElementSibling;
+                }
+                
+                essays.push({
+                    title: heading.textContent.trim(),
+                    content: content
+                });
+            });
+            
+            return essays;
+        }
+
+        // Điền dữ liệu vào dropdown
+        function populateEssayDropdown(essays) {
+            const essaySelector = document.getElementById('essaySelector');
+            essaySelector.innerHTML = '';
+            
+            essays.forEach((essay, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = makeDisplayText(essay.title);
+                essaySelector.appendChild(option);
+            });
+        }
+
+        // Xử lý slug ban đầu từ URL
+        function handleInitialSlugSelection() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('essay') || '';
+            
+            if (!slug) {
+                displaySelectedEssay(0);
+                return;
+            }
+            
+            let foundIndex = null;
+            essaysContent.forEach((essay, index) => {
+                if (slugify(essay.title) === slug) {
+                    foundIndex = index;
+                }
+            });
+            
+            if (foundIndex === null) {
+                displaySelectedEssay(0);
+            } else {
+                displaySelectedEssay(foundIndex);
+                document.getElementById('essaySelector').value = foundIndex;
+            }
+        }
+
+        // Hiển thị bài essay được chọn
+        function displaySelectedEssay(index) {
+            const essay = essaysContent[index];
+            if (!essay) return;
+            
+            const essayContent = document.getElementById('essayContent');
+            essayContent.innerHTML = `
+                <h2>${cleanTitle(essay.title)}</h2>
+                <div contenteditable="true">${essay.content}</div>
+            `;
+            
+            // Hiển thị tab bài tập
+            document.querySelector('.exercise-tabs').style.display = 'block';
+            buildExerciseTabs(index);
+        }
+
+        // Xây dựng các tab bài tập
+        function buildExerciseTabs(essayIndex) {
+            const exerciseTabs = document.getElementById('exerciseTabs');
+            exerciseTabs.innerHTML = '';
+            
+            const essayTitle = essaysContent[essayIndex].title;
+            const exerciseNumber = essayNumber(essayTitle);
+            
+            if (!exerciseNumber) {
+                const p = document.createElement('p');
+                p.textContent = 'Không có bài tập cho essay này';
+                exerciseTabs.appendChild(p);
+                return;
+            }
+            
+            // Tìm tất cả các bài tập liên quan (có cùng số bài essay)
+            essaysContent.forEach((essay, index) => {
+                if (essay.title.includes(`Essay ${exerciseNumber}.`)) {
+                    const tabNumber = essay.title.match(/\d+\.\d+/)?.[0] || essay.title;
+                    
+                    const li = document.createElement('li');
+                    li.className = 'tab-list-item';
+                    li.textContent = tabNumber;
+                    
+                    li.addEventListener('click', function() {
+                        // Xóa active class từ tất cả các tab
+                        document.querySelectorAll('.tab-list-item').forEach(t => t.classList.remove('active'));
+                        // Thêm active class cho tab được click
+                        this.classList.add('active');
+                        // Hiển thị nội dung bài tập
+                        displayExerciseContent(index);
+                    });
+                    
+                    exerciseTabs.appendChild(li);
+                }
+            });
+            
+            // Kích hoạt tab đầu tiên
+            if (exerciseTabs.firstChild) {
+                exerciseTabs.firstChild.click();
+            }
+        }
+
+        // Hiển thị nội dung bài tập
+        function displayExerciseContent(index) {
+            const exercise = essaysContent[index];
+            const exerciseContent = document.getElementById('exerciseContent');
+            
+            exerciseContent.innerHTML = `
+                <h2>${exercise.title}</h2>
+                <div contenteditable="true">${exercise.content}</div>
+                <textarea id="userAnswer" placeholder="Nhập câu trả lời của bạn tại đây..."></textarea>
+                <button onclick="submitAnswer()">Gửi bài để đánh giá</button>
+                <div class="gemini-response">
+                    <h3><i class="fas fa-comment-alt"></i> Phản hồi từ Gemini</h3>
+                    <div class="output" id="apiResponse">
+                        Bài làm của bạn sẽ được đánh giá tại đây...
+                    </div>
+                </div>
+            `;
+        }
+
+        // Gửi câu trả lời để đánh giá bằng Gemini API thật
+        async function submitAnswer() {
+            const userAnswer = document.getElementById('userAnswer')?.value;
+            const apiResponse = document.getElementById('apiResponse');
+            
+            if (!userAnswer?.trim()) {
+                apiResponse.innerHTML = "Vui lòng nhập câu trả lời trước khi gửi đánh giá.";
+                return;
+            }
+            
+            // Hiển thị trạng thái loading
+            apiResponse.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Đang phân tích bài làm...</p></div>';
+            
+            try {
+                // Lấy nội dung bài tập hiện tại
+                const currentExercise = document.querySelector('.tab-list-item.active')?.textContent;
+                const exerciseContent = document.querySelector('#exerciseContent div[contenteditable="true"]')?.textContent;
+                
+                // Tạo prompt cho Gemini API
+                const prompt = `
+                    Bạn là một giáo viên chấm bài IELTS Writing. Hãy đánh giá bài viết sau theo các tiêu chí:
+                    - Task Achievement (Hoàn thành yêu cầu đề bài)
+                    - Coherence and Cohesion (Tính mạch lạc và liên kết)
+                    - Lexical Resource (Vốn từ vựng)
+                    - Grammatical Range and Accuracy (Ngữ pháp)
+                    
+                    Bài tập: ${currentExercise}
+                    Nội dung bài tập: ${exerciseContent}
+                    Bài làm của học viên: ${userAnswer}
+                    
+                    Hãy cung cấp:
+                    1. Điểm số cho từng tiêu chí (từ 0-9)
+                    2. Nhận xét chi tiết về ưu điểm và nhược điểm
+                    3. Gợi ý cải thiện cụ thể
+                    4. Bài viết mẫu tham khảo (nếu cần)
+                `;
+                
+                // Gọi Gemini API
+                const response = await callGeminiAPI(prompt);
+                
+                // Hiển thị kết quả
+                apiResponse.innerHTML = formatGeminiResponse(response);
+                
+            } catch (error) {
+                apiResponse.innerHTML = `Đã xảy ra lỗi: ${error.message}<br>Vui lòng thử lại.`;
+            }
+        }
+
+        // Gọi Gemini API thật
+        async function callGeminiAPI(prompt) {
+            const response = await axios.post(
+                `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
+                {
+                    contents: [{
+                        parts: [{
+                            text: prompt
+                        }]
+                    }]
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            
+            return response.data.candidates[0].content.parts[0].text;
+        }
+
+        // Định dạng phản hồi từ Gemini
+        function formatGeminiResponse(responseText) {
+            // Xử lý và định dạng phản hồi từ API
+            // Bạn có thể tùy chỉnh phần này để hiển thị đẹp hơn
+            return `
+                <h3>Kết quả đánh giá</h3>
+                <div>${responseText.replace(/\n/g, '<br>')}</div>
+            `;
+        }
+
+        // Các hàm tiện ích
+        function slugify(text) {
+            return text
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-zA-Z0-9]+/g, "-")
+                .toLowerCase()
+                .replace(/^-+|-+$/g, "");
+        }
+
+        function cleanTitle(title) {
+            return title.replace(/^\s*(?:pro|registered)\s*essay\s*\d+[\s\-\–\:]*?/i, '').trim();
+        }
+
+        function essayNumber(title) {
+            const match = title.match(/^\s*(?:pro|registered)\s*essay\s*(\d+)/i);
+            return match ? match[1] : null;
+        }
+
+        function makeDisplayText(title) {
+            const num = essayNumber(title);
+            return num ? `ESSAY ${num} - ${cleanTitle(title)}` : cleanTitle(title);
+        }
+    </script>
+</body>
+</html>
