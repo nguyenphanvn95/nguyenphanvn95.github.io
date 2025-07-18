@@ -111,5 +111,59 @@
         "icon": "fas fa-external-link-alt"
       }
     ]
+  },
+  {
+    "id": 7,
+    "name": "Edit Audios in External Editor QT6",
+    "icon": "fas fa-music",
+    "description": "Add-on này cho phép bạn **mở và chỉnh sửa các file âm thanh** gắn trong thẻ Anki bằng phần mềm bên ngoài như **Audacity**. Bạn có thể cấu hình để chọn những âm thanh nào sẽ được mở dựa trên:\n- Tên trường chứa âm thanh\n- Vị trí âm thanh trên mặt trước hoặc mặt sau thẻ\n- Regex (biểu thức chính quy) để tìm audio trong HTML\n![Ảnh 1](https://live.staticflickr.com/65535/54662492598_5caeafc24b_b.jpg)\n![Ảnh 2](https://live.staticflickr.com/65535/54662270611_26dd650f9d_z.jpg)\n\n## ⚙️ Tính năng chính\n\n- Mở một hoặc nhiều file audio liên kết với thẻ đang ôn luyện.\n- Hỗ trợ 3 kiểu cấu hình tìm kiếm:\n  - **Theo tên trường:** `Front,Back`\n  - **Theo vị trí:** `1,2:1` → mở audio thứ 1, 2 ở mặt trước và audio thứ 1 ở mặt sau\n  - **Theo biểu thức chính quy:** ví dụ `\"<div id=\\\"editable\\\">.*?</div>\"` (kết hợp checkbox \"By regex\")\n- Cho phép thay đổi đường dẫn đến phần mềm chỉnh sửa audio.\n- Giao diện cấu hình trực quan: chọn bộ thẻ, trường dữ liệu, và định dạng tìm kiếm.\n- Tùy chọn lưu cấu hình theo từng bộ thẻ (deck).\n\n## 🧭 Cách sử dụng\n\n- Mở Anki → Menu **Tools** → **Edit audios in editor**\n- Sử dụng phím tắt:\n  - `Alt + G`: Mở audio trong thẻ đang xem\n  - `Shift + G`: Mở cửa sổ cấu hình\n\n### 3. Thiết lập cấu hình\n- Chọn bộ thẻ (Deck)\n- Nhập tiêu chí tìm kiếm (tên trường, chỉ số hoặc regex)\n- Đổi phần mềm chỉnh sửa nếu cần\n- (Tùy chọn) Tick \"Save config\" để lưu lại\n\n## 🧪 Ví dụ\n\n| Đầu vào tìm kiếm | Ý nghĩa |\n|------------------|--------|\n| `Front,Back`     | Mở âm thanh trong trường \"Front\" và \"Back\" |\n| `1:2`            | Mở audio đầu tiên ở mặt trước, thứ hai ở mặt sau |\n| `<div id=\"editable\">.*?</div>` (tích regex) | Mở audio trong thẻ HTML cụ thể |\n\n## 💻 Yêu cầu\n\n- Anki >= 2.1.x\n- Python 3.9+\n- Đã cài sẵn phần mềm chỉnh sửa audio (Audacity hoặc phần mềm bất kỳ)\n\n## 🛠 Đường dẫn mặc định editor\n\n| Hệ điều hành | Mặc định |\n|-------------|----------|\n| Windows      | `C:\\\\Program Files (x86)\\\\Audacity\\\\audacity.exe` |\n| macOS        | `/Applications/Audacity.app` |\n\nBạn có thể thay đổi thủ công qua nút \"Change editor path\" trong cấu hình.\n\n## 📝 Ghi chú\n\n- Chỉ hoạt động khi bạn đang **ở chế độ ôn tập thẻ (review mode)**.\n- Addon có thể lỗi nếu đường dẫn audio bị sai hoặc editor không được tìm thấy.\n\n## 📬 Tác giả & Đóng góp\n\n- Tác giả gốc: https://ankiweb.net/shared/info/1502086928\n- Chỉnh sửa & đóng gói lại: Nguyễn Văn Phán",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/276185773?cb=1751859636017",
+        "icon": "fa fa-external-link"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/EditAudioinexternaleditor",
+        "icon": "fa fa-external-link"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "New Card Counter",
+    "icon": "fas fa-clock",
+    "description": "Addon này giúp hiển thị **số lượng thẻ mới được tạo** trong:\n- ✅ Hôm nay\n- ✅ Tuần này\n- ✅ Tháng này  \n\nTất cả được trình bày **trực tiếp trên trang chủ của Anki**, ngay dưới phần thống kê học tập mỗi ngày.\n\n---\n\n## 🔧 Tính năng nổi bật\n\n- 🎯 **Tự động đếm số thẻ mới** dựa trên ngày tạo (creation time) của thẻ.\n- ⚙️ **Tùy chỉnh hiển thị** từng loại thống kê trong menu **Tools > New Card Counter Settings**.\n- 💾 **Lưu cài đặt vào file `config.json`**, không bị mất khi khởi động lại.\n- ♻️ **Cập nhật ngay lập tức**, không cần khởi động lại Anki.\n\n---\n![Ảnh 3](https://live.staticflickr.com/65535/54662496108_707cd04b9f_w.jpg)\n[📺 Xem video trên YouTube](https://youtu.be/rJpUuVBUatE)\n\n## 🛠 Cách cài đặt\n\n1. Giải nén thư mục `new_card_counter` vào thư mục `addons21` của Anki:\n   - Windows: `C:\\Users\\<Tên người dùng>\\AppData\\Roaming\\Anki2\\addons21`\n2. Mở lại Anki.\n3. Vào menu **Tools > New Card Counter Settings** để chọn những mục cần hiển thị.\n\n---\n\n## 📎 Ghi chú\n\n- Addon tương thích với **Anki 23.10 trở lên**.\n- Nếu bạn không thấy giao diện hiển thị sau khi cài đặt, hãy chắc chắn đã bật ít nhất một tùy chọn trong phần cài đặt.",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/2034678526?cb=1751422053386",
+        "icon": "fa fa-external-link"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/countnewcards/edit/main/README.md",
+        "icon": "fa fa-external-link"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Show Deck Name on Title",
+    "icon": "fa fa-flag",
+    "description": "📌Hiển thị tên deck hoặc subdeck đang học ngay trên **tiêu đề cửa sổ Anki**.  \nTự động khôi phục tiêu đề mặc định khi quay về màn hình chính.\n\n---\n![Ảnh 4](https://live.staticflickr.com/65535/54662512389_8880b859b6.jpg)\n\n## ✨ Tính năng chính\n\n✅ Khi bắt đầu học thẻ: tiêu đề đổi thành:\n\n```\n[Tên người dùng] - Anki - [Biểu tượng] [Tên Deck/Subdeck]\n```\n\n✅ Khi quay lại màn hình chính (Deck Browser): tiêu đề trở lại mặc định:\n\n```\n[Tên người dùng] - Anki\n```\n\n✅ Cho phép tùy chỉnh tiêu đề, biểu tượng, định dạng hiển thị.\n\n---\n\n## ⚙️ Cấu hình (Tools → Add-ons → Decktitle → Config)\n\nBạn có thể chỉnh các tùy chọn sau trong khung cấu hình:\n\n```json\n{\n  \"enable_title\": true,\n  \"icon\": \"📚\",\n  \"title_color\": \"#FF0000\",\n  \"title_format\": \"{profile} - Anki - {icon} {deck}\"\n}\n```\n\n### 🔹 Giải thích:\n\n| Khóa | Ý nghĩa |\n|------|--------|\n| `enable_title` | Bật/tắt tính năng hiển thị tiêu đề tùy chỉnh |\n| `icon`         | Biểu tượng hiển thị kèm tên deck |\n| `title_color`  | (Chưa dùng) – Dự phòng cho tính năng màu sắc |\n| `title_format` | Định dạng hiển thị, có thể dùng `{profile}`, `{deck}`, `{icon}` |\n\n---\n\n## 🧪 Ví dụ hiển thị\n\n```text\nDrPhan6.5IELTS - Anki - 📚 Listening Vocabulary::Talking about gifts\n```\n\n---\n\n## 🛠 Tương thích\n\n- ✅ Hoạt động tốt với Anki 2.1.35+ đến 25.02.5\n- ✅ Tương thích Windows/macOS/Linux\n- ✅ Không xung đột với các addon phổ biến như Fastbar, AnkiConnect, Leaderboard...\n\n---\n\n## 🧑‍💻 Cách hoạt động\n\n- `reviewer_did_show_question`: khi bắt đầu học → thay đổi tiêu đề\n- `state_did_change`: khi quay về deck browser → khôi phục tiêu đề mặc định\n\n---\n\n## 📂 Cấu trúc addon\n\n```\nDecktitle/\n├── __init__.py\n├── meta.json\n├── config.md   ← phần mô tả hiển thị bên phải cấu hình\n```\n\n---\n\n## ❤️ Gợi ý biểu tượng\n\n📚 💡 🚀 🧠 🔥 ✅ ✨ ⏱️ 📝 🎯\n\n---\n[📺 Xem video trên YouTube](https://youtu.be/W0WkqqlnVCE)\n",
+    "links": [
+      {
+        "text": "Add-on page",
+        "url": "https://ankiweb.net/shared/info/641302149",
+        "icon": "fa fa-external-link"
+      },
+      {
+        "text": "Github page",
+        "url": "https://github.com/nguyenphanvn95/DecktitleAnki",
+        "icon": "fa fa-external-link"
+      }
+    ]
   }
 ]
