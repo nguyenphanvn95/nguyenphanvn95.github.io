@@ -6,6 +6,7 @@
     <title>IELTS Speaking Practice</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="ielts.png">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
@@ -75,32 +76,57 @@
             height: 4px;
             background: linear-gradient(90deg, var(--part1-color), var(--part2-color), var(--part3-color));
         }
+/* Thêm phần CSS mới này vào thẻ style */
+.settings-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-        .settings-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-	padding: 0; /* loại bỏ nếu có */
-    aspect-ratio: 1 / 1;
-        }
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f1f1f1;
+    border: none;
+    color: #666;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        .settings-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(30deg);
-        }
+.close-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
 
+.settings-panel {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 15px;
+    box-shadow: var(--shadow);
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+ 
         .settings-panel {
             background-color: white;
             border-radius: 10px;
@@ -422,7 +448,6 @@
             border: none;
             width: 30px;
             height: 30px;
-            border-radius: 50%;
             color: var(--text-color);
             cursor: pointer;
             display: flex;
@@ -604,16 +629,22 @@ copyright {
         <header>
             <div class="header-title">
                 <i class="fas fa-microphone-alt"></i> IELTS SPEAKING PRACTICE
+		<br><small style ="color: red; font-weight: intalic;">Hoạt động tốt nhất trên Chrome và Edge</small>
                 <button class="settings-btn" id="settings-btn">
                     <i class="fas fa-cog"></i>
                 </button>
             </div>
             
             <div class="settings-panel" id="settings-panel">
-                <label for="api-key">Gemini API Key:</label>
-                <input type="password" id="api-key" placeholder="Enter your Gemini API key">
-                <button id="save-api-key">Save</button>
-            </div>
+        <button class="close-btn" id="close-settings">
+            <i class="fas fa-times"></i>
+        </button>
+        <label for="api-key">Gemini API Key:</label>
+        <input type="password" id="api-key" placeholder="Enter your Gemini API key">
+        <button id="save-api-key" class="action-btn" style="margin-top: 10px;">
+            <i class="fas fa-save"></i> Save
+        </button>
+    </div>
         </header>
 
         <section class="part-section">
@@ -837,7 +868,10 @@ copyright {
                 alert('Your browser does not support speech recognition. Please use Chrome or Edge.');
             }
         }
-
+// Thêm sự kiện đóng panel
+document.getElementById('close-settings').addEventListener('click', () => {
+    settingsPanel.classList.remove('active');
+});
         // Get question and clues from Gemini API based on part
         async function getQuestionAndClues(part, topic) {
             if (!geminiApiKey) {
