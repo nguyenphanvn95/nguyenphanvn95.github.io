@@ -240,6 +240,61 @@
             animation: spin 1s linear infinite;
         }
 
+        /* Phần cài đặt API */
+        .settings-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .settings-toggle {
+            background: #15a496;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .settings-content {
+            display: none;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .settings-content.show {
+            display: block;
+        }
+
+        .settings-content input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .settings-content label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .settings-content button {
+            margin-top: 10px;
+        }
+
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
@@ -267,10 +322,31 @@
                 padding: 6px 12px;
                 font-size: 0.9rem;
             }
+
+            .settings-content {
+                width: 250px;
+                right: 0;
+                left: auto;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="settings-panel">
+        <button class="settings-toggle" onclick="toggleSettings()">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="settings-content" id="settingsContent">
+            <h3>Cài đặt API</h3>
+            <label for="apiKeyInput">Gemini API Key:</label>
+            <input type="password" id="apiKeyInput" placeholder="Nhập API key của bạn">
+            <label for="docxUrlInput">Đường dẫn file DOCX (GitHub Raw):</label>
+            <input type="text" id="docxUrlInput" placeholder="https://raw.githubusercontent.com/.../essays.docx">
+            <button onclick="saveSettings()">Lưu cài đặt</button>
+            <button onclick="resetSettings()" style="background-color: #f44336;">Đặt lại</button>
+        </div>
+    </div>
+
     <header class="header">
         <div class="header-left">
             <img src="https://genedu.vn/wp-content/uploads/2025/01/7e483cb2-cce6-4328-8ddc-1cc0b3da0552-e1737278736552.png" class="logo" alt="GENedu Logo">
@@ -308,12 +384,31 @@
         // Biến toàn cục
         let essaysContent = [];
         let currentEssayIndex = 0;
-        const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"; // Thay thế bằng API key thật của bạn
-        const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+        let GEMINI_API_KEY = localStorage.getItem('gemini_api_key') || '';
+        let DOCX_URL = localStorage.getItem('docx_url') || '';
 
         // Khởi tạo trang
         document.addEventListener('DOMContentLoaded', function() {
-            loadDocxFile();
+            // Load cài đặt đã lưu
+            document.getElementById('apiKeyInput').value = GEMINI_API_KEY;
+            document.getElementById('docxUrlInput').value = DOCX_URL;
+            
+            // Thử tải dữ liệu nếu đã có URL
+            if (DOCX_URL) {
+                loadDocxFile(DOCX_URL);
+            } else {
+                // Hướng dẫn nếu chưa có cài đặt
+                document.getElementById('apiResponse').innerHTML = `
+                    <h3>Hướng dẫn sử dụng</h3>
+                    <p>Vui lòng nhấn vào nút <i class="fas fa-cog"></i> góc trên bên phải để:</p>
+                    <ol>
+                        <li>Nhập Gemini API Key của bạn</li>
+                        <li>Nhập đường dẫn GitHub Raw đến file essays.docx</li>
+                        <li>Nhấn "Lưu cài đặt"</li>
+                    </ol>
+                    <p>Sau đó hệ thống sẽ tự động tải dữ liệu bài tập.</p>
+                `;
+            }
             
             // Thiết lập sự kiện cho dropdown
             const essaySelector = document.getElementById('essaySelector');
@@ -323,33 +418,30 @@
             });
         });
 
-        // Tải file DOCX
-        function loadDocxFile() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'essays.docx', true);
-            xhr.responseType = 'arraybuffer';
+        // Tải file DOCX từ GitHub Raw
+        function loadDocxFile(url) {
+            document.getElementById('apiResponse').innerHTML = '<div class="loading"><i class="fas fa-spinner"></i><p>Đang tải dữ liệu từ GitHub...</p></div>';
             
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    mammoth.extractRawText({arrayBuffer: xhr.response})
-                        .then(function(result) {
-                            essaysContent = parseContent(result.value);
-                            populateEssayDropdown(essaysContent);
-                            handleInitialSlugSelection();
-                        })
-                        .catch(function(error) {
-                            console.error('Error processing document:', error);
-                        });
-                } else {
-                    console.error('Failed to load essay document:', xhr.status);
-                }
-            };
-            
-            xhr.onerror = function() {
-                console.error('Error loading the document');
-            };
-            
-            xhr.send();
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Không thể tải file');
+                    return response.arrayBuffer();
+                })
+                .then(arrayBuffer => {
+                    return mammoth.extractRawText({arrayBuffer: arrayBuffer});
+                })
+                .then(result => {
+                    essaysContent = parseContent(result.value);
+                    populateEssayDropdown(essaysContent);
+                    handleInitialSlugSelection();
+                })
+                .catch(error => {
+                    console.error('Error loading document:', error);
+                    document.getElementById('apiResponse').innerHTML = `
+                        <p style="color: red;">Lỗi khi tải file: ${error.message}</p>
+                        <p>Vui lòng kiểm tra lại đường dẫn file DOCX trong phần cài đặt.</p>
+                    `;
+                });
         }
 
         // Phân tích nội dung từ file DOCX
@@ -497,6 +589,12 @@
 
         // Gửi câu trả lời để đánh giá bằng Gemini API thật
         async function submitAnswer() {
+            if (!GEMINI_API_KEY) {
+                alert('Vui lòng nhập Gemini API Key trong phần cài đặt');
+                toggleSettings();
+                return;
+            }
+
             const userAnswer = document.getElementById('userAnswer')?.value;
             const apiResponse = document.getElementById('apiResponse');
             
@@ -546,7 +644,7 @@
         // Gọi Gemini API thật
         async function callGeminiAPI(prompt) {
             const response = await axios.post(
-                `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
                 {
                     contents: [{
                         parts: [{
@@ -597,6 +695,40 @@
             const num = essayNumber(title);
             return num ? `ESSAY ${num} - ${cleanTitle(title)}` : cleanTitle(title);
         }
+
+        // Các hàm quản lý cài đặt
+        function toggleSettings() {
+            const settingsContent = document.getElementById('settingsContent');
+            settingsContent.classList.toggle('show');
+        }
+
+        function saveSettings() {
+            GEMINI_API_KEY = document.getElementById('apiKeyInput').value.trim();
+            DOCX_URL = document.getElementById('docxUrlInput').value.trim();
+            
+            localStorage.setItem('gemini_api_key', GEMINI_API_KEY);
+            localStorage.setItem('docx_url', DOCX_URL);
+            
+            alert('Đã lưu cài đặt thành công!');
+            toggleSettings();
+            
+            // Tải lại dữ liệu nếu có URL mới
+            if (DOCX_URL) {
+                loadDocxFile(DOCX_URL);
+            }
+        }
+
+        function resetSettings() {
+            if (confirm('Bạn có chắc chắn muốn đặt lại cài đặt?')) {
+                localStorage.removeItem('gemini_api_key');
+                localStorage.removeItem('docx_url');
+                document.getElementById('apiKeyInput').value = '';
+                document.getElementById('docxUrlInput').value = '';
+                GEMINI_API_KEY = '';
+                DOCX_URL = '';
+                alert('Đã đặt lại cài đặt');
+            }
+        }
     </script>
 </body>
-</html>
+</html
