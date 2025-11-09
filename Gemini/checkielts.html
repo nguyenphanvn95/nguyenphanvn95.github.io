@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chấm Điểm IELTS Writing - Gemini AI</title>
+    <title>IELTS Writing Grader - AI-Powered Assessment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <link rel="icon" href="ielts.png">
     <style>
         :root {
-            --primary-color: #4285f4;
-            --secondary-color: #34a853;
-            --accent-color: #ea4335;
-            --warning-color: #fbbc05;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --border-color: #dee2e6;
+            --primary: #FF6D3A;
+            --primary-light: #FFEDD1;
+            --secondary: #13A62E;
+            --dark: #1f2328;
+            --light: #f8f9fa;
+            --gray: #8A8A8E;
+            --border: #dee2e6;
+            --success: #198754;
+            --danger: #dc3545;
+            --warning: #ffc107;
         }
         
         * {
@@ -27,422 +27,475 @@
         }
         
         body {
-            background: linear-gradient(135deg, #e0f7fa, #f5f7fa);
-            color: #333;
+            background-color: #f5f5f5;
+            color: var(--dark);
             line-height: 1.6;
-            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
         }
         
-        .app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            margin-bottom: 30px;
         }
         
-        /* New header style */
-        header {
-            background: linear-gradient(120deg, #4285f4, #34a853);
-            color: white;
-            padding: 25px 40px;
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
         
-      .logo {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
         
-        .logo i {
-            font-size: 2.8rem;
-            color: white;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        h1, h2, h3, h4 {
-            color: var(--dark-color);
-        }
-        
-        .header-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: white;
-        }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary);
         }
         
         .header-actions {
             display: flex;
+            align-items: center;
             gap: 15px;
+        }
+        
+        .history-btn {
+            background-color: var(--light);
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .history-btn:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+        }
+        
+        .task-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .task-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .task-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .input-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .task2-sections {
+            display: none;
+        }
+        
+        .task2-section {
+            margin-bottom: 20px;
+        }
+        
+        .task2-section h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .image-upload {
+            border: 2px dashed var(--border);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .image-upload:hover {
+            border-color: var(--primary);
+        }
+        
+        .image-upload i {
+            font-size: 40px;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
             margin-top: 10px;
         }
         
-        /* Card styles */
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-            border: 1px solid var(--border-color);
+        .submit-btn:hover {
+            background-color: #ff581d;
         }
         
-        .card h2 {
-            color: var(--primary-color);
+        .submit-btn:disabled {
+            background-color: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .progress-step {
+            text-align: center;
+            flex: 1;
+            font-size: 12px;
+            color: var(--gray);
+            position: relative;
+        }
+        
+        .progress-step.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .progress-step.completed {
+            color: var(--success);
+        }
+        
+        .progress-step::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            z-index: 1;
+        }
+        
+        .progress-step.active::before {
+            background-color: var(--primary);
+        }
+        
+        .progress-step.completed::before {
+            background-color: var(--success);
+        }
+        
+        .step-status {
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .result-section {
+            display: none;
+            margin-bottom: 30px;
+        }
+        
+        .result-step {
             margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border-color);
-            font-size: 1.8rem;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            display: none;
+        }
+        
+        .result-step.completed {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-step-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 18px;
         }
         
-        .container {
+        .result-step-content {
+            line-height: 1.6;
+        }
+        
+        .score-display {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .overall-score {
+            background: linear-gradient(135deg, var(--primary), #ff8c5a);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .score-number {
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .score-label {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .criteria-scores {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 30px;
-            padding: 25px;
-            background-color: white;
+            gap: 15px;
+        }
+        
+        .criteria-score {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .criteria-name {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .criteria-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .criteria-explanation {
+            margin-top: 5px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .score-explanation {
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .corrections-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
         
         @media (max-width: 768px) {
-            .container {
+            .corrections-container {
                 grid-template-columns: 1fr;
             }
         }
         
-        /* Form styles */
-        .form-group {
-            margin-bottom: 25px;
+        .highlighted-text {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            line-height: 1.8;
+            border: 1px solid var(--border);
+            max-height: 500px;
+            overflow-y: auto;
         }
         
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
+        .error-highlight {
+            background-color: #ffcccc;
+            text-decoration: line-through;
+            padding: 2px 4px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .error-highlight:hover {
+            background-color: #ffaaaa;
+        }
+        
+        .error-highlight.active {
+            background-color: #ff9999;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .correction {
+            background-color: #ccffcc;
+            padding: 2px 4px;
+            border-radius: 3px;
             font-weight: 500;
-            color: #555;
         }
         
-        .form-control {
-            width: 100%;
-            padding: 12px 18px;
-            border: 1px solid #dbe2e8;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background-color: #f9fbfd;
+        .error-details {
+            padding: 20px;
+            background: var(--light);
+            border-radius: 5px;
+            border: 1px solid var(--border);
+            max-height: 500px;
+            overflow-y: auto;
         }
         
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
-            background-color: white;
-        }
-        
-        textarea.form-control {
-            min-height: 140px;
-            resize: vertical;
-        }
-        
-        /* Buttons */
-        .btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            flex: 1;
-            min-width: 110px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(120deg, #4285f4, #5b9bf8);
-            color: white;
-            box-shadow: 0 3px 10px rgba(66, 133, 244, 0.25);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(120deg, #3b78e0, #4f8df0);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.35);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(120deg, #34a853, #48c76d);
-            color: white;
-            box-shadow: 0 3px 10px rgba(52, 168, 83, 0.25);
-        }
-        
-        .btn-secondary:hover {
-            background: linear-gradient(120deg, #2d9447, #3db35c);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.35);
-        }
-        
-        .btn-accent {
-            background: linear-gradient(120deg, #ea4335, #f06d62);
-            color: white;
-            box-shadow: 0 3px 10px rgba(234, 67, 53, 0.25);
-        }
-        
-        .btn-accent:hover {
-            background: linear-gradient(120deg, #d33426, #e55b4f);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(234, 67, 53, 0.35);
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        /* Task selection */
-        .task-selection {
-            display: flex;
-            gap: 15px;
+        .error-detail-item {
             margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
         }
         
-        .task-option {
-            flex: 1;
-            text-align: center;
-            padding: 15px;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
+        .error-detail-item:last-child {
+            border-bottom: none;
         }
         
-        .task-option:hover {
-            border-color: var(--primary-color);
-            background-color: rgba(66, 133, 244, 0.05);
-        }
-        
-        .task-option.selected {
-            border-color: var(--primary-color);
-            background-color: rgba(66, 133, 244, 0.1);
-        }
-        
-        .task-option h3 {
+        .error-type {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
             margin-bottom: 8px;
-            color: var(--dark-color);
-            font-size: 1.1rem;
         }
         
-        .task-option p {
-            color: #5f6368;
-            font-size: 0.85rem;
+        .error-type.grammar {
+            background-color: #ffe6cc;
+            color: #cc6600;
         }
         
-        /* Vocabulary section */
-        .vocabulary-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 0 25px 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
+        .error-type.vocabulary {
+            background-color: #e6f2ff;
+            color: #0066cc;
         }
         
-        .vocab-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+        .error-type.coherence {
+            background-color: #f0e6ff;
+            color: #6600cc;
         }
         
-        .vocab-header h2 {
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
+        .error-original {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--danger);
         }
         
-        .vocab-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(to right, var(--primary-color), #5a8dee);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 2px 6px rgba(66, 133, 244, 0.3);
+        .error-correction {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--success);
         }
         
-        .vocab-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(66, 133, 244, 0.4);
-            background: linear-gradient(to right, #3a75e0, #4e82e8);
+        .error-explanation {
+            color: var(--dark);
+            line-height: 1.6;
         }
         
-        .vocab-toggle:active {
-            transform: translateY(1px);
-        }
-        
-        .vocab-toggle.hidden {
-            background: linear-gradient(to right, #ea4335, #f15c50);
-            box-shadow: 0 2px 6px rgba(234, 67, 53, 0.3);
-        }
-        
-        .vocab-toggle.hidden:hover {
-            background: linear-gradient(to right, #d9382c, #e64a3e);
-            box-shadow: 0 4px 10px rgba(234, 67, 53, 0.4);
-        }
-        
-        .toggle-icon {
-            font-size: 1rem;
-        }
-        
-        /* Cải tiến hiển thị từ vựng */
-        .vocabulary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
-            transition: opacity 0.3s ease;
-        }
-        
-        .vocab-card {
-            background: #f8fafd;
-            border-radius: 10px;
-            padding: 14px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--secondary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            min-height: 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .vocab-card.compact {
-            min-height: 70px;
-            padding: 12px;
-        }
-        
-        .vocab-card.compact .vocab-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-        
-        .vocab-card.compact .vocab-word {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            line-height: 1.3;
-        }
-        
-        .vocab-card.compact .vocab-pos {
-            font-size: 0.85rem;
-            color: #5f6368;
-            font-style: italic;
-            background: rgba(0, 0, 0, 0.05);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-        
-        .vocab-card.compact .vocab-meaning {
-            font-size: 0.9rem;
-            color: var(--dark-color);
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .vocabulary-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-        }
-        
-        .pos {
-            font-style: italic;
-            color: #5f6368;
-            margin-bottom: 8px;
-            font-size: 0.85rem;
-        }
-        
-        .meaning {
-            color: var(--dark-color);
-            line-height: 1.5;
-            font-size: 0.95rem;
-        }
-        
-        .vocab-placeholder {
-            text-align: center;
-            padding: 30px 20px;
-            color: #5f6368;
-            font-style: italic;
-            border: 2px dashed var(--border-color);
-            border-radius: 12px;
-            margin-top: 10px;
-            background-color: rgba(248, 249, 250, 0.5);
-        }
-        
-        .vocab-placeholder i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        /* Result section */
-        .result-container {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 0 25px 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-        }
-        
-        .result-container h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border-color);
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .sample-essay, .improvement-tips, .detailed-feedback {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            line-height: 1.8;
+            border: 1px solid var(--border);
         }
         
         .loading {
@@ -453,721 +506,1085 @@
         
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left: 4px solid var(--primary-color);
+            border-left-color: var(--primary);
             border-radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .result-content {
-            min-height: 200px;
-        }
-        
-        .error {
-            color: var(--accent-color);
-            padding: 15px;
-            background: rgba(234, 67, 53, 0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
-        }
-        
-        .api-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 5px;
-            font-size: 0.9rem;
-            color: #5f6368;
-        }
-        
-        .api-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .api-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .gemini-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(90deg, #4285f4, #34a853, #ea4335);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-        
-        .vocab-loading {
-            text-align: center;
-            padding: 20px;
-            color: #5f6368;
-        }
-        
-        .vocab-loading .spinner {
             margin: 0 auto 15px;
         }
         
-        /* Footer */
-        footer {
-            background: linear-gradient(120deg, #2c3e50, #34495e);
-            color: white;
-            padding: 40px 20px 25px;
-            text-align: center;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-links i {
-            font-size: 0.9em;
-        }
-        
-        .footer-copyright {
-            color: #95a5a6;
-            font-size: 0.95rem;
+        .api-key-section {
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-            
-            .header-actions {
-                width: 100%;
-                flex-direction: column;
-            }
-            
-            .task-selection {
-                flex-direction: column;
-            }
-            
-            .button-group {
-                flex-direction: column;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-        
-        /* Kiểu cho kết quả đánh giá */
-        .result-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
-        }
-        
-        .result-header {
+        .api-key-input {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            gap: 10px;
+        }
+        
+        .api-key-input input {
+            flex: 1;
+        }
+        
+        .save-api-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .error-message {
+            background-color: #ffe6e6;
+            color: var(--danger);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+        
+        .markdown-content {
+            line-height: 1.8;
+        }
+        
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+            margin: 15px 0 10px 0;
+            color: var(--primary);
+        }
+        
+        .markdown-content p {
+            margin-bottom: 10px;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin-left: 20px;
             margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
         }
         
-        .result-title {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            font-weight: 600;
+        .markdown-content li {
+            margin-bottom: 5px;
         }
         
-        .result-score {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            background: rgba(66, 133, 244, 0.1);
-            padding: 5px 15px;
-            border-radius: 8px;
+        .markdown-content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin: 15px 0;
+            color: var(--gray);
+            font-style: italic;
         }
         
-        .criteria-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .markdown-content code {
+            background-color: #f1f1f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
         }
         
-        .criteria-item {
+        .markdown-content pre {
+            background-color: #f8f8f8;
             padding: 15px;
-            border-radius: 8px;
-            background: #f0f7ff;
-            border-left: 4px solid var(--secondary-color);
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
         }
         
-        .criteria-header {
+        .improvement-tip {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .improvement-tip h4 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+        
+        /* Modal styles for history */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
         }
         
-        .criteria-name {
-            font-weight: 600;
-            color: var(--primary-color);
+        .modal-title {
+            font-size: 22px;
+            color: var(--primary);
         }
         
-        .criteria-point {
-            font-weight: 700;
-            color: var(--secondary-color);
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
         }
         
-        .criteria-feedback {
-            line-height: 1.6;
+        .history-list {
+            max-height: 400px;
+            overflow-y: auto;
         }
         
-        .suggestion-list {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px dashed var(--border-color);
+        .history-item {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .suggestion-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
+        .history-item:hover {
+            background: var(--light);
         }
         
-        .suggestion-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
+        .history-date {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .history-score {
             font-weight: bold;
+            color: var(--primary);
+            font-size: 18px;
         }
-        
-        .gemini-footer {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            font-style: italic;
-            color: #5f6368;
-        }
-a {
-    text-decoration: none;
-}
     </style>
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-pen-fancy"></i>
-                <div class="logo-text">
-                    <h1 class="header-title">Chấm Điểm IELTS Writing</h1>
-                    <p class="subtitle">Công cụ đánh giá bài viết IELTS với trí tuệ nhân tạo Gemini</p>
-                </div>
-            </div>
-            
-            <div class="header-actions">
-                <a href="translateielts.html" class="btn btn-secondary"><i class="fas fa-language"></i>Luyện dịch IELTS</a>
-            </div>
-        </header>
-        
+    <header>
         <div class="container">
-            <div class="card">
-                <h2><i class="fas fa-edit"></i> Thông tin bài viết</h2>
-                
-                <div class="form-group">
-                    <label for="api-key" class="form-label">API Key Gemini:</label>
-                    <input type="text" id="api-key" class="form-control" placeholder="Nhập API Key của bạn...">
-                    <div class="api-info">
-                        <i class="fas fa-info-circle"></i>
-                        <span>Lấy API Key tại: <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a></span>
-                    </div>
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-pen-fancy"></i> IELTS Writing Grader</h1>
                 </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Chọn Task:</label>
-                    <div class="task-selection">
-                        <div class="task-option selected" data-task="task1">
-                            <h3><i class="fas fa-chart-bar"></i> Task 1</h3>
-                            <p>Mô tả biểu đồ, bản đồ, quy trình</p>
-                        </div>
-                        <div class="task-option" data-task="task2">
-                            <h3><i class="fas fa-comments"></i> Task 2</h3>
-                            <p>Bài luận về quan điểm, thảo luận</p>
+                <div class="header-actions">
+                    <button class="history-btn" id="history-btn">
+                        <i class="fas fa-history"></i> Lịch sử
+                    </button>
+                    <div class="api-key-section">
+                        <div class="api-key-input">
+                            <input type="password" id="api-key" placeholder="Gemini API key">
+                            <button class="save-api-btn" id="save-api-key">Lưu</button>
                         </div>
                     </div>
-                    <input type="hidden" id="task-type" value="task1">
                 </div>
-                
-                <div class="form-group">
-                    <label for="topic" class="form-label">Đề bài / Topic:</label>
-                    <input type="text" id="topic" class="form-control" placeholder="Nhập đề bài IELTS...">
-                </div>
-                
-                <div class="form-group">
-                    <label for="essay" class="form-label">Bài viết của bạn:</label>
-                    <textarea id="essay" class="form-control" placeholder="Nhập bài viết của bạn tại đây..."></textarea>
-                </div>
-                
-                <div class="button-group">
-                    <button id="grade-btn" class="btn btn-primary">
-                        <i class="fas fa-check-circle"></i> Chấm điểm
-                    </button>
-                    <button id="reset-btn" class="btn btn-accent">
-                        <i class="fas fa-redo"></i> Làm lại
-                    </button>
-                    <button id="vocab-btn" class="btn btn-secondary">
-                        <i class="fas fa-book"></i> Từ điển
-                    </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="task-selector">
+            <button class="task-btn active" data-task="1"><i class="fas fa-chart-bar"></i> Task 1</button>
+            <button class="task-btn" data-task="2"><i class="fas fa-edit"></i> Task 2</button>
+        </div>
+
+        <div class="input-section">
+            <h2 class="section-title"><i class="fas fa-pencil-alt"></i> Nhập Bài Viết</h2>
+            
+            <div class="form-group">
+                <label for="topic"><i class="fas fa-book"></i> Đề bài:</label>
+                <textarea id="topic" placeholder="Nhập đề bài IELTS Writing tại đây..."></textarea>
+            </div>
+            
+            <div class="form-group" id="task1-image">
+                <label for="image-upload"><i class="fas fa-image"></i> Hình ảnh minh họa (Task 1):</label>
+                <div class="image-upload" id="image-upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Kéo thả hình ảnh hoặc click để chọn</p>
+                    <input type="file" id="image-input" accept="image/*" style="display: none;">
                 </div>
             </div>
             
-            <div class="card">
-                <h2><i class="fas fa-info-circle"></i> Hướng dẫn sử dụng</h2>
-                <div class="instructions">
-                    <h3><i class="fas fa-play-circle"></i> Cách sử dụng công cụ:</h3>
-                    <ol>
-                        <li>Nhập API Key Gemini của bạn (cần có tài khoản Google)</li>
-                        <li>Chọn Task 1 hoặc Task 2 tùy theo bài viết</li>
-                        <li>Nhập đề bài vào ô "Đề bài / Topic"</li>
-                        <li>Nhập bài viết của bạn vào ô "Bài viết của bạn"</li>
-                        <li>Nhấn "Chấm điểm" để nhận đánh giá chi tiết</li>
-                        <li>Nhấn "Từ điển" để xem các từ vựng liên quan đến chủ đề</li>
-                    </ol>
-                    
-                    <h3><i class="fas fa-star"></i> Tiêu chí chấm điểm:</h3>
-                    <ul>
-                        <li><strong>Task Achievement (Task 1) / Task Response (Task 2)</strong>: Hoàn thành yêu cầu đề bài</li>
-                        <li><strong>Coherence and Cohesion</strong>: Tính mạch lạc và liên kết</li>
-                        <li><strong>Lexical Resource</strong>: Vốn từ vựng</li>
-                        <li><strong>Grammatical Range and Accuracy</strong>: Ngữ pháp đa dạng và chính xác</li>
-                    </ul>
-                    
-                    <h3><i class="fas fa-exclamation-triangle"></i> Lưu ý:</h3>
-                    <p>Để có kết quả tốt nhất, hãy đảm bảo bài viết đủ dài (tối thiểu 150 từ cho Task 1 và 250 từ cho Task 2). Kết quả chấm điểm chỉ mang tính chất tham khảo.</p>
+            <div class="task2-sections" id="task2-sections">
+                <div class="task2-section">
+                    <h4><i class="fas fa-paragraph"></i> Introduction</h4>
+                    <textarea id="intro" placeholder="Nhập phần mở bài..."></textarea>
+                </div>
+                
+                <div class="task2-section">
+                    <h4><i class="fas fa-align-left"></i> Body Paragraphs</h4>
+                    <textarea id="body" placeholder="Nhập phần thân bài..."></textarea>
+                </div>
+                
+                <div class="task2-section">
+                    <h4><i class="fas fa-flag-checkered"></i> Conclusion</h4>
+                    <textarea id="conclusion" placeholder="Nhập phần kết luận..."></textarea>
                 </div>
             </div>
-        </div>
-        
-        <div class="vocabulary-container">
-            <div class="vocab-header">
-                <h2><i class="fas fa-book-open"></i> Từ vựng liên quan</h2>
-                <button class="vocab-toggle" id="vocab-toggle">
-                    <i class="fas fa-eye-slash toggle-icon"></i>
-                    <span class="toggle-text">Hiện từ vựng</span>
-                </button>
+            
+            <div class="form-group" id="task1-essay">
+                <label for="essay"><i class="fas fa-file-alt"></i> Bài viết (Task 1):</label>
+                <textarea id="essay" placeholder="Nhập bài viết của bạn tại đây..."></textarea>
             </div>
-            <div class="vocabulary-grid hidden" id="vocabulary-grid">
-                <!-- Vocabulary cards will be inserted here -->
+            
+            <div class="error-message" id="error-message"></div>
+            
+            <button class="submit-btn" id="submit-btn"><i class="fas fa-star"></i> Chấm Điểm</button>
+            
+            <div class="progress-container" id="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step active" id="step-1">Chấm điểm</div>
+                    <div class="progress-step" id="step-2">Phân tích lỗi</div>
+                    <div class="progress-step" id="step-3">Bài mẫu</div>
+                    <div class="progress-step" id="step-4">Gợi ý nâng cấp</div>
+                </div>
+                <div class="step-status" id="step-status">Đang chấm điểm theo 4 tiêu chí IELTS...</div>
             </div>
-            <div class="vocab-placeholder" id="vocab-placeholder">
-                <i class="fas fa-book"></i>
-                <p>Nhấn nút <strong>"Từ điển"</strong> để xem các từ vựng liên quan đến chủ đề</p>
-            </div>
-        </div>
-        
-        <div class="result-container">
-            <h2><i class="fas fa-chart-line"></i> Kết quả chấm điểm</h2>
+            
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <p>Đang chấm điểm bài viết với Gemini AI, vui lòng chờ...</p>
-                <p><small>Thời gian xử lý: ~10-30 giây</small></p>
-            </div>
-            <div class="error" id="error-msg"></div>
-            <div class="result-content" id="result-content">
-                <p>Kết quả chấm điểm sẽ hiển thị tại đây sau khi bạn nhấn nút "Chấm điểm".</p>
+                <p>AI đang chấm điểm bài viết của bạn...</p>
             </div>
         </div>
         
-        <footer>
-            <div class="footer-content">
-                <p class="footer-title">Học, học nữa, học mãi - V.I. Lê nin</p>
-                <div class="footer-links">
-                    <a href="https://nguyenphanvn95.github.io"><i class="fas fa-home"></i> Trang chủ</a>
-                    <a href="mailto:nguyenphanvn95@gmail.com"><i class="fas fa-envelope"></i> Liên hệ</a>
-                    <a href="https://github.com/nguyenphanvn95"><i class="fa-brands fa-github"></i> Phan's Github</a>
+        <div class="result-section" id="result-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Kết Quả Chấm Điểm</h2>
+            
+            <div class="result-step" id="result-scores">
+                <div class="result-step-title">
+                    <i class="fas fa-check-circle"></i> Điểm số đánh giá
                 </div>
-                <p class="footer-copyright">© 2025 Nguyễn Văn Phán. Tất cả quyền được bảo lưu.</p>
+                <div class="result-step-content">
+                    <div class="score-display">
+                        <div class="overall-score">
+                            <div class="score-number" id="overall-score">0.0</div>
+                            <div class="score-label">Overall Band Score</div>
+                            <div class="score-explanation" id="score-explanation">Band điểm tổng thể của bạn</div>
+                        </div>
+                        
+                        <div class="criteria-scores">
+                            <div class="criteria-score">
+                                <div class="criteria-name">Task Response</div>
+                                <div class="criteria-value" id="task-response">0.0</div>
+                                <div class="criteria-explanation">Khả năng trả lời đề bài</div>
+                            </div>
+                            <div class="criteria-score">
+                                <div class="criteria-name">Coherence & Cohesion</div>
+                                <div class="criteria-value" id="cohesion">0.0</div>
+                                <div class="criteria-explanation">Tính mạch lạc và liên kết</div>
+                            </div>
+                            <div class="criteria-score">
+                                <div class="criteria-name">Lexical Resource</div>
+                                <div class="criteria-value" id="lexical">0.0</div>
+                                <div class="criteria-explanation">Vốn từ vựng</div>
+                            </div>
+                            <div class="criteria-score">
+                                <div class="criteria-name">Grammatical Range & Accuracy</div>
+                                <div class="criteria-value" id="grammar">0.0</div>
+                                <div class="criteria-explanation">Độ chính xác và đa dạng ngữ pháp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+            
+            <div class="result-step" id="result-corrections">
+                <div class="result-step-title">
+                    <i class="fas fa-check-circle"></i> Phân tích và sửa lỗi chi tiết
+                </div>
+                <div class="result-step-content">
+                    <div class="corrections-container">
+                        <div>
+                            <h3>Bài viết đã sửa</h3>
+                            <div class="highlighted-text" id="corrected-text">
+                                <!-- Nội dung được highlight sẽ được chèn ở đây -->
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Giải thích chi tiết</h3>
+                            <div class="error-details" id="error-details">
+                                <!-- Chi tiết lỗi sẽ được chèn ở đây -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-step" id="result-sample">
+                <div class="result-step-title">
+                    <i class="fas fa-check-circle"></i> Bài viết mẫu Band 8.0+
+                </div>
+                <div class="result-step-content">
+                    <div class="sample-essay markdown-content" id="sample-essay">
+                        <!-- Bài viết mẫu sẽ được chèn ở đây -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-step" id="result-improvement">
+                <div class="result-step-title">
+                    <i class="fas fa-check-circle"></i> Gợi ý nâng cấp bài viết
+                </div>
+                <div class="result-step-content">
+                    <div class="improvement-tips" id="improvement-tips">
+                        <!-- Gợi ý nâng cấp sẽ được chèn ở đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div class="modal" id="history-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><i class="fas fa-history"></i> Lịch Sử Chấm Bài</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- Lịch sử sẽ được chèn ở đây -->
+            </div>
+        </div>
     </div>
 
     <script>
-        // Khởi tạo biến và chọn task
+        // DOM Elements
+        const taskButtons = document.querySelectorAll('.task-btn');
+        const task1Image = document.getElementById('task1-image');
+        const task1Essay = document.getElementById('task1-essay');
+        const task2Sections = document.getElementById('task2-sections');
+        const imageUploadArea = document.getElementById('image-upload-area');
+        const imageInput = document.getElementById('image-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const loadingElement = document.getElementById('loading');
+        const resultSection = document.getElementById('result-section');
+        const historyList = document.getElementById('history-list');
+        const apiKeyInput = document.getElementById('api-key');
+        const saveApiKeyBtn = document.getElementById('save-api-key');
+        const errorMessage = document.getElementById('error-message');
+        const scoreExplanation = document.getElementById('score-explanation');
+        const progressContainer = document.getElementById('progress-container');
+        const progressFill = document.getElementById('progress-fill');
+        const stepStatus = document.getElementById('step-status');
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const resultSteps = document.querySelectorAll('.result-step');
+        const historyBtn = document.getElementById('history-btn');
+        const historyModal = document.getElementById('history-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        // Current task (1 or 2)
+        let currentTask = 1;
+        let currentStep = 0;
+        let totalSteps = 4;
+        let errorDetails = [];
+        
+        // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            const taskOptions = document.querySelectorAll('.task-option');
-            const taskTypeInput = document.getElementById('task-type');
+            // Load API key from localStorage if available
+            const savedApiKey = localStorage.getItem('geminiApiKey');
+            if (savedApiKey) {
+                apiKeyInput.value = savedApiKey;
+            }
             
-            taskOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    taskOptions.forEach(opt => opt.classList.remove('selected'));
-                    this.classList.add('selected');
-                    taskTypeInput.value = this.dataset.task;
+            // Load history from localStorage
+            loadHistory();
+            
+            // Set up event listeners
+            setupEventListeners();
+        });
+        
+        function setupEventListeners() {
+            // Task selection
+            taskButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    taskButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentTask = parseInt(this.dataset.task);
+                    toggleTaskInputs();
                 });
             });
             
-            // Xử lý nút làm lại
-            document.getElementById('reset-btn').addEventListener('click', function() {
-                document.getElementById('topic').value = '';
-                document.getElementById('essay').value = '';
-                document.getElementById('result-content').innerHTML = '<p>Kết quả chấm điểm sẽ hiển thị tại đây sau khi bạn nhấn nút "Chấm điểm".</p>';
-                document.getElementById('vocabulary-grid').innerHTML = '';
-                document.getElementById('vocab-placeholder').style.display = 'block';
-                document.getElementById('vocabulary-grid').classList.add('hidden');
-                document.getElementById('vocab-toggle').classList.remove('hidden');
-                document.getElementById('vocab-toggle').querySelector('.toggle-icon').className = 'fas fa-eye-slash toggle-icon';
-                document.getElementById('vocab-toggle').querySelector('.toggle-text').textContent = 'Hiện từ vựng';
-                document.getElementById('error-msg').style.display = 'none';
+            // Image upload
+            imageUploadArea.addEventListener('click', function() {
+                imageInput.click();
             });
             
-            // Xử lý nút chấm điểm với Gemini API
-            document.getElementById('grade-btn').addEventListener('click', async function() {
-                const apiKey = document.getElementById('api-key').value;
-                const taskType = document.getElementById('task-type').value;
-                const topic = document.getElementById('topic').value;
-                const essay = document.getElementById('essay').value;
-                
-                if (!apiKey) {
-                    showError('Vui lòng nhập API Key Gemini');
-                    return;
+            imageInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const fileName = this.files[0].name;
+                    imageUploadArea.innerHTML = `<p><i class="fas fa-check-circle"></i> Đã chọn: ${fileName}</p>`;
                 }
-                
-                if (!topic) {
-                    showError('Vui lòng nhập đề bài');
-                    return;
-                }
-                
-                if (!essay) {
-                    showError('Vui lòng nhập bài viết');
-                    return;
-                }
-                
-                // Hiển thị loading
-                document.getElementById('loading').style.display = 'block';
-                document.getElementById('error-msg').style.display = 'none';
-                
-                // Gửi yêu cầu đến Gemini
-                await gradeEssayWithGemini(apiKey, taskType, topic, essay);
             });
             
-            // Xử lý nút từ điển
-            document.getElementById('vocab-btn').addEventListener('click', async function() {
-                const apiKey = document.getElementById('api-key').value;
-                const topic = document.getElementById('topic').value;
-                
-                if (!apiKey) {
-                    showError('Vui lòng nhập API Key Gemini');
-                    return;
-                }
-                
-                if (!topic) {
-                    showError('Vui lòng nhập đề bài để tạo từ điển');
-                    return;
-                }
-                
-                // Hiển thị loading cho từ điển
-                document.getElementById('vocab-placeholder').innerHTML = `
-                    <div class="vocab-loading">
-                        <div class="spinner"></div>
-                        <p>Đang tạo từ điển với Gemini, vui lòng chờ...</p>
-                    </div>
-                `;
-                document.getElementById('error-msg').style.display = 'none';
-                
-                // Gửi yêu cầu tạo từ điển
-                await generateVocabularyWithGemini(apiKey, topic);
-            });
+            // Submit button
+            submitBtn.addEventListener('click', submitEssay);
             
-            // Xử lý nút toggle từ vựng
-            const vocabToggle = document.getElementById('vocab-toggle');
-            const vocabGrid = document.getElementById('vocabulary-grid');
-            const vocabPlaceholder = document.getElementById('vocab-placeholder');
-            const toggleIcon = vocabToggle.querySelector('.toggle-icon');
-            const toggleText = vocabToggle.querySelector('.toggle-text');
-            
-            let isVocabVisible = false;
-            
-            vocabToggle.addEventListener('click', function() {
-                isVocabVisible = !isVocabVisible;
-                
-                if (isVocabVisible) {
-                    vocabGrid.classList.remove('hidden');
-                    vocabPlaceholder.style.display = 'none';
-                    toggleIcon.className = 'fas fa-eye toggle-icon';
-                    toggleText.textContent = 'Ẩn từ vựng';
+            // Save API key
+            saveApiKeyBtn.addEventListener('click', function() {
+                const apiKey = apiKeyInput.value.trim();
+                if (apiKey) {
+                    localStorage.setItem('geminiApiKey', apiKey);
+                    alert('API key đã được lưu!');
                 } else {
-                    vocabGrid.classList.add('hidden');
-                    vocabPlaceholder.style.display = 'block';
-                    toggleIcon.className = 'fas fa-eye-slash toggle-icon';
-                    toggleText.textContent = 'Hiện từ vựng';
+                    alert('Vui lòng nhập API key');
                 }
             });
-        });
-        
-        // Hiển thị lỗi
-        function showError(message) {
-            const errorElement = document.getElementById('error-msg');
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-        }
-        
-        // Gửi yêu cầu chấm điểm đến Gemini API
-        async function gradeEssayWithGemini(apiKey, taskType, topic, essay) {
-            try {
-                // Tạo prompt cho Gemini
-                const prompt = `Bạn là một giám khảo IELTS chuyên nghiệp. Hãy chấm điểm bài viết IELTS Writing ${taskType === 'task1' ? 'Task 1' : 'Task 2'} theo thang điểm IELTS chính thức (0-9) dựa trên các tiêu chí: 
-${taskType === 'task1' ? '- Task Achievement' : '- Task Response'}, 
-- Coherence and Cohesion, 
-- Lexical Resource, 
-- Grammatical Range and Accuracy.
-
-Đề bài: "${topic}"
-
-Bài viết:
-"${essay}"
-
-Hãy trả lời bằng tiếng Việt và theo cấu trúc sau:
-
-1. Tổng điểm: [số điểm]
-2. Phân tích chi tiết từng tiêu chí:
-   a. ${taskType === 'task1' ? 'Task Achievement' : 'Task Response'}: 
-      - Điểm: [số điểm]
-      - Nhận xét: [phản hồi chi tiết]
-   b. Coherence and Cohesion: 
-      - Điểm: [số điểm]
-      - Nhận xét: [phản hồi chi tiết]
-   c. Lexical Resource: 
-      - Điểm: [số điểm]
-      - Nhận xét: [phản hồi chi tiết]
-   d. Grammatical Range and Accuracy: 
-      - Điểm: [số điểm]
-      - Nhận xét: [phản hồi chi tiết]
-3. Đề xuất cải thiện: [các gợi ý để cải thiện bài viết]
-
-Hãy trả lời dưới dạng HTML đẹp mắt để hiển thị trên web.`;
-
-                // Gửi request đến Gemini API
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: prompt
-                        }]
-                    }]
-                })
+            
+            // History modal
+            historyBtn.addEventListener('click', function() {
+                historyModal.style.display = 'flex';
             });
-
-            const data = await response.json();
             
-            // Ẩn loading
-            document.getElementById('loading').style.display = 'none';
-            
-            if (!response.ok) {
-                throw new Error(data.error?.message || 'Lỗi khi kết nối với Gemini API');
-            }
-            
-            // Kiểm tra xem có dữ liệu trả về không
-            if (!data.candidates || !data.candidates.length || 
-                !data.candidates[0].content || !data.candidates[0].content.parts || 
-                !data.candidates[0].content.parts.length) {
-                throw new Error('Không nhận được phản hồi từ Gemini. Vui lòng thử lại.');
-            }
-            
-            // Lấy kết quả từ Gemini
-            const geminiText = data.candidates[0].content.parts[0].text;
-            
-            // Hiển thị kết quả thực tế
-            displayGradingResult(geminiText);
-        } catch (error) {
-            document.getElementById('loading').style.display = 'none';
-            showError(`Lỗi: ${error.message}`);
-        }
-    }
-    
-    // Hiển thị kết quả chấm điểm từ Gemini
-    function displayGradingResult(resultHTML) {
-        // Kiểm tra nếu không có kết quả
-        if (!resultHTML || resultHTML.trim() === '') {
-            showError('Không nhận được phản hồi từ Gemini. Vui lòng thử lại.');
-            return;
-        }
-        
-        // Loại bỏ các ký tự markdown không mong muốn
-        let cleanHTML = resultHTML
-            .replace(/```html/g, '')
-            .replace(/```/g, '')
-            .trim();
-        
-        // Hiển thị kết quả thực tế từ Gemini
-        document.getElementById('result-content').innerHTML = cleanHTML;
-    }
-        
-        // Tạo từ điển từ vựng với Gemini API
-        async function generateVocabularyWithGemini(apiKey, topic) {
-            try {
-                // Tạo prompt cho Gemini
-                const prompt = `Hãy cung cấp một danh sách 10 từ vựng học thuật liên quan đến chủ đề "${topic}" cho bài thi IELTS. 
-Mỗi từ vựng cần bao gồm: 
-- Từ vựng (tiếng Anh)
-- Loại từ (viết tắt: n, v, adj, adv)
-- Nghĩa tiếng Việt (giải thích ngắn gọn)
-
-Trả lời theo định dạng JSON như sau:
-{
-  "vocabulary": [
-    {
-      "word": "Từ vựng",
-      "pos": "Loại từ",
-      "meaning": "Nghĩa tiếng Việt"
-    },
-    ...
-  ]
-}`;
-
-                // Gửi request đến Gemini API
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: prompt
-                        }]
-                    }]
-                })
+            closeModal.addEventListener('click', function() {
+                historyModal.style.display = 'none';
             });
-
-            const data = await response.json();
             
-            if (!response.ok) {
-                throw new Error(data.error?.message || 'Lỗi khi kết nối với Gemini API');
-            }
-            
-            // Kiểm tra dữ liệu trả về
-            if (!data.candidates || !data.candidates.length || 
-                !data.candidates[0].content || !data.candidates[0].content.parts || 
-                !data.candidates[0].content.parts.length) {
-                throw new Error('Không nhận được phản hồi từ Gemini. Vui lòng thử lại.');
-            }
-            
-            // Lấy kết quả từ Gemini
-            const geminiText = data.candidates[0].content.parts[0].text;
-            
-            // Cố gắng parse JSON từ kết quả
-            let vocabData;
-            try {
-                // Gemini có thể trả về JSON trong markdown code block
-                const jsonMatch = geminiText.match(/\{[\s\S]*\}/);
-                if (jsonMatch) {
-                    vocabData = JSON.parse(jsonMatch[0]);
-                } else {
-                    vocabData = JSON.parse(geminiText);
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === historyModal) {
+                    historyModal.style.display = 'none';
                 }
-            } catch (e) {
-                throw new Error('Không thể phân tích phản hồi từ Gemini');
+            });
+        }
+        
+        function toggleTaskInputs() {
+            if (currentTask === 1) {
+                task1Image.style.display = 'block';
+                task1Essay.style.display = 'block';
+                task2Sections.style.display = 'none';
+            } else {
+                task1Image.style.display = 'none';
+                task1Essay.style.display = 'none';
+                task2Sections.style.display = 'block';
+            }
+        }
+        
+        async function submitEssay() {
+            const apiKey = localStorage.getItem('geminiApiKey');
+            if (!apiKey) {
+                showError('Vui lòng nhập Gemini API key trước khi chấm bài');
+                return;
             }
             
-            // Hiển thị từ vựng thực tế
-            displayVocabulary(vocabData.vocabulary);
+            const topic = document.getElementById('topic').value.trim();
+            let essayText = '';
+            
+            if (currentTask === 1) {
+                essayText = document.getElementById('essay').value.trim();
+            } else {
+                const intro = document.getElementById('intro').value.trim();
+                const body = document.getElementById('body').value.trim();
+                const conclusion = document.getElementById('conclusion').value.trim();
+                essayText = `${intro}\n\n${body}\n\n${conclusion}`;
+            }
+            
+            if (!topic || !essayText) {
+                showError('Vui lòng nhập đầy đủ đề bài và bài viết');
+                return;
+            }
+            
+            // Hide any previous error
+            hideError();
+            
+            // Reset progress
+            resetProgress();
+            
+            // Show loading and progress
+            loadingElement.style.display = 'block';
+            progressContainer.style.display = 'block';
+            submitBtn.disabled = true;
+            
+            try {
+                // Step 1: Chấm điểm theo 4 tiêu chí
+                await executeStep(1, "Đang chấm điểm theo 4 tiêu chí IELTS...", 
+                    () => gradeEssay(apiKey, topic, essayText, currentTask));
+                
+                // Step 2: Phân tích lỗi chi tiết
+                await executeStep(2, "Đang phân tích lỗi từ vựng và ngữ pháp...", 
+                    () => analyzeErrors(apiKey, topic, essayText, currentTask));
+                
+                // Step 3: Lấy bài viết mẫu
+                await executeStep(3, "Đang tạo bài viết mẫu Band 8.0+...", 
+                    () => getSampleEssay(apiKey, topic, currentTask));
+                
+                // Step 4: Lấy gợi ý nâng cấp
+                await executeStep(4, "Đang tạo gợi ý nâng cấp bài viết...", 
+                    () => getImprovementTips(apiKey, topic, essayText, currentTask));
+                
+                // Save to history
+                saveToHistory(topic, essayText);
+                
             } catch (error) {
-                showError(`Lỗi khi tạo từ điển: ${error.message}. Vui lòng thử lại.`);
-                document.getElementById('vocab-placeholder').innerHTML = `
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>Không thể kết nối với Gemini. Vui lòng kiểm tra API Key và thử lại.</p>
-                `;
+                console.error('Error:', error);
+                showError('Có lỗi xảy ra khi chấm bài: ' + error.message);
+            } finally {
+                // Hide loading
+                loadingElement.style.display = 'none';
+                submitBtn.disabled = false;
             }
         }
         
-        // Hiển thị từ vựng
-        function displayVocabulary(vocabItems) {
-            let vocabHTML = '';
+        async function executeStep(step, status, stepFunction) {
+            // Update progress UI
+            updateProgress(step, status);
             
-            vocabItems.forEach(item => {
-                vocabHTML += `
-                    <div class="vocab-card">
-                        <h4>${item.word}</h4>
-                        <div class="pos" style ="display:none">${getFullPOS(item.pos)}</div>
-                        <div class="meaning">${item.meaning}</div>
-                    </div>
-                `;
-            });
+            // Wait 10-15 seconds between steps (simulate processing time)
+            if (step > 1) {
+                await new Promise(resolve => setTimeout(resolve, 10000 + Math.random() * 5000));
+            }
             
-            document.getElementById('vocabulary-grid').innerHTML = vocabHTML;
-            document.getElementById('vocab-placeholder').style.display = 'none';
-            document.getElementById('vocabulary-grid').classList.remove('hidden');
+            // Execute the step function
+            await stepFunction();
             
-            // Hiển thị từ vựng và cập nhật nút toggle
-            document.getElementById('vocab-toggle').querySelector('.toggle-icon').className = 'fas fa-eye toggle-icon';
-            document.getElementById('vocab-toggle').querySelector('.toggle-text').textContent = 'Ẩn từ vựng';
-            document.getElementById('vocab-toggle').classList.remove('hidden');
+            // Mark step as completed
+            progressSteps[step-1].classList.remove('active');
+            progressSteps[step-1].classList.add('completed');
+            
+            // Show result step
+            document.getElementById(`result-${getStepName(step)}`).classList.add('completed');
         }
         
-        // Hàm trợ giúp - chuyển đổi viết tắt loại từ thành tên đầy đủ
-        function getFullPOS(abbr) {
-            const posMap = {
-                'n': 'Danh từ',
-                'v': 'Động từ',
-                'adj': 'Tính từ',
-                'adv': 'Trạng từ',
-                'prep': 'Giới từ',
-                'conj': 'Liên từ'
+        function getStepName(step) {
+            switch(step) {
+                case 1: return 'scores';
+                case 2: return 'corrections';
+                case 3: return 'sample';
+                case 4: return 'improvement';
+                default: return '';
+            }
+        }
+        
+        function resetProgress() {
+            currentStep = 0;
+            progressFill.style.width = '0%';
+            progressSteps.forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            progressSteps[0].classList.add('active');
+            
+            resultSteps.forEach(step => {
+                step.classList.remove('completed');
+            });
+        }
+        
+        function updateProgress(step, status) {
+            currentStep = step;
+            const progressPercent = (step / totalSteps) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+            stepStatus.textContent = status;
+            
+            progressSteps.forEach((s, index) => {
+                if (index < step - 1) {
+                    s.classList.remove('active');
+                    s.classList.add('completed');
+                } else if (index === step - 1) {
+                    s.classList.add('active');
+                    s.classList.remove('completed');
+                } else {
+                    s.classList.remove('active', 'completed');
+                }
+            });
+        }
+        
+        async function gradeEssay(apiKey, topic, essay, taskType) {
+            const prompt = `
+                Bạn là một giám khảo IELTS chuyên nghiệp. Hãy chấm điểm bài viết IELTS sau đây theo 4 tiêu chí chính thức của IELTS.
+                
+                ĐỀ BÀI: ${topic}
+                BÀI VIẾT: ${essay}
+                
+                YÊU CẦU:
+                Chấm điểm theo thang điểm 9.0 cho 4 tiêu chí:
+                - Task Response/ Achievement
+                - Coherence and Cohesion
+                - Lexical Resource
+                - Grammatical Range and Accuracy
+                Và tính điểm tổng (Overall Band Score)
+                
+                ĐỊNH DẠNG PHẢN HỒI (phải tuân thủ chính xác):
+                
+                SCORES:
+                Task Response: [điểm]
+                Coherence and Cohesion: [điểm]
+                Lexical Resource: [điểm]
+                Grammatical Range and Accuracy: [điểm]
+                Overall: [điểm]
+            `;
+            
+            const response = await callGeminiAPI(apiKey, prompt);
+            const scores = parseScores(response);
+            
+            // Update UI with scores
+            document.getElementById('overall-score').textContent = scores.overall;
+            document.getElementById('task-response').textContent = scores.taskResponse;
+            document.getElementById('cohesion').textContent = scores.cohesion;
+            document.getElementById('lexical').textContent = scores.lexical;
+            document.getElementById('grammar').textContent = scores.grammar;
+            
+            // Update score explanation
+            updateScoreExplanation(scores.overall);
+            
+            // Show result section
+            resultSection.style.display = 'block';
+            
+            return scores;
+        }
+        
+        async function analyzeErrors(apiKey, topic, essay, taskType) {
+            const prompt = `
+                Bạn là một giám khảo IELTS chuyên nghiệp. Hãy phân tích chi tiết các lỗi trong bài viết IELTS sau đây.
+                
+                ĐỀ BÀI: ${topic}
+                BÀI VIẾT: ${essay}
+                
+                YÊU CẦU:
+                1. Xác định tất cả các lỗi trong bài viết (ngữ pháp, từ vựng, cách diễn đạt)
+                2. Đưa ra phiên bản đã chỉnh sửa với các lỗi được đánh dấu rõ ràng
+                3. Phân loại lỗi và cung cấp giải thích chi tiết cho từng lỗi
+                
+                ĐỊNH DẠNG PHẢN HỒI (phải tuân thủ chính xác):
+                
+                CORRECTED_ESSAY:
+                [Bài viết đã được sửa lỗi với các lỗi được đánh dấu bằng <error id="X">văn bản lỗi</error> và sửa bằng <correction>văn bản đúng</correction>]
+                
+                ERROR_DETAILS:
+                [ID]: [Loại lỗi] - [Mô tả lỗi]
+                [Giải thích chi tiết về lỗi và cách sửa]
+                [Gợi ý để tránh lỗi tương tự trong tương lai]
+                
+                Ví dụ:
+                ERROR_DETAILS:
+                1: Grammar - Sai thì động từ
+                Trong câu này, bạn đã sử dụng thì hiện tại đơn trong khi bối cảnh yêu cầu thì quá khứ.
+                Nên xem xét ngữ cảnh thời gian của câu để chọn thì phù hợp.
+            `;
+            
+            const response = await callGeminiAPI(apiKey, prompt);
+            processErrorAnalysis(response);
+        }
+        
+        async function getSampleEssay(apiKey, topic, taskType) {
+            const prompt = `
+                Bạn là một giám khảo IELTS chuyên nghiệp. Hãy cung cấp một bài viết mẫu chất lượng cao (band 8.0+) cho đề bài IELTS sau đây.
+                
+                ĐỀ BÀI: ${topic}
+                
+                YÊU CẦU:
+                - Bài viết mẫu phải đạt band 8.0+ 
+                - Sử dụng từ vựng học thuật phong phú
+                - Cấu trúc câu đa dạng và phức tạp
+                - Bố cục rõ ràng, mạch lạc
+                - Đáp ứng đầy đủ yêu cầu của đề bài
+                
+                ĐỊNH DẠNG PHẢN HỒI:
+                [Bài viết mẫu band 8.0+]
+            `;
+            
+            const response = await callGeminiAPI(apiKey, prompt);
+            document.getElementById('sample-essay').innerHTML = formatMarkdown(response);
+        }
+        
+        async function getImprovementTips(apiKey, topic, essay, taskType) {
+            const prompt = `
+                Bạn là một giám khảo IELTS chuyên nghiệp. Hãy cung cấp các gợi ý cụ thể để nâng cấp bài viết IELTS sau đây lên band 8-9.
+                
+                ĐỀ BÀI: ${topic}
+                BÀI VIẾT: ${essay}
+                
+                YÊU CẦU:
+                Đưa ra 5-7 gợi ý cụ thể để cải thiện bài viết, tập trung vào:
+                - Nâng cấp từ vựng học thuật
+                - Cải thiện cấu trúc câu phức tạp
+                - Tăng tính mạch lạc và liên kết
+                - Phát triển ý tưởng sâu sắc hơn
+                - Cải thiện độ chính xác ngữ pháp
+                
+                ĐỊNH DẠNG PHẢN HỒI (sử dụng markdown):
+                ## Gợi ý nâng cấp bài viết
+                
+                ### 1. [Tiêu đề gợi ý]
+                [Nội dung chi tiết của gợi ý]
+                
+                ### 2. [Tiêu đề gợi ý]
+                [Nội dung chi tiết của gợi ý]
+            `;
+            
+            const response = await callGeminiAPI(apiKey, prompt);
+            document.getElementById('improvement-tips').innerHTML = formatMarkdown(response);
+        }
+        
+        function processErrorAnalysis(response) {
+            // Parse corrected essay and error details
+            let correctedEssay = parseSection(response, "CORRECTED_ESSAY:");
+            const errorDetailsText = parseSection(response, "ERROR_DETAILS:");
+            
+            // Loại bỏ ERROR_DETAILS: nếu còn sót trong correctedEssay
+            const errorDetailsMarker = "ERROR_DETAILS:";
+            if (correctedEssay.includes(errorDetailsMarker)) {
+                correctedEssay = correctedEssay.split(errorDetailsMarker)[0].trim();
+            }
+            
+            // Update corrected essay with highlights
+            document.getElementById('corrected-text').innerHTML = formatCorrectedEssay(correctedEssay);
+            
+            // Parse and display error details
+            errorDetails = parseErrorDetails(errorDetailsText);
+            displayErrorDetails(errorDetails);
+            
+            // Add click handlers for error highlights
+            addErrorClickHandlers();
+        }
+        
+        function parseErrorDetails(errorDetailsText) {
+            const errors = [];
+            const lines = errorDetailsText.split('\n');
+            let currentError = null;
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.match(/^\d+:/)) {
+                    // New error entry
+                    if (currentError) {
+                        errors.push(currentError);
+                    }
+                    
+                    const parts = line.split(':');
+                    const id = parts[0].trim();
+                    const rest = parts[1] ? parts[1].trim() : '';
+                    const typeMatch = rest.match(/(Grammar|Vocabulary|Coherence|Lexical|Other)/i);
+                    const type = typeMatch ? typeMatch[0] : 'Other';
+                    const description = rest.replace(type, '').replace('-', '').trim();
+                    
+                    currentError = {
+                        id: id,
+                        type: type,
+                        description: description,
+                        explanation: ''
+                    };
+                } else if (currentError && line) {
+                    // Continue building current error explanation
+                    if (currentError.explanation) {
+                        currentError.explanation += ' ' + line;
+                    } else {
+                        currentError.explanation = line;
+                    }
+                }
+            }
+            
+            if (currentError) {
+                errors.push(currentError);
+            }
+            
+            return errors;
+        }
+        
+        function displayErrorDetails(errors) {
+            const container = document.getElementById('error-details');
+            container.innerHTML = '';
+            
+            if (errors.length === 0) {
+                container.innerHTML = '<p>Không tìm thấy lỗi nào cần sửa.</p>';
+                return;
+            }
+            
+            errors.forEach(error => {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-detail-item';
+                errorElement.dataset.errorId = error.id;
+                
+                errorElement.innerHTML = `
+                    <div class="error-type ${error.type.toLowerCase()}">${error.type}</div>
+                    <div class="error-description">${error.description}</div>
+                    <div class="error-explanation">${error.explanation}</div>
+                `;
+                
+                container.appendChild(errorElement);
+            });
+        }
+        
+        function addErrorClickHandlers() {
+            const errorHighlights = document.querySelectorAll('.error-highlight');
+            
+            errorHighlights.forEach(highlight => {
+                highlight.addEventListener('click', function() {
+                    // Remove active class from all highlights
+                    errorHighlights.forEach(h => h.classList.remove('active'));
+                    
+                    // Add active class to clicked highlight
+                    this.classList.add('active');
+                    
+                    // Get error ID
+                    const errorId = this.dataset.errorId;
+                    
+                    // Find and scroll to corresponding error detail
+                    const errorDetail = document.querySelector(`.error-detail-item[data-error-id="${errorId}"]`);
+                    if (errorDetail) {
+                        errorDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Highlight the error detail
+                        document.querySelectorAll('.error-detail-item').forEach(item => {
+                            item.style.backgroundColor = '';
+                        });
+                        errorDetail.style.backgroundColor = 'rgba(255, 165, 0, 0.1)';
+                        
+                        // Remove highlight after a delay
+                        setTimeout(() => {
+                            errorDetail.style.backgroundColor = '';
+                        }, 2000);
+                    }
+                });
+            });
+        }
+        
+        async function callGeminiAPI(apiKey, prompt) {
+            try {
+                // Sử dụng Gemini API thực tế
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: prompt
+                            }]
+                        }],
+                        generationConfig: {
+                            temperature: 0.2,
+                            topK: 40,
+                            topP: 0.95,
+                            maxOutputTokens: 2048,
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error?.message || `API request failed with status ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+                    throw new Error('Invalid response format from Gemini API');
+                }
+                
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error('Gemini API Error:', error);
+                throw new Error(`Failed to call Gemini API: ${error.message}`);
+            }
+        }
+        
+        function parseScores(response) {
+            const scores = {
+                taskResponse: "0.0",
+                cohesion: "0.0",
+                lexical: "0.0",
+                grammar: "0.0",
+                overall: "0.0"
             };
-            return posMap[abbr] || abbr;
+            
+            const lines = response.split('\n');
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.startsWith('Task Response:')) {
+                    scores.taskResponse = line.split(':')[1].trim();
+                } else if (line.startsWith('Coherence and Cohesion:')) {
+                    scores.cohesion = line.split(':')[1].trim();
+                } else if (line.startsWith('Lexical Resource:')) {
+                    scores.lexical = line.split(':')[1].trim();
+                } else if (line.startsWith('Grammatical Range and Accuracy:')) {
+                    scores.grammar = line.split(':')[1].trim();
+                } else if (line.startsWith('Overall:')) {
+                    scores.overall = line.split(':')[1].trim();
+                }
+            }
+            
+            return scores;
+        }
+        
+        function parseSection(response, sectionName) {
+            const startIndex = response.indexOf(sectionName);
+            if (startIndex === -1) return "";
+            
+            let content = response.substring(startIndex + sectionName.length);
+            const nextSectionIndex = content.search(/\n[A-Z_]+:/);
+            
+            if (nextSectionIndex !== -1) {
+                content = content.substring(0, nextSectionIndex);
+            }
+            
+            return content.trim();
+        }
+        
+        function formatCorrectedEssay(text) {
+            // Loại bỏ phần ERROR_DETAILS: nếu có trong text
+            const errorDetailsIndex = text.indexOf("ERROR_DETAILS:");
+            if (errorDetailsIndex !== -1) {
+                text = text.substring(0, errorDetailsIndex).trim();
+            }
+            
+            // Format errors with IDs and corrections
+            return text
+                .replace(/<error id="(\d+)">(.*?)<\/error>/g, '<span class="error-highlight" data-error-id="$1">$2</span>')
+                .replace(/<correction>(.*?)<\/correction>/g, '<span class="correction">$1</span>')
+                .replace(/\n/g, '<br>');
+        }
+        
+        function formatMarkdown(text) {
+            // Simple markdown to HTML conversion
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/### (.*?)(\n|$)/g, '<h3>$1</h3>')
+                .replace(/## (.*?)(\n|$)/g, '<h2>$1</h2>')
+                .replace(/# (.*?)(\n|$)/g, '<h1>$1</h1>')
+                .replace(/\n/g, '<br>')
+                .replace(/- (.*?)(\n|$)/g, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
+        }
+        
+        function updateScoreExplanation(score) {
+            const numScore = parseFloat(score);
+            let explanation = '';
+            
+            if (numScore >= 8.0) {
+                explanation = 'Xuất sắc! Bài viết của bạn thể hiện khả năng sử dụng ngôn ngữ linh hoạt và chính xác.';
+            } else if (numScore >= 7.0) {
+                explanation = 'Tốt! Bài viết của bạn có cấu trúc rõ ràng và sử dụng từ vựng đa dạng.';
+            } else if (numScore >= 6.0) {
+                explanation = 'Khá! Bài viết của bạn đáp ứng được yêu cầu cơ bản nhưng cần cải thiện độ chính xác.';
+            } else if (numScore >= 5.0) {
+                explanation = 'Trung bình! Bài viết của bạn cần cải thiện nhiều về từ vựng và ngữ pháp.';
+            } else {
+                explanation = 'Cần cố gắng! Bài viết của bạn chưa đáp ứng được yêu cầu cơ bản của bài thi IELTS.';
+            }
+            
+            scoreExplanation.textContent = explanation;
+        }
+        
+        function saveToHistory(topic, essay) {
+            const history = JSON.parse(localStorage.getItem('ieltsGradingHistory') || '[]');
+            const scores = {
+                taskResponse: document.getElementById('task-response').textContent,
+                cohesion: document.getElementById('cohesion').textContent,
+                lexical: document.getElementById('lexical').textContent,
+                grammar: document.getElementById('grammar').textContent,
+                overall: document.getElementById('overall-score').textContent
+            };
+            
+            const historyItem = {
+                id: Date.now(),
+                date: new Date().toLocaleString('vi-VN'),
+                task: currentTask,
+                topic: topic.substring(0, 100) + (topic.length > 100 ? '...' : ''),
+                essay: essay.substring(0, 200) + (essay.length > 200 ? '...' : ''),
+                scores: scores
+            };
+            
+            history.unshift(historyItem);
+            localStorage.setItem('ieltsGradingHistory', JSON.stringify(history));
+            
+            loadHistory();
+        }
+        
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('ieltsGradingHistory') || '[]');
+            historyList.innerHTML = '';
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<p>Chưa có bài viết nào được chấm điểm.</p>';
+                return;
+            }
+            
+            history.forEach(item => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                historyItem.innerHTML = `
+                    <div>
+                        <div><strong>Task ${item.task}</strong> - ${item.topic}</div>
+                        <div class="history-date">${item.date}</div>
+                    </div>
+                    <div class="history-score">${item.scores.overall}</div>
+                `;
+                
+                historyItem.addEventListener('click', function() {
+                    loadHistoryItem(item);
+                    historyModal.style.display = 'none';
+                });
+                
+                historyList.appendChild(historyItem);
+            });
+        }
+        
+        function loadHistoryItem(item) {
+            // Update UI with historical data
+            document.getElementById('overall-score').textContent = item.scores.overall;
+            document.getElementById('task-response').textContent = item.scores.taskResponse;
+            document.getElementById('cohesion').textContent = item.scores.cohesion;
+            document.getElementById('lexical').textContent = item.scores.lexical;
+            document.getElementById('grammar').textContent = item.scores.grammar;
+            
+            // Update score explanation
+            updateScoreExplanation(item.scores.overall);
+            
+            // Show result section
+            resultSection.style.display = 'block';
+            
+            // Switch to Task 1 or 2 based on history
+            taskButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.task-btn[data-task="${item.task}"]`).classList.add('active');
+            currentTask = item.task;
+            toggleTaskInputs();
+            
+            // Fill in the inputs
+            document.getElementById('topic').value = item.topic;
+            if (item.task === 1) {
+                document.getElementById('essay').value = item.essay;
+            }
+            // Note: For Task 2, we don't have separate parts in history
+        }
+        
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+        
+        function hideError() {
+            errorMessage.style.display = 'none';
         }
     </script>
-   <!--  Gemini Chat Bubble & Scroll Ball -->
-<script src="../assistant.js"></script>
-<script src="../back-to-top.js"></script>
 </body>
 </html>
