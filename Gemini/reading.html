@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading Assistant with Gemini AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        .word-span {
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .word-span:hover {
+            background-color: #ffedd5; /* orange-100 */
+            border-bottom-color: #f97316; /* orange-500 */
+        }
+        .word-active {
+            background-color: #ffedd5;
+            border-bottom-color: #f97316;
+            font-weight: 600;
+        }
+        .loading-dots::after {
+            content: ' .';
+            animation: dots 1s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: ' .'; }
+            40% { content: ' ..'; }
+            60% { content: ' ...'; }
+            80%, 100% { content: ''; }
+        }
+        .progress-bar {
+            height: 6px;
+            background-color: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #f97316;
+            transition: width 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .settings-panel {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 h-screen flex flex-col overflow-hidden font-sans text-slate-800">
+
+    <header class="bg-white border-b border-gray-200 h-14 flex items-center px-6 justify-between shrink-0 z-10 shadow-sm">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold">IELTS</div>
+            <h1 class="font-bold text-lg">IELTS Reading Assistant AI</h1>
+        </div>
+        <div class="flex gap-3">
+            <input type="password" id="apiKeyInput" placeholder="Dán Gemini API Key vào đây..." class="border rounded-full px-4 py-1 text-sm focus:outline-orange-500 w-64">
+            <button id="settingsToggle" class="p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+                <i data-feather="settings" class="w-5 h-5 text-gray-600"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Settings Panel -->
+    <div id="settingsPanel" class="settings-panel hidden bg-white border-b border-gray-200 px-6 py-3 shadow-sm">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="font-semibold text-gray-700 mb-2">Cài đặt phân tích</h3>
+            <div class="flex flex-wrap gap-6">
+                <div class="flex items-center gap-2">
+                    <label for="batchSize" class="text-sm text-gray-600">Số từ mỗi lần gửi:</label>
+                    <select id="batchSize" class="border rounded px-2 py-1 text-sm">
+                        <option value="3">3 từ</option>
+                        <option value="4">4 từ</option>
+                        <option value="5" selected>5 từ</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label for="delayTime" class="text-sm text-gray-600">Thời gian chờ (giây):</label>
+                    <select id="delayTime" class="border rounded px-2 py-1 text-sm">
+                        <option value="3">3 giây</option>
+                        <option value="4">4 giây</option>
+                        <option value="5" selected>5 giây</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="saveSettings" class="bg-orange-500 hover:bg-orange-600 text-white text-sm px-3 py-1 rounded transition-colors">
+                        Lưu cài đặt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex flex-1 h-full relative">
+        
+        <div class="flex-1 flex flex-col h-full border-r border-gray-200 bg-white relative">
+            
+            <div id="inputSection" class="p-6 flex flex-col h-full">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Nhập bài đọc tiếng Anh của bạn</h2>
+                    <div class="flex gap-2">
+                        <button id="uploadJsonBtn" class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-full transition-colors flex items-center gap-1">
+                            <i data-feather="upload" class="w-4 h-4"></i>
+                            Tải lên file JSON
+                        </button>
+                        <input type="file" id="jsonFileInput" accept=".json" class="hidden">
+                    </div>
+                </div>
+                <textarea id="textInput" class="w-full flex-1 p-4 border border-gray-300 rounded-xl resize-none focus:outline-orange-500 text-lg leading-relaxed" placeholder="Paste your English article here..."></textarea>
+                <div class="mt-4 flex flex-col items-center gap-3">
+                    <button id="startReadingBtn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full w-fit transition-all shadow-md flex items-center gap-2">
+                        <i data-feather="book-open" class="w-5 h-5"></i>
+                        Bắt đầu đọc hiểu
+                    </button>
+                    <button id="analyzeAllBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full w-fit transition-all shadow-md flex items-center gap-2">
+                        <i data-feather="zap" class="w-5 h-5"></i>
+                        Phân tích toàn bộ từ vựng
+                    </button>
+                </div>
+                
+                <!-- Progress bar for batch analysis -->
+                <div id="batchProgress" class="hidden mt-4 w-full max-w-md mx-auto">
+                    <div class="flex justify-between text-sm text-gray-600 mb-1">
+                        <span>Đang phân tích từ vựng...</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p id="progressDetail" class="text-xs text-gray-500 mt-1 text-center">Chuẩn bị...</p>
+                </div>
+            </div>
+
+            <div id="readingSection" class="hidden flex-col h-full relative">
+                <div class="bg-orange-50 px-6 py-3 flex justify-between items-center border-b border-orange-100">
+                    <span class="text-sm text-orange-800 font-semibold">Chế độ đọc hiểu & Tra từ AI</span>
+                    <div class="flex gap-2">
+                        <button id="exportJsonBtn" class="text-sm bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded transition-colors flex items-center gap-1">
+                            <i data-feather="download" class="w-4 h-4"></i>
+                            Xuất JSON
+                        </button>
+                        <button id="backBtn" class="text-sm text-gray-500 hover:text-gray-800 underline flex items-center gap-1">
+                            <i data-feather="arrow-left" class="w-4 h-4"></i>
+                            Quay lại
+                        </button>
+                    </div>
+                </div>
+                <div id="displayText" class="flex-1 overflow-y-auto p-8 text-xl leading-9 text-gray-800 max-w-4xl mx-auto text-justify">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[400px] bg-white h-full shadow-2xl flex flex-col shrink-0 transform transition-transform duration-300 translate-x-0 z-20" id="sidebar">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-orange-500 text-white">
+                <h3 class="font-bold flex items-center gap-2">
+                    <i data-feather="bookmark" class="w-5 h-5"></i>
+                    Tra từ ngữ cảnh
+                </h3>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded">Gemini Flash</span>
+            </div>
+
+            <div id="defaultState" class="flex-1 flex flex-col items-center justify-center text-gray-400 p-6 text-center">
+                <i data-feather="book-open" class="w-16 h-16 mb-4 text-gray-200"></i>
+                <p>Chọn một từ trong bài đọc để xem phân tích chi tiết từ AI.</p>
+            </div>
+
+            <div id="loadingState" class="hidden flex-1 flex flex-col items-center justify-center p-6">
+                <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-orange-500 mb-4"></div>
+                <p class="text-orange-600 font-medium loading-dots">Đang phân tích ngữ cảnh</p>
+            </div>
+
+            <div id="resultContent" class="hidden flex-1 overflow-y-auto p-5">
+                <div class="mb-6">
+                    <div class="flex items-baseline justify-between">
+                        <h2 id="resWord" class="text-3xl font-bold text-gray-900 text-orange-600">Word</h2>
+                        <span id="resIPA" class="text-gray-500 font-mono text-sm">/ipa/</span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span id="resType" class="text-xs font-bold px-2 py-0.5 bg-gray-100 text-gray-600 rounded uppercase">noun</span>
+                        <span id="resMeaningVN" class="text-lg font-semibold text-gray-800">Nghĩa tiếng Việt</span>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gray-100 my-4"></div>
+
+                <div class="space-y-5">
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                            <i data-feather="globe" class="w-3 h-3"></i>
+                            Dịch nghĩa cả câu
+                        </h4>
+                        <p id="resSentenceTrans" class="text-gray-700 bg-orange-50 p-3 rounded-lg italic border-l-4 border-orange-400 text-sm">
+                            Câu dịch sẽ hiện ở đây.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                            <i data-feather="help-circle" class="w-3 h-3"></i>
+                            Giải thích dễ hiểu
+                        </h4>
+                        <p id="resExplanation" class="text-gray-700 text-sm leading-relaxed">
+                            Giải thích ngữ cảnh...
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                            <i data-feather="link" class="w-3 h-3"></i>
+                            Cấu trúc / Collocations
+                        </h4>
+                        <ul id="resCollocations" class="text-sm text-gray-600 list-disc pl-4 space-y-1">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // DOM Elements
+        const els = {
+            apiKeyInput: document.getElementById('apiKeyInput'),
+            inputSection: document.getElementById('inputSection'),
+            readingSection: document.getElementById('readingSection'),
+            textInput: document.getElementById('textInput'),
+            startBtn: document.getElementById('startReadingBtn'),
+            analyzeAllBtn: document.getElementById('analyzeAllBtn'),
+            displayText: document.getElementById('displayText'),
+            backBtn: document.getElementById('backBtn'),
+            exportJsonBtn: document.getElementById('exportJsonBtn'),
+            uploadJsonBtn: document.getElementById('uploadJsonBtn'),
+            jsonFileInput: document.getElementById('jsonFileInput'),
+            settingsToggle: document.getElementById('settingsToggle'),
+            settingsPanel: document.getElementById('settingsPanel'),
+            batchSize: document.getElementById('batchSize'),
+            delayTime: document.getElementById('delayTime'),
+            saveSettings: document.getElementById('saveSettings'),
+            batchProgress: document.getElementById('batchProgress'),
+            progressText: document.getElementById('progressText'),
+            progressFill: document.getElementById('progressFill'),
+            progressDetail: document.getElementById('progressDetail'),
+            sidebar: {
+                default: document.getElementById('defaultState'),
+                loading: document.getElementById('loadingState'),
+                result: document.getElementById('resultContent'),
+                word: document.getElementById('resWord'),
+                ipa: document.getElementById('resIPA'),
+                type: document.getElementById('resType'),
+                meaningVN: document.getElementById('resMeaningVN'),
+                sentenceTrans: document.getElementById('resSentenceTrans'),
+                explanation: document.getElementById('resExplanation'),
+                collocations: document.getElementById('resCollocations'),
+            }
+        };
+
+        // Application state
+        const appState = {
+            currentText: '',
+            wordData: {}, // Store word analysis results
+            settings: {
+                batchSize: 5,
+                delayTime: 5
+            },
+            isAnalyzing: false
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize feather icons
+            if (feather) {
+                feather.replace();
+            }
+            
+            // Load saved settings and API key
+            loadSavedData();
+            
+            // Set up event listeners
+            setupEventListeners();
+        });
+
+        function loadSavedData() {
+            // Load API key from localStorage
+            const savedApiKey = localStorage.getItem('ieltsReadingAssistantApiKey');
+            if (savedApiKey) {
+                els.apiKeyInput.value = savedApiKey;
+            }
+            
+            // Load settings from localStorage
+            const savedSettings = localStorage.getItem('ieltsReadingAssistantSettings');
+            if (savedSettings) {
+                appState.settings = { ...appState.settings, ...JSON.parse(savedSettings) };
+                els.batchSize.value = appState.settings.batchSize;
+                els.delayTime.value = appState.settings.delayTime;
+            }
+            
+            // Load any cached analysis data
+            const cachedData = localStorage.getItem('ieltsReadingAssistantCachedData');
+            if (cachedData) {
+                try {
+                    const data = JSON.parse(cachedData);
+                    if (data.text && data.wordData) {
+                        appState.currentText = data.text;
+                        appState.wordData = data.wordData;
+                        els.textInput.value = data.text;
+                    }
+                } catch (e) {
+                    console.error("Error loading cached data:", e);
+                }
+            }
+        }
+
+        function saveSettings() {
+            appState.settings.batchSize = parseInt(els.batchSize.value);
+            appState.settings.delayTime = parseInt(els.delayTime.value);
+            localStorage.setItem('ieltsReadingAssistantSettings', JSON.stringify(appState.settings));
+            alert('Cài đặt đã được lưu!');
+        }
+
+        function saveApiKey() {
+            localStorage.setItem('ieltsReadingAssistantApiKey', els.apiKeyInput.value);
+        }
+
+        function cacheAnalysisData(text, wordData) {
+            const dataToCache = {
+                text: text,
+                wordData: wordData,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('ieltsReadingAssistantCachedData', JSON.stringify(dataToCache));
+        }
+
+        function setupEventListeners() {
+            // API Key auto-save
+            els.apiKeyInput.addEventListener('change', saveApiKey);
+            
+            // Settings panel toggle
+            els.settingsToggle.addEventListener('click', () => {
+                els.settingsPanel.classList.toggle('hidden');
+            });
+            
+            // Save settings
+            els.saveSettings.addEventListener('click', saveSettings);
+            
+            // Start reading (basic mode)
+            els.startBtn.addEventListener('click', () => {
+                const text = els.textInput.value.trim();
+                if (!text) return alert("Vui lòng nhập văn bản!");
+                
+                appState.currentText = text;
+                displayTextForReading(text);
+                toggleView(true);
+            });
+
+            // Analyze all words
+            els.analyzeAllBtn.addEventListener('click', async () => {
+                const text = els.textInput.value.trim();
+                if (!text) return alert("Vui lòng nhập văn bản!");
+                
+                const apiKey = els.apiKeyInput.value;
+                if (!apiKey) return alert("Vui lòng nhập Gemini API Key!");
+                
+                appState.currentText = text;
+                appState.isAnalyzing = true;
+                
+                // Show progress bar
+                els.batchProgress.classList.remove('hidden');
+                updateProgress(0, "Đang chuẩn bị phân tích...");
+                
+                // Extract unique words from text
+                const uniqueWords = extractUniqueWords(text);
+                
+                // Analyze words in batches
+                await analyzeWordsInBatches(uniqueWords, text, apiKey);
+                
+                // Save data to cache
+                cacheAnalysisData(text, appState.wordData);
+                
+                // Display text with analyzed words
+                displayTextForReading(text);
+                toggleView(true);
+                
+                // Hide progress bar
+                els.batchProgress.classList.add('hidden');
+                appState.isAnalyzing = false;
+                
+                // Auto-download JSON file
+                downloadAnalysisData(text, appState.wordData);
+            });
+
+            // Back button
+            els.backBtn.addEventListener('click', () => toggleView(false));
+            
+            // Export JSON
+            els.exportJsonBtn.addEventListener('click', () => {
+                if (Object.keys(appState.wordData).length === 0) {
+                    alert("Không có dữ liệu phân tích để xuất!");
+                    return;
+                }
+                downloadAnalysisData(appState.currentText, appState.wordData);
+            });
+            
+            // Upload JSON
+            els.uploadJsonBtn.addEventListener('click', () => {
+                els.jsonFileInput.click();
+            });
+            
+            els.jsonFileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        if (data.text && data.wordData) {
+                            appState.currentText = data.text;
+                            appState.wordData = data.wordData;
+                            els.textInput.value = data.text;
+                            displayTextForReading(data.text);
+                            toggleView(true);
+                            alert("Dữ liệu đã được tải lên thành công!");
+                        } else {
+                            alert("File JSON không đúng định dạng!");
+                        }
+                    } catch (error) {
+                        alert("Lỗi khi đọc file JSON: " + error.message);
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
+
+        // --- Text Processing and Display ---
+        function displayTextForReading(text) {
+            const paragraphs = text.split('\n').filter(p => p.trim() !== '');
+            
+            let htmlContent = '';
+            paragraphs.forEach(para => {
+                htmlContent += '<p class="mb-4">';
+                const tokens = para.match(/[\w']+|[.,!?;:()""-]/g);
+                if (tokens) {
+                    tokens.forEach(token => {
+                        if (/^[\w']+$/.test(token)) {
+                            const lowerToken = token.toLowerCase();
+                            // If we have analysis data for this word, show it with a different style
+                            if (appState.wordData[lowerToken]) {
+                                htmlContent += `<span class="word-span bg-blue-50 border-blue-200" onclick="showWordAnalysis('${lowerToken}')">${token}</span> `;
+                            } else {
+                                htmlContent += `<span class="word-span" onclick="analyzeWord(this)">${token}</span> `;
+                            }
+                        } else {
+                            htmlContent += `<span class="text-gray-500">${token}</span> `;
+                        }
+                    });
+                }
+                htmlContent += '</p>';
+            });
+
+            els.displayText.innerHTML = htmlContent;
+        }
+
+        function extractUniqueWords(text) {
+            const words = text.match(/[\w']+/g) || [];
+            const uniqueWords = [...new Set(words.map(word => word.toLowerCase()))];
+            return uniqueWords;
+        }
+
+        async function analyzeWordsInBatches(words, fullText, apiKey) {
+            const batchSize = appState.settings.batchSize;
+            const delay = appState.settings.delayTime * 1000; // Convert to milliseconds
+            
+            for (let i = 0; i < words.length; i += batchSize) {
+                const batch = words.slice(i, i + batchSize);
+                
+                // Update progress
+                const progress = Math.min(100, Math.round((i / words.length) * 100));
+                updateProgress(progress, `Đang phân tích từ ${i+1}-${Math.min(i+batchSize, words.length)}/${words.length}`);
+                
+                // Process current batch
+                await processWordBatch(batch, fullText, apiKey);
+                
+                // Wait before next batch (unless it's the last batch)
+                if (i + batchSize < words.length) {
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+            
+            updateProgress(100, "Hoàn thành phân tích!");
+        }
+
+        async function processWordBatch(wordBatch, fullText, apiKey) {
+            const promises = wordBatch.map(word => 
+                analyzeSingleWord(word, fullText, apiKey)
+            );
+            
+            const results = await Promise.allSettled(promises);
+            
+            results.forEach((result, index) => {
+                if (result.status === 'fulfilled' && result.value) {
+                    appState.wordData[wordBatch[index]] = result.value;
+                }
+            });
+        }
+
+        async function analyzeSingleWord(word, fullText, apiKey) {
+            try {
+                const genAI = new GoogleGenerativeAI(apiKey);
+                const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+
+                // Find a sentence containing the word for context
+                const sentences = fullText.split(/[.!?]/).filter(s => 
+                    s.toLowerCase().includes(word.toLowerCase())
+                );
+                const contextSentence = sentences[0] || fullText;
+
+                const prompt = `
+                    Act as an English tutor. Analyze the word "${word}" in the specific context of this sentence: "${contextSentence}".
+                    
+                    Return ONLY a JSON object with this structure (ensure Vietnamese content):
+                    {
+                        "word": "${word}",
+                        "ipa": "IPA pronunciation",
+                        "part_of_speech": "noun/verb/adj...",
+                        "vietnamese_meaning": "Nghĩa tiếng việt phù hợp nhất với ngữ cảnh câu này",
+                        "sentence_translation": "Dịch cả câu chứa từ này sang tiếng Việt tự nhiên",
+                        "simple_explanation": "Giải thích ngắn gọn vai trò/ý nghĩa của từ trong ngữ cảnh này bằng tiếng Việt (dễ hiểu)",
+                        "collocations": ["cụm từ liên quan 1", "cụm từ liên quan 2"]
+                    }
+                `;
+
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+                
+                // Clean JSON (sometimes Gemini returns markdown ```json ... ```)
+                const jsonStr = text.replace(/```json|```/g, '').trim();
+                return JSON.parse(jsonStr);
+            } catch (error) {
+                console.error(`Error analyzing word "${word}":`, error);
+                return null;
+            }
+        }
+
+        function updateProgress(percent, detail) {
+            els.progressFill.style.width = `${percent}%`;
+            els.progressText.textContent = `${percent}%`;
+            els.progressDetail.textContent = detail;
+        }
+
+        function downloadAnalysisData(text, wordData) {
+            const data = {
+                text: text,
+                wordData: wordData,
+                timestamp: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ielts_reading_analysis_${new Date().getTime()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function toggleView(isReading) {
+            if (isReading) {
+                els.inputSection.classList.add('hidden');
+                els.readingSection.classList.remove('hidden');
+                els.readingSection.classList.add('flex');
+            } else {
+                els.inputSection.classList.remove('hidden');
+                els.readingSection.classList.add('hidden');
+                els.readingSection.classList.remove('flex');
+            }
+        }
+
+        // --- Word Analysis Functions (exposed to global scope) ---
+        window.analyzeWord = async (element) => {
+            if (appState.isAnalyzing) {
+                alert("Hệ thống đang phân tích từ vựng. Vui lòng chờ...");
+                return;
+            }
+
+            const apiKey = els.apiKeyInput.value;
+            if (!apiKey) return alert("Vui lòng nhập Gemini API Key!");
+
+            // UI Handling
+            document.querySelectorAll('.word-active').forEach(el => el.classList.remove('word-active'));
+            element.classList.add('word-active');
+            
+            showSidebarState('loading');
+
+            const word = element.innerText.toLowerCase();
+            
+            // Check if we already have analysis for this word
+            if (appState.wordData[word]) {
+                renderResult(appState.wordData[word]);
+                return;
+            }
+
+            // Otherwise, analyze the word
+            const contextSentence = element.parentElement.innerText;
+
+            try {
+                const result = await analyzeSingleWord(word, appState.currentText, apiKey);
+                if (result) {
+                    appState.wordData[word] = result;
+                    cacheAnalysisData(appState.currentText, appState.wordData);
+                    renderResult(result);
+                } else {
+                    throw new Error("Không nhận được kết quả phân tích");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Lỗi khi phân tích từ: " + error.message);
+                showSidebarState('default');
+            }
+        };
+
+        window.showWordAnalysis = (word) => {
+            if (appState.wordData[word]) {
+                document.querySelectorAll('.word-active').forEach(el => el.classList.remove('word-active'));
+                
+                // Find and highlight the word in the text
+                const wordSpans = document.querySelectorAll('.word-span');
+                wordSpans.forEach(span => {
+                    if (span.innerText.toLowerCase() === word) {
+                        span.classList.add('word-active');
+                    }
+                });
+                
+                renderResult(appState.wordData[word]);
+            }
+        };
+
+        function renderResult(data) {
+            els.sidebar.word.innerText = data.word;
+            els.sidebar.ipa.innerText = data.ipa ? `/${data.ipa}/` : '';
+            els.sidebar.type.innerText = data.part_of_speech;
+            els.sidebar.meaningVN.innerText = data.vietnamese_meaning;
+            els.sidebar.sentenceTrans.innerText = data.sentence_translation;
+            els.sidebar.explanation.innerText = data.simple_explanation;
+            
+            // Render list
+            els.sidebar.collocations.innerHTML = '';
+            if (data.collocations && data.collocations.length > 0) {
+                data.collocations.forEach(col => {
+                    const li = document.createElement('li');
+                    li.innerText = col;
+                    els.sidebar.collocations.appendChild(li);
+                });
+            } else {
+                els.sidebar.collocations.innerHTML = '<li>Không có cấu trúc đặc biệt.</li>';
+            }
+
+            showSidebarState('result');
+            
+            // Refresh icons in the sidebar
+            if (feather) {
+                feather.replace();
+            }
+        }
+
+        function showSidebarState(state) {
+            els.sidebar.default.classList.add('hidden');
+            els.sidebar.loading.classList.add('hidden');
+            els.sidebar.result.classList.add('hidden');
+
+            if (state === 'default') els.sidebar.default.classList.remove('hidden');
+            if (state === 'loading') els.sidebar.loading.classList.remove('hidden');
+            if (state === 'result') els.sidebar.result.classList.remove('hidden');
+            
+            // Refresh icons when showing default state
+            if (state === 'default' && feather) {
+                feather.replace();
+            }
+        }
+
+    </script>
+</body>
+</html>
