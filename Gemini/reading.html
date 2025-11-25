@@ -65,6 +65,13 @@
         .settings-panel {
             transition: all 0.3s ease;
         }
+        .example-box {
+            background-color: #f8fafc;
+            border-left: 4px solid #f97316;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 0 8px 8px 0;
+        }
     </style>
 </head>
 <body class="bg-slate-50 h-screen flex flex-col overflow-hidden font-sans text-slate-800">
@@ -171,7 +178,7 @@
             </div>
         </div>
 
-        <div class="w-[400px] bg-white h-full shadow-2xl flex flex-col shrink-0 transform transition-transform duration-300 translate-x-0 z-20" id="sidebar">
+        <div class="w-[480px] bg-white h-full shadow-2xl flex flex-col shrink-0 transform transition-transform duration-300 translate-x-0 z-20" id="sidebar">
             <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-orange-500 text-white">
                 <h3 class="font-bold flex items-center gap-2">
                     <i data-feather="bookmark" class="w-5 h-5"></i>
@@ -228,10 +235,29 @@
                     <div>
                         <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
                             <i data-feather="link" class="w-3 h-3"></i>
-                            Cấu trúc / Collocations
+                            Từ/Cấu trúc liên quan
                         </h4>
                         <ul id="resCollocations" class="text-sm text-gray-600 list-disc pl-4 space-y-1">
                         </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                            <i data-feather="book-open" class="w-3 h-3"></i>
+                            Ví dụ
+                        </h4>
+                        <div id="resExamples" class="space-y-3">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1">
+                            <i data-feather="link-2" class="w-3 h-3"></i>
+                            Liên kết
+                        </h4>
+                        <p id="resConnection" class="text-gray-700 text-sm leading-relaxed">
+                            Liên kết với các thông tin trước đó...
+                        </p>
                     </div>
                 </div>
             </div>
@@ -274,6 +300,8 @@
                 sentenceTrans: document.getElementById('resSentenceTrans'),
                 explanation: document.getElementById('resExplanation'),
                 collocations: document.getElementById('resCollocations'),
+                examples: document.getElementById('resExamples'),
+                connection: document.getElementById('resConnection'),
             }
         };
 
@@ -548,7 +576,18 @@
                         "vietnamese_meaning": "Nghĩa tiếng việt phù hợp nhất với ngữ cảnh câu này",
                         "sentence_translation": "Dịch cả câu chứa từ này sang tiếng Việt tự nhiên",
                         "simple_explanation": "Giải thích ngắn gọn vai trò/ý nghĩa của từ trong ngữ cảnh này bằng tiếng Việt (dễ hiểu)",
-                        "collocations": ["cụm từ liên quan 1", "cụm từ liên quan 2"]
+                        "collocations": ["cụm từ liên quan 1", "cụm từ liên quan 2"],
+                        "examples": [
+                            {
+                                "en": "Example sentence 1 in English",
+                                "vi": "Bản dịch tiếng Việt của câu ví dụ 1"
+                            },
+                            {
+                                "en": "Example sentence 2 in English",
+                                "vi": "Bản dịch tiếng Việt của câu ví dụ 2"
+                            }
+                        ],
+                        "connection": "Giải thích liên kết với các thông tin trước đó (nếu có)"
                     }
                 `;
 
@@ -667,6 +706,7 @@
             els.sidebar.meaningVN.innerText = data.vietnamese_meaning;
             els.sidebar.sentenceTrans.innerText = data.sentence_translation;
             els.sidebar.explanation.innerText = data.simple_explanation;
+            els.sidebar.connection.innerText = data.connection || 'Không có liên kết đặc biệt.';
             
             // Render list
             els.sidebar.collocations.innerHTML = '';
@@ -678,6 +718,22 @@
                 });
             } else {
                 els.sidebar.collocations.innerHTML = '<li>Không có cấu trúc đặc biệt.</li>';
+            }
+            
+            // Render examples
+            els.sidebar.examples.innerHTML = '';
+            if (data.examples && data.examples.length > 0) {
+                data.examples.forEach(example => {
+                    const exampleDiv = document.createElement('div');
+                    exampleDiv.className = 'example-box';
+                    exampleDiv.innerHTML = `
+                        <p class="text-gray-700 text-sm">${example.en}</p>
+                        <p class="text-gray-600 text-sm italic mt-1">${example.vi}</p>
+                    `;
+                    els.sidebar.examples.appendChild(exampleDiv);
+                });
+            } else {
+                els.sidebar.examples.innerHTML = '<p class="text-gray-500 text-sm">Không có ví dụ.</p>';
             }
 
             showSidebarState('result');
