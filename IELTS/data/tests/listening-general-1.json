@@ -1,0 +1,195 @@
+{
+  "testId": "listening-general-1",
+  "title": "IELTS Listening Test - Everyday Situations",
+  "module": "listening",
+  "description": "Practice listening test with conversation and academic sections",
+  "timeLimit": 1800,
+  "sections": [
+    {
+      "sectionId": 1,
+      "title": "Section 1 - Hotel Booking Conversation",
+      "audioUrl": null,
+      "audioNote": "Audio file not included. Please upload your own audio file or use this as a template for creating listening tests. Place audio files in /public/audio/ folder and update the audioUrl property.",
+      "questions": [
+        {
+          "questionId": 1,
+          "type": "sentence-completion",
+          "text": "The guest wants to book a room for _____ nights.",
+          "correctAnswer": "3"
+        },
+        {
+          "questionId": 2,
+          "type": "multiple-choice-single",
+          "text": "What type of room does the guest prefer?",
+          "options": [
+            "Standard single",
+            "Deluxe double",
+            "Executive suite",
+            "Family room"
+          ],
+          "correctAnswer": "Deluxe double"
+        },
+        {
+          "questionId": 3,
+          "type": "sentence-completion",
+          "text": "The guest's surname is _____.",
+          "correctAnswer": "Johnson"
+        },
+        {
+          "questionId": 4,
+          "type": "sentence-completion",
+          "text": "The contact email address is _____@email.com.",
+          "correctAnswer": "mary.johnson"
+        },
+        {
+          "questionId": 5,
+          "type": "multiple-choice-single",
+          "text": "What meal option does the guest choose?",
+          "options": [
+            "Breakfast only",
+            "Half board",
+            "Full board",
+            "No meals"
+          ],
+          "correctAnswer": "Breakfast only"
+        },
+        {
+          "questionId": 6,
+          "type": "sentence-completion",
+          "text": "The total cost is _____ pounds.",
+          "correctAnswer": "450"
+        },
+        {
+          "questionId": 7,
+          "type": "multiple-choice-single",
+          "text": "How will the guest pay?",
+          "options": [
+            "Credit card",
+            "Cash on arrival",
+            "Bank transfer",
+            "Debit card"
+          ],
+          "correctAnswer": "Credit card"
+        },
+        {
+          "questionId": 8,
+          "type": "sentence-completion",
+          "text": "The hotel provides free _____ for all guests.",
+          "correctAnswer": "WiFi"
+        },
+        {
+          "questionId": 9,
+          "type": "short-answer",
+          "text": "What time can the guest check in? (Use 24-hour format)",
+          "correctAnswer": "14:00",
+          "maxWords": 2
+        },
+        {
+          "questionId": 10,
+          "type": "multiple-choice-single",
+          "text": "What special request does the guest make?",
+          "options": [
+            "Ground floor room",
+            "Extra pillows",
+            "Late checkout",
+            "Airport transfer"
+          ],
+          "correctAnswer": "Ground floor room"
+        }
+      ]
+    },
+    {
+      "sectionId": 2,
+      "title": "Section 2 - University Campus Tour",
+      "audioUrl": null,
+      "audioNote": "Audio file not included. This section would typically contain a monologue about campus facilities and services.",
+      "questions": [
+        {
+          "questionId": 11,
+          "type": "sentence-completion",
+          "text": "The library is open until _____ PM on weekdays.",
+          "correctAnswer": "10"
+        },
+        {
+          "questionId": 12,
+          "type": "multiple-choice-single",
+          "text": "Where is the Student Services office located?",
+          "options": [
+            "Main Building, Ground Floor",
+            "Library Building, First Floor",
+            "Administration Block, Second Floor",
+            "Sports Center, Ground Floor"
+          ],
+          "correctAnswer": "Administration Block, Second Floor"
+        },
+        {
+          "questionId": 13,
+          "type": "sentence-completion",
+          "text": "Students can borrow books for up to _____ weeks.",
+          "correctAnswer": "4"
+        },
+        {
+          "questionId": 14,
+          "type": "multiple-choice-multiple",
+          "text": "Which TWO facilities are available in the Sports Center?",
+          "options": [
+            "Swimming pool",
+            "Tennis courts",
+            "Fitness gym",
+            "Basketball court"
+          ],
+          "correctAnswers": ["Swimming pool", "Fitness gym"]
+        },
+        {
+          "questionId": 15,
+          "type": "sentence-completion",
+          "text": "The cafeteria serves _____ cuisine.",
+          "correctAnswer": "international"
+        },
+        {
+          "questionId": 16,
+          "type": "short-answer",
+          "text": "How many computer labs are there on campus?",
+          "correctAnswer": "5",
+          "maxWords": 1
+        },
+        {
+          "questionId": 17,
+          "type": "multiple-choice-single",
+          "text": "What service does the Medical Center NOT provide?",
+          "options": [
+            "General consultations",
+            "Vaccinations",
+            "Dental care",
+            "Counseling"
+          ],
+          "correctAnswer": "Dental care"
+        },
+        {
+          "questionId": 18,
+          "type": "sentence-completion",
+          "text": "Students need to show their _____ to access campus facilities.",
+          "correctAnswer": "ID card"
+        },
+        {
+          "questionId": 19,
+          "type": "multiple-choice-single",
+          "text": "When does the bus service to the city center operate?",
+          "options": [
+            "7 AM to 7 PM",
+            "8 AM to 8 PM",
+            "9 AM to 9 PM",
+            "24 hours"
+          ],
+          "correctAnswer": "7 AM to 7 PM"
+        },
+        {
+          "questionId": 20,
+          "type": "sentence-completion",
+          "text": "The accommodation office helps students find _____.",
+          "correctAnswer": "housing"
+        }
+      ]
+    }
+  ]
+}

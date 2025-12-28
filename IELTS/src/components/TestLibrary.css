@@ -1,0 +1,247 @@
+.library-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid rgba(0, 62, 116, 0.1);
+}
+
+.library-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bc-navy);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.library-subtitle {
+  color: var(--bc-text-secondary);
+  font-size: 1.125rem;
+}
+
+.library-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--bc-border);
+  background: var(--bc-white);
+  color: var(--bc-text);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--bc-blue);
+  background: var(--bc-light-blue);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--bc-navy);
+  color: var(--bc-white);
+  border-color: var(--bc-navy);
+}
+
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+.test-card {
+  background: var(--bc-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.test-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--bc-blue);
+}
+
+.test-card-header {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 4px solid var(--bc-blue);
+}
+
+.test-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bc-white);
+  flex-shrink: 0;
+}
+
+.test-info {
+  flex: 1;
+}
+
+.test-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--bc-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.test-description {
+  font-size: 0.9375rem;
+  color: var(--bc-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.test-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.test-module-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.test-time {
+  font-size: 0.875rem;
+  color: var(--bc-text-secondary);
+}
+
+.test-card-actions {
+  padding: 1rem 1.5rem;
+  background: var(--bc-gray);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.test-card-actions .btn {
+  flex: 1;
+}
+
+.btn-icon-danger {
+  background: transparent;
+  border: none;
+  color: var(--bc-red);
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-danger:hover {
+  background: rgba(211, 47, 47, 0.1);
+}
+
+.import-section {
+  margin-bottom: 1.5rem;
+}
+
+.import-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--bc-navy);
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px dashed var(--bc-border);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-input:hover {
+  border-color: var(--bc-blue);
+  background: var(--bc-light-blue);
+}
+
+.import-divider {
+  text-align: center;
+  color: var(--bc-text-secondary);
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.import-divider::before,
+.import-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: var(--bc-border);
+}
+
+.import-divider::before {
+  left: 0;
+}
+
+.import-divider::after {
+  right: 0;
+}
+
+.import-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--bc-border);
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.import-textarea:focus {
+  outline: none;
+  border-color: var(--bc-blue);
+  box-shadow: 0 0 0 3px rgba(0, 102, 179, 0.1);
+}
+
+@media (max-width: 768px) {
+  .tests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .library-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

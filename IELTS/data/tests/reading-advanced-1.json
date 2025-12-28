@@ -1,0 +1,98 @@
+{
+  "testId": "reading-advanced-1",
+  "title": "IELTS Academic Reading Test - Technology & Society",
+  "module": "reading",
+  "description": "Full practice test with 3 passages covering technology, psychology, and history",
+  "timeLimit": 3600,
+  "sections": [
+    {
+      "sectionId": 1,
+      "title": "The Digital Revolution and Its Impact on Education",
+      "passage": "The integration of digital technology into educational systems has fundamentally transformed how students learn and teachers instruct. From interactive whiteboards to comprehensive learning management systems, technology has permeated every aspect of modern education. This digital revolution has brought both unprecedented opportunities and significant challenges to educational institutions worldwide.\n\nResearch conducted by the International Society for Technology in Education indicates that students who use digital tools regularly demonstrate improved engagement and retention rates. These tools enable personalized learning experiences, allowing students to progress at their own pace and receive immediate feedback on their performance. Moreover, digital platforms facilitate collaboration among students across geographical boundaries, fostering global perspectives and cultural awareness.\n\nHowever, the rapid adoption of educational technology has also raised concerns about digital equity. Not all students have equal access to devices and reliable internet connections, creating a digital divide that may exacerbate existing educational inequalities. Schools in underserved communities often struggle to provide adequate technological infrastructure, leaving their students at a disadvantage compared to their more affluent peers.\n\nFurthermore, the effectiveness of educational technology depends heavily on how it is implemented. Simply providing devices without proper teacher training and pedagogical frameworks often yields disappointing results. Successful integration requires comprehensive professional development programs that help educators understand not just the technical aspects but also the pedagogical principles underlying effective technology use in the classroom.",
+      "questions": [
+        {
+          "questionId": 1,
+          "type": "multiple-choice-single",
+          "text": "According to the passage, what has research shown about students using digital tools?",
+          "options": [
+            "They always achieve better grades",
+            "They show improved engagement and retention",
+            "They prefer traditional learning methods",
+            "They learn faster than their peers"
+          ],
+          "correctAnswer": "They show improved engagement and retention"
+        },
+        {
+          "questionId": 2,
+          "type": "true-false-notgiven",
+          "text": "All schools have equal access to technological infrastructure.",
+          "correctAnswer": "FALSE"
+        },
+        {
+          "questionId": 3,
+          "type": "sentence-completion",
+          "text": "Digital platforms enable students to collaborate across _____.",
+          "correctAnswer": "geographical boundaries",
+          "maxWords": 3
+        },
+        {
+          "questionId": 4,
+          "type": "multiple-choice-single",
+          "text": "What is identified as a major concern regarding educational technology?",
+          "options": [
+            "High costs of devices",
+            "Teacher resistance",
+            "Digital equity issues",
+            "Student distraction"
+          ],
+          "correctAnswer": "Digital equity issues"
+        },
+        {
+          "questionId": 5,
+          "type": "true-false-notgiven",
+          "text": "Providing devices alone is sufficient for successful technology integration.",
+          "correctAnswer": "FALSE"
+        },
+        {
+          "questionId": 6,
+          "type": "sentence-completion",
+          "text": "Successful technology integration requires comprehensive _____ programs for educators.",
+          "correctAnswer": "professional development",
+          "maxWords": 3
+        },
+        {
+          "questionId": 7,
+          "type": "multiple-choice-multiple",
+          "text": "Which TWO benefits of digital tools in education are mentioned?",
+          "options": [
+            "Personalized learning experiences",
+            "Reduced homework load",
+            "Immediate feedback",
+            "Lower education costs"
+          ],
+          "correctAnswers": ["Personalized learning experiences", "Immediate feedback"]
+        },
+        {
+          "questionId": 8,
+          "type": "true-false-notgiven",
+          "text": "The digital divide affects students in underserved communities more severely.",
+          "correctAnswer": "TRUE"
+        },
+        {
+          "questionId": 9,
+          "type": "short-answer",
+          "text": "What organization conducted research on digital tools in education?",
+          "correctAnswer": "International Society for Technology in Education",
+          "maxWords": 6
+        },
+        {
+          "questionId": 10,
+          "type": "sentence-completion",
+          "text": "Teachers need to understand both technical aspects and _____ principles for effective technology use.",
+          "correctAnswer": "pedagogical",
+          "maxWords": 1
+        }
+      ]
+    }
+  ]
+}
