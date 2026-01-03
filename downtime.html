@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Hồ Đếm Ngược Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .timer-display {
+            font-size: 6rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 50px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 5px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+            width: 100%;
+            text-align: center;
+        }
+        
+        .timer-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .time-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 120px;
+        }
+        
+        .time-input label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        
+        .time-input input {
+            width: 100%;
+            padding: 15px;
+            font-size: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+        }
+        
+        .time-input input:focus {
+            border-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+        
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            min-width: 160px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, #2196F3, #0D47A1);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, #FF9800, #EF6C00);
+            color: white;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, #F44336, #C62828);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .preset-times {
+            margin-bottom: 30px;
+        }
+        
+        .preset-title {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        .preset-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .preset-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .preset-btn:hover {
+            background: rgba(255, 204, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .alarm-settings {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .alarm-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alarm-options {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .alarm-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        
+        .alarm-option input {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .volume-control input {
+            width: 150px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ddd;
+            font-size: 1rem;
+        }
+        
+        .completed-message {
+            font-size: 2rem;
+            text-align: center;
+            color: #ffcc00;
+            margin-top: 20px;
+            display: none;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .timer-display {
+                font-size: 4rem;
+                padding: 20px 30px;
+            }
+            
+            .time-input {
+                min-width: 100px;
+            }
+            
+            .time-input input {
+                font-size: 1.8rem;
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                min-width: 140px;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .timer-display {
+                font-size: 3rem;
+                padding: 15px 20px;
+            }
+            
+            .timer-inputs {
+                gap: 10px;
+            }
+            
+            .time-input {
+                min-width: 80px;
+                padding: 10px;
+            }
+            
+            .time-input input {
+                font-size: 1.5rem;
+                padding: 8px;
+            }
+            
+            .control-buttons {
+                gap: 10px;
+            }
+            
+            .btn {
+                min-width: 120px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clock"></i> Đồng Hồ Đếm Ngược</h1>
+            <p class="subtitle">Thiết lập thời gian, bắt đầu đếm ngược và nhận thông báo khi hoàn thành</p>
+        </header>
+        
+        <main>
+            <div class="timer-container">
+                <div class="timer-display" id="timerDisplay">00:00:00</div>
+                
+                <div class="timer-inputs">
+                    <div class="time-input">
+                        <label for="hours">Giờ</label>
+                        <input type="number" id="hours" min="0" max="99" value="0">
+                    </div>
+                    <div class="time-input">
+                        <label for="minutes">Phút</label>
+                        <input type="number" id="minutes" min="0" max="59" value="10">
+                    </div>
+                    <div class="time-input">
+                        <label for="seconds">Giây</label>
+                        <input type="number" id="seconds" min="0" max="59" value="0">
+                    </div>
+                </div>
+                
+                <div class="control-buttons">
+                    <button class="btn btn-primary" id="startBtn">
+                        <i class="fas fa-play"></i> Bắt đầu
+                    </button>
+                    <button class="btn btn-secondary" id="pauseBtn" disabled>
+                        <i class="fas fa-pause"></i> Tạm dừng
+                    </button>
+                    <button class="btn btn-warning" id="resetBtn" disabled>
+                        <i class="fas fa-redo"></i> Đặt lại
+                    </button>
+                    <button class="btn btn-danger" id="stopBtn" disabled>
+                        <i class="fas fa-stop"></i> Dừng
+                    </button>
+                </div>
+                
+                <div class="completed-message" id="completedMessage">
+                    <i class="fas fa-bell"></i> THỜI GIAN ĐÃ HẾT!
+                </div>
+            </div>
+            
+            <div class="preset-times">
+                <h3 class="preset-title">Thời gian định sẵn:</h3>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-minutes="1">1 phút</button>
+                    <button class="preset-btn" data-minutes="5">5 phút</button>
+                    <button class="preset-btn" data-minutes="10">10 phút</button>
+                    <button class="preset-btn" data-minutes="15">15 phút</button>
+                    <button class="preset-btn" data-minutes="30">30 phút</button>
+                    <button class="preset-btn" data-hours="1">1 giờ</button>
+                </div>
+            </div>
+            
+            <div class="alarm-settings">
+                <h3 class="alarm-title"><i class="fas fa-bell"></i> Cài đặt báo thức</h3>
+                <div class="alarm-options">
+                    <div class="alarm-option">
+                        <input type="radio" id="sound1" name="alarmSound" value="bell" checked>
+                        <label for="sound1">Chuông báo thức</label>
+                    </div>
+                    <div class="alarm-option">
+                        <input type="radio" id="sound2" name="alarmSound" value="beep">
+                        <label for="sound2">Tiếng bíp</label>
+                    </div>
+                    <div class="alarm-option">
+                        <input type="radio" id="sound3" name="alarmSound" value="digital">
+                        <label for="sound3">Âm thanh kỹ thuật số</label>
+                    </div>
+                </div>
+                <div class="volume-control">
+                    <label for="volume">Âm lượng:</label>
+                    <input type="range" id="volume" min="0" max="100" value="70">
+                    <span id="volumeValue">70%</span>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Đồng hồ đếm ngược online © 2023 - Hoàn thành công việc đúng hẹn!</p>
+        </footer>
+    </div>
+    
+    <audio id="alarmSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Các biến toàn cục
+        let countdown;
+        let totalSeconds = 0;
+        let isRunning = false;
+        let isPaused = false;
+        let remainingTime = 0;
+        
+        // Các phần tử DOM
+        const timerDisplay = document.getElementById('timerDisplay');
+        const hoursInput = document.getElementById('hours');
+        const minutesInput = document.getElementById('minutes');
+        const secondsInput = document.getElementById('seconds');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const completedMessage = document.getElementById('completedMessage');
+        const presetButtons = document.querySelectorAll('.preset-btn');
+        const alarmSound = document.getElementById('alarmSound');
+        const volumeControl = document.getElementById('volume');
+        const volumeValue = document.getElementById('volumeValue');
+        const alarmOptions = document.querySelectorAll('input[name="alarmSound"]');
+        
+        // Khởi tạo đồng hồ
+        function initTimer() {
+            updateDisplay();
+            
+            // Thiết lập sự kiện cho các nút điều khiển
+            startBtn.addEventListener('click', startTimer);
+            pauseBtn.addEventListener('click', pauseTimer);
+            resetBtn.addEventListener('click', resetTimer);
+            stopBtn.addEventListener('click', stopTimer);
+            
+            // Thiết lập sự kiện cho các nút thời gian định sẵn
+            presetButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const minutes = this.getAttribute('data-minutes');
+                    const hours = this.getAttribute('data-hours');
+                    
+                    if (minutes) {
+                        hoursInput.value = 0;
+                        minutesInput.value = parseInt(minutes);
+                        secondsInput.value = 0;
+                    } else if (hours) {
+                        hoursInput.value = parseInt(hours);
+                        minutesInput.value = 0;
+                        secondsInput.value = 0;
+                    }
+                    
+                    calculateTotalSeconds();
+                    updateDisplay();
+                    
+                    // Dừng đồng hồ hiện tại nếu đang chạy
+                    if (isRunning) {
+                        stopTimer();
+                    }
+                });
+            });
+            
+            // Thiết lập sự kiện cho các ô nhập thời gian
+            hoursInput.addEventListener('change', calculateTotalSeconds);
+            minutesInput.addEventListener('change', calculateTotalSeconds);
+            secondsInput.addEventListener('change', calculateTotalSeconds);
+            
+            // Thiết lập sự kiện cho điều khiển âm lượng
+            volumeControl.addEventListener('input', function() {
+                volumeValue.textContent = this.value + '%';
+                alarmSound.volume = this.value / 100;
+            });
+            
+            // Thiết lập sự kiện cho các tùy chọn âm thanh báo thức
+            alarmOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    if (this.checked) {
+                        const soundType = this.value;
+                        changeAlarmSound(soundType);
+                    }
+                });
+            });
+            
+            // Tính tổng số giây ban đầu
+            calculateTotalSeconds();
+        }
+        
+        // Tính tổng số giây từ các ô nhập
+        function calculateTotalSeconds() {
+            const hours = parseInt(hoursInput.value) || 0;
+            const minutes = parseInt(minutesInput.value) || 0;
+            const seconds = parseInt(secondsInput.value) || 0;
+            
+            totalSeconds = hours * 3600 + minutes * 60 + seconds;
+            
+            // Đảm bảo các giá trị nằm trong phạm vi hợp lệ
+            if (hours > 99) hoursInput.value = 99;
+            if (minutes > 59) minutesInput.value = 59;
+            if (seconds > 59) secondsInput.value = 59;
+            
+            return totalSeconds;
+        }
+        
+        // Cập nhật hiển thị đồng hồ
+        function updateDisplay() {
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            
+            timerDisplay.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Bắt đầu đếm ngược
+        function startTimer() {
+            if (isRunning) return;
+            
+            // Nếu đang tạm dừng, tiếp tục với thời gian còn lại
+            if (isPaused) {
+                isPaused = false;
+                pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Tạm dừng';
+                startBtn.disabled = true;
+                pauseBtn.disabled = false;
+                
+                countdown = setInterval(() => {
+                    remainingTime--;
+                    
+                    if (remainingTime <= 0) {
+                        completeTimer();
+                    } else {
+                        totalSeconds = remainingTime;
+                        updateDisplay();
+                    }
+                }, 1000);
+                
+                return;
+            }
+            
+            // Tính tổng số giây từ các ô nhập
+            calculateTotalSeconds();
+            
+            if (totalSeconds <= 0) {
+                alert('Vui lòng đặt thời gian lớn hơn 0');
+                return;
+            }
+            
+            isRunning = true;
+            remainingTime = totalSeconds;
+            
+            // Cập nhật trạng thái nút
+            startBtn.disabled = true;
+            pauseBtn.disabled = false;
+            resetBtn.disabled = false;
+            stopBtn.disabled = false;
+            
+            // Vô hiệu hóa các ô nhập
+            hoursInput.disabled = true;
+            minutesInput.disabled = true;
+            secondsInput.disabled = true;
+            
+            // Ẩn thông báo hoàn thành nếu có
+            completedMessage.style.display = 'none';
+            
+            // Bắt đầu đếm ngược
+            countdown = setInterval(() => {
+                remainingTime--;
+                
+                if (remainingTime <= 0) {
+                    completeTimer();
+                } else {
+                    totalSeconds = remainingTime;
+                    updateDisplay();
+                }
+            }, 1000);
+        }
+        
+        // Tạm dừng đếm ngược
+        function pauseTimer() {
+            if (!isRunning) return;
+            
+            if (!isPaused) {
+                clearInterval(countdown);
+                isPaused = true;
+                pauseBtn.innerHTML = '<i class="fas fa-play"></i> Tiếp tục';
+            } else {
+                startTimer();
+            }
+        }
+        
+        // Đặt lại đồng hồ về thời gian ban đầu
+        function resetTimer() {
+            if (!isRunning && !isPaused) return;
+            
+            clearInterval(countdown);
+            isRunning = false;
+            isPaused = false;
+            
+            // Khôi phục thời gian ban đầu từ các ô nhập
+            calculateTotalSeconds();
+            updateDisplay();
+            
+            // Cập nhật trạng thái nút
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            resetBtn.disabled = true;
+            stopBtn.disabled = true;
+            pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Tạm dừng';
+            
+            // Kích hoạt lại các ô nhập
+            hoursInput.disabled = false;
+            minutesInput.disabled = false;
+            secondsInput.disabled = false;
+            
+            // Ẩn thông báo hoàn thành
+            completedMessage.style.display = 'none';
+        }
+        
+        // Dừng hoàn toàn đồng hồ
+        function stopTimer() {
+            if (!isRunning && !isPaused) return;
+            
+            clearInterval(countdown);
+            isRunning = false;
+            isPaused = false;
+            
+            // Đặt thời gian về 0
+            totalSeconds = 0;
+            updateDisplay();
+            
+            // Cập nhật trạng thái nút
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            resetBtn.disabled = true;
+            stopBtn.disabled = true;
+            pauseBtn.innerHTML = '<i class="fas fa-pause"></i> Tạm dừng';
+            
+            // Kích hoạt lại các ô nhập
+            hoursInput.disabled = false;
+            minutesInput.disabled = false;
+            secondsInput.disabled = false;
+            
+            // Ẩn thông báo hoàn thành
+            completedMessage.style.display = 'none';
+        }
+        
+        // Hoàn thành đếm ngược
+        function completeTimer() {
+            clearInterval(countdown);
+            isRunning = false;
+            isPaused = false;
+            
+            // Hiển thị thông báo hoàn thành
+            completedMessage.style.display = 'block';
+            
+            // Phát âm thanh báo thức
+            playAlarm();
+            
+            // Cập nhật trạng thái nút
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            resetBtn.disabled = true;
+            stopBtn.disabled = true;
+            
+            // Kích hoạt lại các ô nhập
+            hoursInput.disabled = false;
+            minutesInput.disabled = false;
+            secondsInput.disabled = false;
+        }
+        
+        // Phát âm thanh báo thức
+        function playAlarm() {
+            // Phát âm thanh
+            alarmSound.currentTime = 0;
+            alarmSound.play();
+            
+            // Dừng âm thanh sau 5 giây
+            setTimeout(() => {
+                alarmSound.pause();
+            }, 5000);
+        }
+        
+        // Thay đổi âm thanh báo thức
+        function changeAlarmSound(soundType) {
+            let soundSource = '';
+            
+            switch(soundType) {
+                case 'bell':
+                    soundSource = 'https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3';
+                    break;
+                case 'beep':
+                    soundSource = 'https://assets.mixkit.co/sfx/preview/mixkit-retro-game-emergency-alarm-1000.mp3';
+                    break;
+                case 'digital':
+                    soundSource = 'https://assets.mixkit.co/sfx/preview/mixkit-digital-clock-digital-alarm-buzzer-992.mp3';
+                    break;
+                default:
+                    soundSource = 'https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3';
+            }
+            
+            // Thay đổi nguồn âm thanh
+            alarmSound.src = soundSource;
+        }
+        
+        // Khởi tạo đồng hồ khi trang được tải
+        document.addEventListener('DOMContentLoaded', initTimer);
+    </script>
+</body>
+</html>
