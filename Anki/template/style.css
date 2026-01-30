@@ -1,0 +1,242 @@
+:root{
+  --bg:#f6f7fb; --card:#ffffff; --text:#111827; --muted:#6b7280;
+  --border:rgba(17,24,39,.10); --shadow:0 10px 30px rgba(0,0,0,.08);
+  --primary:#2563eb; --primary2:#7c3aed;
+  --good:#16a34a; --bad:#ef4444; --warn:#f59e0b;
+}
+
+/* Night variables */
+.nightMode, .night_mode, .night-mode{
+  --bg:#0b1220; --card:#0f172a; --text:#e5e7eb; --muted:#94a3b8;
+  --border:rgba(226,232,240,.14); --shadow:0 14px 40px rgba(0,0,0,.40);
+  --primary:#60a5fa; --primary2:#a78bfa;
+  --good:#22c55e; --bad:#fb7185; --warn:#fbbf24;
+}
+
+/* ===== FIX NIGHT WHITE (Anki/AnkiDroid wrapper) =====
+   - Một số nền trắng đến từ .card / body background mặc định của app
+   - Ép nền toàn trang + wrapper về var(--bg) khi night mode
+*/
+html,body{background:var(--bg) !important; color:var(--text); margin:0; padding:0;}
+.card, .card *{ box-sizing:border-box; }
+
+/* Anki thường bọc nội dung trong .card và/hoặc #qa */
+.card, #qa{
+  background:var(--bg) !important;
+  color:var(--text) !important;
+}
+
+/* Nếu AnkiDroid có layer/phủ nền khác */
+.nightMode body, .night_mode body, .night-mode body,
+.nightMode html, .night_mode html, .night-mode html{
+  background:var(--bg) !important;
+}
+
+/* Nếu có pseudo-element tạo mảng trắng */
+.nightMode .card::before, .night_mode .card::before, .night-mode .card::before,
+.nightMode .card::after,  .night_mode .card::after,  .night-mode .card::after{
+  background:transparent !important;
+}
+
+#qa{padding:14px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif;}
+
+.qz-wrap{max-width:860px; margin:0 auto;}
+.qz-stage{perspective:1200px;}
+.qz-flip{
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .58s cubic-bezier(.2,.8,.2,1);
+  will-change:transform;
+}
+.qz-stage.flipped .qz-flip{ transform:rotateY(180deg); }
+
+.qz-face{ position:relative; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+.qz-face.back{ position:absolute; inset:0; transform:rotateY(180deg); }
+
+.qz-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.qz-topbar{
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px; padding:12px 14px; border-bottom:1px solid var(--border);
+}
+.qz-badges{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+.badge{
+  font-size:12px; line-height:1;
+  padding:7px 10px; border-radius:999px;
+  border:1px solid var(--border); color:var(--muted);
+}
+.badge.primary{border-color:rgba(37,99,235,.35); color:var(--primary); background:rgba(37,99,235,.08);}
+.badge.purple{border-color:rgba(124,58,237,.35); color:var(--primary2); background:rgba(124,58,237,.10);}
+.qz-hint{font-size:12px; color:var(--muted); user-select:none;}
+
+.qz-body{padding:16px 16px 18px;}
+.term{font-size:34px; font-weight:850; line-height:1.12; margin:2px 0 8px; word-break:break-word;}
+.meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px;}
+.ipa{font-size:16px; color:var(--muted); font-weight:650;}
+.pos{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); color:var(--muted);}
+
+.divider{height:1px; background:var(--border); margin:14px 0;}
+.block-title{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 8px;}
+.def{font-size:22px; font-weight:850; line-height:1.25; margin:0;}
+.context{font-size:15px; line-height:1.55;}
+.note{font-size:14px; line-height:1.55; color:var(--muted); border-left:3px solid rgba(37,99,235,.45); padding-left:10px; margin:10px 0 0;}
+a{color:var(--primary); text-decoration:none;} a:hover{text-decoration:underline;}
+
+.img-row{display:flex; gap:10px; flex-wrap:wrap;justify-content: center;   margin-top:10px;align-items:center;}
+.img-row img{max-width:100%; height:auto; border-radius:14px; border:1px solid var(--border);}
+
+.qz-tap{
+  display:flex; justify-content:center; align-items:center; gap:8px;
+  padding:10px 14px; border-top:1px solid var(--border);
+  color:var(--muted); font-size:13px; user-select:none;
+}
+
+/* Type Answer */
+#typeans{
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(37,99,235,.06);
+  font-size:16px; line-height:1.5;
+  word-break:break-word;
+}
+
+/* ===== FIX NIGHT WHITE (input + typeans area) =====
+   - một số máy/AnkiDroid force nền input trắng, nên ép background theo var(--card)
+*/
+input[type="text"], input[type="search"], .typeans input{
+  width:100%; box-sizing:border-box;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--card) !important;
+  color:var(--text) !important;
+  font-size:18px;
+  outline:none;
+}
+input[type="text"]:focus, input[type="search"]:focus, .typeans input:focus{
+  border-color:rgba(37,99,235,.55);
+  box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* Với một số theme, input bị “auto-fill” hoặc nền trắng cứng */
+.nightMode input, .night_mode input, .night-mode input{
+  background:var(--card) !important;
+  color:var(--text) !important;
+  caret-color:var(--text) !important;
+}
+
+.typeGood{color:var(--good); font-weight:900;}
+.typeBad{color:var(--bad); font-weight:900;}
+.typeMissed{color:var(--warn); font-weight:900;}
+
+/* Hide/Highlight vocab in examples */
+.blank{
+  display:inline-block;
+  min-width:48px;
+  padding:2px 6px;
+  border-bottom:2px solid var(--border);
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.highlight-answer{
+  background:rgba(34,197,94,.18);
+  color:var(--good);
+  font-weight:900;
+  padding:0 4px;
+  border-radius:6px;
+}
+
+/* Mobile */
+@media (max-width:480px){
+  #qa{padding:10px;}
+  .term{font-size:28px;}
+  .def{font-size:20px;}
+  .qz-body{padding:14px;}
+}
+
+input::placeholder{
+  color: var(--muted);
+  opacity: .9;
+  letter-spacing: .14em;
+}
+
+/* HARD FORCE for AnkiDroid/Anki night mode */
+body.nightMode, body.night_mode, body.night-mode,
+html.nightMode, html.night_mode, html.night-mode,
+.nightMode #qa, .night_mode #qa, .night-mode #qa,
+.nightMode .card, .night_mode .card, .night-mode .card{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+/* ===== FORCE DARK BACKGROUND FOR ANKIDROID REVIEW ===== */
+
+/* WebView nền ngoài card */
+html, body {
+  background: var(--bg) !important;
+}
+
+/* Container review của AnkiDroid */
+#qa, 
+#review,
+#content,
+#content-wrapper,
+.reviewer,
+.reviewer-content,
+.reviewer-card,
+.card,
+.card-content {
+  background: var(--bg) !important;
+}
+
+/* Chặn nền trắng do table/div mặc định */
+table, tr, td {
+  background: transparent !important;
+}
+
+/* Fix khoảng trắng dưới card */
+body::after {
+  content: "";
+  display: block;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ===== FIX WHITE STRIP (works because it targets html directly) ===== */
+
+/* Mặc định DAY */
+html{
+  background: var(--bg) !important;   /* day: #f6f7fb */
+}
+
+/* Nếu night mode được gắn ở bất kỳ ancestor nào, ép html dùng nền tối */
+.nightMode html, .night_mode html, .night-mode html,
+html.nightMode, html.night_mode, html.night-mode,
+body.nightMode html, body.night_mode html, body.night-mode html,
+#qa.nightMode ~ html, #qa.night_mode ~ html, #qa.night-mode ~ html{
+  background: #0b1220 !important;
+}
+
+/* Phòng khi AnkiDroid set trắng ở body */
+body{
+  background: transparent !important;
+}
+
+/* WebView root */
+#qa{
+  background: transparent !important;
+}
+
+@media (prefers-color-scheme: dark){
+  html{ background:#0b1220 !important; }
+}
+@media (prefers-color-scheme: light){
+  html{ background:#f6f7fb !important; }
+}
