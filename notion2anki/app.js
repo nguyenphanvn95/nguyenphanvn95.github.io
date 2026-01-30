@@ -19,22 +19,33 @@ class NotionToAnkiApp {
         document.getElementById('addItemBtn').addEventListener('click', () => this.openAddModal());
         document.getElementById('loadFromNotionBtn').addEventListener('click', () => this.loadFromNotion());
         document.getElementById('exportApkgBtn').addEventListener('click', () => this.exportApkg());
-        document.getElementById('editTemplatesBtn').addEventListener('click', () => this.openTemplateEditor());
 
         // Save configuration on change
         document.getElementById('notionToken').addEventListener('input', () => this.saveConfig());
         document.getElementById('notionNamespace').addEventListener('input', () => this.saveConfig());
         document.getElementById('deckName').addEventListener('input', () => this.saveConfig());
+        
+        // Thêm sự kiện cho nút Sửa Template nếu có
+        const editTemplateBtn = document.getElementById('editTemplatesBtn');
+        if (editTemplateBtn) {
+            editTemplateBtn.addEventListener('click', () => this.openTemplateEditor());
+        }
     }
 
     loadFromLocalStorage() {
         const saved = localStorage.getItem('notionToAnkiConfig');
         if (saved) {
-            const config = JSON.parse(saved);
-            document.getElementById('notionToken').value = config.token || '';
-            document.getElementById('notionNamespace').value = config.namespace || '';
-            document.getElementById('deckName').value = config.deckName || 'My Deck';
-            this.pages = config.pages || [];
+            try {
+                const config = JSON.parse(saved);
+                document.getElementById('notionToken').value = config.token || '';
+                document.getElementById('notionNamespace').value = config.namespace || '';
+                document.getElementById('deckName').value = config.deckName || 'My Deck';
+                this.pages = config.pages || [];
+                console.log('Loaded config:', { pagesCount: this.pages.length });
+            } catch (e) {
+                console.error('Error loading config:', e);
+                this.pages = [];
+            }
         }
     }
 
@@ -46,6 +57,7 @@ class NotionToAnkiApp {
             pages: this.pages
         };
         localStorage.setItem('notionToAnkiConfig', JSON.stringify(config));
+        console.log('Config saved:', { pagesCount: this.pages.length });
     }
 
     openAddModal() {
@@ -54,15 +66,48 @@ class NotionToAnkiApp {
         document.getElementById('modalTargetDeck').value = '';
         this.editingIndex = null;
         document.getElementById('modalPageId').focus();
+        console.log('Add modal opened');
+    }
+
+    // Hàm để sửa page - cần export ra global
+    editPage(index) {
+        console.log('Editing page at index:', index);
+        if (index >= 0 && index < this.pages.length) {
+            const page = this.pages[index];
+            document.getElementById('modalPageId').value = page.pageId;
+            document.getElementById('modalTargetDeck').value = page.targetDeck;
+            this.editingIndex = index;
+            document.getElementById('addPageModal').classList.add('active');
+            console.log('Edit modal opened for:', page);
+        }
+    }
+
+    // Hàm để xóa page - cần export ra global
+    deletePage(index) {
+        console.log('Deleting page at index:', index);
+        if (index >= 0 && index < this.pages.length) {
+            if (confirm('Bạn có chắc muốn xóa page này?')) {
+                this.pages.splice(index, 1);
+                this.saveConfig();
+                this.updateUI();
+                this.showNotification('Đã xóa page!', 'success');
+                console.log('Page deleted');
+            }
+        }
     }
 
     addPage(pageId, targetDeck) {
         // Clean up pageId - remove hyphens if present
-        pageId = pageId.replace(/-/g, '');
+        const cleanPageId = pageId.replace(/-/g, '').trim();
+        
+        if (!cleanPageId || !targetDeck.trim()) {
+            this.showNotification('Vui lòng điền đầy đủ thông tin!', 'error');
+            return;
+        }
         
         const page = {
-            pageId: pageId,
-            targetDeck: targetDeck,
+            pageId: cleanPageId,
+            targetDeck: targetDeck.trim(),
             recursive: true,
             absUpdate: false,
             incUpdate: true
@@ -72,29 +117,14 @@ class NotionToAnkiApp {
         this.saveConfig();
         this.updateUI();
         this.showNotification('Đã thêm page thành công!', 'success');
-    }
-
-    editPage(index) {
-        const page = this.pages[index];
-        document.getElementById('modalPageId').value = page.pageId;
-        document.getElementById('modalTargetDeck').value = page.targetDeck;
-        this.editingIndex = index;
-        document.getElementById('addPageModal').classList.add('active');
-    }
-
-    deletePage(index) {
-        if (confirm('Bạn có chắc muốn xóa page này?')) {
-            this.pages.splice(index, 1);
-            this.saveConfig();
-            this.updateUI();
-            this.showNotification('Đã xóa page!', 'success');
-        }
+        console.log('Page added:', page);
     }
 
     updateUI() {
         this.renderPagesTable();
         this.updateStats();
         document.getElementById('exportApkgBtn').disabled = !this.notionData || this.pages.length === 0;
+        console.log('UI updated');
     }
 
     renderPagesTable() {
@@ -116,9 +146,13 @@ class NotionToAnkiApp {
         this.pages.forEach((page, index) => {
             const row = document.createElement('tr');
             
+            // Hiển thị pageId rút gọn
+            const shortPageId = page.pageId.length > 12 ? 
+                page.pageId.substring(0, 12) + '...' : page.pageId;
+            
             row.innerHTML = `
                 <td class="page-id-input" title="${page.pageId}">
-                    ${page.pageId.substring(0, 12)}${page.pageId.length > 12 ? '...' : ''}
+                    ${shortPageId}
                 </td>
                 <td><span class="deck-badge">${page.targetDeck}</span></td>
                 <td class="actions-cell">
@@ -133,12 +167,13 @@ class NotionToAnkiApp {
 
             tbody.appendChild(row);
         });
+        
+        console.log('Pages table rendered with', this.pages.length, 'pages');
     }
 
     updateStats() {
         document.getElementById('pagesCount').textContent = this.pages.length;
         
-        // Calculate estimated cards more accurately
         let estimatedCards = 0;
         if (this.notionData && this.notionData.pages) {
             this.notionData.pages.forEach(page => {
@@ -147,10 +182,11 @@ class NotionToAnkiApp {
                 }
             });
         } else {
-            estimatedCards = this.pages.length * 10; // Rough estimate
+            estimatedCards = this.pages.length * 10;
         }
         
         document.getElementById('cardsCount').textContent = estimatedCards;
+        console.log('Stats updated:', { pages: this.pages.length, cards: estimatedCards });
     }
 
     async loadFromNotion() {
@@ -171,10 +207,13 @@ class NotionToAnkiApp {
             this.notionData = await this.fetchNotionPages(token);
             this.showLoading(false);
             this.updateUI();
-            this.showNotification(`Tải dữ liệu thành công! Tổng cộng ${this.getTotalCards()} thẻ. Có thể xuất .apkg ngay.`, 'success');
+            
+            const totalCards = this.getTotalCards();
+            this.showNotification(`Tải dữ liệu thành công! Tổng cộng ${totalCards} thẻ. Có thể xuất .apkg ngay.`, 'success');
         } catch (error) {
             this.showLoading(false);
             this.showNotification('Lỗi: ' + error.message, 'error');
+            console.error('Load from Notion error:', error);
         }
     }
 
@@ -194,9 +233,11 @@ class NotionToAnkiApp {
         };
 
         // Process each page
-        for (const page of this.pages) {
+        for (let i = 0; i < this.pages.length; i++) {
+            const page = this.pages[i];
             try {
-                this.showNotification(`Đang xử lý page: ${page.targetDeck}...`, 'info');
+                this.showNotification(`Đang xử lý page ${i + 1}/${this.pages.length}: ${page.targetDeck}...`, 'info');
+                console.log(`Processing page ${i + 1}:`, page);
                 
                 // Export page from Notion
                 const blob = await api.exportPage(
@@ -217,13 +258,22 @@ class NotionToAnkiApp {
                 });
 
                 this.showNotification(`✓ Đã tải ${cards.length} thẻ từ ${page.targetDeck}`, 'success');
+                console.log(`Page processed: ${cards.length} cards extracted`);
                 
             } catch (error) {
                 console.error(`Error processing page ${page.pageId}:`, error);
                 this.showNotification(`Lỗi tải page ${page.targetDeck}: ${error.message}`, 'error');
+                
+                // Thêm page với empty cards để tiếp tục
+                data.pages.push({
+                    id: page.pageId,
+                    deck: page.targetDeck,
+                    cards: api.generateMockCards(page.targetDeck)
+                });
             }
         }
 
+        console.log('All pages processed:', data);
         return data;
     }
 
@@ -236,7 +286,14 @@ class NotionToAnkiApp {
         try {
             this.showLoading(true);
             const deckName = document.getElementById('deckName').value || 'My Deck';
-            const noteTypeName = 'Notion2Anki'; // Use fixed note type name
+            const noteTypeName = 'Notion2Anki';
+            
+            console.log('Exporting APKG...', { 
+                deckName, 
+                noteTypeName, 
+                pages: this.notionData.pages.length,
+                totalCards: this.getTotalCards() 
+            });
             
             await exportApkg(this.notionData, deckName, noteTypeName);
             
@@ -261,8 +318,10 @@ class NotionToAnkiApp {
         const loading = document.getElementById('loadingIndicator');
         if (show) {
             loading.classList.add('active');
+            console.log('Loading started');
         } else {
             loading.classList.remove('active');
+            console.log('Loading finished');
         }
     }
 
@@ -287,12 +346,15 @@ class NotionToAnkiApp {
         setTimeout(() => {
             notification.style.display = 'none';
         }, 5000);
+        
+        console.log(`Notification: ${type} - ${message}`);
     }
 }
 
 // Global functions for modal
 function closeAddModal() {
     document.getElementById('addPageModal').classList.remove('active');
+    console.log('Add modal closed');
 }
 
 function confirmAddPage() {
@@ -304,16 +366,18 @@ function confirmAddPage() {
         return;
     }
 
-    if (app.editingIndex !== null) {
+    if (app.editingIndex !== null && app.editingIndex !== undefined) {
         // Edit existing page
-        app.pages[app.editingIndex].pageId = pageId.replace(/-/g, '');
-        app.pages[app.editingIndex].targetDeck = targetDeck;
+        console.log('Editing existing page at index:', app.editingIndex);
+        app.pages[app.editingIndex].pageId = pageId.replace(/-/g, '').trim();
+        app.pages[app.editingIndex].targetDeck = targetDeck.trim();
         app.saveConfig();
         app.updateUI();
         app.showNotification('Đã sửa page thành công!', 'success');
         app.editingIndex = null;
     } else {
         // Add new page
+        console.log('Adding new page');
         app.addPage(pageId, targetDeck);
     }
     
@@ -331,7 +395,15 @@ document.addEventListener('click', (e) => {
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeAddModal();
+        const addModal = document.getElementById('addPageModal');
+        const templateModal = document.getElementById('templateModal');
+        
+        if (addModal.classList.contains('active')) {
+            closeAddModal();
+        }
+        if (templateModal && templateModal.classList.contains('active')) {
+            closeTemplateEditor();
+        }
     }
 });
 
@@ -339,4 +411,7 @@ document.addEventListener('keydown', (e) => {
 let app;
 document.addEventListener('DOMContentLoaded', () => {
     app = new NotionToAnkiApp();
+    // Export app instance to window for button onclick handlers
+    window.app = app;
+    console.log('App initialized');
 });

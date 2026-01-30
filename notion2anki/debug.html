@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Notion to Anki</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { margin: 5px; padding: 10px; }
+        #log { background: #f0f0f0; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Debug Page</h1>
+    
+    <div>
+        <input type="text" id="pageId" placeholder="Page ID">
+        <input type="text" id="deckName" placeholder="Deck Name">
+        <button onclick="addPage()">Add Page</button>
+        <button onclick="showPages()">Show Pages</button>
+        <button onclick="clearPages()">Clear Pages</button>
+    </div>
+    
+    <div id="log"></div>
+    
+    <script>
+        function log(msg) {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML += `<div>${new Date().toLocaleTimeString()}: ${msg}</div>`;
+        }
+        
+        function getPages() {
+            const saved = localStorage.getItem('notionToAnkiConfig');
+            return saved ? JSON.parse(saved).pages || [] : [];
+        }
+        
+        function savePages(pages) {
+            const config = JSON.parse(localStorage.getItem('notionToAnkiConfig') || '{}');
+            config.pages = pages;
+            localStorage.setItem('notionToAnkiConfig', JSON.stringify(config));
+        }
+        
+        function addPage() {
+            const pageId = document.getElementById('pageId').value.trim();
+            const deckName = document.getElementById('deckName').value.trim();
+            
+            if (!pageId || !deckName) {
+                alert('Please enter both Page ID and Deck Name');
+                return;
+            }
+            
+            const pages = getPages();
+            pages.push({
+                pageId: pageId.replace(/-/g, ''),
+                targetDeck: deckName,
+                recursive: true,
+                absUpdate: false,
+                incUpdate: true
+            });
+            
+            savePages(pages);
+            log(`Page added: ${pageId} -> ${deckName}`);
+            document.getElementById('pageId').value = '';
+            document.getElementById('deckName').value = '';
+        }
+        
+        function showPages() {
+            const pages = getPages();
+            log(`Total pages: ${pages.length}`);
+            pages.forEach((page, i) => {
+                log(`${i}: ${page.pageId} -> ${page.targetDeck}`);
+            });
+        }
+        
+        function clearPages() {
+            if (confirm('Clear all pages?')) {
+                savePages([]);
+                log('All pages cleared');
+            }
+        }
+        
+        log('Debug page loaded');
+    </script>
+</body>
+</html>
