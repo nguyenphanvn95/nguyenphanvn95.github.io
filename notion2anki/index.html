@@ -618,6 +618,46 @@
         .mono {
             font-family: 'Monaco', 'Consolas', monospace;
         }
+/* Style cho action buttons trong bảng */
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin: 0 2px;
+}
+
+.action-btn-edit {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.action-btn-edit:hover {
+    background: #bbdefb;
+    transform: scale(1.1);
+}
+
+.action-btn-delete {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.action-btn-delete:hover {
+    background: #ffcdd2;
+    transform: scale(1.1);
+}
+
+.actions-cell {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
     </style>
 </head>
 <body>
@@ -745,45 +785,47 @@
         </div>
     </div>
 
-    <!-- Add Page Modal -->
-    <div id="addPageModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-plus-circle"></i> Thêm/Sửa Page</h3>
-                <button class="close-btn" onclick="closeAddModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+    <!-- Cập nhật phần modal trong index.html -->
+<!-- Add Page Modal -->
+<div id="addPageModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-plus-circle"></i> Thêm/Sửa Page</h3>
+            <button class="close-btn" onclick="closeAddModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
 
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-hashtag"></i>
-                    Notion PageID
-                </label>
-                <input type="text" id="modalPageId" placeholder="29a39e2b6215..." class="page-id-input">
-                <small style="color: #666; display: block; margin-top: 5px;">
-                    Lấy từ URL: notion.so/workspace/<strong>29a39e2b6215...</strong>
-                </small>
-            </div>
+        <div class="form-group">
+            <label>
+                <i class="fas fa-hashtag"></i>
+                Notion PageID
+            </label>
+            <input type="text" id="modalPageId" placeholder="29a39e2b6215..." class="page-id-input">
+            <small style="color: #666; display: block; margin-top: 5px;">
+                Lấy từ URL: notion.so/workspace/<strong>29a39e2b6215...</strong>
+            </small>
+        </div>
 
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-folder"></i>
-                    Target Deck
-                </label>
-                <input type="text" id="modalTargetDeck" placeholder="A1, A2, B1...">
-            </div>
+        <div class="form-group">
+            <label>
+                <i class="fas fa-folder"></i>
+                Target Deck
+            </label>
+            <input type="text" id="modalTargetDeck" placeholder="A1, A2, B1...">
+        </div>
 
-            <div class="actions">
-                <button class="btn btn-secondary" onclick="closeAddModal()">
-                    <i class="fas fa-times"></i> Hủy
-                </button>
-                <button class="btn btn-success" onclick="confirmAddPage()">
-                    <i class="fas fa-check"></i> Lưu
-                </button>
-            </div>
+        <div class="actions">
+            <button class="btn btn-secondary" onclick="closeAddModal()">
+                <i class="fas fa-times"></i> Hủy
+            </button>
+            <!-- Thay đổi: gọi confirmAddPage() thay vì onclick inline -->
+            <button class="btn btn-success" id="savePageBtn">
+                <i class="fas fa-check"></i> Lưu
+            </button>
         </div>
     </div>
+</div>
 
     <!-- Template Editor Modal -->
     <div id="templateModal" class="template-modal">

@@ -30,39 +30,61 @@ class TemplateEditor {
 
     bindEvents() {
         // Card management
-        document.getElementById('addCardBtn')?.addEventListener('click', () => this.addCard());
-        document.getElementById('deleteCardBtn')?.addEventListener('click', () => this.deleteCard());
-        document.getElementById('duplicateCardBtn')?.addEventListener('click', () => this.duplicateCard());
+        const addCardBtn = document.getElementById('addCardBtn');
+        const deleteCardBtn = document.getElementById('deleteCardBtn');
+        const duplicateCardBtn = document.getElementById('duplicateCardBtn');
+        const saveTemplateBtn = document.getElementById('saveTemplateBtn');
+        const resetTemplateBtn = document.getElementById('resetTemplateBtn');
+        const closeTplBtn = document.getElementById('closeTplBtn');
+        const cancelTplBtn = document.getElementById('cancelTplBtn');
         
-        // Save button
-        document.getElementById('saveTemplateBtn')?.addEventListener('click', () => this.saveTemplate());
-        
-        // Reset button
-        document.getElementById('resetTemplateBtn')?.addEventListener('click', () => this.resetTemplate());
+        if (addCardBtn) addCardBtn.addEventListener('click', () => this.addCard());
+        if (deleteCardBtn) deleteCardBtn.addEventListener('click', () => this.deleteCard());
+        if (duplicateCardBtn) duplicateCardBtn.addEventListener('click', () => this.duplicateCard());
+        if (saveTemplateBtn) saveTemplateBtn.addEventListener('click', () => this.saveTemplate());
+        if (resetTemplateBtn) resetTemplateBtn.addEventListener('click', () => this.resetTemplate());
+        if (closeTplBtn) closeTplBtn.addEventListener('click', () => this.closeModal());
+        if (cancelTplBtn) cancelTplBtn.addEventListener('click', () => this.closeModal());
         
         // Card list selection
-        document.getElementById('cardList')?.addEventListener('change', (e) => {
-            this.currentCardIndex = parseInt(e.target.value);
-            this.loadCurrentCard();
-        });
+        const cardList = document.getElementById('cardList');
+        if (cardList) {
+            cardList.addEventListener('change', (e) => {
+                this.currentCardIndex = parseInt(e.target.value);
+                this.loadCurrentCard();
+            });
+        }
         
         // Input changes
-        document.getElementById('cardNameInput')?.addEventListener('input', (e) => {
-            this.model.cards[this.currentCardIndex].name = e.target.value;
-            this.renderCardList();
-        });
+        const cardNameInput = document.getElementById('cardNameInput');
+        const frontTemplate = document.getElementById('frontTemplate');
+        const backTemplate = document.getElementById('backTemplate');
+        const globalCss = document.getElementById('globalCss');
         
-        document.getElementById('frontTemplate')?.addEventListener('input', (e) => {
-            this.model.cards[this.currentCardIndex].front = e.target.value;
-        });
+        if (cardNameInput) {
+            cardNameInput.addEventListener('input', (e) => {
+                this.model.cards[this.currentCardIndex].name = e.target.value;
+                this.renderCardList();
+            });
+        }
         
-        document.getElementById('backTemplate')?.addEventListener('input', (e) => {
-            this.model.cards[this.currentCardIndex].back = e.target.value;
-        });
+        if (frontTemplate) {
+            frontTemplate.addEventListener('input', (e) => {
+                this.model.cards[this.currentCardIndex].front = e.target.value;
+            });
+        }
         
-        document.getElementById('globalCss')?.addEventListener('input', (e) => {
-            this.model.globalCss = e.target.value;
-        });
+        if (backTemplate) {
+            backTemplate.addEventListener('input', (e) => {
+                this.model.cards[this.currentCardIndex].back = e.target.value;
+            });
+        }
+        
+        if (globalCss) {
+            globalCss.addEventListener('input', (e) => {
+                this.model.globalCss = e.target.value;
+            });
+        }
     }
 
     renderCardList() {
@@ -84,10 +106,15 @@ class TemplateEditor {
         const card = this.model.cards[this.currentCardIndex];
         if (!card) return;
         
-        document.getElementById('cardNameInput').value = card.name || '';
-        document.getElementById('frontTemplate').value = card.front || '';
-        document.getElementById('backTemplate').value = card.back || '';
-        document.getElementById('globalCss').value = this.model.globalCss || '';
+        const cardNameInput = document.getElementById('cardNameInput');
+        const frontTemplate = document.getElementById('frontTemplate');
+        const backTemplate = document.getElementById('backTemplate');
+        const globalCss = document.getElementById('globalCss');
+        
+        if (cardNameInput) cardNameInput.value = card.name || '';
+        if (frontTemplate) frontTemplate.value = card.front || '';
+        if (backTemplate) backTemplate.value = card.back || '';
+        if (globalCss) globalCss.value = this.model.globalCss || '';
     }
 
     addCard() {
@@ -131,7 +158,7 @@ class TemplateEditor {
         this.loadCurrentCard();
     }
 
-    async saveTemplate() {
+    saveTemplate() {
         this.saveModel();
         
         // Show success message
@@ -144,11 +171,7 @@ class TemplateEditor {
             }, 3000);
         }
         
-        // Close modal if open
-        const modal = document.getElementById('templateModal');
-        if (modal) {
-            modal.classList.remove('active');
-        }
+        this.closeModal();
     }
 
     async resetTemplate() {
@@ -179,23 +202,38 @@ class TemplateEditor {
             }
         }
     }
+
+    openModal() {
+        document.getElementById('templateModal').classList.add('active');
+    }
+
+    closeModal() {
+        document.getElementById('templateModal').classList.remove('active');
+    }
 }
 
-// Modal functions
+// Global functions
+let templateEditor;
+
 function openTemplateEditor() {
-    if (!window.templateEditor) {
-        window.templateEditor = new TemplateEditor();
+    if (!templateEditor) {
+        templateEditor = new TemplateEditor();
     }
-    document.getElementById('templateModal').classList.add('active');
+    templateEditor.openModal();
 }
 
 function closeTemplateEditor() {
-    document.getElementById('templateModal').classList.remove('active');
+    if (templateEditor) {
+        templateEditor.closeModal();
+    }
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Add Edit Template button to the page
+    // Initialize template editor
+    templateEditor = new TemplateEditor();
+    
+    // Add Edit Template button to the page if not exists
     const exportCard = document.querySelector('.card:last-child');
     if (exportCard) {
         const editBtn = document.createElement('button');
@@ -215,7 +253,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    
-    // Initialize template editor
-    window.templateEditor = new TemplateEditor();
 });
