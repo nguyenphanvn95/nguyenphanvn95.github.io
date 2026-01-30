@@ -1,0 +1,175 @@
+<div class="qz-wrap">
+  <div class="qz-stage" id="qzStage">
+    <div class="qz-flip">
+
+      <!-- FRONT -->
+      <div class="qz-face front">
+        <div class="qz-card">
+          <div class="qz-topbar">
+            <div class="qz-badges">
+              <span class="badge primary">VOCAB</span>
+            </div>
+            <div class="qz-hint">Tap Anywhere để lật</div>
+          </div>
+
+          <div class="qz-body">
+            <div class="term">{{Vocab}}</div>
+            <div style="display:none;">{{tts en_US voices=Apple_Samantha speed=0.9:Vocab}}</div>
+
+            <div class="meta">
+              {{#IPA}}<div class="ipa">{{IPA}}</div>{{/IPA}}
+              {{#Part of speech}}<div class="pos">{{Part of speech}}</div>{{/Part of speech}}
+            </div>
+
+            {{#Image}}
+            <div class="divider"></div>
+            <div class="block-title">Image</div>
+            <div class="img-row">{{Image}}</div>
+            {{/Image}}
+          </div>
+
+          <div class="qz-tap">👆 Tap Show Answer</div>
+        </div>
+      </div>
+
+      <!-- BACK (hidden, used for 3D flip fallback only) -->
+      <div class="qz-face back">
+        <div class="qz-card">
+          <div class="qz-topbar">
+            <div class="qz-badges">
+              <span class="badge primary">MEANING</span>
+              {{#Part of speech}}<span class="badge">{{Part of speech}}</span>{{/Part of speech}}
+              {{#IPA}}<span class="badge purple">{{IPA}}</span>{{/IPA}}
+            </div>
+            <div class="qz-hint">Answer</div>
+          </div>
+
+          <div class="qz-body">
+            <div class="term">{{Vocab}}</div>
+            <div class="meta">
+              {{#IPA}}<div class="ipa">{{IPA}}</div>{{/IPA}}
+              {{#Part of speech}}<div class="pos">{{Part of speech}}</div>{{/Part of speech}}
+            </div>
+
+            {{#Meanings}}
+            <div class="divider"></div>
+            <div class="block-title">Definition (VI)</div>
+            <p class="def">{{Meanings}}</p>
+            {{/Meanings}}
+
+            {{#Examples}}
+            <div class="divider"></div>
+            <div class="block-title">Examples</div>
+            <div class="context">{{Examples}}</div>
+            {{/Examples}}
+<div style ="display: none;">
+            {{#Definition}}
+            <div class="divider"></div>
+            <div class="block-title">Source</div>
+            <div class="context"><a href="{{Definition}}">{{Definition}}</a></div>
+            {{/Definition}}
+          </div>
+</div>
+         <div class="qz-tap" id="langQuote">🌱 Keep going.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const stage = document.getElementById("qzStage");
+  const front = document.querySelector(".qz-face.front");
+  if(!front) return;
+
+  // reset 3D fallback state
+  if(stage) stage.classList.remove("flipped");
+
+  function shouldIgnore(e){
+    const t = e.target;
+    if(!t) return false;
+    const tag = (t.tagName || "").toLowerCase();
+
+    // tránh tap link / input / nút
+    if(tag === "a" || tag === "button" || tag === "input" || tag === "textarea" || tag === "select") return true;
+
+    // tránh khi đang bôi đen chữ
+    const sel = window.getSelection && window.getSelection();
+    if(sel && (sel.toString() || "").trim().length) return true;
+
+    return false;
+  }
+
+  // === học từ code MCQ của bạn: nhiều cách "mở mặt sau thật" ===
+  function flipToBack(){
+    setTimeout(function(){
+      try {
+        if (typeof pycmd !== "undefined") {
+          pycmd("ans");            // Anki Desktop (reviewer)
+          return;
+        }
+      } catch(_) {}
+
+      try {
+        if (typeof study !== "undefined" && study && typeof study.drawAnswer === "function") {
+          study.drawAnswer();      // một số môi trường legacy
+          return;
+        }
+      } catch(_) {}
+
+      try {
+        // AnkiDroidJS (một số phiên bản có)
+        if (typeof AnkiDroidJS !== "undefined" && typeof showAnswer === "function") {
+          showAnswer();
+          return;
+        }
+      } catch(_) {}
+
+      try {
+        // iOS/bridge kiểu anki tap
+        if (window.anki && typeof window.sendMessage2 === "function") {
+          window.sendMessage2("ankitap", "midCenter");
+          return;
+        }
+      } catch(_) {}
+
+      try {
+        if (typeof py !== "undefined" && py.anki && typeof py.anki.flip_card === "function") {
+          py.anki.flip_card();
+          return;
+        }
+      } catch(_) {}
+
+      // fallback cuối: flip 3D (chỉ là UI)
+      if(stage) stage.classList.add("flipped");
+    }, 50);
+  }
+
+  function handleTap(e){
+    if(shouldIgnore(e)) return;
+    if(e && typeof e.preventDefault === "function") e.preventDefault();
+    if(e && typeof e.stopPropagation === "function") e.stopPropagation();
+    if(e && typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
+    flipToBack();
+    return false;
+  }
+
+  // tap/click bất kỳ chỗ nào trên mặt trước
+  front.addEventListener("click", handleTap, true);
+  front.addEventListener("touchend", handleTap, {passive:false});
+
+  // (tuỳ chọn) phím Enter/Space cũng mở đáp án
+  window.addEventListener("keydown", function(e){
+    const k = e.key || "";
+    if(k === " " || k === "Enter"){
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      flipToBack();
+      return false;
+    }
+  }, true);
+})();
+</script>
