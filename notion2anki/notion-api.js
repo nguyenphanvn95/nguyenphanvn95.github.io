@@ -191,62 +191,247 @@ class NotionAPI {
     }
 
     /**
-     * Extract cards from parsed HTML
+     * Extract cards from parsed HTML - IMPROVED VERSION
      */
     extractCardsFromHTML(doc, deckName) {
         const cards = [];
         
-        // Look for toggle blocks (common pattern in Notion for flashcards)
-        const toggles = doc.querySelectorAll('.toggle');
+        console.log(`Bắt đầu trích xuất cards từ deck: ${deckName}`);
         
-        toggles.forEach(toggle => {
-            const summary = toggle.querySelector('summary');
-            const content = toggle.querySelector('div');
+        // 1. Tìm tất cả các toggle blocks (cải tiến)
+        const toggles = doc.querySelectorAll('.toggle, details, [class*="toggle"], [class*="collapse"]');
+        console.log(`Tìm thấy ${toggles.length} toggle elements`);
+        
+        toggles.forEach((toggle, index) => {
+            let summary, content;
+            
+            if (toggle.tagName === 'DETAILS') {
+                summary = toggle.querySelector('summary');
+                content = toggle;
+            } else if (toggle.classList.contains('toggle')) {
+                summary = toggle.querySelector('.toggle-title, summary, h1, h2, h3, h4, h5, h6, strong, b');
+                content = toggle.querySelector('.toggle-content, div, p');
+                if (!summary) {
+                    // Try to get first child as summary
+                    const firstChild = toggle.firstElementChild;
+                    if (firstChild && firstChild.textContent.trim()) {
+                        summary = { textContent: firstChild.textContent };
+                        content = toggle;
+                    }
+                }
+            }
             
             if (summary && content) {
                 const front = this.cleanText(summary.textContent);
-                const back = this.cleanText(content.textContent);
+                let back = '';
                 
-                if (front && back) {
+                // Get all text content from content element
+                const contentElements = content.querySelectorAll('p, li, div, span');
+                if (contentElements.length > 0) {
+                    back = Array.from(contentElements)
+                        .map(el => this.cleanText(el.textContent))
+                        .filter(text => text.trim())
+                        .join('\n\n');
+                } else {
+                    back = this.cleanText(content.textContent);
+                }
+                
+                if (front && back && front.trim() !== '' && back.trim() !== '') {
                     cards.push({
                         front: front,
                         back: back,
-                        tags: [deckName],
+                        tags: [deckName, 'notion-toggle'],
                         deck: deckName
                     });
                 }
             }
         });
 
-        // Also look for bullet lists (another common pattern)
-        const lists = doc.querySelectorAll('ul > li');
+        // 2. Tìm các cấu trúc danh sách (bullets, numbered lists)
+        const lists = doc.querySelectorAll('ul > li, ol > li');
+        console.log(`Tìm thấy ${lists.length} list items`);
         
         lists.forEach(li => {
-            const text = li.textContent;
-            // Pattern: "Question :: Answer"
-            if (text.includes('::')) {
-                const [front, back] = text.split('::').map(s => s.trim());
-                if (front && back) {
+            const text = li.textContent.trim();
+            if (!text) return;
+            
+            // Patterns for flashcards
+            const patterns = [
+                /(.+?)[:：]\s*(.+)/,                    // Question: Answer
+                /(.+?)[-–—]\s*(.+)/,                   // Question - Answer
+                /(.+?)\s*[|｜]\s*(.+)/,                 // Question | Answer
+                /(.+?)\s*→\s*(.+)/,                    // Question → Answer
+                /(.+?)\s*=>\s*(.+)/,                   // Question => Answer
+                /(.+?)\s*::\s*(.+)/                    // Question :: Answer
+            ];
+            
+            for (const pattern of patterns) {
+                const match = text.match(pattern);
+                if (match) {
+                    const front = this.cleanText(match[1]);
+                    const back = this.cleanText(match[2]);
+                    if (front && back) {
+                        cards.push({
+                            front: front,
+                            back: back,
+                            tags: [deckName, 'notion-list'],
+                            deck: deckName
+                        });
+                        break;
+                    }
+                }
+            }
+            
+            // Check for bold text followed by regular text
+            const boldElements = li.querySelectorAll('strong, b, [class*="bold"]');
+            boldElements.forEach(bold => {
+                const front = this.cleanText(bold.textContent);
+                let back = '';
+                
+                // Get text after bold element
+                let nextSibling = bold.nextSibling;
+                while (nextSibling && (back.length < 500 || !nextSibling.textContent.match(/[.!?]$/))) {
+                    if (nextSibling.nodeType === Node.TEXT_NODE) {
+                        back += nextSibling.textContent;
+                    } else if (nextSibling.nodeType === Node.ELEMENT_NODE) {
+                        back += nextSibling.textContent;
+                    }
+                    nextSibling = nextSibling.nextSibling;
+                }
+                
+                back = this.cleanText(back);
+                
+                if (front && back && front.trim() !== '' && back.trim() !== '') {
                     cards.push({
                         front: front,
                         back: back,
-                        tags: [deckName],
+                        tags: [deckName, 'notion-bold'],
                         deck: deckName
                     });
+                }
+            });
+        });
+
+        // 3. Tìm các headings (h1-h6) và nội dung sau nó
+        const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        console.log(`Tìm thấy ${headings.length} headings`);
+        
+        headings.forEach(heading => {
+            const front = this.cleanText(heading.textContent);
+            if (!front.trim()) return;
+            
+            let back = '';
+            let nextElement = heading.nextElementSibling;
+            let collectedLines = 0;
+            
+            // Collect next elements until next heading or max lines
+            while (nextElement && 
+                   !nextElement.matches('h1, h2, h3, h4, h5, h6') && 
+                   collectedLines < 10) {
+                
+                const elementText = this.cleanText(nextElement.textContent);
+                if (elementText.trim()) {
+                    back += elementText + '\n\n';
+                    collectedLines++;
+                }
+                
+                nextElement = nextElement.nextElementSibling;
+            }
+            
+            back = back.trim();
+            
+            if (back) {
+                cards.push({
+                    front: front,
+                    back: back,
+                    tags: [deckName, 'notion-heading'],
+                    deck: deckName
+                });
+            }
+        });
+
+        // 4. Tìm các tables có thể chứa flashcard
+        const tables = doc.querySelectorAll('table');
+        console.log(`Tìm thấy ${tables.length} tables`);
+        
+        tables.forEach(table => {
+            const rows = table.querySelectorAll('tr');
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td, th');
+                if (cells.length >= 2) {
+                    const front = this.cleanText(cells[0].textContent);
+                    const back = this.cleanText(cells[1].textContent);
+                    
+                    if (front && back && front.trim() !== '' && back.trim() !== '') {
+                        cards.push({
+                            front: front,
+                            back: back,
+                            tags: [deckName, 'notion-table'],
+                            deck: deckName
+                        });
+                    }
+                }
+            });
+        });
+
+        // 5. Tìm các paragraph có chứa ký tự đặc biệt
+        const paragraphs = doc.querySelectorAll('p');
+        console.log(`Tìm thấy ${paragraphs.length} paragraphs`);
+        
+        paragraphs.forEach(p => {
+            const text = p.textContent.trim();
+            if (!text) return;
+            
+            // Check for Q/A patterns
+            if (text.includes('?') && text.length > 20) {
+                // Try to split at question mark
+                const parts = text.split('?');
+                if (parts.length >= 2) {
+                    const front = this.cleanText(parts[0] + '?');
+                    const back = this.cleanText(parts.slice(1).join('?'));
+                    
+                    if (front && back) {
+                        cards.push({
+                            front: front,
+                            back: back,
+                            tags: [deckName, 'notion-paragraph'],
+                            deck: deckName
+                        });
+                    }
                 }
             }
         });
 
-        return cards;
+        console.log(`Tổng số cards trích xuất: ${cards.length}`);
+        
+        // Remove duplicates based on front content
+        const uniqueCards = [];
+        const seenFronts = new Set();
+        
+        cards.forEach(card => {
+            const frontKey = card.front.trim().toLowerCase();
+            if (!seenFronts.has(frontKey)) {
+                seenFronts.add(frontKey);
+                uniqueCards.push(card);
+            }
+        });
+        
+        console.log(`Số cards sau khi loại bỏ trùng lặp: ${uniqueCards.length}`);
+        
+        return uniqueCards;
     }
 
     /**
      * Clean text content
      */
     cleanText(text) {
+        if (!text) return '';
+        
         return text
             .replace(/\s+/g, ' ')
             .replace(/\n+/g, '\n')
+            .replace(/[ \t]+/g, ' ')
+            .replace(/^\s+|\s+$/g, '')
             .trim();
     }
 

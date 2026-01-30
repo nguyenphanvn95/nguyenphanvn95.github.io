@@ -1,9 +1,9 @@
 // APKG Builder Module - Corrected version based on working auto-apkg.html
 // Generates proper Anki .apkg files
 
-const APKG_MODEL_STORAGE_KEY = 'notion_anki_model_v1';
-const APKG_DECKNAME_KEY = 'notion_anki_deckname_v1';
-const APKG_NOTETYPE_KEY = 'notion_anki_notetype_v1';
+const APKG_MODEL_STORAGE_KEY = 'notion_anki_model_v2';
+const APKG_DECKNAME_KEY = 'notion_anki_deckname_v2';
+const APKG_NOTETYPE_KEY = 'notion_anki_notetype_v2';
 
 let DEFAULT_MODEL = {
     globalCss: '',
@@ -39,7 +39,14 @@ async function loadTemplatesFromFiles() {
         console.warn('Could not load template files, using defaults:', error);
         // Fallback to inline defaults
         DEFAULT_MODEL = {
-            globalCss: `img{max-width:100%;height:auto;border-radius:12px}`,
+            globalCss: `.card {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+img{max-width:100%;height:auto;border-radius:12px}`,
             cards: [{
                 name: "Card 1",
                 front: `{{Front}}`,
@@ -140,7 +147,14 @@ function buildFieldObjects(names) {
     }));
 }
 
-// Main APKG export function
+function escapeHtmlLite(s) {
+    if (typeof s !== 'string') return s;
+    return s.replace(/[&<>"]/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'
+    }[ch]));
+}
+
+// Main APKG export function - FIXED VERSION
 async function exportApkg(notionData, deckName, noteTypeName) {
     if (!notionData || !notionData.pages || notionData.pages.length === 0) {
         throw new Error('No data to export');
@@ -257,7 +271,7 @@ async function exportApkg(notionData, deckName, noteTypeName) {
     );`);
 
     // Field names
-    const fieldNames = ["Front", "Back", "Deck"];
+    const fieldNames = ["Front", "Back", "Deck", "Tags"];
 
     // Build templates
     const tmpls = cards.map((c, i) => ({
@@ -269,11 +283,10 @@ async function exportApkg(notionData, deckName, noteTypeName) {
         bafmt: "",
         did: null,
         bfont: "",
-        bsize: 0,
-        id: 0
+        bsize: 0
     }));
 
-    // Build model (note type)
+    // Build model (note type) - FIXED STRUCTURE
     const req = tmpls.map(t => [t.ord, "all", [0]]);
 
     const models = {};
@@ -285,16 +298,16 @@ async function exportApkg(notionData, deckName, noteTypeName) {
         usn: -1,
         sortf: 0,
         did: deckId,
-        tmpls,
+        tmpls: tmpls,
         flds: buildFieldObjects(fieldNames),
         css: model.globalCss || DEFAULT_MODEL.globalCss,
         latexPre: "",
         latexPost: "",
         latexsvg: false,
-        req
+        req: req
     };
 
-    // Build decks
+    // Build decks - FIXED STRUCTURE
     const decks = {
         "1": {
             id: 1,
@@ -352,7 +365,7 @@ async function exportApkg(notionData, deckName, noteTypeName) {
         dayLearnFirst: false,
         creationOffset: -420
     };
-    conf[`_deck_1_lastNotetype`] = modelId;
+    conf["_deck_1_lastNotetype"] = modelId;
     conf[`_nt_${modelId}_lastDeck`] = deckId;
 
     // Deck config
@@ -392,86 +405,77 @@ async function exportApkg(notionData, deckName, noteTypeName) {
         }
     };
 
-    // Insert collection row
-    const modelsJson = JSON.stringify(models).replace(/'/g, "''");
-    const decksJson = JSON.stringify(decks).replace(/'/g, "''");
-    const confJson = JSON.stringify(conf).replace(/'/g, "''");
-    const dconfJson = JSON.stringify(dconf).replace(/'/g, "''");
-
-    db.run(`INSERT INTO col VALUES (
+    // Insert collection row - USE PARAMETERIZED QUERY
+    db.run(`INSERT INTO col VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
         1,
-        ${nowSec},
-        ${nowSec},
-        ${nowSec},
+        nowSec,
+        nowSec,
+        nowSec,
         11,
         0,
         -1,
         0,
-        '${confJson}',
-        '${modelsJson}',
-        '${decksJson}',
-        '${dconfJson}',
+        JSON.stringify(conf),
+        JSON.stringify(models),
+        JSON.stringify(decks),
+        JSON.stringify(dconf),
         '{}'
-    );`);
+    ]);
 
     // Insert notes and cards
     let noteId = deckId + 2;
     
-    allCards.forEach(card => {
+    allCards.forEach((card, idx) => {
         const guid = generateGuid();
         const frontText = card.front || '';
         const backText = card.back || '';
         const deckText = card.deck || deckName;
+        const tagsText = Array.isArray(card.tags) ? card.tags.join(' ') : (card.tags || '');
         
-        const flds = `${frontText}\x1f${backText}\x1f${deckText}`;
+        const flds = `${escapeHtmlLite(frontText)}\x1f${escapeHtmlLite(backText)}\x1f${deckText}\x1f${tagsText}`;
         const sfld = frontText.substring(0, 50);
-        const tags = card.tags ? ' ' + (Array.isArray(card.tags) ? card.tags.join(' ') : card.tags) + ' ' : '';
         const csum = sha1ish(sfld);
 
-        // Escape single quotes for SQL
-        const fldsEscaped = flds.replace(/'/g, "''");
-        const sfldEscaped = sfld.replace(/'/g, "''");
-        const tagsEscaped = tags.replace(/'/g, "''");
-
         // Insert note
-        db.run(`INSERT INTO notes VALUES (
-            ${noteId},
-            '${guid}',
-            ${modelId},
-            ${nowSec},
+        db.run(`INSERT INTO notes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
+            noteId,
+            guid,
+            modelId,
+            nowSec,
             -1,
-            '${tagsEscaped}',
-            '${fldsEscaped}',
-            '${sfldEscaped}',
-            ${csum},
+            ' ' + tagsText + ' ',
+            flds,
+            sfld,
+            csum,
             0,
-            ''
-        );`);
+            '{}'
+        ]);
 
         // Insert cards for each template
         tmpls.forEach((tmpl, ord) => {
-            const cardId = noteId + ord * 100000;
+            const cardId = noteId * 1000 + ord;
+            const due = noteId + ord;
             
-            db.run(`INSERT INTO cards VALUES (
-                ${cardId},
-                ${noteId},
-                ${deckId},
-                ${ord},
-                ${nowSec},
+            db.run(`INSERT INTO cards VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
+                cardId,
+                noteId,
+                deckId,
+                ord,
+                nowSec,
                 -1,
-                0,
-                0,
-                ${noteId + ord},
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                ''
-            );`);
+                0,  // type
+                0,  // queue
+                due,
+                0,  // ivl
+                0,  // factor
+                0,  // reps
+                0,  // lapses
+                0,  // left
+                0,  // odue
+                0,  // odid
+                0,  // flags
+                '{}'
+            ]);
         });
 
         noteId++;
@@ -479,19 +483,28 @@ async function exportApkg(notionData, deckName, noteTypeName) {
 
     // Export database to binary
     const dbData = db.export();
-    const dbBlob = new Blob([dbData], { type: 'application/octet-stream' });
-
+    
     // Create media file (empty JSON object)
     const media = JSON.stringify({});
 
     // Create ZIP file
     const zip = new JSZip();
-    zip.file('collection.anki2', dbBlob);
+    zip.file('collection.anki2', dbData);
     zip.file('media', media);
 
     // Generate and download
-    const content = await zip.generateAsync({ type: 'blob' });
-    downloadBlob(content, `${deckName}.apkg`);
+    const content = await zip.generateAsync({ 
+        type: 'blob',
+        compression: 'DEFLATE',
+        compressionOptions: { level: 3 }
+    });
+    
+    // Use File API for better filename handling
+    const stamp = new Date().toISOString().slice(0,10).replace(/-/g,'');
+    const filename = `${deckName.replace(/[^\w\- ]+/g,'').replace(/\s+/g,'_')}_${stamp}.apkg`;
+    const file = new File([content], filename, { type: 'application/octet-stream' });
+    
+    downloadBlob(file, filename);
 }
 
 function generateGuid() {
@@ -510,8 +523,21 @@ function downloadBlob(blob, filename) {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 100);
 }
 
 // Initialize templates when module loads
 ensureDefaultTemplatesLoaded();
+
+// Export functions for template editor
+window.APKG_BUILDER = {
+    loadApkgModel,
+    saveApkgModel,
+    resetApkgModel,
+    loadDeckName,
+    saveDeckName,
+    loadNoteType,
+    saveNoteType,
+    ensureDefaultTemplatesLoaded,
+    exportApkg
+};

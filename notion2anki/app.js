@@ -5,7 +5,7 @@ class NotionToAnkiApp {
     constructor() {
         this.pages = [];
         this.notionData = null;
-        this.selectedPageIndex = null;
+        this.editingIndex = null;
         this.init();
     }
 
@@ -17,9 +17,9 @@ class NotionToAnkiApp {
 
     bindEvents() {
         document.getElementById('addItemBtn').addEventListener('click', () => this.openAddModal());
-        document.getElementById('deleteItemBtn').addEventListener('click', () => this.deleteSelectedPage());
         document.getElementById('loadFromNotionBtn').addEventListener('click', () => this.loadFromNotion());
         document.getElementById('exportApkgBtn').addEventListener('click', () => this.exportApkg());
+        document.getElementById('editTemplatesBtn').addEventListener('click', () => this.openTemplateEditor());
 
         // Save configuration on change
         document.getElementById('notionToken').addEventListener('input', () => this.saveConfig());
@@ -52,6 +52,7 @@ class NotionToAnkiApp {
         document.getElementById('addPageModal').classList.add('active');
         document.getElementById('modalPageId').value = '';
         document.getElementById('modalTargetDeck').value = '';
+        this.editingIndex = null;
         document.getElementById('modalPageId').focus();
     }
 
@@ -73,22 +74,26 @@ class NotionToAnkiApp {
         this.showNotification('Đã thêm page thành công!', 'success');
     }
 
-    deleteSelectedPage() {
-        if (this.selectedPageIndex !== null) {
-            if (confirm('Bạn có chắc muốn xóa page này?')) {
-                this.pages.splice(this.selectedPageIndex, 1);
-                this.selectedPageIndex = null;
-                this.saveConfig();
-                this.updateUI();
-                this.showNotification('Đã xóa page!', 'success');
-            }
+    editPage(index) {
+        const page = this.pages[index];
+        document.getElementById('modalPageId').value = page.pageId;
+        document.getElementById('modalTargetDeck').value = page.targetDeck;
+        this.editingIndex = index;
+        document.getElementById('addPageModal').classList.add('active');
+    }
+
+    deletePage(index) {
+        if (confirm('Bạn có chắc muốn xóa page này?')) {
+            this.pages.splice(index, 1);
+            this.saveConfig();
+            this.updateUI();
+            this.showNotification('Đã xóa page!', 'success');
         }
     }
 
     updateUI() {
         this.renderPagesTable();
         this.updateStats();
-        document.getElementById('deleteItemBtn').disabled = this.selectedPageIndex === null;
         document.getElementById('exportApkgBtn').disabled = !this.notionData || this.pages.length === 0;
     }
 
@@ -98,7 +103,7 @@ class NotionToAnkiApp {
         if (this.pages.length === 0) {
             tbody.innerHTML = `
                 <tr class="empty-state">
-                    <td colspan="5">
+                    <td colspan="3">
                         <i class="fas fa-inbox"></i>
                         <p>Chưa có pages nào. Nhấn "Add Item" để thêm.</p>
                     </td>
@@ -110,31 +115,19 @@ class NotionToAnkiApp {
         tbody.innerHTML = '';
         this.pages.forEach((page, index) => {
             const row = document.createElement('tr');
-            row.style.cursor = 'pointer';
             
-            if (index === this.selectedPageIndex) {
-                row.style.background = '#e3f2fd';
-            }
-
-            row.addEventListener('click', () => {
-                this.selectedPageIndex = index;
-                this.updateUI();
-            });
-
             row.innerHTML = `
-                <td class="page-id-input">${page.pageId.substring(0, 12)}...</td>
+                <td class="page-id-input" title="${page.pageId}">
+                    ${page.pageId.substring(0, 12)}${page.pageId.length > 12 ? '...' : ''}
+                </td>
                 <td><span class="deck-badge">${page.targetDeck}</span></td>
-                <td class="checkbox-cell">
-                    <input type="checkbox" ${page.recursive ? 'checked' : ''} 
-                           onchange="app.togglePageOption(${index}, 'recursive')">
-                </td>
-                <td class="checkbox-cell">
-                    <input type="checkbox" ${page.absUpdate ? 'checked' : ''} 
-                           onchange="app.togglePageOption(${index}, 'absUpdate')">
-                </td>
-                <td class="checkbox-cell">
-                    <input type="checkbox" ${page.incUpdate ? 'checked' : ''} 
-                           onchange="app.togglePageOption(${index}, 'incUpdate')">
+                <td class="actions-cell">
+                    <button class="action-btn action-btn-edit" onclick="app.editPage(${index})" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn action-btn-delete" onclick="app.deletePage(${index})" title="Xóa">
+                        <i class="fas fa-trash"></i>
+                    </button>
                 </td>
             `;
 
@@ -142,14 +135,21 @@ class NotionToAnkiApp {
         });
     }
 
-    togglePageOption(index, option) {
-        this.pages[index][option] = !this.pages[index][option];
-        this.saveConfig();
-    }
-
     updateStats() {
         document.getElementById('pagesCount').textContent = this.pages.length;
-        const estimatedCards = this.pages.length * 10; // Rough estimate
+        
+        // Calculate estimated cards more accurately
+        let estimatedCards = 0;
+        if (this.notionData && this.notionData.pages) {
+            this.notionData.pages.forEach(page => {
+                if (page.cards && Array.isArray(page.cards)) {
+                    estimatedCards += page.cards.length;
+                }
+            });
+        } else {
+            estimatedCards = this.pages.length * 10; // Rough estimate
+        }
+        
         document.getElementById('cardsCount').textContent = estimatedCards;
     }
 
@@ -171,70 +171,27 @@ class NotionToAnkiApp {
             this.notionData = await this.fetchNotionPages(token);
             this.showLoading(false);
             this.updateUI();
-            this.showNotification('Tải dữ liệu thành công! Có thể xuất .apkg ngay.', 'success');
+            this.showNotification(`Tải dữ liệu thành công! Tổng cộng ${this.getTotalCards()} thẻ. Có thể xuất .apkg ngay.`, 'success');
         } catch (error) {
             this.showLoading(false);
             this.showNotification('Lỗi: ' + error.message, 'error');
         }
     }
 
-    async fetchNotionPages(token) {
-        // Use simple API for demo (works without CORS issues)
-        // For production, use NotionAPI class with proper CORS proxy
-        const api = new NotionAPISimple();
+    getTotalCards() {
+        if (!this.notionData || !this.notionData.pages) return 0;
         
-        const data = {
-            pages: []
-        };
-
-        // Process each page
-        for (const page of this.pages) {
-            try {
-                this.showNotification(`Đang xử lý page: ${page.targetDeck}...`, 'info');
-                
-                // Export page from Notion
-                const blob = await api.exportPage(
-                    page.pageId, 
-                    page.recursive,
-                    (msg, progress) => {
-                        console.log(`${page.targetDeck}: ${msg} (${progress}%)`);
-                    }
-                );
-
-                // Parse export to cards
-                const cards = await api.parseExportToCards(blob, page.targetDeck);
-                
-                data.pages.push({
-                    id: page.pageId,
-                    deck: page.targetDeck,
-                    cards: cards
-                });
-
-                this.showNotification(`✓ Đã tải ${cards.length} thẻ từ ${page.targetDeck}`, 'success');
-                
-            } catch (error) {
-                console.error(`Error processing page ${page.pageId}:`, error);
-                this.showNotification(`Lỗi tải page ${page.targetDeck}: ${error.message}`, 'error');
-            }
-        }
-
-        return data;
+        return this.notionData.pages.reduce((total, page) => {
+            return total + (page.cards ? page.cards.length : 0);
+        }, 0);
     }
 
-    // Use real Notion API (requires CORS proxy or backend)
-    async fetchNotionPagesReal(token) {
+    async fetchNotionPages(token) {
         const api = new NotionAPI(token);
         
         const data = {
             pages: []
         };
-
-        // Test connection first
-        try {
-            await api.testConnection();
-        } catch (error) {
-            throw new Error('Không thể kết nối với Notion API. Vui lòng kiểm tra Token.');
-        }
 
         // Process each page
         for (const page of this.pages) {
@@ -279,7 +236,7 @@ class NotionToAnkiApp {
         try {
             this.showLoading(true);
             const deckName = document.getElementById('deckName').value || 'My Deck';
-            const noteTypeName = loadNoteType(); // Use the apkg-builder function
+            const noteTypeName = 'Notion2Anki'; // Use fixed note type name
             
             await exportApkg(this.notionData, deckName, noteTypeName);
             
@@ -289,6 +246,14 @@ class NotionToAnkiApp {
             this.showLoading(false);
             this.showNotification('Lỗi khi tạo file: ' + error.message, 'error');
             console.error('Export error:', error);
+        }
+    }
+
+    openTemplateEditor() {
+        if (typeof openTemplateEditor === 'function') {
+            openTemplateEditor();
+        } else {
+            this.showNotification('Template editor chưa được tải. Vui lòng tải lại trang.', 'error');
         }
     }
 
@@ -339,7 +304,19 @@ function confirmAddPage() {
         return;
     }
 
-    app.addPage(pageId, targetDeck);
+    if (app.editingIndex !== null) {
+        // Edit existing page
+        app.pages[app.editingIndex].pageId = pageId.replace(/-/g, '');
+        app.pages[app.editingIndex].targetDeck = targetDeck;
+        app.saveConfig();
+        app.updateUI();
+        app.showNotification('Đã sửa page thành công!', 'success');
+        app.editingIndex = null;
+    } else {
+        // Add new page
+        app.addPage(pageId, targetDeck);
+    }
+    
     closeAddModal();
 }
 

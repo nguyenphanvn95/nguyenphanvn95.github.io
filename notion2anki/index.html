@@ -199,14 +199,40 @@
             background: #f8f9fa;
         }
 
-        .checkbox-cell {
-            text-align: center;
+        .actions-cell {
+            display: flex;
+            gap: 8px;
         }
 
-        input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .action-btn-edit {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .action-btn-edit:hover {
+            background: #bbdefb;
+        }
+
+        .action-btn-delete {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+
+        .action-btn-delete:hover {
+            background: #ffcdd2;
         }
 
         .actions {
@@ -456,6 +482,142 @@
             font-size: 12px;
             font-weight: 600;
         }
+        
+        /* Template Editor Modal */
+        .template-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .template-modal.active {
+            display: flex;
+        }
+
+        .template-modal-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .template-modal-header {
+            padding: 20px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .template-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        .template-modal-footer {
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .template-section {
+            margin-bottom: 25px;
+        }
+
+        .template-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .template-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .template-controls select {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .template-controls button {
+            padding: 8px 16px;
+        }
+
+        .template-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 13px;
+            resize: vertical;
+        }
+
+        .template-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        #templateNotification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: #28a745;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+            z-index: 3000;
+        }
+
+        #templateNotification.show {
+            transform: translateX(0);
+        }
+
+        #templateNotification.success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+
+        #templateNotification.error {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+        }
+        
+        .mini-help {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .mono {
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
     </style>
 </head>
 <body>
@@ -511,29 +673,12 @@
                         <tr>
                             <th>PageID</th>
                             <th>TargetDeck</th>
-                            <th class="checkbox-cell">
-                                <span class="tooltip">
-                                    Recursive
-                                    <span class="tooltiptext">Đồng bộ cả các trang con</span>
-                                </span>
-                            </th>
-                            <th class="checkbox-cell">
-                                <span class="tooltip">
-                                    AbsUpdate
-                                    <span class="tooltiptext">Cập nhật tuyệt đối - ghi đè toàn bộ</span>
-                                </span>
-                            </th>
-                            <th class="checkbox-cell">
-                                <span class="tooltip">
-                                    IncUpdate
-                                    <span class="tooltiptext">Cập nhật tăng dần - chỉ thêm mới</span>
-                                </span>
-                            </th>
+                            <th width="100">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody id="pagesTableBody">
                         <tr class="empty-state">
-                            <td colspan="5">
+                            <td colspan="3">
                                 <i class="fas fa-inbox"></i>
                                 <p>Chưa có pages nào. Nhấn "Add Item" để thêm.</p>
                             </td>
@@ -545,9 +690,6 @@
             <div class="actions">
                 <button class="btn btn-success" id="addItemBtn">
                     <i class="fas fa-plus"></i> Add Item
-                </button>
-                <button class="btn btn-danger" id="deleteItemBtn" disabled>
-                    <i class="fas fa-trash"></i> Delete Item
                 </button>
             </div>
         </div>
@@ -607,7 +749,7 @@
     <div id="addPageModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-plus-circle"></i> Thêm Page mới</h3>
+                <h3><i class="fas fa-plus-circle"></i> Thêm/Sửa Page</h3>
                 <button class="close-btn" onclick="closeAddModal()">
                     <i class="fas fa-times"></i>
                 </button>
@@ -637,17 +779,93 @@
                     <i class="fas fa-times"></i> Hủy
                 </button>
                 <button class="btn btn-success" onclick="confirmAddPage()">
-                    <i class="fas fa-check"></i> Thêm
+                    <i class="fas fa-check"></i> Lưu
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Notification -->
+    <!-- Template Editor Modal -->
+    <div id="templateModal" class="template-modal">
+        <div class="template-modal-content">
+            <div class="template-modal-header">
+                <h3><i class="fas fa-pen"></i> Chỉnh sửa Template</h3>
+                <button class="btn btn-secondary" onclick="closeTemplateEditor()">
+                    <i class="fas fa-times"></i> Đóng
+                </button>
+            </div>
+            
+            <div class="template-modal-body">
+                <div class="template-section">
+                    <label>Quản lý Card Types</label>
+                    <div class="template-controls">
+                        <select id="cardList" class="mono"></select>
+                        <button class="btn btn-success" id="addCardBtn">
+                            <i class="fas fa-plus"></i> Thêm
+                        </button>
+                        <button class="btn btn-info" id="duplicateCardBtn">
+                            <i class="fas fa-clone"></i> Nhân bản
+                        </button>
+                        <button class="btn btn-danger" id="deleteCardBtn">
+                            <i class="fas fa-trash"></i> Xóa
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="template-section">
+                    <label>Tên Card Type</label>
+                    <input type="text" id="cardNameInput" class="input mono" placeholder="Card 1">
+                </div>
+                
+                <div class="template-section">
+                    <label>Front Template (HTML)</label>
+                    <textarea id="frontTemplate" class="template-textarea mono" 
+                              placeholder="{{Front}}" spellcheck="false"></textarea>
+                </div>
+                
+                <div class="template-section">
+                    <label>Back Template (HTML)</label>
+                    <textarea id="backTemplate" class="template-textarea mono" 
+                              placeholder="{{FrontSide}}<hr id='answer'>{{Back}}" spellcheck="false"></textarea>
+                </div>
+                
+                <div class="template-section">
+                    <label>Global CSS</label>
+                    <textarea id="globalCss" class="template-textarea mono" 
+                              placeholder=".card { font-family: Arial; }" spellcheck="false"></textarea>
+                </div>
+                
+                <div class="mini-help">
+                    <strong>Biến có thể dùng:</strong><br>
+                    • {{Front}} - Nội dung mặt trước<br>
+                    • {{Back}} - Nội dung mặt sau<br>
+                    • {{Deck}} - Tên deck<br>
+                    • {{Tags}} - Tags<br>
+                    • {{#Field}}...{{/Field}} - Hiển thị nếu Field có giá trị
+                </div>
+            </div>
+            
+            <div class="template-modal-footer">
+                <button class="btn btn-secondary" onclick="closeTemplateEditor()">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <button class="btn btn-danger" id="resetTemplateBtn">
+                    <i class="fas fa-rotate-left"></i> Reset
+                </button>
+                <button class="btn btn-success" id="saveTemplateBtn">
+                    <i class="fas fa-save"></i> Lưu Template
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications -->
     <div id="notification" class="notification">
         <i id="notificationIcon"></i>
         <span id="notificationText"></span>
     </div>
+    
+    <div id="templateNotification" class="notification"></div>
 
     <!-- Include JSZip and SQL.js libraries for APKG creation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -658,6 +876,9 @@
     
     <!-- APKG Builder Module -->
     <script src="apkg-builder.js"></script>
+    
+    <!-- Template Editor -->
+    <script src="template-editor.js"></script>
     
     <!-- Main App -->
     <script src="app.js"></script>
