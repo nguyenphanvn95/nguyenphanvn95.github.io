@@ -1,0 +1,115 @@
+.card {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: var(--fg);
+    background-color: var(--canvas);
+    word-wrap: break-word;
+}
+
+.prettify-flashcard {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.prettify-deck {
+    font-size: 14px;
+    color: var(--fg-subtle);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.prettify-subdeck {
+    opacity: 0.8;
+}
+
+.prettify-field {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.prettify-field--front {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--fg);
+}
+
+.prettify-field--back {
+    font-size: 20px;
+    color: var(--fg);
+    text-align: left;
+    padding: 15px;
+    background: var(--canvas-elevated);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-fg);
+}
+
+.prettify-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.prettify-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent-card);
+    color: var(--accent-fg);
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 30px 0;
+    opacity: 0.3;
+}
+
+hr#source {
+    margin-top: 40px;
+    opacity: 0.2;
+}
+
+hr#answer {
+    margin: 30px 0;
+    border-top-width: 3px;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode colors (Anki default) */
+.card {
+    --fg: #2c3e50;
+    --fg-subtle: #7f8c8d;
+    --canvas: #ffffff;
+    --canvas-elevated: #f8f9fa;
+    --border: #e0e0e0;
+    --accent-fg: #3498db;
+    --accent-card: #e3f2fd;
+}
+
+/* Dark mode colors */
+.night_mode .card,
+.card.night_mode {
+    --fg: #ecf0f1;
+    --fg-subtle: #bdc3c7;
+    --canvas: #2c3e50;
+    --canvas-elevated: #34495e;
+    --border: #4a5f7f;
+    --accent-fg: #5dade2;
+    --accent-card: #2c3e50;
+}

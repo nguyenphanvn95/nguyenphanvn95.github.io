@@ -42,10 +42,16 @@
 
 ```
 notion-to-anki/
-├── index.html          # Giao diện chính
-├── app.js              # Logic ứng dụng
-├── README.md           # Hướng dẫn
-└── .gitignore          # Git ignore
+├── index.html              # Giao diện chính
+├── app.js                  # Logic ứng dụng
+├── notion-api.js           # Tích hợp Notion API
+├── apkg-builder.js         # Module tạo file .apkg
+├── templates/              # Template cho card types
+│   ├── card1-front.html    # Template mặt trước Card 1
+│   ├── card1-back.html     # Template mặt sau Card 1
+│   └── card1-style.css     # CSS cho Card 1
+├── README.md               # Hướng dẫn
+└── .gitignore              # Git ignore
 ```
 
 ## Deploy lên GitHub Pages
@@ -72,37 +78,36 @@ Trang web sẽ có tại: `https://USERNAME.github.io/notion-to-anki/`
 
 ## Template mặc định
 
-Ứng dụng hỗ trợ các template giống addon:
+Ứng dụng hỗ trợ các template được load từ file riêng:
 
-### Basic Card Template
+### Cấu trúc Template
 
-**Front:**
-```html
-<div class="prettify-flashcard">
-    <div class="prettify-deck">{{Deck}}</div>
-    <div class="prettify-field prettify-field--front">{{Front}}</div>
-</div>
-```
+Mỗi card type có 3 file:
+- **Front HTML** (`card1-front.html`) - Giao diện mặt trước
+- **Back HTML** (`card1-back.html`) - Giao diện mặt sau  
+- **CSS** (`card1-style.css`) - Style chung
 
-**Back:**
-```html
-<div class="prettify-flashcard">
-    <div class="prettify-deck">{{Deck}}</div>
-    <div class="prettify-field prettify-field--front">{{Front}}</div>
-    <hr id="answer">
-    <div class="prettify-field prettify-field--back">{{Back}}</div>
-</div>
-```
+### Template fields
 
-### Cloze Card Template
+Templates hỗ trợ các field sau:
+- `{{Front}}` - Nội dung mặt trước
+- `{{Back}}` - Nội dung mặt sau
+- `{{Deck}}` - Tên deck
+- `{{Tags}}` - Tags của thẻ
+- `{{#Tags}}...{{/Tags}}` - Hiển thị có điều kiện
 
-**Front:**
-```html
-<div class="prettify-flashcard">
-    <div class="prettify-deck">{{Deck}}</div>
-    <div class="prettify-field prettify-field--front">{{cloze:Front}}</div>
-</div>
-```
+### Tùy chỉnh Template
+
+1. Chỉnh sửa file HTML/CSS trong thư mục `templates/`
+2. Template sẽ tự động load khi mở trang
+3. Hoặc dùng nút "Reset Templates" để reload
+
+### Thêm Card Type mới
+
+Để thêm card type thứ 2, 3...:
+1. Tạo file: `card2-front.html`, `card2-back.html`, `card2-style.css`
+2. Đánh số theo thứ tự: card1, card2, card3...
+3. App sẽ tự động detect và load
 
 ## Công nghệ sử dụng
 
@@ -111,6 +116,19 @@ Trang web sẽ có tại: `https://USERNAME.github.io/notion-to-anki/`
 - **JSZip** - Tạo file .apkg (zip format)
 - **SQL.js** - Tạo database Anki (SQLite format)
 - **LocalStorage** - Lưu cấu hình
+
+## Sửa lỗi quan trọng
+
+✅ **Đã fix lỗi "JsonError decoding decks":**
+- Sử dụng cấu trúc database Anki chuẩn
+- Thêm đầy đủ các field bắt buộc (sticky, rtl, font, size...)
+- Tách template ra file riêng để dễ customize
+- Đúng format JSON cho models, decks, dconf
+
+✅ **Template được load từ file external:**
+- Mỗi card type có front/back/css riêng
+- Đánh số: card1-*, card2-*, card3-*
+- Dễ dàng thêm/sửa/xóa card types
 
 ## Lưu ý
 
