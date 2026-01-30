@@ -1,0 +1,286 @@
+<div class="qz-wrap">
+  <div class="qz-stage" id="qzStage">
+    <div class="qz-flip">
+
+      <!-- FRONT -->
+      <div class="qz-face front">
+        <div class="qz-card">
+          <div class="qz-topbar">
+            <div class="qz-badges">
+              <span class="badge primary">VOCAB</span>
+            </div>
+            <div class="qz-hint">Show Answer để lật</div>
+          </div>
+
+          <div class="qz-body">
+            <div class="term">{{Vocab}}</div>
+
+            <div class="meta">
+              {{#IPA}}<div class="ipa">{{IPA}}</div>{{/IPA}}
+              {{#Part of speech}}<div class="pos">{{Part of speech}}</div>{{/Part of speech}}
+            </div>
+
+            
+            <div class="divider"></div>
+            <div class="block-title">Hint</div>
+            <div class="note"></div>
+            
+
+            {{#Image}}
+            <div class="divider"></div>
+            <div class="block-title">Image</div>
+            <div class="img-row">{{Image}}</div>
+            {{/Image}}
+          </div>
+
+          <div class="qz-tap">👆 Quizlet style • Tap Show Answer</div>
+        </div>
+      </div>
+
+      <!-- BACK (hidden, used for 3D flip) -->
+      <div class="qz-face back">
+        <div class="qz-card">
+          <div class="qz-topbar">
+            <div class="qz-badges">
+              <span class="badge primary">MEANING</span>
+            </div>
+            <div class="qz-hint">Answer</div>
+          </div>
+
+          <div class="qz-body">
+            <div class="term">{{Vocab}}</div><div style="display:none;">{{tts en_US voices=Apple_Samantha speed=0.9:Vocab}}</div>
+            <div class="meta">
+              {{#IPA}}<div class="ipa">{{IPA}}</div>{{/IPA}}
+              {{#Part of speech}}<div class="pos">{{Part of speech}}</div>{{/Part of speech}}
+            </div>
+  {{#Definition}}
+            <div class="divider"></div>
+            <div class="block-title">Definition</div>
+            <p class="def">{{Definition}}</p>
+            {{/Definition}}
+            {{#Meanings}}
+            <div class="divider"></div>
+            <div class="block-title">Meanings</div>
+            <p class="def">{{Meanings}}</p>
+            {{/Meanings}}
+
+{{#Examples}}
+<div class="divider"></div>
+<div class="block-title">Examples</div>
+<div class="context js-show-vocab" id="exBlock">{{Examples}}</div>
+{{/Examples}}
+
+<div style="display:none;">
+            {{#Definition}}
+            <div class="divider"></div>
+            <div class="block-title">Source</div>
+            <div class="context"><a href="{{Definition}}">{{Definition}}</a></div>
+            {{/Definition}}
+          </div>
+          {{#Image}}
+            <div class="divider"></div>
+            <div class="block-title">Image</div>
+            <div class="img-row">{{Image}}</div>
+            {{/Image}}
+</div>
+          <div class="qz-tap" id="langQuote">🌱 Keep going.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const raw0 = "{{Vocab}}".trim();
+  if(!raw0) return;
+
+  const w0 = raw0.toLowerCase();
+  const isPhrase = /\s/.test(w0);
+
+  function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function looksCVC(w){
+    return w.length >= 3 &&
+      /[^aeiou]$/.test(w) &&
+      !/[wxy]$/.test(w) &&
+      /[aeiou]/.test(w[w.length-2]) &&
+      /[^aeiou]/.test(w[w.length-3]);
+  }
+  function undouble(w){
+    if(w.length>=4 && w[w.length-1]===w[w.length-2] && /[^aeiou]/.test(w[w.length-1])) return w.slice(0,-1);
+    return w;
+  }
+
+  function baseForm(w){
+    if(isPhrase) return w;
+    if(w.endsWith("ies") && w.length>4) return w.slice(0,-3)+"y";
+    if(w.endsWith("ing") && w.length>5) return undouble(w.slice(0,-3));
+    if(w.endsWith("ied") && w.length>4) return w.slice(0,-3)+"y";
+    if(w.endsWith("ed") && w.length>3) return undouble(w.slice(0,-2));
+    if(w.endsWith("es") && w.length>3) return w.slice(0,-2);
+    if(w.endsWith("s") && w.length>2) return w.slice(0,-1);
+    return w;
+  }
+
+  function variants(base){
+    if(isPhrase) return [raw0];
+    const out = [base];
+    const endsY = /[^aeiou]y$/.test(base);
+    const endsE = /e$/.test(base) && !/ee$/.test(base);
+
+    if(endsY) out.push(base.replace(/y$/,"ies"));
+    else if(/(s|x|z|ch|sh)$/.test(base)) out.push(base+"es");
+    else out.push(base+"s");
+
+    if(endsY) out.push(base.replace(/y$/,"ied"));
+    else if(endsE) out.push(base+"d");
+    else if(looksCVC(base) && base.length<=6) out.push(base+base[base.length-1]+"ed");
+    else out.push(base+"ed");
+
+    if(endsY) out.push(base.replace(/y$/,"ying"));
+    else if(endsE) out.push(base.replace(/e$/,"ing"));
+    else if(looksCVC(base) && base.length<=6) out.push(base+base[base.length-1]+"ing");
+    else out.push(base+"ing");
+
+    return Array.from(new Set(out)).sort((a,b)=>b.length-a.length);
+  }
+
+  const base = baseForm(w0);
+  const list = variants(base); // keep original case matching later
+
+  // boundary: only letters count as word chars
+  function isLetter(ch){ return !!ch && /[A-Za-z]/.test(ch); }
+
+  function highlightTextNode(node){
+    const txt = node.nodeValue;
+    if(!txt) return;
+
+    const lower = txt.toLowerCase();
+    let hits = [];
+
+    // collect matches for all forms
+    list.forEach(form=>{
+      const f = form.toLowerCase();
+      if(!f) return;
+
+      let start = 0;
+      while(true){
+        const idx = lower.indexOf(f, start);
+        if(idx === -1) break;
+
+        const before = txt[idx-1];
+        const after  = txt[idx + f.length];
+
+        // boundary check
+        if(!isLetter(before) && !isLetter(after)){
+          hits.push({i: idx, j: idx + f.length, formLen: f.length});
+        }
+
+        start = idx + 1;
+      }
+    });
+
+    if(!hits.length) return;
+
+    // merge overlaps (prefer longer)
+    hits.sort((a,b)=> a.i-b.i || b.formLen-a.formLen);
+    const merged = [];
+    hits.forEach(h=>{
+      const last = merged[merged.length-1];
+      if(!last || h.i >= last.j){
+        merged.push(h);
+      } else if(h.j > last.j){
+        last.j = h.j;
+      }
+    });
+
+    // build fragment
+    const frag = document.createDocumentFragment();
+    let pos = 0;
+    merged.forEach(h=>{
+      if(h.i > pos) frag.appendChild(document.createTextNode(txt.slice(pos, h.i)));
+
+      const span = document.createElement("span");
+      span.className = "highlight-answer";
+      span.textContent = txt.slice(h.i, h.j); // preserve original casing
+      frag.appendChild(span);
+
+      pos = h.j;
+    });
+    if(pos < txt.length) frag.appendChild(document.createTextNode(txt.slice(pos)));
+
+    node.parentNode.replaceChild(frag, node);
+  }
+
+  function highlightInElement(root){
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(highlightTextNode);
+  }
+
+  document.querySelectorAll(".js-show-vocab").forEach(el=>{
+    highlightInElement(el);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var st = document.getElementById("qzStage");
+  if(st) requestAnimationFrame(()=>st.classList.add("flipped"));
+})();
+</script>
+<script>
+(function(){
+  const quotes = [
+     // --- TIẾNG VIỆT (20) ---
+    "Học đều mỗi ngày quan trọng hơn học nhiều một lúc.",
+    "Ngôn ngữ là phản xạ, không phải lý thuyết.",
+    "Não cần lặp lại để ghi nhớ lâu dài.",
+    "Một câu nói trôi chảy đáng giá hơn mười câu đọc hiểu.",
+    "Học chậm mà đều sẽ đi rất xa.",
+    "Nghe đủ nhiều, miệng sẽ tự nói.",
+    "Sai là dấu hiệu của tiến bộ.",
+    "Học để dùng, không phải để thuộc.",
+    "Mỗi ngày một chút, não sẽ tự kết nối.",
+    "Đều đặn là hình thức kỷ luật nhẹ nhàng nhất.",
+    "Ngôn ngữ cần thời gian ngấm.",
+    "Không cần hoàn hảo, chỉ cần tiếp tục.",
+    "Học là quá trình tích lũy thầm lặng.",
+    "Một từ dùng được còn hơn mười từ để quên.",
+    "Não học tốt nhất khi không bị ép.",
+    "Cứ học tiếp, não đang làm việc.",
+    "Nghe – nhại – nói: đúng thứ tự.",
+    "Học ít nhưng đúng cách.",
+    "Lặp lại tạo phản xạ.",
+    "Bạn đang giỏi lên, dù chưa nhận ra.",
+
+    // --- ENGLISH (10) ---
+    "Consistency beats intensity in language learning.",
+    "Fluency is built, not memorized.",
+    "Mistakes mean your brain is learning.",
+    "Little practice every day goes a long way.",
+    "Don’t wait to be confident — speak to become confident.",
+    "Language is a skill, not a subject.",
+    "Repetition creates automaticity.",
+    "Learn a little. Use it a lot.",
+    "Your brain learns while you keep going.",
+    "Progress is happening, even when it feels slow."
+  ];
+
+  function pick(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function setQuote(){
+    const el = document.getElementById("langQuote");
+    if(!el) return;
+    el.textContent = "🌱 " + pick(quotes);
+  }
+
+  // chạy ngay + chạy lại sau khi flip (phòng trường hợp DOM render chậm)
+  setQuote();
+  setTimeout(setQuote, 80);
+})();
+</script>
