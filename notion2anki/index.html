@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion to Anki - Web Version</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .card-header i {
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .card-header h2 {
+            color: #333;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group label i {
+            color: #667eea;
+        }
+
+        .help-icon {
+            cursor: help;
+            color: #2196F3;
+            margin-left: 5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .btn-success:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #e9ecef;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .checkbox-cell {
+            text-align: center;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            flex: 1;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.success {
+            border-left: 4px solid #28a745;
+        }
+
+        .notification.error {
+            border-left: 4px solid #dc3545;
+        }
+
+        .notification.info {
+            border-left: 4px solid #2196F3;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+        }
+
+        .page-id-input {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 13px;
+        }
+
+        .deck-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-brain"></i> Notion to Anki</h1>
+            <p>Tạo bộ thẻ Anki từ Notion pages - Web Version</p>
+        </div>
+
+        <!-- Notion Configuration Card -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-key"></i>
+                <h2>Notion to Anki Config</h2>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-lock"></i>
+                    Notion Token
+                    <span class="tooltip help-icon">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="tooltiptext">Lấy token_v2 từ cookie của Notion trong trình duyệt</span>
+                    </span>
+                </label>
+                <input type="password" id="notionToken" placeholder="secret_xxxxxxxxxxxxxxxxxxxx" class="page-id-input">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-user"></i>
+                    Notion Namespace
+                    <span class="tooltip help-icon">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="tooltiptext">Username hoặc workspace của bạn trên Notion</span>
+                    </span>
+                </label>
+                <input type="text" id="notionNamespace" placeholder="username hoặc workspace">
+            </div>
+        </div>
+
+        <!-- Pages Management Card -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-file-alt"></i>
+                <h2>Quản lý Pages</h2>
+            </div>
+
+            <div class="table-container">
+                <table id="pagesTable">
+                    <thead>
+                        <tr>
+                            <th>PageID</th>
+                            <th>TargetDeck</th>
+                            <th class="checkbox-cell">
+                                <span class="tooltip">
+                                    Recursive
+                                    <span class="tooltiptext">Đồng bộ cả các trang con</span>
+                                </span>
+                            </th>
+                            <th class="checkbox-cell">
+                                <span class="tooltip">
+                                    AbsUpdate
+                                    <span class="tooltiptext">Cập nhật tuyệt đối - ghi đè toàn bộ</span>
+                                </span>
+                            </th>
+                            <th class="checkbox-cell">
+                                <span class="tooltip">
+                                    IncUpdate
+                                    <span class="tooltiptext">Cập nhật tăng dần - chỉ thêm mới</span>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="pagesTableBody">
+                        <tr class="empty-state">
+                            <td colspan="5">
+                                <i class="fas fa-inbox"></i>
+                                <p>Chưa có pages nào. Nhấn "Add Item" để thêm.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-success" id="addItemBtn">
+                    <i class="fas fa-plus"></i> Add Item
+                </button>
+                <button class="btn btn-danger" id="deleteItemBtn" disabled>
+                    <i class="fas fa-trash"></i> Delete Item
+                </button>
+            </div>
+        </div>
+
+        <!-- Export Configuration Card -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-download"></i>
+                <h2>Xuất file Anki (.apkg)</h2>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-layer-group"></i>
+                    Deck Name
+                </label>
+                <input type="text" id="deckName" placeholder="Nhập tên deck..." value="My Deck">
+            </div>
+
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="pagesCount">0</div>
+                    <div class="stat-label">Pages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="cardsCount">0</div>
+                    <div class="stat-label">Cards (ước tính)</div>
+                </div>
+            </div>
+
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p>Đang tải dữ liệu từ Notion và tạo file .apkg...</p>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="loadFromNotionBtn">
+                    <i class="fas fa-cloud-download-alt"></i> Tải từ Notion
+                </button>
+                <button class="btn btn-success" id="exportApkgBtn" disabled>
+                    <i class="fas fa-file-export"></i> Xuất .apkg
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; color: white; margin-top: 30px; opacity: 0.8;">
+            <p>
+                <i class="fas fa-code"></i> Made with ❤️ for Anki learners
+                <br>
+                <small>Dựa trên addon Notion2AnkiFree</small>
+            </p>
+        </div>
+    </div>
+
+    <!-- Add Page Modal -->
+    <div id="addPageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Thêm Page mới</h3>
+                <button class="close-btn" onclick="closeAddModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-hashtag"></i>
+                    Notion PageID
+                </label>
+                <input type="text" id="modalPageId" placeholder="29a39e2b6215..." class="page-id-input">
+                <small style="color: #666; display: block; margin-top: 5px;">
+                    Lấy từ URL: notion.so/workspace/<strong>29a39e2b6215...</strong>
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-folder"></i>
+                    Target Deck
+                </label>
+                <input type="text" id="modalTargetDeck" placeholder="A1, A2, B1...">
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="closeAddModal()">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <button class="btn btn-success" onclick="confirmAddPage()">
+                    <i class="fas fa-check"></i> Thêm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <i id="notificationIcon"></i>
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- Include JSZip and SQL.js libraries for APKG creation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+    <!-- Notion API Integration -->
+    <script src="notion-api.js"></script>
+    
+    <!-- Main App -->
+    <script src="app.js"></script>
+</body>
+</html>
