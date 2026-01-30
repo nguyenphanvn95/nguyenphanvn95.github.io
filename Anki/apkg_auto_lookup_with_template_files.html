@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vocabulary Manager - JSON to CSV</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Make the first 3 blocks full-width to avoid overflow on narrow screens */
+        .app-container > .card:nth-of-type(-n+3){
+            grid-column: 1 / -1;
+        }
+        
+        @media (max-width: 900px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .card h2 i {
+            color: #667eea;
+        }
+        
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 180px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            min-width: 120px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Bảng mới - responsive */
+        .words-container {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        
+        .status-table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .status-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .status-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        .status-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .vocab-cell {
+            font-weight: 600;
+            color: #333;
+            min-width: 150px;
+        }
+        
+        .vocab-main {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: block;
+        }
+        
+        .vocab-details {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        .vocab-details div {
+            margin-top: 2px;
+        }
+        
+        .status-cell {
+            font-size: 0.85rem;
+            min-width: 250px;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            padding: 4px 0;
+        }
+        
+        .status-label {
+            color: #666;
+            font-size: 0.8rem;
+            min-width: 80px;
+        }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            justify-content: flex-end;
+            min-width: 120px;
+        }
+        
+        .status-yes {
+            color: #28a745;
+        }
+        
+        .status-no {
+            color: #dc3545;
+        }
+        
+        .status-count {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 1px 5px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .actions-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 100px;
+        }
+        
+        .action-btn {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            width: 100%;
+        }
+        
+        .action-btn-view {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .action-btn-view:hover {
+            background: #bbdefb;
+        }
+        
+        .action-btn-copy {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .action-btn-copy:hover {
+            background: #c8e6c9;
+        }
+        
+        .action-btn-delete {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .action-btn-delete:hover {
+            background: #ffcdd2;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 2.5rem;
+            color: #bdbdbd;
+            margin-bottom: 15px;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .instructions h3 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .instructions ol {
+            padding-left: 18px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #d63384;
+            font-size: 0.85rem;
+        }
+        
+        /* Toggle instructions (accordion) */
+        .instructions details.toggle {
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-top: 10px;
+        }
+        .instructions details.toggle[open] {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .instructions details.toggle summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-weight: 700;
+            color: #333;
+            padding: 6px 2px;
+            user-select: none;
+        }
+        .instructions details.toggle summary::-webkit-details-marker { display: none; }
+        .instructions .toggle-caret {
+            flex: 0 0 auto;
+            width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            background: rgba(102,126,234,0.12);
+            color: #445;
+            transition: transform 0.2s ease;
+        }
+        .instructions details.toggle[open] .toggle-caret { transform: rotate(180deg); }
+        .instructions .toggle-body {
+            margin-top: 10px;
+        }
+        .instructions .toggle-body ol,
+        .instructions .toggle-body ul {
+            margin-top: 6px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+        }
+        
+        .notification.info {
+            background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+        }
+        
+        /* Responsive cho mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                min-width: 100px;
+            }
+            
+            .stat-value {
+                font-size: 1.3rem;
+            }
+            
+            .status-table th,
+            .status-table td {
+                padding: 8px;
+            }
+            
+            .vocab-main {
+                font-size: 0.95rem;
+            }
+            
+            .action-btn {
+                padding: 5px 8px;
+                font-size: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .app-container {
+                gap: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .status-table {
+                min-width: 500px;
+            }
+            
+            .instructions {
+                padding: 12px;
+            }
+        }
+    
+        /* ===== APKG Builder ===== */
+        .apkg-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+        .apkg-row input[type="text"]{flex:1;min-width:200px;padding:10px 12px;border:2px solid #e0e0e0;border-radius:8px;font-size:14px;transition:border-color .25s ease;}
+        .apkg-row input[type="text"]:focus{outline:none;border-color:#667eea}
+        .apkg-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+        .btn-purple{background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);color: white;}
+        .btn-purple:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(102,126,234,.4)}
+        .btn-outline{background:#fff;color:#333;border:1px solid #dee2e6;}
+        .btn-outline:hover{background:#f1f3f5;transform:translateY(-2px)}
+        .mini-help{font-size:.85rem;color:#555;line-height:1.45;margin-top:10px}
+        .pill{display:inline-flex;align-items:center;gap:6px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:600;}
+        .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:2000;padding:16px;}
+        .modal{width:min(1050px, 100%);max-height:90vh;overflow:auto;background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);}
+        .modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #eee;}
+        .modal-header h3{font-size:1.05rem;color:#333}
+        .modal-body{padding:16px 18px}
+        .modal-grid{display:grid;grid-template-columns:1fr;gap:12px}
+        .modal-grid textarea{min-height:160px}
+        .modal-footer{padding:14px 18px;border-top:1px solid #eee;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+        .modal-backdrop.show{display:flex}
+        .preview-shell{background:#f8f9fa;border:1px solid #e5e7eb;border-radius:12px;padding:10px;margin-top:12px;}
+        .preview-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:10px}
+        .toggle{display:flex;gap:8px;align-items:center}
+        .toggle button{padding:8px 12px;border-radius:10px;border:1px solid #dee2e6;background:#fff;font-weight:600;cursor:pointer}
+        .toggle button.active{background:#e3f2fd;border-color:#bbdefb;color:#1976d2}
+        .preview-iframe{width:100%;height:360px;border:0;border-radius:10px;background:#fff;}
+
+
+        /* Export cards */
+        .export-card{
+            border: 1px solid rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.18);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            margin: 14px 0 18px;
+        }
+        .export-card h2, .export-card h3, .export-card .section-title{
+            margin-top: 0;
+        }
+        .export-card .apkg-row{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media (min-width: 720px){
+            .export-card .apkg-row{
+                grid-template-columns: 1fr 1fr auto;
+                align-items: center;
+            }
+        }
+    
+
+        /* APKG section layout (match CSV card feel) */
+        .apkg-actions{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .apkg-actions .btn{
+            width: 100%;
+            justify-content: center;
+        }
+        @media (min-width: 720px){
+            .apkg-actions{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+        .apkg-row{
+            display:grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media (min-width: 720px){
+            .apkg-row{
+                grid-template-columns: 1fr 1fr auto;
+                align-items:center;
+            }
+        }
+        .apkg-row input{
+            width: 100%;
+        }
+
+
+
+/* ===== v7 responsive fixes ===== */
+.card{overflow:hidden;}
+.card *{max-width:100%;}
+textarea, input, select, button{max-width:100%;}
+/* Prevent preview toolbar from forcing horizontal overflow on mobile */
+#previewSelect, #previewCardSelect{min-width:0 !important; width:100%; flex:1 1 160px;}
+.preview-toolbar .toggle{flex-wrap:wrap;}
+@media (max-width: 650px){
+  body{padding:12px;}
+  .card{padding:16px;}
+  .preview-toolbar{flex-direction:column; align-items:stretch;}
+  .preview-toolbar .toggle{width:100%; justify-content:flex-start;}
+  .preview-toolbar .toggle button{flex:0 0 auto;}
+}
+/* Modal editor: stack inputs vertically (no side-by-side) */
+.modal-grid{grid-template-columns:1fr !important;}
+.modal-grid > div{min-width:0;}
+.modal-grid textarea{width:100% !important;}
+
+/* Template editor modal layout */
+.tpl-editor{display:flex;flex-direction:column;gap:12px;max-width:100%;}
+.tpl-row{display:flex;flex-direction:column;gap:6px;}
+.tpl-label{font-weight:700;}
+.tpl-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tpl-controls .input{flex:1 1 180px;min-width:160px;max-width:100%;}
+.tpl-editor .input{width:100%;max-width:100%;box-sizing:border-box;}
+.tpl-editor select.input{min-height:44px;height:auto;}
+.tpl-editor select.input{min-height:44px;height:auto;}
+.tpl-editor textarea{resize:vertical;min-height:120px;overflow:auto;}
+.tpl-note{padding-top:4px;color:#666;line-height:1.4;}
+/* modal body scroll on small screens */
+.modal{max-height:85vh;overflow:hidden;}
+.modal-body{overflow:auto;max-height:60vh;padding-right:2px;}
+@media (max-width: 520px){
+  .tpl-controls{flex-direction:column;align-items:stretch;}
+  .tpl-controls .btn{width:100%;}
+  .tpl-controls .input{width:100%;min-width:0;flex:0 0 auto;}
+  .modal-body{max-height:62vh;}
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<!-- APKG libs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-asm.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1><i class="fas fa-book"></i> Vocabulary Manager</h1>
+<p>Import JSON từ Anki và export thành file CSV cho Anki Import</p>
+</div>
+<div class="app-container">
+<!-- Import Section -->
+<div class="card">
+<h2><i class="fas fa-file-import"></i> Tra từ vựng (tự động tạo JSON)</h2>
+<div class="input-section">
+<textarea \"="" \",="" \"<img="" \"example\",="" \"image_html\":="" \"ipa\":="" \"noun\",="" \"pos\":="" id="jsonInput" placeholder="Nhập từ vựng cần tra (mỗi từ 1 dòng hoặc phân cách bằng ;) rồi bấm Tra cứu & Import.
+
+Bạn vẫn có thể dán JSON (nếu muốn) vào đây...
+Ví dụ:
+{
+  \" src="example.jpg" vocab\":="" ɪɡˈzɑːmpl="">\"
+}"&gt;</textarea>
+<div class="buttons">
+<button class="btn btn-primary" id="importBtn">
+<i class="fas fa-upload"></i> Tra cứu & Import
+                        </button>
+<button class="btn btn-secondary" id="clearInputBtn">
+<i class="fas fa-eraser"></i> Xóa
+                        </button>
+<button class="btn btn-secondary" id="loadSampleBtn">
+<i class="fas fa-vial"></i> Load Mẫu
+                        </button>
+</div>
+</div>
+</div>
+<!-- Export Section -->
+<div class="card">
+<h2><i class="fas fa-file-export"></i> Export CSV cho Anki</h2>
+<div class="input-section">
+<div class="stats-card">
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-value" id="totalWords">0</div>
+<div class="stat-label">Tổng số từ</div>
+</div>
+<div class="stat-item">
+<div class="stat-value" id="totalMeanings">0</div>
+<div class="stat-label">Tổng nghĩa</div>
+</div>
+<div class="stat-item">
+<div class="stat-value" id="totalExamples">0</div>
+<div class="stat-label">Tổng ví dụ</div>
+</div>
+</div>
+</div>
+<div class="buttons">
+<button class="btn btn-success" disabled="" id="exportCsvBtn">
+<i class="fas fa-file-csv"></i> Export CSV
+                        </button>
+<button class="btn btn-danger" id="clearAllBtn">
+<i class="fas fa-trash-alt"></i> Xóa tất cả
+                        </button>
+</div>
+</div>
+</div>
+<div class="card">
+<h2><i class="fas fa-box"></i> Export APKG cho Anki</h2>
+<div class="input-section">
+<div class="apkg-row">
+<input id="deckNameInput" placeholder="Tên deck (ví dụ: ENVI Vocabulary)" type="text"/>
+<input id="noteTypeInput" placeholder="Tên note type (ví dụ: ENVI_Vocabulary)" type="text"/>
+<span class="pill" id="apkgCountPill">0 thẻ</span>
+</div>
+<div class="apkg-actions">
+<button class="btn btn-purple" disabled="" id="exportApkgBtn">
+<i class="fas fa-download"></i> Xuất .apkg
+                        </button>
+<button class="btn btn-outline" id="editTemplatesBtn">
+<i class="fas fa-pen"></i> Sửa template
+                        </button>
+<button class="btn btn-outline" disabled="" id="previewBtn">
+<i class="fas fa-eye"></i> Xem trước thẻ
+                        </button>
+<button class="btn btn-secondary" id="resetTemplatesBtn">
+<i class="fas fa-rotate-left"></i> Reset template
+                        </button>
+</div>
+<div class="mini-help">
+                        • Template (<b>Front</b>/<b>Back</b>/<b>CSS</b>) + <b>Note type</b> sẽ được <b>lưu trong bộ nhớ trình duyệt</b>.<br/>
+                        • Xem trước sẽ áp dụng template + CSS hiện tại (giống khi import vào Anki).
+                    </div>
+<div class="preview-shell" id="previewShell" style="display:none;">
+<div class="preview-toolbar">
+<div class="toggle">
+<button class="active" id="previewFrontBtn" type="button">Front</button>
+<button id="previewBackBtn" type="button">Back</button>
+</div>
+<div class="toggle">
+<button id="previewPrevBtn" type="button">◀</button>
+<select id="previewSelect" style="padding:8px 10px;border-radius:10px;border:1px solid #dee2e6"></select>
+<select id="previewCardSelect" style="padding:8px 10px;border-radius:10px;border:1px solid #dee2e6"></select>
+<button id="previewNextBtn" type="button">▶</button>
+</div>
+<div id="previewTitle" style="font-size:.85rem;color:#555"></div>
+</div>
+<iframe class="preview-iframe" id="previewFrame" sandbox="allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+</div>
+<!-- Vocabulary List -->
+</div>
+<div class="card" style="grid-column: 1 / -1;">
+<h2><i class="fas fa-list"></i> Danh sách từ vựng</h2>
+<div class="words-container">
+<div id="wordsList">
+<div class="empty-state">
+<i class="fas fa-inbox"></i>
+<h3>Chưa có từ vựng nào</h3>
+<p>Hãy import JSON từ Anki để bắt đầu</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Instructions -->
+<div class="instructions">
+  <h3><i class="fas fa-info-circle"></i> Hướng dẫn sử dụng</h3>
+
+  <details class="toggle" open>
+    <summary>
+      Tra cứu & Import (tự động)
+      <span class="toggle-caret">▾</span>
+    </summary>
+    <div class="toggle-body">
+      <ol>
+        <li>Trong Anki, nhấn nút <strong>"Copy JSON"</strong> ở mặt sau thẻ</li>
+        <li>Quay lại trang này và dán JSON vào khung Import</li>
+        <li>Nhấn <strong>"Import JSON"</strong> để thêm từ vào danh sách</li>
+        <li>Lặp lại với các từ khác</li>
+      </ol>
+      <p style="margin-top: 8px;"><strong>Lưu ý:</strong></p>
+      <ul style="margin-top: 6px; font-size: 0.85rem; color: #555;">
+        <li>Dữ liệu được lưu trong bộ nhớ trình duyệt, sẽ mất khi xóa cache</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="toggle">
+    <summary>
+      Export CSV cho Anki
+      <span class="toggle-caret">▾</span>
+    </summary>
+    <div class="toggle-body">
+      <ol>
+        <li>Nhấn <strong>"Export CSV"</strong> để tải file CSV về máy</li>
+        <li>Trong Anki: <strong>File → Import</strong> → chọn file CSV</li>
+        <li>Chọn <strong>Note Type</strong> tương ứng và mapping đúng các field</li>
+        <li><strong>Tick "Allow HTML in fields"</strong> rồi Import</li>
+      </ol>
+      <p style="margin-top: 8px;"><strong>Lưu ý quan trọng:</strong></p>
+      <ul style="margin-top: 6px; font-size: 0.85rem; color: #555;">
+        <li>Tick <strong>"Allow HTML in fields"</strong> để ảnh/HTML hiển thị đúng</li>
+        <li>Trường <strong>Image</strong> (nếu có) phải mapping đúng field chứa HTML trong Note Type</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="toggle">
+    <summary>
+      Export APKG cho Anki
+      <span class="toggle-caret">▾</span>
+    </summary>
+    <div class="toggle-body">
+      <ol>
+        <li>Nhập <strong>Deck name</strong> và <strong>Note type name</strong> theo ý bạn</li>
+        <li>Nhấn <strong>"Xuất .apkg"</strong> để tải file apkg</li>
+        <li>Trong Anki: <strong>File → Import</strong> → chọn file <code>.apkg</code></li>
+      </ol>
+      <ul style="margin-top: 6px; font-size: 0.85rem; color: #555;">
+        <li>APKG sẽ tạo Note Type + Card templates theo phần <strong>Sửa template</strong> hiện tại</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="toggle">
+    <summary>
+      Chỉnh sửa Template / Card Type
+      <span class="toggle-caret">▾</span>
+    </summary>
+    <div class="toggle-body">
+      <ol>
+        <li>Nhấn <strong>"Sửa template"</strong> để mở cửa sổ chỉnh sửa</li>
+        <li>Ở mục <strong>Card Type</strong>: chọn card đang muốn sửa</li>
+        <li>Dùng các nút: <strong>Thêm</strong> / <strong>Nhân bản</strong> / <strong>Xóa</strong> để quản lý card type</li>
+        <li>Sửa <strong>Front Template (HTML)</strong> và <strong>Back Template (HTML)</strong></li>
+        <li>Sửa <strong>Global CSS</strong> (CSS chung cho tất cả card)</li>
+        <li>Nhấn <strong>Lưu</strong> → quay lại và dùng <strong>Xem trước thẻ</strong> để test</li>
+      </ol>
+      <ul style="margin-top: 6px; font-size: 0.85rem; color: #555;">
+        <li>Mọi thay đổi template/CSS được lưu trong trình duyệt (localStorage) cho lần mở sau</li>
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notification"></div>
+<script>
+
+        /* ===== Auto Lookup (integrated from json.html) ===== */
+        const AutoLookup = (() => {
+            // Parse input words: split by ; or newline, trim, lower
+            function parseInputWords(input) {
+                const trimmed = (input || '').trim();
+                if (!trimmed) return [];
+                const words = trimmed
+                    .split(/[;\n]/)
+                    .map(w => w.trim())
+                    .filter(Boolean);
+                // de-dup (case-insensitive)
+                const seen = new Set();
+                const out = [];
+                for (const w of words) {
+                    const key = w.toLowerCase();
+                    if (!seen.has(key)) { seen.add(key); out.push(w); }
+                }
+                return out;
+            }
+
+            // Decoder helpers from json.html (kept intact-ish, but scoped)
+            function flipDecode(s) {
+                if (typeof s !== "string") return s;
+
+                const hasEncodedChars = /[^a-zA-Z0-9\/\[\]\(\)\s.,;:'"!?-]/.test(s);
+                if (!hasEncodedChars) return s;
+
+                const flipMap = {};
+                for (let i = 32; i <= 126; i++) {
+                    flipMap[String.fromCharCode(i)] = String.fromCharCode(158 - i);
+                }
+
+                let chars = s.split("");
+                for (let i = 0; i < chars.length; i++) {
+                    if (flipMap[chars[i]]) chars[i] = flipMap[chars[i]];
+                }
+
+                const n = chars.length;
+                const mod = n % 3;
+
+                function swapPairs(arr) {
+                    for (let i = 0; i < arr.length - 1; i += 2) {
+                        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                    }
+                    return arr;
+                }
+
+                if (mod === 0) {
+                    chars.reverse();
+                } else if (mod === 1) {
+                    chars = swapPairs(chars);
+                } else {
+                    chars = swapPairs(chars);
+                    chars.reverse();
+                }
+                return chars.join("");
+            }
+
+            function decodeEnviData(data) {
+                if (!data) return data;
+
+                const result = { ...data };
+
+                if (result.def && typeof result.def === 'string') {
+                    result.def = flipDecode(result.def);
+                }
+
+                if (result.pron && typeof result.pron === 'string') {
+                    result.pron = result.pron.trim();
+                }
+
+                if (result.pos && typeof result.pos === 'string') {
+                    result.pos = result.pos.trim();
+                }
+
+                let meanArray = result.mean;
+
+                if (typeof meanArray === 'string') {
+                    try { meanArray = JSON.parse(meanArray); } catch(e) { meanArray = []; }
+                }
+                if (!Array.isArray(meanArray) && meanArray) meanArray = [meanArray];
+
+                if (Array.isArray(meanArray)) {
+                    result.mean = meanArray.map(item => {
+                        if (!item) return null;
+
+                        if (typeof item === 'object') {
+                            const decodedItem = {};
+                            decodedItem.m = item.m && typeof item.m === 'string' ? flipDecode(item.m) : (item.m || '');
+                            decodedItem.e = item.e && typeof item.e === 'string' ? flipDecode(item.e) : (item.e || '');
+                            decodedItem.v = item.v && typeof item.v === 'string' ? flipDecode(item.v) : (item.v || '');
+                            return decodedItem;
+                        } else if (typeof item === 'string') {
+                            try {
+                                const parsed = JSON.parse(item);
+                                const decodedItem = {};
+                                decodedItem.m = parsed.m && typeof parsed.m === 'string' ? flipDecode(parsed.m) : (parsed.m || '');
+                                decodedItem.e = parsed.e && typeof parsed.e === 'string' ? flipDecode(parsed.e) : (parsed.e || '');
+                                decodedItem.v = parsed.v && typeof parsed.v === 'string' ? flipDecode(parsed.v) : (parsed.v || '');
+                                return decodedItem;
+                            } catch(e) {
+                                return { m: flipDecode(item), e: '', v: '' };
+                            }
+                        }
+                        return null;
+                    }).filter(item => item !== null && (item.m || item.e || item.v));
+                } else {
+                    result.mean = [];
+                }
+                return result;
+            }
+
+            function decodeIfEncoded(s) {
+                if (typeof s !== "string") return s;
+
+                const hasEncodedChars = /[^a-zA-Z0-9\/\[\]\(\)\s.,;:'"!?-]/.test(s);
+                if (!hasEncodedChars) return s;
+
+                const flipMap = {};
+                for (let i = 32; i <= 126; i++) {
+                    flipMap[String.fromCharCode(i)] = String.fromCharCode(158 - i);
+                }
+
+                let chars = s.split("");
+                for (let i = 0; i < chars.length; i++) {
+                    if (flipMap[chars[i]]) chars[i] = flipMap[chars[i]];
+                }
+
+                const n = chars.length;
+                const mod = n % 3;
+
+                function swapPairs(arr) {
+                    for (let i = 0; i < arr.length - 1; i += 2) {
+                        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                    }
+                    return arr;
+                }
+
+                if (mod === 0) chars.reverse();
+                else if (mod === 1) chars = swapPairs(chars);
+                else { chars = swapPairs(chars); chars.reverse(); }
+
+                return chars.join("");
+            }
+
+            function cleanIpa(ipa) {
+                if (!ipa || typeof ipa !== 'string') return '';
+                let cleaned = ipa.trim();
+
+                const isLikelyIpa = /[\/\[\]()ːˈˌ]/.test(cleaned);
+                if (!isLikelyIpa && cleaned.length > 10) {
+                    cleaned = decodeIfEncoded(cleaned);
+                }
+
+                if (!cleaned.startsWith('/') && !cleaned.endsWith('/')) {
+                    cleaned = '/' + cleaned + '/';
+                } else if (cleaned.startsWith('/') && !cleaned.endsWith('/')) {
+                    cleaned = cleaned + '/';
+                } else if (!cleaned.startsWith('/') && cleaned.endsWith('/')) {
+                    cleaned = '/' + cleaned;
+                }
+                return cleaned;
+            }
+
+            function fetchAutoImage(word) {
+                return new Promise((resolve) => {
+                    const keyword = (word || '').trim();
+                    if (!keyword) return resolve(null);
+
+                    const randomLock = Math.floor(Math.random() * 1000);
+                    const imageUrl = "https://loremflickr.com/400/250/" + encodeURIComponent(keyword) + "?lock=" + randomLock;
+
+                    const img = new Image();
+                    img.onload = () => resolve(imageUrl);
+                    img.onerror = () => resolve(null);
+                    img.src = imageUrl;
+                });
+            }
+
+            async function fetchWordData(word) {
+                try {
+                    const response = await fetch('https://en.jpdictionary.com/api/search/e', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Accept': 'application/json'
+                        },
+                        body: new URLSearchParams({ w: word })
+                    });
+
+                    if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+                    const rawData = await response.json();
+                    const decodedData = decodeEnviData(rawData);
+
+                    const imageUrl = await fetchAutoImage(word);
+                    const cleanedIpa = cleanIpa(decodedData.pron || '');
+
+                    const fullData = {
+                        vocab: word,
+                        ipa: cleanedIpa,
+                        pos: decodedData.pos || '',
+                        definition: decodedData.def || '',
+                        meanings: [],
+                        examples: [],
+                        image_html: imageUrl ? `<img src="${imageUrl}">` : ''
+                    };
+
+                    if (Array.isArray(decodedData.mean)) {
+                        decodedData.mean.forEach(item => {
+                            if (item && item.m) {
+                                const meaning = String(item.m).trim();
+                                if (meaning) fullData.meanings.push(meaning);
+                            }
+                            if (item && (item.e || item.v)) {
+                                const ex = { en: item.e ? String(item.e).trim() : '', vi: item.v ? String(item.v).trim() : '' };
+                                if (ex.en || ex.vi) fullData.examples.push(ex);
+                            }
+                        });
+                    }
+
+                    if (fullData.meanings.length === 0 && fullData.definition) {
+                        fullData.meanings.push(fullData.definition);
+                    }
+
+                    return fullData;
+                } catch (error) {
+                    console.error(`AutoLookup error for "${word}":`, error);
+                    return {
+                        vocab: word,
+                        ipa: '',
+                        pos: '',
+                        definition: 'Không thể tải dữ liệu từ API',
+                        meanings: ['Không thể tải dữ liệu cho từ này'],
+                        examples: [],
+                        image_html: '',
+                        error: true
+                    };
+                }
+            }
+
+            return { parseInputWords, fetchWordData };
+        })();
+        /* ===== End Auto Lookup ===== */
+
+
+        class VocabularyManager {
+            constructor() {
+                this.vocabularies = new Map();
+                this.init();
+            }
+            
+            init() {
+                this.loadFromStorage();
+                this.bindEvents();
+                this.updateUI();
+            }
+            
+            bindEvents() {
+                document.getElementById('importBtn').addEventListener('click', () => this.importOrLookup());
+                document.getElementById('clearInputBtn').addEventListener('click', () => {
+                    document.getElementById('jsonInput').value = '';
+                });
+                document.getElementById('loadSampleBtn').addEventListener('click', () => this.loadSample());
+                document.getElementById('exportCsvBtn').addEventListener('click', () => this.exportCsvForAnki());
+                document.getElementById('clearAllBtn').addEventListener('click', () => this.clearAll());
+                document.getElementById('jsonInput').addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'Enter') {
+                        this.importOrLookup();
+                    }
+                });
+            }
+            
+            loadFromStorage() {
+                try {
+                    const saved = localStorage.getItem('anki_vocab_manager');
+                    if (saved) {
+                        const data = JSON.parse(saved);
+                        this.vocabularies = new Map(data);
+                        this.showNotification('Đã tải dữ liệu từ bộ nhớ', 'info');
+                    }
+                } catch (error) {
+                    console.error('Error loading from storage:', error);
+                    localStorage.removeItem('anki_vocab_manager');
+                }
+            }
+            
+            saveToStorage() {
+                try {
+                    const data = Array.from(this.vocabularies.entries());
+                    localStorage.setItem('anki_vocab_manager', JSON.stringify(data));
+                } catch (error) {
+                    console.error('Error saving to storage:', error);
+                }
+            }
+
+
+            // ===== Import / Auto Lookup (new) =====
+            async importOrLookup() {
+                const inputEl = document.getElementById('jsonInput');
+                const importBtn = document.getElementById('importBtn');
+                const raw = (inputEl.value || '').trim();
+
+                if (!raw) {
+                    this.showNotification('Vui lòng nhập từ cần tra (mỗi từ một dòng hoặc phân cách bằng ;)', 'error');
+                    return;
+                }
+
+                // If user pasted JSON, keep old behavior.
+                const looksLikeJson = raw.startsWith('{') || raw.startsWith('[');
+                if (looksLikeJson) {
+                    this.importJsonText(raw);
+                    return;
+                }
+
+                // Otherwise: treat as word list and auto lookup -> create JSON -> import.
+                const words = AutoLookup.parseInputWords(raw);
+                if (!words.length) {
+                    this.showNotification('Không tìm thấy từ nào để tra.', 'error');
+                    return;
+                }
+
+                importBtn.disabled = true;
+                importBtn.innerHTML = '<i class="fas fa-search"></i> Đang tra...';
+
+                let ok = 0, fail = 0;
+                for (let idx = 0; idx < words.length; idx++) {
+                    const w = words[idx];
+                    this.showNotification(`Đang tra: "${w}" (${idx+1}/${words.length})`, 'info', 1200);
+
+                    const data = await AutoLookup.fetchWordData(w);
+                    const res = this.importDataObject(data, { overwrite: true, silent: true });
+
+                    if (res && res.ok) ok += 1;
+                    else fail += 1;
+                }
+
+                inputEl.value = '';
+                this.updateUI();
+                this.showNotification(`Xong! Đã import ${ok} từ${fail ? `, lỗi ${fail}` : ''}.`, fail ? 'info' : 'success', 4000);
+
+                importBtn.disabled = false;
+                importBtn.innerHTML = '<i class="fas fa-upload"></i> Tra cứu & Import';
+            }
+
+            // Old JSON import path (kept)
+            importJsonText(jsonText) {
+                const jsonInput = (jsonText || '').trim();
+
+                if (!jsonInput) {
+                    this.showNotification('Vui lòng nhập JSON', 'error');
+                    return;
+                }
+
+                try {
+                    const data = JSON.parse(jsonInput);
+
+                    if (!this.validateJson(data)) {
+                        this.showNotification('JSON không đúng định dạng', 'error');
+                        return;
+                    }
+
+                    const cleanedData = this.cleanData(data);
+
+                    if (this.vocabularies.has(cleanedData.vocab.toLowerCase())) {
+                        if (!confirm(`Từ "${cleanedData.vocab}" đã tồn tại. Bạn có muốn ghi đè?`)) {
+                            return;
+                        }
+                    }
+
+                    this.vocabularies.set(cleanedData.vocab.toLowerCase(), cleanedData);
+                    this.saveToStorage();
+                    document.getElementById('jsonInput').value = '';
+                    this.updateUI();
+
+                    this.showNotification(`Đã thêm từ "${cleanedData.vocab}" thành công`, 'success');
+
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                    this.showNotification('JSON không hợp lệ. Vui lòng kiểm tra lại.', 'error');
+                }
+            }
+
+            // Import from object (used by auto lookup)
+            importDataObject(data, { overwrite = true, silent = false } = {}) {
+                try {
+                    if (!this.validateJson(data)) {
+                        if (!silent) this.showNotification('Dữ liệu tra cứu không đúng định dạng', 'error');
+                        return { ok: false };
+                    }
+
+                    const cleanedData = this.cleanData(data);
+                    const key = cleanedData.vocab.toLowerCase();
+
+                    if (this.vocabularies.has(key) && !overwrite) {
+                        if (!silent) this.showNotification(`Từ "${cleanedData.vocab}" đã tồn tại`, 'info');
+                        return { ok: false };
+                    }
+
+                    this.vocabularies.set(key, cleanedData);
+                    this.saveToStorage();
+                    return { ok: true, vocab: cleanedData.vocab };
+                } catch (e) {
+                    console.error('importDataObject error:', e);
+                    if (!silent) this.showNotification('Lỗi khi import dữ liệu tra cứu', 'error');
+                    return { ok: false };
+                }
+            }
+            // ===== End Import / Auto Lookup =====
+
+
+            
+            validateJson(data) {
+                if (!data || typeof data !== 'object') return false;
+                if (!data.vocab || typeof data.vocab !== 'string') return false;
+                
+                if (!Array.isArray(data.meanings)) data.meanings = [];
+                if (!Array.isArray(data.examples)) data.examples = [];
+                
+                return true;
+            }
+            
+            cleanData(data) {
+                const cleaned = {
+                    vocab: data.vocab.trim(),
+                    ipa: (data.ipa || '').trim(),
+                    pos: (data.pos || '').trim(),
+                    definition: (data.definition || '').trim(),
+                    meanings: Array.isArray(data.meanings) ? data.meanings.map(m => m.trim()).filter(m => m) : [],
+                    examples: Array.isArray(data.examples) ? data.examples.map(ex => ({
+                        en: (ex.en || '').trim(),
+                        vi: (ex.vi || '').trim()
+                    })).filter(ex => ex.en) : [],
+                    image_html: (data.image_html || '').trim(),
+                    timestamp: new Date().toISOString(),
+                    id: Date.now() + Math.random().toString(36).substr(2, 9)
+                };
+                
+                return cleaned;
+            }
+            
+            updateUI() {
+                this.updateStats();
+                this.updateWordsList();
+                this.updateExportButton();
+            }
+            
+            updateStats() {
+                const totalWords = this.vocabularies.size;
+                const totalMeanings = Array.from(this.vocabularies.values())
+                    .reduce((sum, vocab) => sum + vocab.meanings.length, 0);
+                const totalExamples = Array.from(this.vocabularies.values())
+                    .reduce((sum, vocab) => sum + vocab.examples.length, 0);
+                
+                document.getElementById('totalWords').textContent = totalWords;
+                document.getElementById('totalMeanings').textContent = totalMeanings;
+                document.getElementById('totalExamples').textContent = totalExamples;
+            }
+            
+            updateExportButton() {
+                const exportBtn = document.getElementById('exportCsvBtn');
+                exportBtn.disabled = this.vocabularies.size === 0;
+            }
+            
+            updateWordsList() {
+                const wordsList = document.getElementById('wordsList');
+                
+                if (this.vocabularies.size === 0) {
+                    wordsList.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-inbox"></i>
+                            <h3>Chưa có từ vựng nào</h3>
+                            <p>Hãy import JSON từ Anki để bắt đầu</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const sortedVocabs = Array.from(this.vocabularies.values())
+                    .sort((a, b) => a.vocab.localeCompare(b.vocab));
+                
+                let tableHTML = `
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th width="30%">Từ vựng</th>
+                                <th width="45%">Trạng thái</th>
+                                <th width="25%">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                sortedVocabs.forEach(vocab => {
+                    const hasDefinition = vocab.definition && vocab.definition.trim() !== '';
+                    const meaningsCount = vocab.meanings.length;
+                    const examplesCount = vocab.examples.length;
+                    const hasImage = vocab.image_html && vocab.image_html.trim() !== '';
+                    
+                    tableHTML += `
+                        <tr>
+                            <td class="vocab-cell">
+                                <span class="vocab-main">${this.escapeHtml(vocab.vocab)}</span>
+                                <div class="vocab-details">
+                                    <div>${vocab.pos ? vocab.pos : '<em>Chưa có</em>'}</div>
+                                    ${vocab.ipa ? `<div><i>${this.escapeHtml(vocab.ipa)}</i></div>` : ''}
+                                </div>
+                            </td>
+                            <td class="status-cell">
+                                <div class="status-item">
+                                    <span class="status-label">Định nghĩa:</span>
+                                    <span class="status-indicator ${hasDefinition ? 'status-yes' : 'status-no'}">
+                                        <i class="fas ${hasDefinition ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                        ${hasDefinition ? 'Có' : 'Không có'}
+                                    </span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Nghĩa:</span>
+                                    <span class="status-indicator ${meaningsCount > 0 ? 'status-yes' : 'status-no'}">
+                                        <i class="fas ${meaningsCount > 0 ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                        ${meaningsCount > 0 ? `<span class="status-count">${meaningsCount}</span> nghĩa` : 'Không có'}
+                                    </span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Ví dụ:</span>
+                                    <span class="status-indicator ${examplesCount > 0 ? 'status-yes' : 'status-no'}">
+                                        <i class="fas ${examplesCount > 0 ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                        ${examplesCount > 0 ? `<span class="status-count">${examplesCount}</span> ví dụ` : 'Không có'}
+                                    </span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Hình ảnh:</span>
+                                    <span class="status-indicator ${hasImage ? 'status-yes' : 'status-no'}">
+                                        <i class="fas ${hasImage ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                        ${hasImage ? 'Có' : 'Không có'}
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="actions-cell">
+                                <button class="action-btn action-btn-view" onclick="vocabManager.viewWord('${vocab.id}')" title="Xem chi tiết">
+                                    <i class="fas fa-eye"></i>
+                                    Xem
+                                </button>
+                                <button class="action-btn action-btn-copy" onclick="vocabManager.copyWord('${vocab.id}')" title="Sao chép JSON">
+                                    <i class="fas fa-copy"></i>
+                                    Copy
+                                </button>
+                                <button class="action-btn action-btn-delete" onclick="vocabManager.deleteWord('${vocab.id}')" title="Xóa từ">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Xóa
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+                
+                tableHTML += `
+                        </tbody>
+                    </table>
+                `;
+                
+                wordsList.innerHTML = tableHTML;
+            }
+            
+            viewWord(id) {
+                const vocab = Array.from(this.vocabularies.values()).find(v => v.id === id);
+                if (!vocab) return;
+                
+                const details = `
+Từ: ${vocab.vocab}
+IPA: ${vocab.ipa}
+Loại từ: ${vocab.pos}
+Định nghĩa: ${vocab.definition}
+
+Nghĩa:
+${vocab.meanings.map(m => `• ${m}`).join('\n')}
+
+Ví dụ:
+${vocab.examples.map((ex, i) => `${i+1}. ${ex.en}${ex.vi ? `\n   ${ex.vi}` : ''}`).join('\n\n')}
+
+Hình ảnh HTML: ${vocab.image_html ? 'Có' : 'Không có'}
+                `;
+                
+                alert(details);
+            }
+            
+            copyWord(id) {
+                const vocab = Array.from(this.vocabularies.values()).find(v => v.id === id);
+                if (!vocab) return;
+                
+                const copyData = {
+                    vocab: vocab.vocab,
+                    ipa: vocab.ipa,
+                    pos: vocab.pos,
+                    definition: vocab.definition,
+                    meanings: [...vocab.meanings],
+                    examples: [...vocab.examples],
+                    image_html: vocab.image_html
+                };
+                
+                const jsonString = JSON.stringify(copyData, null, 2);
+                
+                navigator.clipboard.writeText(jsonString)
+                    .then(() => {
+                        this.showNotification(`Đã sao chép JSON của từ "${vocab.vocab}"`, 'success');
+                    })
+                    .catch(err => {
+                        console.error('Copy failed:', err);
+                        const textArea = document.createElement('textarea');
+                        textArea.value = jsonString;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        this.showNotification(`Đã sao chép JSON của từ "${vocab.vocab}"`, 'success');
+                    });
+            }
+            
+            deleteWord(id) {
+                if (!confirm('Bạn có chắc chắn muốn xóa từ này?')) {
+                    return;
+                }
+                
+                const vocab = Array.from(this.vocabularies.values()).find(v => v.id === id);
+                if (!vocab) return;
+                
+                this.vocabularies.delete(vocab.vocab.toLowerCase());
+                this.saveToStorage();
+                this.updateUI();
+                
+                this.showNotification(`Đã xóa từ "${vocab.vocab}"`, 'success');
+            }
+            
+            exportCsvForAnki() {
+                if (this.vocabularies.size === 0) {
+                    this.showNotification('Không có dữ liệu để export', 'error');
+                    return;
+                }
+                
+                const vocabs = Array.from(this.vocabularies.values())
+                    .sort((a, b) => a.vocab.localeCompare(b.vocab));
+                
+                const csvRows = [];
+                const headers = [
+                    'Vocab',
+                    'IPA',
+                    'Part of speech',
+                    'Definition',
+                    'Meanings',
+                    'Examples',
+                    'Image'
+                ];
+                csvRows.push(headers.join(','));
+                
+                vocabs.forEach(vocab => {
+                    const meaningsText = vocab.meanings
+                        .map(m => m.trim())
+                        .filter(m => m)
+                        .join(', ');
+                    
+                    let examplesText = '';
+                    if (vocab.examples.length > 0) {
+                        examplesText = vocab.examples
+                            .map(ex => {
+                                let exampleLine = ex.en;
+                                if (ex.vi && ex.vi.trim()) {
+                                    exampleLine += '\n' + ex.vi;
+                                }
+                                return exampleLine;
+                            })
+                            .join('\n\n');
+                    }
+                    
+                    const row = [
+                        this.csvEscape(vocab.vocab),
+                        this.csvEscape(vocab.ipa),
+                        this.csvEscape(vocab.pos),
+                        this.csvEscape(vocab.definition),
+                        this.csvEscape(meaningsText),
+                        this.csvEscape(examplesText),
+                        this.csvEscapeHtmlForImage(vocab.image_html || '')
+                    ];
+                    
+                    csvRows.push(row.join(','));
+                });
+                
+                const csvContent = csvRows.join('\n');
+                const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+                const filename = `anki_import_${timestamp}_${this.vocabularies.size}_words.csv`;
+                
+                link.href = url;
+                link.setAttribute('download', filename);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                this.showNotification(`Đã export ${this.vocabularies.size} từ thành file CSV cho Anki`, 'success');
+                
+                setTimeout(() => {
+                    this.showImportInstructions();
+                }, 1000);
+            }
+            
+            csvEscapeHtmlForImage(html) {
+                if (!html || html.trim() === '') return '';
+                return '"' + html.replace(/"/g, '""') + '"';
+            }
+            
+            showImportInstructions() {
+                const instructions = `
+HƯỚNG DẪN IMPORT VÀO ANKI:
+
+1. Trong Anki, chọn: File → Import
+2. Chọn file CSV vừa tải về
+3. Chọn Note Type phù hợp (loại thẻ của bạn)
+4. Mapping các field:
+   - Vocab → Vocab
+   - IPA → IPA
+   - Part of speech → Part of speech
+   - Definition → Definition
+   - Meanings → Meanings
+   - Examples → Examples
+   - Image → Image
+
+5. QUAN TRỌNG: Phải chọn "Allow HTML in fields"
+6. Nhấn Import
+
+LƯU Ý: 
+- Kiểm tra field names trong Note Type của bạn để mapping chính xác!
+- Bắt buộc phải tick "Allow HTML in fields" để ảnh hiển thị đúng
+                `;
+                
+                if (confirm('Đã export thành công! Bấm OK để xem hướng dẫn import vào Anki.')) {
+                    alert(instructions);
+                }
+            }
+            
+            clearAll() {
+                if (this.vocabularies.size === 0) {
+                    this.showNotification('Không có dữ liệu để xóa', 'info');
+                    return;
+                }
+                
+                if (confirm(`Bạn có chắc chắn muốn xóa tất cả ${this.vocabularies.size} từ?`)) {
+                    this.vocabularies.clear();
+                    localStorage.removeItem('anki_vocab_manager');
+                    this.updateUI();
+                    this.showNotification('Đã xóa tất cả từ vựng', 'success');
+                }
+            }
+            
+            loadSample() {
+                const sampleJson = `{
+  "vocab": "compliance",
+  "ipa": "/kəmˈplaɪəns/",
+  "pos": "noun",
+  "definition": "The act of obeying a law, rule, or request",
+  "meanings": [
+    "sự tuân thủ",
+    "sự đáp ứng",
+    "tính dễ uốn nắn"
+  ],
+  "examples": [
+    {
+      "en": "The company demonstrated its compliance with industry standards.",
+      "vi": "Công ty đã thể hiện sự tuân thủ các tiêu chuẩn ngành."
+    },
+    {
+      "en": "Our team is focused on achieving compliance with all legal requirements.",
+      "vi": "Nhóm của chúng tôi tập trung vào việc đạt được sự đáp ứng với tất cả các yêu cầu pháp lý."
+    }
+  ],
+  "image_html": "<img src='https://loremflickr.com/400/250/compliance?lock=690' class='card-image' alt='Image for compliance'>"
+}`;
+                
+                document.getElementById('jsonInput').value = sampleJson;
+                this.showNotification('Đã load JSON mẫu', 'info');
+            }
+            
+            csvEscape(str) {
+                if (str === null || str === undefined) return '';
+                const string = String(str);
+                if (string.includes(',') || string.includes('"') || string.includes('\n') || string.includes('\r')) {
+                    return '"' + string.replace(/"/g, '""') + '"';
+                }
+                return string;
+            }
+            
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            showNotification(message, type = 'info') {
+                const notification = document.getElementById('notification');
+                notification.textContent = message;
+                notification.className = `notification ${type} show`;
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        }
+        
+        
+        
+        
+        
+        // ===== APKG Builder (integrated) =====
+        // v5: hỗ trợ nhiều Card Type (multi templates), cho phép đổi tên + sửa Front/Back/CSS từng card.
+        const APKG_MODEL_STORAGE_KEY = 'anki_apkg_model_v5';
+        const APKG_DECKNAME_KEY = 'anki_apkg_deckname_v5';
+        const APKG_NOTETYPE_KEY = 'anki_apkg_notetype_v5';
+
+        // Global CSS là CSS chung của Note Type (Anki: model.css).
+        let DEFAULT_MODEL = {
+            globalCss: `img{max-width:100%;height:auto;border-radius:12px}`,
+            cards: [{
+                name: "Card 1",
+                front: `{{Vocab}}`,
+                back: `{{Vocab}}<br>{{#IPA}}/{{IPA}}/{{/IPA}}<br>{{#Part of speech}}<span style="opacity:.75">{{Part of speech}}</span>{{/Part of speech}}<hr>{{#Definition}}<b>Definition:</b> {{Definition}}<br>{{/Definition}}{{#Meanings}}<b>Meanings:</b> {{Meanings}}<br>{{/Meanings}}{{#Examples}}<b>Examples</b><br>{{Examples}}{{/Examples}}{{#Image}}<br>{{Image}}{{/Image}}`,
+            }]
+        };
+
+        // ===== Load default templates from external files =====
+        // Requirements:
+        // - Default template is loaded from: template/front.html, template/back.html, template/style.css
+        //   (folder "template" is next to this HTML file)
+        // - On first open (when no saved template in localStorage), auto-load these files and persist to browser storage.
+        // - After user edits, templates are saved to localStorage as before.
+        async function _fetchText(url){
+            const res = await fetch(url, { cache: 'no-store' });
+            if(!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+            return await res.text();
+        }
+
+        async function ensureDefaultTemplatesLoaded(opts = {}){
+            const force = !!opts.force;
+
+            // If user has already saved a model (templates), keep it unless forcing reload.
+            if(!force){
+                const existing = localStorage.getItem(APKG_MODEL_STORAGE_KEY);
+                if(existing) return;
+            }else{
+                localStorage.removeItem(APKG_MODEL_STORAGE_KEY);
+            }
+
+            try{
+                const [frontHtml, backHtml, cssText] = await Promise.all([
+                    _fetchText('template/front.html'),
+                    _fetchText('template/back.html'),
+                    _fetchText('template/style.css'),
+                ]);
+
+                // Build new DEFAULT_MODEL based on file contents (single-card default).
+                DEFAULT_MODEL = {
+                    globalCss: (cssText || DEFAULT_MODEL.globalCss),
+                    cards: [{
+                        name: "Card 1",
+                        front: (frontHtml || DEFAULT_MODEL.cards[0].front),
+                        back: (backHtml || DEFAULT_MODEL.cards[0].back),
+                    }]
+                };
+
+                localStorage.setItem(APKG_MODEL_STORAGE_KEY, JSON.stringify(DEFAULT_MODEL));
+            }catch(e){
+                // Fallback: keep inline default; still persist so the app works offline.
+                console.warn('[templates] Could not load template files. Using inline defaults.', e);
+                localStorage.setItem(APKG_MODEL_STORAGE_KEY, JSON.stringify(DEFAULT_MODEL));
+            }
+        }
+
+
+        function _safeString(v){ return (typeof v === 'string') ? v : ''; }
+        function _safeArray(v){ return Array.isArray(v) ? v : []; }
+
+        function loadApkgModel(){
+            try{
+                const raw = localStorage.getItem(APKG_MODEL_STORAGE_KEY);
+                if(!raw) return JSON.parse(JSON.stringify(DEFAULT_MODEL));
+                const o = JSON.parse(raw) || {};
+                const cards = _safeArray(o.cards).map((c, idx)=>({
+                    name: _safeString(c?.name).trim() || `Card ${idx+1}`,
+                    front: _safeString(c?.front) || DEFAULT_MODEL.cards[0].front,
+                    back: _safeString(c?.back) || DEFAULT_MODEL.cards[0].back,
+})).filter(Boolean);
+
+                return {
+                    globalCss: _safeString(o.globalCss) || DEFAULT_MODEL.globalCss,
+                    cards: (cards.length ? cards : JSON.parse(JSON.stringify(DEFAULT_MODEL.cards))),
+                };
+            }catch(_e){
+                return JSON.parse(JSON.stringify(DEFAULT_MODEL));
+            }
+        }
+        function saveApkgModel(model){
+            localStorage.setItem(APKG_MODEL_STORAGE_KEY, JSON.stringify(model));
+        }
+        async function resetApkgModel(){
+            // Reset to defaults from template files (if present)
+            await ensureDefaultTemplatesLoaded({ force: true });
+        }
+
+        function loadDeckName(){ return localStorage.getItem(APKG_DECKNAME_KEY) || 'ENVI Vocabulary'; }
+        function saveDeckName(n){ localStorage.setItem(APKG_DECKNAME_KEY, n); }
+
+        function loadNoteType(){ return localStorage.getItem(APKG_NOTETYPE_KEY) || 'ENVI_Vocabulary'; }
+        function saveNoteType(n){ localStorage.setItem(APKG_NOTETYPE_KEY, n); }
+
+        function normalizeMeanings(m){
+            if(!m) return '';
+            return Array.isArray(m) ? m.map(String).filter(Boolean).join(', ') : String(m);
+        }
+        function escapeHtmlLite(s){
+            return String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+        }
+        function formatExamples(ex){
+            if(!ex || !Array.isArray(ex)) return '';
+            return ex.map(o=>{
+                const en = o?.en ? String(o.en) : '';
+                const vi = o?.vi ? String(o.vi) : '';
+                if(!en && !vi) return '';
+                return `<div style="margin:0 0 10px;padding:10px;border:1px solid #eee;border-radius:10px;">
+                          <div style="font-weight:700;">${escapeHtmlLite(en)}</div>
+                          <div style="margin-top:4px;color:#555;"><em>${escapeHtmlLite(vi)}</em></div>
+                        </div>`;
+            }).filter(Boolean).join('');
+        }
+        function safeImageHtml(h){ return h ? String(h).trim() : ''; }
+
+        // Minimal Anki-ish renderer for preview: supports {{Field}} and {{#Field}}...{{/Field}}
+        function renderTemplate(tpl, fields){
+            if(!tpl) return '';
+            tpl = tpl.replace(/{{#([^}]+)}}([\s\S]*?){{\/\1}}/g, (m,k,inner)=>{
+                k = String(k).trim();
+                const v = fields[k];
+                return (v !== undefined && v !== null && String(v).trim() !== '') ? inner : '';
+            });
+            tpl = tpl.replace(/{{([^}]+)}}/g, (m,k)=>{
+                k = String(k).trim();
+                if(k.startsWith('#') || k.startsWith('/')) return '';
+                const v = fields[k];
+                return (v !== undefined && v !== null) ? String(v) : '';
+            });
+            return tpl;
+        }
+
+        let SQL_INSTANCE = null;
+        async function ensureSqlReady(){
+            if(SQL_INSTANCE) return SQL_INSTANCE;
+            if(typeof initSqlJs === 'undefined') throw new Error('Không tải được sql.js');
+            SQL_INSTANCE = await initSqlJs({});
+            return SQL_INSTANCE;
+        }
+        function sha1ish(str){
+            let h=0;
+            for(let i=0;i<str.length;i++){ h=((h<<5)-h)+str.charCodeAt(i); h|=0; }
+            return Math.abs(h);
+        }
+
+        function buildFieldObjects(names){
+            // Include required keys like "sticky" to avoid JsonError on import.
+            return names.map((name, idx)=>({
+                name,
+                ord: idx,
+                sticky: false,
+                rtl: false,
+                font: "Arial",
+                size: 20,
+                description: "",
+                plainText: false,
+                collapsed: false,
+                excludeFromSearch: false,
+                media: []
+            }));
+        }
+
+        function wrapWithCardCss(html){
+            return (html || '');
+        }
+
+        async function exportApkgFromManager(vocabManager){
+            const count = vocabManager.vocabularies.size;
+            if(!count){ vocabManager.showNotification('Không có dữ liệu để export .apkg','error'); return; }
+
+            const deckName = (document.getElementById('deckNameInput')?.value || '').trim() || 'ENVI Vocabulary';
+            const noteTypeName = (document.getElementById('noteTypeInput')?.value || '').trim() || loadNoteType();
+            saveDeckName(deckName);
+            saveNoteType(noteTypeName);
+
+            const model = loadApkgModel();
+            const cards = Array.isArray(model.cards) ? model.cards : [];
+            if(!cards.length){
+                vocabManager.showNotification('Chưa có Card Type nào. Hãy thêm ít nhất 1 Card Type.', 'error');
+                return;
+            }
+
+            await ensureSqlReady();
+            if(typeof JSZip === 'undefined') throw new Error('Không tải được JSZip');
+
+            const vocabs = Array.from(vocabManager.vocabularies.values()).sort((a,b)=>(a.vocab||'').localeCompare(b.vocab||''));
+
+            const nowMs = Date.now();
+            const nowSec = Math.floor(nowMs/1000);
+            const modelId = nowMs;
+            const deckId = nowMs + 1;
+
+            const SQL = SQL_INSTANCE;
+            const db = new SQL.Database();
+
+            db.run(`CREATE TABLE col (id INTEGER PRIMARY KEY, crt INTEGER NOT NULL, mod INTEGER NOT NULL, scm INTEGER NOT NULL, ver INTEGER NOT NULL, dty INTEGER NOT NULL, usn INTEGER NOT NULL, ls INTEGER NOT NULL, conf TEXT NOT NULL, models TEXT NOT NULL, decks TEXT NOT NULL, dconf TEXT NOT NULL, tags TEXT NOT NULL);`);
+            db.run(`CREATE TABLE notes (id INTEGER PRIMARY KEY, guid TEXT NOT NULL, mid INTEGER NOT NULL, mod INTEGER NOT NULL, usn INTEGER NOT NULL, tags TEXT NOT NULL, flds TEXT NOT NULL, sfld TEXT NOT NULL, csum INTEGER NOT NULL, flags INTEGER NOT NULL, data TEXT NOT NULL);`);
+            db.run(`CREATE TABLE cards (id INTEGER PRIMARY KEY, nid INTEGER NOT NULL, did INTEGER NOT NULL, ord INTEGER NOT NULL, mod INTEGER NOT NULL, usn INTEGER NOT NULL, type INTEGER NOT NULL, queue INTEGER NOT NULL, due INTEGER NOT NULL, ivl INTEGER NOT NULL, factor INTEGER NOT NULL, reps INTEGER NOT NULL, lapses INTEGER NOT NULL, left INTEGER NOT NULL, odue INTEGER NOT NULL, odid INTEGER NOT NULL, flags INTEGER NOT NULL, data TEXT NOT NULL);`);
+            db.run(`CREATE TABLE revlog (id INTEGER PRIMARY KEY, cid INTEGER NOT NULL, usn INTEGER NOT NULL, ease INTEGER NOT NULL, ivl INTEGER NOT NULL, lastIvl INTEGER NOT NULL, factor INTEGER NOT NULL, time INTEGER NOT NULL, type INTEGER NOT NULL);`);
+            db.run(`CREATE TABLE graves (usn INTEGER NOT NULL, oid INTEGER NOT NULL, type INTEGER NOT NULL);`);
+
+            const fieldNames = ["Vocab","IPA","Part of speech","Definition","Meanings","Examples","Image"];
+
+            const tmpls = cards.map((c, i)=>({
+                name: (c?.name || `Card ${i+1}`),
+                ord: i,
+                qfmt: (c?.front || ''),
+                afmt: (c?.back || ''),
+                bqfmt: "",
+                bafmt: "",
+                did: null,
+                bfont: "",
+                bsize: 0,
+                id: 0
+            }));
+
+            const req = tmpls.map((t)=>[t.ord, "all", [0]]); // yêu cầu tối thiểu: có Vocab -> tạo card
+
+            const models = {};
+            models[modelId] = {
+                id: modelId,
+                name: noteTypeName,
+                type: 0,
+                mod: nowSec,
+                usn: -1,
+                sortf: 0,
+                did: deckId,
+                tmpls,
+                flds: buildFieldObjects(fieldNames),
+                css: (model.globalCss || DEFAULT_MODEL.globalCss),
+                latexPre: "",
+                latexPost: "",
+                latexsvg: false,
+                req
+            };
+
+            const decks = {
+                "1": {id:1, mod:0, name:"Default", usn:0, lrnToday:[0,0], revToday:[0,0], newToday:[0,0], timeToday:[0,0], collapsed:true, browserCollapsed:true, desc:"", dyn:0, conf:1, extendNew:0, extendRev:0}
+            };
+            decks[String(deckId)] = {id:deckId, mod:nowSec, name:deckName, usn:-1, lrnToday:[0,0], revToday:[0,0], newToday:[0,0], timeToday:[0,0], collapsed:false, browserCollapsed:false, desc:"", dyn:0, conf:1, extendNew:0, extendRev:0};
+
+            const conf = {schedVer:2, sched2021:true, addToCur:true, sortBackwards:false, dueCounts:true, collapseTime:1200, estTimes:true, nextPos:1, sortType:"noteFld", activeDecks:[deckId], newSpread:0, timeLim:0, curDeck:deckId, curModel:modelId, dayLearnFirst:false, creationOffset:-420};
+            conf["_deck_1_lastNotetype"] = modelId;
+            conf[`_nt_${modelId}_lastDeck`] = deckId;
+
+            const dconf = {1:{id:1, mod:0, name:"Default", usn:0, maxTaken:60, autoplay:true, timer:0, replayq:true, new:{bury:false, delays:[1,10], initialFactor:2500, ints:[1,4,0], order:1, perDay:20}, rev:{bury:false, ease4:1.3, ivlFct:1, maxIvl:36500, perDay:200, hardFactor:1.2}, lapse:{delays:[10], leechAction:1, leechFails:8, minInt:1, mult:0}}};
+
+            db.run(`INSERT INTO col VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`, [1, nowSec, nowSec, nowSec, 11, 0, 0, 0, JSON.stringify(conf), JSON.stringify(models), JSON.stringify(decks), JSON.stringify(dconf), "{}"]);
+
+            const tmplCount = tmpls.length;
+
+            vocabs.forEach((v, idx)=>{
+                const noteId = nowMs + 1000 + idx;
+
+                const f = [
+                    v.vocab || '',
+                    v.ipa || '',
+                    v.pos || '',
+                    v.definition || '',
+                    normalizeMeanings(v.meanings),
+                    formatExamples(v.examples),
+                    safeImageHtml(v.image_html),
+                ];
+
+                const sfld = f[0] || '';
+                const csum = sha1ish(sfld);
+                const guid = 'g' + Math.random().toString(36).slice(2,10) + Math.random().toString(36).slice(2,10);
+
+                db.run(`INSERT INTO notes VALUES (?,?,?,?,?,?,?,?,?,?,?)`, [noteId, guid, modelId, nowSec, -1, "", f.join('\u001f'), sfld, csum, 0, "{}"]);
+
+                // Create 1 card for each template (ord = template index)
+                for(let ord=0; ord<tmplCount; ord++){
+                    const cardId = nowMs + 500000 + (idx * tmplCount) + ord;
+                    const due = (idx * tmplCount) + ord + 1; // stable, unique-ish for new queue ordering
+                    db.run(`INSERT INTO cards VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, [
+                        cardId, noteId, deckId, ord, nowSec, -1,
+                        0, 0, due,
+                        0, 0, 0, 0, 0, 0, 0, 0, "{}"
+                    ]);
+                }
+            });
+
+            const data = db.export();
+            const zip = new JSZip();
+            zip.file("collection.anki2", data);
+            zip.file("media", JSON.stringify({}));
+
+            const blob = await zip.generateAsync({type:"blob", compression:"DEFLATE", compressionOptions:{level:9}});
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            const stamp = new Date().toISOString().slice(0,10).replace(/-/g,'');
+            a.download = `anki_${deckName.replace(/[^\w\- ]+/g,'').trim().replace(/\s+/g,'_')}_${stamp}_${count}_notes_${tmplCount}cards.apkg`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            vocabManager.showNotification(`Đã export .apkg: ${count} notes, ${tmplCount} card types → deck "${deckName}"`, 'success');
+        }
+
+
+        // ===== Preview navigation =====
+        let __previewIndex = 0;
+        let __previewSide = 'front'; // 'front' | 'back'
+        let __previewCardOrd = 0;
+
+        function getVocabList(vocabManager){
+            const arr = Array.from(vocabManager.vocabularies.values());
+            arr.sort((a,b)=>(a.vocab||'').localeCompare(b.vocab||''));
+            return arr;
+        }
+        function fieldsFromVocab(v){
+            return {
+                "Vocab": v.vocab || "",
+                "IPA": v.ipa || "",
+                "Part of speech": v.pos || "",
+                "Definition": v.definition || "",
+                "Meanings": normalizeMeanings(v.meanings),
+                "Examples": formatExamples(v.examples),
+                "Image": safeImageHtml(v.image_html),
+            };
+        }
+
+        function refreshPreviewCardSelect(){
+            const model = loadApkgModel();
+            const sel = document.getElementById('previewCardSelect');
+            if(!sel) return;
+
+            const cards = model.cards || [];
+            sel.innerHTML = cards.map((c,i)=>`<option value="${i}">${(c?.name || ('Card ' + (i+1)))}</option>`).join('');
+            __previewCardOrd = Math.max(0, Math.min(__previewCardOrd, cards.length - 1));
+            sel.value = String(__previewCardOrd);
+        }
+
+        function renderPreview(vocabManager){
+            const shell = document.getElementById('previewShell');
+            const frame = document.getElementById('previewFrame');
+            const title = document.getElementById('previewTitle');
+            const select = document.getElementById('previewSelect');
+
+            const list = getVocabList(vocabManager);
+            if(!list.length) return;
+
+            const model = loadApkgModel();
+            const cards = model.cards || [];
+            if(!cards.length) return;
+
+            __previewIndex = Math.max(0, Math.min(__previewIndex, list.length - 1));
+            __previewCardOrd = Math.max(0, Math.min(__previewCardOrd, cards.length - 1));
+
+            const v = list[__previewIndex];
+            const card = cards[__previewCardOrd];
+
+            if(select){
+                select.innerHTML = list.map((x,i)=>`<option value="${i}">${(x.vocab||'(no vocab)')}</option>`).join('');
+                select.value = String(__previewIndex);
+            }
+
+            const fields = fieldsFromVocab(v);
+            const bodyHtml = (__previewSide === 'back')
+                ? renderTemplate(card.back, fields)
+                : renderTemplate(card.front, fields);
+
+            if(title) title.textContent = `Preview (${__previewIndex+1}/${list.length}) • ${card.name || ('Card ' + (__previewCardOrd+1))} • ${v.vocab || ''}`;
+
+            const doc = frame.contentDocument || frame.contentWindow.document;
+            doc.open();
+            doc.write(`<!doctype html><html><head><meta charset="utf-8">
+              <style>${model.globalCss || ''}</style>
+                            <style>body{margin:0;padding:14px;background:#fff}</style>
+            </head><body>${bodyHtml}</body></html>`);
+            doc.close();
+
+            if(shell) shell.style.display = 'block';
+        }
+
+
+        // ===== Template modal (multi-card) =====
+        let __tplModalBound = false;
+        let __editingModel = null;
+        let __editingCardIndex = 0;
+
+        function _setCardEditorFromModel(){
+            const model = __editingModel || loadApkgModel();
+            const cards = model.cards || [];
+            const sel = document.getElementById('tplCardSelect');
+            const nameInput = document.getElementById('tplCardName');
+            const frontTa = document.getElementById('frontTplInput');
+            const backTa = document.getElementById('backTplInput');
+            const globalCssTa = document.getElementById('globalCssTplInput');
+
+            if(!sel || !nameInput || !frontTa || !backTa || !globalCssTa) return;
+
+            sel.innerHTML = cards.map((c,i)=>`<option value="${i}">${(c?.name || ('Card ' + (i+1)))}</option>`).join('');
+            __editingCardIndex = Math.max(0, Math.min(__editingCardIndex, cards.length - 1));
+            sel.value = String(__editingCardIndex);
+
+            const card = cards[__editingCardIndex] || {};
+            nameInput.value = card.name || `Card ${__editingCardIndex+1}`;
+            frontTa.value = card.front || '';
+            backTa.value = card.back || '';
+            globalCssTa.value = model.globalCss || '';
+        }
+
+        function openTplModal(){
+            __editingModel = loadApkgModel();
+            __editingCardIndex = 0;
+            _setCardEditorFromModel();
+            document.getElementById('tplModalBackdrop').classList.add('show');
+        }
+        function closeTplModal(){
+            document.getElementById('tplModalBackdrop').classList.remove('show');
+        }
+
+        function bindTplModalOnce(vocabManager){
+            if(__tplModalBound) return;
+
+            const backdrop = document.getElementById('tplModalBackdrop');
+            const btnClose = document.getElementById('closeTplModalBtn');
+            const btnCancel = document.getElementById('cancelTplBtn');
+            const btnSave = document.getElementById('saveTplBtn');
+
+            const sel = document.getElementById('tplCardSelect');
+            const btnAdd = document.getElementById('addCardBtn');
+            const btnDup = document.getElementById('dupCardBtn');
+            const btnDel = document.getElementById('delCardBtn');
+
+            const nameInput = document.getElementById('tplCardName');
+            const frontTa = document.getElementById('frontTplInput');
+            const backTa = document.getElementById('backTplInput');
+            const globalCssTa = document.getElementById('globalCssTplInput');
+
+            if(!backdrop || !btnClose || !btnCancel || !btnSave || !sel || !btnAdd || !btnDup || !btnDel || !nameInput || !frontTa || !backTa || !globalCssTa){
+                setTimeout(()=>bindTplModalOnce(vocabManager), 50);
+                return;
+            }
+
+            __tplModalBound = true;
+
+            function commitEditorToModel(){
+                if(!__editingModel) __editingModel = loadApkgModel();
+                const cards = __editingModel.cards || [];
+                if(!cards.length) cards.push(JSON.parse(JSON.stringify(DEFAULT_MODEL.cards[0])));
+                __editingCardIndex = Math.max(0, Math.min(__editingCardIndex, cards.length - 1));
+
+                const card = cards[__editingCardIndex];
+                card.name = (nameInput.value || '').trim() || `Card ${__editingCardIndex+1}`;
+                card.front = frontTa.value || '';
+                card.back = backTa.value || '';
+                
+
+                __editingModel.globalCss = globalCssTa.value || '';
+                __editingModel.cards = cards;
+            }
+
+            function reRenderEditors(){
+                commitEditorToModel();
+                _setCardEditorFromModel();
+            }
+
+            sel.addEventListener('change', ()=>{
+                commitEditorToModel();
+                const idx = parseInt(sel.value, 10);
+                if(!Number.isNaN(idx)) __editingCardIndex = idx;
+                _setCardEditorFromModel();
+            });
+
+            btnAdd.addEventListener('click', (e)=>{
+                e.preventDefault();
+                commitEditorToModel();
+                const cards = __editingModel.cards || [];
+                cards.push({name:`Card ${cards.length+1}`, front: DEFAULT_MODEL.cards[0].front, back: DEFAULT_MODEL.cards[0].back});
+                __editingModel.cards = cards;
+                __editingCardIndex = cards.length - 1;
+                _setCardEditorFromModel();
+            });
+
+            btnDup.addEventListener('click', (e)=>{
+                e.preventDefault();
+                commitEditorToModel();
+                const cards = __editingModel.cards || [];
+                const cur = cards[__editingCardIndex] || DEFAULT_MODEL.cards[0];
+                const cloned = JSON.parse(JSON.stringify(cur));
+                cloned.name = (cloned.name ? (cloned.name + ' (copy)') : `Card ${cards.length+1}`);
+                cards.splice(__editingCardIndex+1, 0, cloned);
+                __editingModel.cards = cards;
+                __editingCardIndex = __editingCardIndex + 1;
+                _setCardEditorFromModel();
+            });
+
+            btnDel.addEventListener('click', (e)=>{
+                e.preventDefault();
+                commitEditorToModel();
+                const cards = __editingModel.cards || [];
+                if(cards.length <= 1){
+                    vocabManager.showNotification('Phải có ít nhất 1 Card Type.', 'error');
+                    return;
+                }
+                if(!confirm('Xóa Card Type đang chọn?')) return;
+                cards.splice(__editingCardIndex, 1);
+                __editingModel.cards = cards;
+                __editingCardIndex = Math.max(0, __editingCardIndex - 1);
+                _setCardEditorFromModel();
+            });
+
+            // Live update card name list when typing name
+            nameInput.addEventListener('input', ()=>{
+                commitEditorToModel();
+                // refresh select label
+                const cards = __editingModel.cards || [];
+                sel.innerHTML = cards.map((c,i)=>`<option value="${i}">${(c?.name || ('Card ' + (i+1)))}</option>`).join('');
+                sel.value = String(__editingCardIndex);
+                // also refresh preview card list if open
+                refreshPreviewCardSelect();
+            });
+
+            btnClose.addEventListener('click', (e)=>{ e.preventDefault(); closeTplModal(); });
+            btnCancel.addEventListener('click', (e)=>{ e.preventDefault(); closeTplModal(); });
+
+            btnSave.addEventListener('click', (e)=>{
+                e.preventDefault();
+                try{
+                    commitEditorToModel();
+                    saveApkgModel(__editingModel);
+                    vocabManager.showNotification('Đã lưu Card Types + template', 'success');
+                    closeTplModal();
+
+                    // refresh preview list (card types) immediately
+                    refreshPreviewCardSelect();
+                    if(document.getElementById('previewShell')?.style?.display !== 'none'){
+                        renderPreview(vocabManager);
+                    }
+                }catch(err){
+                    console.error(err);
+                    vocabManager.showNotification('Lỗi lưu template: ' + (err?.message || err), 'error');
+                }
+            });
+
+            backdrop.addEventListener('click', (e)=>{
+                if(e.target && e.target.id === 'tplModalBackdrop') closeTplModal();
+            });
+
+            window.addEventListener('keydown', (e)=>{
+                if(e.key === 'Escape' && document.getElementById('tplModalBackdrop').classList.contains('show')){
+                    closeTplModal();
+                }
+            });
+        }
+
+
+        function initApkgUI(vocabManager){
+            const deckInput = document.getElementById('deckNameInput');
+            const noteTypeInput = document.getElementById('noteTypeInput');
+            const exportBtn = document.getElementById('exportApkgBtn');
+            const previewBtn = document.getElementById('previewBtn');
+            const countPill = document.getElementById('apkgCountPill');
+
+            if(deckInput) deckInput.value = loadDeckName();
+            if(noteTypeInput) noteTypeInput.value = loadNoteType();
+
+            function refresh(){
+                const c = vocabManager.vocabularies.size;
+                exportBtn.disabled = c===0;
+                previewBtn.disabled = c===0;
+                countPill.textContent = `${c} thẻ`;
+            }
+            refresh();
+
+            const _old = vocabManager.updateUI.bind(vocabManager);
+            vocabManager.updateUI = function(){ _old(); refresh(); };
+
+            deckInput.addEventListener('input', ()=>saveDeckName(deckInput.value.trim()));
+            noteTypeInput.addEventListener('input', ()=>saveNoteType(noteTypeInput.value.trim()));
+
+            exportBtn.addEventListener('click', async ()=>{
+                try{
+                    exportBtn.disabled = true;
+                    exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang tạo...';
+                    await exportApkgFromManager(vocabManager);
+                }catch(e){
+                    console.error(e);
+                    vocabManager.showNotification('Lỗi export .apkg: ' + (e?.message || e), 'error');
+                }finally{
+                    exportBtn.innerHTML = '<i class="fas fa-download"></i> Xuất .apkg';
+                    refresh();
+                }
+            });
+
+            document.getElementById('editTemplatesBtn').addEventListener('click', ()=>openTplModal());
+            bindTplModalOnce(vocabManager);
+
+            document.getElementById('resetTemplatesBtn').addEventListener('click', ()=>{
+                if(!confirm('Reset Card Types + template về mặc định?')) return;
+                resetApkgModel();
+                vocabManager.showNotification('Đã reset template về mặc định', 'success');
+                refreshPreviewCardSelect();
+                if(document.getElementById('previewShell')?.style?.display !== 'none'){
+                    renderPreview(vocabManager);
+                }
+            });
+
+            previewBtn.addEventListener('click', ()=>{
+                __previewSide = 'front';
+                __previewIndex = 0;
+                __previewCardOrd = 0;
+                refreshPreviewCardSelect();
+
+                document.getElementById('previewFrontBtn').classList.add('active');
+                document.getElementById('previewBackBtn').classList.remove('active');
+
+                renderPreview(vocabManager);
+            });
+
+            document.getElementById('previewFrontBtn').addEventListener('click', ()=>{
+                __previewSide = 'front';
+                document.getElementById('previewFrontBtn').classList.add('active');
+                document.getElementById('previewBackBtn').classList.remove('active');
+                renderPreview(vocabManager);
+            });
+            document.getElementById('previewBackBtn').addEventListener('click', ()=>{
+                __previewSide = 'back';
+                document.getElementById('previewBackBtn').classList.add('active');
+                document.getElementById('previewFrontBtn').classList.remove('active');
+                renderPreview(vocabManager);
+            });
+
+            document.getElementById('previewPrevBtn').addEventListener('click', ()=>{
+                __previewIndex = Math.max(0, __previewIndex - 1);
+                renderPreview(vocabManager);
+            });
+            document.getElementById('previewNextBtn').addEventListener('click', ()=>{
+                const list = getVocabList(vocabManager);
+                __previewIndex = Math.min(list.length - 1, __previewIndex + 1);
+                renderPreview(vocabManager);
+            });
+            document.getElementById('previewSelect').addEventListener('change', (e)=>{
+                const v = parseInt(e.target.value, 10);
+                if(!Number.isNaN(v)) __previewIndex = v;
+                renderPreview(vocabManager);
+            });
+
+            // Card type select
+            const previewCardSel = document.getElementById('previewCardSelect');
+            if(previewCardSel){
+                refreshPreviewCardSelect();
+                previewCardSel.addEventListener('change', (e)=>{
+                    const ord = parseInt(e.target.value, 10);
+                    if(!Number.isNaN(ord)) __previewCardOrd = ord;
+                    renderPreview(vocabManager);
+                });
+            }
+        }
+
+        const vocabManager = new VocabularyManager();
+        window.vocabManager = vocabManager;
+        window.addEventListener('DOMContentLoaded', async ()=>{ 
+            try{
+                await ensureDefaultTemplatesLoaded();
+                initApkgUI(vocabManager);
+            }catch(e){ console.error(e); }
+        });
+    </script>
+<!-- ===== Template Editor Modal ===== -->
+<div aria-hidden="true" class="modal-backdrop" id="tplModalBackdrop">
+<div aria-labelledby="tplModalTitle" aria-modal="true" class="modal" role="dialog">
+<div class="modal-header">
+<h3 id="tplModalTitle"><i class="fas fa-pen"></i> Sửa template thẻ (Front / Back / CSS chung)</h3>
+<button class="btn btn-secondary" id="closeTplModalBtn" type="button">
+<i class="fas fa-xmark"></i> Đóng
+                </button>
+</div>
+<div class="modal-body">
+
+
+<div class="tpl-editor">
+  <div class="tpl-row">
+    <label class="tpl-label">Card Type</label>
+    <div class="tpl-controls">
+      <select id="tplCardSelect" class="input"></select>
+      <button class="btn btn-light" id="addCardBtn" type="button"><i class="fas fa-plus"></i> Thêm</button>
+      <button class="btn btn-light" id="dupCardBtn" type="button"><i class="fas fa-clone"></i> Nhân bản</button>
+      <button class="btn btn-danger" id="delCardBtn" type="button"><i class="fas fa-trash"></i> Xóa</button>
+    </div>
+  </div>
+
+  <div class="tpl-row">
+    <label class="tpl-label">Tên Card</label>
+    <input id="tplCardName" class="input" type="text" placeholder="Ví dụ: Card 1" />
+  </div>
+
+  <div class="tpl-row">
+    <label class="tpl-label">Front Template (HTML)</label>
+    <textarea id="frontTplInput" class="input mono" rows="10" spellcheck="false"></textarea>
+  </div>
+
+  <div class="tpl-row">
+    <label class="tpl-label">Back Template (HTML)</label>
+    <textarea id="backTplInput" class="input mono" rows="10" spellcheck="false"></textarea>
+  </div>
+
+  <div class="tpl-row">
+    <label class="tpl-label">Global CSS (chung cho tất cả Card)</label>
+    <textarea id="globalCssTplInput" class="input mono" rows="8" spellcheck="false"></textarea>
+  </div>
+
+  <div class="tpl-note">
+    <small>• Template (Front/Back/CSS) + Note type sẽ được lưu kèm trong file .apkg.<br>
+    • Xem trước sẽ áp dụng template + CSS hiện tại (giống khi import vào Anki).</small>
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" id="cancelTplBtn" type="button">
+<i class="fas fa-ban"></i> Hủy
+                </button>
+<button class="btn btn-success" id="saveTplBtn" type="button">
+<i class="fas fa-save"></i> Lưu
+                </button>
+</div>
+</div>
+</div>
+</body>
+</html>
