@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Killer - Stream Board</title>
+  <link rel="stylesheet" href="stream.css"/>
+</head>
+<body>
+  <main id="app">
+    <section class="stream-shell">
+      <div id="board" class="board">
+        <canvas id="cvGrid"></canvas>
+        <canvas id="cvArrow"></canvas>
+        <div id="highlightLayer"></div>
+        <div id="piecesLayer"></div>
+        <div id="board-resize" title="Drag to resize"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  // [USERSCRIPT PATCH] Stream page đọc state từ localStorage (ghi bởi userscript)
+  window.__CK_BASE_URL__ = window.__CK_BASE_URL__ || 'https://nguyenphanvn95.github.io/chesskiller';
+  window._ckAssetUrl = function(path) {
+    var base = window.__CK_BASE_URL__;
+    path = String(path || '').replace(/^photo\//, 'media/photo/').replace(/^audio\//, 'media/audio/');
+    return base + '/' + path;
+  };
+  // localStorage-based storage for stream page
+  window._ckStorageGet = function(keys, cb) {
+    var result = {};
+    for (var k of (Array.isArray(keys) ? keys : [keys])) {
+      try { var raw = localStorage.getItem('ck_' + k); if (raw != null) result[k] = JSON.parse(raw); } catch(e){}
+    }
+    if (cb) cb(result);
+  };
+  if (!window.chrome || !window.chrome.storage) {
+    window.chrome = window.chrome || {};
+    window.chrome.storage = { local: { get: window._ckStorageGet, set: function(d,cb){if(cb)cb();}, onChanged: { addListener: function(){} } } };
+    window.chrome.runtime = { lastError: null, getURL: window._ckAssetUrl };
+  }
+  </script>
+  <script src="lib/chess_min.js"></script>
+  <script src="stream.js"></script>
+</body>
+</html>

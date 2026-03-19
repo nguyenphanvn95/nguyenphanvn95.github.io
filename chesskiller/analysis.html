@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chess Analysis</title>
+<link rel="stylesheet" href="analysis.css">
+<script>
+// [USERSCRIPT PATCH] Inject base URL for asset resolution
+window.__CK_BASE_URL__ = window.__CK_BASE_URL__ || 'https://nguyenphanvn95.github.io/chesskiller';
+window._ckAssetUrl = function(path) {
+  var base = window.__CK_BASE_URL__;
+  path = String(path || '');
+  path = path.replace(/^(?:modules\/lib\/)/, 'lib/');
+  path = path.replace(/^(?:modules\/)?/, '');
+  path = path.replace(/^photo\//, 'media/photo/');
+  path = path.replace(/^audio\//, 'media/audio/');
+  return base + '/' + path;
+};
+// Storage shim for analysis page
+window._ckStorageGet = function(keys, cb) {
+  var result = {};
+  for (var k of (Array.isArray(keys) ? keys : [keys])) {
+    try { var raw = localStorage.getItem('ck_' + k); if (raw != null) result[k] = JSON.parse(raw); } catch(e) {}
+  }
+  if (cb) cb(result);
+};
+window._ckStorageSet = function(data, cb) {
+  for (var k in data) { try { localStorage.setItem('ck_' + k, JSON.stringify(data[k])); } catch(e) {} }
+  if (cb) cb();
+};
+if (!window.chrome) {
+  window.chrome = { storage: { local: { get: window._ckStorageGet, set: window._ckStorageSet, onChanged: { addListener: function(){} } } }, runtime: { lastError: null, getURL: window._ckAssetUrl } };
+}
+</script>
+
+</head>
+<body>
+<div id="app">
+  <div id="analysis-viewport">
+  <div id="analysis-shell">
+    <div id="left-stack">
+      <div id="board-stage">
+        <div id="board-col">
+          <div id="coordTop" class="coord-row" style="margin-bottom:2px"></div>
+          <div style="display:flex;align-items:stretch">
+            <div id="rankLeft" class="rank-col"></div>
+            <div id="board">
+              <canvas id="cvBoard"></canvas>
+              <canvas id="cvArrow"></canvas>
+              <div id="board-resize" title="Drag to resize"></div>
+            </div>
+            <div id="rankRight" class="rank-col" style="display:none"></div>
+          </div>
+          <div id="coordBot" class="coord-row" style="margin-top:2px"></div>
+        </div>
+
+        <div id="gauge">
+          <div id="gBlack" style="height:50%"></div>
+          <div id="gTick" style="top:50%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="right-stack">
+      <div id="tools">
+        <div id="ceval">
+          <div class="eng-row">
+            <div class="eval-score" id="evalScore">+0.5</div>
+            <div class="eng-info">
+              <div class="eng-name">Komodo Dragon<span class="nnue-tag">fallback Stockfish</span></div>
+              <div class="eng-depth" id="engDepth">Depth 18/99, 83 knodes/s</div>
+            </div>
+            <button class="tog" id="togBtn"></button>
+          </div>
+        </div>
+        <div id="pvLine">1...e5 2. Nc3 Nf6 3. Nf3 Nc6 4. e3 Bb4 5. d4 exd4 6. exd4 d5 7. Be2 ...</div>
+        <div id="pvRows">
+          <div class="pv-row">
+            <div class="pv-rank">1</div>
+            <div class="pv-m" id="pvM1">c4</div>
+            <div class="pv-m2" id="pvM2"></div>
+          </div>
+        </div>
+        <div id="debugPanel" aria-live="polite">
+          <div class="debug-head">
+            <span>Debug log</span>
+            <button id="clearDebugBtn" type="button">Clear</button>
+          </div>
+          <pre id="debugLog"></pre>
+        </div>
+        <div id="moveWrap"><div id="moveList"></div></div>
+        <div id="settingsPanel" aria-hidden="true">
+          <div class="st-row">
+            <button class="tog" id="stBestArrow" type="button"></button>
+            <div class="st-label">Best move arrow</div>
+          </div>
+          <div class="st-row">
+            <button class="tog" id="stShowLines" type="button"></button>
+            <div class="st-label">Show multiple lines</div>
+          </div>
+          <div class="st-row">
+            <button class="tog" id="stInfinite" type="button"></button>
+            <div class="st-label">Infinite analysis</div>
+          </div>
+          <div class="st-slider-row">
+            <label for="stLines">Multiple lines</label>
+            <input id="stLines" class="st-slider" type="range" min="1" max="5" value="1">
+            <div class="st-value" id="stLinesVal">1 / 5</div>
+          </div>
+          <div class="st-row">
+            <button class="tog off" id="stDebug" type="button"></button>
+            <div class="st-label">Show debug log</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ctrl">
+        <button class="cb" id="btnNav0" title="First (Home)">⏮</button>
+        <button class="cb" id="btnNavB" title="Back (←)">◀</button>
+        <button class="cb" id="btnFlip" title="Flip (f)">↺</button>
+        <button class="cb" id="btnNavF" title="Forward (→)">▶</button>
+        <button class="cb" id="btnNavEnd" title="Last (End)">⏭</button>
+        <button class="cb" id="menuBtn" type="button" title="Menu" aria-expanded="false" aria-controls="settingsPanel">☰</button>
+      </div>
+    </div>
+
+    <div id="undr">
+      <div class="fen-line">
+        <span class="fen-lbl">FEN</span>
+        <span class="fen-val" id="fenVal"></span>
+      </div>
+      <div class="dl-links">
+        <a class="dl-link" id="dlPgnLink" href="#">↓ Download PGN</a>
+        <a class="dl-link" id="loadAnalysisPgnLink" href="#">Load PGN</a>
+        <a class="dl-link" id="pngHintLink" href="#">↓ PNG image</a>
+      </div>
+      <input id="analysisPgnFile" type="file" accept=".pgn,.txt" hidden>
+      <div class="pgn-box" id="pgnBox"></div>
+    </div>
+  </div>
+  </div>
+</div>
+<div id="movePreview" class="move-preview hidden" aria-hidden="true">
+  <div class="move-preview-label" id="movePreviewLabel"></div>
+  <div class="move-preview-board" id="movePreviewBoard" aria-hidden="true"></div>
+</div>
+<script src="settings.js"></script>
+<script src="../modules/lib/chess_min.js"></script>
+<script src="analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Killer – Cài đặt</title>
+  <link rel="icon" href="media/photo/icon48.png"/>
+  <style>
+:root{--c0:#0d0d0b;--c1:#161614;--c2:#1e1d1b;--c3:#252422;--c4:#2e2c29;--border:#3a3835;--txt:#c0bdb8;--txt2:#888580;--txt3:#e8e5e0;--green:#629924;--nnue:#76b730;--blue-row:#1c3050;--link:#6baed6;}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;min-height:100%;background:var(--c0);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:13px;}
+body{max-width:500px;margin:0 auto;padding:0 0 24px;}
+#app{min-height:100%;background:radial-gradient(circle at 20% 0%,rgba(0,80,200,.10),transparent 32%),linear-gradient(180deg,#11100d 0%,#070707 100%);}
+
+.popup-head{padding:16px 18px 14px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#1c1b18 0%,#13120f 100%);}
+.brand-row{display:flex;align-items:center;gap:12px;}
+.brand-logo{width:38px;height:38px;flex-shrink:0;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.3);}
+.brand-title{color:var(--txt3);font-size:20px;font-weight:700;letter-spacing:-0.02em;}
+.brand-tag{color:var(--nnue);font-size:10px;font-weight:700;border:1px solid var(--nnue);border-radius:3px;padding:0 4px;line-height:1.7;margin-left:8px;}
+.brand-sub{color:var(--txt2);font-size:11px;margin-top:3px;}
+.header-links{display:flex;gap:8px;margin-top:8px;}
+.header-link{display:inline-block;padding:4px 12px;border:1px solid rgba(118,183,48,.34);border-radius:999px;background:rgba(118,183,48,.08);color:var(--txt3);font:600 12px system-ui;text-decoration:none;transition:background .15s;}
+.header-link:hover{background:rgba(118,183,48,.18);}
+
+.popup-panel{background:linear-gradient(180deg,#262321 0%,#1b1a18 100%);padding:14px 16px 12px;}
+.popup-section{display:flex;flex-direction:column;gap:8px;}
+.section-title{color:var(--txt2);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+.divider{height:1px;background:var(--border);margin:14px 0;}
+.notice{background:#1a2840;border:1px solid #2d4a6a;border-radius:12px;padding:10px 14px;font-size:11px;color:#a8c4e0;margin-bottom:10px;line-height:1.5;}
+.notice strong{color:#6baed6;}
+
+.setting{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 14px;background:var(--c2);border:1px solid var(--border);border-radius:14px;}
+.setting-stack{flex-direction:column;align-items:stretch;}
+.setting-copy{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.setting-label{color:var(--txt3);font-size:14px;font-weight:600;}
+.setting-value,.setting-value b{color:var(--txt3);font-size:13px;font-weight:700;}
+.hint-text{color:var(--txt2);font-size:11px;line-height:1.45;padding:0 4px;}
+
+.toggle{position:relative;width:44px;height:22px;flex-shrink:0;}
+.toggle input{position:absolute;opacity:0;pointer-events:none;}
+.slider{position:absolute;inset:0;border-radius:11px;background:var(--c4);transition:background .2s;}
+.slider::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .18s;}
+.toggle input:checked+.slider{background:var(--green);}
+.toggle input:checked+.slider::after{transform:translateX(22px);}
+
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;cursor:pointer;}
+input[type="range"]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:#84817c;}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:34px;height:22px;border-radius:999px;background:#2d271f;border:1px solid rgba(255,255,255,.08);margin-top:-6px;}
+
+.shortcut-input{width:100%;min-height:40px;padding:0 12px;border:1px solid var(--border);border-radius:10px;background:#12110f;color:var(--txt3);font:600 13px ui-monospace,monospace;outline:none;cursor:pointer;appearance:none;}
+.shortcut-input:focus{border-color:rgba(118,183,48,.55);box-shadow:0 0 0 3px rgba(118,183,48,.12);}
+.setting-hidden{display:none;}
+.range-dual{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.range-dual-copy{display:grid;grid-template-columns:1fr 1fr;gap:12px;color:var(--txt2);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+
+.color-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.color-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 6px 8px;background:var(--c2);border:1px solid var(--border);border-radius:12px;color:var(--txt2);font-size:10px;font-weight:700;text-transform:uppercase;}
+.color-item input[type="color"]{width:34px;height:34px;padding:0;border:none;border-radius:50%;background:none;cursor:pointer;}
+.color-item input[type="color"]::-webkit-color-swatch-wrapper{padding:0;}
+.color-item input[type="color"]::-webkit-color-swatch{border:none;border-radius:50%;}
+
+.elo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.elo-btn{min-height:38px;border:1px solid var(--border);border-radius:10px;background:var(--c3);color:var(--txt);font:600 12px system-ui;cursor:pointer;transition:background .15s,border-color .15s;}
+.elo-btn:hover{background:var(--blue-row);border-color:#35577f;}
+.elo-btn.active{background:var(--blue-row);border-color:#6ea4ff;color:#fff;}
+
+.backup-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.secondary-btn{min-height:40px;border:none;border-radius:10px;background:var(--c3);color:var(--txt3);font:600 13px system-ui;cursor:pointer;transition:background .15s;}
+.secondary-btn:hover{background:var(--blue-row);}
+.hidden-file-input{display:none;}
+.saved-msg{min-height:18px;margin-top:4px;color:var(--nnue);font-size:12px;text-align:center;opacity:0;transition:opacity .25s;}
+.saved-msg.show{opacity:1;}
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="popup-head">
+    <div class="brand-row">
+      <img class="brand-logo" src="media/photo/logo-popup.png" alt="Chess Killer"/>
+      <div>
+        <div>
+          <span class="brand-title">Chess Killer</span>
+          <span class="brand-tag">3.4.5</span>
+        </div>
+        <div class="brand-sub">Powered by Komodoro Dragon + Stockfish</div>
+        <div class="header-links">
+          <a class="header-link" href="analysis.html" target="_blank">⚡ Analysis</a>
+          <a class="header-link" href="review.html" target="_blank">📋 Review</a>
+          <a class="header-link" href="stream.html" target="_blank">📺 Stream</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-panel">
+    <div class="notice">
+      <strong>Lưu ý:</strong> Cài đặt lưu trong <strong>localStorage</strong>. Mở trang này trên <strong>cùng trình duyệt</strong> đang chơi chess.com/lichess.org.
+    </div>
+
+    <section class="popup-section">
+      <div class="section-title">Engine</div>
+      <div class="setting">
+        <span class="setting-label">Bật engine hints</span>
+        <label class="toggle"><input type="checkbox" id="enabled" checked/><span class="slider"></span></label>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">Phân tích</div>
+      <div class="setting setting-stack">
+        <div class="setting-copy"><span class="setting-label">Depth</span><span class="setting-value" id="depthVal">15</span></div>
+        <input type="range" id="depth" min="5" max="25" step="1" value="15"/>
+      </div>
+      <div class="setting setting-stack">
+        <div class="setting-copy"><span class="setting-label">Số gợi ý</span><span class="setting-value" id="linesVal">3</span></div>
+        <input type="range" id="lines" min="1" max="5" step="1" value="3"/>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">Hiển thị</div>
+      <div class="setting"><span class="setting-label">Hiện mũi tên</span><label class="toggle"><input type="checkbox" id="showArrows" checked/><span class="slider"></span></label></div>
+      <div class="setting"><span class="setting-label">Hiện panel nổi</span><label class="toggle"><input type="checkbox" id="showPanel"/><span class="slider"></span></label></div>
+      <div class="setting"><span class="setting-label">Hiện điểm đánh giá</span><label class="toggle"><input type="checkbox" id="showEval" checked/><span class="slider"></span></label></div>
+      <div class="setting setting-stack">
+        <div class="setting-copy"><span class="setting-label">Kiểu mũi tên</span></div>
+        <select id="hintStyle" class="shortcut-input">
+          <option value="classic" selected>Classic arrows</option>
+          <option value="chesscom">Chess.com style</option>
+        </select>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">ELO Limit</div>
+      <div class="elo-grid" id="eloGrid">
+        <button class="elo-btn active" data-elo="0">∞ Unlimited</button>
+        <button class="elo-btn" data-elo="800">800 – Beginner</button>
+        <button class="elo-btn" data-elo="1000">1000 – Casual</button>
+        <button class="elo-btn" data-elo="1200">1200 – Club</button>
+        <button class="elo-btn" data-elo="1500">1500 – Intermediate</button>
+        <button class="elo-btn" data-elo="1800">1800 – Advanced</button>
+        <button class="elo-btn" data-elo="2000">2000 – Expert</button>
+        <button class="elo-btn" data-elo="2200">2200 – Master</button>
+        <button class="elo-btn" data-elo="2500">2500 – GM</button>
+        <button class="elo-btn" data-elo="2800">2800 – Super-GM</button>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">Tự động đi</div>
+      <div class="setting setting-stack">
+        <div class="setting-copy"><span class="setting-label">Chế độ</span></div>
+        <select id="autoPlayMode" class="shortcut-input">
+          <option value="off" selected>Tắt</option>
+          <option value="best">Nước tốt nhất</option>
+          <option value="random">Ngẫu nhiên</option>
+        </select>
+      </div>
+      <div class="setting"><span class="setting-label">Delay ngẫu nhiên</span><label class="toggle"><input type="checkbox" id="autoPlayAutoInterval"/><span class="slider"></span></label></div>
+      <div class="setting setting-stack" id="autoPlayRandomDelayGroup" style="display:none">
+        <div class="setting-copy"><span class="setting-label">Khoảng delay</span><span class="setting-value"><b id="autoPlayDelayMinVal">500</b> – <b id="autoPlayDelayMaxVal">10000</b> ms</span></div>
+        <div class="range-dual-copy"><span>Min</span><span>Max</span></div>
+        <div class="range-dual">
+          <input type="range" id="autoPlayDelayMin" min="500" max="10000" step="100" value="500"/>
+          <input type="range" id="autoPlayDelayMax" min="500" max="10000" step="100" value="10000"/>
+        </div>
+      </div>
+      <div class="setting setting-stack" id="autoPlayDelayGroup">
+        <div class="setting-copy"><span class="setting-label">Delay cố định</span><span class="setting-value"><b id="autoPlayDelayVal">1500</b> ms</span></div>
+        <input type="range" id="autoPlayDelay" min="300" max="5000" step="100" value="1500"/>
+      </div>
+      <div class="setting setting-stack">
+        <div class="setting-copy"><span class="setting-label">Phím tắt đi nhanh</span><span class="setting-value">Default: Space</span></div>
+        <select id="quickMoveKey" class="shortcut-input">
+          <option value=" " selected>Space</option>
+          <option value="a">a</option><option value="z">z</option><option value="e">e</option>
+          <option value="r">r</option><option value="t">t</option><option value="f">f</option>
+          <option value="g">g</option><option value="h">h</option><option value="j">j</option>
+          <option value="Control">Control</option><option value="Shift">Shift</option><option value="Alt">Alt</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        </select>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">Màu mũi tên</div>
+      <div class="color-row">
+        <label class="color-item"><input type="color" id="c1" value="#4f8cff"/><span>1st</span></label>
+        <label class="color-item"><input type="color" id="c2" value="#2ecc71"/><span>2nd</span></label>
+        <label class="color-item"><input type="color" id="c3" value="#f1c40f"/><span>3rd</span></label>
+        <label class="color-item"><input type="color" id="c4" value="#e67e22"/><span>4th</span></label>
+        <label class="color-item"><input type="color" id="c5" value="#e74c3c"/><span>5th</span></label>
+      </div>
+    </section>
+    <div class="divider"></div>
+
+    <section class="popup-section">
+      <div class="section-title">Sao lưu</div>
+      <div class="backup-actions">
+        <button class="secondary-btn" id="exportBtn">Xuất JSON</button>
+        <button class="secondary-btn" id="importBtn">Nhập JSON</button>
+      </div>
+      <input id="importInput" class="hidden-file-input" type="file" accept="application/json,.json"/>
+    </section>
+    <div class="saved-msg" id="savedMsg"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+const LS_KEY = 'ck_chConfig';
+
+const DEFAULT = {
+  depth:15, lines:3, enabled:true, showEval:true, showArrows:true,
+  hintStyle:'classic', showPanel:false,
+  autoPlayMode:'off', autoPlayAutoInterval:false, autoPlayDelay:1500,
+  autoPlayDelayMin:500, autoPlayDelayMax:10000,
+  quickMoveKey:' ', eloLimit:0,
+  colors:['#4f8cff','#2ecc71','#f1c40f','#e67e22','#e74c3c'],
+};
+
+let cfg = {...DEFAULT};
+let saveTimer = null;
+const $ = id => document.getElementById(id);
+
+function normalizeConfig(input) {
+  const n = {...DEFAULT,...(input||{})};
+  n.depth = Math.min(25,Math.max(5,Number(n.depth)||15));
+  n.lines = Math.min(5,Math.max(1,Number(n.lines)||3));
+  n.autoPlayDelay = Math.min(5000,Math.max(300,Number(n.autoPlayDelay)||1500));
+  n.autoPlayDelayMin = Math.min(10000,Math.max(500,Number(n.autoPlayDelayMin)||500));
+  n.autoPlayDelayMax = Math.min(10000,Math.max(500,Number(n.autoPlayDelayMax)||10000));
+  if (n.autoPlayDelayMin > n.autoPlayDelayMax) [n.autoPlayDelayMin,n.autoPlayDelayMax]=[n.autoPlayDelayMax,n.autoPlayDelayMin];
+  n.eloLimit = Number.isInteger(Number(n.eloLimit)) ? Number(n.eloLimit) : 0;
+  n.hintStyle = n.hintStyle === 'chesscom' ? 'chesscom' : 'classic';
+  n.colors = Array.isArray(n.colors) ? n.colors.slice(0,5) : DEFAULT.colors.slice();
+  while (n.colors.length < 5) n.colors.push(DEFAULT.colors[n.colors.length]);
+  return n;
+}
+
+function loadConfig() {
+  try { const raw = localStorage.getItem(LS_KEY); if (raw) cfg = normalizeConfig(JSON.parse(raw)); } catch {}
+}
+
+function saveConfig(immediate) {
+  clearTimeout(saveTimer);
+  const commit = () => {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(cfg)); showSaved('Đã lưu ✓'); } catch { showSaved('Lỗi!'); }
+  };
+  if (immediate) { commit(); return; }
+  saveTimer = setTimeout(commit, 150);
+}
+
+function showSaved(msg, ms) {
+  const el = $('savedMsg');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove('show'), ms || 1100);
+}
+
+function applyToUI() {
+  $('depth').value = cfg.depth; $('depthVal').textContent = cfg.depth;
+  $('lines').value = cfg.lines; $('linesVal').textContent = cfg.lines;
+  $('enabled').checked = cfg.enabled;
+  $('showEval').checked = cfg.showEval;
+  $('showArrows').checked = cfg.showArrows;
+  $('showPanel').checked = cfg.showPanel;
+  $('hintStyle').value = cfg.hintStyle;
+  $('autoPlayMode').value = cfg.autoPlayMode;
+  $('autoPlayAutoInterval').checked = cfg.autoPlayAutoInterval;
+  $('autoPlayDelay').value = cfg.autoPlayDelay; $('autoPlayDelayVal').textContent = cfg.autoPlayDelay;
+  $('autoPlayDelayMin').value = cfg.autoPlayDelayMin; $('autoPlayDelayMinVal').textContent = cfg.autoPlayDelayMin;
+  $('autoPlayDelayMax').value = cfg.autoPlayDelayMax; $('autoPlayDelayMaxVal').textContent = cfg.autoPlayDelayMax;
+  $('quickMoveKey').value = cfg.quickMoveKey;
+  for (let i = 1; i <= 5; i++) { const c = $('c'+i); if (c) { c.value = cfg.colors[i-1]; c.closest('.color-item').style.opacity = i <= cfg.lines ? '1' : '0.3'; } }
+  syncDelayVisibility();
+  updateEloButtons();
+}
+
+function syncDelayVisibility() {
+  $('autoPlayRandomDelayGroup').style.display = cfg.autoPlayAutoInterval ? '' : 'none';
+  $('autoPlayDelayGroup').style.display = cfg.autoPlayAutoInterval ? 'none' : '';
+}
+
+function updateEloButtons() {
+  document.querySelectorAll('.elo-btn').forEach(btn => {
+    btn.classList.toggle('active', Number(btn.dataset.elo) === cfg.eloLimit);
+  });
+}
+
+// Wire controls
+$('depth').addEventListener('input', () => { cfg.depth = Number($('depth').value); $('depthVal').textContent = cfg.depth; saveConfig(); });
+$('lines').addEventListener('input', () => { cfg.lines = Number($('lines').value); $('linesVal').textContent = cfg.lines; applyToUI(); saveConfig(); });
+['enabled','showEval','showArrows','showPanel'].forEach(id => { $(id).addEventListener('change', () => { cfg[id] = $(id).checked; saveConfig(true); }); });
+$('hintStyle').addEventListener('change', () => { cfg.hintStyle = $('hintStyle').value; saveConfig(true); });
+$('autoPlayMode').addEventListener('change', () => { cfg.autoPlayMode = $('autoPlayMode').value; saveConfig(true); });
+$('autoPlayAutoInterval').addEventListener('change', () => { cfg.autoPlayAutoInterval = $('autoPlayAutoInterval').checked; syncDelayVisibility(); saveConfig(true); });
+$('autoPlayDelay').addEventListener('input', () => { cfg.autoPlayDelay = Number($('autoPlayDelay').value); $('autoPlayDelayVal').textContent = cfg.autoPlayDelay; saveConfig(); });
+$('autoPlayDelayMin').addEventListener('input', () => {
+  cfg.autoPlayDelayMin = Number($('autoPlayDelayMin').value);
+  if (cfg.autoPlayDelayMin > cfg.autoPlayDelayMax) { cfg.autoPlayDelayMax = cfg.autoPlayDelayMin; $('autoPlayDelayMax').value = cfg.autoPlayDelayMax; $('autoPlayDelayMaxVal').textContent = cfg.autoPlayDelayMax; }
+  $('autoPlayDelayMinVal').textContent = cfg.autoPlayDelayMin; saveConfig();
+});
+$('autoPlayDelayMax').addEventListener('input', () => {
+  cfg.autoPlayDelayMax = Number($('autoPlayDelayMax').value);
+  if (cfg.autoPlayDelayMax < cfg.autoPlayDelayMin) { cfg.autoPlayDelayMin = cfg.autoPlayDelayMax; $('autoPlayDelayMin').value = cfg.autoPlayDelayMin; $('autoPlayDelayMinVal').textContent = cfg.autoPlayDelayMin; }
+  $('autoPlayDelayMaxVal').textContent = cfg.autoPlayDelayMax; saveConfig();
+});
+$('quickMoveKey').addEventListener('change', () => { cfg.quickMoveKey = $('quickMoveKey').value; saveConfig(true); });
+for (let i = 1; i <= 5; i++) { const c = $('c'+i); if (!c) continue; c.addEventListener('input', () => { cfg.colors[i-1] = c.value; saveConfig(); }); }
+document.querySelectorAll('.elo-btn').forEach(btn => btn.addEventListener('click', () => { cfg.eloLimit = Number(btn.dataset.elo); updateEloButtons(); saveConfig(true); }));
+
+$('exportBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify({app:'ChessKiller',exportedAt:new Date().toISOString(),chConfig:cfg},null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chesskiller-settings.json'; a.click();
+  showSaved('Đã xuất ✓', 1400);
+});
+$('importBtn').addEventListener('click', () => $('importInput').click());
+$('importInput').addEventListener('change', async e => {
+  const file = e.target?.files?.[0]; if (!file) return;
+  try { const raw = await file.text(); const parsed = JSON.parse(raw); cfg = normalizeConfig(parsed.chConfig || parsed); applyToUI(); saveConfig(true); showSaved('Đã nhập ✓', 1400); }
+  catch { showSaved('File không hợp lệ!', 1600); }
+  $('importInput').value = '';
+});
+
+loadConfig();
+applyToUI();
+</script>
+</body>
+</html>
