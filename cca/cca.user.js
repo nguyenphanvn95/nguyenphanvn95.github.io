@@ -79,23 +79,37 @@
 (function(){
   const CH='${CHANNEL}';
   let w=null;
+  let workerPromise=null;
   function emit(type,pay){window.parent.postMessage({channel:CH,type,...pay},'*');}
-  function ensureWorker(){
+  async function ensureWorker(){
     if(w)return w;
-    try{
-      w=new Worker(${JSON.stringify(WORKER_URL)});
-      w.onmessage=ev=>emit('engine-message',{line:ev.data});
-      w.onerror=err=>emit('worker-error',{message:err&&err.message||'worker error'});
-    }catch(e){
-      emit('worker-error',{message:'Worker init failed: '+e.message});
-      return null;
-    }
-    return w;
+    if(workerPromise)return workerPromise;
+    workerPromise=(async()=>{
+      try{
+        const engineUrl=${JSON.stringify(WORKER_URL)};
+        const res=await fetch(engineUrl,{mode:'cors',credentials:'omit'});
+        if(!res.ok)throw new Error('Engine fetch failed: '+res.status);
+        const source=await res.text();
+        const boot='self.__XQ_ENGINE_BOOT__='+JSON.stringify({loaderUrl:engineUrl})+';\\n';
+        const blob=new Blob([boot,source],{type:'application/javascript'});
+        const blobUrl=URL.createObjectURL(blob);
+        w=new Worker(blobUrl);
+        w.onmessage=ev=>emit('engine-message',{line:ev.data});
+        w.onerror=err=>emit('worker-error',{message:err&&err.message||'worker error'});
+        setTimeout(()=>URL.revokeObjectURL(blobUrl),60000);
+        return w;
+      }catch(e){
+        workerPromise=null;
+        emit('worker-error',{message:'Worker init failed: '+e.message});
+        return null;
+      }
+    })();
+    return workerPromise;
   }
-  window.addEventListener('message',ev=>{
+  window.addEventListener('message',async ev=>{
     const d=ev.data||{};
     if(d.channel!==CH||d.type!=='command')return;
-    const wk=ensureWorker();
+    const wk=await ensureWorker();
     if(wk)try{wk.postMessage(String(d.command||''));}catch(e){emit('worker-error',{message:e.message});}
   });
   ensureWorker();
