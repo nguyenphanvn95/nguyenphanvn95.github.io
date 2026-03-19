@@ -122,6 +122,8 @@
 
   // Patch worker JS text to use absolute URLs instead of relative self.location.href
   function patchWorkerJs(text, baseUrl, wasmFile, mainJsFile) {
+    const wasmUrl = `${baseUrl}/${String(wasmFile || '').split('/').pop()}`;
+    const mainUrl = `${baseUrl}/${String(mainJsFile || '').split('/').pop()}`;
     // Replace resolveLib to always return absolute GitHub Pages URL
     const patchedResolveLib = `
   function resolveLib(file) {
@@ -129,8 +131,21 @@
     return ${JSON.stringify(baseUrl)} + '/' + name;
   }`;
     const runtimePatch = `
+  var __CK_WASM_URL__ = ${JSON.stringify(wasmUrl)};
+  var __CK_MAIN_URL__ = ${JSON.stringify(mainUrl)};
   function normalizeEngineUrl(url) {
     var value = String(url || '');
+    if (!value) return value;
+    if (/^(?:blob:|data:)/i.test(value)) {
+      if (/\\.wasm(?:\\?|#|$)/i.test(value)) return __CK_WASM_URL__;
+      if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(value)) return __CK_MAIN_URL__;
+    }
+    if (/engine\\.wasm(?:\\?|#|$)/i.test(value) || /komodoro-worker\\.wasm(?:\\?|#|$)/i.test(value) || /stockfish-worker\\.wasm(?:\\?|#|$)/i.test(value) || /stockfish\\.wasm(?:\\?|#|$)/i.test(value) || /komodoro\\.wasm(?:\\?|#|$)/i.test(value)) {
+      return __CK_WASM_URL__;
+    }
+    if (/komodoro\\.js(?:\\?|#|$)/i.test(value) || /stockfish\\.js(?:\\?|#|$)/i.test(value)) {
+      return __CK_MAIN_URL__;
+    }
     var absolute = value.match(/https?:\\/\\/[\\s\\S]+$/);
     if (absolute) {
       value = absolute[0];
@@ -141,8 +156,18 @@
     value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/([^/])/i, 'https://$2');
     value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/\\//i, 'http://');
     value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/([^/])/i, 'http://$2');
+    if (/\\.wasm(?:\\?|#|$)/i.test(value)) return __CK_WASM_URL__;
     return value;
   }
+  self.Module = self.Module || {};
+  self.Module.wasmBinaryFile = __CK_WASM_URL__;
+  self.Module.mainScriptUrlOrBlob = __CK_MAIN_URL__;
+  self.Module.locateFile = function(path) {
+    var value = normalizeEngineUrl(path);
+    if (/\\.wasm(?:\\?|#|$)/i.test(String(path || ''))) return __CK_WASM_URL__;
+    if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(String(path || ''))) return __CK_MAIN_URL__;
+    return value;
+  };
   try {
     var NativeXHR = self.XMLHttpRequest;
     if (NativeXHR) {
@@ -179,11 +204,15 @@
 
   async function createBlobWorker(workerUrl, baseUrl) {
     const text = await gmFetchText(workerUrl);
-    const patched = patchWorkerJs(text, baseUrl);
+    const workerName = String(workerUrl || '').split('/').pop();
+    const isKomodo = /komodoro/i.test(workerName);
+    const wasmFile = isKomodo ? 'komodoro.wasm' : 'stockfish.wasm';
+    const mainJsFile = isKomodo ? 'komodoro.js' : 'stockfish.js';
+    const patched = patchWorkerJs(text, baseUrl, wasmFile, mainJsFile);
     const importMatch = patched.match(/importScripts\(\s*resolveLib\((['"`])([^'"`]+)\1\)\s*\)\s*;?/);
     let bundled = patched;
     if (importMatch?.[2]) {
-      const mainUrl = `${baseUrl}/${String(importMatch[2]).split('/').pop()}`;
+      const mainUrl = `${baseUrl}/${String(mainJsFile || importMatch[2]).split('/').pop()}`;
       const mainText = await gmFetchText(mainUrl);
       bundled = patched.replace(importMatch[0], `\n/* inlined: ${mainUrl} */\n`) + `\n\n/* bundled main engine */\n${mainText}\n`;
     }
