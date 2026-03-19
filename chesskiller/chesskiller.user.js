@@ -1303,6 +1303,8 @@
       #ch-root{position:fixed;bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right));z-index:999999;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:12px;max-width:min(90vw,340px);touch-action:none;user-select:none}
       #ch-panel{background:linear-gradient(180deg,#262321 0%,#1b1a18 100%);border:1px solid #3a3835;border-radius:16px;min-width:min(278px,90vw);box-shadow:0 16px 36px rgba(0,0,0,.42);overflow:hidden}
       #ch-panel.settings-open{min-width:min(340px,94vw)}
+      #ch-panel.mini{min-width:0;width:auto}
+      #ch-panel.mini.settings-open{min-width:0;width:auto}
       #ch-panel.mini .ch-body,#ch-panel.mini .ch-settings,#ch-panel.mini .ch-foot{display:none}
       .ch-hdr{display:flex;justify-content:space-between;align-items:center;padding:11px 13px 10px;background:linear-gradient(180deg,#1c1b18 0%,#13120f 100%);border-bottom:1px solid #3a3835;cursor:grab;touch-action:none}
       .ch-hdr>span{color:#e8e5e0;font-weight:700;font-size:14px}
