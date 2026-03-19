@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCA - Tro ly co tuong cho xiangqi.com</title>
-  <meta name="description" content="CCA la userscript ho tro phan tich co tuong tren xiangqi.com voi Pikafish, goi y nuoc di, mui ten tren ban co va bang cai dat ngay trong panel.">
-  <meta property="og:title" content="CCA - Tro ly co tuong cho xiangqi.com">
-  <meta property="og:description" content="Cai userscript CCA de xem goi y nuoc di, phan tich the co va su dung Pikafish ngay tren xiangqi.com.">
+  <title>CCA - Chinese Chess Assistant for xiangqi.com</title>
+  <meta name="description" content="CCA is a userscript for xiangqi.com powered by Pikafish, with move hints, board arrows, and in-panel settings.">
+  <meta property="og:title" content="CCA - Chinese Chess Assistant for xiangqi.com">
+  <meta property="og:description" content="Install the CCA userscript to get move hints, position analysis, and Pikafish integration directly on xiangqi.com.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nguyenphanvn95.github.io/cca/icons/icon128.png">
   <link rel="icon" href="icons/icon48.png">
@@ -91,6 +91,7 @@
       margin-top:14px;border-radius:20px;overflow:hidden;border:1px solid var(--line);
       aspect-ratio:9/10;
       background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.2), transparent 22%),
         linear-gradient(90deg,rgba(89,52,18,.58) 0 2%, transparent 2% 98%, rgba(89,52,18,.58) 98%),
         linear-gradient(180deg,#f4deb2,#d7aa67);
       position:relative;
@@ -102,6 +103,49 @@
         repeating-linear-gradient(180deg, transparent 0 calc(11.11% - 1px), rgba(96,55,15,.45) calc(11.11% - 1px) 11.11%);
       opacity:.8
     }
+    .board::after{
+      content:"CHU RIVER  HAN BORDER";
+      position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:8px 18px;
+      color:rgba(121,65,14,.76);font-weight:800;font-size:clamp(14px,1.4vw,19px);
+      letter-spacing:.18em;text-transform:uppercase;
+      background:linear-gradient(180deg,rgba(244,222,178,.92),rgba(228,188,114,.88));
+      border-top:1px solid rgba(121,65,14,.22);border-bottom:1px solid rgba(121,65,14,.22);
+      z-index:1;
+    }
+    .piece{
+      position:absolute;z-index:2;
+      width:clamp(34px,7.2%,42px);aspect-ratio:1;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:clamp(16px,1.6vw,22px);
+      box-shadow:0 6px 14px rgba(0,0,0,.24), inset 0 0 0 2px rgba(255,255,255,.12);
+    }
+    .piece.red{
+      background:radial-gradient(circle at 30% 28%, #ffeadf, #d13e31 60%, #a11f17 100%);
+      color:#fff8f1;border:2px solid #f3c9bc;
+    }
+    .piece.black{
+      background:radial-gradient(circle at 30% 28%, #86827e, #393632 62%, #211f1d 100%);
+      color:#f4efe8;border:2px solid #b9b1a8;
+    }
+    .piece.p1{left:8%;top:9%}
+    .piece.p2{left:21%;top:9%}
+    .piece.p3{left:34%;top:9%}
+    .piece.p4{left:47%;top:9%}
+    .piece.p5{left:60%;top:9%}
+    .piece.p6{left:73%;top:9%}
+    .piece.p7{left:15%;top:30%}
+    .piece.p8{left:67%;top:30%}
+    .piece.p9{left:21%;top:73%}
+    .piece.p10{left:47%;top:73%}
+    .piece.p11{left:73%;top:73%}
+    .piece.p12{left:8%;top:86%}
+    .piece.p13{left:21%;top:86%}
+    .piece.p14{left:34%;top:86%}
+    .piece.p15{left:47%;top:86%}
+    .piece.p16{left:60%;top:86%}
+    .piece.p17{left:73%;top:86%}
     .section{padding:18px 0}
     .section-title{margin:0 0 14px;font-size:28px}
     .grid-3,.grid-2{display:grid;gap:18px}
@@ -134,8 +178,8 @@
         <span>CCA - Chinese Chess Assistant</span>
       </a>
       <nav class="nav-links">
-        <a class="btn-ghost" href="#cai-dat">Cai dat</a>
-        <a class="btn-ghost" href="#su-dung">Su dung</a>
+        <a class="btn-ghost" href="#installation">Installation</a>
+        <a class="btn-ghost" href="#usage">Usage</a>
         <a class="btn-ghost" href="analysis.html">Analysis</a>
         <a class="btn-ghost" href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io" target="_blank" rel="noopener">GitHub</a>
       </nav>
@@ -144,17 +188,17 @@
     <section class="hero">
       <div class="hero-card">
         <div class="eyebrow">Xiangqi.com userscript</div>
-        <h1>Tro ly co tuong thoi gian thuc cho xiangqi.com</h1>
-        <p class="lead">CCA su dung Pikafish de doc the co, hien mui ten goi y, danh gia nuoc di va ho tro auto move. Panel va cai dat duoc nhung truc tiep vao trong giao dien, gon va nhanh hon ban cu.</p>
+        <h1>Real-time Chinese chess assistant for xiangqi.com</h1>
+        <p class="lead">CCA uses Pikafish to read the current position, draw hint arrows, show move evaluation, and support auto move. The panel and settings are embedded directly into the interface for a cleaner and faster workflow.</p>
         <div class="cta">
-          <a class="btn" href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Tai userscript</a>
-          <a class="btn-ghost" href="analysis.html">Mo analysis board</a>
+          <a class="btn" href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Install userscript</a>
+          <a class="btn-ghost" href="analysis.html">Open analysis board</a>
         </div>
         <div class="chips">
           <span class="chip">Pikafish engine</span>
-          <span class="chip">Panel mini tu dong</span>
-          <span class="chip">Cai dat ngay trong panel</span>
-          <span class="chip">Ho tro auto move</span>
+          <span class="chip">Auto mini panel</span>
+          <span class="chip">In-panel settings</span>
+          <span class="chip">Auto move support</span>
         </div>
       </div>
       <div class="hero-card preview">
@@ -168,77 +212,95 @@
               <div class="dot"></div>
             </div>
           </div>
-          <div class="board"></div>
+          <div class="board" aria-hidden="true">
+            <div class="piece black p1">車</div>
+            <div class="piece black p2">象</div>
+            <div class="piece black p3">將</div>
+            <div class="piece black p4">馬</div>
+            <div class="piece black p5">車</div>
+            <div class="piece black p6">炮</div>
+            <div class="piece black p7">卒</div>
+            <div class="piece black p8">卒</div>
+            <div class="piece red p9">兵</div>
+            <div class="piece red p10">炮</div>
+            <div class="piece red p11">兵</div>
+            <div class="piece red p12">俥</div>
+            <div class="piece red p13">傌</div>
+            <div class="piece red p14">相</div>
+            <div class="piece red p15">帥</div>
+            <div class="piece red p16">相</div>
+            <div class="piece red p17">俥</div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title">Tinh nang chinh</h2>
+      <h2 class="section-title">Core features</h2>
       <div class="grid-3">
         <article class="card">
-          <h3>Goi y ngay tren ban co</h3>
-          <p>Doc FEN truc tiep tu xiangqi.com, phan tich voi engine va ve mui ten ngay tren ban co dang choi.</p>
+          <h3>Hints directly on the board</h3>
+          <p>Read FEN directly from xiangqi.com, analyze with the engine, and draw arrows on the live board.</p>
         </article>
         <article class="card">
-          <h3>Panel gon hon</h3>
-          <p>Khi chua phat hien ban co, panel chi con header. Khi co ban co, panel tu mo rong lai nhu ban Chess Killer.</p>
+          <h3>Smaller panel footprint</h3>
+          <p>When no board is detected, the panel collapses to its header. Once a board is found, it expands automatically.</p>
         </article>
         <article class="card">
-          <h3>Cai dat noi bo</h3>
-          <p>Khong can popup setting rieng. Moi tuy chon depth, so dong, mau mui ten, auto move va backup deu nam ngay trong panel.</p>
+          <h3>Built-in settings</h3>
+          <p>No separate popup is required. Depth, hint lines, arrow colors, auto move, and backup all live inside the panel.</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="cai-dat">
-      <h2 class="section-title">Cach cai dat</h2>
+    <section class="section" id="installation">
+      <h2 class="section-title">Installation</h2>
       <div class="grid-2">
         <article class="card">
-          <h3>1. Cai Tampermonkey</h3>
-          <p>Neu trinh duyet chua co userscript manager, hay cai Tampermonkey truoc.</p>
+          <h3>1. Install Tampermonkey</h3>
+          <p>If your browser does not already have a userscript manager, install Tampermonkey first.</p>
         </article>
         <article class="card">
-          <h3>2. Cai CCA</h3>
-          <p>Mo link cai dat ben duoi va chap nhan install trong Tampermonkey.</p>
+          <h3>2. Install CCA</h3>
+          <p>Open the install link below and approve the installation in Tampermonkey.</p>
           <span class="code">https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js</span>
         </article>
       </div>
     </section>
 
-    <section class="section" id="su-dung">
-      <h2 class="section-title">Cach su dung</h2>
+    <section class="section" id="usage">
+      <h2 class="section-title">Usage</h2>
       <article class="card">
         <ol class="steps">
-          <li>Mo trang <strong>xiangqi.com</strong> va vao mot van co.</li>
-          <li>CCA se tu detect ban co. Khi board chua san sang, panel chi hien header de gon man hinh.</li>
-          <li>Nhấn nut banh rang de mo cai dat ngay trong panel.</li>
-          <li>Chinh depth, so nuoc goi y, kieu mui ten, delay auto move va phim tat theo nhu cau.</li>
-          <li>Neu can xem lai the co, mo <a href="analysis.html">analysis board</a>.</li>
+          <li>Open <strong>xiangqi.com</strong> and enter a game.</li>
+          <li>CCA detects the board automatically. While the board is not ready, the panel stays collapsed.</li>
+          <li>Click the gear button to open settings inside the panel.</li>
+          <li>Adjust depth, hint count, arrow style, auto-move delay, and shortcut key as needed.</li>
+          <li>If you need a separate board view, open the <a href="analysis.html">analysis board</a>.</li>
         </ol>
       </article>
     </section>
 
     <section class="section">
-      <h2 class="section-title">Tai nguyen</h2>
+      <h2 class="section-title">Resources</h2>
       <div class="grid-2">
         <article class="card">
-          <h3>Lien ket nhanh</h3>
+          <h3>Quick links</h3>
           <ul>
             <li><a href="analysis.html">Analysis board</a></li>
             <li><a href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Direct install script</a></li>
-            <li><a href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/tree/main/cca" target="_blank" rel="noopener">Ma nguon CCA</a></li>
+            <li><a href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/tree/main/cca" target="_blank" rel="noopener">CCA source code</a></li>
           </ul>
         </article>
         <article class="card">
-          <h3>Luu y</h3>
-          <p>Trang nay chi la giao dien gioi thieu va link cai dat. Toan bo logic script, engine va file tai nguyen duoc luu tren GitHub Pages cua ban.</p>
+          <h3>Note</h3>
+          <p>This page is only the landing page and installation entry point. The script logic, engine, and assets are hosted on your GitHub Pages deployment.</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      <p>CCA duoc phat trien cho xiangqi.com. Ban landing page nay da duoc lam lai theo huong toi gian, bo toan bo noi dung khong lien quan tu mau cu.</p>
+      <p>CCA is built for xiangqi.com. This landing page was redesigned into a minimal version with only the relevant product content.</p>
     </footer>
   </div>
 </body>
