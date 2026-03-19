@@ -53,7 +53,7 @@ window.chrome.storage.local.set = window.chrome.storage.local.set || window._ckS
 window.chrome.storage.local.remove = window.chrome.storage.local.remove || window._ckStorageRemove;
 window.chrome.storage.local.onChanged = window.chrome.storage.local.onChanged || { addListener: function(){} };
 window.chrome.runtime = window.chrome.runtime || {};
-window.chrome.runtime.lastError = null;
+if (!('lastError' in window.chrome.runtime)) window.chrome.runtime.lastError = null;
 window.chrome.runtime.getURL = window.chrome.runtime.getURL || window._ckAssetUrl;
 </script>
 
