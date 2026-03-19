@@ -128,10 +128,52 @@
     var name = String(file || '').split('/').pop() || file;
     return ${JSON.stringify(baseUrl)} + '/' + name;
   }`;
+    const runtimePatch = `
+  function normalizeEngineUrl(url) {
+    var value = String(url || '');
+    var absolute = value.match(/https?:\\/\\/[\\s\\S]+$/);
+    if (absolute) {
+      value = absolute[0];
+      var nested = value.match(/https?:\\/\\/.*?(https?:\\/\\/[\\s\\S]+)$/);
+      if (nested && nested[1]) value = nested[1];
+    }
+    value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/\\//i, 'https://');
+    value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/([^/])/i, 'https://$2');
+    value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/\\//i, 'http://');
+    value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/([^/])/i, 'http://$2');
+    return value;
+  }
+  try {
+    var NativeXHR = self.XMLHttpRequest;
+    if (NativeXHR) {
+      self.XMLHttpRequest = function NormalizedXMLHttpRequest() {
+        var xhr = new NativeXHR();
+        var nativeOpen = xhr.open;
+        xhr.open = function(method, url) {
+          var args = Array.prototype.slice.call(arguments);
+          if (typeof args[1] === 'string') args[1] = normalizeEngineUrl(args[1]);
+          return nativeOpen.apply(this, args);
+        };
+        return xhr;
+      };
+      self.XMLHttpRequest.prototype = NativeXHR.prototype;
+    }
+  } catch (err) {}
+  try {
+    if (typeof self.fetch === 'function') {
+      var nativeFetch = self.fetch.bind(self);
+      self.fetch = function(resource, init) {
+        if (typeof resource === 'string') resource = normalizeEngineUrl(resource);
+        return nativeFetch(resource, init);
+      };
+    }
+  } catch (err) {}
+`;
     let patched = text.replace(
       /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
       patchedResolveLib
     );
+    patched = runtimePatch + '\n' + patched;
     return patched;
   }
 
