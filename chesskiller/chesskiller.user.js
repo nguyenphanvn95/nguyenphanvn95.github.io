@@ -138,7 +138,14 @@
   async function createBlobWorker(workerUrl, baseUrl) {
     const text = await gmFetchText(workerUrl);
     const patched = patchWorkerJs(text, baseUrl);
-    const blob = new Blob([patched], { type: 'application/javascript' });
+    const importMatch = patched.match(/importScripts\(\s*resolveLib\((['"`])([^'"`]+)\1\)\s*\)\s*;?/);
+    let bundled = patched;
+    if (importMatch?.[2]) {
+      const mainUrl = `${baseUrl}/${String(importMatch[2]).split('/').pop()}`;
+      const mainText = await gmFetchText(mainUrl);
+      bundled = patched.replace(importMatch[0], `\n/* inlined: ${mainUrl} */\n`) + `\n\n/* bundled main engine */\n${mainText}\n`;
+    }
+    const blob = new Blob([bundled], { type: 'application/javascript' });
     const blobUrl = URL.createObjectURL(blob);
     const worker = new Worker(blobUrl);
     URL.revokeObjectURL(blobUrl);
