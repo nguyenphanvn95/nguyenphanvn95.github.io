@@ -81,22 +81,30 @@
   let w=null;
   let workerPromise=null;
   function emit(type,pay){window.parent.postMessage({channel:CH,type,...pay},'*');}
+  function debug(message){emit('engine-log',{message});}
   async function ensureWorker(){
     if(w)return w;
     if(workerPromise)return workerPromise;
     workerPromise=(async()=>{
       try{
         const engineUrl=${JSON.stringify(WORKER_URL)};
+        debug('ensureWorker:start url='+engineUrl);
         const res=await fetch(engineUrl,{mode:'cors',credentials:'omit'});
+        debug('ensureWorker:fetch status='+res.status);
         if(!res.ok)throw new Error('Engine fetch failed: '+res.status);
         const source=await res.text();
+        debug('ensureWorker:source bytes='+source.length);
         const boot='self.__XQ_ENGINE_BOOT__='+JSON.stringify({loaderUrl:engineUrl})+';\\n';
         const blob=new Blob([boot,source],{type:'application/javascript'});
         const blobUrl=URL.createObjectURL(blob);
+        debug('ensureWorker:blob url created');
         w=new Worker(blobUrl);
+        debug('ensureWorker:worker constructed');
         w.onmessage=ev=>emit('engine-message',{line:ev.data});
-        w.onerror=err=>emit('worker-error',{message:err&&err.message||'worker error'});
+        w.onerror=err=>emit('worker-error',{message:err&&err.message||'worker error',filename:err&&err.filename||'',lineno:err&&err.lineno||0,colno:err&&err.colno||0});
+        w.onmessageerror=err=>emit('worker-error',{message:'worker messageerror: '+(err&&err.message||'unknown')});
         setTimeout(()=>URL.revokeObjectURL(blobUrl),60000);
+        debug('ensureWorker:worker ready');
         return w;
       }catch(e){
         workerPromise=null;
@@ -109,10 +117,12 @@
   window.addEventListener('message',async ev=>{
     const d=ev.data||{};
     if(d.channel!==CH||d.type!=='command')return;
+    debug('command:'+String(d.command||''));
     const wk=await ensureWorker();
     if(wk)try{wk.postMessage(String(d.command||''));}catch(e){emit('worker-error',{message:e.message});}
   });
   ensureWorker();
+  debug('host ready emitted');
   emit('ready',{});
 })();
 `;
@@ -283,15 +293,16 @@ function drawHintArrows(moves){if(cfg.showArrows===false){clearHintOverlay();ret
 
 // ── Engine host / communication ───────────────────────────────────
 function installEngineHostListener(){if(engineListenerInstalled)return;engineListenerInstalled=true;window.addEventListener("message",event=>{if(event.source!==engineHostFrame?.contentWindow)return;const data=event.data||{};if(data.channel!==ENGINE_HOST_CHANNEL)return;if(data.type==="ready"){engineHostReady=true;workerReady=false;workerUciReady=false;flushEngineQueue();worker?.postMessage("uci");worker?.postMessage("isready");return;}if(data.type==="worker-error"){autoMoveError="Engine worker failed";error("engine:worker-error",data.message||"unknown");scheduleRender();return;}if(data.type==="engine-message")onEngineMsg(data.line);});}
+function installEngineHostListener(){if(engineListenerInstalled)return;engineListenerInstalled=true;window.addEventListener("message",event=>{if(event.source!==engineHostFrame?.contentWindow)return;const data=event.data||{};if(data.channel!==ENGINE_HOST_CHANNEL)return;if(data.type==="ready"){log("engine-host:ready");engineHostReady=true;workerReady=false;workerUciReady=false;flushEngineQueue();worker?.postMessage("uci");worker?.postMessage("isready");return;}if(data.type==="engine-log"){log("engine-host",data.message||"");return;}if(data.type==="worker-error"){autoMoveError="Engine worker failed";error("engine:worker-error",data.message||"unknown",{filename:data.filename||"",lineno:data.lineno||0,colno:data.colno||0});scheduleRender();return;}if(data.type==="engine-message")onEngineMsg(data.line);});}
 function postToEngineHost(command){if(!engineHostFrame?.contentWindow||!engineHostReady){engineCommandQueue.push(command);return false;}engineHostFrame.contentWindow.postMessage({channel:ENGINE_HOST_CHANNEL,type:"command",command},"*");return true;}
 function flushEngineQueue(){if(!worker||!engineHostReady||!engineCommandQueue.length)return;const q=engineCommandQueue;engineCommandQueue=[];q.forEach(c=>postToEngineHost(c));}
 
 // [PATCH] startWorker dùng Blob iframe thay vì chrome.runtime.getURL
 function startWorker(){try{installEngineHostListener();worker={postMessage(cmd){postToEngineHost(cmd);}};if(!engineHostFrame){engineHostFrame=window.__CCA_CREATE_ENGINE_HOST_IFRAME__?.();if(!engineHostFrame){engineHostFrame=document.createElement("iframe");engineHostFrame.id="xq7-engine-host";Object.assign(engineHostFrame.style,{position:"fixed",width:"0",height:"0",border:"0",opacity:"0",pointerEvents:"none",left:"-9999px",top:"-9999px"});}(document.documentElement||document.body).appendChild(engineHostFrame);}}catch(err){autoMoveError="Engine failed to start";error("engine:start-failed",err);scheduleRender();}}
 
-function onEngineMsg(line){if(typeof line!=="string"||!line)return;if(line.includes("uciok"))workerUciReady=true;if(line.includes("readyok")){workerReady=true;autoMoveError=null;if(pendingAnalysisFen||state.fen)maybeAnalyzeCurrentTurn();return;}if(line.startsWith("info")&&line.includes("pv")){const depth=+(line.match(/\\bdepth (\\d+)/)||[])[1];if(!depth||depth<5)return;const pvIdx=+(line.match(/\\bmultipv (\\d+)/)||[,1])[1];const scoreMatch=line.match(/\\bscore (cp|mate) (-?\\d+)/);const pvMatch=line.match(/\\bpv ([a-i](?:10|[0-9])[a-i](?:10|[0-9]))/);if(!pvMatch)return;const parsedMove=splitEngineMoveNotation(pvMatch[1],activeAnalysisFen||state.fen);if(!parsedMove)return;const existing=moveMap.get(pvIdx);if(existing&&existing.depth>depth)return;let evalText="";if(scoreMatch){const[,type,rawScoreText]=scoreMatch;let score=Number(rawScoreText);const turn=fenSide(activeAnalysisFen||state.fen);if(turn==="b")score=-score;evalText=type==="mate"?"#"+score:(score>=0?"+":"")+(score/100).toFixed(1);}moveMap.set(pvIdx,{from:parsedMove.from,to:parsedMove.to,eval:evalText,depth});return;}if(line.startsWith("bestmove")){finishAnalysis();const moves=[...moveMap.entries()].sort((a,b)=>a[0]-b[0]).map(([,v])=>v).slice(0,cfg.lines);state.engineMoves=moves;drawHintArrows(moves);scheduleRender();if(state.autoMoveEnabled&&state.turn===state.myColor&&moves.length){const mv=chooseAutoMove(moves);const delayMs=getAutoPlayDelayMs();clearTimeout(autoMoveTimer);autoMoveTimer=setTimeout(()=>{if(!mv){autoMoveTimer=null;return;}autoMoveInFlight=true;tryApplyMoveWithRetry(mv).then(applied=>{if(applied){lastAutoMoveSignature=state.fen+"|"+state.turn+"|"+state.myColor;consecutiveAutoMoveFailures=0;}else{consecutiveAutoMoveFailures++;if(consecutiveAutoMoveFailures>=2){setAutoPlayMode("off");autoMoveError="Disabled after 2 failures";scheduleRender();}}}).catch(err=>error("autoMove:failed",err)).finally(()=>{autoMoveInFlight=false;autoMoveTimer=null;});},delayMs);}}}
+function onEngineMsg(line){if(typeof line!=="string"||!line)return;if(DEBUG_VERBOSE||line.includes("uciok")||line.includes("readyok")||line.startsWith("bestmove")||line.startsWith("info string [loader]"))log("engine:msg",line);if(line.includes("uciok")){workerUciReady=true;log("engine:uciok");}if(line.includes("readyok")){workerReady=true;autoMoveError=null;log("engine:readyok");if(pendingAnalysisFen||state.fen)maybeAnalyzeCurrentTurn();return;}if(line.startsWith("info")&&line.includes("pv")){const depth=+(line.match(/\\bdepth (\\d+)/)||[])[1];if(!depth||depth<5)return;const pvIdx=+(line.match(/\\bmultipv (\\d+)/)||[,1])[1];const scoreMatch=line.match(/\\bscore (cp|mate) (-?\\d+)/);const pvMatch=line.match(/\\bpv ([a-i](?:10|[0-9])[a-i](?:10|[0-9]))/);if(!pvMatch)return;const parsedMove=splitEngineMoveNotation(pvMatch[1],activeAnalysisFen||state.fen);if(!parsedMove)return;const existing=moveMap.get(pvIdx);if(existing&&existing.depth>depth)return;let evalText="";if(scoreMatch){const[,type,rawScoreText]=scoreMatch;let score=Number(rawScoreText);const turn=fenSide(activeAnalysisFen||state.fen);if(turn==="b")score=-score;evalText=type==="mate"?"#"+score:(score>=0?"+":"")+(score/100).toFixed(1);}moveMap.set(pvIdx,{from:parsedMove.from,to:parsedMove.to,eval:evalText,depth});return;}if(line.startsWith("bestmove")){log("engine:bestmove",line);finishAnalysis();const moves=[...moveMap.entries()].sort((a,b)=>a[0]-b[0]).map(([,v])=>v).slice(0,cfg.lines);state.engineMoves=moves;drawHintArrows(moves);scheduleRender();if(state.autoMoveEnabled&&state.turn===state.myColor&&moves.length){const mv=chooseAutoMove(moves);const delayMs=getAutoPlayDelayMs();clearTimeout(autoMoveTimer);autoMoveTimer=setTimeout(()=>{if(!mv){autoMoveTimer=null;return;}autoMoveInFlight=true;tryApplyMoveWithRetry(mv).then(applied=>{if(applied){lastAutoMoveSignature=state.fen+"|"+state.turn+"|"+state.myColor;consecutiveAutoMoveFailures=0;}else{consecutiveAutoMoveFailures++;if(consecutiveAutoMoveFailures>=2){setAutoPlayMode("off");autoMoveError="Disabled after 2 failures";scheduleRender();}}}).catch(err=>error("autoMove:failed",err)).finally(()=>{autoMoveInFlight=false;autoMoveTimer=null;});},delayMs);}}}
 
-function analyzePosition(fen,reason="direct"){if(!worker||!engineHostReady||!fen)return;if(!workerUciReady||!workerReady){pendingAnalysisFen=fen;worker.postMessage("uci");worker.postMessage("isready");scheduleRender();return;}if(state.engineAnalyzing){pendingAnalysisFen=fen;return;}state.engineAnalyzing=true;state.engineMoves=[];clearHintOverlay();analysisStartedAt=Date.now();activeAnalysisFen=fen;moveMap.clear();clearAnalysisTimer();analysisTimer=setTimeout(()=>{finishAnalysis();autoMoveError="Engine timeout";scheduleRender();},12000);worker.postMessage("stop");worker.postMessage("setoption name MultiPV value "+cfg.lines);worker.postMessage("isready");worker.postMessage("position fen "+fen);worker.postMessage("go depth "+cfg.depth+" movetime 8000");}
+function analyzePosition(fen,reason="direct"){if(!worker||!engineHostReady||!fen){warn("engine:analyze:blocked",{hasWorker:!!worker,engineHostReady,hasFen:!!fen,reason});return;}if(!workerUciReady||!workerReady){warn("engine:analyze:waiting-ready",{workerUciReady,workerReady,reason,fen});pendingAnalysisFen=fen;worker.postMessage("uci");worker.postMessage("isready");scheduleRender();return;}if(state.engineAnalyzing){log("engine:analyze:queued",reason);pendingAnalysisFen=fen;return;}log("engine:analyze:start",{reason,depth:cfg.depth,lines:cfg.lines,fen});state.engineAnalyzing=true;state.engineMoves=[];clearHintOverlay();analysisStartedAt=Date.now();activeAnalysisFen=fen;moveMap.clear();clearAnalysisTimer();analysisTimer=setTimeout(()=>{finishAnalysis();autoMoveError="Engine timeout";error("engine:timeout",{fen,reason});scheduleRender();},12000);worker.postMessage("stop");worker.postMessage("setoption name MultiPV value "+cfg.lines);worker.postMessage("isready");worker.postMessage("position fen "+fen);worker.postMessage("go depth "+cfg.depth+" movetime 8000");}
 function maybeAnalyzeCurrentTurn(){if(!configReady||!state.fen||!state.turn||!state.myColor)return;if(state.turn!==state.myColor){const had=state.engineMoves.length||!!lastHintSignature;state.engineMoves=[];clearHintOverlay();if(had)scheduleRender();return;}if(lastAnalyzedFen===state.fen&&state.engineMoves.length)return;lastAnalyzedFen=state.fen;analyzePosition(state.fen,state.autoMoveEnabled?"auto-play":"hint-only");}
 
 // ── Board reader ──────────────────────────────────────────────────
