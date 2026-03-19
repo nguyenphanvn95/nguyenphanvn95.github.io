@@ -1243,7 +1243,6 @@
 
   function syncSettingsForm() {
     if (!settingsEls) return;
-    settingsEls.enabled.checked = !!cfg.enabled;
     settingsEls.depth.value = String(cfg.depth);
     settingsEls.depthVal.textContent = String(cfg.depth);
     settingsEls.lines.value = String(cfg.lines);
@@ -1267,9 +1266,7 @@
       input.value = cfg.colors[idx] || DEFAULT_CONFIG.colors[idx];
       input.closest('.ch-color-item')?.classList.toggle('muted', idx >= cfg.lines);
     });
-    settingsEls.eloButtons.forEach(btn => {
-      btn.classList.toggle('active', Number(btn.dataset.elo) === cfg.eloLimit);
-    });
+    settingsEls.eloLimit.value = String(cfg.eloLimit || 0);
   }
 
   function flashSettingsSaved(msg) {
@@ -1338,9 +1335,6 @@
       .ch-color-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 4px;background:#252422;border:1px solid #3a3835;border-radius:10px;color:#c0bdb8;font-size:10px;font-weight:700}
       .ch-color-item.muted{opacity:.35}
       .ch-color-item input{width:30px;height:30px;padding:0;border:none;background:none}
-      .ch-elo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-      .ch-elo-btn{min-height:34px;border:1px solid #3a3835;border-radius:10px;background:#252422;color:#c0bdb8;font:600 11px system-ui;cursor:pointer}
-      .ch-elo-btn.active,.ch-elo-btn:hover{background:#1c3050;border-color:#6ea4ff;color:#fff}
       .ch-backup{display:grid;grid-template-columns:1fr 1fr;gap:8px}
       .ch-saved{min-height:16px;color:#76b730;font-size:11px;text-align:center;opacity:0;transition:opacity .2s}
       .ch-saved.show{opacity:1}
@@ -1385,10 +1379,6 @@
   <div class="ch-moves-list" id="ch-hints"></div>
 </div>
 <div class="ch-settings" id="ch-settings">
-  <div class="ch-set-title">Engine</div>
-  <div class="ch-set-card">
-    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-enabled"><span class="ch-set-label">Bật engine hints</span></label>
-  </div>
   <div class="ch-set-title">Phân tích</div>
   <div class="ch-set-card">
     <div class="ch-set-head"><span class="ch-set-label">Depth</span><span class="ch-val yellow" id="ch-set-depth-val">15</span></div>
@@ -1407,18 +1397,18 @@
     </select>
   </div>
   <div class="ch-set-title">ELO Limit</div>
-  <div class="ch-elo-grid" id="ch-set-elo-grid">
-    <button class="ch-elo-btn" type="button" data-elo="0">∞ Unlimited</button>
-    <button class="ch-elo-btn" type="button" data-elo="800">800</button>
-    <button class="ch-elo-btn" type="button" data-elo="1000">1000</button>
-    <button class="ch-elo-btn" type="button" data-elo="1200">1200</button>
-    <button class="ch-elo-btn" type="button" data-elo="1500">1500</button>
-    <button class="ch-elo-btn" type="button" data-elo="1800">1800</button>
-    <button class="ch-elo-btn" type="button" data-elo="2000">2000</button>
-    <button class="ch-elo-btn" type="button" data-elo="2200">2200</button>
-    <button class="ch-elo-btn" type="button" data-elo="2500">2500</button>
-    <button class="ch-elo-btn" type="button" data-elo="2800">2800</button>
-  </div>
+  <select class="ch-set-select" id="ch-set-elo-limit">
+    <option value="0">Unlimited</option>
+    <option value="800">800</option>
+    <option value="1000">1000</option>
+    <option value="1200">1200</option>
+    <option value="1500">1500</option>
+    <option value="1800">1800</option>
+    <option value="2000">2000</option>
+    <option value="2200">2200</option>
+    <option value="2500">2500</option>
+    <option value="2800">2800</option>
+  </select>
   <div class="ch-set-title">Tự động đi</div>
   <div class="ch-set-card">
     <select class="ch-set-select" id="ch-set-auto-mode">
@@ -1478,7 +1468,6 @@
       main: root.querySelector('.ch-body'),
       settings: root.querySelector('#ch-settings'),
       cfgBtn: root.querySelector('#ch-cfg-btn'),
-      enabled: root.querySelector('#ch-set-enabled'),
       depth: root.querySelector('#ch-set-depth'),
       depthVal: root.querySelector('#ch-set-depth-val'),
       lines: root.querySelector('#ch-set-lines'),
@@ -1499,7 +1488,7 @@
       randomDelayWrap: root.querySelector('#ch-set-random-delay-wrap'),
       quickMoveKey: root.querySelector('#ch-set-quick-key'),
       colorInputs: [1,2,3,4,5].map(i => root.querySelector(`#ch-set-c${i}`)),
-      eloButtons: [...root.querySelectorAll('.ch-elo-btn')],
+      eloLimit: root.querySelector('#ch-set-elo-limit'),
       exportBtn: root.querySelector('#ch-set-export'),
       importBtn: root.querySelector('#ch-set-import'),
       importFile: root.querySelector('#ch-set-import-file'),
@@ -1534,7 +1523,6 @@
       if (state.fen) state.fen = state.fen.replace(/^(\S+) [wb]/, `$1 ${state.turn}`);
       scheduleRender(); maybeAnalyze();
     });
-    settingsEls.enabled.addEventListener('change', () => commitSettings({ enabled: settingsEls.enabled.checked }, 'Đã lưu ✓'));
     settingsEls.depth.addEventListener('input', () => commitSettings({ depth: Number(settingsEls.depth.value) }));
     settingsEls.lines.addEventListener('input', () => commitSettings({ lines: Number(settingsEls.lines.value) }));
     settingsEls.showArrows.addEventListener('change', () => commitSettings({ showArrows: settingsEls.showArrows.checked }, 'Đã lưu ✓'));
@@ -1562,7 +1550,7 @@
         commitSettings({ colors });
       });
     });
-    settingsEls.eloButtons.forEach(btn => btn.addEventListener('click', () => commitSettings({ eloLimit: Number(btn.dataset.elo) }, 'Đã lưu ✓')));
+    settingsEls.eloLimit.addEventListener('change', () => commitSettings({ eloLimit: Number(settingsEls.eloLimit.value) }, 'Đã lưu ✓'));
     settingsEls.exportBtn.addEventListener('click', () => {
       const blob = new Blob([JSON.stringify({ app: 'ChessKiller', exportedAt: new Date().toISOString(), chConfig: cfg }, null, 2)], { type: 'application/json' });
       const a = doc.createElement('a');
@@ -1672,6 +1660,7 @@
 
   function normalizeConfig(input) {
     const n = { ...DEFAULT_CONFIG, ...(input || {}) };
+    n.enabled = true;
     n.depth = Math.min(25, Math.max(5, Number(n.depth) || 15));
     n.lines = Math.min(5, Math.max(1, Number(n.lines) || 3));
     n.autoPlayDelay = Math.min(5000, Math.max(300, Number(n.autoPlayDelay) || 1500));
