@@ -568,9 +568,35 @@ function engineDisplayName(script){
   return String(script || '').includes('komodoro') ? 'Komodo' : 'Stockfish';
 }
 
+function buildEngineWorkerBootstrap(script){
+  const workerUrl = assetUrl(script);
+  const wasmUrl = String(script || '').includes('komodoro')
+    ? assetUrl('modules/lib/komodoro.wasm')
+    : assetUrl('modules/lib/stockfish.wasm');
+  const mainScriptUrl = String(script || '').includes('komodoro')
+    ? assetUrl('modules/lib/komodoro.js')
+    : assetUrl('modules/lib/stockfish.js');
+  return `
+    self.Module = self.Module || {};
+    self.Module.locateFile = function(path) {
+      var name = String(path || '').split('/').pop();
+      if (name === 'engine.wasm' || name === 'komodoro-worker.wasm') name = 'komodoro.wasm';
+      if (name === 'stockfish-worker.wasm') name = 'stockfish.wasm';
+      return name && name.endsWith('.wasm') ? ${JSON.stringify(wasmUrl)} : name;
+    };
+    self.Module.wasmBinaryFile = ${JSON.stringify(wasmUrl)};
+    self.Module.mainScriptUrlOrBlob = ${JSON.stringify(mainScriptUrl)};
+    importScripts(${JSON.stringify(workerUrl)});
+  `;
+}
+
 function createEngineWorkerForScript(script){
   const normalized = String(script || '');
-  return new Worker(chrome.runtime.getURL(normalized));
+  const blob = new Blob([buildEngineWorkerBootstrap(normalized)], { type: 'application/javascript' });
+  const blobUrl = URL.createObjectURL(blob);
+  const worker = new Worker(blobUrl);
+  setTimeout(() => URL.revokeObjectURL(blobUrl), 0);
+  return worker;
 }
 
 function computeRandomBestArrow(){

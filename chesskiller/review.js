@@ -1356,6 +1356,12 @@ async function loadReviewPgnText(pgnText){
 async function consumeInitialReviewPgn(){
   const params = new URLSearchParams(window.location.search);
   cleanupExpiredReviewPgnHandoffs();
+  const pgn64 = params.get('pgn64') || decodeURIComponent(readRawQueryParam('pgn64'));
+  if(pgn64){
+    const decodedPgn = String(decodePgnFromUrl(pgn64) || '').trim();
+    if(decodedPgn) return decodedPgn;
+    reviewState.status = 'PGN was passed in the URL, but could not be decoded.';
+  }
   const pgnKey = params.get('pgnKey');
   if(pgnKey && typeof chrome !== 'undefined' && chrome.storage?.local){
     try{
@@ -1368,12 +1374,6 @@ async function consumeInitialReviewPgn(){
       console.error('Failed to read review PGN handoff:', err);
       reviewState.status = err?.message || 'Failed to read review PGN handoff.';
     }
-  }
-  const pgn64 = params.get('pgn64') || decodeURIComponent(readRawQueryParam('pgn64'));
-  if(pgn64){
-    const decodedPgn = String(decodePgnFromUrl(pgn64) || '').trim();
-    if(decodedPgn) return decodedPgn;
-    reviewState.status = 'PGN was passed in the URL, but could not be decoded.';
   }
   const gameUrl = String(params.get('gameUrl') || '').trim();
   if(gameUrl && typeof chrome !== 'undefined' && chrome.runtime?.sendMessage){
@@ -1546,5 +1546,4 @@ window.addEventListener('beforeunload', ()=>{
 });
 
 initReviewPage();
-
 

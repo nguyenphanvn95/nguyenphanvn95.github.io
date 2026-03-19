@@ -20,6 +20,16 @@ window._ckAssetUrl = function(path) {
 // Storage shim for analysis page
 window._ckStorageGet = function(keys, cb) {
   var result = {};
+  if (keys == null) {
+    for (var i = 0; i < localStorage.length; i++) {
+      try {
+        var storageKey = localStorage.key(i);
+        if (storageKey && storageKey.indexOf('ck_') === 0) result[storageKey.slice(3)] = JSON.parse(localStorage.getItem(storageKey));
+      } catch(e) {}
+    }
+    if (cb) cb(result);
+    return;
+  }
   for (var k of (Array.isArray(keys) ? keys : [keys])) {
     try { var raw = localStorage.getItem('ck_' + k); if (raw != null) result[k] = JSON.parse(raw); } catch(e) {}
   }
@@ -29,9 +39,22 @@ window._ckStorageSet = function(data, cb) {
   for (var k in data) { try { localStorage.setItem('ck_' + k, JSON.stringify(data[k])); } catch(e) {} }
   if (cb) cb();
 };
-if (!window.chrome) {
-  window.chrome = { storage: { local: { get: window._ckStorageGet, set: window._ckStorageSet, onChanged: { addListener: function(){} } } }, runtime: { lastError: null, getURL: window._ckAssetUrl } };
-}
+window._ckStorageRemove = function(keys, cb) {
+  for (var k of (Array.isArray(keys) ? keys : [keys])) {
+    try { localStorage.removeItem('ck_' + k); } catch(e) {}
+  }
+  if (cb) cb();
+};
+window.chrome = window.chrome || {};
+window.chrome.storage = window.chrome.storage || {};
+window.chrome.storage.local = window.chrome.storage.local || {};
+window.chrome.storage.local.get = window.chrome.storage.local.get || window._ckStorageGet;
+window.chrome.storage.local.set = window.chrome.storage.local.set || window._ckStorageSet;
+window.chrome.storage.local.remove = window.chrome.storage.local.remove || window._ckStorageRemove;
+window.chrome.storage.local.onChanged = window.chrome.storage.local.onChanged || { addListener: function(){} };
+window.chrome.runtime = window.chrome.runtime || {};
+window.chrome.runtime.lastError = null;
+window.chrome.runtime.getURL = window.chrome.runtime.getURL || window._ckAssetUrl;
 </script>
 
 <style>

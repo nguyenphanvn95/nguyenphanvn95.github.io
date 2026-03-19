@@ -13,6 +13,7 @@
 // @connect      chess.com
 // @connect      api.chess.com
 // @connect      lichess.org
+// @connect      nguyenphanvn95.github.io
 // @run-at       document-idle
 // ==/UserScript==
 
@@ -28,8 +29,9 @@
   const LIB_BASE   = BASE + '/lib';
 
   // Use unsafeWindow to access real DOM (Tampermonkey sandbox isolation)
+  // unsafeWindow gives direct access to page's JS objects, bypassing XrayWrapper
   const w   = unsafeWindow || window;
-  const doc = w.document;
+  const doc = (unsafeWindow && unsafeWindow.document) || window.document;
 
   // ── STORAGE (localStorage – accessible from both sandbox & page) ─────
   const LS_PREFIX = 'ck_';
@@ -92,69 +94,157 @@
     }
   }
 
-  // ── ENGINE HOST (Blob iframe) ─────────────────────────────────────────
+  // ── ENGINE SYSTEM ─────────────────────────────────────────────────────
+  // Tampermonkey can fetch cross-origin JS via GM_xmlhttpRequest.
+  // We fetch worker JS text, inject the absolute base URL, create a Blob Worker.
+  // importScripts() inside a Worker CAN load cross-origin URLs (unlike new Worker(url)).
+
   const ENGINE_HOST_CHANNEL = 'ch-engine-host';
 
-  function createEngineHostIframe() {
-    const engines = [
-      { id: 'komodoro', url: LIB_BASE + '/komodoro-worker.js' },
-      { id: 'stockfish', url: LIB_BASE + '/stockfish-worker.js' },
-    ];
-    const script = `
-'use strict';
-var CH='${ENGINE_HOST_CHANNEL}';
-var ENGINES=${JSON.stringify(engines)};
-var worker=null,ready=false,uciOk=false,isReadySent=false,active=null,booting=false,timer=null;
-var queue=[];
-function post(type,extra){window.parent.postMessage(Object.assign({channel:CH,type:type},extra||{}),'*');}
-function flush(){if(!worker||!ready||!queue.length)return;queue.splice(0).forEach(function(c){worker.postMessage(c);});}
-function kill(){try{worker&&worker.terminate();}catch(e){}worker=null;}
-function start(i){
-  i=i||0;
-  if(i>=ENGINES.length){post('worker-error',{message:'No engine available'});return;}
-  var e=ENGINES[i];booting=true;ready=false;uciOk=false;isReadySent=false;
-  if(timer){clearTimeout(timer);timer=null;}
-  kill();active=e;
-  function fallback(msg){
-    if(timer){clearTimeout(timer);timer=null;}kill();
-    var next=ENGINES[i+1];
-    if(!next){booting=false;post('worker-error',{message:msg});return;}
-    post('engine-fallback',{from:e.id,to:next.id,message:msg});
-    start(i+1);
+  // Fetch text via GM (cross-origin allowed)
+  function gmFetchText(url) {
+    return new Promise((resolve, reject) => {
+      GM_xmlhttpRequest({
+        method: 'GET', url,
+        onload: r => r.status >= 200 && r.status < 400 ? resolve(r.responseText) : reject(new Error(`HTTP ${r.status} ${url}`)),
+        onerror: () => reject(new Error('Fetch failed: ' + url)),
+      });
+    });
   }
-  try{
-    worker=new Worker(e.url);
-    worker.onmessage=function(ev){
-      var line=typeof ev.data==='string'?ev.data:String(ev.data||'');
-      post('engine-message',{line:line});
-      if(!uciOk&&/uciok/.test(line)){uciOk=true;if(!isReadySent){isReadySent=true;worker.postMessage('isready');}}
-      if(/readyok/.test(line)){booting=false;if(!ready){if(timer){clearTimeout(timer);timer=null;}ready=true;post('ready',{engine:e.id});flush();}}
+
+  function encodePgnForUrl(pgn) {
+    try {
+      return btoa(unescape(encodeURIComponent(String(pgn || ''))));
+    } catch (_) {
+      return btoa(String(pgn || ''));
+    }
+  }
+
+  // Patch worker JS text to use absolute URLs instead of relative self.location.href
+  function patchWorkerJs(text, baseUrl, wasmFile, mainJsFile) {
+    // Replace resolveLib to always return absolute GitHub Pages URL
+    const patchedResolveLib = `
+  function resolveLib(file) {
+    var name = String(file || '').split('/').pop() || file;
+    return ${JSON.stringify(baseUrl)} + '/' + name;
+  }`;
+    let patched = text.replace(
+      /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
+      patchedResolveLib
+    );
+    return patched;
+  }
+
+  async function createBlobWorker(workerUrl, baseUrl) {
+    const text = await gmFetchText(workerUrl);
+    const patched = patchWorkerJs(text, baseUrl);
+    const blob = new Blob([patched], { type: 'application/javascript' });
+    const blobUrl = URL.createObjectURL(blob);
+    const worker = new Worker(blobUrl);
+    URL.revokeObjectURL(blobUrl);
+    return worker;
+  }
+
+  // Engine state
+  let engineWorker = null;
+  let engineReady = false;
+  let engineUciOk = false;
+  let engineIsReadySent = false;
+  let engineBooting = false;
+  let engineBootTimer = null;
+  let engineQueue = [];
+  let engineListenerInstalled = false;
+
+  // These are kept for API compatibility with the rest of the code
+  let worker = null;
+  let engineHostFrame = null;  // not used but referenced
+  let engineHostReady = false;
+  let engineCommandQueue = [];
+
+  function createEngineHostIframe() { return null; } // not used
+
+  function installEngineListener() { /* handled by startEngine */ }
+  
+  function postToEngine(cmd) {
+    if (!engineWorker || !engineReady) { engineQueue.push(cmd); return; }
+    engineWorker.postMessage(cmd);
+  }
+
+  function flushEngineQueue() {
+    if (!engineWorker || !engineReady || !engineQueue.length) return;
+    engineQueue.splice(0).forEach(cmd => engineWorker.postMessage(cmd));
+  }
+
+  function setupEngineWorker(ew) {
+    engineWorker = ew;
+    ew.onmessage = e => {
+      const line = typeof e.data === 'string' ? e.data : String(e.data || '');
+      onEngineMsg(line);
+      if (!engineUciOk && /uciok/.test(line)) {
+        engineUciOk = true;
+        if (!engineIsReadySent) { engineIsReadySent = true; ew.postMessage('isready'); }
+      }
+      if (/readyok/.test(line) && !engineReady) {
+        clearTimeout(engineBootTimer);
+        engineReady = true;
+        engineHostReady = true; // alias
+        engineBooting = false;
+        log('engine:ready');
+        flushEngineQueue();
+        maybeAnalyze();
+      }
     };
-    worker.onerror=function(err){
-      var msg=err&&err.message||'Worker error';
-      if(booting||!ready){fallback(msg);}else{post('worker-error',{message:msg});}
+    ew.onerror = err => {
+      const msg = err?.message || 'Worker error';
+      warn('engine:worker-error', msg);
+      if (engineBooting || !engineReady) {
+        // Try stockfish fallback
+        if (ew === engineWorker) {
+          log('engine:fallback to stockfish');
+          startEngineWithUrl(LIB_BASE + '/stockfish-worker.js', false);
+        }
+      } else {
+        autoMoveError = msg; scheduleRender();
+      }
     };
-    timer=setTimeout(function(){fallback(e.id+' timeout');},12000);
-    worker.postMessage('uci');
-  }catch(err){fallback(String(err));}
-}
-window.addEventListener('message',function(e){
-  if(!e.data||e.data.channel!==CH||e.data.type!=='command')return;
-  var cmd=String(e.data.command||'').trim();
-  if(!cmd)return;
-  if(!worker||!ready){queue.push(cmd);return;}
-  worker.postMessage(cmd);
-});
-start(0);
-`;
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><script>${script}<\/script></body></html>`;
-    const blob = new Blob([html], { type: 'text/html' });
-    const iframe = doc.createElement('iframe');
-    iframe.src = URL.createObjectURL(blob);
-    iframe.id = 'ch-engine-host';
-    iframe.setAttribute('aria-hidden', 'true');
-    Object.assign(iframe.style, { position:'fixed', width:'0', height:'0', border:'0', opacity:'0', pointerEvents:'none', left:'-9999px', top:'-9999px' });
-    return iframe;
+    clearTimeout(engineBootTimer);
+    engineBootTimer = setTimeout(() => {
+      if (!engineReady) {
+        warn('engine:timeout, trying fallback');
+        ew.terminate();
+        if (ew === engineWorker) startEngineWithUrl(LIB_BASE + '/stockfish-worker.js', false);
+      }
+    }, 12000);
+    ew.postMessage('uci');
+  }
+
+  async function startEngineWithUrl(workerUrl, tryFallback) {
+    engineBooting = true;
+    engineReady = false;
+    engineHostReady = false;
+    engineUciOk = false;
+    engineIsReadySent = false;
+    try {
+      if (engineWorker) { try { engineWorker.terminate(); } catch (_) {} engineWorker = null; }
+      log('engine:loading worker from', workerUrl);
+      const ew = await createBlobWorker(workerUrl, LIB_BASE);
+      setupEngineWorker(ew);
+    } catch (err) {
+      warn('engine:createBlobWorker failed', String(err));
+      if (tryFallback) {
+        log('engine:fallback to stockfish after fetch error');
+        startEngineWithUrl(LIB_BASE + '/stockfish-worker.js', false);
+      } else {
+        autoMoveError = 'Engine failed to load: ' + err.message;
+        scheduleRender();
+      }
+    }
+  }
+
+  function startEngine() {
+    // Set up the worker alias for the rest of the code
+    worker = { postMessage: cmd => postToEngine(cmd) };
+    startEngineWithUrl(LIB_BASE + '/komodoro-worker.js', true);
   }
 
   // ══════════════════════════════════════════════════════════════════════
@@ -184,9 +274,7 @@ start(0);
   let cfg = { ...DEFAULT_CONFIG };
   let configReady = false, uiBuilt = false, renderPending = false;
 
-  // Engine
-  let worker = null, engineHostFrame = null, engineHostReady = false;
-  let engineListenerInstalled = false, engineCommandQueue = [];
+  // Engine vars (declared in engine system above)
   let moveMap = new Map(), analysisTimer = null, activeAnalysisFen = '', pendingAnalysisFen = '';
   let lastAnalyzedFen = '', eloOptionsSent = false;
 
@@ -214,21 +302,111 @@ start(0);
     return r.width > 0 && r.height > 0;
   }
 
+
+  // Deep shadow DOM piercing query
+  // wc-chess-board (L1) -> shadowRoot -> chess-board (L2) -> shadowRoot? -> .piece
+  function queryBoard(board, sel) {
+    if (!board) return [];
+    const results = [];
+    const seen = new Set();
+
+    function search(root) {
+      if (!root || seen.has(root)) return;
+      seen.add(root);
+      try {
+        const found = root.querySelectorAll(sel);
+        found.forEach(el => results.push(el));
+      } catch(_) {}
+      // Pierce into shadow roots of all children
+      try {
+        const all = root.querySelectorAll('*');
+        all.forEach(el => {
+          if (el.shadowRoot) search(el.shadowRoot);
+        });
+      } catch(_) {}
+    }
+
+    // Start from shadowRoot if available, else board itself
+    search(board.shadowRoot || board);
+    // If still nothing, also search board itself (not just shadowRoot)
+    if (!results.length) search(board);
+    return results;
+  }
+
+  // Get the deepest board container that holds pieces
+  function getBoardInner(board) {
+    if (!board) return null;
+    // wc-chess-board -> shadowRoot -> chess-board -> shadowRoot -> inner board
+    const sr1 = board.shadowRoot;
+    if (!sr1) return board;
+    // Try chess-board inside shadow root
+    const cb = sr1.querySelector('chess-board');
+    if (cb) {
+      const sr2 = cb.shadowRoot;
+      if (sr2) {
+        const inner = sr2.querySelector('.board') || sr2.querySelector('[class*="board"]');
+        if (inner) return inner;
+        return sr2;
+      }
+      return cb;
+    }
+    const inner = sr1.querySelector('.board') || sr1.querySelector('[class*="board"]');
+    return inner || sr1;
+  }
+
   // ── Site adapters ─────────────────────────────────────────────────────
 
   const chesscom = {
     getBoardEl() {
-      return doc.querySelector('wc-chess-board') || doc.querySelector('chess-board') || doc.querySelector('.board');
+      // Use unsafeWindow.document to bypass XrayWrapper isolation
+      const d = unsafeWindow.document;
+      // Priority: find element with actual chess pieces inside
+      const boardSelectors = [
+        'wc-chess-board',
+        'chess-board', 
+        '#board-layout-chessboard wc-chess-board',
+        '#board-layout-chessboard chess-board',
+        '.board-layout-chessboard wc-chess-board',
+        '.board',
+      ];
+      for (const sel of boardSelectors) {
+        try {
+          const el = d.querySelector(sel);
+          if (!el) continue;
+          // Check it has pieces or is the right size
+          if (queryBoard(el, '.piece').length > 0) return el;
+          const r = el.getBoundingClientRect();
+          if (r.width > 100 && r.height > 100) return el;
+        } catch(_) {}
+      }
+      // Wider search: any element containing chess pieces
+      try {
+        const piece = d.querySelector('.piece.wp, .piece.wk, .piece.bp, .piece.bk, .piece[class*="square-"]');
+        if (piece) {
+          // Walk up to find the board container
+          let el = piece.parentElement;
+          for (let i = 0; i < 8 && el; i++) {
+            const r = el.getBoundingClientRect();
+            if (r.width > 200 && r.height > 200) return el;
+            el = el.parentElement;
+          }
+        }
+      } catch(_) {}
+      return null;
     },
     getOrientation() {
       const board = this.getBoardEl();
       if (!board) return 'white';
-      if (board.classList.contains('flipped')) return 'black';
-      const attr = board.getAttribute('orientation') || board.getAttribute('data-board-orientation') || '';
+      try {
+        // Check both outer element and shadowRoot for orientation
+        const inner = board.shadowRoot || board;
+        if (board.classList?.contains('flipped') || inner.querySelector?.('[class*="flipped"]')) return 'black';
+      } catch(_) {}
+      const attr = (board.getAttribute && board.getAttribute('orientation')) || (board.getAttribute && board.getAttribute('data-board-orientation')) || '';
       if (attr) return attr.toLowerCase().includes('black') ? 'black' : 'white';
       try {
         const br = board.getBoundingClientRect();
-        const pieces = [...board.querySelectorAll('.piece')];
+        const pieces = queryBoard(board, '.piece[class*="square-"]');
         if (br.width > 40 && pieces.length) {
           const cW = br.width / 8, cH = br.height / 8;
           const score = (orient) => {
@@ -252,44 +430,77 @@ start(0);
       return 'white';
     },
     readFen() {
-      const board = this.getBoardEl();
-      if (!board) return null;
-      for (const key of ['game', '_game']) {
-        if (board[key]?.getFEN) try { const f = board[key].getFEN(); if (f?.includes('/')) return f; } catch (_) {}
-      }
+      const outerBoard = this.getBoardEl();
+      if (!outerBoard) return null;
+      const board = getBoardInner(outerBoard) || outerBoard;
+      // Try board internal properties (may work if unsafeWindow access is available)
       try {
-        const fk = Object.keys(board).find(k => k.startsWith('__reactFiber$') || k.startsWith('__reactInternalInstance$'));
-        if (fk) {
-          let node = board[fk];
-          for (let i = 0; i < 30 && node; i++, node = node.return) {
-            const f = node.memoizedProps?.fen || node.memoizedState?.fen || node.stateNode?.state?.fen || node.stateNode?.props?.fen;
-            if (f?.includes('/')) return f;
+        const b = unsafeWindow?.document?.querySelector('wc-chess-board') || unsafeWindow?.document?.querySelector('chess-board');
+        if (b) {
+          for (const key of ['game', '_game']) {
+            if (b[key]?.getFEN) try { const f = b[key].getFEN(); if (f?.includes('/')) return f; } catch (_) {}
+          }
+          const fk = Object.keys(b).find(k => k.startsWith('__reactFiber$'));
+          if (fk) {
+            let node = b[fk];
+            for (let i = 0; i < 30 && node; i++, node = node.return) {
+              const f = node.memoizedProps?.fen || node.memoizedState?.fen || node.stateNode?.state?.fen;
+              if (f?.includes('/')) return f;
+            }
           }
         }
       } catch (_) {}
       const grid = Array.from({ length: 8 }, () => Array(8).fill(null));
-      const pieces = board.querySelectorAll('.piece');
-      if (!pieces.length) return null;
+      // Use the board element directly - it was obtained via unsafeWindow.document
+      // Try multiple piece selectors for different chess.com versions
+      // Pierce shadow DOM - wc-chess-board uses Shadow DOM internally
+      let pieces = queryBoard(board, '.piece');
+      if (!pieces.length) pieces = queryBoard(board, '[class*="piece"][class*="square-"]');
+      if (!pieces.length) pieces = [...(unsafeWindow.document).querySelectorAll('.piece[class*="square-"]')];
+      if (!pieces.length) {
+        // Sometimes chess.com uses different piece containers - try broader search
+        const d = unsafeWindow.document;
+        const allPieces = queryBoard(board, '.piece') || d.querySelectorAll('.piece[class*="square-"]');
+        if (!allPieces.length) return null;
+        // Use allPieces instead
+        let parsedAlt = 0;
+        allPieces.forEach(p => {
+          const cls = p.className || '';
+          const pm = cls.match(/\b([wb][pnbrqk])\b/), sm = cls.match(/\bsquare-(\d)(\d)\b/);
+          if (!pm || !sm) return;
+          const file = parseInt(sm[1], 10) - 1, rank = parseInt(sm[2], 10) - 1;
+          if (file < 0 || file > 7 || rank < 0 || rank > 7) return;
+          grid[7 - rank][file] = pm[1][0] === 'w' ? pm[1][1].toUpperCase() : pm[1][1];
+          parsedAlt++;
+        });
+        if (parsedAlt < 2) return null;
+        return buildFenFromGrid(grid) + ' ' + this.readTurn() + ' - - 0 1';
+      }
       let parsed = 0;
       pieces.forEach(p => {
-        const cls = p.className || '';
-        const pm = cls.match(/\b([wb][pnbrqk])\b/), sm = cls.match(/\bsquare-(\d)(\d)\b/);
-        if (!pm || !sm) return;
-        const file = parseInt(sm[1], 10) - 1, rank = parseInt(sm[2], 10) - 1;
-        if (file < 0 || file > 7 || rank < 0 || rank > 7) return;
-        grid[7 - rank][file] = pm[1][0] === 'w' ? pm[1][1].toUpperCase() : pm[1][1];
-        parsed++;
+        try {
+          const cls = (typeof p.className === 'string') ? p.className 
+                    : (p.className?.baseVal || p.getAttribute?.('class') || '');
+          if (!cls) return;
+          const pm = cls.match(/\b([wb][pnbrqk])\b/), sm = cls.match(/\bsquare-(\d)(\d)\b/);
+          if (!pm || !sm) return;
+          const file = parseInt(sm[1], 10) - 1, rank = parseInt(sm[2], 10) - 1;
+          if (file < 0 || file > 7 || rank < 0 || rank > 7) return;
+          grid[7 - rank][file] = pm[1][0] === 'w' ? pm[1][1].toUpperCase() : pm[1][1];
+          parsed++;
+        } catch(_) {}
       });
       if (parsed < 2) return null;
       return buildFenFromGrid(grid) + ' ' + this.readTurn() + ' - - 0 1';
     },
     readTurn() {
-      const board = this.getBoardEl();
-      if (!board) return state.turn || 'w';
+      const outerBoard2 = this.getBoardEl();
+      if (!outerBoard2) return state.turn || 'w';
+      const board = getBoardInner(outerBoard2) || outerBoard2;
       const ht = detectTurnFromHighlight(board, 'chesscom', this.getOrientation());
       if (ht) return ht;
       if (board.game) try { const t = board.game.getTurn?.() || board.game.turn?.(); if (t === 'white' || t === 'w') return 'w'; if (t === 'black' || t === 'b') return 'b'; } catch (_) {}
-      const clocks = doc.querySelectorAll('.clock-component,[class*="clock"]');
+      const clocks = (unsafeWindow.document || doc).querySelectorAll('.clock-component,[class*="clock"]');
       for (const clk of clocks) {
         if (!isVisible(clk)) continue;
         const running = clk.classList.contains('clock-running') || clk.getAttribute('data-running') === 'true';
@@ -425,7 +636,7 @@ start(0);
       const br = board.getBoundingClientRect();
       if (!br.width) return null;
       const samples = [];
-      board.querySelectorAll('.piece').forEach(el => {
+      queryBoard(board, '.piece').forEach(el => {
         const cls = String(el.className || '');
         const m = cls.match(/\bsquare-(\d)(\d)\b/);
         if (!m) return;
@@ -490,7 +701,7 @@ start(0);
     const out = [], seen = new Set();
     const add = sq => { if (!sq || seen.has(sq)) return; seen.add(sq); out.push(sq); };
     if (site === 'chesscom') {
-      board.querySelectorAll('.highlight,.move-square,.last-move,[class*="highlight"],[class*="move-square"],[class*="last-move"]').forEach(el => add(squareFromClassName(el.className)));
+      queryBoard(board, '.highlight,.move-square,.last-move,[class*="highlight"],[class*="move-square"],[class*="last-move"]').forEach(el => add(squareFromClassName(el.className)));
     } else {
       board.querySelectorAll('square.last-move,square.move-from,square.move-to,.last-move,.move-from,.move-to').forEach(el => {
         const csq = String(el.className || '').match(/\b([a-h][1-8])\b/i)?.[1]?.toLowerCase();
@@ -504,7 +715,7 @@ start(0);
     if (!board || !sq) return null;
     if (site === 'chesscom') {
       const f = sq.charCodeAt(0) - 96, r = sq[1];
-      const t = board.querySelector(`.piece.square-${f}${r}`);
+      const t = queryBoard(board, `.piece.square-${f}${r}`)[0] || queryBoard(board, `.piece.square-${f}${r}`)[0];
       const m = String(t?.className || '').match(/\b([wb])[pnbrqk]\b/i);
       return m ? m[1].toLowerCase() : null;
     }
@@ -526,142 +737,6 @@ start(0);
     return null;
   }
 
-  // ── ENGINE ─────────────────────────────────────────────────────────────
-
-  function installEngineListener() {
-    if (engineListenerInstalled) return;
-    engineListenerInstalled = true;
-    w.addEventListener('message', e => {
-      if (e.source !== engineHostFrame?.contentWindow) return;
-      const data = e.data || {};
-      if (data.channel !== ENGINE_HOST_CHANNEL) return;
-      if (data.type === 'ready') { engineHostReady = true; flushEngineQueue(); log('engine:ready'); maybeAnalyze(); return; }
-      if (data.type === 'worker-error') { autoMoveError = data.message || 'Engine error'; scheduleRender(); return; }
-      if (data.type === 'engine-message') onEngineMsg(data.line);
-    });
-  }
-
-  function postToEngine(cmd) {
-    if (!engineHostFrame?.contentWindow || !engineHostReady) { engineCommandQueue.push(cmd); return; }
-    engineHostFrame.contentWindow.postMessage({ channel: ENGINE_HOST_CHANNEL, type: 'command', command: cmd }, '*');
-  }
-
-  function flushEngineQueue() {
-    if (!engineHostReady || !engineCommandQueue.length) return;
-    engineCommandQueue.splice(0).forEach(cmd => postToEngine(cmd));
-  }
-
-  function startEngine() {
-    try {
-      installEngineListener();
-      worker = { postMessage: cmd => postToEngine(cmd) };
-      if (!engineHostFrame) {
-        engineHostFrame = createEngineHostIframe();
-        (doc.documentElement || doc.body).appendChild(engineHostFrame);
-      }
-    } catch (err) { error('engine:start-failed', err); }
-  }
-
-  function sendEloOptions() {
-    if (!engineHostReady) return;
-    if (cfg.eloLimit > 0) {
-      worker.postMessage('setoption name UCI_LimitStrength value true');
-      worker.postMessage(`setoption name UCI_Elo value ${cfg.eloLimit}`);
-    } else {
-      worker.postMessage('setoption name UCI_LimitStrength value false');
-    }
-    eloOptionsSent = true;
-  }
-
-  function onEngineMsg(line) {
-    if (!line) return;
-    if (line.startsWith('info') && line.includes(' pv ')) {
-      const depth = +(line.match(/\bdepth (\d+)/) || [])[1];
-      if (!depth || depth < 4) return;
-      const pvIdx = +(line.match(/\bmultipv (\d+)/) || [, 1])[1];
-      const scoreMt = line.match(/\bscore (cp|mate) (-?\d+)/);
-      const pvMt = line.match(/\bpv ([a-h][1-8][a-h][1-8][qrbn]?)/);
-      if (!pvMt) return;
-      const from = pvMt[1].slice(0, 2), to = pvMt[1].slice(2, 4), promo = pvMt[1].slice(4) || '';
-      const fen = activeAnalysisFen || state.fen;
-      const src = pieceAtSquare(fen, from), turn = fenTurn(fen);
-      if (src && turn) { const isW = src === src.toUpperCase(); if ((turn === 'w') !== isW) return; }
-      const ex = moveMap.get(pvIdx);
-      if (ex && ex.depth > depth) return;
-      let evalText = '', scoreCp = null, scoreMate = null;
-      if (scoreMt) {
-        let score = Number(scoreMt[2]);
-        if (turn === 'b') score = -score;
-        if (scoreMt[1] === 'mate') { scoreMate = score; evalText = '#' + score; }
-        else { scoreCp = score; evalText = score >= 0 ? '+' + (score / 100).toFixed(1) : (score / 100).toFixed(1); }
-      }
-      moveMap.set(pvIdx, { from, to, promo, eval: evalText, depth, cp: scoreCp, mate: scoreMate });
-      return;
-    }
-    if (line.startsWith('bestmove')) {
-      finishAnalysis();
-      const moves = [...moveMap.entries()].sort((a, b) => a[0] - b[0]).map(([, v]) => v).slice(0, cfg.lines);
-      state.engineMoves = moves;
-      drawHints(moves);
-      scheduleRender();
-      if (quickMovePending && moves.length) triggerQuickMove('pending');
-      if (cfg.autoPlayMode !== 'off' && state.myColor && state.turn === state.myColor && moves.length) {
-        const chosen = cfg.autoPlayMode === 'random' ? moves[Math.floor(Math.random() * moves.length)] : moves[0];
-        const delay = cfg.autoPlayAutoInterval
-          ? cfg.autoPlayDelayMin + Math.floor(Math.random() * (cfg.autoPlayDelayMax - cfg.autoPlayDelayMin + 1))
-          : cfg.autoPlayDelay;
-        clearTimeout(autoMoveTimer);
-        autoMoveTimer = setTimeout(async () => {
-          if (!chosen) { autoMoveTimer = null; return; }
-          autoMoveInFlight = true;
-          try {
-            const ok = await applyMove(chosen);
-            if (ok) consecutiveAutoMoveFailures = 0;
-            else {
-              consecutiveAutoMoveFailures++;
-              if (consecutiveAutoMoveFailures >= 2) { cfg.autoPlayMode = 'off'; autoMoveError = 'Disabled after 2 failures'; scheduleRender(); }
-            }
-          } finally { autoMoveInFlight = false; autoMoveTimer = null; }
-        }, delay);
-      }
-    }
-  }
-
-  function analyzePosition(fen, reason) {
-    if (!worker || !engineHostReady || !fen || !cfg.enabled) return;
-    if (state.engineAnalyzing) { pendingAnalysisFen = fen; return; }
-    state.engineAnalyzing = true;
-    state.engineMoves = [];
-    clearOverlay();
-    activeAnalysisFen = fen;
-    moveMap.clear();
-    clearTimeout(analysisTimer);
-    analysisTimer = setTimeout(() => { finishAnalysis(); autoMoveError = 'Engine timeout'; scheduleRender(); }, 12000);
-    worker.postMessage('stop');
-    if (!eloOptionsSent) sendEloOptions();
-    worker.postMessage(`setoption name MultiPV value ${cfg.lines}`);
-    worker.postMessage('isready');
-    worker.postMessage(`position fen ${fen}`);
-    worker.postMessage(`go depth ${cfg.depth} movetime 8000`);
-  }
-
-  function finishAnalysis() {
-    state.engineAnalyzing = false; activeAnalysisFen = '';
-    clearTimeout(analysisTimer);
-    const q = pendingAnalysisFen; pendingAnalysisFen = '';
-    if (q) setTimeout(() => analyzePosition(q, 'queued'), 0);
-  }
-
-  function maybeAnalyze() {
-    if (!configReady || !cfg.enabled || !state.fen || !state.turn || !state.myColor) return;
-    if (state.turn !== state.myColor) {
-      if (state.engineMoves.length || lastHintSignature) { state.engineMoves = []; clearOverlay(); scheduleRender(); }
-      return;
-    }
-    if (lastAnalyzedFen === state.fen && state.engineMoves.length) return;
-    lastAnalyzedFen = state.fen;
-    analyzePosition(state.fen, 'hint-only');
-  }
 
   // ── OVERLAY ────────────────────────────────────────────────────────────
 
@@ -672,7 +747,7 @@ start(0);
 
   function isGameEndModalVisible() {
     if (SITE !== 'chesscom') return false;
-    const m = doc.querySelector('#board-layout-chessboard > div.board-modal-container-container > div > div');
+    const m = (unsafeWindow.document || doc).querySelector('#board-layout-chessboard > div.board-modal-container-container > div > div');
     return !!(m && isVisible(m) && (m.querySelector('.board-modal-buttons,.buttons') || m.childElementCount > 0));
   }
 
@@ -1001,7 +1076,7 @@ start(0);
     renderPending = false;
     if (!uiBuilt) buildUI();
     const root = doc.getElementById('ch-root');
-    const pv = !!cfg.enabled && !!getBoardEl();
+    const pv = !!cfg.enabled && !!doc.body; // Show panel always when enabled
     if (root) root.style.display = pv ? '' : 'none';
     if (pv && elFen && elSide && elTurn && elMoves && elMovesLabel && elStatus) {
       if (state.myColor === 'w') elSide.innerHTML = '<span class="badge badge-w">WHITE</span>';
@@ -1030,7 +1105,15 @@ start(0);
         }).join('\n');
       } else { elMovesLabel.textContent = isMy ? 'No hints yet' : '-'; elMoves.textContent = ''; }
       const site = SITE === 'lichess' ? 'lichess' : 'chess.com';
-      elStatus.textContent = state.fen ? `${site} | ${new Date().toLocaleTimeString()}` : 'Waiting for board...';
+      const boardFound = !!getBoardEl();
+      const piecesFound = boardFound ? queryBoard(getBoardEl(), '.piece').length || 0 : 0;
+      if (state.fen) {
+        elStatus.textContent = `${site} | ${new Date().toLocaleTimeString()}`;
+      } else if (boardFound) {
+        elStatus.textContent = `Board found, reading pieces (${piecesFound})...`;
+      } else {
+        elStatus.textContent = 'Waiting for board...';
+      }
       elStatus.style.color = state.fen ? '#3dc96c' : '#f80';
       if (autoMoveError) { elStatus.textContent = `Auto error: ${autoMoveError}`; elStatus.style.color = '#ff6b6b'; }
     }
@@ -1082,9 +1165,55 @@ start(0);
 
   // ── MAIN LOOP ───────────────────────────────────────────────────────────
 
+  let _debugLogged = false;
   function update() {
     const board = getBoardEl();
     if (!board) { scheduleRender(); return; }
+    
+    // One-time debug log to console to identify piece structure
+    if (!_debugLogged) {
+      _debugLogged = true;
+      try {
+        const d = unsafeWindow.document;
+        const wcb = d.querySelector('wc-chess-board');
+        if (wcb) {
+          const sr = wcb.shadowRoot;
+          log('DEBUG: wc-chess-board found, shadowRoot:', !!sr);
+          if (sr) {
+            log('DEBUG: shadowRoot children:', [...sr.children].map(c => c.tagName + '.' + (c.className||'')).join(', '));
+            const cb = sr.querySelector('chess-board');
+            if (cb) {
+              log('DEBUG: chess-board found inside shadowRoot, its shadowRoot:', !!cb.shadowRoot);
+              if (cb.shadowRoot) {
+                const pieces2 = cb.shadowRoot.querySelectorAll('.piece');
+                log('DEBUG: pieces in chess-board.shadowRoot:', pieces2.length);
+                if (pieces2.length > 0) log('DEBUG: first piece class:', pieces2[0].className);
+              }
+              const pieces3 = cb.querySelectorAll('.piece');
+              log('DEBUG: pieces in chess-board (no shadowRoot):', pieces3.length);
+              if (pieces3.length > 0) log('DEBUG: first piece class:', pieces3[0].className);
+            }
+            const allPieces = sr.querySelectorAll('.piece');
+            log('DEBUG: .piece in shadowRoot:', allPieces.length);
+            if (allPieces.length === 0) {
+              // Try to find any div children with classes
+              const divs = sr.querySelectorAll('div[class]');
+              log('DEBUG: divs with class in shadowRoot:', divs.length);
+              if (divs.length > 0) {
+                [...divs].slice(0,5).forEach(d2 => log('DEBUG div class:', d2.className.slice(0,80)));
+              }
+            }
+          }
+          // Also try without shadow DOM
+          const directPieces = wcb.querySelectorAll('.piece');
+          log('DEBUG: .piece directly in wc-chess-board:', directPieces.length);
+        } else {
+          log('DEBUG: no wc-chess-board, board tag:', board.tagName, board.className?.slice(0,50));
+          // Show what board.children look like
+          [...board.children].slice(0,5).forEach(c => log('DEBUG child:', c.tagName, c.className?.slice(0,60)));
+        }
+      } catch(e) { log('DEBUG error:', e.message); }
+    }
     const nf = readFenFromDom(), nt = readTurn(), nc = getMyColor();
     const changed = nf !== state.fen || nt !== state.turn || nc !== state.myColor;
     if (nf) state.fen = nf;
@@ -1098,11 +1227,24 @@ start(0);
     if (!doc.body) return;
     const obs = new MutationObserver(() => { clearTimeout(observerDebounce); observerDebounce = setTimeout(update, 80); });
     obs.observe(doc.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'transform', 'data-orientation'] });
+
+    // Handle chess.com SPA navigation (URL changes without page reload)
+    let lastUrl = w.location.href;
+    const urlWatcher = setInterval(() => {
+      if (w.location.href !== lastUrl) {
+        lastUrl = w.location.href;
+        // Reset state on navigation
+        state.fen = null; state.turn = null; state.myColor = null;
+        state.engineMoves = []; lastHintSignature = ''; lastAnalyzedFen = '';
+        clearOverlay();
+        setTimeout(update, 500); // give SPA time to render board
+      }
+    }, 500);
   }
 
   function startPolling() {
     clearInterval(updatePollTimer);
-    updatePollTimer = setInterval(update, doc.hidden ? 4000 : 1500);
+    updatePollTimer = setInterval(update, doc.hidden ? 4000 : 800);
     doc.addEventListener('visibilitychange', () => { clearInterval(updatePollTimer); updatePollTimer = setInterval(update, doc.hidden ? 4000 : 1500); });
   }
 
@@ -1181,10 +1323,8 @@ start(0);
       try {
         const result = await fetchGamePgn(gameUrl, hints || []);
         if (result?.success && result.pgn) {
-          const handoffKey = `review-pgn:${Date.now()}:${Math.random().toString(36).slice(2, 10)}`;
-          store.set(handoffKey, { pgn: result.pgn, gameUrl, usernameHints: hints || [], createdAt: Date.now() });
           hideToast();
-          const params = new URLSearchParams({ pgnKey: handoffKey, gameUrl });
+          const params = new URLSearchParams({ pgn64: encodePgnForUrl(result.pgn), gameUrl });
           const hu = (hints || []).map(normalizeUser).filter(Boolean).join(',');
           if (hu) params.set('usernames', hu);
           w.open(`${REVIEW_URL}?${params}`, '_blank', 'noopener,noreferrer');
