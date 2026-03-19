@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Killer - Gioi thieu va huong dan cai dat</title>
+  <meta name="description" content="Trang gioi thieu Chess Killer, huong dan cai userscript va extension, va cach su dung cac tinh nang phan tich, review, auto move.">
+  <style>
+    :root{
+      --bg:#0c0d0b;
+      --bg2:#151714;
+      --panel:#1d1f1b;
+      --panel2:#262924;
+      --line:#393d36;
+      --text:#ece8df;
+      --muted:#aaa69b;
+      --green:#7fb23b;
+      --green2:#9cd24f;
+      --blue:#6ea4ff;
+      --shadow:0 18px 48px rgba(0,0,0,.35);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(110,164,255,.10), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(127,178,59,.12), transparent 26%),
+        linear-gradient(180deg, #11120f 0%, var(--bg) 100%);
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .shell{
+      width:min(1120px, calc(100vw - 32px));
+      margin:0 auto;
+      padding:24px 0 56px;
+    }
+
+    .nav{
+      position:sticky;
+      top:12px;
+      z-index:20;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:12px 16px;
+      margin-bottom:18px;
+      background:rgba(20,22,18,.78);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand img{
+      width:42px;
+      height:42px;
+      border-radius:10px;
+      box-shadow:0 8px 18px rgba(0,0,0,.28);
+      flex:0 0 auto;
+    }
+
+    .brand-copy{min-width:0}
+    .brand-title{font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .brand-sub{font-size:12px;color:var(--muted)}
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:8px;
+    }
+
+    .nav-links a,
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#232620;
+      color:var(--text);
+      font-size:13px;
+      font-weight:700;
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover,
+    .btn:hover{
+      border-color:#628fd8;
+      background:#1d3558;
+    }
+
+    .btn.primary{
+      background:linear-gradient(180deg, var(--green2), var(--green));
+      color:#162108;
+      border-color:transparent;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+      margin-bottom:18px;
+    }
+
+    .hero-main,
+    .hero-side,
+    .section,
+    .card{
+      background:linear-gradient(180deg, var(--panel2), var(--panel));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-main{
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-main::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(127,178,59,.22), transparent 68%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(127,178,59,.10);
+      border:1px solid rgba(127,178,59,.28);
+      color:#b7de7e;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    h1{
+      margin:16px 0 12px;
+      font-size:clamp(34px, 6vw, 58px);
+      line-height:.96;
+      letter-spacing:-.04em;
+    }
+
+    .lead{
+      max-width:60ch;
+      margin:0;
+      color:#d3cec3;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .hero-side{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .stat{
+      padding:14px 16px;
+      background:#20231e;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+    }
+
+    .stat-k{
+      display:block;
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:6px;
+    }
+
+    .stat-v{
+      display:block;
+      font-size:20px;
+      font-weight:800;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .section{
+      padding:24px;
+      margin-bottom:18px;
+    }
+
+    .section h2{
+      margin:0 0 12px;
+      font-size:28px;
+      letter-spacing:-.03em;
+    }
+
+    .section p.section-intro{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .feature,
+    .step,
+    .faq,
+    .mini-card{
+      background:#20231e;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:16px;
+      padding:16px;
+    }
+
+    .feature h3,
+    .step h3,
+    .faq h3{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+
+    .feature p,
+    .step p,
+    .faq p,
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+    }
+
+    .step-num{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:#2a4020;
+      color:#b7de7e;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .tool-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .tool-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .tool-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:0 12px;
+      border-radius:10px;
+      background:#2a2e27;
+      border:1px solid rgba(255,255,255,.08);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .tool-links a:hover{
+      background:#1d3558;
+      border-color:#628fd8;
+    }
+
+    .callout{
+      margin-top:18px;
+      padding:16px 18px;
+      border-left:4px solid var(--green2);
+      border-radius:14px;
+      background:rgba(127,178,59,.08);
+      color:#d9e8bf;
+      line-height:1.7;
+    }
+
+    code{
+      padding:2px 6px;
+      border-radius:8px;
+      background:#151713;
+      border:1px solid rgba(255,255,255,.06);
+      color:#d9f2a6;
+      font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+      font-size:.95em;
+    }
+
+    .footer{
+      padding:20px 6px 0;
+      color:#8f8c84;
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width: 960px){
+      .hero,
+      .grid,
+      .tool-grid,
+      .steps{grid-template-columns:1fr}
+      .nav{align-items:flex-start;flex-direction:column}
+      .nav-links{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="nav">
+      <div class="brand">
+        <img src="media/photo/logo-popup.png" alt="Chess Killer logo">
+        <div class="brand-copy">
+          <div class="brand-title">Chess Killer</div>
+          <div class="brand-sub">Userscript + extension helper cho chess.com va lichess.org</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#gioi-thieu">Gioi thieu</a>
+        <a href="#cai-dat">Cai dat</a>
+        <a href="#su-dung">Su dung</a>
+        <a href="#cong-cu">Cong cu</a>
+      </div>
+    </div>
+
+    <div class="hero" id="gioi-thieu">
+      <div class="hero-main">
+        <div class="eyebrow">Chess Killer 3.4.5</div>
+        <h1>Phan tich, goi y va review van co trong mot bo cong cu nho gon.</h1>
+        <p class="lead">
+          Chess Killer la bo userscript ket hop extension helper de them panel phan tich ngay tren ban co,
+          hien goi y engine, review van dau, analysis board va mot so tuy chon auto move. Ban co the dung
+          cho chess.com va lichess.org tren cung trinh duyet.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="chesskiller.user.js">Cai Userscript</a>
+          <a class="btn" href="#cai-dat">Xem huong dan cai dat</a>
+          <a class="btn" href="analysis.html">Mo Analysis</a>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="stat">
+          <span class="stat-k">Nen tang</span>
+          <span class="stat-v">chess.com + lichess.org</span>
+        </div>
+        <div class="stat">
+          <span class="stat-k">Che do chinh</span>
+          <span class="stat-v">Hint, Review, Analysis</span>
+        </div>
+        <div class="stat">
+          <span class="stat-k">Cau hinh</span>
+          <span class="stat-v">Ngay trong panel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="feature">
+        <h3>Panel phan tich truc tiep</h3>
+        <p>Doc FEN tren board, hien turn, side, danh sach nuoc di va overlay mui ten ngay tren ban co.</p>
+      </div>
+      <div class="feature">
+        <h3>Review sau van dau</h3>
+        <p>Lay PGN tu chess.com de mo review nhanh sau khi van dau ket thuc, khong can copy tay.</p>
+      </div>
+      <div class="feature">
+        <h3>Settings noi bo</h3>
+        <p>Depth, so line, mau mui ten, ELO limit, auto move va phím tat deu nam trong tab Settings cua panel.</p>
+      </div>
+    </div>
+
+    <section class="section" id="cai-dat">
+      <h2>Cai Dat</h2>
+      <p class="section-intro">
+        De su dung day du, ban nen cai ca userscript va extension quan ly userscript.
+        Neu ban da co Tampermonkey hoac Violentmonkey, chi can them file script.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Cai extension quan ly userscript</h3>
+          <p>
+            Cai <code>Tampermonkey</code> hoac <code>Violentmonkey</code> tren Chrome, Edge, Brave hay cac trinh duyet Chromium.
+            Day la phan "ext" de script co the chay tren chess.com va lichess.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Cai file userscript</h3>
+          <p>
+            Bam vao link <a href="chesskiller.user.js"><code>chesskiller.user.js</code></a>.
+            Extension se mo man hinh xac nhan, sau do chon install.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Mo chess.com hoac lichess</h3>
+          <p>
+            Tai trang choi co, panel <code>Chess Killer</code> se hien o goc duoi phai.
+            Neu chua thay, thu reload trang sau khi cai script.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Chinh Settings trong panel</h3>
+          <p>
+            Bam nut banh rang trong header panel de mo tab cai dat noi bo.
+            Khong can vao trang <code>setting.html</code> nua.
+          </p>
+        </div>
+      </div>
+      <div class="callout">
+        Goi y: Neu browser chan popup hoac script chua cap nhat, hay save lai userscript trong Tampermonkey va hard reload trang co.
+      </div>
+    </section>
+
+    <section class="section" id="su-dung">
+      <h2>Huong Dan Su Dung</h2>
+      <p class="section-intro">
+        Sau khi cai xong, day la cac thao tac co ban de dung panel hieu qua.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Theo doi hint dung phe</h3>
+          <p>
+            Script chi phan tich khi den luot cua phe nguoi choi.
+            Luc doi thu di, panel se chuyen ve trang thai cho va an hint cu.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Mo tab cai dat</h3>
+          <p>
+            Bam nut banh rang trong header panel de doi depth, line, ELO limit, auto move,
+            delay, mau mui ten va import/export JSON.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Review sau khi ket thuc van</h3>
+          <p>
+            Tren chess.com, nut <code>Review this game</code> trong modal cuoi van se tu dong fetch PGN
+            va mo trang review phu hop.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Su dung nut Home va Analysis</h3>
+          <p>
+            Nut <code>Home</code> tren header panel mo trang <code>/cca/index.html</code>.
+            Nut con lai mo <code>analysis.html</code> de xem cong cu phan tich rieng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cong-cu">
+      <h2>Cong Cu Di Kem</h2>
+      <p class="section-intro">
+        Ngoai panel trong userscript, repo con co them mot so trang bo tro de dung rieng.
+      </p>
+      <div class="tool-grid">
+        <div class="mini-card">
+          <h3>Analysis</h3>
+          <p>Trang phan tich rieng de xem board, FEN, PGN va thao tac nang cao.</p>
+          <div class="tool-links">
+            <a href="analysis.html">Mo analysis.html</a>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>Review</h3>
+          <p>Trang review van dau tu PGN hoac du lieu fetch duoc sau tran.</p>
+          <div class="tool-links">
+            <a href="review.html">Mo review.html</a>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h3>Userscript</h3>
+          <p>Ban cai dat chinh de inject panel vao chess.com va lichess.org.</p>
+          <div class="tool-links">
+            <a href="chesskiller.user.js">Mo chesskiller.user.js</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>FAQ Nhanh</h2>
+      <div class="steps">
+        <div class="faq">
+          <h3>Khong thay panel?</h3>
+          <p>Kiem tra userscript da enable chua, sau do reload lai trang dang choi co.</p>
+        </div>
+        <div class="faq">
+          <h3>Bam settings ma khong hien?</h3>
+          <p>Ban can cap nhat ban script moi nhat. Settings hien nay nam ngay trong panel, khong mo trang rieng.</p>
+        </div>
+        <div class="faq">
+          <h3>Review khong lay duoc PGN?</h3>
+          <p>Thu lai sau vai giay neu game vua ket thuc, vi archive/callback cua chess.com co the cap nhat cham.</p>
+        </div>
+        <div class="faq">
+          <h3>Co the export cau hinh khong?</h3>
+          <p>Co. Tab Settings trong panel da co nut xuat va nhap JSON.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Chess Killer • GitHub Pages landing page • Dung cho huong dan cai dat va truy cap cong cu
+    </div>
+  </div>
+</body>
+</html>
