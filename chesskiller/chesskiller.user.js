@@ -1040,13 +1040,66 @@
 
   function isMyTurn() { const t = fenTurn(state.fen) || state.turn; return !!state.myColor && t === state.myColor; }
 
+  function pickAutoMove() {
+    const moves = state.engineMoves || [];
+    if (!moves.length) return null;
+    if (cfg.autoPlayMode === 'random') return moves[Math.floor(Math.random() * moves.length)] || moves[0];
+    return moves[0];
+  }
+
+  function getAutoMoveDelayMs() {
+    if (cfg.autoPlayAutoInterval) {
+      const min = Math.max(300, Number(cfg.autoPlayDelayMin) || 500);
+      const max = Math.max(min, Number(cfg.autoPlayDelayMax) || min);
+      return Math.round(min + Math.random() * (max - min));
+    }
+    return Math.max(300, Number(cfg.autoPlayDelay) || 1500);
+  }
+
+  function cancelAutoMove() {
+    clearTimeout(autoMoveTimer);
+    autoMoveTimer = null;
+    quickMovePending = false;
+  }
+
+  function scheduleAutoMove(reason) {
+    if (!cfg.enabled || !configReady || cfg.autoPlayMode === 'off' || !isMyTurn()) {
+      cancelAutoMove();
+      return false;
+    }
+    if (autoMoveInFlight || autoMoveTimer) return false;
+    const candidate = pickAutoMove();
+    if (!candidate?.from) {
+      quickMovePending = !!state.engineAnalyzing;
+      return false;
+    }
+    quickMovePending = false;
+    const delay = getAutoMoveDelayMs();
+    autoMoveTimer = setTimeout(() => {
+      autoMoveTimer = null;
+      if (!cfg.enabled || cfg.autoPlayMode === 'off' || !isMyTurn()) return;
+      const move = pickAutoMove();
+      if (!move?.from || autoMoveInFlight) return;
+      autoMoveInFlight = true;
+      applyMove(move)
+        .then(ok => {
+          consecutiveAutoMoveFailures = ok ? 0 : consecutiveAutoMoveFailures + 1;
+          if (!ok) {
+            autoMoveError = autoMoveError || 'Auto move failed';
+            scheduleRender();
+          }
+        })
+        .finally(() => { autoMoveInFlight = false; });
+    }, delay);
+    return true;
+  }
+
   function triggerQuickMove(reason) {
     if (!cfg.enabled || !configReady || !isMyTurn()) { quickMovePending = false; return false; }
-    const best = state.engineMoves?.[0];
+    const best = pickAutoMove();
     if (!best?.from) { quickMovePending = !!state.engineAnalyzing; return false; }
     if (autoMoveInFlight) return false;
-    quickMovePending = false;
-    clearTimeout(autoMoveTimer); autoMoveTimer = null;
+    cancelAutoMove();
     autoMoveInFlight = true;
     applyMove(best).finally(() => { autoMoveInFlight = false; });
     return true;
@@ -1097,6 +1150,7 @@
       .sort((a, b) => a[0] - b[0])
       .map(([, value]) => value)
       .slice(0, cfg.lines);
+    if (cfg.autoPlayMode !== 'off') scheduleAutoMove('engine-info');
     scheduleRender();
   }
 
@@ -1117,6 +1171,7 @@
   function maybeAnalyze() {
     if (!configReady) return;
     if (!cfg.enabled) {
+      cancelAutoMove();
       moveMap.clear();
       state.engineMoves = [];
       finishAnalysis();
@@ -1125,6 +1180,7 @@
       return;
     }
     if (!state.fen || !fenTurn(state.fen)) {
+      cancelAutoMove();
       moveMap.clear();
       state.engineMoves = [];
       finishAnalysis();
@@ -1133,6 +1189,7 @@
       return;
     }
     if (!isMyTurn()) {
+      cancelAutoMove();
       postToEngine('stop');
       moveMap.clear();
       state.engineMoves = [];
@@ -1144,6 +1201,7 @@
       return;
     }
     if (!engineReady) {
+      cancelAutoMove();
       pendingAnalysisFen = state.fen;
       state.engineAnalyzing = true;
       scheduleRender();
@@ -1152,6 +1210,7 @@
     if (lastAnalyzedFen === state.fen && state.engineMoves.length) return;
 
     finishAnalysis();
+    cancelAutoMove();
     state.engineAnalyzing = true;
     moveMap.clear();
     state.engineMoves = [];
@@ -1635,6 +1694,7 @@
     if (prevElo !== cfg.eloLimit) eloOptionsSent = false;
     if (!cfg.enabled) { state.engineMoves = []; clearOverlay(); finishAnalysis(); }
     if (!cfg.showArrows) clearOverlay();
+    if (cfg.autoPlayMode === 'off') cancelAutoMove();
     syncSettingsForm();
     scheduleRender();
     maybeAnalyze();
@@ -1715,12 +1775,14 @@
     if (nt) state.turn = nt;
     state.myColor = nc;
     if (state.myColor && state.turn && state.turn !== state.myColor && (state.engineMoves.length || state.engineAnalyzing)) {
+      cancelAutoMove();
       postToEngine('stop');
       moveMap.clear();
       state.engineMoves = [];
       finishAnalysis();
       clearOverlay();
     }
+    if (cfg.autoPlayMode !== 'off' && isMyTurn() && state.engineMoves.length) scheduleAutoMove('update');
     if (changed || !uiBuilt) { if (changed) { quickMovePending = false; autoMoveInFlight = false; } scheduleRender(); }
     if (changed && configReady) maybeAnalyze();
   }
