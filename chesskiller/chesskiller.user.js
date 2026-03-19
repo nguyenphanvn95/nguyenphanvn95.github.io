@@ -430,6 +430,7 @@
   let elFen, elSide, elTurn, elMoves, elMovesLabel, elStatus, elPanel;
   let elAutoModeButtons = [], prevTurnForNotify = null;
   let settingsOpen = false, settingsEls = null;
+  let manualMini = false;
 
   const IS_TOUCH = (navigator.maxTouchPoints || 0) > 0;
 
@@ -1283,6 +1284,14 @@
     if (notice) flashSettingsSaved(notice);
   }
 
+  function syncPanelMini(boardFound) {
+    if (!elPanel) return;
+    const mini = !!manualMini || !boardFound;
+    elPanel.classList.toggle('mini', mini);
+    const minBtn = doc.getElementById('ch-min');
+    if (minBtn) minBtn.textContent = mini ? '[]' : '-';
+  }
+
   // ── UI ──────────────────────────────────────────────────────────────────
 
   function buildUI() {
@@ -1496,10 +1505,9 @@
       savedMsgTimer: null,
     };
 
-    let mini = false;
     root.querySelector('#ch-min').addEventListener('click', () => {
-      mini = !mini; elPanel.classList.toggle('mini', mini);
-      root.querySelector('#ch-min').textContent = mini ? '[]' : '-';
+      manualMini = !manualMini;
+      syncPanelMini(!!getBoardEl());
     });
     root.querySelector('#ch-home-btn').addEventListener('click', () => w.open(HOME_URL, '_blank'));
     root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(ANALYSIS_URL, '_blank', 'noopener,width=1200,height=820'));
@@ -1577,6 +1585,7 @@
     });
     syncSettingsPane();
     syncSettingsForm();
+    syncPanelMini(!!getBoardEl());
 
     // Draggable header
     const header = elPanel.querySelector('.ch-hdr');
@@ -1613,6 +1622,8 @@
     const root = doc.getElementById('ch-root');
     const pv = !!cfg.enabled && !!doc.body; // Show panel always when enabled
     if (root) root.style.display = pv ? '' : 'none';
+    const boardFound = !!getBoardEl();
+    syncPanelMini(boardFound);
     if (pv && elFen && elSide && elTurn && elMoves && elMovesLabel && elStatus) {
       if (state.myColor === 'w') elSide.innerHTML = '<span class="badge badge-w">WHITE</span>';
       else if (state.myColor === 'b') elSide.innerHTML = '<span class="badge badge-b">BLACK</span>';
@@ -1640,7 +1651,6 @@
         }).join('\n');
       } else { elMovesLabel.textContent = isMy ? 'No hints yet' : '-'; elMoves.textContent = ''; }
       const site = SITE === 'lichess' ? 'lichess' : 'chess.com';
-      const boardFound = !!getBoardEl();
       const boardEl = boardFound ? getBoardEl() : null;
       const piecesFound = boardEl ? (SITE === 'lichess' ? boardEl.querySelectorAll('piece').length : queryBoard(boardEl, '.piece').length) : 0;
       if (state.fen) {
