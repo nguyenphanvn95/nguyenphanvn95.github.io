@@ -1288,6 +1288,12 @@
     if (!elPanel) return;
     const mini = !!manualMini || !boardFound;
     elPanel.classList.toggle('mini', mini);
+    const mainEl = settingsEls?.main;
+    const settingsEl = settingsEls?.settings;
+    const footEl = elStatus?.parentElement;
+    if (mainEl) mainEl.style.display = mini || settingsOpen ? 'none' : 'flex';
+    if (settingsEl) settingsEl.style.display = mini ? 'none' : (settingsOpen ? 'flex' : 'none');
+    if (footEl) footEl.style.display = mini ? 'none' : '';
     const minBtn = doc.getElementById('ch-min');
     if (minBtn) minBtn.textContent = mini ? '[]' : '-';
   }
