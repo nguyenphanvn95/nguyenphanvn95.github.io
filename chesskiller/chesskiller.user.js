@@ -23,7 +23,6 @@
   // ── CONFIG ──────────────────────────────────────────────────────────
   const BASE       = 'https://nguyenphanvn95.github.io/chesskiller';
   const REVIEW_URL = BASE + '/review.html';
-  const STREAM_URL = BASE + '/stream.html';
   const SETTING_URL= BASE + '/setting.html';
   const LOGO_URL   = BASE + '/media/photo/logo.png';
   const LIB_BASE   = BASE + '/lib';
@@ -112,6 +111,21 @@
     });
   }
 
+  function gmFetchBinary(url) {
+    return new Promise((resolve, reject) => {
+      GM_xmlhttpRequest({
+        method: 'GET',
+        url,
+        responseType: 'arraybuffer',
+        onload: r => {
+          if (r.status >= 200 && r.status < 400 && r.response) resolve(r.response);
+          else reject(new Error(`HTTP ${r.status} ${url}`));
+        },
+        onerror: () => reject(new Error('Fetch failed: ' + url)),
+      });
+    });
+  }
+
   function encodePgnForUrl(pgn) {
     try {
       return btoa(unescape(encodeURIComponent(String(pgn || ''))));
@@ -120,144 +134,146 @@
     }
   }
 
-  // Patch worker JS text to use absolute URLs instead of relative self.location.href
-  function patchWorkerJs(text, baseUrl, wasmFile, mainJsFile) {
-    const wasmUrl = `${baseUrl}/${String(wasmFile || '').split('/').pop()}`;
-    const mainUrl = `${baseUrl}/${String(mainJsFile || '').split('/').pop()}`;
-    // Replace resolveLib to always return absolute GitHub Pages URL
-    const patchedResolveLib = `
-  function resolveLib(file) {
-    var name = String(file || '').split('/').pop() || file;
-    return ${JSON.stringify(baseUrl)} + '/' + name;
-  }`;
-    const runtimePatch = `
-  var __CK_WASM_URL__ = ${JSON.stringify(wasmUrl)};
-  var __CK_MAIN_URL__ = ${JSON.stringify(mainUrl)};
-  function ckDebug(kind, payload) {
-    try {
-      self.postMessage('[ckdbg] ' + kind + ' ' + payload);
-    } catch (err) {}
-  }
-  function looksLikePageUuidUrl(value) {
-    var text = String(value || '');
-    return /^https?:\\/\\/[^/]+\\/[0-9a-f-]{24,}$/i.test(text);
-  }
-  function normalizeEngineUrl(url) {
-    var value = String(url || '');
-    if (!value) return value;
-    if (/^(?:blob:|data:)/i.test(value)) {
-      if (/\\.wasm(?:\\?|#|$)/i.test(value)) return __CK_WASM_URL__;
-      if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(value)) return __CK_MAIN_URL__;
-    }
-    if (/engine\\.wasm(?:\\?|#|$)/i.test(value) || /komodoro-worker\\.wasm(?:\\?|#|$)/i.test(value) || /stockfish-worker\\.wasm(?:\\?|#|$)/i.test(value) || /stockfish\\.wasm(?:\\?|#|$)/i.test(value) || /komodoro\\.wasm(?:\\?|#|$)/i.test(value)) {
-      return __CK_WASM_URL__;
-    }
-    if (/komodoro\\.js(?:\\?|#|$)/i.test(value) || /stockfish\\.js(?:\\?|#|$)/i.test(value)) {
-      return __CK_MAIN_URL__;
-    }
-    var absolute = value.match(/https?:\\/\\/[\\s\\S]+$/);
-    if (absolute) {
-      value = absolute[0];
-      var nested = value.match(/https?:\\/\\/.*?(https?:\\/\\/[\\s\\S]+)$/);
-      if (nested && nested[1]) value = nested[1];
-    }
-    value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/\\//i, 'https://');
-    value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/([^/])/i, 'https://$2');
-    value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/\\//i, 'http://');
-    value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/([^/])/i, 'http://$2');
-    if (looksLikePageUuidUrl(value)) return __CK_WASM_URL__;
-    if (/\\.wasm(?:\\?|#|$)/i.test(value)) return __CK_WASM_URL__;
-    return value;
-  }
-  self.Module = self.Module || {};
-  self.Module.wasmBinaryFile = __CK_WASM_URL__;
-  self.Module.mainScriptUrlOrBlob = __CK_MAIN_URL__;
-  self.Module.locateFile = function(path) {
-    var value = normalizeEngineUrl(path);
-    ckDebug('locateFile', String(path || '') + ' => ' + value);
-    if (/\\.wasm(?:\\?|#|$)/i.test(String(path || ''))) return __CK_WASM_URL__;
-    if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(String(path || ''))) return __CK_MAIN_URL__;
-    return value;
-  };
-  try {
-    var NativeXHR = self.XMLHttpRequest;
-    if (NativeXHR) {
-      self.XMLHttpRequest = function NormalizedXMLHttpRequest() {
-        var xhr = new NativeXHR();
-        var nativeOpen = xhr.open;
-        xhr.__ck_last_url = '';
-        xhr.open = function(method, url) {
-          var args = Array.prototype.slice.call(arguments);
-          if (typeof args[1] === 'string') {
-            var originalUrl = args[1];
-            args[1] = normalizeEngineUrl(args[1]);
-            xhr.__ck_last_url = args[1];
-            ckDebug('xhr.open', originalUrl + ' => ' + args[1]);
-          }
-          return nativeOpen.apply(this, args);
-        };
-        try {
-          var nativeSend = xhr.send;
-          xhr.send = function(body) {
-            var responseType = String(xhr.responseType || '');
-            var lastUrl = String(xhr.__ck_last_url || '');
-            if (responseType === 'arraybuffer' && lastUrl && lastUrl.indexOf(${JSON.stringify(baseUrl + '/')}) !== 0) {
-              ckDebug('xhr.forceWasm', lastUrl + ' => ' + __CK_WASM_URL__);
-              try {
-                nativeOpen.call(xhr, 'GET', __CK_WASM_URL__, false);
-                xhr.responseType = 'arraybuffer';
-                xhr.__ck_last_url = __CK_WASM_URL__;
-              } catch (err) {}
-            }
-            ckDebug('xhr.send', responseType + ' ' + String(xhr.__ck_last_url || ''));
-            return nativeSend.call(this, body);
-          };
-        } catch (err) {}
-        return xhr;
-      };
-      self.XMLHttpRequest.prototype = NativeXHR.prototype;
-    }
-  } catch (err) {}
-  try {
-    if (typeof self.fetch === 'function') {
-      var nativeFetch = self.fetch.bind(self);
-      self.fetch = function(resource, init) {
-        if (typeof resource === 'string') {
-          var originalResource = resource;
-          resource = normalizeEngineUrl(resource);
-          ckDebug('fetch', originalResource + ' => ' + resource);
-        }
-        return nativeFetch(resource, init);
-      };
-    }
-  } catch (err) {}
-`;
-    let patched = text.replace(
-      /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
-      patchedResolveLib
-    );
-    patched = runtimePatch + '\n' + patched;
-    return patched;
-  }
-
   async function createBlobWorker(workerUrl, baseUrl) {
-    const text = await gmFetchText(workerUrl);
     const workerName = String(workerUrl || '').split('/').pop();
     const isKomodo = /komodoro/i.test(workerName);
     const wasmFile = isKomodo ? 'komodoro.wasm' : 'stockfish.wasm';
     const mainJsFile = isKomodo ? 'komodoro.js' : 'stockfish.js';
-    const patched = patchWorkerJs(text, baseUrl, wasmFile, mainJsFile);
-    const importMatch = patched.match(/importScripts\(\s*resolveLib\((['"`])([^'"`]+)\1\)\s*\)\s*;?/);
-    let bundled = patched;
-    if (importMatch?.[2]) {
-      const mainUrl = `${baseUrl}/${String(mainJsFile || importMatch[2]).split('/').pop()}`;
-      const mainText = await gmFetchText(mainUrl);
-      bundled = patched.replace(importMatch[0], `\n/* inlined: ${mainUrl} */\n`) + `\n\n/* bundled main engine */\n${mainText}\n`;
+    const wasmUrl = `${baseUrl}/${wasmFile}`;
+    const mainUrl = `${baseUrl}/${mainJsFile}`;
+    const mainText = await gmFetchText(mainUrl);
+    const wasmBuffer = await gmFetchBinary(wasmUrl);
+    const bundled = `
+(function () {
+  'use strict';
+  var __CK_MAIN_URL__ = ${JSON.stringify(mainUrl)};
+  var __CK_WASM_URL__ = ${JSON.stringify(wasmUrl)};
+  var __CK_MAIN_SOURCE__ = ${JSON.stringify(mainText)};
+  var __ckBooted = false;
+  var __ckQueued = [];
+
+  function ckDebug(kind, payload) {
+    try { self.postMessage('[ckdbg] ' + kind + ' ' + payload); } catch (err) {}
+  }
+
+  function shouldInterceptWasmUrl(url) {
+    var value = String(url || '');
+    if (!value) return false;
+    if (/engine\\.wasm(?:\\?|#|$)/i.test(value)) return true;
+    if (/\\.wasm(?:\\?|#|$)/i.test(value)) return true;
+    if (/^chrome-extension:\\/\\//i.test(value)) return true;
+    if (/lichess\\.orghttps\\/?/i.test(value)) return true;
+    if (/^https?:\\/\\/[^/]+\\/[0-9a-f-]{24,}$/i.test(value)) return true;
+    return false;
+  }
+
+  function defineXhrField(target, key, value) {
+    try {
+      Object.defineProperty(target, key, { configurable: true, writable: true, value: value });
+    } catch (err) {
+      try { target[key] = value; } catch (err2) {}
     }
+  }
+
+  try {
+    var NativeXHR = self.XMLHttpRequest;
+    if (NativeXHR) {
+      self.XMLHttpRequest = function PatchedXMLHttpRequest() {
+        var xhr = new NativeXHR();
+        var nativeOpen = xhr.open;
+        var nativeSend = xhr.send;
+        var nativeAddEventListener = xhr.addEventListener ? xhr.addEventListener.bind(xhr) : null;
+        var intercept = false;
+        var asyncMode = true;
+        var listeners = { load: [], readystatechange: [], error: [] };
+
+        xhr.addEventListener = function(type, listener, options) {
+          if (listeners[type]) listeners[type].push(listener);
+          if (nativeAddEventListener) return nativeAddEventListener(type, listener, options);
+        };
+
+        xhr.open = function(method, url) {
+          var args = Array.prototype.slice.call(arguments);
+          asyncMode = args.length < 3 || args[2] !== false;
+          intercept = shouldInterceptWasmUrl(args[1]);
+          xhr.__ck_url = intercept ? __CK_WASM_URL__ : String(args[1] || '');
+          if (intercept) {
+            ckDebug('xhr.intercept', String(args[1] || '') + ' => ' + __CK_WASM_URL__);
+            return;
+          }
+          return nativeOpen.apply(xhr, args);
+        };
+
+        xhr.send = function(body) {
+          if (!intercept) return nativeSend.call(xhr, body);
+
+          var finish = function() {
+            defineXhrField(xhr, 'readyState', 4);
+            defineXhrField(xhr, 'status', 200);
+            defineXhrField(xhr, 'statusText', 'OK');
+            defineXhrField(xhr, 'responseURL', __CK_WASM_URL__);
+            if (xhr.responseType === 'arraybuffer' || xhr.responseType === 'moz-chunked-arraybuffer') {
+              defineXhrField(xhr, 'response', self.Module.wasmBinary);
+            } else {
+              defineXhrField(xhr, 'response', self.Module.wasmBinary);
+              defineXhrField(xhr, 'responseText', '');
+            }
+            try { if (typeof xhr.onreadystatechange === 'function') xhr.onreadystatechange(); } catch (err) {}
+            try { if (typeof xhr.onload === 'function') xhr.onload(); } catch (err) {}
+            for (var i = 0; i < listeners.readystatechange.length; i++) {
+              try { listeners.readystatechange[i].call(xhr); } catch (err) {}
+            }
+            for (var j = 0; j < listeners.load.length; j++) {
+              try { listeners.load[j].call(xhr); } catch (err) {}
+            }
+          };
+
+          if (asyncMode) setTimeout(finish, 0);
+          else finish();
+        };
+
+        return xhr;
+      };
+      self.XMLHttpRequest.prototype = NativeXHR.prototype;
+    }
+  } catch (err) {
+    ckDebug('xhr.patch.error', String(err && err.message || err));
+  }
+
+  self.Module = self.Module || {};
+  self.Module.wasmBinaryFile = __CK_WASM_URL__;
+  self.Module.mainScriptUrlOrBlob = __CK_MAIN_URL__;
+  self.Module.locateFile = function (path) {
+    var name = String(path || '').split('/').pop();
+    if (/\\.wasm(?:\\?|#|$)/i.test(name) || name === 'engine.wasm' || name === 'komodoro-worker.wasm' || name === 'stockfish-worker.wasm') return __CK_WASM_URL__;
+    if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(name)) return __CK_MAIN_URL__;
+    return ${JSON.stringify(baseUrl)} + '/' + name;
+  };
+
+  try { self.fetch = undefined; } catch (err) {}
+
+  self.onmessage = function (e) {
+    if (__ckBooted) return;
+    if (!(e.data && e.data.__ck_wasm)) {
+      __ckQueued.push(e.data);
+      return;
+    }
+    self.Module.wasmBinary = e.data.__ck_wasm;
+    __ckBooted = true;
+    ckDebug('boot', __CK_WASM_URL__);
+    (0, eval)(__CK_MAIN_SOURCE__);
+    var queued = __ckQueued.splice(0);
+    for (var i = 0; i < queued.length; i++) {
+      try { self.onmessage({ data: queued[i] }); } catch (err) { ckDebug('queue-error', String(err && err.message || err)); }
+    }
+  };
+})();
+`;
     const blob = new Blob([bundled], { type: 'application/javascript' });
     const blobUrl = URL.createObjectURL(blob);
     const worker = new Worker(blobUrl);
     URL.revokeObjectURL(blobUrl);
+    worker.postMessage({ __ck_wasm: wasmBuffer }, [wasmBuffer]);
     return worker;
   }
 
@@ -400,7 +416,7 @@
   let lastAnalyzedFen = '', eloOptionsSent = false;
 
   // Overlay
-  let lastHintSignature = '', lastStreamPublishKey = '';
+  let lastHintSignature = '';
 
   // Auto-move
   let autoMoveInFlight = false, autoMoveTimer = null, autoMoveError = null;
@@ -967,31 +983,13 @@
   }
 
   function ensureOverlayVisible() {
-    if (!cfg.showArrows || !state.engineMoves.length) return;
+    if (!cfg.showArrows || !state.engineMoves.length) { clearOverlay(); return; }
     if (isGameEndModalVisible()) { clearOverlay(); return; }
     const board = getBoardEl();
-    if (board && !hasOverlay(board)) { lastHintSignature = ''; drawHints(state.engineMoves); }
+    if (board) drawHints(state.engineMoves);
   }
 
   // ── STREAM ─────────────────────────────────────────────────────────────
-
-  function publishStream() {
-    if (!state.fen) return;
-    const board = getBoardEl();
-    const lastMoveSquares = board ? getHighlightedSquares(board, SITE, getBoardOrientation()).slice(0, 2) : [];
-    const payload = {
-      fen: state.fen, turn: fenTurn(state.fen), playerSide: state.myColor, lastMoveSquares,
-      moves: (cfg.enabled ? state.engineMoves : []).slice(0, cfg.lines).map(m => ({ from: m.from, to: m.to, promo: m.promo || '', eval: cfg.showEval ? (m.eval || '') : '' })),
-      colors: cfg.colors.slice(0, 5), orientation: getBoardOrientation(),
-      updatedAt: Date.now(), source: w.location.href, site: SITE,
-    };
-    const key = JSON.stringify([payload.fen, payload.turn, payload.playerSide, payload.orientation,
-      payload.lastMoveSquares.join('|'), payload.moves.map(m => m.from + m.to + m.eval).join('|'), payload.colors.join('|')]);
-    if (key === lastStreamPublishKey) return;
-    lastStreamPublishKey = key;
-    // Write to localStorage so stream.html can read it
-    store.set('chStreamState', payload);
-  }
 
   // ── AUTO-MOVE ───────────────────────────────────────────────────────────
 
@@ -1103,6 +1101,7 @@
   function onEngineMsg(line) {
     const text = String(line || '').trim();
     if (!text) return;
+    if (!isMyTurn()) return;
     if (text.startsWith('info ') && /\bpv\s+[a-h][1-8][a-h][1-8]/i.test(text)) {
       ingestEngineInfo(text);
       return;
@@ -1116,14 +1115,29 @@
   function maybeAnalyze() {
     if (!configReady) return;
     if (!cfg.enabled) {
+      moveMap.clear();
       state.engineMoves = [];
       finishAnalysis();
+      clearOverlay();
       scheduleRender();
       return;
     }
     if (!state.fen || !fenTurn(state.fen)) {
+      moveMap.clear();
       state.engineMoves = [];
       finishAnalysis();
+      clearOverlay();
+      scheduleRender();
+      return;
+    }
+    if (!isMyTurn()) {
+      postToEngine('stop');
+      moveMap.clear();
+      state.engineMoves = [];
+      activeAnalysisFen = '';
+      pendingAnalysisFen = '';
+      finishAnalysis();
+      clearOverlay();
       scheduleRender();
       return;
     }
@@ -1208,9 +1222,6 @@
     <button class="ch-btn ch-icon-btn" id="ch-review-btn" title="Open Review">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
     </button>
-    <button class="ch-btn ch-icon-btn" id="ch-stream-btn" title="Stream Board">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-    </button>
     <button class="ch-btn ch-icon-btn" id="ch-cfg-btn" title="Settings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
     </button>
@@ -1251,8 +1262,7 @@
       root.querySelector('#ch-min').textContent = mini ? '[]' : '-';
     });
     root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(REVIEW_URL, '_blank', 'noopener,width=1200,height=820'));
-    root.querySelector('#ch-stream-btn').addEventListener('click', () => w.open(STREAM_URL, '_blank', 'noopener,width=900,height=650'));
-    root.querySelector('#ch-cfg-btn').addEventListener('click', () => w.open(SETTING_URL, '_blank', 'noopener,noreferrer'));
+    root.querySelector('#ch-cfg-btn').addEventListener('click', () => w.open(SETTING_URL, '_blank'));
     root.querySelector('#ch-cp').addEventListener('click', () => {
       navigator.clipboard?.writeText(elFen.textContent?.trim() || '').then(() => {
         const btn = root.querySelector('#ch-cp'); btn.textContent = 'OK'; setTimeout(() => btn.textContent = 'CP', 1200);
@@ -1344,7 +1354,6 @@
       elStatus.style.color = state.fen ? '#3dc96c' : '#f80';
       if (autoMoveError) { elStatus.textContent = `Auto error: ${autoMoveError}`; elStatus.style.color = '#ff6b6b'; }
     }
-    publishStream();
     ensureOverlayVisible();
   }
 
@@ -1452,6 +1461,13 @@
     if (nf) state.fen = nf;
     if (nt) state.turn = nt;
     state.myColor = nc;
+    if (state.myColor && state.turn && state.turn !== state.myColor && (state.engineMoves.length || state.engineAnalyzing)) {
+      postToEngine('stop');
+      moveMap.clear();
+      state.engineMoves = [];
+      finishAnalysis();
+      clearOverlay();
+    }
     if (changed || !uiBuilt) { if (changed) { quickMovePending = false; autoMoveInFlight = false; } scheduleRender(); }
     if (changed && configReady) maybeAnalyze();
   }
