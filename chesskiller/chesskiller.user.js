@@ -932,6 +932,111 @@
     return true;
   }
 
+  function finishAnalysis() {
+    clearTimeout(analysisTimer);
+    analysisTimer = null;
+    pendingAnalysisFen = '';
+    state.engineAnalyzing = false;
+  }
+
+  function cpToEval(cp, mate) {
+    if (Number.isFinite(mate)) return mate > 0 ? `#${mate}` : `#-${Math.abs(mate)}`;
+    if (!Number.isFinite(cp)) return '-';
+    const pawns = cp / 100;
+    return (pawns >= 0 ? '+' : '') + pawns.toFixed(1);
+  }
+
+  function parseUciMove(uci) {
+    const text = String(uci || '').trim();
+    const match = text.match(/^([a-h][1-8])([a-h][1-8])([nbrqk])?$/i);
+    if (!match) return null;
+    return {
+      from: match[1].toLowerCase(),
+      to: match[2].toLowerCase(),
+      promo: (match[3] || '').toLowerCase(),
+    };
+  }
+
+  function ingestEngineInfo(line) {
+    const multiPv = Number(line.match(/\bmultipv\s+(\d+)/)?.[1] || 1);
+    const mate = line.match(/\bscore\s+mate\s+(-?\d+)/);
+    const cp = line.match(/\bscore\s+cp\s+(-?\d+)/);
+    const pv = line.match(/\bpv\s+([a-h][1-8][a-h][1-8][nbrqk]?)/i);
+    const depth = Number(line.match(/\bdepth\s+(\d+)/)?.[1] || 0);
+    if (!pv) return;
+    const move = parseUciMove(pv[1]);
+    if (!move) return;
+    const moveData = {
+      ...move,
+      depth,
+      eval: cpToEval(cp ? Number(cp[1]) : NaN, mate ? Number(mate[1]) : NaN),
+      raw: line,
+    };
+    moveMap.set(multiPv, moveData);
+    state.engineMoves = [...moveMap.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([, value]) => value)
+      .slice(0, cfg.lines);
+    scheduleRender();
+  }
+
+  function onEngineMsg(line) {
+    const text = String(line || '').trim();
+    if (!text) return;
+    if (text.startsWith('info ') && /\bpv\s+[a-h][1-8][a-h][1-8]/i.test(text)) {
+      ingestEngineInfo(text);
+      return;
+    }
+    if (text.startsWith('bestmove')) {
+      state.engineAnalyzing = false;
+      scheduleRender();
+    }
+  }
+
+  function maybeAnalyze() {
+    if (!configReady) return;
+    if (!cfg.enabled) {
+      state.engineMoves = [];
+      finishAnalysis();
+      scheduleRender();
+      return;
+    }
+    if (!state.fen || !fenTurn(state.fen)) {
+      state.engineMoves = [];
+      finishAnalysis();
+      scheduleRender();
+      return;
+    }
+    if (!engineReady) {
+      pendingAnalysisFen = state.fen;
+      state.engineAnalyzing = true;
+      scheduleRender();
+      return;
+    }
+    if (lastAnalyzedFen === state.fen && state.engineMoves.length) return;
+
+    finishAnalysis();
+    state.engineAnalyzing = true;
+    moveMap.clear();
+    state.engineMoves = [];
+    activeAnalysisFen = state.fen;
+    pendingAnalysisFen = state.fen;
+    lastAnalyzedFen = state.fen;
+
+    postToEngine('stop');
+    postToEngine('ucinewgame');
+    postToEngine(`setoption name MultiPV value ${cfg.lines}`);
+    postToEngine(`position fen ${state.fen}`);
+    postToEngine(`go depth ${cfg.depth}`);
+
+    analysisTimer = setTimeout(() => {
+      postToEngine('stop');
+      state.engineAnalyzing = false;
+      scheduleRender();
+    }, 4500);
+    scheduleRender();
+  }
+
   // ── UI ──────────────────────────────────────────────────────────────────
 
   function buildUI() {
@@ -1107,7 +1212,8 @@
       } else { elMovesLabel.textContent = isMy ? 'No hints yet' : '-'; elMoves.textContent = ''; }
       const site = SITE === 'lichess' ? 'lichess' : 'chess.com';
       const boardFound = !!getBoardEl();
-      const piecesFound = boardFound ? queryBoard(getBoardEl(), '.piece').length || 0 : 0;
+      const boardEl = boardFound ? getBoardEl() : null;
+      const piecesFound = boardEl ? (SITE === 'lichess' ? boardEl.querySelectorAll('piece').length : queryBoard(boardEl, '.piece').length) : 0;
       if (state.fen) {
         elStatus.textContent = `${site} | ${new Date().toLocaleTimeString()}`;
       } else if (boardFound) {
