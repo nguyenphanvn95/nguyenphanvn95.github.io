@@ -22,6 +22,8 @@
 
   // ── CONFIG ──────────────────────────────────────────────────────────
   const BASE       = 'https://nguyenphanvn95.github.io/chesskiller';
+  const HOME_URL   = 'https://nguyenphanvn95.github.io/cca/index.html';
+  const ANALYSIS_URL = BASE + '/analysis.html';
   const REVIEW_URL = BASE + '/review.html';
   const LOGO_URL   = BASE + '/media/photo/logo.png';
   const LIB_BASE   = BASE + '/lib';
@@ -1173,8 +1175,8 @@
 
   function syncSettingsPane() {
     if (!settingsEls) return;
-    settingsEls.main.style.display = settingsOpen ? 'none' : '';
-    settingsEls.settings.style.display = settingsOpen ? '' : 'none';
+    settingsEls.main.style.display = settingsOpen ? 'none' : 'flex';
+    settingsEls.settings.style.display = settingsOpen ? 'flex' : 'none';
     elPanel?.classList.toggle('settings-open', settingsOpen);
     settingsEls.cfgBtn?.classList.toggle('active', settingsOpen);
     settingsEls.cfgBtn?.setAttribute('title', settingsOpen ? 'Close Settings' : 'Settings');
@@ -1296,7 +1298,10 @@
 <div class="ch-hdr">
   <span>${siteName}</span>
   <div class="ch-hdr-actions">
-    <button class="ch-btn ch-icon-btn" id="ch-review-btn" title="Open Review">
+    <button class="ch-btn ch-icon-btn" id="ch-home-btn" title="Open Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+    </button>
+    <button class="ch-btn ch-icon-btn" id="ch-review-btn" title="Open Analysis">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
     </button>
     <button class="ch-btn ch-icon-btn" id="ch-cfg-btn" title="Settings">
@@ -1448,7 +1453,8 @@
       mini = !mini; elPanel.classList.toggle('mini', mini);
       root.querySelector('#ch-min').textContent = mini ? '[]' : '-';
     });
-    root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(REVIEW_URL, '_blank', 'noopener,width=1200,height=820'));
+    root.querySelector('#ch-home-btn').addEventListener('click', () => w.open(HOME_URL, '_blank'));
+    root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(ANALYSIS_URL, '_blank', 'noopener,width=1200,height=820'));
     root.querySelector('#ch-cfg-btn').addEventListener('click', () => {
       settingsOpen = !settingsOpen;
       syncSettingsPane();
