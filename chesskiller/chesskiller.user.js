@@ -133,6 +133,15 @@
     const runtimePatch = `
   var __CK_WASM_URL__ = ${JSON.stringify(wasmUrl)};
   var __CK_MAIN_URL__ = ${JSON.stringify(mainUrl)};
+  function ckDebug(kind, payload) {
+    try {
+      self.postMessage('[ckdbg] ' + kind + ' ' + payload);
+    } catch (err) {}
+  }
+  function looksLikePageUuidUrl(value) {
+    var text = String(value || '');
+    return /^https?:\\/\\/[^/]+\\/[0-9a-f-]{24,}$/i.test(text);
+  }
   function normalizeEngineUrl(url) {
     var value = String(url || '');
     if (!value) return value;
@@ -156,6 +165,7 @@
     value = value.replace(/^(https?:\\/\\/[^/]+)https:\\/([^/])/i, 'https://$2');
     value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/\\//i, 'http://');
     value = value.replace(/^(https?:\\/\\/[^/]+)http:\\/([^/])/i, 'http://$2');
+    if (looksLikePageUuidUrl(value)) return __CK_WASM_URL__;
     if (/\\.wasm(?:\\?|#|$)/i.test(value)) return __CK_WASM_URL__;
     return value;
   }
@@ -164,6 +174,7 @@
   self.Module.mainScriptUrlOrBlob = __CK_MAIN_URL__;
   self.Module.locateFile = function(path) {
     var value = normalizeEngineUrl(path);
+    ckDebug('locateFile', String(path || '') + ' => ' + value);
     if (/\\.wasm(?:\\?|#|$)/i.test(String(path || ''))) return __CK_WASM_URL__;
     if (/\\.(?:js|mjs)(?:\\?|#|$)/i.test(String(path || ''))) return __CK_MAIN_URL__;
     return value;
@@ -174,11 +185,34 @@
       self.XMLHttpRequest = function NormalizedXMLHttpRequest() {
         var xhr = new NativeXHR();
         var nativeOpen = xhr.open;
+        xhr.__ck_last_url = '';
         xhr.open = function(method, url) {
           var args = Array.prototype.slice.call(arguments);
-          if (typeof args[1] === 'string') args[1] = normalizeEngineUrl(args[1]);
+          if (typeof args[1] === 'string') {
+            var originalUrl = args[1];
+            args[1] = normalizeEngineUrl(args[1]);
+            xhr.__ck_last_url = args[1];
+            ckDebug('xhr.open', originalUrl + ' => ' + args[1]);
+          }
           return nativeOpen.apply(this, args);
         };
+        try {
+          var nativeSend = xhr.send;
+          xhr.send = function(body) {
+            var responseType = String(xhr.responseType || '');
+            var lastUrl = String(xhr.__ck_last_url || '');
+            if (responseType === 'arraybuffer' && lastUrl && lastUrl.indexOf(${JSON.stringify(baseUrl + '/')}) !== 0) {
+              ckDebug('xhr.forceWasm', lastUrl + ' => ' + __CK_WASM_URL__);
+              try {
+                nativeOpen.call(xhr, 'GET', __CK_WASM_URL__, false);
+                xhr.responseType = 'arraybuffer';
+                xhr.__ck_last_url = __CK_WASM_URL__;
+              } catch (err) {}
+            }
+            ckDebug('xhr.send', responseType + ' ' + String(xhr.__ck_last_url || ''));
+            return nativeSend.call(this, body);
+          };
+        } catch (err) {}
         return xhr;
       };
       self.XMLHttpRequest.prototype = NativeXHR.prototype;
@@ -188,7 +222,11 @@
     if (typeof self.fetch === 'function') {
       var nativeFetch = self.fetch.bind(self);
       self.fetch = function(resource, init) {
-        if (typeof resource === 'string') resource = normalizeEngineUrl(resource);
+        if (typeof resource === 'string') {
+          var originalResource = resource;
+          resource = normalizeEngineUrl(resource);
+          ckDebug('fetch', originalResource + ' => ' + resource);
+        }
         return nativeFetch(resource, init);
       };
     }
@@ -257,6 +295,10 @@
     engineWorker = ew;
     ew.onmessage = e => {
       const line = typeof e.data === 'string' ? e.data : String(e.data || '');
+      if (line.startsWith('[ckdbg] ')) {
+        log(line);
+        return;
+      }
       onEngineMsg(line);
       if (!engineUciOk && /uciok/.test(line)) {
         engineUciOk = true;
