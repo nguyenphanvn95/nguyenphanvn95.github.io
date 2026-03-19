@@ -23,7 +23,6 @@
   // ── CONFIG ──────────────────────────────────────────────────────────
   const BASE       = 'https://nguyenphanvn95.github.io/chesskiller';
   const REVIEW_URL = BASE + '/review.html';
-  const SETTING_URL= BASE + '/setting.html';
   const LOGO_URL   = BASE + '/media/photo/logo.png';
   const LIB_BASE   = BASE + '/lib';
 
@@ -59,7 +58,7 @@
   function normalizeUser(v) { return String(v || '').trim().replace(/^@+/, '').toLowerCase(); }
 
   function parseGameUrl(url) {
-    const m = String(url || '').match(/\/(?:analysis\/)?game\/(?:(live|daily)\/)?(\d+)/i);
+    const m = String(url || '').match(/\/(?:analysis\/)?game\/(?:([a-z-]+)\/)?(\d+)/i);
     if (!m) return null;
     return { gameType: (m[1] || 'live').toLowerCase(), gameId: m[2] };
   }
@@ -428,6 +427,7 @@
   // UI refs
   let elFen, elSide, elTurn, elMoves, elMovesLabel, elStatus, elPanel;
   let elAutoModeButtons = [], prevTurnForNotify = null;
+  let settingsOpen = false, settingsEls = null;
 
   const IS_TOUCH = (navigator.maxTouchPoints || 0) > 0;
 
@@ -1171,6 +1171,60 @@
     scheduleRender();
   }
 
+  function syncSettingsPane() {
+    if (!settingsEls) return;
+    settingsEls.main.style.display = settingsOpen ? 'none' : '';
+    settingsEls.settings.style.display = settingsOpen ? '' : 'none';
+    elPanel?.classList.toggle('settings-open', settingsOpen);
+    settingsEls.cfgBtn?.classList.toggle('active', settingsOpen);
+    settingsEls.cfgBtn?.setAttribute('title', settingsOpen ? 'Close Settings' : 'Settings');
+  }
+
+  function syncSettingsForm() {
+    if (!settingsEls) return;
+    settingsEls.enabled.checked = !!cfg.enabled;
+    settingsEls.depth.value = String(cfg.depth);
+    settingsEls.depthVal.textContent = String(cfg.depth);
+    settingsEls.lines.value = String(cfg.lines);
+    settingsEls.linesVal.textContent = String(cfg.lines);
+    settingsEls.showArrows.checked = !!cfg.showArrows;
+    settingsEls.showEval.checked = !!cfg.showEval;
+    settingsEls.showPanel.checked = !!cfg.showPanel;
+    settingsEls.hintStyle.value = cfg.hintStyle === 'chesscom' ? 'chesscom' : 'classic';
+    settingsEls.autoPlayMode.value = cfg.autoPlayMode || 'off';
+    settingsEls.autoPlayAutoInterval.checked = !!cfg.autoPlayAutoInterval;
+    settingsEls.autoPlayDelay.value = String(cfg.autoPlayDelay);
+    settingsEls.autoPlayDelayVal.textContent = String(cfg.autoPlayDelay);
+    settingsEls.autoPlayDelayMin.value = String(cfg.autoPlayDelayMin);
+    settingsEls.autoPlayDelayMinVal.textContent = String(cfg.autoPlayDelayMin);
+    settingsEls.autoPlayDelayMax.value = String(cfg.autoPlayDelayMax);
+    settingsEls.autoPlayDelayMaxVal.textContent = String(cfg.autoPlayDelayMax);
+    settingsEls.quickMoveKey.value = cfg.quickMoveKey || ' ';
+    settingsEls.randomDelayWrap.style.display = cfg.autoPlayAutoInterval ? '' : 'none';
+    settingsEls.fixedDelayWrap.style.display = cfg.autoPlayAutoInterval ? 'none' : '';
+    settingsEls.colorInputs.forEach((input, idx) => {
+      input.value = cfg.colors[idx] || DEFAULT_CONFIG.colors[idx];
+      input.closest('.ch-color-item')?.classList.toggle('muted', idx >= cfg.lines);
+    });
+    settingsEls.eloButtons.forEach(btn => {
+      btn.classList.toggle('active', Number(btn.dataset.elo) === cfg.eloLimit);
+    });
+  }
+
+  function flashSettingsSaved(msg) {
+    if (!settingsEls?.savedMsg) return;
+    settingsEls.savedMsg.textContent = msg;
+    settingsEls.savedMsg.classList.add('show');
+    clearTimeout(settingsEls.savedMsgTimer);
+    settingsEls.savedMsgTimer = setTimeout(() => settingsEls.savedMsg.classList.remove('show'), 1300);
+  }
+
+  function commitSettings(patch, notice) {
+    applyConfig({ ...cfg, ...patch });
+    persistConfig();
+    if (notice) flashSettingsSaved(notice);
+  }
+
   // ── UI ──────────────────────────────────────────────────────────────────
 
   function buildUI() {
@@ -1181,7 +1235,8 @@
     style.textContent = `
       #ch-root{position:fixed;bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right));z-index:999999;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:12px;max-width:min(90vw,340px);touch-action:none;user-select:none}
       #ch-panel{background:linear-gradient(180deg,#262321 0%,#1b1a18 100%);border:1px solid #3a3835;border-radius:16px;min-width:min(278px,90vw);box-shadow:0 16px 36px rgba(0,0,0,.42);overflow:hidden}
-      #ch-panel.mini .ch-body,#ch-panel.mini .ch-foot{display:none}
+      #ch-panel.settings-open{min-width:min(340px,94vw)}
+      #ch-panel.mini .ch-body,#ch-panel.mini .ch-settings,#ch-panel.mini .ch-foot{display:none}
       .ch-hdr{display:flex;justify-content:space-between;align-items:center;padding:11px 13px 10px;background:linear-gradient(180deg,#1c1b18 0%,#13120f 100%);border-bottom:1px solid #3a3835;cursor:grab;touch-action:none}
       .ch-hdr>span{color:#e8e5e0;font-weight:700;font-size:14px}
       .ch-hdr-actions{display:flex;align-items:center;gap:6px}
@@ -1189,10 +1244,12 @@
       .ch-btn:hover{background:#1c3050;border-color:#35577f}
       .ch-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0}
       .ch-icon-btn svg{width:14px;height:14px}
+      .ch-icon-btn.active{background:#1c3050;border-color:#6ea4ff;color:#fff}
       .ch-segmented{display:flex;align-items:center;gap:4px}
       .ch-mode-btn{min-width:44px;flex:1 1 0;padding:0 6px}
       .ch-mode-btn.active,.ch-mode-btn:disabled{background:#1c3050;border-color:#6ea4ff;color:#fff;cursor:default;pointer-events:none}
       .ch-body{padding:10px 11px 8px;display:flex;flex-direction:column;gap:7px}
+      .ch-settings{display:none;padding:10px 11px 8px;flex-direction:column;gap:8px;max-height:min(65vh,560px);overflow:auto}
       .ch-row{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:8px;padding:10px 11px;background:#1e1d1b;border:1px solid #3a3835;border-radius:13px}
       .ch-row-auto{grid-template-columns:64px minmax(0,1fr)}
       .ch-lbl{color:#888580;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
@@ -1206,6 +1263,26 @@
       @keyframes glow{from{box-shadow:0 0 6px rgba(79,140,255,.35)}to{box-shadow:0 0 16px rgba(79,140,255,.7)}}
       .ch-foot{padding:7px 11px;border-top:1px solid #3a3835;font-size:10px;color:#76b730;background:rgba(0,0,0,.14)}
       .ch-moves-list{max-height:90px;overflow-y:auto;font-size:11px;color:#c0bdb8;white-space:pre;line-height:1.45;font-family:monospace}
+      .ch-set-card{display:flex;flex-direction:column;gap:8px;padding:11px;background:#1e1d1b;border:1px solid #3a3835;border-radius:13px}
+      .ch-set-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+      .ch-set-label{color:#e8e5e0;font-size:13px;font-weight:600}
+      .ch-set-sub{color:#888580;font-size:10px;line-height:1.4}
+      .ch-set-title{color:#888580;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 2px 0}
+      .ch-set-select,.ch-set-range,.ch-set-file{width:100%}
+      .ch-set-select{min-height:38px;padding:0 10px;border:1px solid #3a3835;border-radius:10px;background:#12110f;color:#e8e5e0;font:600 12px system-ui;outline:none}
+      .ch-set-range{accent-color:#6ea4ff}
+      .ch-set-toggle{display:flex;align-items:center;gap:8px}
+      .ch-set-toggle input{width:16px;height:16px}
+      .ch-color-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+      .ch-color-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 4px;background:#252422;border:1px solid #3a3835;border-radius:10px;color:#c0bdb8;font-size:10px;font-weight:700}
+      .ch-color-item.muted{opacity:.35}
+      .ch-color-item input{width:30px;height:30px;padding:0;border:none;background:none}
+      .ch-elo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+      .ch-elo-btn{min-height:34px;border:1px solid #3a3835;border-radius:10px;background:#252422;color:#c0bdb8;font:600 11px system-ui;cursor:pointer}
+      .ch-elo-btn.active,.ch-elo-btn:hover{background:#1c3050;border-color:#6ea4ff;color:#fff}
+      .ch-backup{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+      .ch-saved{min-height:16px;color:#76b730;font-size:11px;text-align:center;opacity:0;transition:opacity .2s}
+      .ch-saved.show{opacity:1}
       #ch-notify{position:fixed;top:max(20px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#1c1b18,#13120f);color:#e8e5e0;padding:10px 16px;border:1px solid #3a3835;border-radius:14px;font-weight:700;font-size:13px;z-index:9999999;box-shadow:0 12px 26px rgba(0,0,0,.32);animation:ndrop .35s ease}
       @keyframes ndrop{from{top:0;opacity:0}to{top:max(20px,env(safe-area-inset-top));opacity:1}}
     `;
@@ -1243,6 +1320,84 @@
   <div class="ch-row"><span class="ch-lbl">Hints</span><span class="ch-val yellow" id="ch-hints-label">-</span></div>
   <div class="ch-moves-list" id="ch-hints"></div>
 </div>
+<div class="ch-settings" id="ch-settings">
+  <div class="ch-set-title">Engine</div>
+  <div class="ch-set-card">
+    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-enabled"><span class="ch-set-label">Bật engine hints</span></label>
+  </div>
+  <div class="ch-set-title">Phân tích</div>
+  <div class="ch-set-card">
+    <div class="ch-set-head"><span class="ch-set-label">Depth</span><span class="ch-val yellow" id="ch-set-depth-val">15</span></div>
+    <input class="ch-set-range" id="ch-set-depth" type="range" min="5" max="25" step="1" value="15">
+    <div class="ch-set-head"><span class="ch-set-label">Số gợi ý</span><span class="ch-val yellow" id="ch-set-lines-val">3</span></div>
+    <input class="ch-set-range" id="ch-set-lines" type="range" min="1" max="5" step="1" value="3">
+  </div>
+  <div class="ch-set-title">Hiển thị</div>
+  <div class="ch-set-card">
+    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-show-arrows"><span class="ch-set-label">Hiện mũi tên</span></label>
+    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-show-eval"><span class="ch-set-label">Hiện điểm đánh giá</span></label>
+    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-show-panel"><span class="ch-set-label">Hiện panel nổi</span></label>
+    <select class="ch-set-select" id="ch-set-hint-style">
+      <option value="classic">Classic arrows</option>
+      <option value="chesscom">Chess.com style</option>
+    </select>
+  </div>
+  <div class="ch-set-title">ELO Limit</div>
+  <div class="ch-elo-grid" id="ch-set-elo-grid">
+    <button class="ch-elo-btn" type="button" data-elo="0">∞ Unlimited</button>
+    <button class="ch-elo-btn" type="button" data-elo="800">800</button>
+    <button class="ch-elo-btn" type="button" data-elo="1000">1000</button>
+    <button class="ch-elo-btn" type="button" data-elo="1200">1200</button>
+    <button class="ch-elo-btn" type="button" data-elo="1500">1500</button>
+    <button class="ch-elo-btn" type="button" data-elo="1800">1800</button>
+    <button class="ch-elo-btn" type="button" data-elo="2000">2000</button>
+    <button class="ch-elo-btn" type="button" data-elo="2200">2200</button>
+    <button class="ch-elo-btn" type="button" data-elo="2500">2500</button>
+    <button class="ch-elo-btn" type="button" data-elo="2800">2800</button>
+  </div>
+  <div class="ch-set-title">Tự động đi</div>
+  <div class="ch-set-card">
+    <select class="ch-set-select" id="ch-set-auto-mode">
+      <option value="off">Tắt</option>
+      <option value="best">Nước tốt nhất</option>
+      <option value="random">Ngẫu nhiên</option>
+    </select>
+    <label class="ch-set-toggle"><input type="checkbox" id="ch-set-auto-random-delay"><span class="ch-set-label">Delay ngẫu nhiên</span></label>
+    <div id="ch-set-fixed-delay-wrap">
+      <div class="ch-set-head"><span class="ch-set-label">Delay cố định</span><span class="ch-val yellow" id="ch-set-delay-val">1500</span></div>
+      <input class="ch-set-range" id="ch-set-delay" type="range" min="300" max="5000" step="100" value="1500">
+    </div>
+    <div id="ch-set-random-delay-wrap" style="display:none">
+      <div class="ch-set-head"><span class="ch-set-label">Min delay</span><span class="ch-val yellow" id="ch-set-delay-min-val">500</span></div>
+      <input class="ch-set-range" id="ch-set-delay-min" type="range" min="500" max="10000" step="100" value="500">
+      <div class="ch-set-head"><span class="ch-set-label">Max delay</span><span class="ch-val yellow" id="ch-set-delay-max-val">10000</span></div>
+      <input class="ch-set-range" id="ch-set-delay-max" type="range" min="500" max="10000" step="100" value="10000">
+    </div>
+    <select class="ch-set-select" id="ch-set-quick-key">
+      <option value=" ">Space</option>
+      <option value="a">a</option><option value="z">z</option><option value="e">e</option>
+      <option value="r">r</option><option value="t">t</option><option value="f">f</option>
+      <option value="g">g</option><option value="h">h</option><option value="j">j</option>
+      <option value="Control">Control</option><option value="Shift">Shift</option><option value="Alt">Alt</option>
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+    </select>
+  </div>
+  <div class="ch-set-title">Màu mũi tên</div>
+  <div class="ch-color-grid">
+    <label class="ch-color-item"><input id="ch-set-c1" type="color"><span>1st</span></label>
+    <label class="ch-color-item"><input id="ch-set-c2" type="color"><span>2nd</span></label>
+    <label class="ch-color-item"><input id="ch-set-c3" type="color"><span>3rd</span></label>
+    <label class="ch-color-item"><input id="ch-set-c4" type="color"><span>4th</span></label>
+    <label class="ch-color-item"><input id="ch-set-c5" type="color"><span>5th</span></label>
+  </div>
+  <div class="ch-set-title">Sao lưu</div>
+  <div class="ch-backup">
+    <button class="ch-btn" id="ch-set-export" type="button">Xuất JSON</button>
+    <button class="ch-btn" id="ch-set-import" type="button">Nhập JSON</button>
+  </div>
+  <input id="ch-set-import-file" type="file" accept="application/json,.json" style="display:none">
+  <div class="ch-saved" id="ch-set-saved"></div>
+</div>
 <div class="ch-foot" id="ch-status">Tracking...</div>
 </div>`;
     doc.body.appendChild(root);
@@ -1255,6 +1410,38 @@
     elStatus    = root.querySelector('#ch-status');
     elPanel     = root.querySelector('#ch-panel');
     elAutoModeButtons = [...root.querySelectorAll('[data-mode]')];
+    settingsEls = {
+      main: root.querySelector('.ch-body'),
+      settings: root.querySelector('#ch-settings'),
+      cfgBtn: root.querySelector('#ch-cfg-btn'),
+      enabled: root.querySelector('#ch-set-enabled'),
+      depth: root.querySelector('#ch-set-depth'),
+      depthVal: root.querySelector('#ch-set-depth-val'),
+      lines: root.querySelector('#ch-set-lines'),
+      linesVal: root.querySelector('#ch-set-lines-val'),
+      showArrows: root.querySelector('#ch-set-show-arrows'),
+      showEval: root.querySelector('#ch-set-show-eval'),
+      showPanel: root.querySelector('#ch-set-show-panel'),
+      hintStyle: root.querySelector('#ch-set-hint-style'),
+      autoPlayMode: root.querySelector('#ch-set-auto-mode'),
+      autoPlayAutoInterval: root.querySelector('#ch-set-auto-random-delay'),
+      autoPlayDelay: root.querySelector('#ch-set-delay'),
+      autoPlayDelayVal: root.querySelector('#ch-set-delay-val'),
+      autoPlayDelayMin: root.querySelector('#ch-set-delay-min'),
+      autoPlayDelayMinVal: root.querySelector('#ch-set-delay-min-val'),
+      autoPlayDelayMax: root.querySelector('#ch-set-delay-max'),
+      autoPlayDelayMaxVal: root.querySelector('#ch-set-delay-max-val'),
+      fixedDelayWrap: root.querySelector('#ch-set-fixed-delay-wrap'),
+      randomDelayWrap: root.querySelector('#ch-set-random-delay-wrap'),
+      quickMoveKey: root.querySelector('#ch-set-quick-key'),
+      colorInputs: [1,2,3,4,5].map(i => root.querySelector(`#ch-set-c${i}`)),
+      eloButtons: [...root.querySelectorAll('.ch-elo-btn')],
+      exportBtn: root.querySelector('#ch-set-export'),
+      importBtn: root.querySelector('#ch-set-import'),
+      importFile: root.querySelector('#ch-set-import-file'),
+      savedMsg: root.querySelector('#ch-set-saved'),
+      savedMsgTimer: null,
+    };
 
     let mini = false;
     root.querySelector('#ch-min').addEventListener('click', () => {
@@ -1262,7 +1449,11 @@
       root.querySelector('#ch-min').textContent = mini ? '[]' : '-';
     });
     root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(REVIEW_URL, '_blank', 'noopener,width=1200,height=820'));
-    root.querySelector('#ch-cfg-btn').addEventListener('click', () => w.open(SETTING_URL, '_blank'));
+    root.querySelector('#ch-cfg-btn').addEventListener('click', () => {
+      settingsOpen = !settingsOpen;
+      syncSettingsPane();
+      syncSettingsForm();
+    });
     root.querySelector('#ch-cp').addEventListener('click', () => {
       navigator.clipboard?.writeText(elFen.textContent?.trim() || '').then(() => {
         const btn = root.querySelector('#ch-cp'); btn.textContent = 'OK'; setTimeout(() => btn.textContent = 'CP', 1200);
@@ -1278,6 +1469,61 @@
       if (state.fen) state.fen = state.fen.replace(/^(\S+) [wb]/, `$1 ${state.turn}`);
       scheduleRender(); maybeAnalyze();
     });
+    settingsEls.enabled.addEventListener('change', () => commitSettings({ enabled: settingsEls.enabled.checked }, 'Đã lưu ✓'));
+    settingsEls.depth.addEventListener('input', () => commitSettings({ depth: Number(settingsEls.depth.value) }));
+    settingsEls.lines.addEventListener('input', () => commitSettings({ lines: Number(settingsEls.lines.value) }));
+    settingsEls.showArrows.addEventListener('change', () => commitSettings({ showArrows: settingsEls.showArrows.checked }, 'Đã lưu ✓'));
+    settingsEls.showEval.addEventListener('change', () => commitSettings({ showEval: settingsEls.showEval.checked }, 'Đã lưu ✓'));
+    settingsEls.showPanel.addEventListener('change', () => commitSettings({ showPanel: settingsEls.showPanel.checked }, 'Đã lưu ✓'));
+    settingsEls.hintStyle.addEventListener('change', () => commitSettings({ hintStyle: settingsEls.hintStyle.value }, 'Đã lưu ✓'));
+    settingsEls.autoPlayMode.addEventListener('change', () => commitSettings({ autoPlayMode: settingsEls.autoPlayMode.value }, 'Đã lưu ✓'));
+    settingsEls.autoPlayAutoInterval.addEventListener('change', () => commitSettings({ autoPlayAutoInterval: settingsEls.autoPlayAutoInterval.checked }, 'Đã lưu ✓'));
+    settingsEls.autoPlayDelay.addEventListener('input', () => commitSettings({ autoPlayDelay: Number(settingsEls.autoPlayDelay.value) }));
+    settingsEls.autoPlayDelayMin.addEventListener('input', () => {
+      const min = Number(settingsEls.autoPlayDelayMin.value);
+      const max = Math.max(min, Number(settingsEls.autoPlayDelayMax.value));
+      commitSettings({ autoPlayDelayMin: min, autoPlayDelayMax: max });
+    });
+    settingsEls.autoPlayDelayMax.addEventListener('input', () => {
+      const max = Number(settingsEls.autoPlayDelayMax.value);
+      const min = Math.min(max, Number(settingsEls.autoPlayDelayMin.value));
+      commitSettings({ autoPlayDelayMin: min, autoPlayDelayMax: max });
+    });
+    settingsEls.quickMoveKey.addEventListener('change', () => commitSettings({ quickMoveKey: settingsEls.quickMoveKey.value }, 'Đã lưu ✓'));
+    settingsEls.colorInputs.forEach((input, idx) => {
+      input.addEventListener('input', () => {
+        const colors = cfg.colors.slice(0, 5);
+        colors[idx] = input.value;
+        commitSettings({ colors });
+      });
+    });
+    settingsEls.eloButtons.forEach(btn => btn.addEventListener('click', () => commitSettings({ eloLimit: Number(btn.dataset.elo) }, 'Đã lưu ✓')));
+    settingsEls.exportBtn.addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify({ app: 'ChessKiller', exportedAt: new Date().toISOString(), chConfig: cfg }, null, 2)], { type: 'application/json' });
+      const a = doc.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'chesskiller-settings.json';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      flashSettingsSaved('Đã xuất ✓');
+    });
+    settingsEls.importBtn.addEventListener('click', () => settingsEls.importFile.click());
+    settingsEls.importFile.addEventListener('change', async e => {
+      const file = e.target?.files?.[0];
+      if (!file) return;
+      try {
+        const parsed = JSON.parse(await file.text());
+        cfg = normalizeConfig(parsed.chConfig || parsed);
+        persistConfig();
+        applyConfig(cfg);
+        flashSettingsSaved('Đã nhập ✓');
+      } catch (_) {
+        flashSettingsSaved('File không hợp lệ');
+      }
+      settingsEls.importFile.value = '';
+    });
+    syncSettingsPane();
+    syncSettingsForm();
 
     // Draggable header
     const header = elPanel.querySelector('.ch-hdr');
@@ -1383,6 +1629,7 @@
     if (prevElo !== cfg.eloLimit) eloOptionsSent = false;
     if (!cfg.enabled) { state.engineMoves = []; clearOverlay(); finishAnalysis(); }
     if (!cfg.showArrows) clearOverlay();
+    syncSettingsForm();
     scheduleRender();
     maybeAnalyze();
   }
@@ -1549,7 +1796,7 @@
     function getGameUrl(row) {
       for (const link of row.querySelectorAll('a[href*="/game/"]')) {
         const href = link.getAttribute('href');
-        if (href && /\/(?:analysis\/)?game\/(?:(live|daily)\/)?(\d+)/.test(href))
+        if (href && /\/(?:analysis\/)?game\/(?:[a-z-]+\/)?(\d+)/i.test(href))
           return href.startsWith('http') ? href : `https://www.chess.com${href}`;
       }
       return null;
