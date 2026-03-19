@@ -1,166 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>A.C.A.S (Advanced Chess Assistance System)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="description" content="A.C.A.S is a free, open‑source chess assistant and chess calculator. Get real‑time insights, chess analysis, and chess learning tools for Chess.com, Lichess, and more.">
-    <meta name="keywords" content="chess assistance, gui, chess engine, chess calculator, chess analysis, chess learning, chess assistance, online chess tools, chess.com assistance, lichess.org assistance, pychess.org assistance">
-    <meta property="og:title" content="A.C.A.S (Advanced Chess Assistance System)">
-    <meta property="og:description" content="A.C.A.S is a free, open‑source chess assistant and chess calculator. Get real‑time insights, chess analysis, and chess learning tools for Chess.com, Lichess, and more.">
-    <meta property="og:image" content="assets/images/mock.png">
-    <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="assets/fonts/Rubik.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" href="assets/fonts/IBMPlexSans.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" href="assets/images/mock.webp" as="image">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="canonical" href="https://psyyke.github.io">
-    <meta property="og:type" content="website">
-    <script type="text/javascript"src="assets/js/tag-manager.js"></script>
-    <script async="" type="text/javascript" src="https://www.googletagmanager.com/gtm.js?id=GTM-5499BQ4B"></script>
-    <script async="" type="text/javascript" src="index.js"></script>
-    <script defer="" type="text/javascript" src="assets/libraries/klaro/config.js"></script>
-    <script defer="" type="text/javascript" src="assets/libraries/klaro/klaro.js"></script>
-    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7248123202489335" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA - Tro ly co tuong cho xiangqi.com</title>
+  <meta name="description" content="CCA la userscript ho tro phan tich co tuong tren xiangqi.com voi Pikafish, goi y nuoc di, mui ten tren ban co va bang cai dat ngay trong panel.">
+  <meta property="og:title" content="CCA - Tro ly co tuong cho xiangqi.com">
+  <meta property="og:description" content="Cai userscript CCA de xem goi y nuoc di, phan tich the co va su dung Pikafish ngay tren xiangqi.com.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nguyenphanvn95.github.io/cca/icons/icon128.png">
+  <link rel="icon" href="icons/icon48.png">
+  <style>
+    :root{
+      --bg:#0e0d0b;
+      --panel:#171512;
+      --panel-2:#211e1a;
+      --line:#3b3732;
+      --text:#ede6da;
+      --muted:#a79f92;
+      --accent:#d39a34;
+      --accent-2:#73b84c;
+      --chip:#2b2722;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(211,154,52,.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(115,184,76,.12), transparent 22%),
+        linear-gradient(180deg,#15120e 0%,#090807 100%);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:42px;height:42px;border-radius:10px}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn,.btn-ghost{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:42px;padding:0 16px;border-radius:12px;border:1px solid var(--line);
+      background:var(--panel-2);color:var(--text);font-weight:700
+    }
+    .btn{background:linear-gradient(180deg,#d39a34,#b77f1f);color:#111}
+    .hero{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:28px;
+      align-items:center;padding:42px 0 28px;
+    }
+    .hero-card,.card{
+      background:linear-gradient(180deg,rgba(31,28,24,.96),rgba(21,19,16,.98));
+      border:1px solid var(--line);border-radius:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,.28);
+    }
+    .hero-card{padding:32px}
+    .eyebrow{
+      display:inline-flex;padding:6px 12px;border-radius:999px;
+      background:rgba(211,154,52,.12);border:1px solid rgba(211,154,52,.26);
+      color:#f0c978;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase
+    }
+    h1{margin:16px 0 12px;font-size:clamp(34px,6vw,58px);line-height:1.02}
+    .lead{margin:0 0 22px;color:var(--muted);font-size:17px;line-height:1.65}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{
+      padding:10px 12px;border-radius:999px;background:var(--chip);
+      border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:700
+    }
+    .preview{
+      padding:22px;background:
+        linear-gradient(135deg,rgba(211,154,52,.14),transparent 38%),
+        linear-gradient(180deg,#1c1915,#100f0d);
+    }
+    .preview-frame{
+      border:1px solid var(--line);border-radius:22px;padding:16px;background:#14120f;
+    }
+    .panel-top{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:#1e1a16
+    }
+    .panel-actions{display:flex;gap:8px}
+    .dot{
+      width:34px;height:34px;border-radius:11px;border:1px solid var(--line);
+      background:#2a2621
+    }
+    .board{
+      margin-top:14px;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+      aspect-ratio:9/10;
+      background:
+        linear-gradient(90deg,rgba(89,52,18,.58) 0 2%, transparent 2% 98%, rgba(89,52,18,.58) 98%),
+        linear-gradient(180deg,#f4deb2,#d7aa67);
+      position:relative;
+    }
+    .board::before{
+      content:"";position:absolute;inset:10% 8%;
+      background:
+        repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), rgba(96,55,15,.45) calc(12.5% - 1px) 12.5%),
+        repeating-linear-gradient(180deg, transparent 0 calc(11.11% - 1px), rgba(96,55,15,.45) calc(11.11% - 1px) 11.11%);
+      opacity:.8
+    }
+    .section{padding:18px 0}
+    .section-title{margin:0 0 14px;font-size:28px}
+    .grid-3,.grid-2{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{padding:22px}
+    .card h3{margin:0 0 10px;font-size:18px}
+    .card p,.card li{color:var(--muted);line-height:1.65}
+    ol,ul{margin:0;padding-left:18px}
+    .steps li{margin-bottom:10px}
+    .code{
+      display:block;margin-top:10px;padding:12px 14px;border-radius:14px;
+      background:#11100d;border:1px solid var(--line);overflow:auto;
+      font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;color:#f5d48e
+    }
+    .footer{
+      padding:28px 0 40px;color:var(--muted);font-size:14px
+    }
+    @media (max-width: 900px){
+      .hero,.grid-3,.grid-2{grid-template-columns:1fr}
+      .nav{align-items:flex-start;gap:12px;flex-direction:column}
+    }
+  </style>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5499BQ4B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <main>
-        <header>
-            <div><a href="" class="acas-logo-main fancy-btn">A.C.A.S<span>V2</span></a></div>
-            <div>
-                <a href="install/" aria-label="Install A.C.A.S" class="fancy-btn"><i class="bi bi-download"></i>Install</a>
-                <a href="usage/" aria-label="How to use A.C.A.S" class="fancy-btn"><i class="bi bi-journals"></i>Usage</a>
-                <a href="troubleshoot/" aria-label="Fixing A.C.A.S" class="fancy-btn"><i class="bi bi-tools"></i>Troubleshoot</a>
-                <a href="faq/" aria-label="Frequently Asked Questions" class="fancy-btn"><i class="bi bi-chat-square-quote"></i>FAQ</a>
-                <a href="blog/" aria-label="View A.C.A.S blog" class="fancy-btn"><i class="bi bi-pen"></i>Blog</a>
-                <a href="contributing/" aria-label="Contribute to A.C.A.S" class="fancy-btn"><i class="bi bi-heart"></i></a>
-                <a href="https://github.com/psyyke/A.C.A.S" target="_blank" class="github-corner fancy-btn" aria-label="View source on Github"><i class="bi bi-github"></i></a>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html">
+        <img src="icons/icon48.png" alt="CCA">
+        <span>CCA - Chinese Chess Assistant</span>
+      </a>
+      <nav class="nav-links">
+        <a class="btn-ghost" href="#cai-dat">Cai dat</a>
+        <a class="btn-ghost" href="#su-dung">Su dung</a>
+        <a class="btn-ghost" href="analysis.html">Analysis</a>
+        <a class="btn-ghost" href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Xiangqi.com userscript</div>
+        <h1>Tro ly co tuong thoi gian thuc cho xiangqi.com</h1>
+        <p class="lead">CCA su dung Pikafish de doc the co, hien mui ten goi y, danh gia nuoc di va ho tro auto move. Panel va cai dat duoc nhung truc tiep vao trong giao dien, gon va nhanh hon ban cu.</p>
+        <div class="cta">
+          <a class="btn" href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Tai userscript</a>
+          <a class="btn-ghost" href="analysis.html">Mo analysis board</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Pikafish engine</span>
+          <span class="chip">Panel mini tu dong</span>
+          <span class="chip">Cai dat ngay trong panel</span>
+          <span class="chip">Ho tro auto move</span>
+        </div>
+      </div>
+      <div class="hero-card preview">
+        <div class="preview-frame">
+          <div class="panel-top">
+            <strong>CCA Xiangqi</strong>
+            <div class="panel-actions">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-        </header>
-        <section class="content">
-            <style>
-            @keyframes floatyAnimation {
-                0%   { transform: translateY(0) scale(1) rotate(var(--floaty-rotate, 0deg)); }
-                15%  { transform: translateY(-10px) scale(1.03) rotate(var(--floaty-rotate, 2deg)); }
-                60%  { transform: translateY(8px) scale(0.98) rotate(var(--floaty-rotate, -3deg)); }
-                100% { transform: translateY(0) scale(1) rotate(var(--floaty-rotate, 0deg)); }
-            }
-            .floaty-piece {
-                animation: floatyAnimation 5.5s ease-in-out infinite alternate; will-change: transform; position: absolute;
-            }
+          </div>
+          <div class="board"></div>
+        </div>
+      </div>
+    </section>
 
-            .floaty0 { --floaty-rotate: 7deg; animation-delay: 0.5s; transform: rotate(7deg); }
+    <section class="section">
+      <h2 class="section-title">Tinh nang chinh</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Goi y ngay tren ban co</h3>
+          <p>Doc FEN truc tiep tu xiangqi.com, phan tich voi engine va ve mui ten ngay tren ban co dang choi.</p>
+        </article>
+        <article class="card">
+          <h3>Panel gon hon</h3>
+          <p>Khi chua phat hien ban co, panel chi con header. Khi co ban co, panel tu mo rong lai nhu ban Chess Killer.</p>
+        </article>
+        <article class="card">
+          <h3>Cai dat noi bo</h3>
+          <p>Khong can popup setting rieng. Moi tuy chon depth, so dong, mau mui ten, auto move va backup deu nam ngay trong panel.</p>
+        </article>
+      </div>
+    </section>
 
-            .floaty2 { --floaty-rotate: 4deg; animation-delay: 0s; left: -100px; width: 240px; top: 100px; transform: rotate(4deg); }
-            .floaty3 { --floaty-rotate: 30deg; animation-delay: 0.5s; left: -135px; width: 170px; top: 0; filter: blur(0.7px); opacity: 0.95; transform: rotate(30deg); z-index: 0; }
-            .floaty6 { --floaty-rotate: -10deg; animation-delay: 1s; left: -80px; width: 130px; top: -120px; transform: rotate(-10deg); opacity: 0.85; filter: blur(1.2px); z-index: -1; }
-            .floaty7 { --floaty-rotate: 25deg; animation-delay: 1.5s; left: 70px; width: 80px; top: -180px; transform: rotate(25deg); opacity: 0.7; filter: blur(1.8px); z-index: -1; }
-            .floaty8 { --floaty-rotate: -35deg; animation-delay: 2s; left: 190px; width: 50px; top: -180px; transform: rotate(-35deg); opacity: 0.4; filter: blur(2.5px); z-index: -1; }
-            .floaty9 { --floaty-rotate: 15deg; animation-delay: 2.5s; left: 270px; width: 30px; top: -175px; transform: rotate(15deg); opacity: 0.2; filter: blur(3px); z-index: -1; }
+    <section class="section" id="cai-dat">
+      <h2 class="section-title">Cach cai dat</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>1. Cai Tampermonkey</h3>
+          <p>Neu trinh duyet chua co userscript manager, hay cai Tampermonkey truoc.</p>
+        </article>
+        <article class="card">
+          <h3>2. Cai CCA</h3>
+          <p>Mo link cai dat ben duoi va chap nhan install trong Tampermonkey.</p>
+          <span class="code">https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js</span>
+        </article>
+      </div>
+    </section>
 
-            .floaty5 { --floaty-rotate: 15deg; animation-delay: 0s; right: -120px; width: 300px; top: 1100px; transform: rotate(15deg); }
-            .floaty1 { --floaty-rotate: -10deg; animation-delay: 0.5s; right: -150px; width: 200px; top: 960px; opacity: 0.95; filter: blur(1.5px); transform: rotate(-10deg); z-index: -1; }
-            .floaty4 { --floaty-rotate: 35deg; animation-delay: 1.2s; right: -90px; width: 120px; top: 840px; filter: blur(2px); opacity: 0.5; transform: rotate(35deg); z-index: -1; }
-            .floaty10 { --floaty-rotate: -40deg; animation-delay: 2s; right: -25px; width: 60px; top: 790px; filter: blur(4px) brightness(0.8); opacity: 0.5; transform: rotate(-40deg); z-index: -1; }
-            </style>
-            <img class="floaty-piece floaty-no-mobile floaty1" src="assets/images/pieces/staunty/wK.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty2" src="assets/images/pieces/staunty/bB.svg">
-            <img class="floaty-piece floaty-no-mobile floaty3" src="assets/images/pieces/staunty/wQ.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty4" src="assets/images/pieces/staunty/bP.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty5" src="assets/images/pieces/staunty/bR.svg">
-            <img class="floaty-piece floaty-no-mobile floaty6" src="assets/images/pieces/staunty/bP.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty7" src="assets/images/pieces/staunty/wR.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty9" src="assets/images/pieces/staunty/bK.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty8" src="assets/images/pieces/staunty/bQ.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty8" src="assets/images/pieces/staunty/wQ.svg"/>
-            <img class="floaty-piece floaty-no-mobile floaty10" src="assets/images/pieces/staunty/wR.svg"/>
-             <!-- PAGE CONTENT -->
-            <article class="markdown-section" id="main">
-                <section class="main-first-section">
-                    <h1 class="large-intro"><span>Chess</span> Assistance</h1>
-                    <div class="large-intro-mobile">A.C.A.S</div>
-                    <h2 class="large-intro-desc">Open source & free, for you~💖</h2>
-                    <img class="mock-img" src="assets/images/mock.webp" alt="A mockup image of the A.C.A.S software.">
-                </section>
-                <section class="stats-container bordered">
-                    <img style="left: -50px;width: 90px;top: -30px;transform: rotate(-6deg);" class="floaty-piece" src="assets/images/pieces/staunty/wP.svg"/>
-                    <div>
-                        <div><h2>50 000+</h2><span>Installs</span></div>
-                        <div><h2>2000</h2><span>Daily Uses</span></div>
-                        <div><h2>&gt;80%</h2><span>Positive Reviews</span></div>
-                        <div><h2>100+</h2><span>Stars</span></div>
-                    </div>
-                    <img style="right: -42px;width: 90px;bottom: -20px;transform: rotate(6deg);" class="floaty-piece floaty0" src="assets/images/pieces/staunty/bB.svg"/>
-                </section>
-                <section>
-                    <p><b>A.C.A.S</b> (<i>Advanced Chess Assistance System</i>) is an open-source chess assistant (not a chess cheat), designed to help you make better moves using a chess engine. Just install the userscript, open the A.C.A.S GUI, and you're ready to go—no downloads necessary!</p>
-                    <ul>
-                        <li><strong>Completely free</strong> and <strong>open source</strong>! (Licensed with GPLv3 💖)</li>
-                        <li>Lots of built-in WASM engines: Stockfish, Lc0, Maia and more...</li>
-                        <li>Supports the most popular chess game sites (<em>e.g. chess.com, lichess.org</em>)</li>
-                        <li>Supports multiple move suggestions, move arrow markings, chess variants &amp; fonts</li>
-                        <li>Get move feedback and board state analysis directly on your board</li>
-                        <li>Translated to 30+ languages</li>
-                    </ul>
-                </section>
-                <section>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="bordered tweaking"><a href="app/">▶️ Open A.C.A.S</a></th>
-                                <th class="bordered fancy-btn"><a href="https://greasyfork.org/en/scripts/459137-a-c-a-s-advanced-chess-assistance-system" target="_blank" rel="noopener">⬇️ Install (GreasyFork)</a></th>
-                                <th class="bordered fancy-btn"><a href="acas.user.js">⬇️ Download (Direct)</a></th>
-                                <th class="bordered fancy-btn"><a href="https://github.com/Psyyke/A.C.A.S/issues" target="_blank" rel="noopener">💬 Discuss With Community</a></th>
-                            </tr>
-                        </thead>
-                    </table>
-                    <p class="tip">Please be advised that the use of A.C.A.S may violate the rules and lead to disqualification or banning from tournaments and online platforms. The developers of A.C.A.S and related systems will NOT be held accountable for any consequences resulting from its use. We strongly advise to use A.C.A.S only in a controlled environment ethically.</p>
-                </section>
-                <section>
-                    <div class="showcase">
-                        <div>
-                            <h2>Beyond Move Suggestions.</h2>
-                            <p>Our goal is to build chess software that benefits everyone. We aim to support new players by offering features that enhance learning and deepen understanding of the game.</p>
-                        </div>
-                        <img loading="lazy" src="assets/images/homeshowcase.png" alt="A.C.A.S can render stuff right on the chessboard."/>
-                    </div>
-                </section>
-                <section>
-                    <div class="showcase showcase-2">
-                        <img loading="lazy" src="assets/images/homeshowcase2.png" alt="Settings for changing the engine and such. A.C.A.S offers great customization."/>
-                        <div>
-                            <h2>Customize it.</h2>
-                            <p>We’ve made it so you’re in charge, giving you full control over your experience. Whether you’re a newbie or a chess pro, it’s all about playing your way.</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2 id="hindsight-is-overrated">Okay, so what’s the deal?</h2>
-                    <p>No payments, no complex software installations. Just a real-time chess tool that actually helps you play better. That’s A.C.A.S baby. Whether you’re grinding puzzles, playing bullet, or trying to hit 2000 ELO, A.C.A.S gives you smart overlays right on the board. It’s light and fast, some could even call it stable, but we'll let you decide that one. Remember, no guarantees!</p>
-                    <p>Just install it, keep the window open, and you’ll start learning as you play. Works on basically anything with a modern browser, even your phone. Everything runs locally, no cloud stuff. A.C.A.S is amazing.</p>
-                    <div class="checkitout-container"><img src="assets/images/checkit.png" alt="Check it out" style="width:300px;height:112.3px;" loading="lazy"></div>
-                </section>                  
-                <section>
-                </section>
-                <img src="assets/images/full.png" alt="A.C.A.S full showcase" style="width:100%;display:block;max-width: 100%;border-radius:0;min-height:700px;object-fit: cover;" loading="lazy">
-                <section>
-                    <p class="install-suggestion">Ready to begin? <a href="install/" class="install-button fancy-btn">Let's get it!</a></p>
-                </section>
-            </article>
-            <!-- PAGE CONTENT ENDS -->
-        </section>
-        <footer>
-            <img style="right: -70px;bottom: -35px;width: 200px;" class="floaty-piece floaty-footer" src="assets/images/pieces/staunty/wN.svg"/>
-            <section><a href="tos/">Terms of Service</a><a href="privacy/">Privacy Policy</a><a href="https://www.gnu.org/licenses/gpl-3.0.en.html">Licensed with GPLv3</a><a href="https://github.com/Hakorr">Contact Me</a></section>
-        </footer>
-    </main>
-    <script async="" src="assets/js/site-additional-content.js"></script>
-    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7248123202489335" crossorigin="anonymous"></script>
+    <section class="section" id="su-dung">
+      <h2 class="section-title">Cach su dung</h2>
+      <article class="card">
+        <ol class="steps">
+          <li>Mo trang <strong>xiangqi.com</strong> va vao mot van co.</li>
+          <li>CCA se tu detect ban co. Khi board chua san sang, panel chi hien header de gon man hinh.</li>
+          <li>Nhấn nut banh rang de mo cai dat ngay trong panel.</li>
+          <li>Chinh depth, so nuoc goi y, kieu mui ten, delay auto move va phim tat theo nhu cau.</li>
+          <li>Neu can xem lai the co, mo <a href="analysis.html">analysis board</a>.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Tai nguyen</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Lien ket nhanh</h3>
+          <ul>
+            <li><a href="analysis.html">Analysis board</a></li>
+            <li><a href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Direct install script</a></li>
+            <li><a href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/tree/main/cca" target="_blank" rel="noopener">Ma nguon CCA</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Luu y</h3>
+          <p>Trang nay chi la giao dien gioi thieu va link cai dat. Toan bo logic script, engine va file tai nguyen duoc luu tren GitHub Pages cua ban.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>CCA duoc phat trien cho xiangqi.com. Ban landing page nay da duoc lam lai theo huong toi gian, bo toan bo noi dung khong lien quan tu mau cu.</p>
+    </footer>
+  </div>
 </body>
 </html>
