@@ -258,10 +258,11 @@
 
   const SITE = w.location.hostname.includes('lichess.org') ? 'lichess' : 'chesscom';
   const CONFIG_KEY = 'chConfig';
+  const CONFIG_MIGRATION_KEY = 'chConfigMigrationV2';
 
   const DEFAULT_CONFIG = {
     depth: 15, lines: 3, enabled: true, showEval: true, showArrows: true,
-    hintStyle: 'classic', showPanel: false,
+    hintStyle: 'classic', showPanel: true,
     autoPlayMode: 'off', autoPlayDelay: 1500, autoPlayAutoInterval: false,
     autoPlayDelayMin: 500, autoPlayDelayMax: 10000,
     quickMoveKey: ' ', eloLimit: 0,
@@ -1026,7 +1027,7 @@
     });
     root.querySelector('#ch-review-btn').addEventListener('click', () => w.open(REVIEW_URL, '_blank', 'noopener,width=1200,height=820'));
     root.querySelector('#ch-stream-btn').addEventListener('click', () => w.open(STREAM_URL, '_blank', 'noopener,width=900,height=650'));
-    root.querySelector('#ch-cfg-btn').addEventListener('click', () => w.open(SETTING_URL, '_blank', 'noopener,width=480,height=700'));
+    root.querySelector('#ch-cfg-btn').addEventListener('click', () => w.open(SETTING_URL, '_blank', 'noopener,noreferrer'));
     root.querySelector('#ch-cp').addEventListener('click', () => {
       navigator.clipboard?.writeText(elFen.textContent?.trim() || '').then(() => {
         const btn = root.querySelector('#ch-cp'); btn.textContent = 'OK'; setTimeout(() => btn.textContent = 'CP', 1200);
@@ -1152,7 +1153,13 @@
   }
 
   function loadConfig() {
-    const saved = store.get(CONFIG_KEY);
+    let saved = store.get(CONFIG_KEY);
+    const migrated = store.get(CONFIG_MIGRATION_KEY);
+    if (!migrated) {
+      saved = { ...(saved || {}), showPanel: true };
+      store.set(CONFIG_KEY, saved);
+      store.set(CONFIG_MIGRATION_KEY, { appliedAt: Date.now() });
+    }
     applyConfig(saved || DEFAULT_CONFIG);
     // Poll localStorage for changes (from setting.html)
     setInterval(() => {
