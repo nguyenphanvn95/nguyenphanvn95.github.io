@@ -22,7 +22,7 @@
 
   // ── CONFIG ──────────────────────────────────────────────────────────
   const BASE       = 'https://nguyenphanvn95.github.io/chesskiller';
-  const HOME_URL   = 'https://nguyenphanvn95.github.io/cca/index.html';
+  const HOME_URL   = 'https://nguyenphanvn95.github.io/chesskiller/index.html';
   const ANALYSIS_URL = BASE + '/analysis.html';
   const REVIEW_URL = BASE + '/review.html';
   const LOGO_URL   = BASE + '/media/photo/logo.png';
