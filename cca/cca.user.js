@@ -182,6 +182,26 @@ let baselineTurnGrid=null,baselineTurnGridKey="",liveTurnGridKey="",liveTurnGrid
 let settingsOpen=false,settingsEls=null,manualMini=false;
 let panelHidden=false,restoreBtn=null;
 
+function applyPanelUrlCommand(){
+  try{
+    const url=new URL(location.href);
+    const cmd=url.searchParams.get("cca_panel");
+    if(!cmd)return;
+    if(cmd==="show"){
+      panelHidden=false;
+      manualMini=true;
+    }else if(cmd==="hide"){
+      panelHidden=true;
+    }else if(cmd==="toggle"){
+      panelHidden=!panelHidden;
+      if(!panelHidden)manualMini=true;
+    }
+    url.searchParams.delete("cca_panel");
+    history.replaceState(null,"",url.toString());
+    scheduleRender();
+  }catch{}
+}
+
 const IS_TOUCH_DEVICE=(navigator.maxTouchPoints||0)>0||(typeof window.matchMedia==="function"&&window.matchMedia("(pointer: coarse)").matches);
 const PRIMARY_POINTER_TYPE=IS_TOUCH_DEVICE?"touch":"mouse";
 const ACTIVE_SIDE_POLL_MS=900,HIDDEN_SIDE_POLL_MS=2500,ACTIVE_UPDATE_POLL_MS=1800,HIDDEN_UPDATE_POLL_MS=5000;
@@ -508,7 +528,7 @@ function showNotify(msg){if(isGameEndPopupVisible()||isMatchmakingPopupVisible()
 function shouldShowPanel(){return !isGameEndPopupVisible()&&!isMatchmakingPopupVisible()&&(hasDetectedBoard()||manualMini);}
 function render(){renderPending=false;if(!uiBuilt)buildUI();const root=document.getElementById("xq7-root");const pv=shouldShowPanel();const showPanel=pv&&!panelHidden;if(root)root.style.display=showPanel?"":"none";if(restoreBtn)restoreBtn.style.display=panelHidden&&pv?"":"none";const boardFound=hasDetectedBoard();syncPanelMini(boardFound);if(!pv){clearHintOverlay();document.getElementById("xq7-notify")?.remove();publishStreamState();return;}if(elFen&&elSide&&elTurn&&elMoves&&elMovesLabel&&elStatus){if(state.myColor==="red")elSide.innerHTML='<span class="badge badge-red">RED</span>';else if(state.myColor==="black")elSide.innerHTML='<span class="badge badge-black">BLACK</span>';else elSide.textContent="Detecting...";const isMy=state.myColor&&state.turn===state.myColor;if(state.turn==="red"){const g=isMy?" myturn":"";elTurn.innerHTML='<span class="badge badge-red'+g+'">Red to move</span>'+(isMy?' <- <b style="color:#f0a500">YOUR TURN</b>':"");}else if(state.turn==="black"){const g=isMy?" myturn":"";elTurn.innerHTML='<span class="badge badge-black'+g+'">Black to move</span>'+(isMy?' <- <b style="color:#f0a500">YOUR TURN</b>':"");}else elTurn.textContent="-";prevTurnForNotify=state.turn;elAutoModeButtons.forEach(btn=>{const ia=btn.dataset.autoMode===cfg.autoPlayMode;btn.classList.toggle("active",ia);btn.disabled=ia;});elFen.textContent=state.fen||"-";if(state.turn!==state.myColor){elMovesLabel.textContent="Waiting for opponent...";elMoves.textContent="";}else if(state.engineAnalyzing){elMovesLabel.textContent="Analyzing "+cfg.lines+" line(s)...";elMoves.textContent="";}else if(state.engineMoves.length){elMovesLabel.textContent=state.engineMoves.length+" hint(s)";elMoves.textContent=state.engineMoves.map((m,i)=>formatHintMove(m,i,state.fen)).join("\\n");}else{elMovesLabel.textContent=!workerReady?"Engine not ready...":state.turn===state.myColor?"No hints yet":"-";elMoves.textContent="";}elStatus.textContent=state.fen?"xiangqi.com | "+new Date().toLocaleTimeString("en-US"):boardFound?"Board found, reading...":"Waiting for board...";elStatus.style.color=state.fen?"#3dc96c":"#f80";if(autoMoveError){elStatus.textContent="Engine error: "+autoMoveError;elStatus.style.color="#ff6b6b";}}publishStreamState();if(boardFound)ensureHintOverlayVisible();maybeAutoMove();}
 
-function boot(){loadConfig();startWorker();buildUI();update();startObserver();startPolling();bindViewportListeners();bindQuickMoveShortcut();log("boot:complete");}
+function boot(){loadConfig();startWorker();buildUI();applyPanelUrlCommand();update();startObserver();startPolling();bindViewportListeners();bindQuickMoveShortcut();log("boot:complete");}
 window.addEventListener("error",ev=>error("window:error",ev.message));
 window.addEventListener("unhandledrejection",ev=>error("window:unhandledrejection",ev.reason));
 if(document.body)boot();else document.addEventListener("DOMContentLoaded",boot,{once:true});
