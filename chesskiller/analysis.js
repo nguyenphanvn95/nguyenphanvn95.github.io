@@ -1215,13 +1215,6 @@ function render(){
     });
   }
 
-  if(bestArrowMove && !document.getElementById('stBestArrow')?.classList.contains('off')){
-    drawArrow(
-      bestArrowMove.fr.row,bestArrowMove.fr.col,
-      bestArrowMove.to.row,bestArrowMove.to.col,
-      getSharedSettings().arrowColor || '#6f8f4b',.42
-    );
-  }
 
   // Selected square
   if(sel){
@@ -1454,12 +1447,11 @@ function toggleSettings(){ settingsOpen ? closeSettings() : openSettings(); }
 function bindSettingControls(){
   // Settings are plain DOM controls; each one updates UI immediately and triggers
   // a fresh engine request only when it changes engine behavior.
-  [['stBestArrow',true],['stShowLines',true],['stInfinite',false],['stDebug',false]].forEach(([id,on])=>{
+  [['stShowLines',true],['stInfinite',false],['stDebug',false]].forEach(([id,on])=>{
     const el=document.getElementById(id);
     setToggleButton(el,on);
     if(el) el.addEventListener('click',()=>{
       setToggleButton(el,el.classList.contains('off'));
-      if(id==='stBestArrow') render();
       if(id==='stShowLines' || id==='stDebug') syncAuxPanels();
       if(id==='stInfinite' && engOn){
         engineOptionsSent = false;

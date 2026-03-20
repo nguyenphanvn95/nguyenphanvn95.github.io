@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Helper – Cài đặt</title>
+  <link rel="icon" href="icons/icon48.png"/>
+  <style>
+:root{--c0:#0f172a;--c1:#1e293b;--c2:#262f40;--c3:#334155;--border:#334155;--txt:#cbd5e1;--txt2:#64748b;--txt3:#f1f5f9;--indigo:#6366f1;--green:#22c55e;--yellow:#fbbf24;}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;min-height:100%;background:var(--c0);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;}
+body{max-width:480px;margin:0 auto;padding:0 0 32px;}
+
+.head{padding:20px 20px 16px;background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(139,92,246,.12));border-bottom:1px solid var(--border);}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-icon{width:42px;height:42px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 16px rgba(99,102,241,.4);}
+.brand-title{font-size:20px;font-weight:700;background:linear-gradient(135deg,#f1f5f9,#cbd5e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.brand-sub{font-size:11px;color:var(--txt2);margin-top:2px;}
+.notice{margin:14px 16px 0;background:#1a2840;border:1px solid #2d4a6a;border-radius:10px;padding:10px 14px;font-size:11px;color:#a8c4e0;line-height:1.5;}
+.notice strong{color:#6baed6;}
+
+.panel{background:linear-gradient(180deg,#1e293b,#18222f);margin:14px 0 0;padding:16px;}
+.section-title{color:var(--txt2);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:11px 13px;background:var(--c2);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;}
+.setting:last-child{margin-bottom:0;}
+.setting-label{color:var(--txt3);font-size:13px;font-weight:600;}
+.setting-sub{color:var(--txt2);font-size:10px;margin-top:2px;line-height:1.4;}
+.divider{height:1px;background:var(--border);margin:16px 0;}
+
+.toggle{position:relative;width:42px;height:22px;flex-shrink:0;}
+.toggle input{position:absolute;opacity:0;pointer-events:none;}
+.slider{position:absolute;inset:0;border-radius:11px;background:var(--c3);transition:background .2s;}
+.slider::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .18s;box-shadow:0 2px 4px rgba(0,0,0,.2);}
+.toggle input:checked+.slider{background:var(--indigo);}
+.toggle input:checked+.slider::after{transform:translateX(20px);}
+
+.select,.input-field{height:28px;padding:3px 10px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:8px;color:var(--txt3);font-size:12px;outline:none;cursor:pointer;}
+.select{min-width:80px;}
+.select option{background:#1e293b;}
+.input-field{width:60px;text-align:center;}
+.input-field:focus,.select:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(99,102,241,.18);}
+
+.delay-row{display:flex;align-items:center;gap:6px;}
+.delay-sep{color:var(--txt2);font-size:11px;}
+
+.elo-badge{padding:4px 12px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);border-radius:8px;color:#a5b4fc;font-size:11px;font-weight:600;}
+
+.backup-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+.btn{height:38px;border:1px solid var(--border);border-radius:10px;background:var(--c2);color:var(--txt3);font:600 12px system-ui;cursor:pointer;transition:background .15s;}
+.btn:hover{background:rgba(99,102,241,.18);border-color:var(--indigo);}
+.hidden-file{display:none;}
+
+.saved-msg{min-height:18px;margin-top:8px;color:var(--green);font-size:12px;text-align:center;opacity:0;transition:opacity .25s;}
+.saved-msg.show{opacity:1;}
+  </style>
+</head>
+<body>
+<div class="head">
+  <div class="brand">
+    <div class="brand-icon">♟</div>
+    <div>
+      <div class="brand-title">Chess Helper</div>
+      <div class="brand-sub">Stockfish 18 · chess.com &amp; lichess.org</div>
+    </div>
+  </div>
+  <div class="notice">
+    <strong>Lưu ý:</strong> Cài đặt lưu trong <strong>localStorage</strong>. Mở trang này trên <strong>cùng trình duyệt</strong> đang chơi.
+  </div>
+</div>
+
+<div class="panel">
+  <div class="section-title">Phân tích</div>
+  <div class="setting">
+    <div><div class="setting-label">Depth (Moves Ahead)</div><div class="setting-sub">Độ sâu phân tích: 1–12. Cao hơn = mạnh hơn</div></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <select class="select" id="depth"></select>
+      <span class="elo-badge" id="eloBadge">1600-1850</span>
+    </div>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Số gợi ý (MultiPV)</div><div class="setting-sub">Hiện 1–3 nước cùng lúc</div></div>
+    <select class="select" id="lines">
+      <option value="1">1 (Best)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Phong cách (Style Mode)</div></div>
+    <select class="select" id="styleMode">
+      <option value="default">Default</option>
+      <option value="aggressive">Aggressive</option>
+      <option value="defensive">Defensive</option>
+      <option value="endgame">Endgame</option>
+      <option value="suicide">Suicide</option>
+      <option value="human">Human</option>
+    </select>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Bắt đầu từ nước</div><div class="setting-sub">Bỏ qua N nước đầu</div></div>
+    <input type="number" class="input-field" id="startMove" min="1" max="50" value="1"/>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="section-title">Hiển thị</div>
+  <div class="setting">
+    <div class="setting-label">Hiện mũi tên</div>
+    <label class="toggle"><input type="checkbox" id="arrows" checked/><span class="slider"></span></label>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Hiện nước đi địch</div><div class="setting-sub">Tắt = chỉ tính lượt mình</div></div>
+    <label class="toggle"><input type="checkbox" id="showEnemy"/><span class="slider"></span></label>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Ẩn gợi ý</div><div class="setting-sub">Click mắt để lộ từng dòng</div></div>
+    <label class="toggle"><input type="checkbox" id="hideSuggestion"/><span class="slider"></span></label>
+  </div>
+  <div class="setting">
+    <div><div class="setting-label">Phân tích nước đã đi</div><div class="setting-sub">Đánh giá Brilliant/Best/Blunder…</div></div>
+    <label class="toggle"><input type="checkbox" id="analyzePlayerMoves" checked/><span class="slider"></span></label>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="section-title">Auto Play</div>
+  <div class="setting">
+    <div><div class="setting-label">Tự động đi</div><div class="setting-sub">⚠️ Rủi ro phát hiện cao!</div></div>
+    <label class="toggle"><input type="checkbox" id="autoPlay"/><span class="slider"></span></label>
+  </div>
+  <div class="setting" id="autoDelayRow" style="display:none">
+    <div><div class="setting-label">Delay auto (giây)</div><div class="setting-sub">Ngẫu nhiên từ min đến max</div></div>
+    <div class="delay-row">
+      <input type="number" class="input-field" id="autoDelayMin" min="0" max="30" value="0"/>
+      <span class="delay-sep">→</span>
+      <input type="number" class="input-field" id="autoDelayMax" min="0" max="30" value="0"/>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="section-title">Sao lưu cài đặt</div>
+  <div class="backup-actions">
+    <button class="btn" id="exportBtn">Xuất JSON</button>
+    <button class="btn" id="importBtn">Nhập JSON</button>
+  </div>
+  <input type="file" class="hidden-file" id="importInput" accept=".json,application/json"/>
+</div>
+
+<div class="saved-msg" id="savedMsg"></div>
+
+<script>
+'use strict';
+// Storage keys match exactly what content.js uses
+const STORAGE = {
+  depth: '_ch_d', skipEnemy: '_ch_s', startMove: '_ch_m', lines: '_ch_l',
+  styleMode: '_ch_style', arrows: '_ch_a', hideSuggestion: '_ch_hide',
+  autoDelayMin: '_ch_delay_min', autoDelayMax: '_ch_delay_max',
+  autoPlay: '_ch_auto', analyzePlayerMoves: '_ch_analyze_moves',
+};
+const DEPTH_ELO = {1:{min:1200,max:1500},2:{min:1300,max:1550},3:{min:1350,max:1650},4:{min:1450,max:1700},5:{min:1500,max:1800},6:{min:1600,max:1850},7:{min:1650,max:1950},8:{min:1750,max:2050},9:{min:1800,max:2100},10:{min:1900,max:2200},11:{min:1950,max:2250},12:{min:2050,max:2350}};
+
+const $= id => document.getElementById(id);
+
+function getLS(key, def) {
+  try { const v = localStorage.getItem(key); return v !== null ? v : def; } catch { return def; }
+}
+function setLS(key, val) { try { localStorage.setItem(key, val); } catch {} }
+
+function loadAll() {
+  const depth = parseInt(getLS(STORAGE.depth, '6')) || 6;
+  $('depth').value = Math.min(12, Math.max(1, depth));
+  updateElo(depth);
+  $('lines').value = Math.min(3, Math.max(1, parseInt(getLS(STORAGE.lines, '1')) || 1));
+  $('styleMode').value = getLS(STORAGE.styleMode, 'default') || 'default';
+  $('startMove').value = Math.max(1, parseInt(getLS(STORAGE.startMove, '1')) || 1);
+  $('arrows').checked = getLS(STORAGE.arrows, '1') !== '0';
+  $('showEnemy').checked = getLS(STORAGE.skipEnemy, '1') === '0'; // skipEnemy=1 means skip (don't show)
+  $('hideSuggestion').checked = getLS(STORAGE.hideSuggestion, '0') === '1';
+  $('analyzePlayerMoves').checked = getLS(STORAGE.analyzePlayerMoves, '1') !== '0';
+  $('autoPlay').checked = getLS(STORAGE.autoPlay, '0') === '1';
+  $('autoDelayMin').value = parseInt(getLS(STORAGE.autoDelayMin, '0')) || 0;
+  $('autoDelayMax').value = parseInt(getLS(STORAGE.autoDelayMax, '0')) || 0;
+  syncAutoDelayRow();
+}
+
+// Build depth options
+(function() {
+  const sel = $('depth');
+  for (let i = 1; i <= 12; i++) {
+    const opt = document.createElement('option');
+    opt.value = i; opt.textContent = i;
+    sel.appendChild(opt);
+  }
+})();
+
+function updateElo(depth) {
+  const d = Math.min(12, Math.max(1, parseInt(depth) || 6));
+  const range = DEPTH_ELO[d] || DEPTH_ELO[6];
+  $('eloBadge').textContent = `${range.min}-${range.max}`;
+}
+
+function syncAutoDelayRow() {
+  $('autoDelayRow').style.display = $('autoPlay').checked ? '' : 'none';
+}
+
+function showSaved(msg) {
+  const el = $('savedMsg'); el.textContent = msg || 'Đã lưu ✓';
+  el.classList.add('show'); clearTimeout(el._t);
+  el._t = setTimeout(() => el.classList.remove('show'), 1200);
+}
+
+// Wire events
+$('depth').addEventListener('change', () => {
+  const v = Math.min(12, Math.max(1, parseInt($('depth').value) || 6));
+  setLS(STORAGE.depth, v); updateElo(v); showSaved();
+});
+$('lines').addEventListener('change', () => { setLS(STORAGE.lines, $('lines').value); showSaved(); });
+$('styleMode').addEventListener('change', () => { setLS(STORAGE.styleMode, $('styleMode').value); showSaved(); });
+$('startMove').addEventListener('change', () => {
+  const v = Math.max(1, parseInt($('startMove').value) || 1);
+  $('startMove').value = v; setLS(STORAGE.startMove, v); showSaved();
+});
+$('arrows').addEventListener('change', () => { setLS(STORAGE.arrows, $('arrows').checked ? '1' : '0'); showSaved(); });
+$('showEnemy').addEventListener('change', () => {
+  // showEnemy checked = skipEnemy=0 (don't skip = show enemy move)
+  setLS(STORAGE.skipEnemy, $('showEnemy').checked ? '0' : '1'); showSaved();
+});
+$('hideSuggestion').addEventListener('change', () => { setLS(STORAGE.hideSuggestion, $('hideSuggestion').checked ? '1' : '0'); showSaved(); });
+$('analyzePlayerMoves').addEventListener('change', () => { setLS(STORAGE.analyzePlayerMoves, $('analyzePlayerMoves').checked ? '1' : '0'); showSaved(); });
+$('autoPlay').addEventListener('change', () => {
+  setLS(STORAGE.autoPlay, $('autoPlay').checked ? '1' : '0');
+  syncAutoDelayRow(); showSaved();
+});
+$('autoDelayMin').addEventListener('change', () => {
+  let mn = Math.max(0, Math.min(30, parseInt($('autoDelayMin').value) || 0));
+  let mx = Math.max(0, Math.min(30, parseInt($('autoDelayMax').value) || 0));
+  if (mx < mn) { mx = mn; $('autoDelayMax').value = mx; }
+  setLS(STORAGE.autoDelayMin, mn); setLS(STORAGE.autoDelayMax, mx); showSaved();
+});
+$('autoDelayMax').addEventListener('change', () => {
+  let mn = Math.max(0, Math.min(30, parseInt($('autoDelayMin').value) || 0));
+  let mx = Math.max(0, Math.min(30, parseInt($('autoDelayMax').value) || 0));
+  if (mx < mn) { mn = mx; $('autoDelayMin').value = mn; }
+  setLS(STORAGE.autoDelayMin, mn); setLS(STORAGE.autoDelayMax, mx); showSaved();
+});
+
+// Export / Import
+$('exportBtn').addEventListener('click', () => {
+  const data = {};
+  Object.entries(STORAGE).forEach(([k, lsKey]) => { data[k] = localStorage.getItem(lsKey); });
+  const blob = new Blob([JSON.stringify({app:'ChessHelper',exportedAt:new Date().toISOString(),settings:data},null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'chesshelper-settings.json'; a.click();
+  showSaved('Đã xuất ✓');
+});
+$('importBtn').addEventListener('click', () => $('importInput').click());
+$('importInput').addEventListener('change', async e => {
+  const file = e.target?.files?.[0]; if (!file) return;
+  try {
+    const raw = await file.text(); const parsed = JSON.parse(raw);
+    const data = parsed.settings || parsed;
+    Object.entries(STORAGE).forEach(([k, lsKey]) => {
+      if (data[k] !== undefined && data[k] !== null) setLS(lsKey, data[k]);
+    });
+    loadAll(); showSaved('Đã nhập ✓');
+  } catch { showSaved('File không hợp lệ!'); }
+  $('importInput').value = '';
+});
+
+loadAll();
+</script>
+</body>
+</html>

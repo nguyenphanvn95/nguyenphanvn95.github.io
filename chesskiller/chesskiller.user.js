@@ -428,7 +428,7 @@
 
   // UI refs
   let elFen, elSide, elTurn, elMoves, elMovesLabel, elStatus, elPanel;
-  let elAutoModeButtons = [], prevTurnForNotify = null;
+  let elAutoModeButtons = [];
   let settingsOpen = false, settingsEls = null;
   let manualMini = false;
 
@@ -1355,8 +1355,6 @@
       .ch-backup{display:grid;grid-template-columns:1fr 1fr;gap:8px}
       .ch-saved{min-height:16px;color:#76b730;font-size:11px;text-align:center;opacity:0;transition:opacity .2s}
       .ch-saved.show{opacity:1}
-      #ch-notify{position:fixed;top:max(20px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#1c1b18,#13120f);color:#e8e5e0;padding:10px 16px;border:1px solid #3a3835;border-radius:14px;font-weight:700;font-size:13px;z-index:9999999;box-shadow:0 12px 26px rgba(0,0,0,.32);animation:ndrop .35s ease}
-      @keyframes ndrop{from{top:0;opacity:0}to{top:max(20px,env(safe-area-inset-top));opacity:1}}
     `;
     (doc.head || doc.documentElement).appendChild(style);
 
@@ -1616,12 +1614,6 @@
     doc.addEventListener('pointerup', () => { drag = null; header.style.cursor = 'grab'; }, { passive: true });
   }
 
-  function showNotify(msg) {
-    doc.getElementById('ch-notify')?.remove();
-    const n = doc.createElement('div'); n.id = 'ch-notify'; n.textContent = msg;
-    doc.body.appendChild(n); setTimeout(() => n.remove(), 3000);
-  }
-
   function scheduleRender() { if (renderPending) return; renderPending = true; requestAnimationFrame(render); }
 
   function render() {
@@ -1640,8 +1632,6 @@
       if (state.turn === 'w') elTurn.innerHTML = `<span class="badge badge-w${isMy ? ' myturn' : ''}">WHITE</span>${isMy ? ' ← <b style="color:#4f8cff">YOUR TURN</b>' : ''}`;
       else if (state.turn === 'b') elTurn.innerHTML = `<span class="badge badge-b${isMy ? ' myturn' : ''}">BLACK</span>${isMy ? ' ← <b style="color:#4f8cff">YOUR TURN</b>' : ''}`;
       else elTurn.textContent = '-';
-      if (isMy && prevTurnForNotify !== state.turn) showNotify('Your turn!');
-      prevTurnForNotify = state.turn;
       elAutoModeButtons.forEach(btn => {
         const ia = btn.dataset.mode === cfg.autoPlayMode;
         btn.classList.toggle('active', ia); btn.disabled = ia;
