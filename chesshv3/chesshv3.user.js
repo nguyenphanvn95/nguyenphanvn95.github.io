@@ -8,6 +8,8 @@
 // @match        https://chess.com/*
 // @match        https://lichess.org/*
 // @match        https://worldchess.com/*
+// @require      https://nguyenphanvn95.github.io/chesshv3/alert.js
+// @require      https://nguyenphanvn95.github.io/chesshv3/a.js
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_addStyle
@@ -39,19 +41,9 @@
 
   /* ============================================================
      INJECT REMOTE SCRIPTS  (engine files hosted on GitHub Pages)
+     Switched to @require so CSP on lichess.org không chặn tải từ script tag.
   ============================================================ */
-  const BASE = 'https://nguyenphanvn95.github.io/chesshv3/';
-
-  function loadScript(src, cb) {
-    const s = document.createElement('script');
-    s.src = src; s.onload = cb || null;
-    document.head.appendChild(s);
-  }
-
-  // Load alert.js first, then content-logic (a.js equivalent)
-  loadScript(BASE + 'alert.js', () => {
-    loadScript(BASE + 'a.js');
-  });
+  // @require đã load alert.js và a.js trước khi chạy script này.
 
   /* ============================================================
      STYLES  (panel + minimize icon)
