@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCA - Chinese Chess Assistant for xiangqi.com</title>
-  <meta name="description" content="CCA is a userscript for xiangqi.com powered by Pikafish, with move hints, board arrows, and in-panel settings.">
-  <meta property="og:title" content="CCA - Chinese Chess Assistant for xiangqi.com">
-  <meta property="og:description" content="Install the CCA userscript to get move hints, position analysis, and Pikafish integration directly on xiangqi.com.">
+  <title>CCA - Tr? lý C? tu?ng cho xiangqi.com</title>
+  <meta name="description" content="CCA là userscript cho xiangqi.com dùng Pikafish, có g?i ý nu?c di, mui tên trên bàn c? và cài d?t ngay trong panel.">
+  <meta property="og:title" content="CCA - Tr? lý C? tu?ng cho xiangqi.com">
+  <meta property="og:description" content="Cài userscript CCA d? nh?n g?i ý nu?c di, phân tích th? c? và tích h?p Pikafish tr?c ti?p trên xiangqi.com.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://nguyenphanvn95.github.io/cca/icons/icon128.png">
   <link rel="icon" href="icons/icon48.png">
@@ -104,7 +104,7 @@
       opacity:.8
     }
     .board::after{
-      content:"CHU RIVER  HAN BORDER";
+      content:"SÔNG CHU  HÁN GI?I";
       position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%);
       display:flex;justify-content:space-between;align-items:center;
       padding:8px 18px;
@@ -175,30 +175,30 @@
     <header class="nav">
       <a class="brand" href="index.html">
         <img src="icons/icon48.png" alt="CCA">
-        <span>CCA - Chinese Chess Assistant</span>
+        <span>CCA - Tr? lý C? tu?ng</span>
       </a>
       <nav class="nav-links">
-        <a class="btn-ghost" href="#installation">Installation</a>
-        <a class="btn-ghost" href="#usage">Usage</a>
-        <a class="btn-ghost" href="analysis.html">Analysis</a>
+        <a class="btn-ghost" href="#installation">Cài d?t</a>
+        <a class="btn-ghost" href="#usage">Cách dùng</a>
+        <a class="btn-ghost" href="analysis.html">Phân tích</a>
         <a class="btn-ghost" href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
 
     <section class="hero">
       <div class="hero-card">
-        <div class="eyebrow">Xiangqi.com userscript</div>
-        <h1>Real-time Chinese chess assistant for xiangqi.com</h1>
-        <p class="lead">CCA uses Pikafish to read the current position, draw hint arrows, show move evaluation, and support auto move. The panel and settings are embedded directly into the interface for a cleaner and faster workflow.</p>
+        <div class="eyebrow">Userscript cho Xiangqi.com</div>
+        <h1>Tr? lý c? tu?ng th?i gian th?c cho xiangqi.com</h1>
+        <p class="lead">CCA dùng Pikafish d? d?c th? c? hi?n t?i, v? mui tên g?i ý, hi?n th? dánh giá nu?c di và h? tr? t? di. Panel và cài d?t n?m ngay trong giao di?n d? thao tác nhanh và g?n.</p>
         <div class="cta">
-          <a class="btn" href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Install userscript</a>
-          <a class="btn-ghost" href="analysis.html">Open analysis board</a>
+          <a class="btn" href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Cài userscript</a>
+          <a class="btn-ghost" href="analysis.html">M? bàn phân tích</a>
         </div>
         <div class="chips">
-          <span class="chip">Pikafish engine</span>
-          <span class="chip">Auto mini panel</span>
-          <span class="chip">In-panel settings</span>
-          <span class="chip">Auto move support</span>
+          <span class="chip">Ð?ng co Pikafish</span>
+          <span class="chip">Panel t? thu g?n</span>
+          <span class="chip">Cài d?t trong panel</span>
+          <span class="chip">H? tr? t? di</span>
         </div>
       </div>
       <div class="hero-card preview">
@@ -236,71 +236,71 @@
     </section>
 
     <section class="section">
-      <h2 class="section-title">Core features</h2>
+      <h2 class="section-title">Tính nang chính</h2>
       <div class="grid-3">
         <article class="card">
-          <h3>Hints directly on the board</h3>
-          <p>Read FEN directly from xiangqi.com, analyze with the engine, and draw arrows on the live board.</p>
+          <h3>G?i ý ngay trên bàn c?</h3>
+          <p>Ð?c FEN tr?c ti?p t? xiangqi.com, phân tích b?ng engine và v? mui tên trên bàn c?.</p>
         </article>
         <article class="card">
-          <h3>Smaller panel footprint</h3>
-          <p>When no board is detected, the panel collapses to its header. Once a board is found, it expands automatically.</p>
+          <h3>Panel g?n nh?</h3>
+          <p>Khi chua phát hi?n bàn c?, panel t? thu g?n vào tiêu d?. Có bàn c? thì t? m? r?ng.</p>
         </article>
         <article class="card">
-          <h3>Built-in settings</h3>
-          <p>No separate popup is required. Depth, hint lines, arrow colors, auto move, and backup all live inside the panel.</p>
+          <h3>Cài d?t tích h?p</h3>
+          <p>Không c?n popup riêng. Ð? sâu, s? dòng g?i ý, màu mui tên, t? di và sao luu d?u n?m trong panel.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="installation">
-      <h2 class="section-title">Installation</h2>
+      <h2 class="section-title">Cài d?t</h2>
       <div class="grid-2">
         <article class="card">
-          <h3>1. Install Tampermonkey</h3>
-          <p>If your browser does not already have a userscript manager, install Tampermonkey first.</p>
+          <h3>1. Cài Tampermonkey</h3>
+          <p>N?u trình duy?t chua có trình qu?n lý userscript, hãy cài Tampermonkey tru?c.</p>
         </article>
         <article class="card">
-          <h3>2. Install CCA</h3>
-          <p>Open the install link below and approve the installation in Tampermonkey.</p>
+          <h3>2. Cài CCA</h3>
+          <p>M? liên k?t du?i dây và xác nh?n cài d?t trong Tampermonkey.</p>
           <span class="code">https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js</span>
         </article>
       </div>
     </section>
 
     <section class="section" id="usage">
-      <h2 class="section-title">Usage</h2>
+      <h2 class="section-title">Cách dùng</h2>
       <article class="card">
         <ol class="steps">
-          <li>Open <strong>xiangqi.com</strong> and enter a game.</li>
-          <li>CCA detects the board automatically. While the board is not ready, the panel stays collapsed.</li>
-          <li>Click the gear button to open settings inside the panel.</li>
-          <li>Adjust depth, hint count, arrow style, auto-move delay, and shortcut key as needed.</li>
-          <li>If you need a separate board view, open the <a href="analysis.html">analysis board</a>.</li>
+          <li>M? <strong>xiangqi.com</strong> và vào m?t ván c?.</li>
+          <li>CCA t? phát hi?n bàn c?. Khi chua s?n sàng, panel s? thu g?n.</li>
+          <li>Nh?n nút bánh rang d? m? ph?n cài d?t trong panel.</li>
+          <li>Ði?u ch?nh d? sâu, s? dòng g?i ý, ki?u mui tên, d? tr? t? di và phím t?t.</li>
+          <li>N?u c?n xem bàn phân tích riêng, m? <a href="analysis.html">bàn phân tích</a>.</li>
         </ol>
       </article>
     </section>
 
     <section class="section">
-      <h2 class="section-title">Resources</h2>
+      <h2 class="section-title">Tài nguyên</h2>
       <div class="grid-2">
         <article class="card">
-          <h3>Quick links</h3>
+          <h3>Liên k?t nhanh</h3>
           <ul>
-            <li><a href="analysis.html">Analysis board</a></li>
-            <li><a href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Direct install script</a></li>
-            <li><a href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/tree/main/cca" target="_blank" rel="noopener">CCA source code</a></li>
+            <li><a href="analysis.html">Bàn phân tích</a></li>
+            <li><a href="https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/cca/cca.user.js" target="_blank" rel="noopener">Script cài tr?c ti?p</a></li>
+            <li><a href="https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/tree/main/cca" target="_blank" rel="noopener">Mã ngu?n CCA</a></li>
           </ul>
         </article>
         <article class="card">
-          <h3>Note</h3>
-          <p>This page is only the landing page and installation entry point. The script logic, engine, and assets are hosted on your GitHub Pages deployment.</p>
+          <h3>Ghi chú</h3>
+          <p>Ðây là trang gi?i thi?u và cài d?t. Logic script, engine và tài nguyên du?c host trên GitHub Pages c?a b?n.</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      <p>CCA is built for xiangqi.com. This landing page was redesigned into a minimal version with only the relevant product content.</p>
+      <p>CCA du?c xây cho xiangqi.com. Trang gi?i thi?u này ch? gi? l?i n?i dung s?n ph?m c?n thi?t.</p>
     </footer>
   </div>
 </body>
