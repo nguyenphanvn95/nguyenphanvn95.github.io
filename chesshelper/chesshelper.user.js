@@ -197,11 +197,30 @@
     }
 
     async ensureReady(timeoutMs) {
-      if (this.ready) return;
+      const startedAt = Date.now();
+      console.log('[Chess Helper] [Engine] host:ensure-ready', {
+        frameKey: this.key,
+        timeoutMs: timeoutMs || 8000,
+        ready: this.ready,
+      });
+      if (this.ready) {
+        console.log('[Chess Helper] [Engine] host:already-ready', { frameKey: this.key });
+        return;
+      }
       await Promise.race([
         this._readyPromise,
-        new Promise((_, rej) => setTimeout(() => rej(new Error('engine_host_ready_timeout')), timeoutMs || 8000))
+        new Promise((_, rej) => setTimeout(() => {
+          const err = new Error('engine_host_ready_timeout');
+          console.error('[Chess Helper] [Engine] host:ready-timeout', {
+            frameKey: this.key,
+            timeoutMs: timeoutMs || 8000,
+            elapsedMs: Date.now() - startedAt,
+            ready: this.ready,
+          });
+          rej(err);
+        }, timeoutMs || 8000))
       ]);
+      console.log('[Chess Helper] [Engine] host:ready-complete', { frameKey: this.key, elapsedMs: Date.now() - startedAt });
     }
 
     async analyze(fen, { depth, multipv, timeoutMs, styleMode }) {

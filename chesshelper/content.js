@@ -2557,12 +2557,49 @@
 
     async ensureReady(timeoutMs = 8000) {
       this.ensureFrame()
-      if (this.ready) return
+      const startedAt = Date.now()
+      logEvent('Engine', 'host:ensure-ready', {
+        frameKey: this.frameKey,
+        timeoutMs,
+        ready: this.ready,
+        frameSrc: this.frame?.src || null,
+      })
+      if (this.ready) {
+        logEvent('Engine', 'host:already-ready', { frameKey: this.frameKey })
+        return
+      }
       await new Promise((resolve, reject) => {
-        const timer = setTimeout(() => reject(new Error('engine_host_ready_timeout')), timeoutMs)
+        const timer = setTimeout(() => {
+          const error = new Error('engine_host_ready_timeout')
+          logEvent('Engine', 'host:ready-timeout', {
+            frameKey: this.frameKey,
+            timeoutMs,
+            elapsedMs: Date.now() - startedAt,
+            frameReady: this.ready,
+            frameConnected: !!this.frame?.isConnected,
+            frameSrc: this.frame?.src || null,
+          })
+          reject(error)
+        }, timeoutMs)
+
         this.readyPromise.then(
-          () => { clearTimeout(timer); resolve(true) },
-          (error) => { clearTimeout(timer); reject(error) }
+          () => {
+            clearTimeout(timer)
+            logEvent('Engine', 'host:ready-resolved', {
+              frameKey: this.frameKey,
+              elapsedMs: Date.now() - startedAt,
+            })
+            resolve(true)
+          },
+          (error) => {
+            clearTimeout(timer)
+            logEvent('Engine', 'host:ready-rejected', {
+              frameKey: this.frameKey,
+              error: error?.message || String(error),
+              elapsedMs: Date.now() - startedAt,
+            })
+            reject(error)
+          }
         )
       })
     }
