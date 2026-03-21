@@ -2,9 +2,9 @@
   'use strict';
 
   function resolveLib(file) {
-    var name = String(file || '').split('/').pop() || file;
-    return 'https://nguyenphanvn95.github.io/chesshelper/lib/' + name;
-  }
+    try {
+      var name = String(file || '').split('/').pop() || file;
+      return 'https://nguyenphanvn95.github.io/chesshelper/lib/' + name;
     } catch (err) {
       // Fall through to relative URL.
     }

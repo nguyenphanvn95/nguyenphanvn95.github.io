@@ -287,11 +287,14 @@
   ================================================================ */
   function injectLichessBridge() {
     if (w.location.hostname.includes('lichess') && !doc.getElementById('__ch_lichess_bridge__')) {
-      // Fetch bridge code and inject as script tag into page
+      // Fetch bridge code and inject as script tag into page using Blob URL (CSP-safe)
       gmFetchText(BASE + '/lichess-page-bridge.js').then(code => {
+        const blob = new Blob([code], { type: 'application/javascript' });
+        const blobUrl = URL.createObjectURL(blob);
         const s = doc.createElement('script');
         s.id = '__ch_lichess_bridge__';
-        s.textContent = code;
+        s.src = blobUrl;
+        s.onload = () => { URL.revokeObjectURL(blobUrl); };
         (doc.head || doc.documentElement).appendChild(s);
         console.log('[Chess Helper] Lichess bridge injected');
       }).catch(err => {
@@ -516,9 +519,12 @@ window.addEventListener('message', function(e) {
     // Fetch and patch content.js, then inject
     try {
       const patched = await fetchAndPatchContentJs();
+      const blob = new Blob([patched], { type: 'application/javascript' });
+      const blobUrl = URL.createObjectURL(blob);
       const s = doc.createElement('script');
       s.id = '__ch_content_script__';
-      s.textContent = patched;
+      s.src = blobUrl;
+      s.onload = () => { URL.revokeObjectURL(blobUrl); };
       (doc.head || doc.documentElement).appendChild(s);
       console.log('[Chess Helper] Content script injected');
     } catch (err) {
