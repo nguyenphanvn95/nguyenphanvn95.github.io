@@ -92,14 +92,40 @@
       this.lastConfigKey = '';
       this._readyResolve = null;
       this._readyReject = null;
-      this._readyPromise = new Promise((res, rej) => { this._readyResolve = res; this._readyReject = rej; });
+      this._readyPromise = null;
       this._bootTimer = null;
       this._starting = false;
+      this._readyAttempts = 0;
+      this.resetReadyPromise();
       this.start();
+    }
+
+    resetReadyPromise() {
+      this._readyPromise = new Promise((res, rej) => { this._readyResolve = res; this._readyReject = rej; });
+    }
+
+    resetHost() {
+      if (this._bootTimer) { clearTimeout(this._bootTimer); this._bootTimer = null; }
+      this.ready = false;
+      this.sentUci = false;
+      this.sentIsReady = false;
+      this.queue = [];
+      this.currentJob = null;
+      if (this.worker) {
+        try { this.worker.terminate(); } catch (e) {
+          console.warn('[Chess Helper] Worker terminate failed', e);
+        }
+        this.worker = null;
+      }
+      this._starting = false;
+      this.resetReadyPromise();
     }
 
     async start() {
       if (this._starting) return;
+      this._starting = true;
+      this._readyAttempts = 0;
+      this.resetHost();
       this._starting = true;
       try {
         const ew = await createBlobWorker(LIB_BASE + '/stockfish-worker.js');
@@ -107,23 +133,24 @@
         ew.onmessage = (e) => this._onLine(typeof e.data === 'string' ? e.data : String(e.data || ''));
         ew.onerror = (err) => {
           console.warn('[Chess Helper] Worker error:', err?.message);
-          if (!this.ready) { this._readyReject(new Error(err?.message || 'Worker error')); }
+          if (!this.ready && this._readyReject) { this._readyReject(new Error(err?.message || 'Worker error')); }
           if (this.currentJob) { this.currentJob.reject(new Error(err?.message || 'Worker error')); this.currentJob = null; }
         };
         clearTimeout(this._bootTimer);
         this._bootTimer = setTimeout(() => {
-          if (!this.ready) this._readyReject(new Error('Engine timeout'));
+          if (!this.ready && this._readyReject) this._readyReject(new Error('Engine timeout'));
         }, 12000);
         ew.postMessage('uci');
       } catch (err) {
         console.error('[Chess Helper] createBlobWorker failed:', err);
-        this._readyReject(err);
+        if (this._readyReject) this._readyReject(err);
         this._starting = false;
       }
     }
 
     _onLine(line) {
       if (!line) return;
+      console.log('[Chess Helper] [Engine] host:line', { frameKey: this.key, line });
       // Forward line to the content script's message handler via window.postMessage
       // This reuses the existing EngineHostClient.handleLine() in content.js
       // BUT content.js's EngineHostClient.installListener() filters by frame.contentWindow
@@ -197,30 +224,57 @@
     }
 
     async ensureReady(timeoutMs) {
+      timeoutMs = Math.max(8000, timeoutMs || 8000);
       const startedAt = Date.now();
+      this._readyAttempts = this._readyAttempts || 0;
       console.log('[Chess Helper] [Engine] host:ensure-ready', {
         frameKey: this.key,
-        timeoutMs: timeoutMs || 8000,
+        attempt: this._readyAttempts + 1,
+        timeoutMs,
         ready: this.ready,
       });
+
       if (this.ready) {
         console.log('[Chess Helper] [Engine] host:already-ready', { frameKey: this.key });
+        this._readyAttempts = 0;
         return;
       }
-      await Promise.race([
-        this._readyPromise,
-        new Promise((_, rej) => setTimeout(() => {
-          const err = new Error('engine_host_ready_timeout');
-          console.error('[Chess Helper] [Engine] host:ready-timeout', {
-            frameKey: this.key,
-            timeoutMs: timeoutMs || 8000,
-            elapsedMs: Date.now() - startedAt,
-            ready: this.ready,
-          });
-          rej(err);
-        }, timeoutMs || 8000))
-      ]);
-      console.log('[Chess Helper] [Engine] host:ready-complete', { frameKey: this.key, elapsedMs: Date.now() - startedAt });
+
+      if (this._readyAttempts >= 2) {
+        throw new Error('engine_host_ready_timeout');
+      }
+
+      this._readyAttempts += 1;
+
+      try {
+        await Promise.race([
+          this._readyPromise,
+          new Promise((_, rej) => setTimeout(() => {
+            const err = new Error('engine_host_ready_timeout');
+            console.error('[Chess Helper] [Engine] host:ready-timeout', {
+              frameKey: this.key,
+              attempt: this._readyAttempts,
+              timeoutMs,
+              elapsedMs: Date.now() - startedAt,
+              ready: this.ready,
+            });
+            rej(err);
+          }, timeoutMs))
+        ]);
+
+        console.log('[Chess Helper] [Engine] host:ready-complete', { frameKey: this.key, attempt: this._readyAttempts, elapsedMs: Date.now() - startedAt });
+        this._readyAttempts = 0;
+        return;
+      } catch (err) {
+        console.warn('[Chess Helper] [Engine] host:ready-failed', { frameKey: this.key, attempt: this._readyAttempts, error: err?.message });
+        if (this._readyAttempts < 2) {
+          console.log('[Chess Helper] [Engine] host:retrying', { frameKey: this.key, attempt: this._readyAttempts + 1 });
+          this.resetHost();
+          await this.start();
+          return this.ensureReady(timeoutMs);
+        }
+        throw err;
+      }
     }
 
     async analyze(fen, { depth, multipv, timeoutMs, styleMode }) {
