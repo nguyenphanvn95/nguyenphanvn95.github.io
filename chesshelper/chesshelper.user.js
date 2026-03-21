@@ -45,13 +45,28 @@
   async function createBlobWorker(workerUrl) {
     const text = await gmFetchText(workerUrl);
     // Replace resolveLib to use absolute GitHub Pages URL
-    const patched = text.replace(
-      /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
-      `function resolveLib(file) {
-        var name = String(file || '').split('/').pop() || file;
-        return '${LIB_BASE}/' + name;
-      }`
-    );
+    // Also handle possible broken legacy payload containing stray `} catch` blocks
+    let patched = text
+    const resolveLibBlock = /function\s+resolveLib\s*\([^)]*\)\s*\{[\s\S]*?self\.Module\s*=\s*self\.Module/;
+    if (resolveLibBlock.test(text)) {
+      patched = text.replace(resolveLibBlock, `function resolveLib(file) {
+        try {
+          var name = String(file || '').split('/').pop() || file;
+          return '${LIB_BASE}/' + name;
+        } catch (err) {
+          // Fall through to relative URL.
+        }
+        return new URL(file, self.location.href).href;
+      }\n\n      self.Module = self.Module`);
+    } else {
+      patched = text.replace(
+        /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
+        `function resolveLib(file) {
+          var name = String(file || '').split('/').pop() || file;
+          return '${LIB_BASE}/' + name;
+        }`
+      );
+    }
     const blob = new Blob([patched], { type: 'application/javascript' });
     const blobUrl = URL.createObjectURL(blob);
     const worker = new Worker(blobUrl);
@@ -461,10 +476,27 @@ function markReady() {
 fetch('${LIB_BASE}/stockfish-worker.js')
   .then(function(r) { return r.text(); })
   .then(function(text) {
-    var patched = text.replace(
-      /function resolveLib\\s*\\([^)]*\\)\\s*\\{[\\s\\S]*?\\}/,
-      'function resolveLib(file) { var name = String(file||"").split("/").pop()||file; return "${LIB_BASE}/" + name; }'
-    );
+    // Best-effort fix old broken resolveLib code (extra } catch in payload)
+    var patched;
+    var resolveLibBlock = /function\s+resolveLib\s*\([^)]*\)\s*\{[\s\S]*?self\.Module\s*=\s*self\.Module/;
+    if (resolveLibBlock.test(text)) {
+      patched = text.replace(resolveLibBlock,
+        'function resolveLib(file) {\n' +
+        '  try {\n' +
+        '    var name = String(file || "").split("/").pop() || file;\n' +
+        '    return "${LIB_BASE}/" + name;\n' +
+        '  } catch (err) {\n' +
+        '    // Fall through to relative URL.\n' +
+        '  }\n' +
+        '  return new URL(file, self.location.href).href;\n' +
+        '}\n\n' +
+        '      self.Module = self.Module');
+    } else {
+      patched = text.replace(
+        /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
+        'function resolveLib(file) { var name = String(file||"").split("/").pop()||file; return "${LIB_BASE}/" + name; }'
+      );
+    }
     var blob = new Blob([patched], { type: 'application/javascript' });
     var blobUrl = URL.createObjectURL(blob);
     worker = new Worker(blobUrl);
@@ -490,6 +522,7 @@ fetch('${LIB_BASE}/stockfish-worker.js')
   .catch(function(err) {
     post('worker-error', { message: String(err) });
   });
+
 
 window.addEventListener('message', function(e) {
   if (!e.data || e.data.channel !== CHANNEL || e.data.type !== 'command') return;
