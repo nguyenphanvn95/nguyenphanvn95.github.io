@@ -469,18 +469,76 @@
   async function fetchAndPatchContentJs() {
     const code = await gmFetchText(BASE + '/content.js');
 
-    // Patch 1: Replace chrome.runtime.getURL('engine_host.html') with Blob iframe
-    // The EngineHostClient.ensureFrame() creates an iframe with src = engine_host.html
-    // We replace it with our blob-based engine host URL
+    // Fetch and patch the worker code early using gmFetchText
+    let workerCode = '';
+    try {
+      const rawWorkerCode = await gmFetchText(LIB_BASE + '/stockfish-worker.js');
+      // Patch resolveLib to use absolute GitHub Pages URL
+      let patched = rawWorkerCode;
+      const resolveLibBlock = /function\s+resolveLib\s*\([^)]*\)\s*\{[\s\S]*?self\.Module\s*=\s*self\.Module/;
+      if (resolveLibBlock.test(rawWorkerCode)) {
+        patched = rawWorkerCode.replace(resolveLibBlock, `function resolveLib(file) {
+          try {
+            var name = String(file || '').split('/').pop() || file;
+            return '${LIB_BASE}/' + name;
+          } catch (err) {
+            // Fall through to relative URL.
+          }
+          return new URL(file, self.location.href).href;
+        }\n\n      self.Module = self.Module`);
+      } else {
+        patched = rawWorkerCode.replace(
+          /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
+          `function resolveLib(file) {
+            var name = String(file || '').split('/').pop() || file;
+            return '${LIB_BASE}/' + name;
+          }`
+        );
+      }
+      workerCode = patched;
+    } catch (err) {
+      console.warn('[Chess Helper] Failed to fetch/patch worker code:', err);
+    }
 
-    const engineHostBlob = createEngineHostBlob();
+    // Store worker code in window object for content.js to access
+    try {
+      Object.defineProperty(w, '__chess_helper_worker_code__', {
+        value: workerCode,
+        writable: false,
+        configurable: true,
+      });
+    } catch (e) {
+      w.__chess_helper_worker_code__ = workerCode;
+    }
 
     let patched = code;
 
     // Patch engine_host.html URL → our blob engine host
     patched = patched.replace(
       /getExtensionUrl\s*\(\s*['"]engine_host\.html['"]\s*\)/g,
-      JSON.stringify(engineHostBlob)
+      JSON.stringify(createEngineHostBlob())
+    );
+
+    // Patch to send worker code to iframe after creation
+    // Insert code after the frame is appended to initialize the worker
+    patched = patched.replace(
+      /\(document\.documentElement \|\| document\.body\)\.appendChild\(this\.frame\)/,
+      `(document.documentElement || document.body).appendChild(this.frame);
+      // Send worker code to iframe to bypass CORS fetch
+      if (window.__chess_helper_worker_code__) {
+        var frame = this.frame;
+        setTimeout(function() {
+          try {
+            frame.contentWindow.postMessage({
+              channel: 'chess-helper-engine-host',
+              type: 'init-worker',
+              workerCode: window.__chess_helper_worker_code__
+            }, '*');
+          } catch (e) {
+            console.warn('[Chess Helper] Failed to send worker code to iframe:', e);
+          }
+        }, 100);
+      }`
     );
 
     // Patch images/wizardChess → GitHub Pages URL
@@ -495,8 +553,6 @@
     );
 
     // Patch context-userid-probe.js injection → use our inline version
-    // content.js tries to create a <script src="context-userid-probe.js">
-    // Replace with inline probe code
     patched = patched.replace(
       /s\.src\s*=\s*chrome\.runtime\.getURL\s*\(\s*['"]context-userid-probe\.js['"]\s*\)/g,
       `s.textContent = ${JSON.stringify(`(function(){
@@ -521,7 +577,8 @@
   }
 
   function createEngineHostBlob() {
-    // This blob iframe hosts the Stockfish worker using our patched worker URL
+    // This blob iframe hosts the Stockfish worker
+    // Worker code is passed via postMessage to avoid CORS issues
     const script = `
 'use strict';
 var CHANNEL = 'chess-helper-engine-host';
@@ -545,32 +602,9 @@ function markReady() {
   flushQueue();
 }
 
-// Fetch worker JS and create Blob Worker (bypass cross-origin restriction)
-fetch('${LIB_BASE}/stockfish-worker.js')
-  .then(function(r) { return r.text(); })
-  .then(function(text) {
-    // Best-effort fix old broken resolveLib code (extra } catch in payload)
-    var patched;
-    var resolveLibBlock = /function\s+resolveLib\s*\([^)]*\)\s*\{[\s\S]*?self\.Module\s*=\s*self\.Module/;
-    if (resolveLibBlock.test(text)) {
-      patched = text.replace(resolveLibBlock,
-        'function resolveLib(file) {\n' +
-        '  try {\n' +
-        '    var name = String(file || "").split("/").pop() || file;\n' +
-        '    return "${LIB_BASE}/" + name;\n' +
-        '  } catch (err) {\n' +
-        '    // Fall through to relative URL.\n' +
-        '  }\n' +
-        '  return new URL(file, self.location.href).href;\n' +
-        '}\n\n' +
-        '      self.Module = self.Module');
-    } else {
-      patched = text.replace(
-        /function resolveLib\s*\([^)]*\)\s*\{[\s\S]*?\}/,
-        'function resolveLib(file) { var name = String(file||"").split("/").pop()||file; return "${LIB_BASE}/" + name; }'
-      );
-    }
-    var blob = new Blob([patched], { type: 'application/javascript' });
+function initWorker(workerCode) {
+  try {
+    var blob = new Blob([workerCode], { type: 'application/javascript' });
     var blobUrl = URL.createObjectURL(blob);
     worker = new Worker(blobUrl);
     URL.revokeObjectURL(blobUrl);
@@ -591,15 +625,21 @@ fetch('${LIB_BASE}/stockfish-worker.js')
       post('worker-error', { message: 'Engine timeout' });
     }, 12000);
     worker.postMessage('uci');
-  })
-  .catch(function(err) {
+  } catch (err) {
     post('worker-error', { message: String(err) });
-  });
-
+  }
+}
 
 window.addEventListener('message', function(e) {
-  if (!e.data || e.data.channel !== CHANNEL || e.data.type !== 'command') return;
-  var cmd = String(e.data.command || '').trim();
+  var data = e.data || {};
+  if (data.channel !== CHANNEL) return;
+  if (data.type === 'init-worker') {
+    // Receive worker code from parent and initialize
+    initWorker(data.workerCode);
+    return;
+  }
+  if (data.type !== 'command') return;
+  var cmd = String(data.command || '').trim();
   if (!cmd) return;
   if (!worker || !hostReady) { queue.push(cmd); return; }
   worker.postMessage(cmd);
