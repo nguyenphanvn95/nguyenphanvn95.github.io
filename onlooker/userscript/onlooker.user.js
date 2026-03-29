@@ -11,7 +11,24 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
+// @grant        GM_getResourceURL
 // @resource     ONLOOKER_CSS https://nguyenphanvn95.github.io/onlooker/popup-overlay.css
+// @resource     ONLOOKER_ICON_APP https://nguyenphanvn95.github.io/onlooker/icons/icon-app.png
+// @resource     ONLOOKER_UI_PLAY https://nguyenphanvn95.github.io/onlooker/icons/ui/play.svg
+// @resource     ONLOOKER_UI_CAMERA https://nguyenphanvn95.github.io/onlooker/icons/ui/camera.svg
+// @resource     ONLOOKER_UI_SEARCH https://nguyenphanvn95.github.io/onlooker/icons/ui/search.svg
+// @resource     ONLOOKER_PIECE_WK https://nguyenphanvn95.github.io/onlooker/icons/pieces/wK.svg
+// @resource     ONLOOKER_PIECE_WQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/wQ.svg
+// @resource     ONLOOKER_PIECE_WR https://nguyenphanvn95.github.io/onlooker/icons/pieces/wR.svg
+// @resource     ONLOOKER_PIECE_WB https://nguyenphanvn95.github.io/onlooker/icons/pieces/wB.svg
+// @resource     ONLOOKER_PIECE_WN https://nguyenphanvn95.github.io/onlooker/icons/pieces/wN.svg
+// @resource     ONLOOKER_PIECE_WP https://nguyenphanvn95.github.io/onlooker/icons/pieces/wP.svg
+// @resource     ONLOOKER_PIECE_BK https://nguyenphanvn95.github.io/onlooker/icons/pieces/bK.svg
+// @resource     ONLOOKER_PIECE_BQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/bQ.svg
+// @resource     ONLOOKER_PIECE_BR https://nguyenphanvn95.github.io/onlooker/icons/pieces/bR.svg
+// @resource     ONLOOKER_PIECE_BB https://nguyenphanvn95.github.io/onlooker/icons/pieces/bB.svg
+// @resource     ONLOOKER_PIECE_BN https://nguyenphanvn95.github.io/onlooker/icons/pieces/bN.svg
+// @resource     ONLOOKER_PIECE_BP https://nguyenphanvn95.github.io/onlooker/icons/pieces/bP.svg
 // @require      https://nguyenphanvn95.github.io/onlooker/userscript/bootstrap.js
 // @require      https://nguyenphanvn95.github.io/onlooker/libs/dom-to-image.min.js
 // @require      https://nguyenphanvn95.github.io/onlooker/hosted-runtime.js

@@ -4,6 +4,7 @@
 
   const config = window.__ONLOOKER_HOSTED_CONFIG__ || {};
   const baseUrl = String(config.baseUrl || new URL('./', location.href).href);
+  const resourceMap = config.resourceMap || {};
   const SETTINGS_KEY = 'onlookerSettings';
   const CHANNEL = 'fen-engine-host';
   const DEFAULT_SETTINGS = Object.freeze({
@@ -23,7 +24,13 @@
   let analysisQueue = Promise.resolve();
 
   function resolveUrl(path) {
-    return new URL(String(path || '').replace(/^\/+/, ''), baseUrl).href;
+    const normalized = String(path || '').replace(/^\/+/, '');
+    const resourceName = resourceMap[normalized];
+    if (resourceName && typeof config.getResourceUrl === 'function') {
+      const resourceUrl = config.getResourceUrl(resourceName);
+      if (resourceUrl) return resourceUrl;
+    }
+    return new URL(normalized, baseUrl).href;
   }
 
   function clone(value) {
