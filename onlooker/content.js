@@ -236,10 +236,6 @@
     panelHostEl.id = PANEL_HOST_ID;
     panelRoot = panelHostEl.attachShadow({ mode: 'open' });
 
-    const styleLink = document.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.href = chrome.runtime.getURL('popup-overlay.css');
-
     panelEl = document.createElement('div');
     panelEl.id = PANEL_ID;
     panelEl.innerHTML = `
@@ -332,7 +328,6 @@
       </button>
     `;
 
-    panelRoot.appendChild(styleLink);
     panelRoot.appendChild(panelEl);
     (document.body || document.documentElement).appendChild(panelHostEl);
     panelEl.style.display = 'none';
