@@ -1,6 +1,7 @@
 ﻿(function () {
   if (window.__fenScannerLoaded) return;
   window.__fenScannerLoaded = true;
+  const isHostedScript = Boolean(window.__ONLOOKER_HOSTED_CONFIG__);
 
   const PANEL_ID = 'fen-scanner-live-panel';
   const PANEL_HOST_ID = 'fen-scanner-live-panel-host';
@@ -213,6 +214,12 @@
   }
 
   function buildPieceImages() {
+    if (isHostedScript) {
+      return {
+        K: '', Q: '', R: '', B: '', N: '', P: '',
+        k: '', q: '', r: '', b: '', n: '', p: '',
+      };
+    }
     return {
       K: assetUrl('icons/pieces/wK.svg'),
       Q: assetUrl('icons/pieces/wQ.svg'),
@@ -242,7 +249,9 @@
       <div class="fen-live-shell">
         <div class="fen-live-header">
           <div class="fen-live-brand">
-            <img class="fen-live-brand-icon" src="${chrome.runtime.getURL('icons/icon-app.png')}" alt="OnLooker" />
+            ${isHostedScript
+              ? '<div class="fen-live-brand-mark" aria-hidden="true">♟</div>'
+              : `<img class="fen-live-brand-icon" src="${chrome.runtime.getURL('icons/icon-app.png')}" alt="OnLooker" />`}
             <div class="fen-live-title">OnLooker</div>
           </div>
           <button class="fen-live-close" type="button" title="Close">x</button>
@@ -323,7 +332,9 @@
         </div>
       </div>
       <button class="fen-live-launcher" type="button" data-role="launcher" title="Open OnLooker">
-        <img class="fen-live-launcher-icon" src="${chrome.runtime.getURL('icons/icon-app.png')}" alt="OnLooker" />
+        ${isHostedScript
+          ? '<span class="fen-live-launcher-mark" aria-hidden="true">♟</span>'
+          : `<img class="fen-live-launcher-icon" src="${chrome.runtime.getURL('icons/icon-app.png')}" alt="OnLooker" />`}
         <span class="fen-live-launcher-dot" data-role="launcher-dot"></span>
       </button>
     `;
@@ -1562,10 +1573,29 @@
       return null;
     }
 
-    for (const piece of pieces) {
-      const img = await loadPieceImage(PIECE_IMAGES[piece.code]);
-      if (!img) continue;
-      ctx.drawImage(img, piece.col * sq, piece.row * sq, sq, sq);
+    const shouldOverlayPieces = !boardMedia || !isHostedScript;
+    if (shouldOverlayPieces) {
+      for (const piece of pieces) {
+        if (isHostedScript) {
+          const glyph = PIECE_GLYPHS[piece.code] || '';
+          if (!glyph) continue;
+          ctx.save();
+          ctx.font = `700 ${Math.floor(sq * 0.8)}px "Segoe UI Symbol", "Noto Sans Symbols 2", "DejaVu Sans", serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = piece.code === piece.code.toUpperCase() ? '#fff6dd' : '#151515';
+          ctx.strokeStyle = piece.code === piece.code.toUpperCase() ? 'rgba(0,0,0,0.45)' : 'rgba(255,255,255,0.18)';
+          ctx.lineWidth = Math.max(1, sq * 0.04);
+          ctx.strokeText(glyph, (piece.col + 0.5) * sq, (piece.row + 0.53) * sq);
+          ctx.fillText(glyph, (piece.col + 0.5) * sq, (piece.row + 0.53) * sq);
+          ctx.restore();
+          continue;
+        }
+
+        const img = await loadPieceImage(PIECE_IMAGES[piece.code]);
+        if (!img) continue;
+        ctx.drawImage(img, piece.col * sq, piece.row * sq, sq, sq);
+      }
     }
 
     return {
@@ -2100,7 +2130,7 @@
 
   function drawBoardPieces(layer, board, flip, sq) {
     layer.innerHTML = '';
-    const useTextPieces = isCompactMobilePanel();
+    const useTextPieces = isCompactMobilePanel() || isHostedScript;
     for (let r = 0; r < 8; r += 1) {
       for (let c = 0; c < 8; c += 1) {
         const piece = board[r][c];

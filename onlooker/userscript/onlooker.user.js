@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OnLooker Userscript
 // @namespace    https://nguyenphanvn95.github.io/onlooker/
-// @version      1.0.1
+// @version      1.0.3
 // @description  Hosted OnLooker panel for Tampermonkey/Userscript
 // @match        *://*/*
 // @run-at       document-idle
@@ -12,27 +12,27 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @grant        GM_getResourceURL
-// @resource     ONLOOKER_CSS https://nguyenphanvn95.github.io/onlooker/popup-overlay.css
-// @resource     ONLOOKER_ICON_APP https://nguyenphanvn95.github.io/onlooker/icons/icon-app.png
-// @resource     ONLOOKER_UI_PLAY https://nguyenphanvn95.github.io/onlooker/icons/ui/play.svg
-// @resource     ONLOOKER_UI_CAMERA https://nguyenphanvn95.github.io/onlooker/icons/ui/camera.svg
-// @resource     ONLOOKER_UI_SEARCH https://nguyenphanvn95.github.io/onlooker/icons/ui/search.svg
-// @resource     ONLOOKER_PIECE_WK https://nguyenphanvn95.github.io/onlooker/icons/pieces/wK.svg
-// @resource     ONLOOKER_PIECE_WQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/wQ.svg
-// @resource     ONLOOKER_PIECE_WR https://nguyenphanvn95.github.io/onlooker/icons/pieces/wR.svg
-// @resource     ONLOOKER_PIECE_WB https://nguyenphanvn95.github.io/onlooker/icons/pieces/wB.svg
-// @resource     ONLOOKER_PIECE_WN https://nguyenphanvn95.github.io/onlooker/icons/pieces/wN.svg
-// @resource     ONLOOKER_PIECE_WP https://nguyenphanvn95.github.io/onlooker/icons/pieces/wP.svg
-// @resource     ONLOOKER_PIECE_BK https://nguyenphanvn95.github.io/onlooker/icons/pieces/bK.svg
-// @resource     ONLOOKER_PIECE_BQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/bQ.svg
-// @resource     ONLOOKER_PIECE_BR https://nguyenphanvn95.github.io/onlooker/icons/pieces/bR.svg
-// @resource     ONLOOKER_PIECE_BB https://nguyenphanvn95.github.io/onlooker/icons/pieces/bB.svg
-// @resource     ONLOOKER_PIECE_BN https://nguyenphanvn95.github.io/onlooker/icons/pieces/bN.svg
-// @resource     ONLOOKER_PIECE_BP https://nguyenphanvn95.github.io/onlooker/icons/pieces/bP.svg
-// @require      https://nguyenphanvn95.github.io/onlooker/userscript/bootstrap.js
-// @require      https://nguyenphanvn95.github.io/onlooker/libs/dom-to-image.min.js
-// @require      https://nguyenphanvn95.github.io/onlooker/hosted-runtime.js
-// @require      https://nguyenphanvn95.github.io/onlooker/content.js
+// @resource     ONLOOKER_CSS https://nguyenphanvn95.github.io/onlooker/popup-overlay.css?v=20260329-3
+// @resource     ONLOOKER_ICON_APP https://nguyenphanvn95.github.io/onlooker/icons/icon-app.png?v=20260329-3
+// @resource     ONLOOKER_UI_PLAY https://nguyenphanvn95.github.io/onlooker/icons/ui/play.svg?v=20260329-3
+// @resource     ONLOOKER_UI_CAMERA https://nguyenphanvn95.github.io/onlooker/icons/ui/camera.svg?v=20260329-3
+// @resource     ONLOOKER_UI_SEARCH https://nguyenphanvn95.github.io/onlooker/icons/ui/search.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WK https://nguyenphanvn95.github.io/onlooker/icons/pieces/wK.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/wQ.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WR https://nguyenphanvn95.github.io/onlooker/icons/pieces/wR.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WB https://nguyenphanvn95.github.io/onlooker/icons/pieces/wB.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WN https://nguyenphanvn95.github.io/onlooker/icons/pieces/wN.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_WP https://nguyenphanvn95.github.io/onlooker/icons/pieces/wP.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BK https://nguyenphanvn95.github.io/onlooker/icons/pieces/bK.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BQ https://nguyenphanvn95.github.io/onlooker/icons/pieces/bQ.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BR https://nguyenphanvn95.github.io/onlooker/icons/pieces/bR.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BB https://nguyenphanvn95.github.io/onlooker/icons/pieces/bB.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BN https://nguyenphanvn95.github.io/onlooker/icons/pieces/bN.svg?v=20260329-3
+// @resource     ONLOOKER_PIECE_BP https://nguyenphanvn95.github.io/onlooker/icons/pieces/bP.svg?v=20260329-3
+// @require      https://nguyenphanvn95.github.io/onlooker/userscript/bootstrap.js?v=20260329-3
+// @require      https://nguyenphanvn95.github.io/onlooker/libs/dom-to-image.min.js?v=20260329-3
+// @require      https://nguyenphanvn95.github.io/onlooker/hosted-runtime.js?v=20260329-3
+// @require      https://nguyenphanvn95.github.io/onlooker/content.js?v=20260329-3
 // @connect      nguyenphanvn95.github.io
 // @connect      app.chessvision.ai
 // @connect      lichess.org
