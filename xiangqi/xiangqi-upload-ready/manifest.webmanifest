@@ -1,0 +1,20 @@
+﻿{
+  "name": "Pikafish Xiangqi Local",
+  "short_name": "Pikafish",
+  "start_url": "/xiangqi/",
+  "scope": "/xiangqi/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d8c891",
+  "lang": "vi",
+  "description": "Ban clone localhost cua giao dien phan tich tuong Pikafish.",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

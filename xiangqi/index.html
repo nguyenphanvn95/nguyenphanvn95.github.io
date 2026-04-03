@@ -1,26 +1,103 @@
-﻿<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Pikafish Xiangqi</title>
-  <meta name="description" content="Pikafish Xiangqi web build for GitHub Pages.">
+  <title>Pikafish Xiangqi Local</title>
+  <meta name="description" content="Ban clone localhost cua giao dien phan tich tuong Pikafish.">
   <meta name="theme-color" content="#d8c891">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Pikafish Xiangqi">
-  <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <link rel="mask-icon" href="./favicon-pinned.svg" color="#b1624d">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./index.6cb394a3.css">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/favicon-pinned.svg" color="#b1624d">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/index.6cb394a3.css">
   <script>
-    window.__APP_BASE__ = "/xiangqi/";
+    (function () {
+      function rewriteApiUrl(input) {
+        try {
+          var url = input instanceof URL ? input : new URL(String(input), window.location.href);
+          var hostname = url.hostname.replace(/^www\./, "");
+
+          if (hostname === "api.xiangqi.com") {
+            url.protocol = window.location.protocol;
+            url.host = window.location.host;
+            url.pathname = url.pathname.startsWith("/socket.io/")
+              ? url.pathname
+              : url.pathname.startsWith("/api/")
+                ? url.pathname
+                : "/api" + (url.pathname.startsWith("/") ? url.pathname : "/" + url.pathname);
+            return url.toString();
+          }
+
+          return input;
+        } catch (error) {
+          if (typeof input === "string") {
+            return input.replace(/^https?:\/\/api\.xiangqi\.com(?=\/|$)/i, window.location.origin);
+          }
+
+          return input;
+        }
+      }
+
+      if (window.fetch) {
+        var originalFetch = window.fetch;
+        window.fetch = function (resource, options) {
+          if (typeof resource === "string" || resource instanceof URL) {
+            return originalFetch.call(this, rewriteApiUrl(resource), options);
+          }
+
+          if (resource && typeof resource.url === "string") {
+            return originalFetch.call(this, new Request(rewriteApiUrl(resource.url), resource), options);
+          }
+
+          return originalFetch.call(this, resource, options);
+        };
+      }
+
+      if (window.XMLHttpRequest) {
+        var originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function (method, url) {
+          arguments[1] = rewriteApiUrl(url);
+          return originalOpen.apply(this, arguments);
+        };
+      }
+
+      if (window.WebSocket) {
+        var OriginalWebSocket = window.WebSocket;
+        window.WebSocket = function (url, protocols) {
+          var finalUrl = (function (value) {
+            try {
+              var parsed = new URL(value, window.location.href);
+              var hostname = parsed.hostname.replace(/^www\./, "");
+
+              if (hostname === "api.xiangqi.com") {
+                parsed.protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+                parsed.host = window.location.host;
+              }
+
+              return parsed.toString();
+            } catch (error) {
+              return value;
+            }
+          })(url);
+
+          return new OriginalWebSocket(finalUrl, protocols);
+        };
+
+        window.WebSocket.prototype = OriginalWebSocket.prototype;
+        if (Object.setPrototypeOf) {
+          Object.setPrototypeOf(window.WebSocket, OriginalWebSocket);
+        }
+      }
+    })();
   </script>
 </head>
 <body>
-  <noscript>This page requires JavaScript.</noscript>
+  <noscript>Trang nay can JavaScript de chay.</noscript>
   <div id="app"></div>
-  <script type="module" src="./index.db1f3122.js"></script>
+  <script type="module" src="/index.db1f3122.js"></script>
 </body>
 </html>
