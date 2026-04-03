@@ -1,1 +1,2 @@
-var a="/assets/board.f90aeebd.webp";export{a as default};
+﻿var a="/xiangqi/assets/board.f90aeebd.webp";export{a as default};
+

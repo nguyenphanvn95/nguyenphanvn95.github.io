@@ -1,1 +1,2 @@
-var s="/assets/wb.f8750892.svg";export{s as default};
+﻿var s="/xiangqi/assets/wb.f8750892.svg";export{s as default};
+

@@ -1,1 +1,2 @@
-var a="/assets/bp.a2ba256e.svg";export{a as default};
+﻿var a="/xiangqi/assets/bp.a2ba256e.svg";export{a as default};
+
