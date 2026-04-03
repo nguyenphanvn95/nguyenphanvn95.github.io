@@ -1,0 +1,9 @@
+﻿Deploy target: /xiangqi/
+
+Upload the CONTENTS of this folder to:
+xiangqi/
+
+For your repo, that means:
+nguyenphanvn95.github.io/xiangqi/
+
+If you use the root repository working tree directly, copy every file and folder inside this package into the 'xiangqi' folder of that repo.
