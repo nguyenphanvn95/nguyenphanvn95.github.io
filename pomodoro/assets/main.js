@@ -226,77 +226,39 @@ let CognitoService = class CognitoService {
   }
 
   isLoggedIn() {
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const token = yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.get({
-        key: 'token'
-      });
-      const bool = token.value !== null;
-      return bool;
-    })();
+    return Promise.resolve(false);
   }
 
   signUp(email, password) {
-    return new Promise((resolved, reject) => {
-      const userAttribute = [];
-      userAttribute.push(new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUserAttribute({
-        Name: 'email',
-        Value: email
-      }));
-      console.log(email, password);
-      this.userPool.signUp(email, password, userAttribute, null, (err, result) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolved(result);
-        }
-      });
+    return Promise.resolve({
+      user: {
+        username: email || 'guest'
+      }
     });
   }
 
   authenticate(email, password) {
-    return new Promise((resolved, reject) => {
-      const authDetails = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.AuthenticationDetails({
-        Username: email,
-        Password: password
-      });
-      const cognitoUser = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUser({
-        Username: email,
-        Pool: this.userPool
-      });
-      cognitoUser.authenticateUser(authDetails, {
-        onSuccess: result => {
-          resolved(result);
-        },
-        onFailure: err => {
-          reject(err);
-        }
-      });
+    return Promise.resolve({
+      idToken: {
+        getJwtToken: () => ''
+      },
+      refreshToken: {
+        token: ''
+      }
     });
   }
 
   signOut() {
-    const thisUser = this.getCurrentUser();
-    const cognitoUser = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUser({
-      Username: thisUser.username,
-      Pool: this.userPool
-    });
-    cognitoUser.signOut();
+    return _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.clear();
   }
 
   getLoggedUser() {
-    return new Promise((resolve, reject) => {
-      const cognitoUser = this.userPool.getCurrentUser();
-
-      if (cognitoUser != null) {
-        cognitoUser.getSession((err, result) => {
-          if (result) {
-            console.log(result);
-            resolve(result); //resolved(result.getIdToken().getJwtToken());
-          } else {
-            reject(err);
-          }
-        });
-      }
+    return Promise.resolve({
+      getIdToken: () => ({
+        payload: {
+          email: 'guest@offline.local'
+        }
+      })
     });
   }
 
@@ -310,107 +272,28 @@ let CognitoService = class CognitoService {
   }
 
   sendRestPasswordEmail(email) {
-    return new Promise((resolved, reject) => {
-      let userPool = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUserPool(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.userPoolParams.COGNITO_POOL);
-      const cognitoUser = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUser({
-        Username: email,
-        Pool: userPool
-      });
-      cognitoUser.forgotPassword({
-        onSuccess: data => {
-          // successfully initiated reset password request
-          resolved(data);
-        },
-        onFailure: err => {
-          reject(err);
-        }
-      });
+    return Promise.resolve({
+      email
     });
   }
 
   getCurrentUser() {
-    var _this = this;
-
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      return yield _this.userPool.getCurrentUser();
-    })();
+    return Promise.resolve(null);
   }
 
   getToken() {
-    var _this2 = this;
-
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      try {
-        let token = yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.get({
-          key: 'token'
-        });
-        const expiry = JSON.parse(atob(token.value.split('.')[1])).exp; // If JWT is not expired return token value else refresh using refresh token.
-
-        if (Math.floor(new Date().getTime() / 1000) < expiry) {
-          return token.value;
-        } else {
-          const email = yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.get({
-            key: 'email'
-          });
-          yield _this2.refreshToken(email).then( /*#__PURE__*/function () {
-            var _ref = (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (newTokens) {
-              const newIdToken = newTokens.idToken.getJwtToken();
-              token = newIdToken;
-              const refreshToken = newTokens.refreshToken.token;
-              yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.set({
-                key: 'token',
-                value: newIdToken
-              });
-              yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.set({
-                key: 'refreshToken',
-                value: refreshToken
-              });
-            });
-
-            return function (_x) {
-              return _ref.apply(this, arguments);
-            };
-          }());
-          const newToken = yield _capacitor_storage__WEBPACK_IMPORTED_MODULE_3__.Storage.get({
-            key: 'token'
-          });
-          return newToken.value;
-        }
-      } catch (e) {
-        _this2.signOut();
-      }
-    })();
+    return Promise.resolve('');
   }
 
   refreshToken(email) {
-    var _this3 = this;
-
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const refreshToken = (yield _this3.getRefreshToken()).toString();
-      return new Promise( /*#__PURE__*/function () {
-        var _ref2 = (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolved, reject) {
-          const token = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoRefreshToken({
-            RefreshToken: refreshToken
-          });
-          const userPool = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUserPool(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.userPoolParams.COGNITO_POOL);
-          const cognitoUser = new amazon_cognito_identity_js__WEBPACK_IMPORTED_MODULE_1__.CognitoUser({
-            Username: email,
-            Pool: userPool
-          });
-          cognitoUser.refreshSession(token, (err, session) => {
-            if (err) {
-              reject(err);
-            }
-
-            resolved(session);
-          });
-        });
-
-        return function (_x2, _x3) {
-          return _ref2.apply(this, arguments);
-        };
-      }());
-    })();
+    return Promise.resolve({
+      idToken: {
+        getJwtToken: () => ''
+      },
+      refreshToken: {
+        token: ''
+      }
+    });
   }
 
 };

@@ -591,33 +591,31 @@ let YtService = class YtService {
   }
 
   getAllYT() {
-    var _this = this;
-
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const token = yield _this.cognitoService.getToken();
-      let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders();
-      headers = headers.append('Authorization', 'Bearer ' + token);
-      return _this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.backendServiceEndpoint + 'getallyt', {
-        headers
-      });
-    })();
+    return Promise.resolve({
+      subscribe: next => {
+        next({
+          Items: []
+        });
+        return {
+          unsubscribe() {}
+        };
+      }
+    });
   }
 
   createYT(url, name) {
-    var _this2 = this;
-
-    return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const token = yield _this2.cognitoService.getToken();
-      let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpHeaders();
-      headers = headers.append('Authorization', 'Bearer ' + token);
-      const body = {
-        url,
-        name
-      };
-      return _this2.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__.environment.backendServiceEndpoint + 'createyt', body, {
-        headers
-      });
-    })();
+    return Promise.resolve({
+      subscribe: next => {
+        next({
+          ok: true,
+          url,
+          name
+        });
+        return {
+          unsubscribe() {}
+        };
+      }
+    });
   }
 
 };
