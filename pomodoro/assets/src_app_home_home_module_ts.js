@@ -348,11 +348,31 @@ let HomePage = class HomePage {
     var _this4 = this;
 
     return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // get id from video.
-      const paramString = _this4.youtubeForm.get('id').value.split('?')[1];
+      // Accept full YouTube URLs, short links, or raw video IDs.
+      const rawInput = (_this4.youtubeForm.get('id').value || '').trim();
+      let id = rawInput;
 
-      const queryString = new URLSearchParams(paramString);
-      const id = queryString.get('v');
+      try {
+        if (rawInput.includes('youtu.be/')) {
+          id = rawInput.split('youtu.be/')[1].split(/[?&#]/)[0];
+        } else if (rawInput.includes('watch?v=')) {
+          const parsedUrl = new URL(rawInput);
+          id = parsedUrl.searchParams.get('v') || '';
+        } else if (rawInput.includes('youtube.com/embed/')) {
+          id = rawInput.split('youtube.com/embed/')[1].split(/[?&#]/)[0];
+        } else if (rawInput.includes('youtube.com/shorts/')) {
+          id = rawInput.split('youtube.com/shorts/')[1].split(/[?&#]/)[0];
+        }
+      } catch (e) {
+        id = '';
+      }
+
+      id = (id || '').trim();
+
+      if (!id) {
+        _this4.presentToast('Please paste a valid YouTube link or video ID.');
+        return;
+      }
 
       const name = _this4.youtubeForm.get('name').value;
 
@@ -514,12 +534,17 @@ let HomePage = class HomePage {
     var _this8 = this;
 
     return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const toast = yield _this8.toastController.create({
-        message: message,
-        duration: 3000,
-        position: 'bottom'
-      });
-      yield toast.present();
+      try {
+        const toast = yield _this8.toastController.create({
+          message: message,
+          duration: 3000,
+          position: 'bottom'
+        });
+        yield toast.present();
+      } catch (error) {
+        // Fallback for offline bundles where ion-toast may not be available.
+        alert(message);
+      }
     })();
   }
 
