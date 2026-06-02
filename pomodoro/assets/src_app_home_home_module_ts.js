@@ -534,17 +534,12 @@ let HomePage = class HomePage {
     var _this8 = this;
 
     return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      try {
-        const toast = yield _this8.toastController.create({
-          message: message,
-          duration: 3000,
-          position: 'bottom'
-        });
-        yield toast.present();
-      } catch (error) {
-        // Fallback for offline bundles where ion-toast may not be available.
-        alert(message);
-      }
+      const toast = yield _this8.toastController.create({
+        message: typeof message === 'string' ? message : (message && message.message) ? message.message : 'Something went wrong.',
+        duration: 3000,
+        position: 'bottom'
+      });
+      yield toast.present();
     })();
   }
 
