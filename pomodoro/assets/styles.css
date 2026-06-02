@@ -1415,3 +1415,6 @@ sub {
 }
 
 /*# sourceMappingURL=styles.css.map*/
+ion-fab-button#profile-modal {
+  display: none !important;
+}
