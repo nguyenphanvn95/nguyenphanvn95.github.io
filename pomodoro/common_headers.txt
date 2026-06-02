@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Content-Type: application/javascript
+Content-Length: 46482
+Connection: keep-alive
+Date: Tue, 02 Jun 2026 08:02:43 GMT
+Last-Modified: Wed, 18 Jan 2023 19:59:28 GMT
+ETag: "8b8277e3ed3b0915cd0ac245ea3430bd"
+x-amz-server-side-encryption: AES256
+Accept-Ranges: bytes
+Server: AmazonS3
+X-Cache: Miss from cloudfront
+Via: 1.1 10ea2fcd3c290fc39fdd11e80888f578.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: HKG1-P2
+X-Amz-Cf-Id: YCGHaIgebVkAPwTH07-2_f_8PsweYQxYkRoiaApyGf9WtRjL7duzcQ==
+
