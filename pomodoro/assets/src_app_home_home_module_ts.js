@@ -426,10 +426,7 @@ let HomePage = class HomePage {
   setVideo($event) {
     this.youtubeVidId = $event.detail.value;
     this.changeYouTubeId(this.youtubeVidId);
-
-    if (!this.musicPlaying) {
-      this.player.pauseVideo();
-    }
+    this.musicPlaying = true;
   }
 
   getYtVideos() {
@@ -485,10 +482,6 @@ let HomePage = class HomePage {
               }
 
               _this5.iFrameId = _this5.youtubeVidId;
-
-              if (_this5.player) {
-                _this5.changeYouTubeId(_this5.youtubeVidId);
-              }
             }
           }, error => console.log(error));
         }
@@ -504,10 +497,6 @@ let HomePage = class HomePage {
         }
 
         _this5.iFrameId = _this5.youtubeVidId;
-
-        if (_this5.player) {
-          _this5.changeYouTubeId(_this5.youtubeVidId);
-        }
       }
     })();
   }
