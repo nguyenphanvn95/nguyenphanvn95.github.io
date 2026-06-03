@@ -340,34 +340,61 @@ let HomePage = class HomePage {
     return new Array(i);
   }
 
+  extractYoutubeId(rawInput) {
+    const input = (rawInput || '').trim();
+    let id = input;
+
+    try {
+      if (input.includes('youtu.be/')) {
+        id = input.split('youtu.be/')[1].split(/[?&#]/)[0];
+      } else if (input.includes('watch?v=')) {
+        const parsedUrl = new URL(input);
+        id = parsedUrl.searchParams.get('v') || '';
+      } else if (input.includes('youtube.com/embed/')) {
+        id = input.split('youtube.com/embed/')[1].split(/[?&#]/)[0];
+      } else if (input.includes('youtube.com/shorts/')) {
+        id = input.split('youtube.com/shorts/')[1].split(/[?&#]/)[0];
+      }
+    } catch (e) {
+      id = '';
+    }
+
+    return (id || '').trim();
+  }
+
+  normalizeYoutubeVideo(entry) {
+    if (!entry) {
+      return null;
+    }
+
+    const name = entry.name || entry.title || entry.label || 'YouTube Music';
+    const rawValue = entry.id || entry.url || entry.link || '';
+    const id = this.extractYoutubeId(rawValue);
+
+    if (!id) {
+      return null;
+    }
+
+    return {
+      name,
+      id
+    };
+  }
+
   changeYouTubeId(videoId) {
-    this.player.loadVideoById(videoId);
+    this.iFrameId = videoId;
+
+    if (this.player) {
+      this.player.loadVideoById(videoId);
+    }
   }
 
   saveYoutubeVideo() {
     var _this4 = this;
 
     return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      // Accept full YouTube URLs, short links, or raw video IDs.
-      const rawInput = (_this4.youtubeForm.get('id').value || '').trim();
-      let id = rawInput;
-
-      try {
-        if (rawInput.includes('youtu.be/')) {
-          id = rawInput.split('youtu.be/')[1].split(/[?&#]/)[0];
-        } else if (rawInput.includes('watch?v=')) {
-          const parsedUrl = new URL(rawInput);
-          id = parsedUrl.searchParams.get('v') || '';
-        } else if (rawInput.includes('youtube.com/embed/')) {
-          id = rawInput.split('youtube.com/embed/')[1].split(/[?&#]/)[0];
-        } else if (rawInput.includes('youtube.com/shorts/')) {
-          id = rawInput.split('youtube.com/shorts/')[1].split(/[?&#]/)[0];
-        }
-      } catch (e) {
-        id = '';
-      }
-
-      id = (id || '').trim();
+      const rawInput = _this4.youtubeForm.get('id').value || '';
+      const id = _this4.extractYoutubeId(rawInput);
 
       if (!id) {
         _this4.presentToast('Please paste a valid YouTube link or video ID.');
@@ -409,17 +436,79 @@ let HomePage = class HomePage {
     var _this5 = this;
 
     return (0,C_Users_zwright_pomodoro_app_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      (yield _this5.ytService.getAllYT()).subscribe(data => {
-        console.log(data.Items);
-        data.Items.forEach(el => {
-          console.log(el);
+      _this5.youtubeVids = [];
+      const seenIds = new Set();
 
-          _this5.youtubeVids.push({
-            name: el.name.S,
-            id: el.url.S
-          });
+      const addVideo = video => {
+        if (!video || !video.id || seenIds.has(video.id)) {
+          return;
+        }
+
+        seenIds.add(video.id);
+
+        _this5.youtubeVids.push(video);
+      };
+
+      try {
+        const response = yield fetch('./youtube.json', {
+          cache: 'no-store'
         });
-      }, error => console.log(error));
+
+        if (response.ok) {
+          const localVideos = yield response.json();
+
+          if (Array.isArray(localVideos)) {
+            localVideos.forEach(entry => addVideo(_this5.normalizeYoutubeVideo(entry)));
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      try {
+        if (_this5.loggedIn) {
+          (yield _this5.ytService.getAllYT()).subscribe(data => {
+            console.log(data.Items);
+            data.Items.forEach(el => {
+              console.log(el);
+              addVideo({
+                name: el.name.S,
+                id: _this5.extractYoutubeId(el.url.S)
+              });
+            });
+
+            if (_this5.youtubeVids.length > 0) {
+              const currentSelectionExists = _this5.youtubeVids.some(video => video.id === _this5.youtubeVidId);
+
+              if (!currentSelectionExists) {
+                _this5.youtubeVidId = _this5.youtubeVids[0].id;
+              }
+
+              _this5.iFrameId = _this5.youtubeVidId;
+
+              if (_this5.player) {
+                _this5.changeYouTubeId(_this5.youtubeVidId);
+              }
+            }
+          }, error => console.log(error));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      if (_this5.youtubeVids.length > 0) {
+        const currentSelectionExists = _this5.youtubeVids.some(video => video.id === _this5.youtubeVidId);
+
+        if (!currentSelectionExists) {
+          _this5.youtubeVidId = _this5.youtubeVids[0].id;
+        }
+
+        _this5.iFrameId = _this5.youtubeVidId;
+
+        if (_this5.player) {
+          _this5.changeYouTubeId(_this5.youtubeVidId);
+        }
+      }
     })();
   }
 
@@ -701,9 +790,11 @@ module.exports = "#container {\n  text-align: center;\n  position: absolute;\n  
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <ion-fab vertical=\"top\" horizontal=\"end\">\r\n    <ion-fab-button size=\"small\" color=\"light\" (click)=\"toggleFullScreen()\">\r\n      <ion-icon *ngIf=\"!isFullScreen\" name=\"expand\"></ion-icon>\r\n      <ion-icon *ngIf=\"isFullScreen\" name=\"contract\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <div id=\"container\">\r\n    <div class=\"timer\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-justify-content-center\">\r\n          <ion-row class=\"timer-row\">\r\n            <div class=\"line\"></div>\r\n            <div class=\"timer-box\">{{min | number:'2.0'}}</div>\r\n            <div class=\"timer-box\">{{sec | number:'2.0'}}</div>\r\n          </ion-row>\r\n          <div #clock></div>\r\n        </ion-row>\r\n        <ion-row class=\"ion-justify-content-center ion-margin\">\r\n          <ng-container *ngFor=\"let n of counter(sessionsCompleted)\">\r\n            <ion-icon name=\"flame-outline\" size=\"large\">\r\n            </ion-icon>\r\n          </ng-container>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </div>\r\n    <!-- fab placed to the bottom end -->\r\n    <div class=\"control-bar\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-justify-content-center ion-margin\">\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" (click)=\"resetTimer()\">\r\n                <ion-icon name=\"repeat-outline\" size=\"large\"></ion-icon>\r\n              </ion-fab-button>\r\n            </ion-fab>\r\n          </ion-col>\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" (click)=\"toggleTimer()\">\r\n                <ion-icon *ngIf=\"!timerActive\" name=\"play-outline\"></ion-icon>\r\n                <ion-icon *ngIf=\"timerActive\" name=\"pause-outline\"></ion-icon>\r\n              </ion-fab-button>\r\n            </ion-fab>\r\n          </ion-col>\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" id=\"music-settings-modal\">\r\n                <ion-icon name=\"musical-notes-outline\"></ion-icon>\r\n              </ion-fab-button>\r\n              <!-- <ion-fab-list side=\"end\">\r\n                <ion-fab-button>\r\n                  <fa-icon [icon]=\"['fas', 'volume-xmark']\"></fa-icon>\r\n                </ion-fab-button>\r\n                <ion-fab-button>\r\n                  <fa-icon [icon]=\"['fab', 'spotify']\"></fa-icon>\r\n                </ion-fab-button>\r\n                <ion-fab-button id=\"youtube-settings-modal\">\r\n                  <fa-icon [icon]=\"['fab', 'youtube']\"></fa-icon>\r\n                </ion-fab-button>\r\n              </ion-fab-list> -->\r\n            </ion-fab>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\">\r\n    <ion-fab-button size=\"small\" color=\"light\">\r\n      <ion-icon name=\"settings\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button id=\"timer-settings-modal\">\r\n        <ion-icon name=\"alarm\"></ion-icon>\r\n      </ion-fab-button>\r\n      <ion-fab-button id=\"profile-modal\">\r\n        <fa-icon [icon]=\"['far', 'user']\"></fa-icon>\r\n      </ion-fab-button>\r\n      <ion-fab-button [routerLink]=\"'/about'\">\r\n        <ion-icon name=\"information-outline\"></ion-icon>\r\n      </ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n</ion-footer>\r\n<youtube-player id=\"youtube-audio\" [videoId]=\"iFrameId\" loop=\"1\" [playlist]=\"iFrameId\" (ready)=\"onReady($event)\">\r\n</youtube-player>\r\n<ion-modal trigger=\"timer-settings-modal\" #timerModal>\r\n  <ng-template>\r\n    <ion-header>\r\n      <ion-toolbar>\r\n        <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n            <ion-button color=\"dark\" (click)=\"closeSettingModal()\">\r\n              <ion-icon name=\"checkmark-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-buttons>\r\n          <ion-title>Timer Settings</ion-title>\r\n        </ion-toolbar>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content class=\"ion-padding\">\r\n      <ion-list>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Pomodoro Time</ion-label>\r\n          <ion-input [(ngModel)]=\"sessionTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Short Break Time</ion-label>\r\n          <ion-input [(ngModel)]=\"shortBreakTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Long Break Frequency</ion-label>\r\n          <ion-input [(ngModel)]=\"longBreakInterval\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Long Break Time</ion-label>\r\n          <ion-input [(ngModel)]=\"longBreakTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n      </ion-list>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n<ion-modal trigger=\"profile-modal\" #profileModal>\r\n  <ng-template>\r\n    <ng-container *ngIf=\"!loggedIn\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-toolbar>\r\n            <ion-buttons slot=\"start\">\r\n              <ion-button (click)=\"profileModal.dismiss(null, 'cancel')\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-buttons>\r\n            <ion-segment [(ngModel)]=\"signInMode\" (ionChange)=\"signInSegmentChanged($event)\">\r\n              <ion-segment-button value=\"signIn\">\r\n                <ion-label>Sign In</ion-label>\r\n              </ion-segment-button>\r\n              <ion-segment-button value=\"signUp\">\r\n                <ion-label>Sign Up</ion-label>\r\n              </ion-segment-button>\r\n            </ion-segment>\r\n          </ion-toolbar>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"loggedIn\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-toolbar>\r\n            <ion-buttons slot=\"start\">\r\n              <ion-button (click)=\"profileModal.dismiss(null, 'cancel')\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-buttons>\r\n            <ion-title>\r\n              Hi, {{user}}\r\n            </ion-title>\r\n          </ion-toolbar>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n    </ng-container>\r\n    <ion-content *ngIf=\"!authLoading && !loggedIn\" class=\"ion-padding\" [ngSwitch]=\"signInMode\">\r\n      <ion-list *ngSwitchCase=\"'signIn'\" [formGroup]=\"loginForm\">\r\n        <ng-container *ngIf=\"!resetPassword\">\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">email</ion-label>\r\n            <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">Password</ion-label>\r\n            <ion-input formControlName=\"password\" type=\"password\"></ion-input>\r\n          </ion-item>\r\n          <div>\r\n            <ion-button expand=\"full\" (click)=\"signIn()\" class=\"ion-margin\">\r\n              Sign In\r\n            </ion-button>\r\n          </div>\r\n          <div class=\"ion-margin ion-text-center\">\r\n            <a class=\"\" (click)=\"resetPassword = !resetPassword;\">Forgot your password?</a>\r\n          </div>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"resetPassword\">\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">email</ion-label>\r\n            <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n          </ion-item>\r\n          <div>\r\n            <ion-button expand=\"full\" (click)=\"sendResetPasswordEmail()\" class=\"ion-margin\">\r\n              Reset Password</ion-button>\r\n          </div>\r\n          <ion-button fill=\"clear w-100 mt-3\" (click)=\"resetPassword = !resetPassword;\">\r\n            <ion-icon name=\"chevron-back-outline\">\r\n            </ion-icon> Back to sign in\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-list>\r\n      <ion-list *ngSwitchCase=\"'signUp'\" [formGroup]=\"signupForm\">\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">email</ion-label>\r\n          <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Password</ion-label>\r\n          <ion-input formControlName=\"password\" type=\"password\"></ion-input>\r\n        </ion-item>\r\n        <div class=\"ion-text-end\">\r\n          <ion-button expand=\"full\" (click)=\"signUp()\" class=\"ion-margin\">\r\n            Sign Up\r\n          </ion-button>\r\n        </div>\r\n      </ion-list>\r\n    </ion-content>\r\n    <ion-content *ngIf=\"authLoading\" class=\"ion-text-center\">\r\n      <ion-spinner name=\"crescent\" class=\"ion-margin\"></ion-spinner>\r\n    </ion-content>\r\n    <ion-content *ngIf=\"!authLoading && loggedIn\">\r\n      <ion-content>\r\n        <ion-button expand=\"full\" (click)=\"logout()\" class=\"ion-margin\">\r\n          Log Out\r\n        </ion-button>\r\n      </ion-content>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n<ion-modal trigger=\"music-settings-modal\" #youTubeModal>\r\n  <ng-template>\r\n    <ion-header>\r\n      <ion-toolbar>\r\n        <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n            <ion-button (click)=\"youTubeModal.dismiss(null, 'cancel')\">\r\n              <ion-icon slot=\"icon-only\" name=\"checkmark-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-buttons>\r\n          <ion-segment [(ngModel)]=\"musicMode\" (ionChange)=\"musicSegmentChanged($event)\">\r\n            <ion-segment-button value=\"youtube\">\r\n              <fa-icon [icon]=\"['fab', 'youtube']\"></fa-icon>\r\n            </ion-segment-button>\r\n            <ion-segment-button value=\"spotify\">\r\n              <fa-icon [icon]=\"['fab', 'spotify']\"></fa-icon>\r\n            </ion-segment-button>\r\n          </ion-segment>\r\n        </ion-toolbar>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content class=\"ion-padding\" [ngSwitch]=\"musicMode\">\r\n      <ng-container *ngSwitchCase=\"'youtube'\">\r\n        <ion-card>\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"10\">\r\n                <ion-list [formGroup]=\"youtubeForm\">\r\n                  <ion-title>\r\n                    Add Youtube Video\r\n                  </ion-title>\r\n                  <ion-item class=\"ion-margin-horizontal\">\r\n                    <ion-label position=\"floating\">Youtube video URL</ion-label>\r\n                    <ion-input formControlName=\"id\"></ion-input>\r\n                  </ion-item>\r\n                  <ion-item class=\"ion-margin-horizontal\">\r\n                    <ion-label position=\"floating\">Video Name</ion-label>\r\n                    <ion-input formControlName=\"name\"></ion-input>\r\n                  </ion-item>\r\n                </ion-list>\r\n              </ion-col>\r\n              <ion-col size=\"2\" class=\"flex-col\">\r\n                <ion-button (click)=\"saveYoutubeVideo()\">\r\n                  <ion-icon name=\"add-outline\"></ion-icon>\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n        <ion-card>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <ion-list>\r\n                <ion-title>\r\n                  Youtube Videos\r\n                </ion-title>\r\n                <ion-radio-group value=\"\" (ionChange)=\"setVideo($event)\">\r\n                  <ion-item *ngFor=\"let video of youtubeVids\">\r\n                    <ion-label>{{ video.name }}</ion-label>\r\n                    <ion-radio slot=\"start\" [value]=\"video.id\"></ion-radio>\r\n                  </ion-item>\r\n                </ion-radio-group>\r\n              </ion-list>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-card>\r\n      </ng-container>\r\n      <ng-container *ngSwitchCase=\"'spotify'\">\r\n        <ion-title>\r\n          Spotify Integration Coming Soon!\r\n        </ion-title>\r\n      </ng-container>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n";
+module.exports = "<ion-content [fullscreen]=\"true\">\r\n  <ion-fab vertical=\"top\" horizontal=\"end\">\r\n    <ion-fab-button size=\"small\" color=\"light\" (click)=\"toggleFullScreen()\">\r\n      <ion-icon *ngIf=\"!isFullScreen\" name=\"expand\"></ion-icon>\r\n      <ion-icon *ngIf=\"isFullScreen\" name=\"contract\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n  <div id=\"container\">\r\n    <div class=\"timer\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-justify-content-center\">\r\n          <ion-row class=\"timer-row\">\r\n            <div class=\"line\"></div>\r\n            <div class=\"timer-box\">{{min | number:'2.0'}}</div>\r\n            <div class=\"timer-box\">{{sec | number:'2.0'}}</div>\r\n          </ion-row>\r\n          <div #clock></div>\r\n        </ion-row>\r\n        <ion-row class=\"ion-justify-content-center ion-margin\">\r\n          <ng-container *ngFor=\"let n of counter(sessionsCompleted)\">\r\n            <ion-icon name=\"flame-outline\" size=\"large\">\r\n            </ion-icon>\r\n          </ng-container>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </div>\r\n    <!-- fab placed to the bottom end -->\r\n    <div class=\"control-bar\">\r\n      <ion-grid>\r\n        <ion-row class=\"ion-justify-content-center ion-margin\">\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" (click)=\"resetTimer()\">\r\n                <ion-icon name=\"repeat-outline\" size=\"large\"></ion-icon>\r\n              </ion-fab-button>\r\n            </ion-fab>\r\n          </ion-col>\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" (click)=\"toggleTimer()\">\r\n                <ion-icon *ngIf=\"!timerActive\" name=\"play-outline\"></ion-icon>\r\n                <ion-icon *ngIf=\"timerActive\" name=\"pause-outline\"></ion-icon>\r\n              </ion-fab-button>\r\n            </ion-fab>\r\n          </ion-col>\r\n          <ion-col size-lg=\"1\" size-xs=\"2\" class=\"flex-col\">\r\n            <ion-fab>\r\n              <ion-fab-button color=\"light\" id=\"music-settings-modal\">\r\n                <ion-icon name=\"musical-notes-outline\"></ion-icon>\r\n              </ion-fab-button>\r\n              <!-- <ion-fab-list side=\"end\">\r\n                <ion-fab-button>\r\n                  <fa-icon [icon]=\"['fas', 'volume-xmark']\"></fa-icon>\r\n                </ion-fab-button>\r\n                <ion-fab-button>\r\n                  <fa-icon [icon]=\"['fab', 'spotify']\"></fa-icon>\r\n                </ion-fab-button>\r\n                <ion-fab-button id=\"youtube-settings-modal\">\r\n                  <fa-icon [icon]=\"['fab', 'youtube']\"></fa-icon>\r\n                </ion-fab-button>\r\n              </ion-fab-list> -->\r\n            </ion-fab>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </div>\r\n  </div>\r\n</ion-content>\r\n<ion-footer>\r\n  <ion-fab vertical=\"bottom\" horizontal=\"end\">\r\n    <ion-fab-button size=\"small\" color=\"light\">\r\n      <ion-icon name=\"settings\"></ion-icon>\r\n    </ion-fab-button>\r\n    <ion-fab-list side=\"top\">\r\n      <ion-fab-button id=\"timer-settings-modal\">\r\n        <ion-icon name=\"alarm\"></ion-icon>\r\n      </ion-fab-button>\r\n      <ion-fab-button id=\"profile-modal\">\r\n        <fa-icon [icon]=\"['far', 'user']\"></fa-icon>\r\n      </ion-fab-button>\r\n      <ion-fab-button [routerLink]=\"'/about'\">\r\n        <ion-icon name=\"information-outline\"></ion-icon>\r\n      </ion-fab-button>\r\n    </ion-fab-list>\r\n  </ion-fab>\r\n</ion-footer>\r\n<youtube-player id=\"youtube-audio\" [videoId]=\"iFrameId\" loop=\"1\" [playlist]=\"iFrameId\" (ready)=\"onReady($event)\">\r\n</youtube-player>\r\n<ion-modal trigger=\"timer-settings-modal\" #timerModal>\r\n  <ng-template>\r\n    <ion-header>\r\n      <ion-toolbar>\r\n        <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n            <ion-button color=\"dark\" (click)=\"closeSettingModal()\">\r\n              <ion-icon name=\"checkmark-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-buttons>\r\n          <ion-title>Timer Settings</ion-title>\r\n        </ion-toolbar>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content class=\"ion-padding\">\r\n      <ion-list>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Pomodoro Time</ion-label>\r\n          <ion-input [(ngModel)]=\"sessionTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Short Break Time</ion-label>\r\n          <ion-input [(ngModel)]=\"shortBreakTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Long Break Frequency</ion-label>\r\n          <ion-input [(ngModel)]=\"longBreakInterval\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Long Break Time</ion-label>\r\n          <ion-input [(ngModel)]=\"longBreakTime\" type=\"number\"></ion-input>\r\n        </ion-item>\r\n      </ion-list>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n<ion-modal trigger=\"profile-modal\" #profileModal>\r\n  <ng-template>\r\n    <ng-container *ngIf=\"!loggedIn\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-toolbar>\r\n            <ion-buttons slot=\"start\">\r\n              <ion-button (click)=\"profileModal.dismiss(null, 'cancel')\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-buttons>\r\n            <ion-segment [(ngModel)]=\"signInMode\" (ionChange)=\"signInSegmentChanged($event)\">\r\n              <ion-segment-button value=\"signIn\">\r\n                <ion-label>Sign In</ion-label>\r\n              </ion-segment-button>\r\n              <ion-segment-button value=\"signUp\">\r\n                <ion-label>Sign Up</ion-label>\r\n              </ion-segment-button>\r\n            </ion-segment>\r\n          </ion-toolbar>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"loggedIn\">\r\n      <ion-header>\r\n        <ion-toolbar>\r\n          <ion-toolbar>\r\n            <ion-buttons slot=\"start\">\r\n              <ion-button (click)=\"profileModal.dismiss(null, 'cancel')\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back-outline\"></ion-icon>\r\n              </ion-button>\r\n            </ion-buttons>\r\n            <ion-title>\r\n              Hi, {{user}}\r\n            </ion-title>\r\n          </ion-toolbar>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n    </ng-container>\r\n    <ion-content *ngIf=\"!authLoading && !loggedIn\" class=\"ion-padding\" [ngSwitch]=\"signInMode\">\r\n      <ion-list *ngSwitchCase=\"'signIn'\" [formGroup]=\"loginForm\">\r\n        <ng-container *ngIf=\"!resetPassword\">\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">email</ion-label>\r\n            <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n          </ion-item>\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">Password</ion-label>\r\n            <ion-input formControlName=\"password\" type=\"password\"></ion-input>\r\n          </ion-item>\r\n          <div>\r\n            <ion-button expand=\"full\" (click)=\"signIn()\" class=\"ion-margin\">\r\n              Sign In\r\n            </ion-button>\r\n          </div>\r\n          <div class=\"ion-margin ion-text-center\">\r\n            <a class=\"\" (click)=\"resetPassword = !resetPassword;\">Forgot your password?</a>\r\n          </div>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"resetPassword\">\r\n          <ion-item class=\"ion-margin-horizontal\">\r\n            <ion-label position=\"floating\">email</ion-label>\r\n            <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n          </ion-item>\r\n          <div>\r\n            <ion-button expand=\"full\" (click)=\"sendResetPasswordEmail()\" class=\"ion-margin\">\r\n              Reset Password</ion-button>\r\n          </div>\r\n          <ion-button fill=\"clear w-100 mt-3\" (click)=\"resetPassword = !resetPassword;\">\r\n            <ion-icon name=\"chevron-back-outline\">\r\n            </ion-icon> Back to sign in\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-list>\r\n      <ion-list *ngSwitchCase=\"'signUp'\" [formGroup]=\"signupForm\">\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">email</ion-label>\r\n          <ion-input formControlName=\"email\" type=\"email\" placeholder=\"your@email.com\"></ion-input>\r\n        </ion-item>\r\n        <ion-item class=\"ion-margin-horizontal\">\r\n          <ion-label position=\"floating\">Password</ion-label>\r\n          <ion-input formControlName=\"password\" type=\"password\"></ion-input>\r\n        </ion-item>\r\n        <div class=\"ion-text-end\">\r\n          <ion-button expand=\"full\" (click)=\"signUp()\" class=\"ion-margin\">\r\n            Sign Up\r\n          </ion-button>\r\n        </div>\r\n      </ion-list>\r\n    </ion-content>\r\n    <ion-content *ngIf=\"authLoading\" class=\"ion-text-center\">\r\n      <ion-spinner name=\"crescent\" class=\"ion-margin\"></ion-spinner>\r\n    </ion-content>\r\n    <ion-content *ngIf=\"!authLoading && loggedIn\">\r\n      <ion-content>\r\n        <ion-button expand=\"full\" (click)=\"logout()\" class=\"ion-margin\">\r\n          Log Out\r\n        </ion-button>\r\n      </ion-content>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n<ion-modal trigger=\"music-settings-modal\" #youTubeModal>\r\n  <ng-template>\r\n    <ion-header>\r\n      <ion-toolbar>\r\n        <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n            <ion-button (click)=\"youTubeModal.dismiss(null, 'cancel')\">\r\n              <ion-icon slot=\"icon-only\" name=\"checkmark-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ion-buttons>\r\n          <ion-segment [(ngModel)]=\"musicMode\" (ionChange)=\"musicSegmentChanged($event)\">\r\n            <ion-segment-button value=\"youtube\">\r\n              <fa-icon [icon]=\"['fab', 'youtube']\"></fa-icon>\r\n            </ion-segment-button>\r\n            <ion-segment-button value=\"spotify\">\r\n              <fa-icon [icon]=\"['fab', 'spotify']\"></fa-icon>\r\n            </ion-segment-button>\r\n          </ion-segment>\r\n        </ion-toolbar>\r\n      </ion-toolbar>\r\n    </ion-header>\r\n    <ion-content class=\"ion-padding\" [ngSwitch]=\"musicMode\">\r\n      <ng-container *ngSwitchCase=\"'youtube'\">\r\n        <ion-card>\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"10\">\r\n                <ion-list [formGroup]=\"youtubeForm\">\r\n                  <ion-title>\r\n                    Add Youtube Video\r\n                  </ion-title>\r\n                  <ion-item class=\"ion-margin-horizontal\">\r\n                    <ion-label position=\"floating\">Youtube video URL</ion-label>\r\n                    <ion-input formControlName=\"id\"></ion-input>\r\n                  </ion-item>\r\n                  <ion-item class=\"ion-margin-horizontal\">\r\n                    <ion-label position=\"floating\">Video Name</ion-label>\r\n                    <ion-input formControlName=\"name\"></ion-input>\r\n                  </ion-item>\r\n                </ion-list>\r\n              </ion-col>\r\n              <ion-col size=\"2\" class=\"flex-col\">\r\n                <ion-button (click)=\"saveYoutubeVideo()\">\r\n                  <ion-icon name=\"add-outline\"></ion-icon>\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n        <ion-card>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <ion-list>\r\n                <ion-title>\r\n                  Youtube Videos\r\n                </ion-title>\r\n                <ion-radio-group [value]=\"youtubeVidId\" (ionChange)=\"setVideo($event)\">\r\n                  <ion-item *ngFor=\"let video of youtubeVids\">\r\n                    <ion-label>{{ video.name }}</ion-label>\r\n                    <ion-radio slot=\"start\" [value]=\"video.id\"></ion-radio>\r\n                  </ion-item>\r\n                </ion-radio-group>\r\n              </ion-list>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-card>\r\n      </ng-container>\r\n      <ng-container *ngSwitchCase=\"'spotify'\">\r\n        <ion-title>\r\n          Spotify Integration Coming Soon!\r\n        </ion-title>\r\n      </ng-container>\r\n    </ion-content>\r\n  </ng-template>\r\n</ion-modal>\r\n";
 
 /***/ })
 
 }]);
 //# sourceMappingURL=src_app_home_home_module_ts.js.map
+
+
