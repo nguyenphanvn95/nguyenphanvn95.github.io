@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,7 @@
 <title>Book Reader</title>
 
 <!-- EPUB.js (jszip bundled inside epubjs) -->
-<script src="https://unpkg.com/epubjs@0.3.93/dist/epub.min.js"></script>
+<script src="assets/epub.min.js"></script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -66,7 +66,7 @@
     overflow: hidden;
   }
 
-  /* ── LOADING SCREEN ── */
+  /* â”€â”€ LOADING SCREEN â”€â”€ */
   #loading-screen {
     position: fixed; inset: 0;
     background: var(--bg);
@@ -103,7 +103,7 @@
     letter-spacing: 0.08em;
   }
 
-  /* ── ERROR SCREEN ── */
+  /* â”€â”€ ERROR SCREEN â”€â”€ */
   #error-screen {
     position: fixed; inset: 0;
     background: var(--bg);
@@ -130,7 +130,7 @@
     word-break: break-all;
   }
 
-  /* ── MAIN LAYOUT ── */
+  /* â”€â”€ MAIN LAYOUT â”€â”€ */
   #app {
     display: flex;
     height: 100vh;
@@ -139,7 +139,7 @@
   }
   #app.ready { opacity: 1; }
 
-  /* ── SIDEBAR ── */
+  /* â”€â”€ SIDEBAR â”€â”€ */
   #sidebar {
     width: var(--panel-w);
     min-width: var(--panel-w);
@@ -265,7 +265,7 @@
     width: 0%;
   }
 
-  /* ── MAIN READER AREA ── */
+  /* â”€â”€ MAIN READER AREA â”€â”€ */
   #main {
     flex: 1;
     display: flex;
@@ -373,7 +373,7 @@
   .theme-btn.sepia { background: #f0e8d8; box-shadow: inset 0 0 0 1px #ccc0a8; }
   .theme-btn.dark { background: #1c1916; box-shadow: inset 0 0 0 1px #332e28; }
 
-  /* ── EPUB READER ── */
+  /* â”€â”€ EPUB READER â”€â”€ */
   #epub-container {
     flex: 1;
     display: none;
@@ -411,7 +411,7 @@
   .epub-nav.next { right: 0; border-radius: 8px 0 0 8px; border-right: none; }
   .epub-nav svg { width: 20px; height: 20px; }
 
-  /* ── PDF READER ── */
+  /* â”€â”€ PDF READER â”€â”€ */
   #pdf-container {
     flex: 1;
     display: none;
@@ -518,7 +518,7 @@
     50% { opacity: 0.5; }
   }
 
-  /* ── KEYBOARD HINT ── */
+  /* â”€â”€ KEYBOARD HINT â”€â”€ */
   #kbd-hint {
     position: fixed;
     bottom: 20px; left: 50%;
@@ -545,7 +545,7 @@
   .toc-section::-webkit-scrollbar-track { background: transparent; }
   .toc-section::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-  /* ── RESPONSIVE ── */
+  /* â”€â”€ RESPONSIVE â”€â”€ */
   @media (max-width: 640px) {
     :root { --panel-w: 80vw; }
     #sidebar {
@@ -569,16 +569,16 @@
 
 <!-- Loading Screen -->
 <div id="loading-screen">
-  <span class="loading-logo">📖 Reader</span>
+  <span class="loading-logo">ðŸ“– Reader</span>
   <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
   <span class="loading-text" id="loading-text">initializing...</span>
 </div>
 
 <!-- Error Screen -->
 <div id="error-screen">
-  <div class="error-icon">📚</div>
-  <div class="error-title">Không thể tải sách</div>
-  <div class="error-msg" id="error-msg">Đã có lỗi xảy ra khi tải sách.</div>
+  <div class="error-icon">ðŸ“š</div>
+  <div class="error-title">KhÃ´ng thá»ƒ táº£i sÃ¡ch</div>
+  <div class="error-msg" id="error-msg">ÄÃ£ cÃ³ lá»—i xáº£y ra khi táº£i sÃ¡ch.</div>
   <div class="error-code" id="error-code"></div>
 </div>
 
@@ -590,7 +590,7 @@
   <!-- Sidebar -->
   <aside id="sidebar">
     <div class="sidebar-header">
-      <span class="book-logo">📖 Book Reader</span>
+      <span class="book-logo">ðŸ“– Book Reader</span>
       <div class="book-cover-wrap" id="cover-wrap">
         <div class="book-cover-placeholder">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -599,20 +599,20 @@
           </svg>
         </div>
       </div>
-      <div class="book-title-sidebar" id="sidebar-title">—</div>
-      <div class="book-author-sidebar" id="sidebar-author">—</div>
+      <div class="book-title-sidebar" id="sidebar-title">â€”</div>
+      <div class="book-author-sidebar" id="sidebar-author">â€”</div>
     </div>
 
     <div class="toc-section" id="toc-list">
-      <div class="toc-title">Mục lục</div>
+      <div class="toc-title">Má»¥c lá»¥c</div>
       <div style="padding: 12px 20px; font-size:0.8rem; color: var(--ink3); font-style: italic;">
-        Đang tải mục lục...
+        Äang táº£i má»¥c lá»¥c...
       </div>
     </div>
 
     <div class="sidebar-footer">
       <div class="progress-label">
-        <span>Tiến độ đọc</span>
+        <span>Tiáº¿n Ä‘á»™ Ä‘á»c</span>
         <span id="progress-pct">0%</span>
       </div>
       <div class="progress-track">
@@ -631,7 +631,7 @@
         </svg>
       </button>
 
-      <div class="topbar-title" id="topbar-title">Đang tải...</div>
+      <div class="topbar-title" id="topbar-title">Äang táº£i...</div>
 
       <div class="topbar-controls">
         <!-- Fullscreen -->
@@ -650,19 +650,19 @@
           </button>
           <div class="settings-dropdown" id="settings-dropdown">
             <div class="settings-row">
-              <span class="settings-label">CỠ CHỮ</span>
+              <span class="settings-label">Cá»  CHá»®</span>
               <div class="font-size-ctrl">
-                <button id="font-dec">−</button>
+                <button id="font-dec">âˆ’</button>
                 <span class="font-size-val" id="font-size-val">16</span>
                 <button id="font-inc">+</button>
               </div>
             </div>
             <div class="settings-row">
-              <span class="settings-label">NỀN</span>
+              <span class="settings-label">Ná»€N</span>
               <div class="theme-btns">
-                <div class="theme-btn light active" data-theme="light" title="Sáng"></div>
+                <div class="theme-btn light active" data-theme="light" title="SÃ¡ng"></div>
                 <div class="theme-btn sepia" data-theme="sepia" title="Sepia"></div>
-                <div class="theme-btn dark" data-theme="dark" title="Tối"></div>
+                <div class="theme-btn dark" data-theme="dark" title="Tá»‘i"></div>
               </div>
             </div>
           </div>
@@ -688,20 +688,20 @@
     <!-- PDF Viewer -->
     <div id="pdf-container">
       <div id="pdf-toolbar">
-        <button class="btn-icon" id="pdf-prev" title="Trang trước (←)">
+        <button class="btn-icon" id="pdf-prev" title="Trang trÆ°á»›c (â†)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="pdf-page-info">
           <input type="number" class="pdf-page-input" id="pdf-page-input" value="1" min="1">
-          <span>/ <span id="pdf-total-pages">—</span></span>
+          <span>/ <span id="pdf-total-pages">â€”</span></span>
         </div>
-        <button class="btn-icon" id="pdf-next" title="Trang sau (→)">
+        <button class="btn-icon" id="pdf-next" title="Trang sau (â†’)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
         <div class="pdf-zoom-ctrl">
-          <button id="pdf-zoom-out" title="Thu nhỏ">−</button>
+          <button id="pdf-zoom-out" title="Thu nhá»">âˆ’</button>
           <span class="pdf-zoom-val" id="pdf-zoom-val">100%</span>
-          <button id="pdf-zoom-in" title="Phóng to">+</button>
+          <button id="pdf-zoom-in" title="PhÃ³ng to">+</button>
         </div>
       </div>
       <div id="pdf-scroll-area"></div>
@@ -710,602 +710,11 @@
 </div>
 
 <!-- Keyboard hint -->
-<div id="kbd-hint" id="kbd-hint">← → để lật trang • F toàn màn hình</div>
+<div id="kbd-hint" id="kbd-hint">â† â†’ Ä‘á»ƒ láº­t trang â€¢ F toÃ n mÃ n hÃ¬nh</div>
 
-<script>
-// ── STATE ──────────────────────────────────────────────
-const state = {
-  bookId: null,
-  bookMeta: null,
-  type: null,
-  fontSize: 16,
-  theme: 'light',
-  epubBook: null,
-  epubRendition: null,
-  pdfDoc: null,
-  pdfCurrentPage: 1,
-  pdfTotalPages: 0,
-  pdfZoom: 1.0,
-  pdfRendering: false,
-  pdfRenderQueue: null,
-};
-
-// ── UTILS ──────────────────────────────────────────────
-const $  = id => document.getElementById(id);
-const $$ = sel => document.querySelector(sel);
-
-function setLoading(pct, msg) {
-  $('loading-fill').style.width = pct + '%';
-  $('loading-text').textContent = msg;
-}
-
-function showError(msg, detail = '') {
-  $('loading-screen').classList.add('hide');
-  $('error-screen').classList.add('show');
-  $('error-msg').textContent = msg;
-  $('error-code').textContent = detail;
-  $('error-code').style.display = detail ? 'block' : 'none';
-}
-
-function showApp() {
-  setTimeout(() => {
-    $('loading-screen').classList.add('hide');
-    setTimeout(() => {
-      $('loading-screen').style.display = 'none';
-      $('app').style.opacity = '';   // clear inline style nếu epub đã set
-      $('app').classList.add('ready');
-    }, 500);
-  }, 300);
-}
-
-function setProgress(pct) {
-  const p = Math.round(pct * 100) / 100;
-  $('progress-fill').style.width = p + '%';
-  $('progress-pct').textContent = Math.round(p) + '%';
-}
-
-function showKbdHint() {
-  const h = $('kbd-hint');
-  h.classList.add('show');
-  setTimeout(() => h.classList.remove('show'), 3000);
-}
-
-// ── LOAD LINK.JSON ─────────────────────────────────────
-async function loadLinkJson() {
-  setLoading(10, 'loading link.json...');
-  const res = await fetch('link.json');
-  if (!res.ok) throw new Error(`link.json: HTTP ${res.status}`);
-  return await res.json();
-}
-
-// ── BOOK META ──────────────────────────────────────────
-function applyMeta(meta) {
-  state.bookMeta = meta;
-  $('sidebar-title').textContent = meta.title || 'Unknown Title';
-  $('sidebar-author').textContent = meta.author || '';
-  $('topbar-title').textContent = meta.title || 'Book Reader';
-  document.title = (meta.title || 'Book') + ' — Reader';
-
-  if (meta.cover) {
-    $('cover-wrap').innerHTML = `<img src="${meta.cover}" alt="cover" onerror="this.parentNode.innerHTML='<div class=book-cover-placeholder>📖</div>'">`;
-  }
-}
-
-// ── EPUB ───────────────────────────────────────────────
-async function ensureEpubJs() {
-  if (typeof ePub === 'function') return;
-  // fallback: load từ CDN khác
-  await new Promise((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js';
-    s.onload = resolve;
-    s.onerror = () => reject(new Error('Không tải được epub.js'));
-    document.head.appendChild(s);
-  });
-  if (typeof ePub !== 'function') throw new Error('epub.js load xong nhưng ePub() không tồn tại');
-}
-
-
-async function loadEpub(url) {
-  setLoading(20, 'loading epub.js...');
-  await ensureEpubJs();
-
-  // ── Bước 1: fetch file về dạng ArrayBuffer ──────────────
-  setLoading(30, 'downloading epub...');
-  let epubData;
-  try {
-    const resp = await Promise.race([
-      fetch(url),
-      new Promise((_, rej) => setTimeout(() => rej(new Error('Timeout download epub (30s)')), 30000))
-    ]);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status} khi tải epub`);
-    epubData = await resp.arrayBuffer();
-  } catch(e) {
-    throw new Error('Không tải được file epub: ' + e.message);
-  }
-  setLoading(55, `downloaded ${Math.round(epubData.byteLength/1024)}KB`);
-
-  // ── Bước 2: khởi tạo ePub từ ArrayBuffer ────────────────
-  const book = ePub(epubData, { openAs: 'epub' });
-  state.epubBook = book;
-
-  await Promise.race([
-    book.ready,
-    new Promise((_, rej) => setTimeout(() => rej(new Error('epub parse timeout')), 15000))
-  ]);
-  setLoading(65, 'rendering...');
-
-  // ── Bước 3: show app, đo kích thước ─────────────────────
-  $('epub-container').classList.add('active');
-
-  // Render kích thước cố định dựa trên window (không dùng clientWidth vì app chưa visible)
-  const TOPBAR_H = 52;
-  const W = window.innerWidth;
-  const H = window.innerHeight - TOPBAR_H;
-
-  const rendition = book.renderTo('epub-viewer', {
-    width:  W,
-    height: H,
-    flow:   'paginated',
-    spread: 'none',
-    allowScriptedContent: false,
-  });
-  state.epubRendition = rendition;
-
-  // ── Bước 4: display trang đầu ────────────────────────────
-  const savedLoc = localStorage.getItem('reader_loc_' + state.bookId);
-  setLoading(75, 'rendering page...');
-
-  await Promise.race([
-    rendition.display(savedLoc || undefined),
-    new Promise((_, rej) => setTimeout(() => rej(new Error('Timeout render trang đầu (20s)')), 20000))
-  ]);
-
-  setLoading(90, 'loading toc...');
-  applyEpubTheme();
-
-  // ── TOC ──────────────────────────────────────────────────
-  try {
-    const nav = await Promise.race([
-      book.loaded.navigation,
-      new Promise(r => setTimeout(() => r({ toc: [] }), 5000))
-    ]);
-    buildToc(nav.toc, rendition);
-  } catch(e) {
-    $('toc-list').innerHTML = '<div class="toc-title">Mục lục</div><div style="padding:12px 20px;font-size:0.8rem;color:var(--ink3);font-style:italic;">Không có mục lục</div>';
-  }
-
-  // ── Progress ─────────────────────────────────────────────
-  book.locations.generate(1024).then(() => {
-    rendition.on('relocated', loc => {
-      try {
-        const pct = book.locations.percentageFromCfi(loc.start.cfi) * 100;
-        setProgress(pct);
-        localStorage.setItem('reader_loc_' + state.bookId, loc.start.cfi);
-      } catch(e) {}
-    });
-  }).catch(() => {});
-
-  // ── Controls ─────────────────────────────────────────────
-  $('epub-prev').onclick = () => rendition.prev();
-  $('epub-next').onclick = () => rendition.next();
-
-  // Swipe mobile
-  const viewer = $('epub-viewer');
-  let touchStartX = 0;
-  viewer.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  viewer.addEventListener('touchend',   e => {
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    if (Math.abs(dx) > 50) dx < 0 ? rendition.next() : rendition.prev();
-  }, { passive: true });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  rendition.prev();
-    if (e.key === 'ArrowRight') rendition.next();
-  });
-
-  // Resize
-  window.addEventListener('resize', () => {
-    rendition.resize(window.innerWidth, window.innerHeight - TOPBAR_H);
-  });
-
-  setLoading(100, 'done');
-  showApp();
-  showKbdHint();
-}
-
-
-function applyEpubTheme() {
-  const r = state.epubRendition;
-  if (!r) return;
-  const bg = getComputedStyle(document.documentElement).getPropertyValue('--reader-bg').trim();
-  const fg = getComputedStyle(document.documentElement).getPropertyValue('--reader-text').trim();
-  r.themes.default({
-    body: {
-      'font-family': "'Lora', Georgia, serif !important",
-      'font-size': state.fontSize + 'px !important',
-      'color': fg + ' !important',
-      'background': bg + ' !important',
-      'line-height': '1.85 !important',
-      'max-width': '680px !important',
-      'margin': '0 auto !important',
-      'padding': '0 24px !important',
-    },
-    'a': { 'color': 'var(--accent) !important' }
-  });
-  r.themes.select('default');
-}
-
-function buildToc(toc, rendition) {
-  const list = $('toc-list');
-  list.innerHTML = '<div class="toc-title">Mục lục</div>';
-  if (!toc || toc.length === 0) {
-    list.innerHTML += '<div style="padding:12px 20px;font-size:0.8rem;color:var(--ink3);font-style:italic;">Không có mục lục</div>';
-    return;
-  }
-  function addItems(items, depth = 0) {
-    items.forEach(item => {
-      const el = document.createElement('a');
-      el.className = 'toc-item';
-      el.textContent = item.label;
-      el.style.paddingLeft = (20 + depth * 12) + 'px';
-      el.href = '#';
-      el.onclick = e => {
-        e.preventDefault();
-        rendition.display(item.href);
-        document.querySelectorAll('.toc-item').forEach(x => x.classList.remove('active'));
-        el.classList.add('active');
-        // mobile: close sidebar
-        if (window.innerWidth <= 640) closeSidebarMobile();
-      };
-      list.appendChild(el);
-      if (item.subitems && item.subitems.length) addItems(item.subitems, depth + 1);
-    });
-  }
-  addItems(toc);
-}
-
-// ── PDF ────────────────────────────────────────────────
-let pdfjsLib = null;
-const PDFJS_VERSION = '3.11.174';
-const PDFJS_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
-
-async function loadPdfJs() {
-  if (pdfjsLib) return;
-  if (window.pdfjsLib) {
-    pdfjsLib = window.pdfjsLib;
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
-    return;
-  }
-  await new Promise((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = `${PDFJS_CDN}/pdf.min.js`;
-    s.onload = resolve;
-    s.onerror = () => reject(new Error('Không tải được pdf.js từ CDN'));
-    document.head.appendChild(s);
-  });
-  pdfjsLib = window.pdfjsLib;
-  if (!pdfjsLib) throw new Error('pdf.js load xong nhưng window.pdfjsLib không tồn tại');
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
-}
-
-async function loadPdf(url) {
-  setLoading(20, 'loading pdf.js...');
-  await loadPdfJs();
-
-  setLoading(40, 'downloading pdf...');
-  $('pdf-container').classList.add('active');
-
-  // Use a CORS proxy if direct access fails
-  const loadingTask = pdfjsLib.getDocument({ url, withCredentials: false });
-
-  loadingTask.onProgress = p => {
-    if (p.total) {
-      const pct = 40 + (p.loaded / p.total) * 40;
-      setLoading(pct, `downloading... ${Math.round(p.loaded/1024)}KB`);
-    }
-  };
-
-  const pdf = await loadingTask.promise;
-  state.pdfDoc = pdf;
-  state.pdfTotalPages = pdf.numPages;
-  state.pdfCurrentPage = 1;
-
-  $('pdf-total-pages').textContent = pdf.numPages;
-  $('pdf-page-input').max = pdf.numPages;
-
-  setLoading(85, 'rendering pages...');
-
-  // Build TOC from PDF outline
-  const outline = await pdf.getOutline();
-  buildPdfToc(outline, pdf);
-
-  await renderAllPdfPages();
-
-  setLoading(100, 'done');
-  showApp();
-
-  setupPdfControls();
-  showKbdHint();
-}
-
-async function renderAllPdfPages() {
-  const scroll = $('pdf-scroll-area');
-  scroll.innerHTML = '';
-  const pdf = state.pdfDoc;
-  const zoom = state.pdfZoom;
-
-  // Render pages one by one (lazy-ish: all at once for smaller docs)
-  for (let i = 1; i <= pdf.numPages; i++) {
-    const wrap = document.createElement('div');
-    wrap.className = 'pdf-page-wrap';
-    wrap.id = 'pdf-p-' + i;
-    wrap.innerHTML = `<div class="pdf-loading-page">página ${i}</div>`;
-    scroll.appendChild(wrap);
-  }
-
-  // Intersection observer for lazy render
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        const pageNum = parseInt(id.replace('pdf-p-', ''));
-        if (!entry.target.dataset.rendered) {
-          entry.target.dataset.rendered = '1';
-          renderPdfPage(pageNum, entry.target);
-          observer.unobserve(entry.target);
-        }
-      }
-    });
-  }, { rootMargin: '200px' });
-
-  document.querySelectorAll('.pdf-page-wrap').forEach(el => observer.observe(el));
-}
-
-async function renderPdfPage(num, container) {
-  try {
-    const page = await state.pdfDoc.getPage(num);
-    const viewport = page.getViewport({ scale: state.pdfZoom });
-    const canvas = document.createElement('canvas');
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    const ctx = canvas.getContext('2d');
-    await page.render({ canvasContext: ctx, viewport }).promise;
-    container.innerHTML = '';
-    container.appendChild(canvas);
-    const lbl = document.createElement('div');
-    lbl.className = 'pdf-page-num';
-    lbl.textContent = num;
-    container.appendChild(lbl);
-  } catch(e) {
-    container.innerHTML = `<div class="pdf-loading-page" style="color:var(--accent)">Lỗi trang ${num}</div>`;
-  }
-}
-
-async function rerenderAllPdf() {
-  const pdf = state.pdfDoc;
-  if (!pdf) return;
-  document.querySelectorAll('.pdf-page-wrap').forEach(el => {
-    const num = parseInt(el.id.replace('pdf-p-', ''));
-    el.removeAttribute('data-rendered');
-    el.innerHTML = `<div class="pdf-loading-page">trang ${num}</div>`;
-  });
-  // re-observe
-  await renderAllPdfPages();
-}
-
-function buildPdfToc(outline, pdf) {
-  const list = $('toc-list');
-  list.innerHTML = '<div class="toc-title">Mục lục</div>';
-  if (!outline || outline.length === 0) {
-    list.innerHTML += '<div style="padding:12px 20px;font-size:0.8rem;color:var(--ink3);font-style:italic;">Không có mục lục</div>';
-    return;
-  }
-  async function addItems(items, depth = 0) {
-    for (const item of items) {
-      const el = document.createElement('a');
-      el.className = 'toc-item';
-      el.textContent = item.title;
-      el.style.paddingLeft = (20 + depth * 12) + 'px';
-      el.href = '#';
-      el.onclick = async e => {
-        e.preventDefault();
-        try {
-          const dest = await pdf.getDestination(item.dest);
-          if (dest) {
-            const ref = dest[0];
-            const pageNum = await pdf.getPageIndex(ref) + 1;
-            scrollToPdfPage(pageNum);
-          }
-        } catch(err) {}
-        document.querySelectorAll('.toc-item').forEach(x => x.classList.remove('active'));
-        el.classList.add('active');
-        if (window.innerWidth <= 640) closeSidebarMobile();
-      };
-      list.appendChild(el);
-      if (item.items && item.items.length) await addItems(item.items, depth + 1);
-    }
-  }
-  addItems(outline);
-}
-
-function scrollToPdfPage(num) {
-  const el = $('pdf-p-' + num);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  state.pdfCurrentPage = num;
-  $('pdf-page-input').value = num;
-  updatePdfProgress();
-}
-
-function setupPdfControls() {
-  $('pdf-prev').onclick = () => {
-    if (state.pdfCurrentPage > 1) scrollToPdfPage(state.pdfCurrentPage - 1);
-  };
-  $('pdf-next').onclick = () => {
-    if (state.pdfCurrentPage < state.pdfTotalPages) scrollToPdfPage(state.pdfCurrentPage + 1);
-  };
-  $('pdf-page-input').onchange = e => {
-    const v = parseInt(e.target.value);
-    if (v >= 1 && v <= state.pdfTotalPages) scrollToPdfPage(v);
-  };
-
-  let pdfZoomLevel = 1.0;
-  $('pdf-zoom-in').onclick = async () => {
-    pdfZoomLevel = Math.min(3, pdfZoomLevel + 0.25);
-    state.pdfZoom = pdfZoomLevel;
-    $('pdf-zoom-val').textContent = Math.round(pdfZoomLevel * 100) + '%';
-    await rerenderAllPdf();
-  };
-  $('pdf-zoom-out').onclick = async () => {
-    pdfZoomLevel = Math.max(0.5, pdfZoomLevel - 0.25);
-    state.pdfZoom = pdfZoomLevel;
-    $('pdf-zoom-val').textContent = Math.round(pdfZoomLevel * 100) + '%';
-    await rerenderAllPdf();
-  };
-
-  // Track current page via scroll
-  const scrollArea = $('pdf-scroll-area');
-  scrollArea.addEventListener('scroll', () => {
-    const pages = document.querySelectorAll('.pdf-page-wrap');
-    let closest = 1;
-    let minDist = Infinity;
-    pages.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const dist = Math.abs(rect.top);
-      if (dist < minDist) {
-        minDist = dist;
-        closest = parseInt(el.id.replace('pdf-p-', ''));
-      }
-    });
-    state.pdfCurrentPage = closest;
-    $('pdf-page-input').value = closest;
-    updatePdfProgress();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      if (state.pdfCurrentPage > 1) scrollToPdfPage(state.pdfCurrentPage - 1);
-    }
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      if (state.pdfCurrentPage < state.pdfTotalPages) scrollToPdfPage(state.pdfCurrentPage + 1);
-    }
-  });
-}
-
-function updatePdfProgress() {
-  const pct = (state.pdfCurrentPage / state.pdfTotalPages) * 100;
-  setProgress(pct);
-}
-
-// ── THEME & FONT ───────────────────────────────────────
-function applyTheme(theme) {
-  state.theme = theme;
-  document.documentElement.setAttribute('data-theme', theme);
-  document.querySelectorAll('.theme-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.theme === theme);
-  });
-  localStorage.setItem('reader_theme', theme);
-  if (state.epubRendition) applyEpubTheme();
-}
-
-function applyFontSize(size) {
-  state.fontSize = size;
-  $('font-size-val').textContent = size;
-  localStorage.setItem('reader_fontsize', size);
-  if (state.epubRendition) applyEpubTheme();
-}
-
-// ── SIDEBAR & CONTROLS ─────────────────────────────────
-function closeSidebarMobile() {
-  $('sidebar').classList.remove('open');
-  $('sidebar-overlay').classList.remove('show');
-}
-
-$('btn-sidebar').onclick = () => {
-  if (window.innerWidth <= 640) {
-    $('sidebar').classList.toggle('open');
-    $('sidebar-overlay').classList.toggle('show');
-  } else {
-    $('sidebar').classList.toggle('collapsed');
-  }
-};
-$('sidebar-overlay').onclick = closeSidebarMobile;
-
-$('btn-fullscreen').onclick = () => {
-  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-  else document.exitFullscreen();
-};
-document.addEventListener('keydown', e => {
-  if (e.key === 'f' || e.key === 'F') {
-    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-    else document.exitFullscreen();
-  }
-  if (e.key === 'Escape') $('settings-dropdown').classList.remove('open');
-});
-
-$('btn-settings').onclick = e => {
-  e.stopPropagation();
-  $('settings-dropdown').classList.toggle('open');
-};
-document.onclick = () => $('settings-dropdown').classList.remove('open');
-$('settings-dropdown').onclick = e => e.stopPropagation();
-
-$('font-inc').onclick = () => applyFontSize(Math.min(28, state.fontSize + 1));
-$('font-dec').onclick = () => applyFontSize(Math.max(10, state.fontSize - 1));
-
-document.querySelectorAll('.theme-btn').forEach(b => {
-  b.onclick = () => applyTheme(b.dataset.theme);
-});
-
-// ── RESTORE PREFERENCES ────────────────────────────────
-const savedTheme = localStorage.getItem('reader_theme') || 'light';
-const savedFont  = parseInt(localStorage.getItem('reader_fontsize')) || 16;
-applyTheme(savedTheme);
-applyFontSize(savedFont);
-
-// ── MAIN INIT ──────────────────────────────────────────
-(async () => {
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    if (!id) {
-      showError(
-        'Thiếu tham số ?id=',
-        'Truy cập: read.html?id=your-book-id\nVí dụ: read.html?id=demo-epub'
-      );
-      return;
-    }
-    state.bookId = id;
-
-    const links = await loadLinkJson();
-    const meta = links[id];
-    if (!meta) {
-      showError(
-        `Không tìm thấy sách "${id}"`,
-        `Các ID có sẵn: ${Object.keys(links).join(', ')}`
-      );
-      return;
-    }
-
-    setLoading(20, 'book found: ' + id);
-    applyMeta(meta);
-
-    const type = (meta.type || '').toLowerCase() ||
-                 (meta.url.endsWith('.epub') ? 'epub' : 'pdf');
-    state.type = type;
-
-    if (type === 'epub') {
-      await loadEpub(meta.url);
-    } else if (type === 'pdf') {
-      await loadPdf(meta.url);
-    } else {
-      showError('Định dạng không hỗ trợ: ' + type, 'Chỉ hỗ trợ epub và pdf');
-    }
-  } catch(err) {
-    console.error(err);
-    showError('Lỗi khi tải sách', err.message || String(err));
-  }
-})();
-</script>
+<script src="read.js"></script>
 </body>
 </html>
+
+
+
