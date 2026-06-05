@@ -1,11 +1,11 @@
 {
   "demo-epub": {
-    "title": "Alice's Adventures in Wonderland",
-    "author": "Lewis Carroll",
-    "cover": "",
+    "title": "Tên sách",
+    "author": "Tác giả",
     "type": "epub",
-    "url": "https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/raw/refs/heads/main/mylibrary/demo.epub"
-  },
+    "url": "https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/mylibrary/demo.epub"
+  }
+},
   "demo-pdf": {
     "title": "Sample PDF Book",
     "author": "Demo Author",
