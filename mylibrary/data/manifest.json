@@ -1,0 +1,191 @@
+{
+  "siteName": "Thư viện Sách Vui Offline",
+  "sourceSite": "https://sachvuii.com/",
+  "categories": [
+    {
+      "id": "am-thuc-nau-an",
+      "name": "Ẩm thực - Nấu ăn",
+      "file": "am-thuc-nau-an.json"
+    },
+    {
+      "id": "co-tich-than-thoai",
+      "name": "Cổ Tích - Thần Thoại",
+      "file": "co-tich-than-thoai.json"
+    },
+    {
+      "id": "cong-nghe-thong-tin",
+      "name": "Công Nghệ Thông Tin",
+      "file": "cong-nghe-thong-tin.json"
+    },
+    {
+      "id": "danh-nhan",
+      "name": "Danh Nhân",
+      "file": "danh-nhan.json"
+    },
+    {
+      "id": "giao-duc",
+      "name": "Giáo dục",
+      "file": "giao-duc.json"
+    },
+    {
+      "id": "hoc-ngoai-ngu",
+      "name": "Học Ngoại Ngữ",
+      "file": "hoc-ngoai-ngu.json"
+    },
+    {
+      "id": "hoi-ky-tuy-but",
+      "name": "Hồi Ký - Tuỳ Bút",
+      "file": "hoi-ky-tuy-but.json"
+    },
+    {
+      "id": "huyen-bi-gia-tuong",
+      "name": "Huyền bí - Giả Tưởng",
+      "file": "huyen-bi-gia-tuong.json"
+    },
+    {
+      "id": "khac",
+      "name": "Khác",
+      "file": "khac.json"
+    },
+    {
+      "id": "khoa-hoc-ky-thuat",
+      "name": "Khoa Học - Kỹ Thuật",
+      "file": "khoa-hoc-ky-thuat.json"
+    },
+    {
+      "id": "kien-truc-xay-dung",
+      "name": "Kiến Trúc - Xây Dựng",
+      "file": "kien-truc-xay-dung.json"
+    },
+    {
+      "id": "kinh-te-quan-ly",
+      "name": "Kinh Tế - Quản Lý",
+      "file": "kinh-te-quan-ly.json"
+    },
+    {
+      "id": "lam-cha-me-nuoi-day-tre",
+      "name": "Làm Cha Mẹ - Nuôi Dạy Trẻ",
+      "file": "lam-cha-me-nuoi-day-tre.json"
+    },
+    {
+      "id": "lich-su-chinh-tri",
+      "name": "Lịch Sử - Chính Trị",
+      "file": "lich-su-chinh-tri.json"
+    },
+    {
+      "id": "luat-phap",
+      "name": "Luật Pháp",
+      "file": "luat-phap.json"
+    },
+    {
+      "id": "marketing-ban-hang",
+      "name": "Marketing - Bán hàng",
+      "file": "marketing-ban-hang.json"
+    },
+    {
+      "id": "nong-lam-ngu",
+      "name": "Nông - Lâm - Ngư",
+      "file": "nong-lam-ngu.json"
+    },
+    {
+      "id": "phieu-luu-mao-hiem",
+      "name": "Phiêu Lưu - Mạo Hiểm",
+      "file": "phieu-luu-mao-hiem.json"
+    },
+    {
+      "id": "review-sach",
+      "name": "Review sách",
+      "file": "review-sach.json"
+    },
+    {
+      "id": "self-help-khoi-nghiep",
+      "name": "Self Help - Khởi nghiệp",
+      "file": "self-help-khoi-nghiep.json"
+    },
+    {
+      "id": "tai-lieu-hoc-tap",
+      "name": "Tài Liệu Học Tập",
+      "file": "tai-lieu-hoc-tap.json"
+    },
+    {
+      "id": "tam-ly-ky-nang-song",
+      "name": "Tâm Lý - Kỹ Năng Sống",
+      "file": "tam-ly-ky-nang-song.json"
+    },
+    {
+      "id": "tap-truyen-ngan",
+      "name": "Tập Truyện Ngắn",
+      "file": "tap-truyen-ngan.json"
+    },
+    {
+      "id": "the-thao-nghe-thuat",
+      "name": "Thể Thao - Nghệ Thuật",
+      "file": "the-thao-nghe-thuat.json"
+    },
+    {
+      "id": "thieu-nhi",
+      "name": "Thiếu Nhi",
+      "file": "thieu-nhi.json"
+    },
+    {
+      "id": "tho-ca",
+      "name": "Thơ Ca",
+      "file": "tho-ca.json"
+    },
+    {
+      "id": "tieu-thuyet",
+      "name": "Tiểu thuyết",
+      "file": "tieu-thuyet.json"
+    },
+    {
+      "id": "tieu-thuyet-phuong-dong",
+      "name": "Tiểu Thuyết Phương Đông",
+      "file": "tieu-thuyet-phuong-dong.json"
+    },
+    {
+      "id": "tieu-thuyet-phuong-tay",
+      "name": "Tiểu Thuyết Phương Tây",
+      "file": "tieu-thuyet-phuong-tay.json"
+    },
+    {
+      "id": "tieu-thuyet-trung-quoc",
+      "name": "Tiểu Thuyết Trung Quốc",
+      "file": "tieu-thuyet-trung-quoc.json"
+    },
+    {
+      "id": "trinh-tham-hinh-su",
+      "name": "Trinh Thám - Hình Sự",
+      "file": "trinh-tham-hinh-su.json"
+    },
+    {
+      "id": "truyen-cuoi-tieu-lam",
+      "name": "Truyện Cười - Tiếu Lâm",
+      "file": "truyen-cuoi-tieu-lam.json"
+    },
+    {
+      "id": "truyen-teen-tuoi-hoc-tro",
+      "name": "Truyên Teen - Tuổi Học Trò",
+      "file": "truyen-teen-tuoi-hoc-tro.json"
+    },
+    {
+      "id": "truyen-tranh",
+      "name": "Truyện Tranh",
+      "file": "truyen-tranh.json"
+    },
+    {
+      "id": "van-hoa-ton-giao",
+      "name": "Văn Hóa",
+      "file": "van-hoa-ton-giao.json"
+    },
+    {
+      "id": "van-hoc-viet-nam",
+      "name": "Văn Học Việt Nam",
+      "file": "van-hoc-viet-nam.json"
+    },
+    {
+      "id": "y-hoc-suc-khoe",
+      "name": "Y Học - Sức Khỏe",
+      "file": "y-hoc-suc-khoe.json"
+    }
+  ]
+}

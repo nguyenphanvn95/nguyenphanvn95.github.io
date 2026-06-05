@@ -1,0 +1,458 @@
+{
+  "theloai": {
+    "id": "giao-duc",
+    "name": "Giáo dục"
+  },
+  "items": [
+    {
+      "id": "thuc-vat-8211-sach-do-viet-nam-pdf-epub",
+      "name": "Thực Vật &#8211; Sách Đỏ Việt Nam PDF EPUB",
+      "tacgia": "Nhiều tác giả",
+      "mieuta": "Cuốn sách “Sách Đỏ Việt Nam – Thực Vật” do Bộ Môi trường và Tổ chức Bảo tồn Thiên nhiên Quốc tế (IUCN) xuất bản năm 2007. Đây là ấn phẩm quan trọng nhằm đánh giá tình trạng bảo tồn các loài thực vật hoang dã trên lãnh thổ Việt Nam. Cuốn sách được biên soạn bởi đội ngũ chuyên gia đầu ngành về thực vật học tại Việt Nam. Nội dung sách được chia thành 7 phần chính: Giới thiệu chung, Phương pháp đánh giá, Kết quả đánh giá, Danh sách các loài thực vật có nguy cơ tuyệt chủng, Danh sách các loài thực vật quý hiếm, Danh sách các loài thực vật cần quan tâm và Phụ lục. Theo đó, cuốn sách đã thống kê và đánh giá tình trạng bảo tồn của 4.993 loài thực vật bản địa và du nhập tại Việt Nam. Kết quả cho thấy có 1.207 loài thực vật đang có nguy cơ tuyệt chủng trong tự nhiên ở mức độ cao hơn. Trong số đó, có tới 147 loài được xếp vào Nguy cấp cao (CR), 223 loài Nguy cấp (EN) và 837 loài Dễ bị tổn thương (VU). Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/thuc-vat.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nhiều tác giả"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201460&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "thien-van-vat-ly-8211-astrophysics-pdf-epub",
+      "name": "Thiên Văn Vật Lý &#8211; Astrophysics PDF EPUB",
+      "tacgia": "Nhiều tác giả",
+      "mieuta": "Thiên Văn Vật Lý: Khám Phá Vũ Trụ Qua Góc Nhìn Vật Lý Tổng Quan: Vật lý thiên văn là một lĩnh vực nghiên cứu quan trọng trong ngành thiên văn học, tập trung vào việc hiểu về các tính chất vật lý của vũ trụ và tương tác giữa các thiên thể. Dưới đây là một tóm tắt về nội dung và ứng dụng của vật lý thiên văn: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/thien-van-vat-ly-nhieu-tac-gia.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nhiều tác giả"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201462&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "thau-cam-8211-harvard-business-review-pdf-epub",
+      "name": "Thấu Cảm &#8211; Harvard Business Review PDF EPUB",
+      "tacgia": "Harvard Business Review",
+      "mieuta": "Cuốn sách “Thấu Cảm” là một nguồn tài liệu quý giá về phẩm chất quan trọng này và cách áp dụng nó trong cuộc sống hàng ngày. Dưới đây là một số trích dẫn tiêu biểu từ cuốn sách: “Biết lắng nghe không đơn thuần chỉ là biết giữ yên lặng khi người khác nói. Trái lại, một người được coi là biết lắng nghe khi họ có khả năng đặt ra những câu hỏi kích thích sự tìm tòi và thấu hiểu… Lắng nghe được xem là một hội thoại hai chiều thay vì tương tắc một chiều giữa ‘người nói và người nghe’.” “Thấu cảm là năng lực cho phép bạn ‘đọc vị’ được mọi người. Ai đang ủng hộ ai? Ai đang có thái độ khiêu khích và ai đang thoai thác? Sự chống đối nằm ở đâu?” Cuốn sách này không chỉ giúp bạn hiểu rõ về tầm quan trọng của thấu cảm mà còn cung cấp các chiến lược và kỹ thuật cụ thể để phát triển và sử dụng kỹ năng này trong các tình huống giao tiếp và quan hệ. — Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Thau-Cam-HBR-Press.jpg",
+      "tags": [
+        "Giáo dục",
+        "Harvard Business Review"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201426&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "tien-la-gi-2-tien-cua-gia-dinh-pdf-epub",
+      "name": "Tiền Là Gì 2: Tiền Của Gia Đình PDF EPUB",
+      "tacgia": "William Whitehead",
+      "mieuta": "Tiền Là Gì 2 – Tiền Của Gia Đình: Các gia đình tiêu tiền như thế nào và tại sao là cuốn sách thứ hai trong bộ sách Tiền Là Gì của William Whitehead. Trong đó, tác giả đã nghiên cứu chi tiết về cách thức các gia đình quản lý và chi tiêu tiền bạc của mình. Theo đó, Whitehead đã khảo sát hơn 1000 gia đình ở Mỹ để hiểu rõ hơn về thói quen chi tiêu của từng nhóm đối tượng. Kết quả nghiên cứu cho thấy có sự khác biệt lớn giữa cách tiêu tiền của các gia đình trẻ so với gia đình giàu kinh nghiệm hơn. Cụ thể: – Gia đình trẻ thường chi tiêu phung phí hơn và thiếu kế hoạch tài chính . Họ dễ bị cuốn theo xu hướng tiêu tiền cho những món hàng không thực sự cần thiết. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tien-cua-gia-dinh-nhieu-tac-gia.jpg",
+      "tags": [
+        "Giáo dục",
+        "William Whitehead"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201458&#038;map=258953"
+        },
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201458&#038;map=258953"
+        },
+        {
+          "type": "azw3",
+          "label": "AZW3",
+          "url": "/get-link/?type=azw3&#038;truyen=201458&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "vuot-qua-nghich-canh-pdf-epub",
+      "name": "Vượt Qua Nghịch Cảnh PDF EPUB",
+      "tacgia": "Harvard Business Review",
+      "mieuta": "Cuốn sách “Vượt Qua Nghịch Cảnh” là một nguồn cảm hứng quý báu về sự kiên nhẫn, sức mạnh tinh thần và khả năng tái sinh sau những thất bại và khó khăn trong cuộc sống. Dưới đây là một số trích dẫn tiêu biểu từ cuốn sách: “Một trong những điều quan trọng nhất trong việc vượt qua khủng hoảng là tìm ra ý nghĩa và hướng đi mới. Khi chúng ta có một mục tiêu rõ ràng và ý nghĩa trong cuộc sống, chúng ta có thể tìm thấy sức mạnh để đối mặt với mọi thử thách.” “Không phải tất cả mọi người đều sinh ra với khả năng chịu đựng mạnh mẽ. Tuy nhiên, mỗi người đều có thể rèn luyện sự kiên nhẫn và sức mạnh tinh thần của mình thông qua việc thực hiện những bước nhỏ hướng tới mục tiêu của họ.” “Có những người dường như không bao giờ gục ngã dưới áp lực và thách thức. Họ biết cách tìm ra cơ hội trong mọi tình huống và sử dụng nó để trở nên mạnh mẽ hơn.” “Để khởi động lại nghề nghiệp một cách hiệu quả sau một thất bại, bạn cần phải tự tin vào khả năng của mình và không ngừng tìm kiếm cơ hội mới.” “Hãy nhớ rằng mọi thất bại đều là một bài học. Hãy học từ những sai lầm của bạn và tiến lên với niềm tin vào khả năng của mình.” — Khoảng thời gian đầu khi mới bước vào nghề tôi là phóng viên của một tạp chí quốc gia – ở đó có một người đàn ông mà tôi sẽ gọi là Claus Schmidt. Ông ấy hơn 50 tuổi, và trong ấn tượng của tôi, ông là một phóng viên kiểu mẫu: đôi khi hơi thô lỗ, nhưng luôn tò mò tìm hiểu về mọi việc và tràn đầy sức sống, thỉnh thoảng ông cũng hài hước một cách “nhạt nhẽo”. Ông viết nên những câu chuyện thu hút trên trang bìa một cách tinh tế và nhanh chóng mà tôi ước mình cũng có thể làm được. Chính bởi vậy, tôi rất ngạc nhiên khi biết ông chưa bao giờ được đề bạt lên chức thư ký tòa soạn. Nhưng những người biết rõ về Claus hơn tôi không chỉ coi ông là một phóng viên vĩ đại mà còn là một “người sống sót” kỳ diệu, một người đã phải trải qua nhiều cay đắng trong một môi trường khắc nghiệt. Ông đã làm việc tại đây và chứng kiến ít nhất ba lần thay đổi ban lãnh đạo tạp chí, trong khi hầu hết những người bạn và đồng nghiệp tốt nhất của ông đều ra đi. Tại quê nhà, hai người con của ông không may phải chống chọi với căn bệnh hiểm nghèo, còn người con thứ ba thì thiệt mạng trong một vụ tai nạn giao thông. Bất chấp mọi chuyện hoặc có thể chính vì tất cả những điều này – ông quanh quẩn tại tòa soạn ngày này qua ngày khác, đưa ra lời khuyên cho những phóng viên trẻ, nói về những cuốn tiểu thuyết mà mình đang viết – luôn chờ đợi xem điều gì sẽ xảy ra với tương lai của bản thân. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Vuot-Qua-Nghich-Canh-HBR-Press.jpg",
+      "tags": [
+        "Giáo dục",
+        "Harvard Business Review"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201428&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "vu-tru-8211-su-tien-hoa-cua-vu-tru-su-song-va-nen-van-minh-pdf-epub",
+      "name": "Vũ Trụ &#8211; Sự tiến hoá của vũ trụ, sự sống và nền văn minh PDF EPUB",
+      "tacgia": "Carl Sagan",
+      "mieuta": "Cuốn sách “Vũ Trụ – Sự tiến hoá của vũ trụ, sự sống và nền văn minh” của Carl Sagan là một tác phẩm khoa học phổ biến xuất sắc, nhằm mục đích giới thiệu cho độc giả về những kiến thức cơ bản về vũ trụ học cũng như quá trình tiến hoá của vũ trụ, sự sống và con người. Cuốn sách được chia thành nhiều phần chính: Phần đầu tiên của cuốn sách giới thiệu về lịch sử nghiên cứu vũ trụ học, từ những lý thuyết cổ đại cho đến những khám phá và giả thuyết hiện đại. Tác giả đã đưa ra những bằng chứng khoa học vững chắc để chứng minh rằng vũ trụ có tuổi khoảng 13,7 tỷ năm, và nó bắt đầu từ một vụ nổ lớn (Big Bang) cực kỳ nóng và đặc. Những phát hiện quan trọng nhất của vật lý thiên văn hiện đại được trình bày một cách chi tiết và dễ hiểu. Phần thứ hai của cuốn sách mô tả quá trình tiến hoá của vũ trụ sau vụ nổ lớn ban đầu. Cụ thể, tác giả đã giải thích về sự hình thành các nguyên tố hóa học, sao, thiên hà và cấu trúc vũ trụ lớn hơn. Những kiến thức hiện đại về vật lý thiên văn và vũ trụ học được trình bày một cách khoa học. Đặc biệt, tác giả đã giải thích rõ ràng về nguồn gốc của vật chất và năng lượng trong vũ trụ ngày nay. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/vu-tru-carl-sagan.jpg",
+      "tags": [
+        "Giáo dục",
+        "Carl Sagan"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201430&#038;map=258936"
+        },
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201430&#038;map=258936"
+        },
+        {
+          "type": "azw3",
+          "label": "AZW3",
+          "url": "/get-link/?type=azw3&#038;truyen=201430&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "viet-lai-ma-su-song-pdf-epub",
+      "name": "Viết Lại Mã Sự Sống PDF EPUB",
+      "tacgia": "Walter Isaacson",
+      "mieuta": "“Viết Lại Mã Sự Sống” của tác giả Walter Isaacson là một cuộc phiêu lưu sâu sắc và hấp dẫn vào thế giới của Jennifer Doudna, một nhà khoa học tài năng với niềm đam mê khám phá và sáng tạo. Câu chuyện về CRISPR/Cas9 không chỉ là một cuộc cách mạng trong lĩnh vực khoa học mà còn đặt ra những thách thức đạo đức và nhân quả vô cùng quan trọng. Nhìn Nhận Đa Chiều về CRISPR/Cas9: Cuốn sách không chỉ tập trung vào khía cạnh khoa học và kỹ thuật của công nghệ CRISPR/Cas9 mà còn đưa ra những thảo luận sâu sắc về đạo đức. Việc chỉnh sửa gen mở ra những cánh cửa mới cho y học, nhưng đồng thời đặt ra nhiều lo ngại về việc sử dụng công nghệ này trong việc “chọn lọc” gen, mở rộng khoảng cách xã hội và đạo đức của con người. Sự Hợp Nhất Giữa tình yêu Khoa Học và Nghệ Thuật: Walter Isaacson với bản lĩnh của một nhà văn tài năng hòa quyện cảm xúc và khoa học. Cuộc sống của Jennifer Doudna được tái hiện một cách chân thực và đồng thời, ông cũng giữ được sự hấp dẫn của nguyên tắc khoa học đằng sau công nghệ CRISPR/Cas9. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/viet-lai-ma-su-song-1-768x1087-1.jpg",
+      "tags": [
+        "Giáo dục",
+        "Walter Isaacson"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201432&#038;map=258936"
+        },
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201432&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "ung-xu-voi-nguoi-kho-nhan-pdf-epub",
+      "name": "Ứng Xử Với Người Khó Nhằn PDF EPUB",
+      "tacgia": "Harvard Business Review",
+      "mieuta": "Cuốn sách “Ứng Xử Với Người Khó Nhằn” đề cập đến một khía cạnh quan trọng trong quản lý mối quan hệ, đặc biệt là khi đối diện với những người có tính cách khó chịu. Dưới đây là một số trích dẫn tiêu biểu từ cuốn sách: “Giải quyết mâu thuẫn cũng giống như nấu ăn, chỉ đạt kết quả tốt nhất khi ở nhiệt độ phù hợp. Nếu quá nóng nảy, mâu thuẫn có thể bùng nổ, đốt cháy giao ước, khiến mối quan hệ tan vỡ trong sự tức giận hoặc thù ghét. Nếu quá lạnh nhạt, giao ước có thể bị đóng băng, không tiến triển tiếp được, hoặc mối quan hệ trở nên lạnh nhạt khi cảm xúc không được bộc lộ và những mối bận tâm không được giãi bày.” “Nhu cầu cảm xúc cơ bản của chúng ta là được trân trọng và thấy mình có giá trị. Khi cảm xúc đó không được đáp ứng, chúng ta cảm thấy bất ổn, mất cân bằng, thiếu an toàn và không hạnh phúc . Ở mức độ nghiêm trọng nhất, chúng ta thậm chí còn cảm thấy sự sống của mình bị đe dọa.” Cuốn sách này cung cấp cái nhìn sâu sắc vào cách chúng ta có thể hiểu và ứng xử với những tình huống phức tạp khi đối mặt với những người khó chịu, từ đó giúp chúng ta xây dựng mối quan hệ tốt hơn và tạo ra môi trường làm việc tích cực hơn. — Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Ung-Xu-Voi-Nguoi-Kho-Nhan-HBR-Press.jpg",
+      "tags": [
+        "Giáo dục",
+        "Harvard Business Review"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201434&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "tu-hoc-excel-tu-co-ban-toi-nang-cao-pdf-epub",
+      "name": "Tự Học Excel Từ Cơ Bản Tới Nâng Cao PDF EPUB",
+      "tacgia": "Timothy C. Needham",
+      "mieuta": "Microsoft Excel là ứng dụng bảng tính trong bộ MS Office. Nó được sử dụng rộng rãi để lưu trữ, tổ chức và phân tích dữ liệu hoặc thông tin. Mỗi tệp Excel tương đương với một sổ làm việc bao gồm một hoặc nhiều trang tính. Mỗi trang tính đại diện cho không gian làm việc của bạn, giúp bạn truy cập sâu hơn vào nhiều chức năng của Excel. Chúng bao gồm nhập và lưu trữ dữ liệu, tổ chức và định dạng dữ liệu cũng như phân tích dữ liệu thông qua các phép tính, công cụ vẽ bảng và biểu đồ cũng như các hoạt động thống kê, cùng nhiều hoạt động khác. Cho dù nó liên quan đến các nhiệm vụ đơn giản như tạo dòng thời gian dự án hay theo dõi ngân sách, cho đến những nhiệm vụ phức tạp hơn như tổ chức sơ đồ quy trình cho lưu đồ hoặc thậm chí phân tích dòng tiền kinh doanh, Excel chắc chắn có thể hoàn thành công việc. Cuốn sách này hướng dẫn toàn diện về Microsoft Excel 2016 dành cho người mới bắt đầu, trong đó các tính năng và chức năng cơ bản và thường được sử dụng sẽ được thảo luận chi tiết. Ngoài ra, các ví dụ thực hành được minh họa bằng ảnh hướng dẫn và quy trình từng bước. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Tu-Hoc-Excel-Tu-Co-Ban-Toi-Nang-Cao.jpg",
+      "tags": [
+        "Giáo dục",
+        "Timothy C. Needham"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201436&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "trong-sau-tham-cua-bi-an-5-giai-ma-nhung-cau-chuyen-bi-an-muon-doi-pdf-epub",
+      "name": "Trong Sâu Thẳm Của Bí Ẩn 5 – Giải Mã Những Câu Chuyện Bí Ẩn Muôn Đời PDF EPUB",
+      "tacgia": "Nguyễn Thị Kim Anh",
+      "mieuta": "Tóm Tắt: “Tập 5: Giải Mã Những Câu Chuyện Bí Ẩn Muôn Đời” của cuốn sách “Trong Thẳm Sâu Của Bí Ẩn” hứa hẹn mang lại những giải đáp cho những câu chuyện bí ẩn đã tồn tại từ thời xa xưa. Cuốn sách mở cánh cửa cho độc giả khám phá những khía cạnh kỳ bí và bí mật đằng sau những câu chuyện lâu đời. Các Điểm Nổi Bật: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/giai-ma-nhung-cau-chuyen-bi-an-muon-doi-nguyen-thi-kim-anh.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nguyễn Thị Kim Anh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201438&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "trong-sau-tham-cua-bi-an-4-nhung-bi-mat-duoc-che-day-trong-bong-dem-lich-su-pdf-epub",
+      "name": "Trong Sâu Thẳm Của Bí Ẩn 4 – Những Bí Mật Được Che Đậy Trong Bóng Đêm Lịch Sử PDF EPUB",
+      "tacgia": "Nguyễn Thị Kim Anh",
+      "mieuta": "Tóm Tắt: “Tập 4: Những Bí Mật Được Che Đậy Trong Bóng Đêm Lịch Sử” của cuốn sách “Trong Thẳm Sâu Của Bí Ẩn” khám phá những bí mật che đậy và kỳ bí trong lịch sử loài người. Cuốn sách đặt ra những câu hỏi đầy thách thức với độc giả, từ xác ướp người băng Ötzi đến những thắc mắc xoay quanh Hitler, Napoléon và mỏ vàng của vua Solomon. Câu Hỏi Đặt Ra: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/nhung-bi-mat-duoc-che-day-trong-bong-dem-lich-su-nguyen-thi-kim-anh.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nguyễn Thị Kim Anh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201440&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "trong-sau-tham-cua-bi-an-3-giua-huyen-thoai-va-khoa-hoc-8211-hoang-duong-va-su-that-pdf-epub",
+      "name": "Trong Sâu Thẳm Của Bí Ẩn 3 – Giữa Huyền Thoại Và Khoa Học &#8211; Hoang Đường Và Sự Thật PDF EPUB",
+      "tacgia": "Nguyễn Thị Kim Anh",
+      "mieuta": "Tóm Tắt: “Tập 3: Giữa Huyền Thoại Và khoa học – Hoang Đường Và Sự Thật” của cuốn sách “Trong Thẳm Sâu Của Bí Ẩn” đưa độc giả đến với những câu chuyện bí ẩn và kịch tính. Một vụ án mạng bí ẩn đặt ra nhiều câu hỏi khó giải đáp, từ việc xác định liệu có phải là tự vẫn hay án mạng đằng sau cái chết của vị hoàng thân già. Câu chuyện được xây dựng với những chi tiết gây tò mò và hứa hẹn đưa độc giả đến những thang bậc cao nhất của cảm xúc, từ nỗi sợ hãi đến hy vọng. Các Câu Hỏi Hấp Dẫn: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/giua-huyen-thoai-va-khoa-hoc-hoang-duong-va-su-that-nguyen-thi-kim-anh.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nguyễn Thị Kim Anh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201442&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "trong-sau-tham-cua-bi-an-2-bi-an-cac-nen-van-hoa-trong-lich-su-loai-nguoi-pdf-epub",
+      "name": "Trong Sâu Thẳm Của Bí Ẩn 2 – Bí Ẩn Các Nền Văn Hóa Trong Lịch Sử Loài Người PDF EPUB",
+      "tacgia": "Nguyễn Thị Kim Anh",
+      "mieuta": "“Tập 2: Trong Thẳm Sâu Của Bí Ẩn” là một cuốn sách khám phá những bí ẩn lớn của các dân tộc, ngôn ngữ và nền văn hóa trong lịch sử loài người. Dù có bao nhiêu phương tiện nghiên cứu hiện đại, những bí ẩn không thể lý giải vẫn là một thách thức, thúc đẩy nhà nghiên cứu và độc giả mở rộng tầm nhìn về thế giới và bản thân. Cuốn sách đưa độc giả vào những câu chuyện kỳ bí và những khám phá đầy thú vị về lịch sử loài người. Từ những ngôn ngữ bí ẩn đến những nền văn hóa độc đáo, sách không chỉ kể chuyện mà còn mở rộng cánh cửa cho sự tưởng tượng, khơi dậy sự hiếu kỳ và đánh thức tinh thần ngẫm nghĩ của độc giả. Đặc Điểm Nổi Bật: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/bi-an-cac-nen-van-hoa-trong-lich-su-loai-nguoi-nguyen-thi-kim-anh.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nguyễn Thị Kim Anh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201444&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "toi-la-che-ngu-dai-vuong-pdf-epub",
+      "name": "Tôi Là Chế Ngự Đại Vương PDF EPUB",
+      "tacgia": "Trương Cần",
+      "mieuta": "Cuốn sách “Nhật Ký Trưởng Thành Cúa Đứa Trẻ Ngoan – Tôi Là Chế Ngự Đại Vương” của tác giả Trương Cần kể về quá trình trưởng thành của nhân vật chính tên là Chế Ngự Đại Vương. Chế Ngự Đại Vương là một đứa trẻ ngoan ngoãn và thông minh. Từ bé, Chế Ngự Đại Vương đã tỏ ra rất ham học hỏi, tìm hiểu mọi thứ xung quanh mình. Gia đình cậu rất khá giả, bố mẹ cậu cũng rất yêu thương và chiều chuộng cậu. Tuy nhiên, cuộc sống của Chế Ngự Đại Vương bắt đầu thay đổi khi cậu bước vào tuổi thiếu niên. Cậu phải đối mặt với nhiều thử thách, rào cản khi bước vào đời. Cậu dần nhận ra rằng, cuộc sống không phải lúc nào cũng suôn sẻ như trước. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/toi-la-che-ngu-dai-vuong.jpg",
+      "tags": [
+        "Giáo dục",
+        "Trương Cần"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201446&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "tinh-yeu-va-toan-hoc-8211-edward-frenkel-pdf-epub",
+      "name": "Tình Yêu Và Toán Học &#8211; Edward Frenkel PDF EPUB",
+      "tacgia": "Edward Frenkel",
+      "mieuta": "tình yêu Và Toán Học – Trái Tim Của Thực Tại Ẩn Giấu là một cuốn sách đầy cảm hứng và thú vị do giáo sư Edward Frenkel, một nhà toán học người Mỹ gốc Nga viết về cuộc đời và sự nghiệp của mình. Cuốn sách không chỉ kể về hành trình học tập và nghiên cứu toán học của tác giả mà còn mang đến cho độc giả những câu chuyện sâu sắc hơn về tình yêu, sự hy sinh, sự kiên trì và những phát hiện khoa học đầy thú vị. Tác giả sinh ra tại một gia đình người Nga nhưng lớn lên tại Mỹ. Từ nhỏ, ông đã bộc lộ năng khiếu và đam mê toán học. Mặc dù gia đình có hoàn cảnh khó khăn nhưng với sự cổ vũ và hỗ trợ từ cha mẹ, Frenkel đã theo đuổi ước mơ trở thành một nhà toán học. Sau khi tốt nghiệp trung học với thành tích xuất sắc, ông theo học tại Đại học Harvard danh giá. Tuy nhiên, cuộc sống ở trường đại học không hề đơn giản đối với một sinh viên nghèo như Frenkel. Ông phải làm thêm rất nhiều công việc khác nhau như làm bảo vệ, phục vụ bàn, giúp việc nhà…để kiếm tiền trang trải học phí và sinh hoạt. Trong quá trình học tập tại Harvard, Frenkel đã tìm thấy niềm vui và sự hứng thú khi tìm hiểu về lý thuyết đại số và hình học. Ông bộc lộ khả năng xuất sắc trong nghiên cứu toán học, luôn đạt điểm cao nhất lớp và giành được nhiều học bổng giá trị. Tuy nhiên, con đường trở thành một nhà toán học chuyên nghiệp vẫn còn nhiều thử thách phía trước. Sau khi tốt nghiệp cử nhân, Frenkel tiếp tục theo học chương trình thạc sĩ và tiến sĩ tại Đại học California, Berkeley. Thời gian này, ông phải vượt qua áp lực học tập lớn đồng thời phải làm thêm nhiều công việc để kiếm sống. Nhờ bản lĩnh và nghị lực phi thường, Frenkel đã hoàn thành xuất sắc chương trình học và bảo vệ thành công luận án tiến sĩ. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tinh-yeu-va-toan-hoc-trai-tim-cua-thuc-tai-an-giau.jpg",
+      "tags": [
+        "Giáo dục",
+        "Edward Frenkel"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201448&#038;map=178054"
+        },
+        {
+          "type": "azw3",
+          "label": "AZW3",
+          "url": "/get-link/?type=azw3&#038;truyen=201448&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "tinh-thuc-8211-harvard-business-review-pdf-epub",
+      "name": "Tỉnh Thức &#8211; Harvard Business Review PDF EPUB",
+      "tacgia": "Harvard Business Review",
+      "mieuta": "Cuốn sách “Tỉnh Thức” không chỉ là một nguồn cảm hứng mà còn là một công cụ mạnh mẽ để cải thiện cuộc sống và công việc của bạn. Dưới đây là một số trích dẫn tiêu biểu từ cuốn sách: “Tỉnh thức không phải là sống thật chậm. Tỉnh thức là về việc bạn nâng cao sự tập trung và nhận thức cả trong công việc và cuộc sống. Bạn loại bỏ phiền nhiễu và đi đúng hướng theo cả mục tiêu của cá nhân và tổ chức.” “Sự chần chừ và hối tiếc có thể biến mất, bởi nếu bạn biết lý do tại sao mình đang làm việc gì đó, bạn sẽ không chỉ trích bản thân vì không làm việc khác. Nếu bạn hoàn toàn ý thức khi quyết định ưu tiên nhiệm vụ này, làm việc tại công ty này, tạo ra sản phẩm này hoặc theo đuổi chiến lược này, thì lý do gì để bạn phải hối hận chứ?” Cuốn sách này sẽ giúp bạn hiểu rõ hơn về sự tỉnh thức và cách áp dụng nó vào cuộc sống hàng ngày, từ đó giúp bạn trở nên tự nhận thức và hiệu quả hơn trong mọi khía cạnh của cuộc sống. — Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Tinh-Thuc-HBR-Press.jpg",
+      "tags": [
+        "Giáo dục",
+        "Harvard Business Review"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201450&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "so-tay-luat-su-2-ky-nang-hanh-nghe-luat-su-trong-to-tung-hinh-su-hanh-chinh-dan-su-pdf-epub",
+      "name": "Sổ Tay Luật Sư 2: Kỹ Năng Hành Nghề Luật Sư Trong Tố Tụng Hình Sự, Hành Chính, Dân Sự PDF EPUB",
+      "tacgia": "Nhiều tác giả",
+      "mieuta": "Tóm Tắt: “Sổ Tay Luật Sư 2: Kỹ Năng Hành Nghề Luật Sư Trong Tố Tụng Hình Sự, Hành Chính, Dân Sự” là tập sách tiếp theo trong sê-ri, tập trung vào giới thiệu và phân tích kỹ năng hành nghề của luật sư trong lĩnh vực tố tụng hình sự, hành chính và dân sự. Tập sách cung cấp kiến thức chi tiết về kỹ năng cơ bản và cụ thể cần thiết cho luật sư khi tham gia vào các loại vụ án khác nhau. Nội Dung Chi Tiết: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ky-nang-hanh-nghe-luat-su-trong-to-tung-hinh-su-hanh-chinh-dan-su.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nhiều tác giả"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201420&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "tien-la-gi-4-tien-cua-the-gioi-pdf-epub",
+      "name": "Tiền Là Gì 4: Tiền Của Thế Giới PDF EPUB",
+      "tacgia": "Gerry Bailey",
+      "mieuta": "Cuốn sách “Tiền Là Gì 4 – Tiền Của Thế Giới: Thế giới tiêu tiền như thế nào và tại sao” của tác giả Gerry Bailey đã mở rộng kiến thức của độc giả về cách thức mà các nền kinh tế trên toàn cầu sử dụng và tiêu tiền. Trong cuốn sách này, tác giả đã phân tích chi tiết về các hình thức thanh toán và cách thức tiêu tiền của người dân tại các quốc gia khác nhau trên thế giới. Theo đó, tác giả đã chia sẻ về các hình thức thanh toán phổ biến nhất tại từng khu vực như thanh toán bằng tiền mặt, séc, thẻ tín dụng, chuyển khoản ngân hàng. Tại các nước phát triển như Mỹ, Anh, thanh toán bằng thẻ tín dụng và chuyển khoản ngân hàng là hình thức chủ đạo. Trong khi đó, tại một số nước đang phát triển ở châu Á, châu Phi thì thanh toán bằng tiền mặt vẫn chiếm tỷ lệ lớn. Bên cạnh đó, tác giả cũng phân tích chi tiết về thói quen tiêu tiền của người dân tại từng khu vực. Cụ thể, tại các nước phát triển, người dân thường chi tiêu nhiều hơn cho các dịch vụ như y tế, giáo dục, bảo hiểm. Trong khi đó, tại các nước đang phát triển, người dân thường chi tiêu nhiều hơn cho lương thực, thực phẩm và nhu yếu phẩm cơ bản. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tien-cua-the-gioi-nhieu-tac-gia.jpg",
+      "tags": [
+        "Giáo dục",
+        "Gerry Bailey"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201452&#038;map=258953"
+        },
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201452&#038;map=258953"
+        },
+        {
+          "type": "azw3",
+          "label": "AZW3",
+          "url": "/get-link/?type=azw3&#038;truyen=201452&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "so-tay-luat-su-3-ky-nang-hanh-nghe-luat-su-tu-van-trong-linh-vuc-dau-tu-kinh-doanh-thuong-mai-pdf-epub",
+      "name": "Sổ Tay Luật Sư 3: Kỹ Năng Hành Nghề Luật Sư Tư Vấn Trong Lĩnh Vực Đầu Tư, Kinh Doanh, Thương Mại PDF EPUB",
+      "tacgia": "Nhiều tác giả",
+      "mieuta": "Tóm Tắt: “Sổ Tay Luật Sư 3: Kỹ Năng Hành Nghề Luật Sư Tư Vấn Trong Lĩnh Vực Đầu Tư, Kinh Doanh, Thương Mại” là cuốn sách thứ ba trong sê-ri, tập trung vào giới thiệu và phân tích kỹ năng hành nghề của luật sư trong lĩnh vực đầu tư, kinh doanh, và thương mại. Cuốn sách đề cập đến các khía cạnh quan trọng của lĩnh vực pháp lý liên quan đến doanh nghiệp và hoạt động kinh doanh. Nội Dung Chi Tiết: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ky-nang-hanh-nghe-luat-su-tu-van-trong-linh-vuc-dau-tu-kinh-doanh-thuong-mai.jpg",
+      "tags": [
+        "Giáo dục",
+        "Nhiều tác giả"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201422&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "tien-la-gi-3-tien-cua-quoc-gia-pdf-epub",
+      "name": "Tiền Là Gì 3: Tiền Của Quốc Gia PDF EPUB",
+      "tacgia": "William Whitehead",
+      "mieuta": "Cuốn sách “Tiền Là Gì 3 – Tiền Của Quốc Gia: Các Quốc Gia tiêu tiền như thế nào và tại sao” của tác giả William Whitehead đã phân tích và giải thích chi tiết về cách mà các quốc gia quản lý và sử dụng tiền tệ của mình. Trong cuốn sách này, tác giả đã giới thiệu khái niệm về tiền tệ quốc gia và vai trò quan trọng của nó đối với nền kinh tế mỗi quốc gia. Tiền tệ quốc gia không chỉ đơn thuần là phương tiện thanh toán mà còn là công cụ quan trọng để nhà nước thực hiện chính sách tài khóa và tiền tệ, điều tiết nền kinh tế. Qua đó, tác giả nhấn mạnh đến vai trò của Ngân hàng Trung ương trong việc quản lý cung cầu tiền tệ, đảm bảo ổn định giá cả và tỷ giá. Sau đó, tác giả đi sâu phân tích cách mà các quốc gia tiêu tiền thông qua ngân sách nhà nước. Theo đó, ngân sách nhà nước là công cụ quan trọng để quốc gia điều phối nguồn lực tài chính vào các lĩnh vực kinh tế – xã hội khác nhau như y tế, giáo dục, quốc phòng, an ninh, cơ sở hạ tầng… Tác giả phân tích chi tiết các khoản thu và chi của ngân sách, cách xây dựng dự toán ngân sách hàng năm của chính phủ các nước. Đồng thời cũng chỉ ra những thách thức mà các quốc gia phải đối mặt trong việc cân đối ngân sách, quản lý nợ công. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Giáo dục",
+      "theloaiSlug": "giao-duc",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tien-cua-quoc-gia-nhieu-tac-gia.jpg",
+      "tags": [
+        "Giáo dục",
+        "William Whitehead"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "/get-link/?type=epub&#038;truyen=201454&#038;map=178054"
+        },
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=201454&#038;map=178054"
+        },
+        {
+          "type": "azw3",
+          "label": "AZW3",
+          "url": "/get-link/?type=azw3&#038;truyen=201454&#038;map=178054"
+        }
+      ]
+    }
+  ]
+}

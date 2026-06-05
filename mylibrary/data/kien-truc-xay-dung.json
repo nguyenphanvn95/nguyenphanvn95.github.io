@@ -1,0 +1,408 @@
+{
+  "theloai": {
+    "id": "kien-truc-xay-dung",
+    "name": "Kiến Trúc - Xây Dựng"
+  },
+  "items": [
+    {
+      "id": "nha-o-theo-phong-tuc-dan-gian",
+      "name": "Nhà ở theo phong tục dân gian",
+      "tacgia": "Vân Dương Sĩ",
+      "mieuta": "Chương 1 : Nhà ở với xem sức khoẻ và nhân duyên Chương 2 : Nhà ở với tình cảm vợ chồng Chương 3 : Nhà ở với sức khoẻ và vận kim tiền Chương 4 : Nhà ở với phong thuỷ xung quanh Chương 5 : Nhà ở và gian ngăn cách Chương 6 : Danh sư tướng học xem phong thuỷ Chương 7 : Tự xem tướng nhà mình Sách liên quan: Châm Cứu Theo Cấu Trúc Không Gian Và Thời Gian Phi Thuyền Thời Gian Tập 7: Mất Tích Theo Dòng Thời Gian Nghệ Thuật Theo Đuổi Sự Tối Giản",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/kAfmoSkvzC.webp",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Vân Dương Sĩ"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=232538&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "nhung-ngoi-nha-mo-uoc",
+      "name": "Những ngôi nhà mơ ước",
+      "tacgia": "Dan Morris",
+      "mieuta": "Đứng trước nhu cầu phát triển mạnh mẽ về xây dựng hiện nay, ngành thiết kế kiến trúc có một vai trò hết sức quan trọng. Nó ngày càng phát triển đa dạng, phong phú góp phần thay đổi bộ mặt của đất nước. Đồng thời, ngày nay ngành thiết kế kiến trúc không chỉ là mối quan tâm của riêng các kiến trúc sư, sinh viên kiến trúc mà ngay cả người dân cũng muốn tìm cho mình những mẫu nhà thiết kế phù hợp nhất. Vì khi điều kiện kinh tế của gia đình đã phát triển, ai cũng muốn nơi mình ở phải dẹp, thoải mái với những tiện nghi hiện đại để phục vụ tốt cho bản thân. Đây cũng là mối quan tâm tất yếu của tất cả mọi người. Cuốn Những Ngôi Nhà Mơ Ước gồm những mẫu nhà biệt thự đặc sắc nhất của ngành kiến trúc hiện nay trên thế giới được xây dựng ở đô thị hoặc ở vùng cao. Nó có thể đáp ứng được sự mong muốn của những ai có điều kiện kinh tế muốn xây dựng cho mình một ngôi nhà mà lâu nay mình hằng mơ ước. Mặc dù người biên dịch đã cố gắng chọn lọc, sưu tầm những mẫu nhà đẹp từ các tài liệu nước ngoài, song khó tránh khỏi thiếu sót. Chúng tôi rất mong được sự đóng góp của quý độc giả để chúng tôi nâng cao chất lượng xuất bản những cuốn kế tiếp. .ua12feda6401cc5cada412903c5b77251 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ua12feda6401cc5cada412903c5b77251:active, .ua12feda6401cc5cada412903c5b77251:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ua12feda6401cc5cada412903c5b77251 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ua12feda6401cc5cada412903c5b77251 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ua12feda6401cc5cada412903c5b77251 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ua12feda6401cc5cada412903c5b77251:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Giáo Trình Kết Cấu Chuyên Ngành Thuỷ Nông",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/c8bf594aaa044dfba2b6bdb74a76202c.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Dan Morris"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=232402&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "tu-dau-truong-colide-den-duong-ngam-chau-au",
+      "name": "Từ đấu trường CôLiDê đến đường ngầm châu âu",
+      "tacgia": "D.Chambron",
+      "mieuta": "Cách đây hàng nghìn năm, con người đã biết sử dụng cành cây và da súc vật để dựng lều tránh mưa tránh rét. Ngày nay, chúng ta xây dựng đủ mọi dạng công trình: nhà ở, trang trại, dinh thự, v.v&#8230; Dù lớn hay nhỏ, các công trình này đều rất quan trọng vì chúng che chở và làm cho cuộc sống chúng ta được tiện nghi. Sách liên quan: Công Trình Ga Và Đường Tàu Điện Ngầm Châu Âu cứ mơ mộng và lên đường Bảo Vệ Và Phát Triển Môi Trường Cảnh Quan Trong Xây Dựng Đường Ô Tô",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/kDc8qOLWcP.webp",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "D.Chambron"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=232281&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "trang-bi-dien-may-xay-dung",
+      "name": "Trang bị điện máy xây dựng",
+      "tacgia": "Đỗ Xuân Tùng",
+      "mieuta": "Nước ta đang ở thời kì công nghiệp hóa, hiện đại hóa nền kinh tế. Nhu cầu xây dựng các công trình dân dụng, công nghiệp và các cơ sở hạ tầng ngày càng tăng. Việc sử dụng các máy móc và trang bị kĩ thuật xây dựng đã có bước tiến đáng kể. Nhiều loại máy móc mới hiện đại xuất hiện phục vụ cho công nghệ xây dựng. Các trang thiết bị điện, các hệ thống truyền động diện là một bộ phận quan trọng, đóng góp vai trò đáng kể trong việc nâng cao hiệu suất làm việc của các loại máy móc xây dựng khác nhau. Nhu cầu kiến thức về trang bị điện và hệ thống truyền động điện trong máy xây dựng của các cán bộ trong ngành ngày càng cao nhằm đáp ứng cho việc sử dụng, vận hành máy móc có hiệu quả cũng như cho nghiên cứu cải tiến nâng cao chất lượng của các hệ thống trang bị điện để đáp ứng các yêu cầu công nghệ mới. Do yêu cầu trên chúng tôi biên soạn cuốn giáo trình &#8220;Trang bị điện máy xây dựng&#8221;. Sách đề cập đến các kiến thức cơ bản về các hệ thống truyền động điện trong máy xây dựng và máy móc nói chung ; Các phương pháp lựa chọn và điều khiển máy điện cho hệ thống truyền động diện ; các thiết bị và khí cụ điện và giới thiệu các sơ đồ mạch điện điều khiển máy điện trong các máy nâng &#8211; vận chuyển, máy xúc, trong ôtô và máy kéo. .uc809fe78082b559a8e6b65c1c095fad8 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .uc809fe78082b559a8e6b65c1c095fad8:active, .uc809fe78082b559a8e6b65c1c095fad8:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .uc809fe78082b559a8e6b65c1c095fad8 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .uc809fe78082b559a8e6b65c1c095fad8 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .uc809fe78082b559a8e6b65c1c095fad8 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .uc809fe78082b559a8e6b65c1c095fad8:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Kiến trúc phong cảnh",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/7f8270c50e854897bf38fa218f3f8800.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Đỗ Xuân Tùng"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=231587&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "xu-huong-moi-trong-kien-truc-8211-do-thi-the-gioi-va-viet-nam-thoi-hoi-nhap",
+      "name": "Xu Hướng Mới Trong Kiến Trúc &#8211; Đô Thị Thế Giới Và Việt Nam Thời Hội Nhập",
+      "tacgia": "Nguyễn Hữu Thái",
+      "mieuta": "Thế kỷ XX tưởng phi có thể mở ra cho loài người một thời đại xán lạn mới, vậy mà thế giới ngày nay vẫn còn hỗn độn và đầy mâu thuẫn. Những tồn tại của một thế kỷ công nghiệp hóa quá mức vẫn còn đó, nào xung đột chính trị, văn hóa, nào mâu thuẫn giàu nghèo, phá hoại môi trường, phung phí tài nguyên… Nhiều lời báo động đã vang lên từ các diễn đàn quốc tế suốt cả năm 2002. Tổ chức UN Habitat của Liên Hiệp quốc tiến hành Diễn đàn Đô thị thế giới tại Nairobi, Kenya, thảo luận vấn đề phát triển đô thị bền vững. Báo động về sự xuống cấp của cả hành tinh chúng ta được giống lớn khẩn cấp hơn tại Hội nghị Thượng đỉnh thể giới về môi trường và phát triển bền vững ở Johannesburg, Nam Phi, kêu gọi loài người cùng chung sức tiến hành quá trình phấn đấu cho một Trái Đất xanh sạch đẹp trước khi quá muộn! Vào tháng 7 năm 2002, Đại hội Kiến trúc sư thế giới lần thứ XXI tổ chức tại Berlin, CHLB Đức đã và định kiến trúc phải là nguồn lực phục vụ hòa bình và phát triển. Đại hội nêu quyết tâm sử dụng nguồn lực tri thức và vật chất cho mục tiêu phục vụ hòa bình và tiến bộ xã hội, xóa đói nghèo, chống bất công, nhằm phát triển khu vực, bảo vệ môi trường, tôn trọng văn hóa của rừng dân tộc, rừng quốc gia. Đấy chính là những vấn đề mà tác giả, hiển trúc sư Nguyễn Hữu Thái, nén lên trong cuốn sách “Xu hướng mới trong kiến trúc-đô thị thế giới và Việt Nam thời hội nhập&#8221; với nội dung nhằm giải đáp cho các câu hỏi: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b587331a32574cd1b524616b052ca7ea.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Hữu Thái"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=231499&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "xay-dung-cong-trinh-ngam-do-thi-theo-phuong-phap-dao-mo",
+      "name": "Xây Dựng Công Trình Ngầm Đô Thị Theo Phương Pháp Đào Mở",
+      "tacgia": "Nguyễn Bá Kế",
+      "mieuta": "Trong xây dựng đô thị, nhất là các đô thị lớn, thì các dạng công trình ngầm là một trong các thành phần chủ yếu của hạ tầng kĩ thuật đô thị. Trong xu thế chung của phát triển các đô thị theo hướng hiện đại thì hệ thống công trình ngầm đô thị ngày càng có vị trí quan trọng. Muốn vậy, ta cần nhanh chóng tiếp cận với những phương pháp tổ chức khai thác không gian ngầm theo những ý tưởng mới qua tài liệu sách báo gần đây và trên thực tế đã định hình dần ngay ở đầu thế kỉ XXI này. Bộ môn Xây dựng công trình ngầm đô thị của trường Đại học Kiến trúc Hà Nội bắt đầu đào tạo kỹ sư theo các hướng đó thông qua các môn học đã được Bộ giáo dục &#8211; đào tạo chấp nhận. Quyển sách &#8220;Xây dựng công trình ngầm đô thị theo phương pháp đào mở&#8221; là một trong các tài liệu dùng để giảng dạy cho sinh viên Khoa Xây dựng chuyên ngành Xây dựng công trình ngầm đô thị. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3647192e75704449b1c219551150d6fa.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Bá Kế"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=231469&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "trac-dia-quy-hoach-duong-va-do-thi",
+      "name": "Trắc Địa Quy Hoạch Đường Và Đô Thị",
+      "tacgia": "Vũ Thặng",
+      "mieuta": "Khu đô thị nằm trên diện tích lớn, các công trình hình tuyến như đường ôtô, đường sắt, kênh mương, đường ống dẫn, đường dây tải điện&#8230; nằm trải dài qua các địa hình khác nhau. Khi khảo sát, thiết kế quy hoạch cũng như khi xây dựng công trình, địa hình là một yếu tố cơ bản ảnh hưởng tới chất lượng, hiệu quả kinh tế, ý nghĩa sử dụng của công trình. Vì vậy, những hiểu biết chuyên môn trong lĩnh vực chuyên ngành công trình cũng như trong lĩnh vực trắc địa sẽ giúp các nhà thiết kế quy hoạch thực hiện tốt nhiệm vụ khi thiết kế, thi công công trình. Tài liệu “Trắc địa quy hoạch đường và đô thị sẽ giúp bạn đọc có được những hiểu biết cần thiết, nắm được các mối liên hệ giữa công tác trắc địa công trình cũng như công tác thiết kế quy hoạch, thi công đường giao thông và khu đô thị. Sách giới thiệu các phương pháp thiết kế quy hoạch có các ví dụ minh hoạ cụ thể. Vì vậy, nó có thể là cơ sở để nghiên cứu môn học sau khi đã học xong các môn chuyên ngành công trình cũng như trắc địa đại cương. Đồng thời, nó cũng là tài liệu tham khảo tốt cho các bạn đang làm công tác thiết kế quy hoạch trong các lĩnh vực công trình chuyên ngành đường và quy hoạch đô thị. Nội dung sách gồm bốn chương: .uc809fe78082b559a8e6b65c1c095fad8 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .uc809fe78082b559a8e6b65c1c095fad8:active, .uc809fe78082b559a8e6b65c1c095fad8:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .uc809fe78082b559a8e6b65c1c095fad8 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .uc809fe78082b559a8e6b65c1c095fad8 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .uc809fe78082b559a8e6b65c1c095fad8 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .uc809fe78082b559a8e6b65c1c095fad8:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Kiến trúc phong cảnh",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/f5b0481ec0ea455a81fa33a4b731bcff.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Vũ Thặng"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=229933&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "may-lam-dat",
+      "name": "Máy Làm Đất",
+      "tacgia": "Phạm Hữu Đỗng",
+      "mieuta": "LỜI NÓI ĐẦU Trong xây dựng cơ bản, khối lượng công tác đất chiếm tỷ trọng tương đối lớn. Để từng bước cơ giới hóa, tự động hóa công tác làm đất, trên thế giới cũng như ở nước ta ngày càng sử dụng nhiều loại máy làm đất. Cuốn sách “Máy làm đất&#8221; biên soạn nhằm góp phần đáp ứng yêu cầu tìm hiểu về các loại máy làm đất đang được sử dụng nhiều trên các công trình xây dựng cơ bản của nước ta và thế giới. Cuốn sách &#8220;Máy làm đất&#8221; dùng làm giáo trình cho sinh viên Ngành Cơ khí xây dựng. Nó cũng là tài liệu tham khảo khi tính toán, thiết kế, chế tạo, sử dụng các loại máy làm đất. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/f4194ff73a2c4385a06e43441f891132.jpg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Phạm Hữu Đỗng"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=228948&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "giao-trinh-ket-cau-chuyen-nganh-thuy-nong",
+      "name": "Giáo Trình Kết Cấu Chuyên Ngành Thuỷ Nông",
+      "tacgia": "Hoàng Xuân Anh",
+      "mieuta": "Nước ta đang bước vào thời kỳ công nghiệp hóa, hiện đại hóa nhằm đưa Việt Nam trở thành nước công nghiệp văn minh, hiện đại. Trong sự nghiệp cách mạng to lớn đó, công tác đào tạo nhân lực luôn giữ vai trò quan trọng. Báo cáo Chính trị của Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam tại Đại hội Đảng toàn quốc lần thứ IX đã chỉ rõ: “Phát triển giáo dục và đào tạo là một trong những động lực quan trọng thúc đẩy sự nghiệp công nghiệp hóa, hiện đại hóa, là điều kiện để phát triển nguồn lực con người &#8211; yếu tố cơ bản để phát triển xã hội, tăng trưởng kinh tế nhanh và bền vững”. Quán triệt chủ trương, Nghị quyết của Đảng và Nhà nước và nhận thức đúng đắn về tầm quan trọng của chương trình, giáo trình đối với việc nâng cao chất lượng đào tạo, theo đề nghị của Sở Giáo dục và Đào tạo Hà Nội, ngày 23/9/2003, Ủy ban nhân dân thành phố Hà Nội đã ra Quyết định số 5620/QĐ-UB cho phép Sở Giáo dục và Đào tạo thực hiện đề án biên soạn chương trình, giáo trình trong các trường Trung học chuyên nghiệp (THCN) Hà Nội. Quyết định này thể hiện sự quan tâm sâu sắc của Thành ủy, UBND thành phố trong việc nâng cao chất lượng đào tạo và phát triển nguồn nhân lực Thủ đô. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/dbb3403dc41b4e0b8d1a76005552e2bc.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Hoàng Xuân Anh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=228340&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "to-chuc-cong-truong-xay-dung",
+      "name": "Tổ Chức Công Trường Xây Dựng",
+      "tacgia": "Nguyễn Duy Thiện",
+      "mieuta": "Cuốn sách Tổ chức công trường xây dựng&#8221; cung cấp các kiến thức cơ bản về phương pháp tổ chức, bố trí mặt bằng để thi công một công trình xây dựng, ngoài ra nó còn thông tin cho người đọc những tiến bộ kĩ thuật về thi công xây dựng, tổ chức khoa học lao động, lập kế hoạch tiến độ thi công&#8230;, và những vấn đề đặt ra hàng ngày trên công trường của một người chỉ huy thi công. Nội dung sách gồm 8 chương: Chương 1: Xây dựng nhà và công trình công cộng &#8211; Vấn đề tổ chức xí nghiệp. Chương 2: Những nghiên cứu sơ bộ để mở công trường. Chương 3: Bố trí chung mặt bằng công trường. Chương 4: Bố trí các thiết bị chính. Chương 5: Tư tưởng chủ đạo trong tổ chức lao động. Chương 6: Sự phối hợp các công trường. Chương 7: Kiểm tra công trường. Chương 8: Tổ chức công việc. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/a9e03d8f8de94cca964432fa022420a5.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Duy Thiện"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=228274&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "to-chuc-khong-gian-kien-truc-cac-loai-nha-cong-cong",
+      "name": "Tổ Chức Không Gian Kiến Trúc Các Loại Nhà Công Cộng",
+      "tacgia": "Vũ Duy Cừ",
+      "mieuta": "Để phục vụ nhu của sách tham khảo, học tập và giảng dạy môn &#8220;Đồ án thiết kế kiến trúc nhà công cộng&#8221;, cuốn sách &#8220;Tổ chức không gian kiến trúc các loại nhà công cộng&#8221; đã được biên soạn với nội dung sau: Phần I: Kiến trúc công cộng trong xã hội công nghiệp hiện đại. Phần II: Những nhân tố ảnh hưởng đến việc tổ chức không gian kiến trúc như công cộng. Phần III: Tổ chức không gian kiến trúc các loại nhà công cộng. Trong mỗi phần đều chứa đựng những kiến thức cơ bản theo nội dung chương trình đào tạo kiến trúc sư, cao học và nghiên cứu sinh thuộc Trường Đại học Kiến trúc Hà Nội. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3433d524d28f4bdc84d0508b66d87528.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Vũ Duy Cừ"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=228276&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "tinh-toan-thiet-ke-cong-trinh-ngam",
+      "name": "Tính Toán Thiết Kế Công Trình Ngầm",
+      "tacgia": "Trần Thanh Giám",
+      "mieuta": "Trên thế giới, công trình ngầm đã được phát triển rất phổ biến và xây dựng hiện đại. Những công trình này phục vụ cho giao thông vận tải xuyên qua núi cao, sông rộng, hệ thống giao thông đô thị lớn; khai thác khoáng sản; nhà máy, kho tàng, nhà hát; công trình thuỷ công và cho mục đích an ninh quốc phòng. Ở nước ta, những năm gần đây, đã và đang xây dựng một số công trình ngầm có quy mô trung bình và khá phức tạp trong các tầng đá cứng chắc với sự giúp đỡ của các chuyên gia nước ngoài như Thuỷ điện Hoà Bình, Trị An, Yali, Nhà máy xi măng Hoàng Mai; đường hầm xuyên đèo Hải Vân,&#8230; Và trong tương lai các đô thị lớn như Hà Nội, thành phố Hồ Chí Minh,&#8230; việc xây dựng các công trình giao thông ngầm sẽ trở nên bức thiết nhằm khắc phục nạn ách tắc giao thông và nhu cầu về phát triển kinh tế tại các đô thị hiện đại. Song, trên thực tế, kinh nghiệm về thiết kế và thi công xây dựng công trình ngầm ở ta còn chưa đáng kể, đội ngũ cán bộ và công nhân chuyên ngành có tay nghề cao còn thiếu; các tài liệu nghiên cứu về thiết kế, thi công và khai thác công trình ngầm còn khan hiếm. Điều đó phần nào gây khó khăn và lúng túng trong việc nghiên cứu, học tập cho sinh viên ngành khai thác mỏ, ngành xây dựng công trình ngầm; cũng như việc tính toán thiết kế thi công của các cán bộ kĩ thuật xây dựng có liên quan trong lĩnh vực này. Còn các tài liệu đã có phần nhiều lại chỉ đề cập đến lí thuyết cơ bản và biện pháp thi công công trình ngầm trong lĩnh vực giao thông và thuỷ điện. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/c8a53c161be04e098f638d833fa8ca6b.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Trần Thanh Giám"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=228252&#038;map=178054"
+        }
+      ]
+    },
+    {
+      "id": "thiet-ke-va-khai-thac-duong-oto-8211-duong-thanh-pho-theo-quan-diem-an-toan-giao-thong",
+      "name": "Thiết Kế Và Khai Thác Đường Ôtô &#8211; Đường Thành Phố Theo Quan Điểm An Toàn Giao Thông",
+      "tacgia": "Nguyễn Xuân Vinh",
+      "mieuta": "Có lẽ, tên cuốn sách và phần mở đầu của nó cũng đã giới thiệu với bạn đọc mục đích biên soạn tài liệu này. Nội dung của cuốn sách gồm 10 chương Chương mở đầu trình bày quan điểm thiết kế an toàn cho đường ôtô, đường thành phổ thông qua những số liệu về hiểm hoạ do tai nạn giao thông (TNGT) đường bộ gây ra. Từ chương 1 đến chương 7: Trình bày cách ứng xử của lái xe từ sự thiết lập chế độ xe chạy cho chính mình bằng những cảm nhận về các điều kiện của đường sá; Khảo sát các nguyên nhân và phân tích các tỉnh huống xảy ra các TNGT; xem xét ảnh hưởng của các điều kiện đường sở, điều kiện thiên nhiên đến an toàn giao thông (ATGT) đường bộ cùng các biện pháp bảo đảm an toàn cho các phương tiện giao thông trên đường. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/33b45a16c1c34f138898837c0ec148ba.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Xuân Vinh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227776&#038;map=176245"
+        }
+      ]
+    },
+    {
+      "id": "thiet-ke-cong-trinh-bao-ve-bo-de",
+      "name": "Thiết Kế Công Trình Bảo Vệ Bờ, Đê",
+      "tacgia": "Tôn Thất Vĩnh",
+      "mieuta": "LỜI MỞ ĐẦU Việt nam có 2 đồng bằng lớn sông Hồng, sông Cửu long và đồng bằng hẹp dài ven biển các tỉnh miền trung là những đồng bằng thấp thường hay bị uy hiếp rủi ro thiệt hại ngập lụt do lũ hay nước biển dâng do bão. Để là công trình phòng chống chủ yếu được xây dựng từ lâu đời và không ngừng củng cố. Ngày nay cả nước có trên 7 ngàn km đê, trong đó khoảng 5 ngàn km đê sông và 2 ngàn km đê biển không kể dẻ bao vùng đồng bằng nam bộ. Để bảo vệ đê, kè chống sạt lở bờ sông và bờ biển cũng được xây dựng. Đặc biệt những năm gần dây kẻ xây dựng nhiều do kết hợp bảo vệ đất, nhà cửa. hải đảo và cho giao thông thuỷ, căng. Tổ chức củng cố đê kè và hộ để sửa chữa khẩn cấp chúng ta có nhiều kinh nghiệm. Nhưng thiết kế chưa đáp ứng yêu cầu phát triển hiện nay và tương lai nên cần tiếp cận kiểu thức mới từ các kết quả đúc rút từ kinh nghiệm, nghiên cứu quá tính toán cụ thể. Kiến thức đề kè này được áp dụng và phổ biến rộng rãi ở các nước công nghiệp phát triển như Hà lan, Mỹ, Anh v,v&#8230; Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/4b079672dd50446181921fac9264abcc.jpg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Tôn Thất Vĩnh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227754&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "thiet-ke-duong-do-thi",
+      "name": "Thiết Kế Đường Đô Thị",
+      "tacgia": "Phạm Hữu Đức",
+      "mieuta": "Những năm gần đây, tốc độ đô thị hóa ở Việt Nam đã được đẩy nhanh cùng với sự tăng trưởng mạnh của nền kinh tế nước nhà. Công tác quy hoạch xây dựng đô thị được chú trọng, nhiều khu đô thị mới được thiết kế, xây dựng. Để đáp ứng yêu cầu của thực tiễn, cũng như để phù hợp với mục tiêu đổi mới chương trình đào tạo của Nhà trường, bộ môn Giao thông Đô thị &#8211; trường Đại học Kiến trúc Hà Nội biên soạn Giáo trình thiết kế đường đô thị. Cuốn giáo trình &#8220;Thiết kế đường đô thị&#8221; được biên soạn theo chương trình đào tạo Kỹ sư Đô thị ngành Hạ tầng Kỹ thuật, đồng thời là tài liệu tham khảo cho các chuyên ngành Quy hoạch đô thị, Cao học Kỹ thuật Hạ tầng Đô thị và các chuyên ngành có liên quan khác. Giáo trình gồm 8 chương: Chương 1: Những khái niệm cơ bản về đường đô thị. Chương 2: Những yêu cầu cơ bản về giao thông đô thị. Chương 3: Thiết kế mặt cắt ngang đường phố. Chương 4: Chọn tuyến đường và thiết kế mặt bằng tuyển. Chương 5: Thiết kế mặt cắt dọc đường. Chương 6: Thiết kế nền đường và kết cấu áo đường. Chương 7: Tính toán khối lượng công tác xây dựng đường. Chương 8: Thiết kế các loại đường đặc biệt. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/a25bc5d5ddc74190abdca91779434aa7.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Phạm Hữu Đức"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227758&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "thiet-ke-duong-oto-duong-ngoai-do-thi-va-duong-do-thi-tap-2-8211-duong-do-thi",
+      "name": "Thiết Kế Đường Ôtô Đường Ngoài Đô Thị Và Đường Đô Thị Tập 2 &#8211; Đường Đô Thị",
+      "tacgia": "Doãn Hoa",
+      "mieuta": "Thiết kế đường ô tô tập 2 : Đường đô thị được biên soạn theo quan điểm chung như đã nêu ở tập 1. Một số vấn đề đã nêu trong tập 1 sẽ không nhắc lại ở tập 2, trừ bảng đổi đơn vị, để bạn đọc tiện sử dụng khi chỉ có một tập sách. Nút giao nhau khác mức trên đường đô thị với các dạng cầu cong trong không gian là một công trình rất đẹp, nhưng cũng rất phức tạp. Sắp tới chúng ta sẽ xây dựng một số công trình loại này ở Hà Nội và thành phố Hồ Chí Minh. Do đó, tác giả có đề cập sơ lược đến phương pháp thiết kế cầu cong, chỉ có ý nghĩa như một chủ đề mà các kĩ sư cầu đường cần quan tâm. Vì đường đô thị liên quan đến đô thị, nên trong tập sách này tác giả có mở rộng thêm một số vấn đề về quy hoạch, cảnh quan kiến trúc, bảo vệ môi trường đô thị. Mong bạn đọc góp ý cho những sai sót để lần sau ấn hành được tốt hơn. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3511c258228b42b8a51ed93515d023f6.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Doãn Hoa"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227760&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "thiet-ke-he-dam-san-thep",
+      "name": "Thiết Kế Hệ Dầm Sàn Thép",
+      "tacgia": "Đoàn Tuyết Ngọc",
+      "mieuta": "Để phục vụ cho nhu cầu học tập và thiết kế mạng dầm sàn thép trong công trình xây dựng nhà dân dụng và công nghiệp, năm 1986 trường Đại học Kiến trúc Hà Nội đã xuất bản cuốn sách hướng dẫn Thiết kế hệ dầm sàn thép. Hiện nay, với sự phát triển của ngành xây dựng theo xu hướng đổi mới hội nhập với sự phát triển của quốc tế, ở nước ta quy phạm tiêu chuẩn về kết cấu thép đã có sự thay đổi. Quy phạm TCXDVN 5575 : 1991 Kết cấu thép &#8211; Tiêu chuẩn thiết kế được thay thế bằng TCXDVN 338 : 2005 Kết cấu thép &#8211; Tiêu chuẩn thiết kế. Cập nhật sự thay đổi đó nhằm đảm bảo sự phù hợp với thực tế xây dựng của hệ dầm sàn thép trong nhà cao tầng, cuốn sách hướng dẫn Thiết kế hệ dầm sàn thép được viết lại với nội dung đổi mới và đầy đủ hơn, sử dụng các quy phạm mới nhất hiện đang được ban hành. Cuốn sách này giúp cho các kĩ sư, các sinh viên ngành xây dựng hiểu rõ cấu tạo và tính toán hệ dầm sàn bằng thép và hệ dầm sàn liên hợp. Tác giả mong nhận được sự góp ý của độc giả và các bạn đồng nghiệp. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3lcuUkH94f.webp",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Đoàn Tuyết Ngọc"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227762&#038;map=258936"
+        }
+      ]
+    },
+    {
+      "id": "thi-cong-cong-trinh-ha-tang-ky-thuat-do-thi",
+      "name": "Thi Công Công Trình Hạ Tầng Kỹ Thuật Đô Thị",
+      "tacgia": "Nguyễn Văn Thịnh",
+      "mieuta": "Để đáp ứng yêu cầu về tài liệu cho môn học Kỹ thuật thi công công trình hạ tầng đô thị, chúng tôi biên soạn cuốn giáo trình &#8220;Thi công công trình hạ tầng kỹ thuật đô thị &#8220;, với mong muốn phục vụ kịp thời cho công tác giảng dạy, học tập của sinh viên các trường thuộc khối xây dựng. Đây là tài liệu bổ ích có thể đáp ứng phần nào kiến thức cho bạn đọc quan tâm đến lĩnh vực này. Toàn bộ cuốn sách được trình bày gồm 13 chương bao gồm nội dung của phần kỹ thuật thi công các công trình hạ tầng trong đô thị. Khi biên soạn giáo trình này, chúng tôi đã nhận được nhiều sự động viên góp ý của các đồng nghiệp trong bộ môn Giao thông đô thị, bộ môn chuẩn bị kỹ thuật và bộ môn Cấp thoát nước của khoa Kỹ thuật hạ tầng và môi trường Đô thị, trường Đại học Kiến trúc Hà Nội. Ngoài ra còn nhận được nhiều ý kiến đóng góp quý báu của các chuyên gia có nhiều kinh nghiệm trong lĩnh vực xây dựng công trình hạ tầng đô thị. Tuy nhiên do kiến thức có hạn và kỹ thuật thi công luôn luôn phát triển nên chắc chắn phải bổ sung thường xuyên nội dung. Chúng tôi xin chân thành cám ơn sự giúp đỡ của các bạn đồng nghiệp và tin chắc rằng cuốn sách sẽ được hoàn thiện hơn, nếu qua sử dụng các đồng nghiệp và bạn đọc gửi cho chúng tôi những ý kiến đóng góp quý báu. .u965691737bba48b0204bfd3ba5b515c5 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u965691737bba48b0204bfd3ba5b515c5:active, .u965691737bba48b0204bfd3ba5b515c5:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u965691737bba48b0204bfd3ba5b515c5 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u965691737bba48b0204bfd3ba5b515c5 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u965691737bba48b0204bfd3ba5b515c5 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u965691737bba48b0204bfd3ba5b515c5:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Đô thị cổ Bắc Kinh",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/2b8bf5634e014428930cb02c5d8973f2.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Văn Thịnh"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227696&#038;map=258953"
+        }
+      ]
+    },
+    {
+      "id": "thi-cong-ham",
+      "name": "Thi Công Hầm",
+      "tacgia": "Nguyễn Thế Phùng",
+      "mieuta": "Trong những năm gần đây ở Việt Nam xây dựng ngầm đã có mặt ở hầu hết các lĩnh vực xây dựng: Giao thông, thủy lợi, thủy điện, dân dụng, công nghiệp. quốc phòng vv. và chúng đã chiếm một tỉ trong đáng kể. Để giải quyết vấn đề giao thông đô thị, sắp tới tại Hà Nội, thành phố Hồ Chí Minh và các thành phố lớn khác sẽ triển khai xây dựng các hệ thống xe điện ngầm, hầm trên đường ô tô, hầm cho người đi bộ. Đó là những công việc xây dựng ngắm hết sức phức tạp cả về quy hoạch không gian, kết cấu công trình, khai thác vận hành và thi công xây dựng trong những điều kiện địa chất công trình và địa chất thủy văn phức tạp. Mặt khác để đáp ứng nguồn nhân lực chất lượng cao cho xây dựng ngầm, nhiều trường Đại học trong cả nước cũng đã mở ngành đào tạo theo chuyên món này với mức độ chuyên sâu khác nhau, với những mục tiêu khác nhau. Với những lý do trên số người trực tiếp tham gia thiết kế, thi công xây dựng công trình ngầm và học tập nghiên cứu trong lĩnh vực này ngày một đông đảo. Cuốn sách “Thi công hán&#8221; được biên soạn dựa trên cuốn sách tác giả và Nguyễn Ngọc Tuấn biên soạn trước đây (Nhà xuất bản KHKT &#8211; 1997). Nội dung biên soạn lần này có bổ sung những kiến thức cơ bản nhất về các phương pháp xây dựng hầm và công trình ngầm, kể cả các phương pháp khiên đào và máy đào liên hợp. Hy vọng cuốn sách này cùng với cuốn &#8220;Thiết kế hầm giao thông&#8221;, (NXB Xây dựng 2008) sẽ cung cấp cho bạn đọc những kiến thức cần thiết để giúp các bạn tự tin, vững vàng trong giảng dạy, đào tạo, trong thiết kế thi công các công trình ngầm Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/aed4a73137c64078852c3d630a890313.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Nguyễn Thế Phùng"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227700&#038;map=258832"
+        }
+      ]
+    },
+    {
+      "id": "thang-may-cau-tao-8211-lua-chon-lap-dat-va-su-dung",
+      "name": "Thang Máy Cấu Tạo &#8211; Lựa Chọn Lắp Đặt Và Sử Dụng",
+      "tacgia": "Vũ Liêm Chính",
+      "mieuta": "MỤC LỤC Chương 1. KHÁI NIỆM CHUNG Chương 2. CẤU TẠO THANG MÁY Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "theloai": "Kiến Trúc - Xây Dựng",
+      "theloaiSlug": "kien-truc-xay-dung",
+      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/9295911dafcb43f5a7dd93c2d64f2314.jpeg",
+      "tags": [
+        "Kiến Trúc - Xây Dựng",
+        "Vũ Liêm Chính"
+      ],
+      "formats": [
+        {
+          "type": "pdf",
+          "label": "PDF",
+          "url": "/get-link/?type=pdf&#038;truyen=227642&#038;map=258953"
+        }
+      ]
+    }
+  ]
+}
