@@ -1,416 +1,47 @@
 {
   "theloai": {
     "id": "tieu-thuyet-phuong-tay",
-    "name": "Tiểu Thuyết Phương Tây"
+    "name": "Tiểu Thuyết Phương Tây",
+    "slug": "tieu-thuyet-phuong-tay"
   },
   "items": [
     {
-      "id": "mau-muc-8211-cornelia-funke-pdf-epub",
-      "name": "Máu Mực &#8211; Cornelia Funke PDF EPUB",
-      "tacgia": "Cornelia Funke",
-      "mieuta": "Nếu bạn đã lòng mình với Harry Potter của J.K.Rowling, thì không thể bỏ qua Tim Mực của Cornelia Funke, vốn đang là tâm điểm của các danh sách bán chạy nhất tại Đức và Mỹ. Với bộ tác phẩm Tim Mực này, Cornelia Funke thật sự xứng đáng được xem là J.K.Rowling của nước Đức. Truyện bắt đầu vào một đêm, khi cha của Meggie, ông Mo, đọc cuốn sách Tim Mực với giọng to. Và rồi, tác giả huyền bí Capricorn bèn thoát khỏi trang sách, xuất hiện một cách đáng sợ trong phòng khách. Meggie và ông Mo phải học cách điều khiển phép thuật để giải cứu mình. Họ phải thay đổi cốt truyện để thay đổi số phận của họ. Cornelia Caroline Funke, một nhà văn người Đức đã nhận được nhiều giải thưởng về văn học thiếu nhi . Funke được biết đến nhiều nhất với bộ ba Inkworld. Cuốn thứ ba của loạt sách này, Inkdeath, được phát hành vào tháng 10 năm 2008. Các tác phẩm của Funke chủ yếu thuộc thể loại giả tưởng, phiêu lưu và nhiều tác phẩm đã được dịch sang tiếng Anh. Hiện bà đang sinh sống tại Los Angeles, California. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "sach-ngoai-van-north-and-south",
+      "name": "[Sách ngoại văn] North and South",
+      "tacgia": "Elizabeth Gákell",
+      "mieuta": "",
       "theloai": "Tiểu Thuyết Phương Tây",
       "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/mau-muc-cornelia-funke-1.jpg",
+      "anhbia": "https://drive.google.com/file/d/1w-2xe7pukt2GFXBNFuD3i9C-ol1Suw6m/view?usp=sharing",
       "tags": [
         "Tiểu Thuyết Phương Tây",
-        "Cornelia Funke"
+        "Elizabeth Gákell"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=232599&#038;map=176245"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232599&#038;map=176245"
-        },
-        {
-          "type": "azw3",
-          "label": "AZW3",
-          "url": "/get-link/?type=azw3&#038;truyen=232599&#038;map=176245"
+          "url": "https://drive.google.com/uc?export=download&id=1tLCNHyDVYJoelsIGooABtQRboE-VsyeM"
         }
       ]
     },
     {
-      "id": "mot-nguoi-chong-ly-tuong",
-      "name": "Một Người Chồng Lý Tưởng",
-      "tacgia": "Oscar Wilde",
-      "mieuta": "Trong gia tài kịch của Oscar Wilde – 3 bi kịch, 4 hài kịch và 2 vở di cảo dở dang – thì quyển sách này chỉ có hai hài kịch: Một người chồng lý tưởng và Chiếc quạt của Windermere phu nhân. Thật khó để đoán ra lí do vì sao ban biên tập lại chọn hai vở này để in, bởi chúng không được coi là kiệt tác của Wilde đến mức ngày nay vẫn còn diễn như vở Ai cũng muốn nghiêm trang (The Importance of being Earnest) và bi kịch một hồi Salomé; nhưng tôi mạnh bạo đoán có thể do ban biên tập nhận thấy hình ảnh của chính Wilde hiện lên rõ nét nhất trong hai vở này chăng? Ở Một người chồng lý tưởng ai cũng biết rằng Wilde đã lấy chính mình để hoá thân vào một nhân vật trong tác phẩm, nhân vật ấy là một anh chàng bảnh bao, một triết gia biết ăn diện đầu tiên trong lịch sử, một người thích được người khác hiểu nhầm, một tay quí tộc nhàn rỗi và tự hào về lối sống không làm gì của mình, một người yêu mến tuổi trẻ đến mức ám ảnh về nó – đây cũng là ý tưởng để trước đó Wilde viết ra Bức hoạ Dorian Gray. Còn ở Chiếc quạt của Windermere phu nhân chúng ta thấy rõ nét quan điểm đạp lên dư luận mà ung dung sống của Wilde. Bà Erlynne trong vở kịch này thay mặt Wilde cho chúng ta thấy những đánh giá của dư luận về nhân cách của ai đó thật nông cạn và võ đoán, nhưng mặt khác lại cho thấy cái tính thích được hiểu nhầm và mặc kệ cho người đời hiểu nhầm của Wilde, miễn sao tự ta biết ta đúng và không thẹn với bản thân là được, và cuối cùng là một cái kết trêu ngươi người khác khi bà Erlynne chẳng cần giải thích với dư luận mà chỉ lẳng lặng cưới một ông chồng giàu và ra nước ngoài sống, mãi mãi hạnh phúc &#8230; Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "thoi-khac",
+      "name": "Thời khắc",
+      "tacgia": "Michael Cunningham",
+      "mieuta": "",
       "theloai": "Tiểu Thuyết Phương Tây",
       "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3IBYfuWiVm.webp",
+      "anhbia": "https://drive.google.com/file/d/1V2I8d7nxIkfv1hULvMfoAZy1K3ICd7nx/view?usp=sharing",
       "tags": [
         "Tiểu Thuyết Phương Tây",
-        "Oscar Wilde"
+        "Michael Cunningham"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232458&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "noi-loi-yeu-em",
-      "name": "Nói Lời Yêu Em",
-      "tacgia": "Johanna Lindsey",
-      "mieuta": "NÓI LỜI YÊU EM (SAY YOU LOVE ME) Tiếp nối những câu chuyện trước đó về những thành viên họ tộc Malory, Hãy nói yêu em sẽ làm say mê hàng triệu độc giả qua câu chuyện tình yêu đầy thử thách của Derek Malory và Kelsey Langton. Không chỉ có tình yêu, vấn đề tình dục cũng được tác giả khai thác dưới những góc cạnh đầy đam mê, mãnh liệt. Tình yêu hiện lên qua các trang sách quả thực đầy hấp dẫn nhưng cũng khiến con người phải khổ sở, day dứt&#8230; Nhẹ nhàng, sâu sắc mà vẫn đầy cá tính, lời kể của Johanna Lindsey như đưa người đọc đến với không gian truyện thấm đẫm chất thơ nhưng cũng đầy ấn tượng mãnh liệt bởi chất hiện đại đan xen vào từng tình tiết, câu thoại&#8230; Cuối cùng thì, tình yêu &#8211; với cái quyền năng vô hạn của nó &#8211; đã có thể đảo tung mọi lề thói của cuộc sống, khiến nó dẫu mang bất kỳ cung bậc nào, buồn hay vui, đều trở nên vô cùng sống động&#8230; Sách liên quan: Em Là Của Anh Hãy Nói Yêu Em Tia Sét Hoang Đầu Hàng Tình Yêu Của Tôi Đánh Cắp Khát Khao Em Không Lựa Chọn Nhưng Quyến Rũ Ngọn Lửa Mùa Đông",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/sX2LVLr9lk.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Johanna Lindsey"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232394&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "otello",
-      "name": "Ôtellô",
-      "tacgia": "Sêcxpia",
-      "mieuta": "Shakespeare viết Othello vào khoảng 1604. Cốt truyện được mượn từ người Moor thành Venice in trong tập “Một trăm truyện ngắn” (Hecatommithi) của nhà văn Ý Giraldi Cinthio (1504-1573). Người Moor của Shakespeare &#8211; hay nói rõ hơn Othello &#8211; là một dũng tướng ở Venice. Nhờ có nhiều công lao, Othello được nhà nước Venice tín nhiệm và đặc biệt được nguyên lão nghị viên Brabantio yêu mến. Những lần đến chơi nhà Brabantio chàng thường được yêu cầu kể lại chuyện đời mình. Chính câu chuyện này đã làm say mê Desdemona một thiếu nữ tuyệt sắc, con gái yêu của Brabantio . Nàng say sưa nghe chuyện, cảm phục những hành động của Othello, rồi cuối cùng yêu mến con người đã có cái quá khứ anh dũng và phong trần ấy. Hai người bí mật đưa nhau đi làm phép cưới, nhưng họ không ngờ rằng chuyện tình duyên của họ đã bị một cặp mắt xảo quyệt và lạnh lùng chăm chú theo dõi. Iago, hiệu uý của Othello căm thù chủ tướng chỉ vì Othello đã cử Cassio làm phó tướng mà không cử y. Để phá đám, y xúi bẩy gã quý tộc si tình Roderigo đến báo cho Brabantio biết: “Con gái ông đã lẻn theo tên nhọ”. Được tin, Brabantio tức tối đem gia nhân đi bắt Othello và Desdemona. Nhưng đồng thời trong đêm đó, được tin cấp báo quân Thổ xâm lăng Cyprus, nghị viện Venice họp, có cho mời Othello và Brabantio đến luận bàn. Nghị viên Brabantio đòi bàn việc của mình trước và đòi trừng trị Othello, buộc tội chàng đã mê hoặc Desdemona; nhưng Desdemona đã thẳng thắn và can đảm nhận cô yêu Othello, chứ không phải “bị chài, bị bả” như cha nàng nói. Thất bại, Brabantio thề không nhìn mặt con gái, còn Othello được cử đến Cyprus để đối phó với hạm đội Thổ, Desdemona xin được đi theo chồng. Cùng đi có Cassio, Iago và Emilia, vợ y Nhưng cuộc binh đao không xảy ra, nên lễ thành hôn của Othello và Desdemona được cử hành ngay đêm đầu họ tới Cyprus. Trong một bữa tiệc, Iago chuốc cho Cassio say khướt và bày cách cho Roderigo chọc tức Cassio. Rượu say Cassio đuổi đánh Roderigo rồi lại đâm Monteno, vị trấn thủ Cyprus bị thương. Vì sự vi phạm kỷ luật này, Cassio bị Othello cách chức. Iago xui Cassio đến van nài Desdemona để nàng xin chồng phục chức cho. Đúng lúc Cassio đang nhờ cậy Desdemona thì Iago dẫn Othello về và bắt đầu từ đấy bằng những câu nói mập mờ bỏ lửng, bằng những lời xúc xiểm xảo quyệt, Iago đã dần dần gieo vào tâm trí Othello sự nghi ngờ day dứt: “Thà ta bị gươm đâm, thừng trói, bị lửa thiêu hay độc dược giày vò, bị nhấn chìm trong sông ngột ngạt, còn hơn để việc này dằn vặt. Cuối cùng, Iago xui vợ đánh cắp chiếc khăn thêu mà Othello đã tặng Desdemona. Nhưng Emilia may mắn lại bắt được chiếc khăn đó, nàng vô tình đưa cho chồng. Y vứt nó vào giường ngủ của Cassio để cho hắn vô tình lượm được. Sau đó, y bố trí để Othello nhìn thấy Cassio cầm cái khăn thêu trong tay. Bị mắc mưu, Othello ghen điên cuồng, sai Iago giết Cassio, và chính tay chàng đang tay bóp chết Desdemona. Đúng lúc Othello vừa giết vợ xong thì Emilia chạy vào báo tin Cassio bị thương. Trước thi thể con người đức hạnh, sự công bình, lòng nhân đạo đã khiến Emilia vô cùng đau xót lớn tiếng sỉ vả Othello ngay trước mũi dao hăm doạ của chàng. Mọi người xô đến, Othello trình bày nguyên nhân khiến chàng giết vợ, lúc ấy Emilia mới vỡ lẽ, nàng bèn kể lại chuyện cái khăn. Bị lột mặt nạ, Iago xông lại đâm chết vợ. Biết rõ “nguyên nhân”, Othello đau đớn, hối hận, nhưng&#8230; tâm hồn chàng yên tĩnh vì biết Desdemona trong trắng, và cuối cùng chàng tự tử. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/4c30804dc6d9465dbb66ba8d5b767511.jpeg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Sêcxpia"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232361&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "vong-phan-kapkazo",
-      "name": "Vòng Phấn Kapkazơ",
-      "tacgia": "Bectôn Brếch",
-      "mieuta": "“Vòng phấn Kavkaz” là một trong những vở kịch nổi tiếng nhất của tác gia người Đức Bertolt Brecht (1898 &#8211; 1956). Trường phái sân khấu gián cách là một đặc trưng trong cách viết kịch của ông. Tại Việt Nam, đây là lần đầu tiên “Vòng phấn Kavkaz” được đưa lên sân khấu kịch với phong cách dàn dựng mới này. Với vai trò là một nhà phê bình sân khấu, PGS. TS Nguyễn Thị Minh Thái cho biết: “Người ta có nhiều cách khác nhau để xử lý một kịch bản của Bertolt Brecht trên câu chữ mà nó có. Và cách xử lý nào cũng cực kì đẹp. Cách xử lý của đạo diễn này rất hiện đại nhưng tôi vẫn bị ấn tượng bởi sân khấu của ông Steal Max nhiều hơn (đạo diễn dựng vở“Vòng phấn Kavkaz” từ thập niên 80 của thế kỉ trước trên sân khấu chèo Việt Nam) nhưng tôi vẫn công nhận là đạo diễn Dominik rất hiện đại. Ông sử dụng nhiều nhạc, đạo cụ hiện đại. Và hệ thống sân khấu này chủ trương vấn đề diễn viên không đi vào nhân vật, hòa cảm hoàn toàn cùng nhân vật mà vừa diễn vừa tách mình ra”. Nghệ sĩ nhân dân Lê Khanh, Phó đạo diễn vở kịch “Vòng phấn Kavlaz” cho biết: Đây là cơ hội học tập, thử nghiệm của các diễn viên nhà hát Tuổi trẻ với trường phái kịch Bertolt Brecht. Khi diễn, các diễn viên diễn chủ động, bằng lời thoại của mình nhắc khán giả biết rằng họ đang xem kịch và đặt ra những câu hỏi, suy ngẫm cho khán giả từ các tình huống kịch: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/9f14282cdf964acf857b8df2f5178cd6.jpeg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Bectôn Brếch"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231435&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "truyen-ngan-chon-loc-cua-jack-london",
-      "name": "Truyện ngắn chọn lọc của Jack London",
-      "tacgia": "Jack London",
-      "mieuta": "Jack London (1876 &#8211; 1916) là một trong những nhà văn ngoại quốc được người đọc Việt Nam hết sức yêu mến. Những tác phẩm nổi tiếng của ông đã đến với người đọc nước ta từ những năm sáu mươi của thế kỷ trước, thế nhưng lâu nay người ta chỉ tập trung nghiên cứu Jack London với tư cách là một tiểu thuyết gia, chưa có công trình nghiên cứu chuyên sâu và hệ thống về Jack London với tư cách là một “bậc thầy truyện ngắn”. Không gian nghệ thuật trong truyện ngắn của J. London khá đa dạng. Nét đặc trưng của J. London thể hiện ở chỗ ông luôn khai thác không gian với tất cả tính chất hung dữ, thù địch với con người. Đó là cách để nhà văn vạch trần bộ mặt đen tối của xã hội, đồng thời thể hiện những trăn trở, những ước mơ khát vọng của mình đối với con người và xã hội. Trong sách Truyện ngắn chọn lọc của Jack London này gồm có: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/XTQsWlIdkk.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Jack London"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231196&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "vi-co-bridgerton",
-      "name": "Vì Cô Bridgerton",
-      "tacgia": "Julia Quinn",
-      "mieuta": "Đôi khi bạn tìm thấy tình yêu ở những nơi bất ngờ nhất &#8230; Đây không phải là một trong những thời điểm như thế. Mọi người đều mong Billie Bridgerton sẽ kết hôn với một trong những anh em nhà Rokesby. Hai gia đình là hàng xóm của nhau trong nhiều thế kỷ, và khi còn nhỏ, Billie tomboy đã sống hoang dã với Edward và Andrew. Một trong hai người sẽ trở thành một người chồng hoàn hảo &#8230; vào một ngày nào đó. Đôi khi bạn yêu chính xác người mà bạn nghĩ rằng bạn nên &#8230; Hay không. Chỉ có một Rokesby mà Billie tuyệt đối không thể dung thứ, và đó là George. Anh là anh cả và là người thừa kế tước vị bá tước, nhưng anh kiêu ngạo, khó chịu và nàng hoàn toàn chắc chắn rằng anh ghét nàng. Điều đó hoàn toàn thuận tiện, vì nàng cũng không thể chịu đựng được việc gần anh. Nhưng đôi khi số phận có một khiếu hài hước độc ác &#8230; Bởi vì khi Billie và George được ném vào nhau theo đúng nghĩa đen, một loại tia lửa hoàn toàn mới bắt đầu bùng lên. Và khi cuối cùng những kẻ thù truyền kiếp này hôn nhau, họ mới phát hiện ra rằng người duy nhất mà họ không thể ở bên là người mà họ không thể sống thiếu &#8230; *** Julia Quinn (tên thật Julie Pottinger) là nhà văn Mỹ nổi tiếng trên khắp thế giới với các tác phẩm lãng mạn lịch sử. Các tác phẩm của bà đã được dịch ra 24 thứ tiếng, 16 lần được đứng trong danh sách New York Times Bestseller, ba lần đoạt giải RITA và Chuyện xảy ra ở London đã mang lại cho Quinn giải RITA năm 2010. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ezcWUMejzS.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Julia Quinn"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231054&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "van-xuan",
-      "name": "Vạn Xuân",
-      "tacgia": "Yveline Féray",
-      "mieuta": "Người đời đã viết rất nhiều về Nguyễn Trãi và người đàn bà tài sắc đã gắn bó số phận với ông. Nhưng, cho đến nay, hầu như chưa có một tác phẩm nào của người Việt xứng với tầm vóc cuộc đời, sự nghiệp của Nguyễn Trãi và đưa ra cách lý giải thấu đáo về vụ án Lệ Chi Viên. Vậy mà, có một nữ nhà văn Pháp &#8211; bà Yveline Feray đã viết một tiểu thuyết dày tới hơn 1.200 trang về Nguyễn Trãi và Nguyễn Thị Lộ, về thời đại họ sống và tấn thảm kịch Lệ Chi Viên với nhan đề “Vạn Xuân”. Ngay trong lời giới thiệu cuốn sách, nhà thơ Huy Cận đã nhận xét: “Tác phẩm của Yveline Feray đã phục hiện cuộc đời và sự nghiệp của Nguyễn Trãi, tâm trạng và tâm tình của Nguyễn Trãi với một sự thấu hiểu tâm lý sâu sắc. Hiểu được tâm hồn Nguyễn Trãi và Nguyễn Thị Lộ qua cuộc tình duyên đẹp đẽ mà như có dấu ấn của số mệnh in vào”. Còn lý do để xây dựng bộ tiểu thuyết này, trong lời phi lộ, nữ văn sĩ Yveline Feray đã phải thốt lên: “Độc giả sẽ say sưa kinh ngạc trước tài năng đa dạng của kẻ sĩ Việt Nam này vì ông vừa là một thi hào, một nhà viết văn cừ khôi, vừa là một chiến lược gia có tầm mắt nhìn viễn thấu, một nhà ngoại giao tài tình, một nhạc sĩ lịch lãm, một nhà địa lý thông thái, một nhà sư phạm tuyệt vời”. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Bzajik0UPA.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Yveline Féray"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231026&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "vo-cuc",
-      "name": "Vô Cực",
-      "tacgia": "Quyên Gavoye",
-      "mieuta": "Truyện dài “Vô cực” thuộc thể loại truyện giả tưởng với nhân vật Thomas Phạm, 28 tuổi, ông chủ của nhà máy sản xuất đồng hồ nổi tiếng tại thành phố Besançon, Cộng hòa Pháp, một người có gốc gác nhập cư đến từ Đông Dương, người vừa mua lại khu công nghiệp, một vùng đất vàng nằm giữa thành phố sầm uất tại Châu u bị bỏ hoang từ hơn ba phần tư thế kỷ. Không một ai biết lý do tại sao khu công nghiệp lại bị bỏ hoang. “Bí mật là bí mật. Thành phố bán vật chất chứ không bán bí mật”. Với tư cách là ông chủ của mảnh đất. Thomas quyết tìm ra những uẩn khúc cất giấu đằng sau những bí mật: chuyện gì đã xảy ra với khu công nghiệp? Làm thế nào để ông chủ cũ của khu công nghiệp và toàn bộ hơn trăm hộ công nhân làm việc tại đó có thể biến mất mà không để lại bất cứ một dấu vết nào cho thấy họ đã chết hay còn tồn tại ở một nơi nào đó trên Trái Đất? Có hay không một đường hầm bí mật giúp họ biến mất? Ai sẽ là ông chủ thực sự của khu công nghiệp? Lý do thật sự của cuộc biến mất ấy là gì?&#8230; Và còn rất nhiều những câu hỏi buộc Thomas phải đích thân tìm ra. Sách liên quan: Mê Cung Trong Thư Viện Của Ngài Lemoncello Thám Tử Xương Vui Tính Nàng Lika Băng Thanh Tra Maigret Khi Con Tim Quá Nóng Bước Đường Trở Thành Bố Già Corleone .u0a25cc5efe2a9f50e8ae8618f082efc6 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u0a25cc5efe2a9f50e8ae8618f082efc6:active, .u0a25cc5efe2a9f50e8ae8618f082efc6:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u0a25cc5efe2a9f50e8ae8618f082efc6 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u0a25cc5efe2a9f50e8ae8618f082efc6 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u0a25cc5efe2a9f50e8ae8618f082efc6 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u0a25cc5efe2a9f50e8ae8618f082efc6:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bí mật thành Paris - Tập 2",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/e2f70979b2f348abbc6111ed9dfdba99.jpg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Quyên Gavoye"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230958&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "tu-quai-tkkg-tron-bo",
-      "name": "Tứ quái TKKG trọn bộ",
-      "tacgia": "Stefan Wolf",
-      "mieuta": "TỨ QUÁI TKKG TÁI XUẤT GIANG Hồ vào ngày 20/8/2020 Trọn bộ 70 tập (Đôi lời tác giả Bùi Chí Vinh gửi tới bạn đọc) Năm 1994, ông Nguyễn Thắng Vu giám đốc NXB Kim Đồng lúc đó có vào Sài Gòn gặp tôi và đưa nguyên tác tiếng Đức cuốn TKKG của nhà văn Stefan Wolf lẫn bản dịch tiếng Việt, đề nghị tôi phóng tác thành bộ truyện trường thiên thiếu niên giang hồ võ hiệp mang hơi hướm ngôn ngữ và cuộc sống thời kỳ hiện đại. Không hiểu ai giới thiệu tôi cho ông, nhưng qua sự tín nhiệm của ông Nguyễn Thắng Vu, tôi thấy có bổn phận phải đưa đến cho độc giả trẻ tuổi Việt Nam đang thiếu thốn thức ăn tinh thần một bộ truyện bổ ích nói lên được ước mơ, khát vọng hành hiệp của các em. Tôi liên tưởng đến phong cách dịch tài hoa của Ngọc Thứ Lang qua cuốn BỐ GIÀ của Maria Puzzo mà tôi từng mê đắm. Thế là bằng kinh nghiệm giang hồ và bằng văn phong không giống ai, tôi đã phóng tác 70 cuốn TỨ QUÁI TKKG ra đời gây sóng gió dư luận trong suốt 2 năm với số bản in trung bình mỗi cuốn là 60 ngàn bản hằng tuần, phá mọi kỷ lục về số lượng phát hành lúc đó (và tới tận bây giờ). Hôm nay Hanoi Books có nhã ý tái bản bộ sách “gối đầu giường” của các thế hệ thập niên 90. Vậy là kể như TỨ QUÁI TKKG tái xuất giang hồ trình diện tuổi chip hôi, tuổi choai choai, tuổi học trò trong một hoàn cảnh hoàn toàn mới với đủ mọi tiện nghi của thế kỷ 21. Trên tư thế một nhà văn phóng tác truyện, tôi chỉ biết đề tặng TỨ QUÁI TKKG tái xuất giang hồ bằng bài thơ tứ tuyệt với 4 chữ đầu mỗi câu ghép lại thành biệt danh tứ quái:TKKG .ub51475e15953adf21a98f8dcfd20c7f9 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ub51475e15953adf21a98f8dcfd20c7f9:active, .ub51475e15953adf21a98f8dcfd20c7f9:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ub51475e15953adf21a98f8dcfd20c7f9 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ub51475e15953adf21a98f8dcfd20c7f9 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ub51475e15953adf21a98f8dcfd20c7f9 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ub51475e15953adf21a98f8dcfd20c7f9:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Tình Yêu Dối Trá",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/XanzxnrYva.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Stefan Wolf"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230430&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "zaizie-trong-tau-dien-ngam",
-      "name": "Zaizie trong tàu điện ngầm",
-      "tacgia": "Raymond Queneau",
-      "mieuta": "Mẹ gửi Zazie lên Paris cho cậu Gabriel trông. Zazie không quan tâm đến những cung điện tráng lệ, những di tích văn hoá và lịch sử mà chỉ thích đi tàu điện ngầm. Bạn đang cầm trong tay mình cuộc phiêu lưu của cô bé mới có mười ba tuổi nhưng đã đủ tinh ranh để mọi người xung quanh, trong đó có vũ công Gabriel, hồng hộc chạy theo cả tuần. Đây còn là cuộc phiêu lưu của ngôn ngữ. Ngôn ngữ hàng ngày được Raymond Queneau nhào nặn thành những tổ hợp cũng ngộ nghĩnh, tinh ranh không khác gì Zazie. Khi tiếng lóng bị buộc vào những cấu trúc trừu tượng của ngữ pháp, nó làm chúng ta bật cười, một nụ cười hồn nhiên, vô tư, không hè mỉa mai, chua chát. gon Cả tôi và bạn đều cần cái nụ cười ấy lắm, để còn có sức khoẻ mà sống với cuộc sống xung quanh, một cuộc sống nhiều khi chỉ toàn một màu xám xịt. Ngô Bảo Châu &#038; Phan Việt Sách liên quan: Zazie Trong Tàu Điện Ngầm Trong Tầm Ngắm Công Trình Ga Và Đường Tàu Điện Ngầm",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/7584e6b64a5b44f5b3f5f02c9d37d55c.jpeg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Raymond Queneau"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230013&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "yeu-muon",
-      "name": "Yêu Muộn",
-      "tacgia": "Pearl Buck",
-      "mieuta": "André, một giáo sĩ ngoại quốc làm gia sư dạy tiếng Anh cho con trai bà Vũ, một phụ nữ quí tộc Trung Hoa. Một hôm, vị giáo sĩ bị bọn côn đồ đánh chết. Trước giờ lâm chung của nhà tu hành, bà Vũ nhận chân được rằng mình đã yêu vị gia sư uyên bác này. Kể từ đó, bà Vũ sống với hình ảnh của André trong một cuộc sống khôn ngoan và giàu lòng nhân ái, dưới sự dẫn dắt tinh thần của người đã khuất. Yêu muộn được giải Nobel vǎn chương nǎm 1938. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/v40luePXiR.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Pearl Buck"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230015&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "ziky-boys-8211-nhung-cau-be-kem",
-      "name": "Ziky Boys &#8211; Những cậu bé kẽm",
-      "tacgia": "Svetlana Alexievich",
-      "mieuta": "“Văn chương đang ngạt thở trong những biên giới của mình”. Với tâm tình đó, nữ nhà văn Svetlana Alexievich đã quyết định chọn hình thức “truyện vừa tư liệu” cho cuốn sách Những cậu bé kẽm, được in lần đầu tiên năm 1989. Hai mươi sáu năm sau, cuốn sách đã góp phần đưa bà đến giải Nobel văn học năm 2015, cùng với bốn quyển sách khác trong loạt sách Những giọng nói không tưởng: Chiến tranh không có một khuôn mặt phụ nữ (1983), Những nhân chứng cuối cùng (1985), Lời nguyện cầu từ Chernobyl (1997) và Thời second hand (2013). Nhưng cũng chính thể loại truyện vừa tư liệu của Những cậu bé kẽm đã khiến bà phải ra tòa (phần cuối quyển sách đã giới thiệu tiến trình tố tụng này). Phiên tòa mà, từ một phía bà bị cáo buộc là “xúc phạm danh dự và phẩm giá” của những người lính đã chết trong cuộc chiến tranh Afghanistan, của những người mẹ vẫn còn đang ngồi bên mộ chí con mình. Còn từ phía những người ủng hộ nữ nhà văn, đó là phiên tòa “xử án văn chương”, “xử án một quyển sách”, “xử án sự thật”. Cuộc tranh cãi đó, cuối cùng được cố gắng ngã ngũ ở việc thế nào là thể loại truyện vừa tư liệu; vẫn chưa giải đáp được câu hỏi “sự thật là sự thật nào”, khi chính nữ nhà văn cũng hoài nghi như Pilatus đặt câu hỏi về sự thật trong phiên tòa xử Chúa. Phiên tòa đã khép lại đầu những năm 1990. Nhưng cuộc tranh cãi về sự nghiệp của nữ nhà văn Belarus viết bằng tiếng Nga một lần nữa được nhắc lại nhân Nobel 2015. Nếu bà được ngợi khen trên báo chí phương Tây như một “bậc thầy xuất sắc trong lĩnh vực văn xuôi nghệ thuật tư liệu” (Frankfurter Allgemeine), thì nhà phê bình Nga Olga Tukhanitsa, lại nhận xét vào tháng 12-2015: “Một mặt, Alexievich khăng khăng biện hộ mình không phải là nhà văn nhưng lại chứng minh những gì bà đang làm trong thế giới hiện đại là văn học chân chính; mặt khác, bà &#8211; như một nữ sinh, đoàn viên Komsomol, cố nhồi vào thông điệp của mình tất cả những khuôn mẫu định kiến về nước Nga…” Dẫu sao, chúng ta sẽ không thể tranh luận với cả hai ý kiến trên nếu chưa đọc hết Những cậu bé kẽm. Bản dịch tiếng Việt dựa trên nguyên bản tiếng Nga đã được tác giả hiệu đính và NXB Vremya (Moskva) phát hành năm 2017. Trân trọng giới thiệu cùng độc giả, và thành thật cảm ơn bà Marina Vladimirovna Sharoiko (Giảng viên Bộ môn Lý luận Văn học Nga, Đại học Tổng hợp Kuban) và bà Irina Letiagina (cựu biên tập viên NXB Cầu vồng, và NXB Tiến bộ &#8211; Liên Xô cũ) đã giúp chúng tôi hoàn thành bản dịch này. .u78a4522b5f5f8eb7b691c80b1cb8c104 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u78a4522b5f5f8eb7b691c80b1cb8c104:active, .u78a4522b5f5f8eb7b691c80b1cb8c104:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u78a4522b5f5f8eb7b691c80b1cb8c104 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u78a4522b5f5f8eb7b691c80b1cb8c104 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u78a4522b5f5f8eb7b691c80b1cb8c104 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u78a4522b5f5f8eb7b691c80b1cb8c104:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Môi Kề Môi",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ac9e8037b9d240d492fdef00f1f3b64b.jpeg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Svetlana Alexievich"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229999&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "toan-tap-linh-ngu-lam-phao-thu",
-      "name": "Toàn tập lính ngự lâm pháo thủ",
-      "tacgia": "Alexandre Dumas",
-      "mieuta": "Alexandre Dumas (tên sinh thời là Dumas Davy De La Pailleterie), sinh năm 1802 tại Villers Cotterêts trong khu Aisne, ở Picardy, Pháp. Ông có hai chị gái là Marie Alexandrine (sinh năm 1794) và Louise Alexandrine (1796 &#8211; 1797). Cha mẹ ông là bà Marie Louise Élisabeth Labouret, con gái của một chủ nhà trọ và ông Thomas Alexandre Dumas. Ông Thomas Alexandre được sinh ra tại thuộc địa Saint Domingue của Pháp (nay là Haiti), là con lai ngoài giá thú của hầu tước Alexandre Antoine Davy de la Pailleterie, một quý tộc Pháp, Cao Ủy Trưởng về pháo binh trong khu thuộc địa với Marie Cessette Dumas, nữ nô lệ da đen có nguồn gốc từ Afro Caribbean. Không ai biết rõ bà được sinh ra tại Saint Domingue hay ở Châu Phi (dù thực tế bà đã có một tên họ bằng tiếng Pháp nên có lẽ bà là người thiểu số Creole) và cũng không biết rằng cội nguồn của bà là ở đâu. Được cha đem về Pháp và cậu bé Thomas đã sống tự do một cách hợp pháp tại đây, Thomas Alexandre Dumas Davy theo học một trường quân đội và gia nhập quân ngũ khi còn thiếu niên. Khi trưởng thành, Thomas Alexandre lấy tên của mẹ là Dumas làm họ sau khi cắt đứt quan hệ với cha. Dumas được thăng cấp tướng năm 31 tuổi, người lính đầu tiên có gốc gác Afro Antilles đạt được cấp bậc này trong hàng ngũ quân đội Pháp. Ông đã tham gia trong Chiến Tranh Cách Mạng Pháp. Ông trở thành Tổng chỉ huy trưởng trong Quân đội Pyrenees, người đàn ông da màu đầu tiên đạt được cấp bậc đó. Dù là một vị tướng dưới trướng của Napoléon Bonaparte trong các chiến dịch ở Ý và Ai Cập nhưng Thomas Dumas không còn được tín nhiệm vào năm 1800 nên đã yêu cầu nghỉ phép để quay về Pháp. Trên đường về, tàu của ông phải dừng lại ở Taranto thuộc Vương quốc Napoli, tại đây ông và những người khác bị giữ làm tù binh. Trong hai năm bị giam giữ, sức khỏe ông đã bị yếu đi. Tại thời điểm Alexandre Dumas được sinh ra, cha ông bị suy kiệt nặng nề. Ông Thomas qua đời vì ung thu năm 1806 khi Alexandre lên 4. Người mẹ góa phụ Marie Louise không đủ sức lo cho việc học hành của con trai nhưng Alexandre Dumas tập đọc mọi thứ trong khả năng và còn tự học tiếng Tây Ban Nha. Những câu truyện kể của mẹ về lòng dũng cảm của người cha trong các trận đánh đã truyền cảm hứng cho trí tưởng tượng sinh động của cậu bé. Mặc dù trở nên nghèo túng, gia đình vẫn có danh tiếng lỗi lạc của người cha để lại và thứ hạng quý tộc để trợ giúp con cái thăng quan tiến chức. Năm 1822, sau khi triều Bourbon phục hoàng, Alexandre Dumas 20 tuổi chuyển đến Paris. Ông đã có được một vị trí trong văn phòng thuộc Cung điện Hoàng gia của Công Tước Orléans &#8211; Louis Philippe. .u7784b79d52c3393ea54f6fb23a04259a { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u7784b79d52c3393ea54f6fb23a04259a:active, .u7784b79d52c3393ea54f6fb23a04259a:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u7784b79d52c3393ea54f6fb23a04259a { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u7784b79d52c3393ea54f6fb23a04259a .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u7784b79d52c3393ea54f6fb23a04259a .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u7784b79d52c3393ea54f6fb23a04259a:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Những Chiếc Cầu Ở Quận Madison - Robert James Waller",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ico7yagkLv.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Alexandre Dumas"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229856&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "papillon-nguoi-tu-kho-sai",
-      "name": "Papillon Người Tù Khổ Sai",
-      "tacgia": "Henri Charrière",
-      "mieuta": "Cuốn sách “Papillon – người tù khổ sai” ra đời như một sự bung nổ làm chấn động Paris. Thắng lợi vượt xa dự tính của tác giả, riêng ở Pháp đã phát hành hơn một triệu bản (1969). Chỉ vài năm sau, Papillon được dịch ở 25 nước. Và bộ phim “Người tù khổ sai” dựa trên tác phẩm của Henri Charrière do đạo diễn F.J. Schaffner thực hiện tại Trung tâm điện ảnh Hollywood, cũng lại một lần nữa làm chấn động dư luận. &#8230; Bị xử án đày khổ sai chung thân vì tội giết người căn cứ vào lời khai của một nhân chứng đã được cảnh sát &#8220;mớm&#8221;, Charriere quyết chí chuẩn bị vượt ngục ngay từ đầu. Anh quyết sống và thoát ra khỏi trại khổ sai để trả thù. Quyết tâm ấy đã làm cho anh có đủ sức mạnh chịu đựng mọi thử thách. Không có một mối nguy hiểm nào làm cho anh lùi bước, không có một phen thất bại ê chề nào làm cho anh nhụt chí. Nếu kể cả những mưu toan vượt ngục đã bị vỡ lở ngay từ khi đang chuẩn bị, Charriere, biệt hiệu Bươm Bướm, đã tổ chức cả thảy chín lần vượt ngục trước khi thành công và được nhận cư trú ở Venezuela như một công dân chính thức&#8230; Sách liên quan: Người Tù Khổ Sai &#8211; Tập 2 &#8211; Henri Charriere Người Tù Khổ Sai &#8211; Tập 1 &#8211; Henri Charriere Biết người &#8211; Dùng người &#8211; Quản người Hỏi – Đáp Chính Sách Hỗ Trợ Giáo Dục Và Đào Tạo Dành Cho Người Nghèo, Người Dân Tộc Thiểu Số Và Vùng Khó Khăn Người Người Cưng Chiều Sư Muội Miệng Quạ Đen PDF EPUB Sáu Người Bạn Đồng Hành Tập 38: Người Săn Tin &#8211; Paul Jacques Bonzon full mobi pdf epub azw3 [Văn Học Pháp] Người Gặp Người Yêu Nhưng Chỉ Muốn Yên Ổn Làm Sư Tôn Của Nam Chính PDF EPUB .ucc943ddc429d32224f17223150b635c2 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ucc943ddc429d32224f17223150b635c2:active, .ucc943ddc429d32224f17223150b635c2:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ucc943ddc429d32224f17223150b635c2 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ucc943ddc429d32224f17223150b635c2 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ucc943ddc429d32224f17223150b635c2 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ucc943ddc429d32224f17223150b635c2:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Anh em Nhà Karamazov",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/3hVTl3Jg98.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Henri Charrière"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229300&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "nhung-dua-tre-o-guernica",
-      "name": "Những đứa trẻ ở Guernica",
-      "tacgia": "Hermann Kesten",
-      "mieuta": "Hermann Kesten, năm nay chưa quá năm mươi tuổi, đã cho ra đời cho chúng ta hết thảy: tám cuốn tiều thuyết lớn loại này, một tuyền tập truyện ngắn, và một cuốn tiều sử Casanova vừa vui vừa giàu tài liệu – một cách vững vàng. Cuốn những đứa trẻ ở Guernica của Kesten là cuốn có vị trí cao nhất trong số sách sáng tác của ông, đặc biệt đáng được dịch ra pháp ngữ. Nói vậy là tôi muốn nói nhiều điều: trước hết là suốt đời tôi ngưỡng mộ văn học pháp; nó có chất trí thức kiêu hãnh của nó, nó rất thẳng thắn khi nó đề cập đến những vẫn đề nhân sinh, nó khô khan nhưng lóng lánh, nó sâu xa nhưng sáng sủa – hay là nó sáng sủa một cách sâu xa thì cũng vậy, nó chứa một mầu yếm thế, nhưng khi cần, thì không bao giờ đề con người cô đơn, không bao giờ đề loài người lẻ loi&#8230; Đấy, văn học pháp chứa bấy nhiêu hình dung từ&#8230; Nhưng tôi cũng muốn nói rằng tiều thuyết đức chúng ta đượm tình đượm ý toàn diện âu tây, cũng không khác gì văn chương pháp, và cũng là những cuốn tiều thuyết đề cho dân tộc Pháp thưởng ngoạn mà không phải cuốn nào cũng đáng được cái may mắn ấy đâu ! Hermann Kesten là một tiều thuyết gia có một bút pháp vạm vỡ; cách kề chuyện có rất nhiều mầu sắc, chuyện có sao nói một cách thẳng thần ra vậy&#8230; Và văn chương Kesten đi thẳng vào lòng người cũng như chính cái khí hậu tinh thần mà văn chương Kesten phản ảnh vậy : những bức tranh chua chát không bao giờ người ta quên được thể hiện những cái nhớp nhúa của nội chiến Tây Ban Nha. Tác giả tả những cử chỉ dã man của những kẻ có quyền có thể trong tay, tác giả tả cái định mệnh tàn nhẫn của một gia đình basque &#8211; gia đình ông Espinosa&#8230; Tác giả tả nhưng&#8230; mượn miệng bé Carlos đề nói, hay đề lời nói vào bé Carlos thì cũng vậy: một đứa bé mười lăm tuổi, một nhân vật của cái gia-đình Espinosa di cır qua Paris. Bé Carlos kề hết câu chuyện ấy cho tác giả nghe &#8211; ngồi trước sân một quán giải khát ở Tuileries. Sao? Con nít dùng ngôn ngữ con nít đề kề chuyện chăng ? Không! Gần hết cuốn tiều thuyết là&#8230; lời của bé Carlos &#8211; nhưng ở cửa miệng bé Carlos, trở nên một thứ văn chương vững vàng đến đỗi người nghe phải hụt thở. Sự thực thì văn chương ấy phản ảnh cái văn tài của một tiều thuyết gia rất thông minh: tôi ái mộ cả văn chương và cả cái tốc lực và trình độ tưởng tượng của Hermann Kesten vậy. .u6e3d1daffb36ee5e9433b0b7ab142e3e { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u6e3d1daffb36ee5e9433b0b7ab142e3e:active, .u6e3d1daffb36ee5e9433b0b7ab142e3e:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u6e3d1daffb36ee5e9433b0b7ab142e3e { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u6e3d1daffb36ee5e9433b0b7ab142e3e .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u6e3d1daffb36ee5e9433b0b7ab142e3e .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u6e3d1daffb36ee5e9433b0b7ab142e3e:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Tôi, Charley Và Hành Trình Nước Mỹ",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/ca099f6c312048d389cea85b24b143fe.jpg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Hermann Kesten"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229181&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "nguoi-hoa-tien",
-      "name": "Người Hoả Tiễn",
-      "tacgia": "Robert Kurson",
-      "mieuta": "BA PHI HÀNH GIA ĐƯỢC NAI NỊT AN TOÀN NGỒI BÊN TRONG một con tàu vũ trụ nhỏ ở độ cao bằng tòa nhà 36 tầng, chờ đợi những thời khắc đếm ngược cuối cùng. Họ đang ở trên đỉnh một trong những cỗ máy mạnh nhất từng được chế tạo. Tên lửa Saturn V là viên ngọc quý của Cơ quan Hàng không và Vũ trụ Mỹ NASA, một phương tiện có thể tạo ra năng lượng ngang một quả bom nguyên tử loại nhỏ. Nhưng nó chưa từng chở người và mới trải qua hai lần thử nghiệm, lần gần nhất vào tám tháng trước đó lại thất bại thảm hại. Ba phi hành gia này không đơn thuần là bay vào quỹ đạo Trái Đất, hay thậm chí là vượt qua độ cao kỷ lục 1.373 km từng được xác lập. Họ dự định vượt qua gần 400.000 km để tới nơi mà chưa ai từng đặt chân đến. Họ muốn lên Mặt Trăng. Dưới chân họ, nước Mỹ đang lao đao. Năm 1968 chứng kiến những vụ mưu sát, chiến tranh, biểu tình và bất ổn chính trị chưa từng có trong lịch sử đất nước, từ hai vụ ám sát Martin Luther King Jr. và Robert Kennedy cho đến các cuộc bạo động ở Chicago và sự sa lầy trong Chiến tranh Việt Nam. Vì lẽ ấy, tạp chí Time đã vinh danh Nhân vật của năm là THE DISSENTER (KẺ BẤT ĐỒNG). Martin Luther King Jr. (1929-1968) là nhà hoạt động nhân quyền người Mỹ gốc Phi, nổi tiếng với quan điểm bất bạo động. Ông được trao giải Nobel Hòa bình năm 1964. (ND) .uac1a660d55fff35873d600c153899819 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .uac1a660d55fff35873d600c153899819:active, .uac1a660d55fff35873d600c153899819:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .uac1a660d55fff35873d600c153899819 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .uac1a660d55fff35873d600c153899819 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .uac1a660d55fff35873d600c153899819 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .uac1a660d55fff35873d600c153899819:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Căn Phòng Khóa - Emma Donoghue",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/HBVQURc9Ql.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Robert Kurson"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229081&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "max-8211-bi-kich-cua-8220-chung-toc-thuong-dang-8221",
-      "name": "MAX &#8211; Bi Kịch Của &#8220;Chủng Tộc Thượng Đẳng&#8221;",
-      "tacgia": "Sarah Cohen-Scali",
-      "mieuta": "“Mong ước đầu đời của tôi là được sinh ra vào ngày 20 tháng Tư, vì đó là sinh nhật của Quốc trưởng. Nếu tôi sinh ra vào ngày 20 tháng Tư thì tôi sẽ được các vị Thánh của người Đức ban phước lành và người ta sẽ coi tôi như là đứa con đầu lòng của chủng người thượng đẳng, người Aryan. Đây là chủng người từ nay sẽ thống trị thế giới. Tôi là đứa trẻ của tương lai. Đứa trẻ được hình thành không có tình yêu . Không Chúa Trời. Không luật pháp. Không gì khác ngoài sức mạnh và sự vĩ cuồng.&#8221; &#8211; Heil Hitler Cuốn tiểu thuyết hé lộ những sự thật lịch sử đầy ám ảnh về chương trình Lebensborn do Thống chế Himmler khởi xướng, nhằm tạo ra các đại diện thuần chủng của chủng người Aryan, thế hệ trẻ lí tưởng phụng sự cho sứ mệnh phục hưng nước Đức và sau đó là châu u nằm dưới sự chiếm đóng của Đế chế. “Chiến thắng của những đứa trẻ phải tiếp nối chiến thắng của vũ khí.” &#8211; Thống chế Himmler Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b8d530eb7fef4b8c890b82e61023fef0.jpg",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Sarah Cohen-Scali"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=228946&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "luong-cay-cua-vitca",
-      "name": "Luống cày của Vitca",
-      "tacgia": "Andray Blinop",
-      "mieuta": "Truyện thiếu nhi của Liên Xô xuất bản năm 1979 do NXB Kim Đồng ấn bản xin giới thiệu đến các em thiếu nhi, những thiếu nhi thế hệ về trước cùng đọc lại Sách liên quan: Quấn Lấy Không Buông &#8211; Bán Hạ Lương Lương full prc pdf epub azw3 [Ngôn Tình] Anh Đây Cóc Sợ Vợ &#8211; Bán Hạ Lương Lương full prc pdf epub azw3 [Hiện Đại] Toán Nâng Cao Lượng Giác Phần Phương Trình Lượng Giác Tự Luận Và Trắc Nghiệm 10, 11, 12 Chuyên Đề: Lượng Giác Và Phương Trình Lượng Giác 11 Giáo trình đo lường các đại lượng điện và không điện Luong Ngôn T- Ý Chuyện Buồn Không Thể Tin Được Của Êrênhdira Ngây Thơ Và Người Bà Bất Lương",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Af9qj4dotw.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "Andray Blinop"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=228894&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "tinh-phai-nang-ha",
-      "name": "Tình Phai Nắng Hạ",
-      "tacgia": "William Trevor",
-      "mieuta": "“Tình phai nắng hạ” kể lại cuộc tình lãng mạn giữa một phụ nữ đã có chồng nhưng hạnh phúc không trọn vẹn, và chàng trai phiêu bạt, có cuộc sống bất định về cả tinh thần lẫn vật chất. Tác giả đã thu hút được sự chú ý của người đọc một cách kỳ lạ bằng văn phong vừa tỉnh lạnh vừa sâu sắc, hy vọng và khát khao hạnh phúc tình yêu . Theo William Trevor, tình yêu đồng nghĩa có sức mạnh vực dậy những tâm hồn tổn thương, và cũng là niềm an ủi tuyệt vời dù chỉ thoáng qua, mong manh tựa như giấc mộng đêm hè. Tác giả William Trevor sinh tại Mitchelstown, hạt Cork, và lớn lên ở Ireland; từng theo học trường đại học Trinity ở Dublin. Ông viết nhiều tiểu thuyết và giành được nhiều giải thưởng, trong đó có Hawthornden &#8211; giải thưởng hàng năm của nhà xuất bản Yorkshire Post Book và Whitbread Book. Tiểu thuyết mới đây nhất của ông, The Story of Lucy Gault (2002), có tên trong danh sách để cử cả hai giải Man Booker và Whitbread dành cho tiểu thuyết hay nhất. Sách liên quan: Không Phải Tình Hờ Ta Trở Thành Phú Nhị Đại Phản Phái &#8211; Tam Tam Đắc Cửu full mobi pdf epub azw3 [Dị Năng] Vương Phải Tình Em Tình Đầu Khó Phai PDF EPUB Tình Yêu Không Phải Trò Đùa Không Phải Khúc Tình Ca PDF EPUB Trầm Vụn Hương Phai &#8211; Tô Mịch full prc pdf epub azw3 [Ngôn Tình] .u2c5bf7876dd0e314ed1276bb80636d19 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u2c5bf7876dd0e314ed1276bb80636d19:active, .u2c5bf7876dd0e314ed1276bb80636d19:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u2c5bf7876dd0e314ed1276bb80636d19 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u2c5bf7876dd0e314ed1276bb80636d19 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u2c5bf7876dd0e314ed1276bb80636d19 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u2c5bf7876dd0e314ed1276bb80636d19:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Thư Hà Nội",
-      "theloai": "Tiểu Thuyết Phương Tây",
-      "theloaiSlug": "tieu-thuyet-phuong-tay",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/K39c26fe3j.webp",
-      "tags": [
-        "Tiểu Thuyết Phương Tây",
-        "William Trevor"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=228240&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1g40k6s90cw3XmOR3EJYOVrML9EKFAyNg"
         }
       ]
     }

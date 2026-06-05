@@ -1,406 +1,346 @@
 {
   "theloai": {
     "id": "tam-ly-ky-nang-song",
-    "name": "Tâm Lý - Kỹ Năng Sống"
+    "name": "Tâm Lý - Kỹ Năng Sống",
+    "slug": "tam-ly-ky-nang-song"
   },
   "items": [
     {
-      "id": "noi-voi-tuoi-hai-muoi",
-      "name": "Nói Với Tuổi Hai Mươi",
-      "tacgia": "Thích Nhất Hạnh",
-      "mieuta": "“Nói với Tuổi Hai Mươi” là một tác phẩm sáng sủa và sâu lắng của Thiền sư Thích Nhất Hạnh, mở ra trang sách như một cửa sổ tinh thần, đưa bạn vào một hành trình khám phá bản thân và cuộc sống. Trong tinh thần thanh tịnh của cuốn sách, Thích Nhất Hạnh chia sẻ những suy nghĩ và trải nghiệm chất chứa từ tuổi hai mươi của mình, mang đến cho người đọc những ánh sáng thắp lên con đường tương lai. Những trang sách tràn ngập sự nhẹ nhàng, như là những lời thầy dạy tròn trịa, thổi bùng lên tâm hồn và thúc đẩy tầm nhìn. “Nói với Tuổi Hai Mươi” không chỉ là cuốn sách, mà là một người bạn tâm hồn dành riêng cho những ai đang dấn thân vào thập kỷ quan trọng của tuổi trẻ. Cuốn sách không chỉ giúp bạn hiểu sâu hơn về chính mình, mà còn mở ra cánh cửa của tri thức và sự thấu hiểu về cuộc sống. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "stop-overthinking-song-tu-do-khong-au-lo",
+      "name": "Stop overthinking - Sống tự do, không âu lo",
+      "tacgia": "",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/07b74a2a503c4bffbd6aa0be1713bd1a.jpg",
+      "anhbia": "https://drive.google.com/file/d/1VDzTUFWsEF2yzmYUKIvsHJP3wg9DGPUu/view?usp=sharing",
       "tags": [
-        "Tâm Lý - Kỹ Năng Sống",
-        "Thích Nhất Hạnh"
+        "Tâm Lý - Kỹ Năng Sống"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232564&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1NKQ_TIUm3bHW-KtrbKvFP7aqkBkjwfFZ"
         }
       ]
     },
     {
-      "id": "toi-suy-tuong",
-      "name": "Tôi Suy tưởng",
-      "tacgia": "Vũ Văn Thanh",
-      "mieuta": "Văn minh cơ khi ngày một phát-triển. Vật-chất đường như muốn lần-át giá trị tinh thần. Người ta càng sống gần với sự tiến bộ của khoa học thì sự tu dưỡng nội-tâm càng lơ là thua sút. Chính vì thế tâm-trạng con người vẫn không thoát khỏi những sự ưu tư, phiền-muộn, hoài nghi&#8230; &#8211; Người bạn trẻ nhìn đời với thái-độ bỡ ngỡ e ngại. Bậc niên cao tuổi trọng thì chán ngán cho mùi nhân thể, không thiết đua tranh. Người được may mắn thành công sang giầu thì tự cao tự đại, không biết những gì sẽ xảy đến cho mình ở mai-hậu &#8211; Kẻ bị rủi ro thất-bại khốn cùng thì chán chường tiêu cực, hết muốn sống. Từ ngàn xưa các đạo-giáo, học thuyết của những bậc giáo chủ tiên hiền tiên triết đã luận-bàn, giảng nhiều về đời người cuộc sống. thuyết khả Nhưng cho đến bây giờ « những mối sầu vạn cổ », * những trống-trải trong tâm hồn « những băn khoăn khắc khoải của thế nhân vẫn chưa hết, hãng gnày vẫn được nhắc nhở ; đề cập đến. Sách liên quan: Elon Musk: Tesla, SpaceX và sứ mệnh tìm kiếm một tương lai ngoài sức tưởng tượng PDF EPUB Tesla, SpaceX Và Sứ Mệnh Tìm Kiếm Một Tương Lai Ngoài Sức Tưởng Tượng Tương Lai Văn Hóa Việt Nam &#8211; Hồ Hữu Tường full prc pdf epub azw3 [Biên Khảo]",
+      "id": "suc-nang-cua-su-ky-vong",
+      "name": "Sức nặng của sự kỳ vọng",
+      "tacgia": "An An",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/41hUVRDzlk.webp",
+      "anhbia": "https://drive.google.com/file/d/1Ln6YImliZsVXZi1bGdmD_nCaLITjcWkf/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Vũ Văn Thanh"
+        "An An"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232588&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1wdnjawYAoItJglz_OGLzAPzX4_zIxrPV"
         }
       ]
     },
     {
-      "id": "nha-nho-8211-cang-o-cang-rong",
-      "name": "Nhà Nhỏ &#8211; Càng Ở Càng Rộng",
-      "tacgia": "Lục Vy",
-      "mieuta": "Nhà thì nhỏ, đồ quá nhiều! Hãy lần lượt giải quyết các vấn đề của căn bếp, phòng khách, phòng ngủ, khu vệ sinh, và để ngôi nhà nhỏ của bạn luôn gọn gàng, ngăn nắp! hạnh phúc không dễ đo đếm bằng diện tích hay sự xa hoa của một ngôi nhà, bởi chất lượng của không gian sống và từng giây phút sống trong tổ ấm ấy mới quyết định hạnh phúc của bạn! Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "toi-on-ban-on",
+      "name": "Tôi ổn, Bạn ổn",
+      "tacgia": "Thomas A.Harris, MD",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b24455273a884d3184dfcda2c023b835.jpg",
+      "anhbia": "https://drive.google.com/file/d/1uYM2y28lqAwJ4ivrLLf3kgpKt5vxT9Xe/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Lục Vy"
+        "Thomas A.Harris, MD"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232534&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1iHu5PUjpAutR_ISmZ_A0xRs-v0XL2K4b"
         }
       ]
     },
     {
-      "id": "nhan-sinh-muon-ve-dung-voi-so-do",
-      "name": "Nhân sinh muôn vẻ, đừng vội so đo",
-      "tacgia": "Trương Di",
-      "mieuta": "Chúng ta ao ước cầu sự vẹn toàn trong mọi việc nhưng ít ai chịu ngồi yên suy nghĩ rằng khát vọng của con người là vô hạn. Muốn đạt được hạnh phúc , mỗi ngày hãy học cách bỏ đi một ít. Sở dĩ con người ta đau khổ chính bởi mãi theo đuổi những thứ sai lầm. Lòng tham và dục vọng là hai ngọn lửa thiêu cháy mọi con đường đi đến hạnh phúc. Có được một ít, chúng ta lại muốn có nhiều hơn một chút, thêm được một phần, ta lại muốn đạt được nhiều phần hơn nữa. Vòng luẩn quẩn của lòng ham muốn chính là không tự mình biết đủ. Cuốn sách gửi đến bạn đọc thông điệp: “Hạnh phúc đích thực không nằm ở chỗ ta có thêm bao nhiêu mà nó phụ thuộc vào việc ta cảm nhận được mình hiện đang đầy đủ như thế nào”… Thông qua những quan điểm sống hướng đến chân-thiện-mỹ, để con người luôn sống hạnh phúc, biết cách buông bỏ, sống vì mình, vì người. Cuốn sách gồm 3 Chương: Nền tảng của hạnh phúc ; Học cách trưởng thành; Một cuộc đời ý nghĩa. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "ban-khong-dac-biet-nhu-ban-nghi",
+      "name": "Bạn không đặc biệt như bạn nghĩ",
+      "tacgia": "Clara Wynne",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/164effb3d07b4b7c8d5b2c497311e457.jpg",
+      "anhbia": "https://drive.google.com/file/d/1e0NIZ1X97jyownhemRrwcfpUAgG40r4m/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Trương Di"
+        "Clara Wynne"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232550&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1JasqJiAMpoY-Gea6Pdca00048kqL1wPO"
         }
       ]
     },
     {
-      "id": "mot-doi-nhu-ke-tim-duong",
-      "name": "Một Đời Như Kẻ Tìm Đường",
-      "tacgia": "Phan Văn Trường",
-      "mieuta": "Hai cuốn sách trước của GS. Phan Văn Trường, “Một Đời Thương Thuyết” và “Một Đời Quản Trị”, là sự chắt lọc từ những trải nghiệm trong suốt nhiều năm tháng nghề nghiệp của bản thân. Tuy nhiên, đến với cuốn sách này, tác giả lại muốn dành một khoảng không gian riêng để có thể phản ảnh những cảm nhận cá nhân về cuộc sống, với góc nhìn từ những năm tháng tuổi trẻ cho đến độ tuổi xế chiều này. Khoảnh khắc khó chịu nhất có lẽ là khi mình đã lỡ chọn một hướng đi, nhưng ngộ được rằng con đường này nhiều chông gai, lắm rào cản và lại còn không phù hợp. Trong lòng, lúc ấy chỉ muốn được quay trở lại để bắt đầu, để lựa chọn lại một hướng khôn ngoan hơn. Việc lựa chọn tất nhiên đòi hỏi nhiều sáng suốt, nhưng trên hết người lựa chọn phải hiểu rõ thế giới mà mình đang sống và biết rõ chính mình muốn gì, và một mặt khác phải sẵn sàng cáng đáng lấy trách nhiệm trong sự lựa chọn. Nói một cách hoa mỹ hơn, mình chỉ tìm ra hướng đi đúng đắn và phù hợp cho bản thân nếu thấu hiểu rõ bản năng, bản ngã và cả tiềm thức của chính mình. Cùng một tinh thần luôn sẵn sàng đối mặt với những hệ quả tốt và xấu từ sự lựa chọn ấy. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "hack-nao-hanh-vi-ung-dung-tam-ly-hoc-de-bot-bi-dat-mui",
+      "name": "Hack não hành vi - Ứng dụng tâm lý học để bớt bị dắt mũi",
+      "tacgia": "Clara Wynne",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/iuYVtFYd6g.webp",
+      "anhbia": "https://drive.google.com/file/d/1V7uOuHPBOsL3m9fNhygrlPf3rPX2dR_A/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Phan Văn Trường"
+        "Clara Wynne"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232466&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=13nm5DN3o1_n6hqFRpstHprXRqugJESn_"
         }
       ]
     },
     {
-      "id": "noi-lo-dia-vi",
-      "name": "Nỗi lo địa vị",
-      "tacgia": "Alain de Botton",
-      "mieuta": "Một sự lo lắng quá nguy hại để có thể làm hư hỏng quãng đời kéo dài của chúng ta, khiến chúng ta có nguy cơ không thể thích ứng với những quan niệm về thành công do xã hội đặt ra. Và kết quả chúng ta có thể bị tước lột phẩm giá và sự tôn trọng, hay nỗi lo ngại rằng chúng ta hiện tại đang có một cấp bậc trong xã hội quả khiêm tốn hoặc sẽ rơi xuống một cấp bậc thấp hơn. Nỗi lo này gây ra do một trong các nguyên nhân như : sự giáng chức, thất nghiệp, thăng tiến, về hưu, những cuộc tán chuyện với đồng nghiệp trong cùng ngành công nghiệp, sự mô tả sơ lược trên báo chí về những thành công nổi bật và đáng kể hơn của bạn bè. Giống như việc thủ nhận lòng đố kị (mà cảm xúc này có liên quan đến), nỗi lo địa vị có thể là sự thiếu thận trọng về mặt xã hội khi bộc lộ phạm vi của bất kỳ nỗi lo lắng nào, và do đó, dấu hiệu của sự xúc động nội tâm là không bình thường, thường giới hạn ở một cái nhìn chằm chằm lo lắng, một nụ cười giòn hay một thoáng ngừng lâu sau tin tức về thành công của người khác. Sách liên quan: Vượt Bẫy Cảm Xúc &#8211; Susan David Đạo Lý Của Người Xưa PDF EPUB Khả Năng Cải Thiện Nghịch Cảnh PDF EPUB .ua7c117a5399946bdef030b68844dba2f { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ua7c117a5399946bdef030b68844dba2f:active, .ua7c117a5399946bdef030b68844dba2f:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ua7c117a5399946bdef030b68844dba2f { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ua7c117a5399946bdef030b68844dba2f .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ua7c117a5399946bdef030b68844dba2f .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ua7c117a5399946bdef030b68844dba2f:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Tối giản - Sở hữu ít đi, hạnh phúc nhiều hơn",
+      "id": "hieu-va-thuong-de-truong-thanh",
+      "name": "Hiểu và thương để trưởng thành",
+      "tacgia": "Diệu An",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/r4VYKIhp2T.webp",
+      "anhbia": "https://drive.google.com/file/d/1N7cS57D0bag0xQA2u6OlGi4eGP-ETeEZ/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Alain de Botton"
+        "Diệu An"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232398&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1mmmsIdMC_UKeJkDNKIAdZWmXmGUv0A4Z"
         }
       ]
     },
     {
-      "id": "phuong-huong-va-uoc-dac",
-      "name": "Phương hướng và ước đạc",
-      "tacgia": "Phạm Văn Nhân",
-      "mieuta": "Trong tập sách này giới thiệu khá kỹ, chi tiết về cách sử dụng bản đồ. Không ít người đã có lần loay hoay với tấm bản đồ trong tay, điên đầu vì không biết làm thế nào để giải mã những rối rắm về màu sắc và các ký hiệu đủ mọi hình thức trên đó. Vì các bạn chưa được hướng dẫn đầy đủ, chưa có dịp tiếp cận thực tế. Trong sách này nêu rõ về cách sử dụng bản đồ địa hình: những ghi chú, ước hiệu, tỷ lệ xích, các hướng, hệ thống ô vuông, tọa độ, cao độ… Cùng đó là cách định hướng bản đồ, xác định điểm đúng, cách gấp và giữ gìn bản đồ. Kỹ năng này giúp các bạn trong các cuộc thám du, di hành dã ngoại, đi tiền trạm… các bạn có dịp ứng dụng. Sách còn hướng dẫn về cách xác định phương hướng bằng cách sử dụng địa bàn, bằng đồng hồ, bằng gậy, bằng mặt trời, bằng sao, mặt trăng, bằng gió, bằng thiết bị định vị toàn cầu GPS. Bên cạnh đó sách còn chỉ cách giữ hướng đi trong khi di chuyển qua các địa hình phức tạp… để tránh bị chệch hướng, bị lạc. Sách liên quan: Hướng Dẫn Phương Pháp Khuyến Nông Sổ Tay Hướng Dẫn Xây Dựng Xã, Phường, Thị Trấn Đạt Chuẩn Tiếp Cận Pháp Luật Đổi Mới Phương Thức Lãnh Đạo Của Đảng Đối Với Công Tác Dân Vận Trong Điều Kiện Phát Triển Kinh Tế Thị Trường Định Hướng Xã Hội Chủ Nghĩa Và Hội Nhập Quốc Tế Quản Lý Hiệu Quả Trong Một Thế Giới Đại Chuyển Đổi: Phương Thức Đúng Đắn Để Quản Lý Hiệu Quả, Làm Việc Năng Suất Và Tận Hưởng Cuộc Sống Tài liệu học tập Hướng dẫn giải quyết tình huống học phần Luật quốc tế Tài liệu học tập Hướng dẫn giải quyết tình huống học phần Tư pháp quốc tế Hướng dẫn giảo quyết tình huống học phần Luật Lao động .u0148fb82f1aae90afba1a6d292a89e0f { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u0148fb82f1aae90afba1a6d292a89e0f:active, .u0148fb82f1aae90afba1a6d292a89e0f:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u0148fb82f1aae90afba1a6d292a89e0f { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u0148fb82f1aae90afba1a6d292a89e0f .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u0148fb82f1aae90afba1a6d292a89e0f .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u0148fb82f1aae90afba1a6d292a89e0f:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Làm Chủ Tuổi 20",
+      "id": "suc-manh-cua-ngon-tu",
+      "name": "Sức mạnh của ngôn từ",
+      "tacgia": "Don Gabor",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/50a54a538146421b906ef1ce673d0a5e.jpg",
+      "anhbia": "https://drive.google.com/file/d/1InI7H01WTwry53jZySYJLoNq0xtEXw_p/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Phạm Văn Nhân"
+        "Don Gabor"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232349&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1g4KsRS3ZIAoNHML_1dQ0K2CGkwo1Vpej"
         }
       ]
     },
     {
-      "id": "vong-tay-cua-me",
-      "name": "Vòng Tay Của Mẹ",
-      "tacgia": "Jack Canfield - Mark Victor Hansen",
-      "mieuta": "“Mỗi câu chuyện là một thông điệp có thể hàn gắn vết thương, làm thay đổi suy nghĩ, tâm hồn và đôi khi, cả cuộc đời bạn. Chúng tôi thật sự tin rằng những câu chuyện này sẽ làm nên nhiều khác biệt, mang lại nguồn cảm hứng vô tận cho bạn, vì chính cuộc sống tinh thần của chúng tôi cũng tốt hơn sau mỗi lần đọc một câu chuyện hay. Một khi đã được truyền cảm hứng, bạn đều có thể đem đến những điều tốt đẹp cho bản thân mình và những người xung quanh”. (Jack Canfield và Mark Victor Hansen). Mục Lục: Lời giới thiệu Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "cang-khiem-nhuong-cang-gia-tri",
+      "name": "Càng khiêm nhường, càng giá trị",
+      "tacgia": "Hoàng Nguyên",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/9Ftczimage.webp",
+      "anhbia": "https://drive.google.com/file/d/1P3TcxZBc8xIxhQ2lOAM7Mqnt_qgr7oPk/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Jack Canfield - Mark Victor Hansen"
+        "Hoàng Nguyên"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232247&#038;map=258832"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1VJet5FL5gqbvQ5o4UFcVx72olBuwp0VL"
         }
       ]
     },
     {
-      "id": "tram-tran-tram-thang",
-      "name": "Trăm trận, trăm thắng",
-      "tacgia": "Đông A Sáng",
-      "mieuta": "Cuốn sách Trăm trận trăm thắng, có tên là Bách chiến kì lược do Lưu Cơ, một nhân vật thần kì, được biên sọan dưới triều vua Thần Tông (1067 &#8211; 1085), thời Bắc Tống . Từ khi ra đời đến nay, cuốn sách đã được các nhà quân sự lỗi lạc dưới các triều đại, các danh tướng mọi thời coi trọng, ứng dụng thành công và ca ngợi hết lời : Là cuốn binh thư kì diệu, không có cuốn binh thư nào sánh được. Sách đã khai mở tinh thần, trí tuệ và sự thông biến cho người đọc. Sở dĩ, sách được coi trọng, ứng dụng thành công và nhận được những lời khen ngợi, vì : 1. Sách đã kế thừa tinh hoa những cuốn binh thư nổi tiếng thời cổ như Lục thao, Ngô tử, Tam lược, Tư Mã Pháp, trong đó Tôn Tử binh pháp là chính; từ đó hình thành phát triển thành cuốn Bách chiến kì lược. Cho nên, sách được đánh giá là cuốn binh thư kì diệu không có cuốn binh thư nào sánh được. 2. Để chứng minh cho những nguyên tắc quân sự, sách đã dẫn chứng một trăm câu chuyện hấp dẫn được trích từ trong những cuốn sử nổi tiếng, tiêu biểu như Sử kí Tư Mã Thiên, Tả truyện, Tam quốc chí, Tấn thư, Hậu hán thư, Tư trị thông giám. Với những trận đánh long trời lỡ đất, quyết định tồn vong của một thế lực, một triều đại, một đất nước, trong lịch sử Trung Hoa qua các triều đại : Xuân Thu, Chiến Quốc, Tần Hán đến thời Tam quốc, Ngụy Tấn. 3. Sách được kết cấu chặt chẽ, đa số các nguyên tắc, các dẫn chứng được sắp xếp theo những cặp mâu thuẫn, giàu tính chất triết lí : tử &#8211; sinh, yếu &#8211; mạnh, ít – nhiều, thủ &#8211; công, thối &#8211; tiến, sau &#8211; trước, bại &#8211; thắng. Với tùy cơ ứng biến, trong đất chết tìm ra đường sống, yếu chuyển sang mạnh, lấy ít đánh nhiều, lấy nhiều đè bẹp ít, chuyển thủ sang công, biến thối thành tiến, biến sau thành trước, biến trước thành sau, chuyển bại thành thắng &#8230; như một vòng tròn chuyển hóa bất tận thiên biến vạn hóa, xuất quỷ nhập thần, vi diệu, thần kì, người trí tuệ bình thường khó đóan. Vì vậy, sách được đánh giá là đã khai mở tinh thần, trí tuệ và sự thông biến cho người đọc. 4. Mặc dầu đã trải qua ngàn năm hưng phế của lịch sử, cuốn Kì mưu diệu kế, trăm trận trăm thắng vẫn còn nguyên giá trị, có thể ứng dụng vào trong nhiều lãnh vực như quân sự, ngọai giao, ứng xử, giao tiếp; đặc biệt là các doanh nhân muốn trăm trận trăm thắng trên thương trường khốc liệt, lạnh lùng. 5. Thông thường, một cuốn sách quý, như viên kim cương chỉ tỏa sáng long lanh dưới ánh mặt trời. Những nguyên tắc, câu chuyện và mục lạm bàn và khuôn khổ cuốn sách, chỉ là viên kim cương nhỏ nhắn, khiêm tốn. Nhưng với trí thông minh, tham gia lạm bàn, quý bạn sẽ tìm ra ánh sáng muôn màu, diệu dụng vô song. .u17cb12700a41d912a8351acf8a4fc54b { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u17cb12700a41d912a8351acf8a4fc54b:active, .u17cb12700a41d912a8351acf8a4fc54b:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u17cb12700a41d912a8351acf8a4fc54b { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u17cb12700a41d912a8351acf8a4fc54b .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u17cb12700a41d912a8351acf8a4fc54b .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u17cb12700a41d912a8351acf8a4fc54b:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bông Hồng Yểu Mệnh - Erin Kelly full mobi pdf epub azw3 [Trinh Thám]",
+      "id": "hanh-phuc-tuoi-tre-truong-thanh-bang-yeu-thuong",
+      "name": "Hạnh phúc tuổi trẻ, Trưởng thành bằng yêu thương",
+      "tacgia": "J. Krishnamurti",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tLy2mzKGqT.webp",
+      "anhbia": "https://drive.google.com/file/d/1qnyXzke62KMg8MkqLOYP5SYc5ZFnakIh/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Đông A Sáng"
+        "J. Krishnamurti"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232223&#038;map=258832"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Dt47VeyQARMSMDjK_Qs1GKcaN5r5WBIw"
         }
       ]
     },
     {
-      "id": "quyen-tach-khoi-dam-dong",
-      "name": "Quyền Tách Khỏi Đám Đông",
-      "tacgia": "Jung Heejae",
-      "mieuta": "“QUYỀN TÁCH KHỎI ĐÁM ĐÔNG” Niềm hạnh phúc đến từ việc bình thản bỏ cả những tham vọng của khối óc, lẫn sự bận bịu của trái tim. Chúng ta đều bị mắc bẫy bởi câu nói: “Hãy nỗ lực hơn nữa”. Đó là lý do vì sao không bao giờ chúng ta cảm thấy hạnh phúc. Điều này giống như một người cực đoan luôn giữ vững tâm lý lạc quan, tẩy xóa những nỗi buồn và thương tổn khi nó xuất hiện. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "suc-manh-cua-su-tu-te",
+      "name": "Sức mạnh của sự tử tế",
+      "tacgia": "Jack Canfield",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/658cc2f406f44f9a8d99f46c119447fe.jpeg",
+      "anhbia": "https://drive.google.com/file/d/1q0_jdGHZs4MO226cspbsz-Wl2SO_y004/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Jung Heejae"
+        "Jack Canfield"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232119&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Zq1YeEmhoMUve3Juj0N5FkMXkraa2s1E"
         }
       ]
     },
     {
-      "id": "ren-luyen-ky-nang-song-8211-ky-nang-thuyet-trinh-hieu-qua",
-      "name": "Rèn luyện kỹ năng sống &#8211; Kỹ Năng Thuyết Trình Hiệu Quả",
-      "tacgia": "Lại Thế Luyện",
-      "mieuta": "Quý bạn đọc thân mến! Khi cầm cuốn sách này trên tay, chắc hẳn bạn đã nhận ra kỹ năng thuyết trình ngày càng trở nên quan trọng như thế nào trong môi trường kinh doanh ngày nay? Là một người làm kinh doanh, tại các buổi hội nghị khách hàng, hội thảo, các cuộc hội họp giữa các phòng ban trong công ty, đại hội cổ đông, các buổi giới thiệu sản phẩm với khách hàng, họp báo, các diễn dàn doanh nghiệp. . . bạn không thể không thuyết trình. Dù muốn dù không, bạn vẫn phải thừa nhận một thực tế: kỹ năng thuyết trình là một trong những chìa khóa giúp bạn thành công – dù bạn đang kinh doanh trong bất cứ lĩnh vực nào! Hiện nay, để có thể tiến xa hơn các đối thủ cạnh tranh và gia tăng doanh số bán hàng, nhiều công ty tuyển dụng nhân viên tiếp thị luôn đòi hỏi ứng viên phải có kỹ năng giao tiếp tốt và kỹ năng thuyết trình. Nếu bạn là một nhân viên tiếp thị thì kỹ năng thuyết trình sẽ giúp bạn thuyết phục khách hàng một cách hiệu quả hơn, nhờ đó gia tăng doanh số bán hàng và gặt hái thành công trong nghề nghiệp Trong bối cảnh cạnh tranh ngày càng gay gắt khốc liệt, các công ty sẽ phải làm nhiều việc hơn để quảng bá thương hiệu. Nếu bạn là giám đốc kinh doanh, kỹ năng thuyết trình chắc chắn không thể thiếu được tại các buổi hội nghị khách hàng hoặc trong những sự kiện trọng đại khác của công ty. .u1e3a069df4ec1b79bf909c1a2e251e31 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u1e3a069df4ec1b79bf909c1a2e251e31:active, .u1e3a069df4ec1b79bf909c1a2e251e31:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u1e3a069df4ec1b79bf909c1a2e251e31 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u1e3a069df4ec1b79bf909c1a2e251e31 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u1e3a069df4ec1b79bf909c1a2e251e31 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u1e3a069df4ec1b79bf909c1a2e251e31:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Phương hướng và ước đạc",
+      "id": "dan-ong-sao-hoa-dan-ba-sao-kim-hanh-phuc-ben-nhau",
+      "name": "Đàn ông sao Hỏa, đàn bà sao Kim - Hạnh phúc bên nhau",
+      "tacgia": "John Gray",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/fsXrITV3Fr.webp",
+      "anhbia": "https://drive.google.com/file/d/1jetJ0p0k3-ysc-1pkj3B0a69ZxpvJiWA/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Lại Thế Luyện"
+        "John Gray"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232091&#038;map=258936"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1PXoW0NONJUGT05waPSqkk0PxsXXViS_V"
         }
       ]
     },
     {
-      "id": "ren-nhan-cach",
-      "name": "Rèn nhân cách",
-      "tacgia": "Hoàng Xuân Việt",
-      "mieuta": "Sách scan do bạn Thanh Trung Nguyen gửi đến thư viện, xin chân thành cảm ơn bạn sách do Hoàng Xuân Việt viết năm 1956. Sách liên quan: Kỷ Yếu Hội Thảo Khoa Học Quốc Gia Nâng Cao Đạo Đức Cách Mạng, Quét Sạch Chủ Nghĩa Cá Nhân Theo Tư Tưởng, Đạo Đức, Phong Cách Hồ Chí Minh Giải Mã Sức Hút Cá Nhân &#8211; Cách Tạo Ấn Tượng Mạnh Mẽ Và Bền Vững Tự tạo tương lai cho chính mình – Cách làm chủ 12 nhân tố then chốt của sự thành công 30 Năm Sóng Gió &#8211; Thành Tựu Phi Thường Và Số Phận Bi Kịch Của Tầng Lớp Doanh Nhân Trung Quốc Trong Cải Cách Kinh Tế 1978-2008 &#8211; Ngô Hiểu Ba full mobi pdf epub azw3 [Doanh Nhân] Các Học Thuyết Về Nhân Cách Danh Nhân Cách Mạng Việt Nam Kể Chuyện Danh Nhân Việt Nam &#8211; Tập 6: Danh Nhân Cách Mạng Việt Nam",
+      "id": "cam-on-cuoc-song",
+      "name": "Cám ơn cuộc sống",
+      "tacgia": "Keith D.Harell",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/34f3KQ1Flo.webp",
+      "anhbia": "https://drive.google.com/file/d/1LkhTjNrLdU8HmuxGCUBeC3D1bGNmUFFS/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Hoàng Xuân Việt"
+        "Keith D.Harell"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232087&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1rgLUXufcDRwbUTCUEs2-o3PyMvjw0FpD"
         }
       ]
     },
     {
-      "id": "ren-luyen-ky-nang-song-8211-ky-nang-tim-viec-lam",
-      "name": "Rèn luyện kỹ năng sống &#8211; Kỹ Năng Tìm Việc Làm",
-      "tacgia": "Lại Thế Luyện",
-      "mieuta": "Ngày nay, một trong những vấn đề gai góc nhất mà nhiều người đang phải đối mặt là tìm kiếm việc làm. Nếu bạn là một sinh viên đang theo đuổi chuyên ngành ở bậc đại học hoặc đang theo học tại một cơ sở đào tạo nghề nào đó, chắc chắn bạn sẽ luôn tự hỏi: “Mình sẽ làm gì sau khi ra trường” Làm thế nào để tối đa hóa cơ hội tìm việc? Mỗi năm, thị trường lao động lại tràn ngập sinh viên ra trường và đi tìm việc, dẫn đến một thực trạng là nhiều người, ít việc. Trong điều kiện đó, làm thế nào để tìm cho bản thân mình một công việc ưng ý, phù hợp với năng lực và trình độ của bản thân? Đây là một nguyện vọng vô cùng chính đáng, nhưng đồng thời cũng là vấn để nan giải đối với nhiều bạn trẻ hôm nay. Vấn đề việc làm liên quan đến nhiều khía cạnh khác nhau trong cuộc sống. Việc làm không chỉ là để mưu sinh, mà còn là điều kiện để bạn phát triển các kỹ năng cá nhân, theo đuổi những hứng thú thuộc về lĩnh vực chuyên môn và những giá trị cao đẹp trong cuộc sống. Những thứ mà chúng ta gọi là “mục dích và ý nghĩa của cuộc đời&#8221; đều phải được thực hiện thông qua công việc mà chúng ta làm mỗi ngày! Tìm việc là hành trình không thể thiếu của bất cứ ai. Bất cứ ai trong chúng ta cũng cần có nghề nghiệp, có công việc hằng ngày để làm, để sinh sống, để phục vụ chính mình và người khác, phục vụ cộng đồng, cống hiến sức lực và trí tuệ cho xã hội. .ua04b843a503d82f4e064199ecc3549ea { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ua04b843a503d82f4e064199ecc3549ea:active, .ua04b843a503d82f4e064199ecc3549ea:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ua04b843a503d82f4e064199ecc3549ea { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ua04b843a503d82f4e064199ecc3549ea .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ua04b843a503d82f4e064199ecc3549ea .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ua04b843a503d82f4e064199ecc3549ea:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Người Kể Chuyện Trên Báo",
+      "id": "suc-manh-cua-su-khich-le",
+      "name": "Sức mạnh của sự khích lệ",
+      "tacgia": "Ken Blanchard",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/gvtVxFJUhh.webp",
+      "anhbia": "https://drive.google.com/file/d/1rXa05x6tilzbZvr30-E4FcT2rEIriPGr/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Lại Thế Luyện"
+        "Ken Blanchard"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232089&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1zLo-DbcBwFv_CLN9AJJTQrkz77blhSkA"
         }
       ]
     },
     {
-      "id": "sach-gia-nhu-toi-biet-nhung-dieu-nay-truoc-khi-thi-dai-hoc",
-      "name": "Sách Giá Như Tôi Biết Những Điều Này…Trước Khi Thi Đại Học",
-      "tacgia": "Đinh Tuấn Ân",
-      "mieuta": "Nếu bạn có ước mơ học tiếp lên cao đẳng, đại học trong tương lai, để trở thành những người thành công thì tôi khuyên bạn ngày lúc này hãy sở hữu cho mình cuốn sách này càng sớm càng tốt. Nếu bạn là học sinh cấp ba, nhất là những bạn đang trong độ tuổi chuẩn bị cho kì thi đại học thì tôi khuyên bạn không nên đi mà phải chạy thật nhanh để đảm bảo bạn và những người bạn thân thiết của bạn sở hữu cuốn sách này và nghiền ngẫm nó thật kỹ. Sách liên quan: Những Điều Cần Biết Về Chế Độ, Chính Sách Đối Với Cán Bộ, Công Chức Xã, Phường, Thị Trấn Thoái Hóa Cột Sống Những Điều Cần Biết Để Phòng Và Điều Trị Những Điều Cần Biết Khi Sống Chung Với Điện Những Điều Muốn Biết Về Hoạt Động Giới Tính Nhưng Ngại Hỏi Những điều bạn muốn biết về hoạt động giới tính nhưng ngại hỏi Những Điều Cần Biết Về Đào Tạo Nghề Và Việc Làm Đối Với Lao Động Nông Thôn Những điều cần biết về da",
+      "id": "suc-manh-cua-su-quan-tam",
+      "name": "Sức mạnh của sự quan tâm",
+      "tacgia": "Ken Blanchard. S.Truett Cathy",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Juy6i11.webp",
+      "anhbia": "https://drive.google.com/file/d/1wLxXstc6Y7SPIVYsmT0f4sr6Qx4ErRgR/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Đinh Tuấn Ân"
+        "Ken Blanchard. S.Truett Cathy"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232067&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1de0dKG_33hoALiNmueUIkUq7LFFPDkie"
         }
       ]
     },
     {
-      "id": "thai-cong-binh-phap",
-      "name": "Thái Công Binh Pháp",
-      "tacgia": "Khương Lữ Vọng",
-      "mieuta": "Huỳnh thạch công lục chương CHƯƠNG 1: NGUYÊN THỦY CHƯƠNG II: CẦU NHÂN CHI CHÍ CHƯƠNG III: CHÁNH ĐẠO CHƯƠNG IV: BỒN ĐỨC TÔN ĐẠO CHƯƠNG V: TUÂN NGHĨA CHƯƠNG VI: AN LỄ Bùa nhịn cơm của Trương Lương. Thái Công Binh Pháp Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "hieu-ve-trai-tim",
+      "name": "Hiểu về trái tim",
+      "tacgia": "Minh Niệm",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/MvAbGw8Zjh.webp",
+      "anhbia": "https://drive.google.com/file/d/1HXAYU8mcIXkkFvMRzbZk7VQhjNMJ4qOw/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Khương Lữ Vọng"
+        "Minh Niệm"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231835&#038;map=258936"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=180DrEwYE1XLrB6K32Q-eftJB15cYmhlu"
         }
       ]
     },
     {
-      "id": "thay-doi-ti-hon-hieu-qua-bat-ngo",
-      "name": "Thay Đổi Tí Hon Hiệu Quả Bất Ngờ",
-      "tacgia": "James Clear",
-      "mieuta": "Hệ thống mang tính cách mạng giúp bạn tiến bộ 1% mỗi ngày. Mọi người cho rằng nếu bạn muốn thay đổi cuộc đời mình, bạn cần phải có những suy nghĩ lớn lao. Nhưng James Clear đã khám phá ra một cách thức khác. Tác giả đã phát hiện ra rằng sự thay đổi thực sự đến từ ảnh hưởng sâu sắc của hàng trăm những quyết định nhỏ bé &#8211; thực hiện hai cú chống đẩy mỗi ngày, mỗi sáng dậy sớm hơn năm phút, hoặc đọc thêm chỉ một trang sách. Tác giả gọi đó là những thói quen nguyên tử. Trong cuốn sách đột phá này, tác giả Clear đã làm rõ cách mà những thay đổi nhỏ bé này có thể đem lại những kết quả bất ngờ khi áp dụng trong cuộc sống. Tác giả đã tiết lộ những mẹo đơn giản mà rất hữu ích (nghệ thuật xếp chồng thói quen đã bị quên lãng, sức mạnh không ngờ của Qui luật Hai phút,&#8230;) và đào sâu nghiên cứu các khía cạnh giải thích tại sao chúng lại có tác dụng như vậy theo tâm lý học và thần kinh học. Xuyên suốt quyển sách, tác giả kể những câu truyện truyền cảm hứng về những vận động viên dành huy chương vàng Olympic, những nhà lãnh đạo hàng đầu, và những nhà khoa học lỗi lạc, những người đã sử dụng bộ môn khoa học thói quen nhỏ bé để có được cuộc sống hạnh phúc , lạc quan và làm việc hiệu quả. Những thay đổi nhỏ bé này sẽ đem lại những ảnh hưởng làm thay đổi sự nghiệp, mối quan hệ và cuộc đời bạn. .u8928be53e954faaf98fdb2c66c03bb05 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u8928be53e954faaf98fdb2c66c03bb05:active, .u8928be53e954faaf98fdb2c66c03bb05:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u8928be53e954faaf98fdb2c66c03bb05 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u8928be53e954faaf98fdb2c66c03bb05 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u8928be53e954faaf98fdb2c66c03bb05 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u8928be53e954faaf98fdb2c66c03bb05:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Những Việc Cần Làm Trong Đời Người",
+      "id": "nghe-thuat-giao-tiep-cua-nguoi-tinh-te",
+      "name": "Nghệ thuật giao tiếp của người tinh tế",
+      "tacgia": "Phan Ý",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b263c14aec1645238650c373adad56cd.jpeg",
+      "anhbia": "https://drive.google.com/file/d/18-WZ28n4ivQsvE9nNT0a0nj13OUWAmdg/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "James Clear"
+        "Phan Ý"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231813&#038;map=258936"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1ptP0RSwA3uPNcHeCghxQYAJGnvDGaTQ2"
         }
       ]
     },
     {
-      "id": "thanh-cong-vuot-troi-kien-thuc-khoa-hoc-ve-su-giau-co-va-hanh-phuc",
-      "name": "Thành Công Vượt Trội – Kiến Thức Khoa Học Về Sự Giàu Có Và Hạnh Phúc",
-      "tacgia": "Sandra Anne Taylor",
-      "mieuta": "Mỗi chúng ta đều là chủ thể của một thế giới không ngừng vận động theo một chu kỳ nhân &#8211; quả bất tận. Mỗi chúng ta đều là một tiểu vụ trụ trong Đại vũ trụ, hay còn gọi là Đại tự nhiên. Để tồn tại và phát triển, đểu mưu cầu hạnh phúc cho mình, chúng ta không nên và không thể đối địch với tự nhiên mà phải sống hài hòa với tự nhiên, và với những người sống quanh ta. Dựa trên nền trảng tư tưởng này, đồng thời vận dụng lý thuyết lượng tử &#8211; một trong những lý thuyết vĩ đại nhất của vật lý học &#8211; cuốn sách Thành công vượt trội của nữ học giả Sandra Anne Taylor sẽ đề xuất với chúng ta cách thức vượt trội trong cuộc sống, chứ không chỉ làm tốt những công việc bình thường hàng ngày. Nếu bạn muốn có được những thành công vượt trội trong cuộc sống, hãy cùng tác giả cuốn sách lần lượt khám phá 7 quy luật phổ quát của vũ trụ, 6 sức mạnh các nhân để thành công, 5 sức hút lôi cuốn thành công, những sự trợ giúp vô hình, các yếu tố cản trở và cuối cùng là con đường dẫn tới thành công. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "tam-ly-hoc-ung-dung",
+      "name": "Tâm lý học ứng dụng",
+      "tacgia": "René BINOIS",
+      "mieuta": "",
       "theloai": "Tâm Lý - Kỹ Năng Sống",
       "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/WUlGh7Akro.webp",
+      "anhbia": "https://drive.google.com/file/d/1IRKM_Paufk11jpUfpIoGaC6NzZF3jBIJ/view?usp=sharing",
       "tags": [
         "Tâm Lý - Kỹ Năng Sống",
-        "Sandra Anne Taylor"
+        "René BINOIS"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231827&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "thuat-song-dung",
-      "name": "Thuật Sống Dũng",
-      "tacgia": "Hoàng Xuân Việt",
-      "mieuta": "Bạn muốn có một đời sống “nghiêm”, tận hưởng những ngày tháng vô tư của cuộc đời ngắn ngủi và không hổ thẹn với lòng mình? Đó cũng là nghệ thuật sống dũng đấy các bạn ạ! Cuốn sách nhỏ này sẽ góp phần giúp bạn rèn luyện tinh thần để có một cuộc sống tốt. Đó là một tinh thần sống sáng suốt anh dũng, tế nhị, sống kỹ, rất kỹ cuộc đời, luôn yêu đời, ham sống, cao tuổi mà lòng như trai tráng, nhưng tin tin phòng phòng đối với bất cứ ai, trong bất cứ hoàn cảnh nào mà không phải ta gieo ngờ vực để rước ác cảm… MỤC LỤC Chương I. Nhân đức với lý tưởng con người Chương II. Nhân đức là gì? Chương III. Đức khôn ngoan Chương IV. Đức lạc quan Chương V. Đức anh dũng Chương VI. Đức tự chủ Chương VII. Đức điềm tĩnh Chương VIII. Đức kiên nhẫn Chương IX. Đức tự tín Chương X. Đức tiết độ Chương XI. Đức sạch sẽ Chương XII. Đức khiết bạch Chương XIII. Đức nết na Chương XIV. Đức cần kiệm Chương XV. Đức đơn giản Chương XVI. Đức siêng năng Chương XVII. Đức thanh bần Chương XVIII. Đức công bình Chương XIX. Đức hiếu thảo Chương XX. Đức tuân phục Chương XXI. Đức cẩn mật Chương XXII. Đức trung tín Chương XXIII. Đức thành thực Chương XXIV. Đức bác ái Chương XXV. Đức thu tâm Chương XXVI. Đức lễ độ Chương XXVII. Đức tế nhị Chương XXVIII. Đức khiêm tốn Chương XXIX. Đức hiền dịu Chương XXIX. Đức ái quốc Kết luận Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Tâm Lý - Kỹ Năng Sống",
-      "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/s0MB89GE07.webp",
-      "tags": [
-        "Tâm Lý - Kỹ Năng Sống",
-        "Hoàng Xuân Việt"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231751&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "toi-gian-8211-so-huu-it-di-hanh-phuc-nhieu-hon",
-      "name": "Tối giản &#8211; Sở hữu ít đi, hạnh phúc nhiều hơn",
-      "tacgia": "Hideko Yamashita",
-      "mieuta": "Xin kính chào quý độc giả đến với cuốn sách này. Tôi là Hideko Yamashita, một tư vấn viên clutter. Tư vấn viên clutter là công việc như thế nào? Nghe có vẻ lạ tai nhỉ? Dẫu sao trên thế giới này chắc chỉ có mình tôi tự nhận là tư vấn viên clutter. “Clutter” trong tiếng Anh nghĩa là lộn xộn. Clutter nếu là danh từ ý chỉ đồ vật linh tinh không cần thiết. Khi là động từ, nó có nghĩa làm xáo trộn địa điểm, khiến đầu óc rối bời bởi những thông tin không liên quan. Công việc của tôi là kiểm tra đống gia dụng hỗn độn trong nhà, cân nhắc mối tương quan với gia chủ, góp ý vứt bỏ những vật dụng không cần thiết, không thích hợp, không thoải mái. Kết quả, căn nhà được dọn dẹp, còn gia chủ có thể trút bỏ những suy nghĩ quay mòng mòng trong đầu. Nói tóm lại, công việc của tôi là tư vấn giúp căn nhà và tâm trí khách hàng được sắp xếp gọn gàng, ngăn nắp. Tiêu để cuốn sách là Tối giản (Danshari), bạn có nghĩ nó là một từ quen thuộc với bạn không? Xin hãy đọc rõ thành tiếng, rành mạch: Danshari. Nói một cách ngắn gọn, Danshari là: Kỹ thuật dọn dẹp giúp chúng ta có thể nhận thức được bản thân, sắp xếp lại suy nghĩ hỗn loạn trong đầu và khiến cuộc sống dễ chịu hơn. Đơn giản vậy thôi. Hoặc nói cách khác: Đây chính là phương pháp dọn dẹp đồ đạc lộn xộn trong nhà, xử lý những rắc rối trong lòng, khiến cuộc đời vui vẻ hơn. Tóm lại, nhờ dọn dẹp, góc nhìn của ta thay đổi từ cụ thể hữu hình sang trừu tượng vô hình. &#8230; .udfc9846727c44f8ade37f4ed14917b8b { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .udfc9846727c44f8ade37f4ed14917b8b:active, .udfc9846727c44f8ade37f4ed14917b8b:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .udfc9846727c44f8ade37f4ed14917b8b { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .udfc9846727c44f8ade37f4ed14917b8b .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .udfc9846727c44f8ade37f4ed14917b8b .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .udfc9846727c44f8ade37f4ed14917b8b:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Kỹ Năng Buông Bỏ",
-      "theloai": "Tâm Lý - Kỹ Năng Sống",
-      "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/055e5dca67d34b0aa407d69a88b3eb29.jpg",
-      "tags": [
-        "Tâm Lý - Kỹ Năng Sống",
-        "Hideko Yamashita"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231641&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "xay-dung-loi-song-tich-cuc-cua-sinh-vien-truoc-tac-dong-cua-mang-xa-hoi-hien-nay",
-      "name": "Xây Dựng Lối Sống Tích Cực Của Sinh Viên Trước Tác Động Của Mạng Xã Hội Hiện Nay",
-      "tacgia": "Trần Hậu Tân",
-      "mieuta": "Ngày nay, tiến bộ của khoa học &#8211; công nghệ đã tạo ra sự phát triển mạnh mẽ của mạng xã hội. Với những tính năng đa dạng, nguồn thông tin phong phú, mạng xã hội đã cho phép người dùng kết nối, giao tiếp, mở rộng các mối quan hệ xã hội, tiếp nhận, chia sẻ và chọn lọc thông tin một cách có hiệu quả. Hiệu quả mà mạng xã hội mang lại đã có tác động làm thay đổi nhiều thói quen cũ và hình thành những biểu hiện mới của lối sống ở một bộ phận khá lớn những người sử dụng. Đối với sinh viên, những tiện ích mà mạng xã hội mang lại rất lớn. Mạng xã hội là môi trường cung cấp, chia sẻ, trao đổi, khai thác sử dụng thông tin, mở ra chân trời mới cho sinh viên làm giàu tri thức, đáp ứng nhu cầu giải trí, giao tiếp, mở rộng các quan hệ xã hội, cơ hội nghề nghiệp và khẳng định năng lực bản thân. Tuy nhiên, bên cạnh những tác động tích cực thì mạng xã hội cũng có ảnh hưởng tiêu cực đến việc định hình lối sống của sinh viên. Tác động từ mặt trái của mạng xã hội đã làm cho một số sinh viên có những biểu hiện “lệch chuẩn” trong lối sống, sa vào lối sống “ảo” dẫn tới suy giảm, thậm chí ngại học, ngại rèn, giảm sút say mê, hứng thú với các hoạt động học tập, rèn luyện; chạy theo những giá trị viển vông không thực tế trong cuộc sống; bị tiêm nhiễm bởi lối sống buông thả, thực dụng, vô cảm, chỉ quan tâm đến lợi ích cá nhân mà quên đi lợi ích tập thể, ít quan tâm đến các vấn đề của đời sống chính trị &#8211; xã hội của đất nước; không biết quan tâm, trân trọng tình cảm và sẻ chia với người khác; không biết trân trọng những giá trị do lao động mang lại, do đó dễ có những biểu hiện bi quan, chán nản và mất niềm tin khi gặp phải những khó khăn trong cuộc sống. Những mặt trái ấy được các thế lực thù địch lợi dụng và cài cắm những thông tin thiếu lành mạnh nhằm thực hiện ý đồ xấu, ảnh hưởng trực tiếp đến quá trình xây dựng lối sống tích cực của sinh viên. .u4305fdff2f06749eab76478a0ddc2fbf { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u4305fdff2f06749eab76478a0ddc2fbf:active, .u4305fdff2f06749eab76478a0ddc2fbf:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u4305fdff2f06749eab76478a0ddc2fbf { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u4305fdff2f06749eab76478a0ddc2fbf .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u4305fdff2f06749eab76478a0ddc2fbf .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u4305fdff2f06749eab76478a0ddc2fbf:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Sống Cân Bằng Giữa Muôn Vàn Công Việc",
-      "theloai": "Tâm Lý - Kỹ Năng Sống",
-      "theloaiSlug": "tam-ly-ky-nang-song",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/8551524dbc874cac8cac8d773c9271b2.jpg",
-      "tags": [
-        "Tâm Lý - Kỹ Năng Sống",
-        "Trần Hậu Tân"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231473&#038;map=258832"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1wc0tEJgPMCOkWdOY0C82K7RrXOf_XMjp"
         }
       ]
     }

@@ -1,406 +1,107 @@
 {
   "theloai": {
     "id": "huyen-bi-gia-tuong",
-    "name": "Huyền bí - Giả Tưởng"
+    "name": "Huyền bí - Giả Tưởng",
+    "slug": "huyen-bi-gia-tuong"
   },
   "items": [
     {
-      "id": "toi-tin",
-      "name": "Tôi Tin",
-      "tacgia": "T. Lobsang Rampa",
-      "mieuta": "Tôi tin – (I Believe – Lần đầu xuất bản năm 1977) trong cuốn sách này Bác sĩ Rampa nói về một người tự sát, chính xác những gì sẽ xảy ra, và họ sẽ phải trả như thế nào món nợ mà nó có thể trải dài qua nhiều kiếp sống – mỗi một lần điều kiện sẽ trở nên càng khó khăn hơn nếu họ không học hỏi từ những sai lầm của họ. Bất cứ ai dự tính tự tử nên đọc điều này trước khi hành động quyết liệt như vậy. Bên cạnh đó, ông cũng đưa ra cái nhìn về Thượng Đế từ những quan điểm khác nhau, về Phong trào Giải phóng Phụ nữ, nơi phụ nữ bắt đầu đi sai đường. *** Cô Mathilda Hockersnickler ngồi bên khung cửa sổ hé mở. Quyển sách cô đang đọc thu hút hết tâm trí của cô. Một đoàn rước đám tang đi qua trong lúc bóng cô đổ lên tấm rèm cửa bằng đăng ten trang trí cho khung cửa sổ. Một cuộc cãi nhau của hai người hàng xóm bên ngoài bị che khuất bởi chậu măng tây rung ring bên dưới cửa sổ. Cô Mathilda đang đọc sách. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
+      "id": "tien-kiep-co-hay-khong",
+      "name": "Tiền kiếp có hay không",
+      "tacgia": "Jim B. Tucker",
+      "mieuta": "",
       "theloai": "Huyền bí - Giả Tưởng",
       "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/A1LF5MHHkW.webp",
+      "anhbia": "https://drive.google.com/file/d/1wbgblmsKdRX4K2P6TU8-_Oz8COsg3CAH/view?usp=sharing",
       "tags": [
         "Huyền bí - Giả Tưởng",
-        "T. Lobsang Rampa"
+        "Jim B. Tucker"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232590&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1HNmC5FrAw2viWmfdPDSEWOLTYPYuhMrg"
         }
       ]
     },
     {
-      "id": "vu-thuat-than-bi",
-      "name": "Vu thuật thần bí",
-      "tacgia": "Diêu Chu Huy",
-      "mieuta": "Văn hoá Trung Hoa không chỉ nổi tiếng bởi lâu đời, phong phú, mà còn được người Trung Quốc và nước ngoài ngưỡng mộ vì tính chất thần bí sâu đậm của nó. Nói thần bí, có nghĩa là thần kỳ và bí ẩn. Tất cả những nền văn hoá mang màu sắc thần bí, đều có thể gọi là Văn hoá thần bí. Văn hoá thần bí là một kho biến ảo thần kỳ, người theo nghiệp học nhìn thấy ở đây ánh hào quang của trí tuệ; người cần quyền qua đây mà tổng kết những quyền mưu gìn giữ chính quyền; người kinh doanh lấy từ đây vô vàn của cải; kẻ mông muội thì xin ở đây sợi dây để tự trói mình… Sách liên quan: Về Cái Tinh Thần Trong Nghệ Thuật Ảo Thuật Thần Tọa &#8211; Mực Thích Lặn Nước PDF EPUB Bệnh Học Phẫu Thuật Thần Kinh Thần Bí Xã &#8211; Tập 3: Màn Thôi Miên Của Nhà Ảo Thuật &#8211; Vương Văn Kiệt Bệnh học phẩu thuật thần kinh (tái bản lần thứ nhất) Picasso &#8211; Những Cuộc Tình Hoá Thân Vào Nghệ Thuật Học Viện Ma Thuật Và Pháp Thuật Ilvermorny",
+      "id": "muon-kiep-nhan-sinh",
+      "name": "Muôn kiếp nhân sinh",
+      "tacgia": "Nguyên Phong",
+      "mieuta": "",
       "theloai": "Huyền bí - Giả Tưởng",
       "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b20be1a248a949f1a8960c9a8986012f.jpg",
+      "anhbia": "https://drive.google.com/file/d/1MMkgYvYO6lY5zWdwnUxmN4th0ia_BtHN/view?usp=sharing",
       "tags": [
         "Huyền bí - Giả Tưởng",
-        "Diêu Chu Huy"
+        "Nguyên Phong"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232241&#038;map=178054"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=11QIdUgS9-I_zxis7A6DKo7KLp6K9SU3g"
         }
       ]
     },
     {
-      "id": "trai-tim-cua-but",
-      "name": "Trái Tim của Bụt",
-      "tacgia": "Thích Nhất Hạnh",
-      "mieuta": "&#8220;Trái tim của Bụt&#8221; là Phật pháp căn bản để dạy cho người xuất gia, đã và đang được sử dụng bởi các giáo thọ trẻ ở Việt Nam, dùng giảng dạy trong các trường Phật học cơ bản. Cuốn sách tập hợp 25 bài phật pháp căn bản. Các vị giáo thọ trẻ ở Việt Nam dùng &#8220;Trái Tim Của Bụt&#8221; làm tài liệu giảng dạy và họ cũng sử dụng nhiều tư liệu khác của Làng Mai. Trải qua quá trình dạy dỗ và thực tập thì tác giả đã sáng tạo ra được những pháp môn rất mầu nhiệm mà những người tại gia và cư sĩ cũng có thể thừa hưởng được. Những quan niệm như tăng thân, tăng nhãn, làm mới, soi sáng, thiền lạy, đệ nhị thân v.v &#8230; là những hoa trái của sự thực tập và học hỏi ở Làng Mai, Hiện nay cuốn sách không những được sử dụng trong giới xuất gia mà còn được sử dụng trong giới tại gia&#8230; Sách liên quan: Trái tim của Hiểu biết Bạn Trai Tháo Vát &#8211; Bộ Tuyệt Chiêu Dành Cho Bạn Trai Mio, Con Trai Ta",
+      "id": "muon-kiep-nhan-sinh-2",
+      "name": "Muôn kiếp nhân sinh 2",
+      "tacgia": "Nguyên Phong",
+      "mieuta": "",
       "theloai": "Huyền bí - Giả Tưởng",
       "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/vTYr91.webp",
+      "anhbia": "https://drive.google.com/file/d/1CcXgfrmUhY9jVAyrmiPJD6VlWzmnecrZ/view?usp=sharing",
       "tags": [
         "Huyền bí - Giả Tưởng",
-        "Thích Nhất Hạnh"
+        "Nguyên Phong"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232215&#038;map=258953"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1LZr9DDfvQYGE_gs5YriMvHxGYXKbcJkG"
         }
       ]
     },
     {
-      "id": "trai-tim-cua-hieu-biet",
-      "name": "Trái tim của Hiểu biết",
-      "tacgia": "Thích Nhất Hạnh",
-      "mieuta": "Kinh Tinh Yếu Bát Nhã Ba La Mật Đa này tôi đã trì tụng trên bốn mươi năm, có lẽ hơn thế nữa, nhưng nghĩa của kinh đối với tôi vẫn còn thậm thâm vi diệu. Đây là một bản kinh rất quan trọng, là một bức thông điệp của Đức Bồ Tát Quán Thế Âm gửi cho chúng ta. Chúng ta có thể đang có văn bản trong tay hoặc đã thuộc lòng nó, nhưng chưa chắc ta đã nhận được thông điệp của Ngài. Hôm nay chúng ta có cơ hội cứu xét nội dung kinh. Sự thành công hay không của chúng ta hôm nay tùy thuộc ở sự kiện chúng ta có nhận thức thanh tịnh hay là không. Nhận thức thanh tịnh là nhận thức cần thiết để có thể hiểu được những lời Bụt dạy. Hôm qua quý vị đã nghe câu chuyện một người cha trẻ đánh mất đứa con. Câu chuyện này cũng được kể trong cuống Tương Lai Văn Hóa Việt Nam: Kinh Bách Dụ kể chuyện người lái buôn góa vợ vì dại dột mà đánh mất đứa con trai yêu quý. Đứa con trai ấy còn nhỏ tuổi, một hôm trong khi cha đi vắng bị kẻ cướp bắt cóc. Trước khi rút lui, kẻ cướp đốt nhà và đốt xóm. Khi người lái buôn về tới, ông ta thấy một tử thi thiếu nhi cháy đen ở đống trò tàn. Trong cơn hoảng hốt, ông ta cho đó là tử thi con ông. Ông khóc kể và làm lễ hỏa táng tử thi, rồi vì thương con quá, ông cất tro xương và một cái túi gấm, và đi đâu cũng mang theo mình. Mấy tháng sau, vào lúc nửa đêm, đứa con trai tìm thoát được tay kẻ cướp và tìm về gõ cửa đòi vào. Người cha lúc ấy đang âu sầu ôm chiếc túi gấm đựng tro, không chịu đứng dậy mở cửa. Ông ta tin chắc con mình đã chết, và đứa trẻ đang gõ cửa xưng con ngoài kia là một đứa trẻ hàng xóm nào đó đang cố tình trêu ghẹo ông. Vì vậy, đứa con trai phải thất thểu ra đi, và người lái buôn kia vĩnh viễn mất con&#8230; .u4ac8ec368ae375abc9c94b014d4575b5 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u4ac8ec368ae375abc9c94b014d4575b5:active, .u4ac8ec368ae375abc9c94b014d4575b5:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u4ac8ec368ae375abc9c94b014d4575b5 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u4ac8ec368ae375abc9c94b014d4575b5 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u4ac8ec368ae375abc9c94b014d4575b5 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u4ac8ec368ae375abc9c94b014d4575b5:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Món Quà Của Người Andalite",
+      "id": "muon-kiep-nhan-sinh-3",
+      "name": "Muôn kiếp nhân sinh 3",
+      "tacgia": "Nguyên Phong",
+      "mieuta": "",
       "theloai": "Huyền bí - Giả Tưởng",
       "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/iSJWGlyqDx.webp",
+      "anhbia": "https://drive.google.com/file/d/1P0nkvllDEMl9WveIaaUsR9xUIE-sBPUk/view?usp=sharing",
       "tags": [
         "Huyền bí - Giả Tưởng",
-        "Thích Nhất Hạnh"
+        "Nguyên Phong"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232217&#038;map=178054"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=13T_E-0x0uu1bP_DaxnZ2fUp1QR7fveyj"
         }
       ]
     },
     {
-      "id": "sach-giao-ly-cua-hoi-thanh-cong-giao",
-      "name": "Sách giáo lý của hội thánh công giáo",
-      "tacgia": "Ủy Ban Giáo Lý Đức Tin",
-      "mieuta": "Logo ngoài bìa: hình phác hoạ theo bức khắc trên mộ đá trong hang toại đạo Domitilla ở Rôma, vào cuối thế kỷ thứ ba. Hình ảnh người mục tử này, có nguồn gốc từ lương dân, được Kitô hữu thời đó lấy lại để diễn tả việc an nghỉ và hạnh phúc mà linh hồn những người quá cố tìm được trong đời sống vĩnh cửu. Hình ảnh đó cũng gợi lên một số khía cạnh đặc trưng của Sách Giáo Lý này: Đức Kitô, Vị Mục tử nhân lành dẫn dắt và bảo vệ tín hữu (con chiên) bằng quyền năng của Người (cây gậy), lôi cuốn họ bằng khúc nhạc du dương của chân lý (sáo bè), và cho họ an nghỉ dưới bóng “cây sự sống”, là cây Thánh giá cứu chuộc mà Người dùng để mở cửa thiên đàng. Sách liên quan: Tài Liệu Bồi Dưỡng Giáo Viên Sử Dụng Sách Giáo Khoa Môn Giáo Dục Công Dân Lớp 4 Bộ Sách Chân Trời Sáng Tạo Tài Liệu Bồi Dưỡng Giáo Viên Sử Dụng Sách Giáo Khoa Môn Công Nghệ Lớp 4 Bộ Sách Chân Trời Sáng Tạo Tài Liệu Bồi Dưỡng Giáo Viên Sử Dụng Sách Giáo Khoa Môn Công Nghệ Lớp 8 Bộ Sách Chân Trời Sáng Tạo Quốc Gia Học Tập: Học Tập Công Nghệ, Chính Sách Công Nghiệp Và Bắt Kịp Thành Công Tài Liệu Bồi Dưỡng Giáo Viên Sử Dụng Sách Giáo Khoa Giáo Dục Công Dân 7 – Kết Nối Tri Thức Với Cuộc Sống Sách Giáo Viên Giáo Dục Công Dân 7 – Chân Trời Sáng Tạo Sách Giáo Viên Giáo Dục Công Dân 8 – Chân Trời Sáng Tạo .u247455b8cec7f48a34667816efd411bb { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u247455b8cec7f48a34667816efd411bb:active, .u247455b8cec7f48a34667816efd411bb:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u247455b8cec7f48a34667816efd411bb { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u247455b8cec7f48a34667816efd411bb .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u247455b8cec7f48a34667816efd411bb .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u247455b8cec7f48a34667816efd411bb:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Charlie Bone và Hiệp Sĩ Đỏ - Jenny Nimmo full prc epub azw3 [Huyền Ảo]",
+      "id": "than-so-hoc-suc-manh-cua-nhung-con-so",
+      "name": "Thần số học - Sức mạnh của những con số",
+      "tacgia": "Ruth A. Drayer",
+      "mieuta": "",
       "theloai": "Huyền bí - Giả Tưởng",
       "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/b0f4f484e2cf419da45ae8fac48426cf.jpg",
+      "anhbia": "https://drive.google.com/file/d/1SHV-kvVn5RUINm9zNPWtFs8U9OzouvvO/view?usp=sharing",
       "tags": [
         "Huyền bí - Giả Tưởng",
-        "Ủy Ban Giáo Lý Đức Tin"
+        "Ruth A. Drayer"
       ],
       "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=232019&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "tha-mot-be-lau",
-      "name": "Thả Một Bè Lau",
-      "tacgia": "Thích Nhất Hạnh",
-      "mieuta": "Ngày xưa tôi cũng đã từng dạy văn chương Việt Nam và đã dạy Truyện Kiều. Nhưng tâm của tôi lúc đó không được như bây giờ. Tôi đã dạy với tư cách một giáo sư văn chương mà chưa bao giờ dạy với tư cách một thiền sư. Nhìn với tư cách một thiền sư là nhìn sâu, nhìn kỹ, nhìn bằng sự khám phá của thiền quán mọi sự kiện qua những nhận thức, đau khổ, hạnh phúc , thành công, thất bại và qua sự tu học của mình. Nhìn như vậy trong khi đọc lại Truyện Kiều ta có thể thấy được những điều rất mới. Khi đọc Truyện Kiều, ta không nên ngại về từ ngữ và điển tích. Các bản Truyện Kiều đều có chú giải. Có tài liệu là ta có thể hiểu được hết các điển tích và từ cổ. Điều quan trọng là chúng ta đọc với tâm trạng quán chiếu, tìm thấy tâm lý của tác giả và tìm thấy lòng mình. (Thích Nhất Hạnh) Sách liên quan: Bưởi Cho đất nước đi lên Cho đất nước mở ra Hơi Thở Nuôi Dưỡng Và Trị Liệu Hương vị của đất &#8211; Văn Lang Dị Sử Muốn An Được An Sen búp từng cánh hé",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/knWYVEv7Df.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Thích Nhất Hạnh"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231845&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "thien-duong-du-ki",
-      "name": "Thiên Đường Du Kí",
-      "tacgia": "Thánh Hiền Đường",
-      "mieuta": "“Trẫm ngự tại điện Linh Tiêu, lòng hằng ôm ấp thế đạo, vì từ lâu thấy trần gian đạo đức suy đồi, luân thường trụy lạc, địa ngục xây mãi mà vẫn không chứa hết lũ ác nhân (2), chốn ở mới nơi thiên đường lại vắng vẻ không người tới. Nay gặp lúc Tam Tào phổ độ, thiên đạo giáng thế, nhân luân chấn hưng trở lại, cùng nhờ có Thánh Hiền Đường ở Đài Trung trực thuộc sự cai quản cõi Nam Thiên đã ra công phát huy cơ bút khuyên đời, chăm lo in tặng kinh sách quảng độ bến mê. Từ khi Địa Ngục Du Ký được ban truyền ra nhân gian tới nay, đạo lí xum xuê, thuyền từ quảng độ, kẻ nhận sự khuyến hóa mà bỏ ác theo thiện, cầu chân chính tu đạo đức thực là vô số kể, khiến lòng Trẫm vui mừng khôn xiết. Tình hình địa ngục đã phơi bày thế gian, cảnh tiên nơi thiên đường giờ đây tiết lộ không còn trở ngại. Ngày mồng 1 tháng 5, Tam Tào kêu gọi mở Thánh hội họp bàn, có chư Tiên, Bồ Tát tham dự để lo việc phổ độ quần sanh đã đồng thanh nghị quyết cử Tam Tào chủ trương cai quản, gấp rút bày tỏ cho nhân gian thấy lại cảnh trí thiên đường tươi sáng, hầu sớm thiết lập nhân loại đại đồng. Do đó, đã tìm người linh ứng thoát tục để có thể lãnh nhiệm vụ dạo thiên đường thì thấy chỉ có thánh bút, bởi vậy hội nghị đã ban sắc lệnh cho Thánh Hiền Đường đảm nhiệm việc hoàn thành sách Thiên Đường Du Ký. Ngày Sắc Chỉ tới ra lệnh cho Phật Sống Tế Công hướng dẫn thánh bút Dương Thiện Sinh dạo cõi Trời để thấy rõ phong cảnh sáng tươi, cùng hỏi đạo cho rõ ngọn ngành hầu khuyên đời răn người; để sách thánh sớm hoàn thành cho nhân gian dưới gầm trời hiểu thấu cái khổ của địa ngục, cái sướng của thiên đường mà đi vào ngả thiện, lên thang Trời thẳng tới thánh địa mây xanh hưởng lạc thú tiêu dao vậy! Khi giáng cơ bút trước tác Thiên Đường Du Ký, ra lệnh cho các cửa ngõ ba cõi Tam Tào gồm Đất Trời Người mỗi khi gặp Dương Sinh tới phải mở cửa nghênh tiếp, cùng hiệp tác soạn sách cho tới khi hoàn tất mới ngưng. Nếu như có kẻ trái lệnh, nhất luật nghiêm phạt chẳng tha, mong chư sinh một mực trung thành giúp đạo, ức vạn huân công từ đây có thể nhận được”. .u364d6305c2a734a004fbe324feb13c17 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u364d6305c2a734a004fbe324feb13c17:active, .u364d6305c2a734a004fbe324feb13c17:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u364d6305c2a734a004fbe324feb13c17 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u364d6305c2a734a004fbe324feb13c17 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u364d6305c2a734a004fbe324feb13c17 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u364d6305c2a734a004fbe324feb13c17:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bí Ẩn Các Vì Sao Tập 1 - Erik L' Homme full prc pdf epub azw3 [Huyền Ảo]",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/h0Kq3N3iAr.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Thánh Hiền Đường"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231799&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "thong-thien-hoc-khai-luoc",
-      "name": "Thông thiên học khái lược",
-      "tacgia": "Cao Thị Lan",
-      "mieuta": "Ðã bao nhiêu thế kỷ, người ta đã tranh luận, dẫn chứng, tìm tòi rất nhiều về một vài Chơn-Lý trọng đại, như sự hiện tồn của Thượng-Ðế, và bản thể của Ngài, sự liên quan của Ngài với nhân loại, cùng dĩ vãng và tương lai của nhân-loại nầy. Về những điểm trên, người ta có những tín niệm rất khác nhau, rồi bắt đầu công- kích và nhạo báng những tín ngưỡng của nhau một cách chua chát và dữ dội, đến nỗi sau cùng, trong đám dư-luận quần-chúng có một luồng tư-tưởng thiệt đơn-giản là: Về những vấn-đề nầy, người ta không thể biết được một điều gì chắc chắn, tất cả chỉ là những lý- thuyết mơ hồ, những lý-luận mông lung, thỉnh thoảng lại phát sinh ra một suy luận thất thiệt căn cứ ở những tiền đề không vững vàng. Để chống lại với luồng dư-luận ấy của quần-chúng, những xác ngôn rõ ràng, minh-bạch, nhưng thường thường khó tin của các Tôn-Giáo không làm sao đoạt ưu thắng được. Sách liên quan: Khái Lược Văn Minh Luận STL Lập trình khái lược trong C++ Tâm Lí Học &#8211; Khái Lược Những Tư Tưởng Lớn Khoa Học &#8211; Khái Lược Những Tư Tưởng Lớn Kinh Tế Học &#8211; Khái Lược Những Tư Tưởng Lớn PDF EPUB Kaizen Teian &#8211; Hướng Dẫn Triển Khai Hệ Thống Đề Xuất Cải Tiến Liên Tục Thông Qua Thực Hiện Đề Xuất Của Người Lao Động PDF EPUB Nghệ Thuật &#8211; Khái Lược Những Tư Tưởng Lớn PDF EPUB .u7cd63aed4a3e0aacc8feb59be75ce387 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u7cd63aed4a3e0aacc8feb59be75ce387:active, .u7cd63aed4a3e0aacc8feb59be75ce387:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u7cd63aed4a3e0aacc8feb59be75ce387 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u7cd63aed4a3e0aacc8feb59be75ce387 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u7cd63aed4a3e0aacc8feb59be75ce387 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u7cd63aed4a3e0aacc8feb59be75ce387:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Việt Nam Phong Tục",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/0WVDC1.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Cao Thị Lan"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231771&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "voi-tung-moi-hoi-tho",
-      "name": "Với từng mỗi hơi thở",
-      "tacgia": "Tỳ Kheo Thanissaro (Geoffrey DeGraff)",
-      "mieuta": "Trong mấy năm qua, một vài ông bà — cụ thể là Mary Talbot, Jane Yudelman, Bok Lim Kim và Larry Rosenberg—đã đề nghị tôi “Khi nào Sư sẽ viết hướng dẫn về hành thiền hơi thở?” Tôi đã luôn nói với họ rằng cuốn Giữ Hơi Thở Trong Tâm (Keeping the Breath in Mind) của Ajaan Lee là hướng dẫn thực hành tuyệt vời, nhưng họ vẫn nài nỉ lần nữa là cần một cuốn sách viết cụ thể cho những người không biết về Truyền Thống Ẩn Lâm Thái Lan. Sự thúc bách nhẹ nhàng nhưng bền bỉ của họ là nhân duyên đưa cuốn sách này ra đời. Bây giờ khi cuốn sách đã thành hiện thực, tôi muốn cám ơn họ vì tôi đã học được nhiều điều khi cố gắng gom các ý nghĩ về chủ đề này dưới dạng ngắn gọn và có thể tiếp cận được. Cuốn sách đã mang lại lợi ích nhờ những ý kiến đóng góp của họ cũng như ý kiến đóng góp của Ajahn Nyanadhammo, Michael Barber, Matthew Grad, Ruby Grad, Katharine Greider, Addie Onsanit, Nathanial Osgood, Dale Schulz, Joe Thitathan, Donna Todd, Josephine Wolf, Barbara Wright và các quý Sư ở đây trong tu viện này. Tôi muốn cám ơn tất cả quý vị đã giúp đỡ. Tất nhiên, bất cứ sai sót nào trong cuốn sách này là lỗi của chính bản thân tôi. Sách liên quan: Tung Tăng Tung Tẩy&#8230; Trời Tây Sen búp từng cánh hé An Lạc Từng Bước Chân Bố Đã Từng Yêu Nhà Văn Bà Tùng Long Từng Yêu Về Sau PDF EPUB Bắc Hành Tùng Ký .u5c1126f69802893f0804385c014ae46b { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u5c1126f69802893f0804385c014ae46b:active, .u5c1126f69802893f0804385c014ae46b:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u5c1126f69802893f0804385c014ae46b { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u5c1126f69802893f0804385c014ae46b .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u5c1126f69802893f0804385c014ae46b .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u5c1126f69802893f0804385c014ae46b:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Cẩu Tại Yêu Võ Loạn Thế Tu Tiên - Văn Sao Công full mobi pdf epub azw3 [Đa Xuyên]",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/80X8A6Ps8V.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Tỳ Kheo Thanissaro (Geoffrey DeGraff)"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=231433&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "viet-nam-phong-tuc",
-      "name": "Việt Nam Phong Tục",
-      "tacgia": "Phan Kế Bính",
-      "mieuta": "Mỗi nước có một phong tục riêng. Phong tục ấy kỳ thuỷ hoặc bởi tự một vài người mà rồi bắt chước nhau thành ra thói quen. Hoặc bởi ở phong thổ và cách chính trị, cách giáo dục trong nước mà thành ra. Hoặc bởi cái phong trào ở ngoài tràn vào rồi mà dần dần tiêm nhiễm thành tục. Nhưng đại để tục gì cũng vậy, phải trải lâu tháng lâu năm mới thành được, mà trong những tục ấy cũng có tục hay, cũng có tục dở. Duy chỉ bởi tai mắt người đã quen, lòng người đã tin dùng, thì dẫu có người biết là dở mà cũng không sao đổi ngay đi được. Sách liên quan: Kể Chuyện Danh Nhân Việt Nam &#8211; Tập 2: Những Người Việt Nam Đi Tiên Phong Việt Nam Phong Tục &#8211; Phan Kế Bính full mobi pdf epub azw3 [Biên Khảo] Nét Đẹp Phong Tục Các Dân Tộc Việt Nam",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/rznuHmjXwM.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Phan Kế Bính"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230806&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "vi-sao-toi-kho",
-      "name": "Vì sao tôi khổ ?",
-      "tacgia": "Nguyên Minh",
-      "mieuta": "Tập sách này nêu lên một vấn đề xưa cũ nhưng phân tích và giải quyết theo một cách nhìn nhận mới. Nói đúng hơn, tác giả đã khéo léo vận dụng chính những nhận thức và hiểu biết của tiền nhân về vấn đề này để đưa ra những giải pháp, những nhận thức mới uyển chuyển hơn, thích hợp hơn mà vẫn không xa rời những gì người xưa đã dạy. Với cách trình bày chi tiết, mạch lạc cùng với cách đặt vấn đề chính xác và những biện luận chặt chẽ, tập sách đã dẫn dắt người đọc đi qua những phạm trù tưởng chừng như vô cùng khó hiểu trong các bộ luận giải xưa nay và chứng minh được rằng tất cả những điều ấy cũng không hề xa rời cuộc sống thường nhật của mỗi chúng ta. Tập sách đã trả lời câu hỏi về nguyên nhân khổ đau theo một cách thức vừa phù hợp với những lời dạy trong kinh điển, vừa thiết thực và gần gũi với tất cả những gì chúng ta đang phải trải qua mỗi ngày. Sách liên quan: Nhật Ký Vũ Trụ Của Ion Lặng Lẽ Những Bí Ẩn Của Cuộc Đời Bóng Tối Trỗi Dậy &#8211; Susan Cooper &#038; Song Hạnh (dịch) full mobi pdf epub azw3 [Kỳ Ảo] Charlie Bone và Quả Cầu Xoắn Thời Gian &#8211; Jenny Nimmo full prc epub [Huyền Ảo] Chinh Phục Tình Yêu Không Diệt Không Sinh Đừng Sợ Hãi Văn Hóa Việt Nam – Tìm Tòi Và Suy Ngẫm .u3e247932cd8aaa650652467594cdc9ce { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u3e247932cd8aaa650652467594cdc9ce:active, .u3e247932cd8aaa650652467594cdc9ce:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u3e247932cd8aaa650652467594cdc9ce { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u3e247932cd8aaa650652467594cdc9ce .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u3e247932cd8aaa650652467594cdc9ce .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u3e247932cd8aaa650652467594cdc9ce:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bốn Mươi Ba Công Án Của Trần Thái Tông",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/LhGSvApfID.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Nguyên Minh"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230776&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "ung-dung-truong-khi-trong-doi-song-va-kien-truc",
-      "name": "Ứng Dụng Trường Khí Trong Đời Sống Và Kiến Trúc",
-      "tacgia": "Trương Huệ Dân",
-      "mieuta": "Đặc điểm cuốn sách Ứng Dụng Trường Khí Trong Đời Sống Và Kiến Trúc không chỉ có cách nhìn mới, mà còn tính thực tiễn, đã đưa ra sự giảng giải mang tính chất chỉ đạo về ứng dụng cụ thể của phong thủy. Vì thế cuốn sách này đáng là người thầy tốt của sự an cư, người bạn của sự lập nghiệp. Chẳng cứ bạn là nhà kinh doanh địa ốc, hay tìm hướng tậu nhà, hoặc là đi vào thương trường, đều nên đọc cuốn sách này. Cuốn sách bao gồm những nội dung chính: Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/gV7E9Q1hMB.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Trương Huệ Dân"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230606&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "van-hoa-loi-song-cua-nguoi-theo-hoi-giao",
-      "name": "Văn Hoá Lối Sống Của Người Theo Hồi Giáo",
-      "tacgia": "Nguyễn Mạnh Cường",
-      "mieuta": "Đạo hồi-lịch sử hình thành (kinh cô ran). lối sống đạo của người theo hồi giáo. người chăm việt nam với đạo hồi. sắc màu văn hóa hồi giáo. Hồi giáo trong xã hội hiện đại. Sách liên quan: Hướng Dẫn Giao Dịch Theo Sóng Elliott Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Giáo Dục Thể Chất Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Đạo Đức Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Âm Nhạc Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Mĩ Thuật Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Toán Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống Tài Liệu Tập Huấn Dạy Học Theo Sách Giáo Khoa Mới Môn Tự Nhiên Và Xã Hội Lớp 1 – Bộ Sách: Kết Nối Tri Thức Với Cuộc Sống",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/HrGqbGjk4o.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Nguyễn Mạnh Cường"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230620&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "van-hoa-va-con-nguoi",
-      "name": "Văn Hoá Và Con Người",
-      "tacgia": "Nguyễn Trần Bạt",
-      "mieuta": "Sau khi trở thành người giàu có thứ hạng tại Việt Nam và là doanh nhân nổi tiếng Châu Á, ông đang viết sách. Đó không phải loại sách văn chương mà những người có tiền nhiều khi lấy để tô điểm cho mình, hoặc thoả mãn cái thú thơ từ. Đó cũng không phải loại sách truyền bá kinh nghiệm làm giàu mà những người thành đạt thường xuất bản. Sách của ông kén người đọc. Nó mang màu sắc mênh mông, trừu tượng của những tư tưởng triết học . Vẻ đẹp của nó lấp lánh từ tư duy của một con người có bản năng sống mạnh mẽ và không ngừng chiêm nghiệm về đời sống. Ông thừa nhận mình không phải là một nhà hàn lâm và cũng không có ý định trở thành như vậy. &#8220;Nhưng tôi là một người đam mê quan sát cuộc sống. Chính đam mê này và sự hấp dẫn của cuộc sống đã thúc ép tôi phải có những lý giải về nó&#8221;. Và ông đã hơn một lần nói rằng: nhà nghiên cứu, nhà văn, nhà kinh doanh hay nhà chính trị&#8230; chỉ là những trạng thái khác nhau, quán xuyến những giai đoạn khác nhau của cuộc đời một con người. Chả ai sinh ra đã cố định với một thiên chức nào đó. Và ở giai đoạn này ông là một người viết. Giờ làm việc của ông bắt đầu từ 7 giờ sáng và không khi nào kết thúc trước 10 giờ khuya. Sức làm việc của ông thật đáng ngưỡng mộ với sự dày dặn của những trang viết, với những đề tài và những lý giải sự vật vã của đời sống. Đến nay ông đã có khoảng 2.000 trang viết. Và ông dự định sẽ kết thúc cuộc đời với 15.000 trang viết! Ngoài cuốn sách “Văn hoá và Con người” dày 250 trang vừa ra đời, trong năm nay cuốn “Tự do sinh ra con người” khoảng 500 trang cũng sẽ được xuất bản. Ông viết với một thái độ thận trọng, trân trọng người đọc. Người nghệ sĩ chân chính ngượng ngùng trước những cơn phải gió &#8211; những tác phẩm nghệ thuật, trong đó thể hiện bản ngã của anh ta. Càng có tài càng khiếm tốn. Ông viết sau những suy nghĩ đến chín nẫu, rụt rè thận trọng trước phản ứng của người đọc, không hề có chút lỗ mãng mà những người cầm bút nhiều khi mắc phải. Đó là thái độ liều mạng nói về mình, áp đặt những ý nghĩ chủ quan nhiều khi lệch lạc, rao giảng những triết lý sống. &#8220;Văn hoá và con người&#8221; &#8211; như ông bộc bạch: Cuốn sách là một phần trong những cố gắng nhằm lý giải một số hiện tượng của cuộc sống xuất phát từ những đòi hỏi của chính nó. Ông không có tham vọng to tát mang tính triết học mà chỉ mongnhững nghiên cứu của mình như là kết quả của những suy tưởng khởi nguồn từ những ý niệm lắng lại trong tâm hồn mình, khi cuộc sống đã đi qua nó. Chẳng hạn như về tự do, một đề tài trăn trở qua nhiều tiểu luận của ông, ông so sánh: Các công ty Mỹ như một tổ ong, có người ra và người vào, dựa trên một tiêu chuẩn nào đó với cơ chế thông thoáng. Mô hình này tốt hơn, bởi nó dựa trên sự tự do của con người, bởi vì sớm hay muộn, sự phát triển của xã hội cũng dựa trên sự thức tỉnh của các giá trị cá nhân. Toàn cầu hoá và hội nhập là một minh chứng cho sự dần mất đi của các giá trị khu trú để cho phép con người trở thành một đối tượng độc lập. Đó là cá nhân. Ông hiếm khi ra khỏi &#8220;tháp ngà&#8221; của mình trừ những việc giao đãi quan trọng. Ông không trực tiếp điều hành công việc kinh doanh. Vậy ông làm gì trong suốt những khoảng thời gian dài tĩnh lặng đó? &#8220;Tôi suy nghĩ và bán trí khôn cho người khác&#8221; &#8211; Câu trả lời có vẻ ngạo mạn, nếu như người ta không hiểu ông. Ông có lối nói chuyện bóc trần và gọi đúng tên của sự vật mà không tô vẽ hay làm giảm nhẹ sự thật dù vẻ đẹp đẽ hay xấu xa của nó. Tác giả &#8211; như tôi biết &#8211; là người của suy nghĩ và hành động, vì thế những trang viết của ông vừa có sự mơ mộng trí tuệ vừa như cuốn theo cả cái nóng hổi, bức bối của đời sống với biết bao là vấn đề hàng ngày đòi hỏi phải được đối thoại, xem xét, tìm ra câu trả lời. Có thể thấy ông cố gắng đi theo một con đường riêng trong việc tiếp cận, lý giải những vấn đề vốn đã bị nhiều người làm cho nhàm chán, thổi vào đó niềm đam mê của chính mình và vì thế kích thích mối quan tâm của người khác. Bạn có thể đồng ý hay không với những luận điểm được thể hiện trong cuốn sách, nhưng tôi tin rằng khi gấp sách lại, bạn cũng như tôi, khó mà không tiếp tục suy nghĩ về chúng. Tạ Duy Anh Người đàn ông này có xuất thân như bao nhiêu chàng trai xứ Nghệ khăn gói ra Hà Nội học, cái nghèo bám đuổi sau lưng. Xứ nghèo ấy có một con đường, một truyền thống là phải học giỏi để đỗ đạt. Ông cũng tự nhận &#8220;đuổi theo và bắt trượt vinh quang như bắt con bồ câu nhà hàng xóm&#8221;. Nhưng ông sớm nhận ra, nếu con người cứ theo đuổi những ước vọng của riêng mình, bất chấp nghĩa vụ với bản thân, với người thân và với xã hội thì là con người không cao thượng. Có lẽ chính điều này làm ông thức tỉnh. Và chính vì thế, ông rời viện nghiên cứu để lập một công ty tư nhân, bước chân vào kinh doanh. Điều đó là số phận của công hay là sự toan tính đầy lý trí thì cũng khó phân định rạch ròi. Về công việc viết lách, ông phân định: Có ba loại người viết. Loại thứ nhất truyền đạt, giáo dục cuộc đời bằng kinh nghiệm và tình yêu , sự hiểu biết. Loại thứ hai giải toả chính tâm hồn mình, ý nghĩa giáo dục nằm ngoài ý thức người viết. Loại thứ ba viết để trang điểm, làm sang cho bản thân. Đây cũng là nhu cầu chính đáng thôi. Ông cười: tôi muốn làm loại thứ nhất, nhưng về khả năng thì đứng vào loại thứ hai, và tuyệt đối không ở loại thứ ba&#8230; Ông viết hối hả với ý nghĩ rằng cuộc sống là thứ gì đó mà không tranh thủ sẽ trôi qua. Ý nghĩ cũng là một cuộc gặp gỡ vãng lai của những điều có lý, nếu không ghi lại cũng trôi qua không dấu vết. Ông đọc nhiều và khuyến khích cộng sựđọc sách. Invest consult có một thư viện bề thế rất ấn tượng. Chính điều này ảnh hưởng đến nhân viên, cộng sự của ông, để họ sống trong một guồng máy chi phối bởi tư duy sáng tạo và không ngừng phát triển. .u465a9bbbe407ff86b02e99bc86ff6baf { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u465a9bbbe407ff86b02e99bc86ff6baf:active, .u465a9bbbe407ff86b02e99bc86ff6baf:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u465a9bbbe407ff86b02e99bc86ff6baf { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u465a9bbbe407ff86b02e99bc86ff6baf .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u465a9bbbe407ff86b02e99bc86ff6baf .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u465a9bbbe407ff86b02e99bc86ff6baf:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bưởi",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Wh1RgEFKbu.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Nguyễn Trần Bạt"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230626&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "van-hoa-viet-nam-tim-toi-va-suy-ngam",
-      "name": "Văn Hóa Việt Nam – Tìm Tòi Và Suy Ngẫm",
-      "tacgia": "Trần Quốc Vượng",
-      "mieuta": "Công trình trên do giáo sư Trần Quốc Vượng – Khoa Lịch sử, Trường Đại học khoa học Xã hội &#038; Nhân văn, Đại học Quốc gia Hà Nội thực hiện. Công trình đã được Nhà xuất bản Văn hóa Dân tộc và Tạp chí Văn hóa Nghệ thuật xuất bản năm 2000, tái bản năm 2003. Cuốn sách “Văn hóa Việt Nam – tìm tòi và suy ngẫm” dày gần 1000 trang bao gồm các công trình đã công bố của GS. Trần Quốc Vượng do Tạp chí Văn hóa Nghệ thuật lựa chọn đưa vào Tủ sách Văn hóa học, nhằm cung cấp những kiến thức, tư liệu và kinh nghiệm để xây dựng ngành Văn hóa học còn đang ở giai đoạn ban đầu ở Việt Nam. Những công trình nghiên cứu được bố cục theo 6 chủ đề chính từ khái niệm – công cụ; không/thời gian văn hóa, con người văn hóa đến các thành tố văn hóa… Tất cả các bài viết dù được tiếp cận theo góc độ nào từ chung đến riêng hay ngược lại từ riêng đến chung đều thấu suốt và quán triệt quan điểm toàn diện trong nghiên cứu văn hóa để cố gắng đạt tới nhận thức khoa học khái quát và khách quan đến mức có thể. Trong mỗi chủ đề, thông qua việc diễn giải vấn đề cụ thể, tác giả sử dụng những hệ khái niệm được hiểu là những khái niệm công cụ, khái niệm chìa khoá dẫn dắt người đọc trên con đường khám phá chân lý khách quan và khái quát của lịch sử, văn hoá dân tộc. Mỗi trang viết là kết quả của quá trình tìm tòi suy ngẫm và nghiệm sinh lâu dài, hiện đại về tư liệu, xử lý tài tình mối quan hệ biện chứng giữa Phá bỏ – Bảo tồn – Sáng tạo. Với cách viết rất riêng thâm thúy và khoáng đạt, đề cao tôn chỉ “Nghiêm thay sử bút” và thái độ tôn trọng sự đa dạng và khoan dung văn hoá, tác giả đã tiếp cận văn hóa Việt Nam quá khứ và đương đại theo nhiều chiều kích, thuận/nghịch; trong/ngoài; nội sinh/ngoại sinh… Những nghiên cứu lý thuyết, điền dã của tác giả về văn hóa Việt Nam là kết quả của quá trình từ nhận thức – nhận định lại – tái nhận thức đến nhận thức. Kết cuối của mỗi công trình nghiên cứu trong cuốn sách này cũng chính là mở Đầu cuộc tìm kiếm, chiêm nghiệm mới và cứ như thế… Tập hợp từ những bài viết trong nửa thế kỷ qua “Văn hóa Việt Nam – tìm tòi và suy ngẫm” là một trong những công trình mang tính tổng hợp, “tập đại thành” đối với những người làm công tác nghiên cứu văn hóa. Mỗi chương sách thực sự là một khám phá chứa đựng những ý tưởng khoa học mới, độc đáo và sâu sắc giúp gợi mở những hướng nghiên cứu mang tính liên ngành, đa ngành, xuyên ngành cho văn hóa học hiện nay nói chung và cho các nhà nghiên cứu văn hóa khi tiếp cận nghiên cứu văn hóa Việt Nam Xưa – Nay cả về nội dung lẫn phương pháp tiếp cận. .u325f50a22a4e64864a0f79435b01a88b { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u325f50a22a4e64864a0f79435b01a88b:active, .u325f50a22a4e64864a0f79435b01a88b:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u325f50a22a4e64864a0f79435b01a88b { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u325f50a22a4e64864a0f79435b01a88b .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u325f50a22a4e64864a0f79435b01a88b .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u325f50a22a4e64864a0f79435b01a88b:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Sách giáo lý của hội thánh công giáo",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/tZVoufF8zd.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Trần Quốc Vượng"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230632&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "duong-den-cac-di-san-the-gioi-mien-trung",
-      "name": "Đường Đến Các Di Sản Thế Giới Miền Trung",
-      "tacgia": "Trần Huy Hùng Cường",
-      "mieuta": "Đường đến các di sản thế giới miền Trung của tác giả Trần Huy Hùng Cường sẽ đưa các bạn khởi hành từ thành phố Hồ Chí Minh, qua Đồng Nai, Bình Thuận, kết hợp với du lịch cao nguyên miền Trung,&#8230; Ở mỗi địa danh tác giả giới thiệu các thông tin về kinh tế, địa lý của mỗi vùng miền, các điểm du lịch lý thú bạn nên đi qua để trải nghiệm và các thông tin được tác giả cung cấp vô cùng hữu ích và hấp dẫn. Sách được chia làm 2 phần. Phần 1 sau đây tác giả sẽ đưa các bạn đi từ điểm khởi hành là TP. Hồ Chí Minh đến tỉnh Đồng Nai. Sách liên quan: Nấu Ăn Gia Đình Miền Trung Tuyển tập lý luận phê bình văn học miền trung thế kỷ XX Thức ăn vật nuôi vùng trung du miền núi phía Bắc Việt Nam Giới Thiệu Những Phương Pháp Nuôi Cá Ở Miền Núi Chợ Trời Biên Giới Việt Nam &#8211; Cao Miên &#8211; Lê Hương full prc pdf epub azw3 [Văn Hóa] Đường Về Trùng Khánh Đại Đường Tiểu Lang Trung PDF EPUB",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/53xAWgjW60.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Trần Huy Hùng Cường"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230248&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "vo-nga-vo-uu",
-      "name": "Vô Ngã Vô Ưu",
-      "tacgia": "Ni sư Ayya Khema",
-      "mieuta": "“Vô Ngã Vô Ưu” (Being Nobody, Going Nowhere) là một cuốn sách về Thiền quán hay nhất của Ni sư người Đức Ayya Khema. Là một tuyệt tác viết về Thiền quán, cuốn sách đã được giải thưởng của Chrismas Humphreys và là cuốn sách bán chạy nhất tại Mỹ năm 1988. Trong cuốn sách này, Ni sư Ayya Kherma đã giới thiệu với người đọc những gì tinh tuý nhất trên con đường Phật pháp. Bà nhấn mạnh đến cách thức và tại sao lại cần hành thiền cũng như cung cấp cho ta một nền tảng hiểu biết cơ bản về bản chất của Nghiệp, Tái sinh và Bát chính đạo – những giáo lý căn bản của Đạo Phật. Với những lời khuyên hữu ích và thiết thực, Ni sư Ayya Khema đã dẫn dắt cho chúng ta những cách thức thực hành tứ vô lượng tâm: từ, bi, hỷ, xả và cách vượt qua những chướng ngại trên con đường tu tập. Rất ít cuốn sách cơ bản về Phật giáo có thể bao chứa cả hai tiêu chí giản dị và sâu sắc. Nhưng vô ngã vô ưu đã làm được cả hai điều này. Đây không những là một cuốn sách mọi thiền sinh không thể bỏ qua, mà còn là cuốn sách tuyệt vời cho tất cả mọi người. Sách liên quan: Kim Tự Tháp Đỏ Bạo Tiếu Bĩ Tiên: Thượng Thần, Cầu Liêu! &#8211; Thất Tiểu Huỳnh full prc pdf epub azw3 [Huyền Ảo] Bưởi Cho đất nước đi lên Di Sản Trí Tuệ Giảng lý dướichân Thầy Việt Nam Phong Tục .uff355b8228ac04072c55f2efadf37bc1 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .uff355b8228ac04072c55f2efadf37bc1:active, .uff355b8228ac04072c55f2efadf37bc1:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .uff355b8228ac04072c55f2efadf37bc1 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .uff355b8228ac04072c55f2efadf37bc1 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .uff355b8228ac04072c55f2efadf37bc1 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .uff355b8228ac04072c55f2efadf37bc1:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Thánh Ngôn Hiệp Tuyển (Quyển 1)",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/1fbzMtayxh.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Ni sư Ayya Khema"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=230138&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "toi-la-thay-tuong-so-8211-tap-2",
-      "name": "Tôi Là Thầy Tướng Số &#8211; Tập 2",
-      "tacgia": "Dịch Chi",
-      "mieuta": "Tập 1 Các bạn xem ở đây Bạn đã đi xem bói bao giờ chưa? Có bao giờ bạn thấy mình bị lừa không? Nghề tướng số, manh nha từ thời tiên Tần, phát triển vào thời Tùy Đường, đến thời Minh Thanh thì lan truyền vô cùng mạnh mẽ; Trương Lương đời Hán, Gia Cát Lượng đời Tam Quốc, Lưu Bá Ôn đời Minh đều là những nhà tướng số trên các lĩnh vực tướng tay, tướng mặt, bát tự, bát quái. Kinh Hoa Nghiêm giảng: “Ác nghiệp tạo ra trước kia, đều do tham, sân, si vô cùng vô tận”. Nhược điểm trong bản tính con người chính là: tham, sân, si. Quan sát một cách tỉ mỉ thì dường như tất cả tai họa đều bắt nguồn từ đây. Một khi ba nhược điểm ày bị lộ ra, “A Bảo” – kẻ lừa đảo bằng nghề tướng số, tất sẽ có cơ hội ra tay, nên không thể trách kẻ đi lừa, mà trách người để bị lừa. đến xem tướng số tựu chung có : cha mẹ xem cho con cái, con cái xem cho cha mẹ ; Vợ xem cho chồng, chồng xem cho vợ ; Sĩ tử, kẻ lắm tiền, người quyền cao tước trọng xem cho bản thân mình. Lẽ thường, khi ai đó hỏi đi hỏi lại một sự việc, nhất định việc đó không được như ý nguyện. Nó là căn nguyên của sự lo lắng, vậy nên kẻ hành nghề tướng số sẽ xem tướng mặt, đoán Bát tự, nắm bắt tinh tế từng tia hy vọng, lòng tham lam, tâm hư vinh, sự đố kỵ, nỗi sợ hãi, tính ngạo mạn của người đến xem. Có thể nói vận mệnh của một người được biểu lộ hết trên khuôn mặt. Điều đó không có nghĩa thầy tướng số bói quá chuẩn, mà do người đến xem đã tự tiết lộ quá nhiều. Bộ sách gồm 2 tập vô cùng hấp dẫn: Tôi là thầy tướng số sẽ đưa bạn ngược dòng thời gian tìm hiểu trí tuệ người xưa và giới giang hồ hiểm ác ẩn phía sau nghề tướng số. Mời các bạn đón đọc cuốn sách &#8220;Tôi Là Thầy Tướng Số &#8211; Dịch Chi&#8221; .ube6fa7fd4256409df64c33eebf742d77 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .ube6fa7fd4256409df64c33eebf742d77:active, .ube6fa7fd4256409df64c33eebf742d77:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .ube6fa7fd4256409df64c33eebf742d77 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .ube6fa7fd4256409df64c33eebf742d77 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .ube6fa7fd4256409df64c33eebf742d77 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .ube6fa7fd4256409df64c33eebf742d77:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Bá Trượng Quảng Lục",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/Yxl5520lCY.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Dịch Chi"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229890&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "toi-la-thay-tuong-so-8211-tap-1",
-      "name": "Tôi Là Thầy Tướng Số &#8211; Tập 1",
-      "tacgia": "Dịch Chi",
-      "mieuta": "Bạn đã đi xem bói bao giờ chưa? Có bao giờ bạn thấy mình bị lừa không? Nghề tướng số, manh nha từ thời tiên Tần, phát triển vào thời Tùy Đường, đến thời Minh Thanh thì lan truyền vô cùng mạnh mẽ; Trương Lương đời Hán, Gia Cát Lượng đời Tam Quốc, Lưu Bá Ôn đời Minh đều là những nhà tướng số trên các lĩnh vực tướng tay, tướng mặt, bát tự, bát quái. Kinh Hoa Nghiêm giảng: “Ác nghiệp tạo ra trước kia, đều do tham, sân, si vô cùng vô tận”. Nhược điểm trong bản tính con người chính là: tham, sân, si. Quan sát một cách tỉ mỉ thì dường như tất cả tai họa đều bắt nguồn từ đây. Một khi ba nhược điểm ày bị lộ ra, “A Bảo” – kẻ lừa đảo bằng nghề tướng số, tất sẽ có cơ hội ra tay, nên không thể trách kẻ đi lừa, mà trách người để bị lừa. Đến xem tướng số tựu chung có: cha mẹ xem cho con cái, con cái xem cho cha mẹ ; Vợ xem cho chồng, chồng xem cho vợ ; Sĩ tử, kẻ lắm tiền, người quyền cao tước trọng xem cho bản thân mình. Lẽ thường, khi ai đó hỏi đi hỏi lại một sự việc, nhất định việc đó không được như ý nguyện. Nó là căn nguyên của sự lo lắng, vậy nên kẻ hành nghề tướng số sẽ xem tướng mặt, đoán Bát tự, nắm bắt tinh tế từng tia hy vọng, lòng tham lam, tâm hư vinh, sự đố kỵ, nỗi sợ hãi, tính ngạo mạn của người đến xem. Có thể nói vận mệnh của một người được biểu lộ hết trên khuôn mặt. Điều đó không có nghĩa thầy tướng số bói quá chuẩn, mà do người đến xem đã tự tiết lộ quá nhiều. .u4a58820495c990111634af828c636391 { padding:0px; margin: 0; padding-top:1em!important; padding-bottom:1em!important; width:100%; display: block; font-weight:bold; background-color:inherit; border:0!important; border-left:4px solid inherit!important; text-decoration:none; } .u4a58820495c990111634af828c636391:active, .u4a58820495c990111634af828c636391:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; text-decoration:none; } .u4a58820495c990111634af828c636391 { transition: background-color 250ms; webkit-transition: background-color 250ms; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; } .u4a58820495c990111634af828c636391 .ctaText { font-weight:bold; color:inherit; text-decoration:none; font-size: 16px; } .u4a58820495c990111634af828c636391 .postTitle { color:inherit; text-decoration: underline!important; font-size: 16px; } .u4a58820495c990111634af828c636391:hover .postTitle { text-decoration: underline!important; } Có thể bạn thích sách &nbsp; Một Đời Người Một Câu Thần Chú",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/TBkGUm61EG.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Dịch Chi"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229892&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "tim-lai-chinh-minh",
-      "name": "Tìm Lại Chính Mình",
-      "tacgia": "Thích Thánh Nghiêm",
-      "mieuta": "Tìm lại chính mình là một trong những tác phẩm hay của Hòa thượng Thích Thánh Nghiêm, liên quan mật thiết đến đời sống tâm linh của con người hiện đại. Toàn bộ cuốn sách chia thành bốn phần lớn gồm: 1. La bàn định hướng cuộc đời; 2. Giải thoát cho mình; 3. Tìm về âm thanh nội tại; 4. Khẳng định bản than, trưởng thành và thể nhập vô ngã. Là bậc thầy hướng dẫn đời sống tâm linh của xã hội đương đại, Hòa thượng Thánh Nghiêm không giống với những tác giả bình thường chỉ bàn luận đến thành công và trưởng thành của mỗi cá nhân. Xuất phát từ tầm nhìn vĩ mô, ngài cho rằng khi con người xác định được phương hướng đúng đắn, hòa mình vào mục tiêu chung của nhân loại, tự nhiên sẽ định vị được bản than, không đi lệch hướng. Hơn nữa, trưởng thành của cả nhân loại, thành công của cá nhân chính là sự trưởng thành của cả nhân loại, thành công của cá nhân là thành công của toàn xã hội, cá nhân và tập thể không mâu thuẫn đối lập và tác độc qua lại, bổ trợ cho nhau. Nếu không có trí tuệ uyên thâm, hiểu biết cuộc đời thì làm sao có được tầm nhìn rộng lớn và sâu sắc như thế. Hiện tại toàn bộ link tải đã bị gỡ khỏi sachvui, trang web chỉ còn lưu thông tin đầu sách để bạn tham khảo.",
-      "theloai": "Huyền bí - Giả Tưởng",
-      "theloaiSlug": "huyen-bi-gia-tuong",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/10/DlPmFYS6yJ.webp",
-      "tags": [
-        "Huyền bí - Giả Tưởng",
-        "Thích Thánh Nghiêm"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=229772&#038;map=176245"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=15u7Oedp4L46VCXrKPyYPfZmnifkpTBqh"
         }
       ]
     }

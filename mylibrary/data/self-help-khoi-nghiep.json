@@ -1,287 +1,78 @@
 {
   "theloai": {
     "id": "self-help-khoi-nghiep",
-    "name": "Self Help - Khởi nghiệp"
+    "name": "Self Help - Khởi nghiệp",
+    "slug": "self-help-khoi-nghiep"
   },
   "items": [
     {
-      "id": "doc-vi-doi-thu-8211-bi-mat-tu-duy-ty-phu-8211-adam-m-brandenburger-038-barry-j-nalebuff-full-mobi-pdf-epub-azw3-kinh-doanh",
-      "name": "Đọc Vị Đối Thủ &#8211; Bí Mật Tư Duy Tỷ Phú &#8211; Adam M. Brandenburger &#038; Barry J. Nalebuff full mobi pdf epub azw3 [Kinh Doanh]",
-      "tacgia": "Adam M. Brandenburger",
+      "id": "tu-duy-nguoc-dich-chuyen-the-gioi",
+      "name": "Tư duy ngược dịch chuyển thế giới",
+      "tacgia": "Adam Grant",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/doc-vi-doi-thu-bi-mat-tu-duy-ty-phu.jpg",
+      "anhbia": "https://drive.google.com/file/d/1kbaGZi9RuqAvQ8FNxXhK3JcjIexc12tw/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "Adam M. Brandenburger"
+        "Adam Grant"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195838&#038;map=258953"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195838&#038;map=258953"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195838&#038;map=258953"
+          "url": "https://drive.google.com/uc?export=download&id=1uLES7iXvEDO92kLFF0SkIoKSo5FtVDr3"
         }
       ]
     },
     {
-      "id": "dieu-binh-di-thong-thai-8211-first-news-full-mobi-pdf-epub-azw3-song-dep",
-      "name": "Điều Bình Dị Thông Thái &#8211; First News full mobi pdf epub azw3 [Sống Đẹp]",
-      "tacgia": "First News",
+      "id": "dac-nhan-tam",
+      "name": "Đắc nhân tâm",
+      "tacgia": "Dale Carnegie",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/dieu-binh-di-thong-thai-first-news.jpg",
+      "anhbia": "https://drive.google.com/file/d/1wk3dh3lroDxxlsQW6h9I-DLp3tWyEk5L/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "First News"
+        "Dale Carnegie"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195757&#038;map=178054"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195757&#038;map=178054"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195757&#038;map=178054"
+          "url": "https://drive.google.com/uc?export=download&id=1Y_EPguEJRDiGMrNeQ6KYT6JhvuMSZpeq"
         }
       ]
     },
     {
-      "id": "dieu-nho-nhat-tao-nen-so-phan-8211-andy-andrews-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Điều Nhỏ Nhặt Tạo Nên Số Phận &#8211; Andy Andrews full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "Andy Andrews",
+      "id": "cach-bien-kha-nang-cua-ban-thanh-tien",
+      "name": "Cách biến khả năng của bạn thành tiền",
+      "tacgia": "Earl Prevette A.b., LL.B",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/dieu-nho-nhat-tao-nen-so-phan-andy-andrews.jpg",
+      "anhbia": "https://drive.google.com/file/d/1LbNZouXEwHreccITVq90Joawtv_Rl8p9/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "Andy Andrews"
+        "Earl Prevette A.b., LL.B"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195767&#038;map=176245"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195767&#038;map=176245"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195767&#038;map=176245"
+          "url": "https://drive.google.com/uc?export=download&id=19yLVNRjLCPnJUP28ijyMj6RvM1RO7Fca"
         }
       ]
     },
     {
-      "id": "dieu-y-nghia-nhat-trong-tung-khoanh-khac-cuoc-doi-8211-gary-keller-038-jay-papasan-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Điều Ý Nghĩa Nhất Trong Từng Khoảnh Khắc Cuộc Đời &#8211; Gary Keller &#038; Jay Papasan full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "Gary Keller",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/dieu-y-nghia-nhat-trong-tung-khoanh-khac-cuoc-doi.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Gary Keller"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195771&#038;map=258832"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195771&#038;map=258832"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195771&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "diem-den-cua-cuoc-doi-8211-dang-hoang-giang-full-prc-pdf-epub-azw3-self-help",
-      "name": "Điểm Đến Của Cuộc Đời &#8211; Đặng Hoàng Giang full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Đặng Hoàng Giang",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/diem-den-cua-cuoc-doi-dang-hoang-giang.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Đặng Hoàng Giang"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195723&#038;map=258832"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195723&#038;map=258832"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195723&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "diem-tua-cua-niem-tin-8211-nhieu-tac-gia-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Điểm Tựa Của Niềm Tin &#8211; Nhiều Tác Giả full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "Nhiều tác giả",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/diem-tua-cua-niem-tin-nhieu-tac-gia.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Nhiều tác giả"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195727&#038;map=176245"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195727&#038;map=176245"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195727&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "de-thanh-cong-trong-cuoc-song-8211-thu-gui-con-trai-cua-cha-8211-earl-chesterfield-full-prc-pdf-epub-azw3-self-help",
-      "name": "Để Thành Công Trong Cuộc Sống &#8211; Thư Gửi Con Trai Của Cha &#8211; Earl Chesterfield full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Earl Chesterfield",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/de-thanh-cong-trong-cuoc-song-thu-gui-con-trai-cua-cha-earl-chesterfield.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Earl Chesterfield"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195631&#038;map=258936"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195631&#038;map=258936"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195631&#038;map=258936"
-        }
-      ]
-    },
-    {
-      "id": "de-thanh-nha-van-8211-thu-giang-038-nguyen-duy-can-full-prc-pdf-epub-azw3-self-help",
-      "name": "Để Thành Nhà Văn &#8211; Thu Giang &#038; Nguyễn Duy Cần full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Nguyễn Duy Cần",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/de-thanh-nha-van-thu-giang-nguyen-duy-can.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Nguyễn Duy Cần"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195635&#038;map=178054"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195635&#038;map=178054"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195635&#038;map=178054"
-        }
-      ]
-    },
-    {
-      "id": "de-duoc-trong-dung-038-dai-ngo-8211-brian-tracy-full-prc-pdf-epub-azw3-self-help",
-      "name": "Để Được Trọng Dụng &#038; Đãi Ngộ &#8211; Brian Tracy full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Brian Tracy",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/de-duoc-trong-dung-dai-ngo-brian-tracy.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Brian Tracy"
-      ],
-      "formats": [
-        {
-          "type": "epub",
-          "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195613&#038;map=176245"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195613&#038;map=176245"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195613&#038;map=176245"
-        }
-      ]
-    },
-    {
-      "id": "dam-me-khong-de-lam-canh-dam-me-la-de-ra-tien-8211-emma-casey-full-mobi-pdf-epub-azw3-huong-nghiep",
-      "name": "Đam Mê Không Để Làm Cảnh, Đam Mê Là Để Ra Tiền &#8211; Emma Casey full mobi pdf epub azw3 [Hướng Nghiệp]",
+      "id": "dam-me-khong-de-lam-canh-dam-me-la-de-ra-tien",
+      "name": "Đam mê không để làm cảnh, đam mê là để ra tiền",
       "tacgia": "Emma Casey",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "",
+      "anhbia": "https://drive.google.com/file/d/1UMh_TicyyAoEiYayLL_-EAaMoDL8qDUi/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
         "Emma Casey"
@@ -290,276 +81,187 @@
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195512&#038;map=258832"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195512&#038;map=258832"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195512&#038;map=258832"
+          "url": "https://drive.google.com/uc?export=download&id=1RTpY5idx0Zk4w9YznquQpELF0dvOwcUE"
         }
       ]
     },
     {
-      "id": "dam-phan-theo-phong-cach-trump-8211-george-h-ross-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Đàm Phán Theo Phong Cách Trump &#8211; George H. Ross full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "George H.Ross",
+      "id": "khac-biet-de-dan-dau",
+      "name": "Khác biệt để dẫn đầu",
+      "tacgia": "Hoàng Nguyên",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/dam-phan-theo-phong-cach-trump.jpg",
+      "anhbia": "https://drive.google.com/file/d/1RAWpeYALOxhnqFCEmsWES3zAHn4MtbmF/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "George H.Ross"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195515&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "chuyen-chu-chim-con-ech-va-khu-vuon-mau-xanh-8211-elizabeth-o-dulemba-038-nguyen-trang-dich-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Chuyện Chú Chim, Con Ếch Và Khu Vườn Màu Xanh &#8211; Elizabeth O. Dulemba &#038; Nguyễn Trang (dịch) full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "Elizabeth O. Dulemba",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Elizabeth O. Dulemba"
+        "Hoàng Nguyên"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=195094&#038;map=176245"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=195094&#038;map=176245"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=195094&#038;map=176245"
+          "url": "https://drive.google.com/uc?export=download&id=1e5FvzR-n0LzpwWWbYcDIMRydDtiHAS1I"
         }
       ]
     },
     {
-      "id": "chon-nghe-ban-yeu-yeu-nghe-ban-chon-8211-kim-rando-full-mobi-pdf-epub-azw3-huong-nghiep",
-      "name": "Chọn Nghề Bạn Yêu, Yêu Nghề Bạn Chọn &#8211; Kim Rando full mobi pdf epub azw3 [Hướng Nghiệp]",
-      "tacgia": "Kim Rando",
+      "id": "ton-tai-truoc-ly-tuong-sau",
+      "name": "Tồn tại trước, lý tưởng sau",
+      "tacgia": "Hoàng Nguyên",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "",
+      "anhbia": "https://drive.google.com/file/d/1FpYgw5d9eXkRdxwhTdRn1_xtl2HVmNlz/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "Kim Rando"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194961&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "chinh-phuc-hanh-phuc-8211-bertrand-russell-full-prc-pdf-epub-azw3-self-help",
-      "name": "Chinh Phục Hạnh Phúc &#8211; Bertrand Russell full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Bertrand Russell",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/chinh-phuc-hanh-phuc-bertrand-russell.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Bertrand Russell"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194923&#038;map=258953"
-        }
-      ]
-    },
-    {
-      "id": "chinh-phuc-muc-tieu-8211-brian-tracy-full-prc-pdf-epub-azw3-khoi-nghiep",
-      "name": "Chinh Phục Mục Tiêu &#8211; Brian Tracy full prc pdf epub azw3 [Khởi nghiệp]",
-      "tacgia": "Brian Tracy",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/35799205756_d0f7442b1c_o.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Brian Tracy"
+        "Hoàng Nguyên"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=194925&#038;map=258936"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=194925&#038;map=258936"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194925&#038;map=258936"
+          "url": "https://drive.google.com/uc?export=download&id=1ZhBhvTb3WQ2hmWUooRn3O1zpmKFL-W0p"
         }
       ]
     },
     {
-      "id": "cho-dan-duong-8211-dai-gia-va-nhan-qua-8211-mikhail-samarsky-038-pham-ba-thuy-dich-full-mobi-pdf-epub-azw3-song-dep",
-      "name": "Chó Dẫn Đường &#8211; Đại Gia Và Nhân Quả &#8211; Mikhail Samarsky &#038; Phạm Bá Thủy (dịch) full mobi pdf epub azw3 [Sống Đẹp]",
-      "tacgia": "Mikhail Samarsky",
+      "id": "dung-bao-gio-tu-bo-uoc-mo",
+      "name": "Đừng bao giờ từ bỏ ước mơ",
+      "tacgia": "Jack Canfield, Mark vicktor hansen",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/cho-dan-duong-dai-gia-va-nhan-qua.jpg",
+      "anhbia": "https://drive.google.com/file/d/15WCHKetLdnpqVGsN550Xdk-OOdKswLSH/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "Mikhail Samarsky"
+        "Jack Canfield, Mark vicktor hansen"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=194935&#038;map=178054"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=194935&#038;map=178054"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194935&#038;map=178054"
+          "url": "https://drive.google.com/uc?export=download&id=1CeK5duBPMbC6YVARNYZLsSgjI9C7wvC7"
         }
       ]
     },
     {
-      "id": "chien-luoc-kinh-doanh-hieu-qua-8211-first-news-full-prc-pdf-epub-azw3-self-help-8211-first-news-full-prc-pdf-epub-azw3-self-help",
-      "name": "Chiến Lược Kinh Doanh Hiệu Quả &#8211; First News full prc pdf epub azw3 [Self Help] &#8211; First News full prc pdf epub azw3 [Self Help]",
-      "tacgia": "First News",
+      "id": "songtoigian-layout-indd",
+      "name": "SongToiGian_layout_ indd",
+      "tacgia": "Joshua Becker",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/chien-luoc-kinh-doanh-hieu-qua-first-news.jpg",
+      "anhbia": "https://drive.google.com/file/d/10o2pzOuqrjcr9mLMyMt_466F7hYmIdbv/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "First News"
+        "Joshua Becker"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=194883&#038;map=178054"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=194883&#038;map=178054"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194883&#038;map=178054"
+          "url": "https://drive.google.com/uc?export=download&id=13OtMGsvl1IidxQzgudeTyqmzWDpNtaan"
         }
       ]
     },
     {
-      "id": "chien-luoc-xung-dot-8211-thomas-c-schelling-full-prc-pdf-epub-azw3-self-help",
-      "name": "Chiến Lược Xung Đột &#8211; Thomas C. Schelling full prc pdf epub azw3 [Self-Help]",
-      "tacgia": "Thomas C. Schelling",
+      "id": "thuyet-mac-ke-ho",
+      "name": "Thuyết mặc kệ họ",
+      "tacgia": "Mel Robbins",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/chien-luoc-xung-dot-thomas-c.-schelling.jpg",
+      "anhbia": "https://drive.google.com/file/d/1ZFwMqDFI6DCzl_6YG2ZACBqZH_tmg8gK/view?usp=sharing",
       "tags": [
         "Self Help - Khởi nghiệp",
-        "Thomas C. Schelling"
-      ],
-      "formats": [
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194885&#038;map=258832"
-        }
-      ]
-    },
-    {
-      "id": "chia-khoa-de-tro-thanh-nguoi-da-ngon-ngu-8211-ho-thu-huong-full-prc-pdf-epub-azw3-self-help",
-      "name": "Chìa Khóa Để Trở Thành Người Đa Ngôn Ngữ &#8211; Hồ Thu Hương full prc pdf epub azw3 [Self Help]",
-      "tacgia": "Hồ Thu Hương",
-      "mieuta": "",
-      "theloai": "Self Help - Khởi nghiệp",
-      "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/chia-khoa-de-tro-thanh-nguoi-da-ngon-ngu-ho-thu-huong.jpg",
-      "tags": [
-        "Self Help - Khởi nghiệp",
-        "Hồ Thu Hương"
+        "Mel Robbins"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=194819&#038;map=178054"
-        },
-        {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=194819&#038;map=178054"
-        },
-        {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194819&#038;map=178054"
+          "url": "https://drive.google.com/uc?export=download&id=1NWjD39yPtykOU_KzaZNump2Yke_ClIpQ"
         }
       ]
     },
     {
-      "id": "cham-vao-dinh-menh-8211-phuong-bui-full-mobi-pdf-epub-azw3-self-help",
-      "name": "Chạm Vào Định Mệnh &#8211; Phương Bùi full mobi pdf epub azw3 [Self Help]",
-      "tacgia": "",
+      "id": "cach-nghi-de-thanh-cong",
+      "name": "Cách nghĩ để thành công",
+      "tacgia": "Napoleon Hill",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
       "theloaiSlug": "self-help-khoi-nghiep",
-      "anhbia": "https://sachvuii.com/wp-content/uploads/2024/07/cham-vao-dinh-menh-phuong-bui.jpg",
+      "anhbia": "https://drive.google.com/file/d/1XycCJfYRVtEm1lu3KQCVtzt700zi_sJ7/view?usp=sharing",
       "tags": [
-        "Self Help - Khởi nghiệp"
+        "Self Help - Khởi nghiệp",
+        "Napoleon Hill"
       ],
       "formats": [
         {
           "type": "epub",
           "label": "EPUB",
-          "url": "/get-link/?type=epub&#038;truyen=194689&#038;map=258832"
-        },
+          "url": "https://drive.google.com/uc?export=download&id=1jYo-G28jh4MD5cCKdejzDcIYrbFCPdvr"
+        }
+      ]
+    },
+    {
+      "id": "nghe-thuat-cua-sang-tao",
+      "name": "Nghệ thuật của sáng tạo",
+      "tacgia": "Robert E. Mueller",
+      "mieuta": "",
+      "theloai": "Self Help - Khởi nghiệp",
+      "theloaiSlug": "self-help-khoi-nghiep",
+      "anhbia": "https://drive.google.com/file/d/1WfS3zF7G6kGuHJwhZ1n-9n3CrAvZ_JM6/view?usp=sharing",
+      "tags": [
+        "Self Help - Khởi nghiệp",
+        "Robert E. Mueller"
+      ],
+      "formats": [
         {
-          "type": "mobi",
-          "label": "MOBI",
-          "url": "/get-link/?type=mobi&#038;truyen=194689&#038;map=258832"
-        },
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1KuLhD9NPnvW0Qz8F5ARhZGL3fzhB1B-C"
+        }
+      ]
+    },
+    {
+      "id": "ban-khong-thieu-kien-thuc-ban-chi-no-luc-sai-cach",
+      "name": "Bạn không thiếu kiến thức. Bạn chỉ nỗ lực sai cách",
+      "tacgia": "Sarah An",
+      "mieuta": "",
+      "theloai": "Self Help - Khởi nghiệp",
+      "theloaiSlug": "self-help-khoi-nghiep",
+      "anhbia": "https://drive.google.com/file/d/15j-4ZZu_IfSeSmrS_G40kx747JEW64Xw/view?usp=sharing",
+      "tags": [
+        "Self Help - Khởi nghiệp",
+        "Sarah An"
+      ],
+      "formats": [
         {
-          "type": "pdf",
-          "label": "PDF",
-          "url": "/get-link/?type=pdf&#038;truyen=194689&#038;map=258832"
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1yGxXbd4UBwpwJByUidVgx0T9fxKMjlLz"
+        }
+      ]
+    },
+    {
+      "id": "khai-pha-phi-thuong-trong-chinh-ta-tam-thuong",
+      "name": "Khai phá phi thường trong chính ta tầm thường",
+      "tacgia": "Sarah An",
+      "mieuta": "",
+      "theloai": "Self Help - Khởi nghiệp",
+      "theloaiSlug": "self-help-khoi-nghiep",
+      "anhbia": "https://drive.google.com/file/d/1RbF07jA-qEBmg6bnCawQm913dWQmKF52/view?usp=sharing",
+      "tags": [
+        "Self Help - Khởi nghiệp",
+        "Sarah An"
+      ],
+      "formats": [
+        {
+          "type": "epub",
+          "label": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=18ddYHFmreKYqXJSKNYK07CmAVOM2hgKn"
         }
       ]
     }
