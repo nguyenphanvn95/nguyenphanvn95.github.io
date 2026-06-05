@@ -543,9 +543,9 @@
 
 <script type="module">
 // ── Import pdf.js (relative path — file nằm cùng thư mục mylibrary/) ──────────
-import * as pdfjsLib from './pdfjs/build/pdf.min.mjs';
+import * as pdfjsLib from 'https://unpkg.com/pdfjs-dist@4.9.155/build/pdf.min.mjs';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@4.9.155/build/pdf.worker.min.mjs';
 
 // ── CORS proxy fallback ────────────────────────────────────────────────────────
 const CORS_PROXY = 'https://corsproxy.io/?';
