@@ -5,11 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Reader</title>
 
-<!-- EPUB.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
-<!-- PDF.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.3.136/pdf.min.mjs" type="module" id="pdfjs-script"></script>
+<!-- EPUB.js (jszip bundled inside epubjs) -->
+<script src="https://unpkg.com/epubjs@0.3.93/dist/epub.min.js"></script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -794,8 +791,23 @@ function applyMeta(meta) {
 }
 
 // ── EPUB ───────────────────────────────────────────────
+async function ensureEpubJs() {
+  if (typeof ePub === 'function') return;
+  // fallback: load từ CDN khác
+  await new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js';
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('Không tải được epub.js'));
+    document.head.appendChild(s);
+  });
+  if (typeof ePub !== 'function') throw new Error('epub.js load xong nhưng ePub() không tồn tại');
+}
+
 async function loadEpub(url) {
-  setLoading(30, 'loading epub...');
+  setLoading(25, 'loading epub.js...');
+  await ensureEpubJs();
+  setLoading(35, 'loading epub...');
   $('epub-container').classList.add('active');
 
   const book = ePub(url);
@@ -901,22 +913,26 @@ function buildToc(toc, rendition) {
 
 // ── PDF ────────────────────────────────────────────────
 let pdfjsLib = null;
+const PDFJS_VERSION = '3.11.174';
+const PDFJS_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
 
 async function loadPdfJs() {
-  // Try loading pdf.js dynamically
-  if (window.pdfjsLib) { pdfjsLib = window.pdfjsLib; return; }
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
-    script.onload = () => {
-      pdfjsLib = window.pdfjsLib;
-      pdfjsLib.GlobalWorkerOptions.workerSrc =
-        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-      resolve();
-    };
-    script.onerror = reject;
-    document.head.appendChild(script);
+  if (pdfjsLib) return;
+  if (window.pdfjsLib) {
+    pdfjsLib = window.pdfjsLib;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
+    return;
+  }
+  await new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = `${PDFJS_CDN}/pdf.min.js`;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('Không tải được pdf.js từ CDN'));
+    document.head.appendChild(s);
   });
+  pdfjsLib = window.pdfjsLib;
+  if (!pdfjsLib) throw new Error('pdf.js load xong nhưng window.pdfjsLib không tồn tại');
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `${PDFJS_CDN}/pdf.worker.min.js`;
 }
 
 async function loadPdf(url) {
