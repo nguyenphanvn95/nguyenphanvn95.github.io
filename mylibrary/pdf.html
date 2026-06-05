@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="shortcut icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
   <title>PDF Reader</title>
   <style>
     /* ─── Variables ─── */
@@ -543,9 +544,9 @@
 
 <script type="module">
 // ── Import pdf.js (relative path — file nằm cùng thư mục mylibrary/) ──────────
-import * as pdfjsLib from 'https://unpkg.com/pdfjs-dist@4.9.155/build/pdf.min.mjs';
+import * as pdfjsLib from 'assets/pdf.min.mjs';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@4.9.155/build/pdf.worker.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'assets/pdf.worker.min.mjs';
 
 // ── CORS proxy fallback ────────────────────────────────────────────────────────
 const CORS_PROXY = 'https://corsproxy.io/?';
