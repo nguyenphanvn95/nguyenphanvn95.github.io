@@ -128,6 +128,21 @@ function formatLabel(formatType) {
   return mapping[formatType.toLowerCase()] || formatType.toUpperCase();
 }
 
+function getReadOnlineUrl(book) {
+  const formats = Array.isArray(book.formats) ? book.formats : [];
+  const preferredFormats = [
+    formats.find((format) => normalizeText(format.type) === 'epub' && format.url),
+    formats.find((format) => normalizeText(format.type) === 'pdf' && format.url)
+  ].filter(Boolean);
+
+  const selected = preferredFormats[0];
+  if (!selected) return '';
+
+  const type = normalizeText(selected.type);
+  const reader = type === 'pdf' ? 'pdf.html' : 'epub.html';
+  return `./${reader}?url=${encodeURIComponent(selected.url)}`;
+}
+
 function fallbackCover(title, category) {
   const combined = `${title}|${category}`;
   let hash = 0;
@@ -354,17 +369,24 @@ function renderPagination() {
 
 function openDialog(book) {
   const cover = resolveCoverUrl(book.anhbia, book.name, book.theloai);
+  const readOnlineUrl = getReadOnlineUrl(book);
   const links = (book.formats || [])
     .map(
       (format) =>
         `<a class="format-btn format-${slugify(format.type)}" href="${format.url}" target="_blank" rel="noreferrer">${escapeXml(formatLabel(format.type))}</a>`
     )
     .join('');
+  const coverContent = readOnlineUrl
+    ? `<a class="dialog-cover-link" href="${readOnlineUrl}" target="_blank" rel="noreferrer" aria-label="Đọc online ${escapeXml(book.name)}">
+        <img src="${cover}" alt="${escapeXml(book.name)}" loading="lazy" data-fallback="${fallbackCover(book.name, book.theloai)}" onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallback;}">
+      </a>
+      <a class="read-online-btn" href="${readOnlineUrl}" target="_blank" rel="noreferrer">Đọc online</a>`
+    : `<img src="${cover}" alt="${escapeXml(book.name)}" loading="lazy" data-fallback="${fallbackCover(book.name, book.theloai)}" onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallback;}">`;
 
   els.dialogBody.innerHTML = `
     <div class="dialog-grid">
       <div class="dialog-cover">
-        <img src="${cover}" alt="${escapeXml(book.name)}" loading="lazy" data-fallback="${fallbackCover(book.name, book.theloai)}" onerror="if(!this.dataset.fallbackApplied){this.dataset.fallbackApplied='1';this.src=this.dataset.fallback;}">
+        ${coverContent}
       </div>
       <div class="dialog-info">
         <h3>${escapeXml(book.name)}</h3>
