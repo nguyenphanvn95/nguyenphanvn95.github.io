@@ -8,13 +8,15 @@
     {
       "id": "trai-tim-nguoi-cha",
       "name": "Trái tim người cha",
-      "tacgia": "",
-      "mieuta": "",
+      "tacgia": "Jack Canfield, Mark Victor Hansen",
+      "mieuta": "Thuộc series Hạt Giống Tâm Hồn nổi tiếng, cuốn sách là tập hợp những câu chuyện xúc động về tình yêu thương của người cha dành cho con — được kể qua nhiều cung bậc cảm xúc khác nhau nhưng đều có chung một điểm là chạm đến trái tim và truyền cảm hứng thật sự. Không chỉ những người cha viết lại, bạn còn tìm thấy cảm xúc của những người con trai, con gái và cháu chắt, những người đã thấu hiểu và trở nên tốt hơn nhờ tình yêu của cha — dù là cha ruột, cha dượng hay cha nuôi. Mỗi câu chuyện là một thông điệp có thể hàn gắn vết thương, làm thay đổi suy nghĩ và tâm hồn, mang lại nguồn cảm hứng vô tận về ý nghĩa của tình phụ tử.",
       "theloai": "Làm Cha Mẹ - Nuôi Dạy Trẻ",
       "theloaiSlug": "lam-cha-me-nuoi-day-tre",
       "anhbia": "https://drive.google.com/file/d/1vph7hOANTK-NsygsyIzX5sSe9_hyRkc0/view?usp=sharing",
       "tags": [
-        "Làm Cha Mẹ - Nuôi Dạy Trẻ"
+        "Làm Cha Mẹ - Nuôi Dạy Trẻ",
+        "Jack Canfield",
+        "Mark Victor Hansen"
       ],
       "formats": [
         {
