@@ -345,12 +345,18 @@
       viewer.style.width  = width  + 'px';
       viewer.style.height = height + 'px';
 
-      rendition = book.renderTo('viewer', { width, height, flow: currentFlow, spread: 'none' });
+      rendition = book.renderTo('viewer', {
+        width, height, flow: currentFlow, spread: 'none',
+        allowScriptedContent: false  // tắt script trong EPUB để tránh sandbox block
+      });
       applyReaderTheme();
       applyFontSize();
 
       const savedLoc = localStorage.getItem('epub_loc_' + (meta.identifier || source));
       await rendition.display(savedLoc || undefined);
+
+      // Đợi spine load xong
+      await book.spine.ready;
 
       const toc = await book.loaded.navigation;
       renderTOC(toc.toc);
@@ -407,32 +413,48 @@
       btn.onclick = () => {
         if (!rendition || !item.href) return;
         closeSidebar();
-        navigateToHref(item.href);
+            navigateToHref(item.href);
       };
       $id('toc-list').appendChild(btn);
       if (item.subitems && item.subitems.length) renderTOC(item.subitems, depth + 1);
     });
   }
 
-  function navigateToHref(href) {
-    // Tách anchor nếu có (vd: chapter1.xhtml#section2)
-    const hashIdx = href.indexOf('#');
-    const path   = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
-    const anchor = hashIdx >= 0 ? href.slice(hashIdx + 1) : null;
+  async function navigateToHref(href) {
+    if (!href) return;
 
-    // Thử resolve bằng spine trước
-    let spineItem = null;
-    try { spineItem = book.spine.get(path); } catch(e) {}
-    if (!spineItem) {
-      try { spineItem = book.spine.get(href); } catch(e) {}
+    // Tách anchor
+    const hashIdx = href.indexOf('#');
+    const pathPart = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
+    const anchor   = hashIdx >= 0 ? href.slice(hashIdx + 1) : null;
+    const filename = pathPart.split('/').pop().toLowerCase();
+
+    // Duyệt spine tìm item khớp
+    const items = book.spine.items || [];
+    let found = null;
+    for (const item of items) {
+      const h = (item.href || item.url || '').toLowerCase();
+      const hNoQuery = h.split('?')[0];
+      if (
+        hNoQuery === pathPart.toLowerCase() ||
+        hNoQuery.endsWith('/' + filename) ||
+        hNoQuery === filename
+      ) { found = item; break; }
     }
 
-    if (spineItem) {
-      const target = anchor ? spineItem.href + '#' + anchor : spineItem.href;
-      rendition.display(target).catch(() => rendition.display(href).catch(console.warn));
-    } else {
-      // Fallback: display href gốc
-      rendition.display(href).catch(console.warn);
+    if (found) {
+      const baseHref = found.href || found.url || '';
+      const target   = anchor ? baseHref + '#' + anchor : baseHref;
+        try { await rendition.display(target); return; } catch(e) {
+      }
+    }
+
+    // Fallback 1: display href gốc
+    try { await rendition.display(href); return; } catch(e) {
+    }
+
+    // Fallback 2: chỉ dùng filename
+    try { await rendition.display(filename); } catch(e) {
     }
   }
 
