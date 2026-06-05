@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PDF Reader</title>
+  <style>
+    /* ─── Variables ─── */
+    :root {
+      --bg: #18161a;
+      --surface: #201e24;
+      --surface2: #2a2830;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2dde8;
+      --text-dim: #7a7585;
+      --accent: #a78bfa;
+      --accent2: #c4b5fd;
+      --ui-font: 'Segoe UI', system-ui, sans-serif;
+      --radius: 6px;
+      --tr: 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="light"] {
+      --bg: #f0eef5;
+      --surface: #e6e3ee;
+      --surface2: #ddd9e8;
+      --border: rgba(0,0,0,0.08);
+      --text: #1e1b26;
+      --text-dim: #7a7585;
+      --accent: #7c3aed;
+      --accent2: #6d28d9;
+    }
+    [data-theme="sepia"] {
+      --bg: #f5f0e8;
+      --surface: #ece6d8;
+      --surface2: #e2dac8;
+      --border: rgba(0,0,0,0.08);
+      --text: #2d2418;
+      --text-dim: #8a7d68;
+      --accent: #92622a;
+      --accent2: #7a5222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: var(--ui-font);
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+      transition: background var(--tr), color var(--tr);
+    }
+
+    /* ─── Shell layout ─── */
+    #shell {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    /* ─── Topbar ─── */
+    #topbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      height: 46px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      flex-shrink: 0;
+      text-transform: uppercase;
+    }
+    #doc-title {
+      flex: 1;
+      font-size: 12px;
+      color: var(--text-dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      padding: 0 8px;
+    }
+    /* Page nav group */
+    .page-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .page-nav input {
+      width: 44px;
+      text-align: center;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: var(--radius);
+      padding: 3px 4px;
+      font-size: 12px;
+      outline: none;
+    }
+    .page-nav input:focus { border-color: var(--accent); }
+    .page-nav span {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+    /* Icon buttons */
+    .ib {
+      background: none;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--tr);
+      flex-shrink: 0;
+    }
+    .ib:hover { color: var(--text); border-color: var(--border); background: var(--surface2); }
+    .ib.active { color: var(--accent2); border-color: rgba(167,139,250,0.3); }
+    .ib svg { width: 15px; height: 15px; }
+    .sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; margin: 0 2px; }
+
+    /* Zoom display */
+    #zoom-val {
+      font-size: 11px;
+      color: var(--text-dim);
+      min-width: 38px;
+      text-align: center;
+    }
+
+    /* ─── Main ─── */
+    #main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ─── Sidebar ─── */
+    #sidebar {
+      width: 230px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      z-index: 100;
+      transform: translateX(-100%);
+      transition: transform var(--tr);
+    }
+    #sidebar.open { transform: translateX(0); }
+    #sb-head {
+      padding: 12px 14px 8px;
+      border-bottom: 1px solid var(--border);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #outline-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 6px 0;
+    }
+    #outline-list::-webkit-scrollbar { width: 4px; }
+    #outline-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .ol-item {
+      display: block;
+      width: 100%;
+      padding: 7px 14px;
+      font-size: 12px;
+      color: var(--text-dim);
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: all var(--tr);
+    }
+    .ol-item:hover { color: var(--text); background: var(--surface2); }
+    .ol-item.active { color: var(--accent2); }
+    .ol-item[data-depth="1"] { padding-left: 24px; font-size: 11px; }
+    .ol-item[data-depth="2"] { padding-left: 34px; font-size: 10px; }
+    #sb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 99;
+    }
+    #sb-overlay.show { display: block; }
+
+    /* ─── Stage ─── */
+    #stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Canvas scroll area */
+    #canvas-area {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 0;
+      gap: 12px;
+      background: var(--bg);
+      scroll-behavior: smooth;
+    }
+    #canvas-area::-webkit-scrollbar { width: 8px; height: 8px; }
+    #canvas-area::-webkit-scrollbar-track { background: transparent; }
+    #canvas-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    #canvas-area::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+    .pdf-page-wrap {
+      position: relative;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+      flex-shrink: 0;
+      background: white;
+    }
+    .pdf-page-wrap canvas { display: block; }
+    .pdf-page-wrap .page-num-badge {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    /* Single page mode */
+    #single-canvas {
+      display: block;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    /* ─── Bottombar ─── */
+    #bottombar {
+      height: 36px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    #progress-wrap {
+      flex: 1;
+      height: 4px;
+      background: var(--surface2);
+      border-radius: 2px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    #progress-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.25s;
+    }
+    #page-info {
+      font-size: 11px;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    /* ─── Settings panel ─── */
+    #settings-panel {
+      position: absolute;
+      bottom: 44px;
+      right: 14px;
+      width: 210px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      z-index: 200;
+      display: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    }
+    #settings-panel.open { display: block; }
+    .sl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 7px; margin-top: 11px; }
+    .sl:first-child { margin-top: 0; }
+    .sr { display: flex; gap: 5px; flex-wrap: wrap; }
+    .sb2 {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 5px 9px;
+      font-size: 11px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--tr);
+      font-family: var(--ui-font);
+    }
+    .sb2:hover, .sb2.active { color: var(--accent2); border-color: var(--accent); background: var(--surface); }
+
+    /* ─── Loading / Welcome ─── */
+    #overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      z-index: 500;
+      text-align: center;
+      padding: 24px;
+      transition: opacity 0.35s;
+    }
+    #overlay.fade { opacity: 0; pointer-events: none; }
+    #overlay.gone { display: none; }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #overlay h2 { font-size: 20px; font-weight: 600; color: var(--accent); }
+    #overlay p { font-size: 13px; color: var(--text-dim); max-width: 400px; line-height: 1.7; }
+    #overlay code { font-family: monospace; font-size: 12px; background: var(--surface2); padding: 2px 6px; border-radius: 3px; color: var(--accent2); }
+    #url-row { display: flex; gap: 8px; width: 100%; max-width: 460px; }
+    #url-in {
+      flex: 1;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 9px 11px;
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-family: monospace;
+      outline: none;
+      transition: border-color var(--tr);
+    }
+    #url-in:focus { border-color: var(--accent); }
+    #url-in::placeholder { color: var(--text-dim); }
+    #open-btn {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 9px 16px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity var(--tr);
+      white-space: nowrap;
+    }
+    #open-btn:hover { opacity: 0.85; }
+    #drop-zone {
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 16px 28px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--text-dim);
+      transition: all var(--tr);
+    }
+    #drop-zone:hover, #drop-zone.dg { border-color: var(--accent); color: var(--accent); background: var(--surface2); }
+    #file-in { display: none; }
+    #err { color: #f87171; font-size: 13px; display: none; }
+    #err.show { display: block; }
+    #load-msg { font-size: 13px; color: var(--text-dim); display: none; }
+    #load-msg.show { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  </style>
+</head>
+<body data-theme="dark">
+
+<div id="shell">
+  <!-- Topbar -->
+  <div id="topbar">
+    <span class="brand">PDF</span>
+    <div class="sep"></div>
+
+    <!-- TOC -->
+    <button class="ib" id="toc-btn" title="Mục lục">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="16" y2="12"/><line x1="3" y1="18" x2="12" y2="18"/>
+      </svg>
+    </button>
+
+    <div id="doc-title">—</div>
+
+    <!-- Page nav -->
+    <div class="page-nav">
+      <button class="ib" id="prev-btn" title="Trang trước">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <input type="number" id="page-input" value="1" min="1" title="Số trang" />
+      <span id="total-pages">/ —</span>
+      <button class="ib" id="next-btn" title="Trang sau">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Zoom -->
+    <button class="ib" id="zoom-out-btn" title="Thu nhỏ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/>
+      </svg>
+    </button>
+    <span id="zoom-val">100%</span>
+    <button class="ib" id="zoom-in-btn" title="Phóng to">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+      </svg>
+    </button>
+    <button class="ib" id="zoom-fit-btn" title="Vừa cửa sổ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+      </svg>
+    </button>
+
+    <div class="sep"></div>
+
+    <!-- View mode: single / continuous -->
+    <button class="ib active" id="mode-single-btn" title="Đơn trang">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="4" y="3" width="16" height="18" rx="1"/>
+      </svg>
+    </button>
+    <button class="ib" id="mode-cont-btn" title="Liên tục">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="4" y="2" width="16" height="7" rx="1"/><rect x="4" y="11" width="16" height="7" rx="1"/><rect x="4" y="20" width="16" height="3" rx="1"/>
+      </svg>
+    </button>
+
+    <div class="sep"></div>
+
+    <!-- Download -->
+    <button class="ib" id="dl-btn" title="Tải xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </button>
+
+    <!-- Settings -->
+    <button class="ib" id="settings-btn" title="Cài đặt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+    <!-- Sidebar (Outline) -->
+    <div id="sidebar">
+      <div id="sb-head">
+        <span>Mục lục</span>
+        <button class="ib" id="close-sb" style="width:22px;height:22px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div id="outline-list"><p style="padding:12px;font-size:12px;color:var(--text-dim)">Không có mục lục.</p></div>
+    </div>
+    <div id="sb-overlay"></div>
+
+    <!-- Stage -->
+    <div id="stage">
+      <!-- Canvas area -->
+      <div id="canvas-area">
+        <!-- Pages rendered here -->
+      </div>
+
+      <!-- Loading / Welcome overlay -->
+      <div id="overlay">
+        <h2>PDF Reader</h2>
+        <p>Truyền URL file PDF qua <code>?url=https://...</code> hoặc nhập bên dưới.</p>
+        <div id="url-row">
+          <input id="url-in" type="text" placeholder="https://example.com/document.pdf" />
+          <button id="open-btn">Mở</button>
+        </div>
+        <div id="drop-zone">📂 Kéo file PDF vào đây hoặc <u>nhấn để chọn</u></div>
+        <input type="file" id="file-in" accept=".pdf,application/pdf" />
+        <p id="err"></p>
+        <div id="load-msg">
+          <div class="spinner"></div>
+          <span id="load-text">Đang tải PDF...</span>
+        </div>
+      </div>
+
+      <!-- Settings panel -->
+      <div id="settings-panel">
+        <div class="sl">Giao diện</div>
+        <div class="sr">
+          <button class="sb2 active" data-theme="dark">Tối</button>
+          <button class="sb2" data-theme="light">Sáng</button>
+          <button class="sb2" data-theme="sepia">Sepia</button>
+        </div>
+        <div class="sl">Xoay trang</div>
+        <div class="sr">
+          <button class="sb2" id="rot-left">↺ Trái</button>
+          <button class="sb2" id="rot-right">↻ Phải</button>
+          <button class="sb2" id="rot-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottombar -->
+  <div id="bottombar">
+    <div id="progress-wrap" title="Nhấp để chuyển trang">
+      <div id="progress-bar"></div>
+    </div>
+    <span id="page-info">—</span>
+  </div>
+</div>
+
+<script type="module">
+// ── Import pdf.js (relative path — file nằm cùng thư mục mylibrary/) ──────────
+import * as pdfjsLib from './pdfjs/build/pdf.min.mjs';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdfjs/build/pdf.worker.min.mjs';
+
+// ── CORS proxy fallback ────────────────────────────────────────────────────────
+const CORS_PROXY = 'https://corsproxy.io/?';
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let pdfDoc     = null;
+let currentPage = 1;
+let totalPages  = 0;
+let scale       = 1.0;
+let rotation    = 0;
+let viewMode    = 'single';   // 'single' | 'continuous'
+let renderTask  = null;
+let currentUrl  = null;
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+const $  = id => document.getElementById(id);
+const canvasArea = $('canvas-area');
+
+function calcFitScale(page) {
+  const vp = page.getViewport({ scale: 1, rotation });
+  const areaW = canvasArea.clientWidth - 32;
+  return Math.min(areaW / vp.width, 1.8);
+}
+
+function updateUI() {
+  $('page-input').value = currentPage;
+  $('total-pages').textContent = '/ ' + totalPages;
+  $('page-info').textContent   = `${currentPage} / ${totalPages}`;
+  $('progress-bar').style.width = (totalPages > 1 ? ((currentPage - 1) / (totalPages - 1)) * 100 : 100) + '%';
+  $('zoom-val').textContent = Math.round(scale * 100) + '%';
+}
+
+// ── Single-page render ────────────────────────────────────────────────────────
+async function renderSinglePage(num) {
+  if (!pdfDoc) return;
+  if (renderTask) { try { renderTask.cancel(); } catch(e) {} }
+
+  canvasArea.innerHTML = '';
+  const page = await pdfDoc.getPage(num);
+  const vp   = page.getViewport({ scale, rotation });
+
+  const canvas = document.createElement('canvas');
+  canvas.width  = vp.width;
+  canvas.height = vp.height;
+  canvas.style.maxWidth = '100%';
+  canvas.id = 'single-canvas';
+  canvasArea.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  renderTask = page.render({ canvasContext: ctx, viewport: vp });
+  try { await renderTask.promise; } catch(e) {}
+  renderTask = null;
+
+  currentPage = num;
+  updateUI();
+}
+
+// ── Continuous render ─────────────────────────────────────────────────────────
+async function renderAllPages() {
+  if (!pdfDoc) return;
+  canvasArea.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i++) {
+    const wrap   = document.createElement('div');
+    wrap.className = 'pdf-page-wrap';
+    wrap.dataset.page = i;
+
+    const canvas = document.createElement('canvas');
+    const badge  = document.createElement('span');
+    badge.className = 'page-num-badge';
+    badge.textContent = i;
+
+    wrap.appendChild(canvas);
+    wrap.appendChild(badge);
+    canvasArea.appendChild(wrap);
+
+    const page = await pdfDoc.getPage(i);
+    const vp   = page.getViewport({ scale, rotation });
+    canvas.width  = vp.width;
+    canvas.height = vp.height;
+    wrap.style.width  = vp.width  + 'px';
+    wrap.style.height = vp.height + 'px';
+
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport: vp }).promise;
+  }
+
+  // Scroll observer for current page tracking
+  setupScrollObserver();
+  updateUI();
+}
+
+function setupScrollObserver() {
+  const wraps = canvasArea.querySelectorAll('.pdf-page-wrap');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const pg = parseInt(e.target.dataset.page);
+        if (pg !== currentPage) { currentPage = pg; updateUI(); }
+      }
+    });
+  }, { root: canvasArea, threshold: 0.5 });
+  wraps.forEach(w => obs.observe(w));
+}
+
+// ── Render dispatcher ─────────────────────────────────────────────────────────
+async function render(page) {
+  page = Math.max(1, Math.min(page, totalPages));
+  if (viewMode === 'continuous') { await renderAllPages(); }
+  else { await renderSinglePage(page); }
+}
+
+// ── Load PDF ──────────────────────────────────────────────────────────────────
+async function loadPDF(source, isUrl) {
+  pdfDoc = null; currentPage = 1; totalPages = 0;
+  showLoading(isUrl ? 'Đang tải PDF từ URL...' : 'Đang mở file...');
+
+  try {
+    let loadSource;
+    if (isUrl) {
+      loadSource = { url: source };
+    } else {
+      loadSource = { data: source };
+    }
+
+    const loadingTask = pdfjsLib.getDocument(loadSource);
+    loadingTask.onProgress = p => {
+      if (p.total) {
+        const pct = Math.round((p.loaded / p.total) * 100);
+        $('load-text').textContent = `Đang tải... ${pct}%`;
+      }
+    };
+
+    try {
+      pdfDoc = await loadingTask.promise;
+    } catch(e) {
+      if (isUrl) {
+        // Retry with CORS proxy
+        $('load-text').textContent = 'Thử qua CORS proxy...';
+        const proxyTask = pdfjsLib.getDocument({ url: CORS_PROXY + encodeURIComponent(source) });
+        pdfDoc = await proxyTask.promise;
+      } else throw e;
+    }
+
+    totalPages = pdfDoc.numPages;
+
+    // Get title from metadata
+    try {
+      const meta = await pdfDoc.getMetadata();
+      const title = meta.info?.Title;
+      if (title && title.trim()) {
+        document.title = title + ' — PDF Reader';
+        $('doc-title').textContent = title;
+      } else {
+        const name = isUrl ? source.split('/').pop().replace(/\?.*/, '') : source.name || 'PDF';
+        $('doc-title').textContent = decodeURIComponent(name);
+        document.title = name + ' — PDF Reader';
+      }
+    } catch(e) {}
+
+    // Load outline
+    loadOutline();
+
+    // Fit scale
+    const firstPage = await pdfDoc.getPage(1);
+    scale = calcFitScale(firstPage);
+
+    // Restore last page
+    const savedPage = parseInt(localStorage.getItem('pdf_page_' + (isUrl ? source : 'local')) || '1');
+    currentPage = Math.min(savedPage, totalPages);
+
+    hideOverlay();
+    await render(currentPage);
+
+  } catch(err) {
+    console.error(err);
+    showError('Không thể tải file PDF. Kiểm tra URL và CORS. ' + (err.message || ''));
+  }
+}
+
+// ── Outline ───────────────────────────────────────────────────────────────────
+async function loadOutline() {
+  const list = $('outline-list');
+  list.innerHTML = '';
+  try {
+    const outline = await pdfDoc.getOutline();
+    if (!outline || outline.length === 0) {
+      list.innerHTML = '<p style="padding:12px;font-size:12px;color:var(--text-dim)">Không có mục lục.</p>';
+      return;
+    }
+    renderOutline(outline, list, 0);
+  } catch(e) {
+    list.innerHTML = '<p style="padding:12px;font-size:12px;color:var(--text-dim)">Không có mục lục.</p>';
+  }
+}
+
+function renderOutline(items, container, depth) {
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.className = 'ol-item';
+    btn.textContent = item.title || '—';
+    btn.dataset.depth = depth;
+    btn.onclick = async () => {
+      if (item.dest) {
+        try {
+          let dest = item.dest;
+          if (typeof dest === 'string') dest = await pdfDoc.getDestination(dest);
+          if (dest && dest[0]) {
+            const ref = dest[0];
+            const pg  = await pdfDoc.getPageIndex(ref) + 1;
+            goToPage(pg);
+            closeSidebar();
+          }
+        } catch(e) {}
+      }
+    };
+    container.appendChild(btn);
+    if (item.items && item.items.length) renderOutline(item.items, container, depth + 1);
+  });
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+function goToPage(n) {
+  n = Math.max(1, Math.min(n, totalPages));
+  currentPage = n;
+  if (viewMode === 'continuous') {
+    const wrap = canvasArea.querySelector(`[data-page="${n}"]`);
+    if (wrap) wrap.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    renderSinglePage(n);
+  }
+  // Save position
+  if (currentUrl) localStorage.setItem('pdf_page_' + currentUrl, n);
+}
+
+$('prev-btn').onclick = () => pdfDoc && goToPage(currentPage - 1);
+$('next-btn').onclick = () => pdfDoc && goToPage(currentPage + 1);
+$('page-input').addEventListener('change', e => {
+  const n = parseInt(e.target.value);
+  if (!isNaN(n)) goToPage(n);
+});
+$('page-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { const n = parseInt(e.target.value); if (!isNaN(n)) goToPage(n); }
+});
+
+// Keyboard nav
+document.addEventListener('keydown', e => {
+  if (!pdfDoc) return;
+  if (['INPUT','TEXTAREA'].includes(e.target.tagName)) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') goToPage(currentPage + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp'   || e.key === 'PageUp')   goToPage(currentPage - 1);
+  if (e.key === 'Home') goToPage(1);
+  if (e.key === 'End')  goToPage(totalPages);
+  if (e.key === '+' || e.key === '=') zoomBy(0.15);
+  if (e.key === '-') zoomBy(-0.15);
+});
+
+// Progress bar click
+$('progress-wrap').addEventListener('click', e => {
+  if (!pdfDoc) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  const pct = (e.clientX - r.left) / r.width;
+  goToPage(Math.max(1, Math.round(pct * totalPages)));
+});
+
+// ── Zoom ──────────────────────────────────────────────────────────────────────
+function zoomBy(delta) {
+  if (!pdfDoc) return;
+  scale = Math.max(0.25, Math.min(4, scale + delta));
+  render(currentPage);
+}
+$('zoom-in-btn').onclick  = () => zoomBy(0.2);
+$('zoom-out-btn').onclick = () => zoomBy(-0.2);
+$('zoom-fit-btn').onclick = async () => {
+  if (!pdfDoc) return;
+  const page = await pdfDoc.getPage(1);
+  scale = calcFitScale(page);
+  render(currentPage);
+};
+
+// ── View mode ─────────────────────────────────────────────────────────────────
+$('mode-single-btn').onclick = () => {
+  if (viewMode === 'single') return;
+  viewMode = 'single';
+  $('mode-single-btn').classList.add('active');
+  $('mode-cont-btn').classList.remove('active');
+  if (pdfDoc) renderSinglePage(currentPage);
+};
+$('mode-cont-btn').onclick = () => {
+  if (viewMode === 'continuous') return;
+  viewMode = 'continuous';
+  $('mode-cont-btn').classList.add('active');
+  $('mode-single-btn').classList.remove('active');
+  if (pdfDoc) renderAllPages();
+};
+
+// ── Rotation ──────────────────────────────────────────────────────────────────
+$('rot-left').onclick  = () => { rotation = (rotation - 90 + 360) % 360; if (pdfDoc) render(currentPage); };
+$('rot-right').onclick = () => { rotation = (rotation + 90) % 360;       if (pdfDoc) render(currentPage); };
+$('rot-reset').onclick = () => { rotation = 0;                            if (pdfDoc) render(currentPage); };
+
+// ── Download ──────────────────────────────────────────────────────────────────
+$('dl-btn').onclick = () => {
+  if (!currentUrl) return;
+  const a = document.createElement('a');
+  a.href = currentUrl;
+  a.download = '';
+  a.target = '_blank';
+  a.click();
+};
+
+// ── Resize ────────────────────────────────────────────────────────────────────
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(async () => {
+    if (!pdfDoc) return;
+    const page = await pdfDoc.getPage(1);
+    scale = calcFitScale(page);
+    render(currentPage);
+  }, 250);
+});
+
+// ── Theme ─────────────────────────────────────────────────────────────────────
+document.querySelectorAll('[data-theme]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.body.setAttribute('data-theme', btn.dataset.theme);
+    document.querySelectorAll('[data-theme]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ── Sidebar ───────────────────────────────────────────────────────────────────
+function openSidebar()  { $('sidebar').classList.add('open');  $('sb-overlay').classList.add('show'); }
+function closeSidebar() { $('sidebar').classList.remove('open'); $('sb-overlay').classList.remove('show'); }
+$('toc-btn').onclick   = () => $('sidebar').classList.contains('open') ? closeSidebar() : openSidebar();
+$('close-sb').onclick  = closeSidebar;
+$('sb-overlay').onclick = closeSidebar;
+
+// ── Settings ──────────────────────────────────────────────────────────────────
+const sp = $('settings-panel');
+$('settings-btn').onclick = e => { e.stopPropagation(); sp.classList.toggle('open'); };
+document.addEventListener('click', e => {
+  if (!sp.contains(e.target) && e.target !== $('settings-btn')) sp.classList.remove('open');
+});
+
+// ── Overlay helpers ───────────────────────────────────────────────────────────
+function showLoading(msg) {
+  const ov = $('overlay');
+  ov.classList.remove('fade','gone');
+  ov.querySelector('h2').style.display = 'none';
+  ov.querySelector('p').style.display  = 'none';
+  $('url-row').style.display   = 'none';
+  $('drop-zone').style.display = 'none';
+  $('err').classList.remove('show');
+  $('load-msg').classList.add('show');
+  $('load-text').textContent = msg || 'Đang tải...';
+}
+function hideOverlay() {
+  const ov = $('overlay');
+  ov.classList.add('fade');
+  setTimeout(() => ov.classList.add('gone'), 380);
+}
+function showError(msg) {
+  const ov = $('overlay');
+  ov.classList.remove('fade','gone');
+  ov.querySelector('h2').style.display = '';
+  ov.querySelector('p').style.display  = '';
+  $('url-row').style.display   = '';
+  $('drop-zone').style.display = '';
+  $('load-msg').classList.remove('show');
+  $('err').textContent = msg;
+  $('err').classList.add('show');
+}
+
+// ── URL input ─────────────────────────────────────────────────────────────────
+$('open-btn').onclick = () => {
+  const url = $('url-in').value.trim();
+  if (!url) return;
+  currentUrl = url;
+  const nu = new URL(window.location.href);
+  nu.searchParams.set('url', url);
+  history.pushState(null, '', nu);
+  loadPDF(url, true);
+};
+$('url-in').addEventListener('keydown', e => { if (e.key === 'Enter') $('open-btn').click(); });
+
+// ── File drop / pick ──────────────────────────────────────────────────────────
+const dz = $('drop-zone'), fi = $('file-in');
+dz.onclick = () => fi.click();
+dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('dg'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('dg'));
+dz.addEventListener('drop', e => {
+  e.preventDefault(); dz.classList.remove('dg');
+  const f = e.dataTransfer.files[0];
+  if (f) loadFile(f);
+});
+fi.addEventListener('change', e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
+
+function loadFile(file) {
+  if (!file.type.includes('pdf') && !file.name.endsWith('.pdf')) {
+    $('err').textContent = 'Vui lòng chọn file PDF.';
+    $('err').classList.add('show');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = e => { currentUrl = null; loadPDF(new Uint8Array(e.target.result), false); };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── Touch swipe (single page mode) ───────────────────────────────────────────
+let touchX = null;
+canvasArea.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+canvasArea.addEventListener('touchend',   e => {
+  if (touchX === null || viewMode !== 'single') return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  touchX = null;
+  if (Math.abs(dx) < 50) return;
+  dx < 0 ? goToPage(currentPage + 1) : goToPage(currentPage - 1);
+});
+
+// ── Bootstrap ─────────────────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const pdfUrl = params.get('url') || params.get('file');
+if (pdfUrl) {
+  $('url-in').value = pdfUrl;
+  currentUrl = pdfUrl;
+  loadPDF(pdfUrl, true);
+}
+</script>
+</body>
+</html>
