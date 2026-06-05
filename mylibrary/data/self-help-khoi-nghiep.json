@@ -146,8 +146,8 @@
       ]
     },
     {
-      "id": "songtoigian-layout-indd",
-      "name": "SongToiGian_layout_ indd",
+      "id": "song-toi-gian",
+      "name": "Sống tối giản",
       "tacgia": "Joshua Becker",
       "mieuta": "",
       "theloai": "Self Help - Khởi nghiệp",
@@ -160,7 +160,7 @@
       "formats": [
         {
           "type": "epub",
-          "label": "EPUB",
+          "label": "epub",
           "url": "https://drive.google.com/uc?export=download&id=13OtMGsvl1IidxQzgudeTyqmzWDpNtaan"
         }
       ]
