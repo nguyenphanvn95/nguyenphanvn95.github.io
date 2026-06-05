@@ -56,6 +56,21 @@ function escapeXml(value = '') {
     .replace(/'/g, '&apos;');
 }
 
+function resolveCoverUrl(url = '', title = '', category = '') {
+  const value = String(url || '').trim();
+  if (!value) return fallbackCover(title, category);
+
+  const directImage = /\.(png|jpe?g|gif|webp|bmp|svg)(\?.*)?$/i.test(value) || value.startsWith('data:image/');
+  if (directImage) return value;
+
+  const driveMatch = value.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:[^#]*&)?id=)([a-zA-Z0-9_-]+)/i);
+  if (driveMatch) {
+    return `https://drive.google.com/thumbnail?id=${driveMatch[1]}&sz=w1000`;
+  }
+
+  return value;
+}
+
 function slugify(value = '') {
   return value
     .normalize('NFD')
@@ -233,7 +248,7 @@ function getPageBooks() {
 }
 
 function renderBook(book) {
-  const cover = book.anhbia || fallbackCover(book.name, book.theloai);
+  const cover = resolveCoverUrl(book.anhbia, book.name, book.theloai);
 
   return `
     <article class="book-item" data-book-id="${escapeXml(book.id)}" data-open-book="${escapeXml(book.id)}">
@@ -338,7 +353,7 @@ function renderPagination() {
 }
 
 function openDialog(book) {
-  const cover = book.anhbia || fallbackCover(book.name, book.theloai);
+  const cover = resolveCoverUrl(book.anhbia, book.name, book.theloai);
   const links = (book.formats || [])
     .map(
       (format) =>
