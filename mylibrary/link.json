@@ -1,0 +1,16 @@
+{
+  "demo-epub": {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "cover": "",
+    "type": "epub",
+    "url": "https://standardebooks.org/ebooks/lewis-carroll/alices-adventures-in-wonderland/downloads/lewis-carroll_alices-adventures-in-wonderland.epub"
+  },
+  "demo-pdf": {
+    "title": "Sample PDF Book",
+    "author": "Demo Author",
+    "cover": "",
+    "type": "pdf",
+    "url": "https://www.w3.org/WAI/WCAG21/wcag21.pdf"
+  }
+}

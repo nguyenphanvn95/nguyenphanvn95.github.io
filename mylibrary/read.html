@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Reader</title>
+
+<!-- EPUB.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.3.136/pdf.min.mjs" type="module" id="pdfjs-script"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f5f0e8;
+    --surface: #faf7f2;
+    --surface2: #ede8df;
+    --ink: #1a1610;
+    --ink2: #4a4538;
+    --ink3: #8a8070;
+    --accent: #b5470f;
+    --accent2: #d4692a;
+    --border: #d8d0c0;
+    --shadow: rgba(26,22,16,0.12);
+    --reader-bg: #fdf9f3;
+    --reader-text: #2a2318;
+    --panel-w: 260px;
+  }
+
+  [data-theme="dark"] {
+    --bg: #12100e;
+    --surface: #1c1916;
+    --surface2: #252220;
+    --ink: #e8e0d0;
+    --ink2: #a8a090;
+    --ink3: #686058;
+    --accent: #e08050;
+    --accent2: #d4692a;
+    --border: #332e28;
+    --shadow: rgba(0,0,0,0.4);
+    --reader-bg: #161411;
+    --reader-text: #d8d0c0;
+  }
+
+  [data-theme="sepia"] {
+    --bg: #f0e8d8;
+    --surface: #f8f0e4;
+    --surface2: #e8deca;
+    --ink: #3a2e1e;
+    --ink2: #6a5e48;
+    --ink3: #9a9080;
+    --accent: #8b4513;
+    --border: #ccc0a8;
+    --reader-bg: #f8f0e4;
+    --reader-text: #3a2e1e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    transition: background 0.3s, color 0.3s;
+    overflow: hidden;
+  }
+
+  /* ── LOADING SCREEN ── */
+  #loading-screen {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 20px; z-index: 999;
+    transition: opacity 0.5s;
+  }
+  #loading-screen.hide { opacity: 0; pointer-events: none; }
+
+  .loading-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .loading-bar {
+    width: 200px; height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .loading-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+  .loading-text {
+    font-size: 0.8rem;
+    color: var(--ink3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── ERROR SCREEN ── */
+  #error-screen {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    display: none; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 16px; z-index: 998;
+    padding: 40px;
+    text-align: center;
+  }
+  #error-screen.show { display: flex; }
+  .error-icon { font-size: 3rem; }
+  .error-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--accent);
+  }
+  .error-msg { color: var(--ink2); max-width: 480px; line-height: 1.7; }
+  .error-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--surface2);
+    padding: 10px 16px; border-radius: 6px;
+    color: var(--ink3); max-width: 480px;
+    word-break: break-all;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  #app {
+    display: flex;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  #app.ready { opacity: 1; }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: var(--panel-w);
+    min-width: var(--panel-w);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, width 0.3s ease, min-width 0.3s ease;
+    z-index: 10;
+    overflow: hidden;
+  }
+  #sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+    transform: translateX(-100%);
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .book-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .book-cover-wrap {
+    width: 100%;
+    aspect-ratio: 2/3;
+    max-height: 140px;
+    object-fit: contain;
+    background: var(--surface2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .book-cover-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .book-cover-placeholder {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; padding: 16px;
+    width: 100%; height: 100%;
+  }
+  .book-cover-placeholder svg { color: var(--ink3); }
+  .book-title-sidebar {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .book-author-sidebar {
+    font-size: 0.78rem;
+    color: var(--ink3);
+    font-style: italic;
+  }
+
+  /* TOC */
+  .toc-section { flex: 1; overflow-y: auto; padding: 12px 0; }
+  .toc-title {
+    padding: 0 20px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink3);
+    text-transform: uppercase;
+  }
+  .toc-item {
+    display: block;
+    padding: 7px 20px;
+    font-size: 0.82rem;
+    color: var(--ink2);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .toc-item:hover { color: var(--ink); background: var(--surface2); }
+  .toc-item.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: var(--surface2);
+  }
+
+  /* Sidebar footer */
+  .sidebar-footer {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink3);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .progress-track {
+    height: 3px; background: var(--border); border-radius: 3px;
+  }
+  .progress-fill {
+    height: 100%; background: var(--accent); border-radius: 3px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── MAIN READER AREA ── */
+  #main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--reader-bg);
+  }
+
+  /* Top bar */
+  #topbar {
+    height: 52px;
+    min-height: 52px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+    z-index: 5;
+  }
+
+  .btn-icon {
+    width: 34px; height: 34px;
+    border: none; background: none;
+    color: var(--ink2);
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .btn-icon:hover { background: var(--surface2); color: var(--ink); }
+  .btn-icon svg { width: 18px; height: 18px; }
+
+  .topbar-title {
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .topbar-controls {
+    display: flex; align-items: center; gap: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Settings dropdown */
+  .settings-wrap { position: relative; }
+  .settings-dropdown {
+    position: absolute; top: 42px; right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    width: 220px;
+    box-shadow: 0 8px 32px var(--shadow);
+    z-index: 100;
+    display: none;
+  }
+  .settings-dropdown.open { display: block; }
+
+  .settings-row {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .settings-row:last-child { margin-bottom: 0; }
+  .settings-label {
+    font-size: 0.78rem; color: var(--ink2);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .font-size-ctrl {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .font-size-ctrl button {
+    width: 26px; height: 26px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--ink2);
+    border-radius: 4px; cursor: pointer;
+    font-size: 1rem; line-height: 1;
+    transition: all 0.15s;
+  }
+  .font-size-ctrl button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .font-size-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--ink);
+    min-width: 32px; text-align: center;
+  }
+
+  .theme-btns { display: flex; gap: 6px; }
+  .theme-btn {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer; transition: border-color 0.15s;
+  }
+  .theme-btn.active { border-color: var(--accent); }
+  .theme-btn.light { background: #f5f0e8; box-shadow: inset 0 0 0 1px #d8d0c0; }
+  .theme-btn.sepia { background: #f0e8d8; box-shadow: inset 0 0 0 1px #ccc0a8; }
+  .theme-btn.dark { background: #1c1916; box-shadow: inset 0 0 0 1px #332e28; }
+
+  /* ── EPUB READER ── */
+  #epub-container {
+    flex: 1;
+    display: none;
+    position: relative;
+    overflow: hidden;
+  }
+  #epub-container.active { display: flex; }
+
+  #epub-viewer {
+    flex: 1;
+    overflow: hidden;
+  }
+  #epub-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .epub-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px; height: 80px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink2);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    opacity: 0.5;
+    z-index: 5;
+  }
+  .epub-nav:hover { opacity: 1; color: var(--accent); }
+  .epub-nav.prev { left: 0; border-radius: 0 8px 8px 0; border-left: none; }
+  .epub-nav.next { right: 0; border-radius: 8px 0 0 8px; border-right: none; }
+  .epub-nav svg { width: 20px; height: 20px; }
+
+  /* ── PDF READER ── */
+  #pdf-container {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  #pdf-container.active { display: flex; }
+
+  #pdf-toolbar {
+    height: 44px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .pdf-page-info {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink2);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pdf-page-input {
+    width: 44px; height: 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    border-radius: 4px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    padding: 0 4px;
+  }
+  .pdf-page-input:focus { outline: none; border-color: var(--accent); }
+
+  .pdf-zoom-ctrl { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+  .pdf-zoom-ctrl button {
+    width: 28px; height: 28px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink2);
+    border-radius: 4px; cursor: pointer;
+    font-size: 1rem; transition: all 0.15s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pdf-zoom-ctrl button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pdf-zoom-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; color: var(--ink2);
+    min-width: 40px; text-align: center;
+  }
+
+  #pdf-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--reader-bg);
+    scroll-behavior: smooth;
+  }
+  #pdf-scroll-area::-webkit-scrollbar { width: 6px; }
+  #pdf-scroll-area::-webkit-scrollbar-track { background: transparent; }
+  #pdf-scroll-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  .pdf-page-wrap {
+    position: relative;
+    box-shadow: 0 4px 20px var(--shadow);
+    border-radius: 2px;
+    overflow: hidden;
+    line-height: 0;
+    transition: transform 0.2s;
+  }
+  .pdf-page-wrap canvas { display: block; }
+  .pdf-page-num {
+    position: absolute; bottom: 6px; right: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--ink3);
+    background: var(--surface);
+    padding: 2px 6px;
+    border-radius: 3px;
+    opacity: 0.7;
+  }
+
+  .pdf-loading-page {
+    width: 600px; height: 800px;
+    background: var(--surface);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink3); font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* ── KEYBOARD HINT ── */
+  #kbd-hint {
+    position: fixed;
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+    box-shadow: 0 4px 16px var(--shadow);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    z-index: 50;
+    white-space: nowrap;
+  }
+  #kbd-hint.show { opacity: 1; }
+
+  /* Scrollbar for sidebar TOC */
+  .toc-section::-webkit-scrollbar { width: 4px; }
+  .toc-section::-webkit-scrollbar-track { background: transparent; }
+  .toc-section::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    :root { --panel-w: 80vw; }
+    #sidebar {
+      position: fixed; left: 0; top: 0; bottom: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: 50;
+    }
+    #sidebar.open { transform: translateX(0); }
+    #sidebar-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 40;
+    }
+    #sidebar-overlay.show { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <span class="loading-logo">📖 Reader</span>
+  <div class="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
+  <span class="loading-text" id="loading-text">initializing...</span>
+</div>
+
+<!-- Error Screen -->
+<div id="error-screen">
+  <div class="error-icon">📚</div>
+  <div class="error-title">Không thể tải sách</div>
+  <div class="error-msg" id="error-msg">Đã có lỗi xảy ra khi tải sách.</div>
+  <div class="error-code" id="error-code"></div>
+</div>
+
+<!-- Mobile sidebar overlay -->
+<div id="sidebar-overlay"></div>
+
+<!-- App -->
+<div id="app">
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <span class="book-logo">📖 Book Reader</span>
+      <div class="book-cover-wrap" id="cover-wrap">
+        <div class="book-cover-placeholder">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="book-title-sidebar" id="sidebar-title">—</div>
+      <div class="book-author-sidebar" id="sidebar-author">—</div>
+    </div>
+
+    <div class="toc-section" id="toc-list">
+      <div class="toc-title">Mục lục</div>
+      <div style="padding: 12px 20px; font-size:0.8rem; color: var(--ink3); font-style: italic;">
+        Đang tải mục lục...
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="progress-label">
+        <span>Tiến độ đọc</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div id="main">
+    <!-- Topbar -->
+    <div id="topbar">
+      <button class="btn-icon" id="btn-sidebar" title="Toggle sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="topbar-title" id="topbar-title">Đang tải...</div>
+
+      <div class="topbar-controls">
+        <!-- Fullscreen -->
+        <button class="btn-icon" id="btn-fullscreen" title="Fullscreen (F)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+        </button>
+        <!-- Settings -->
+        <div class="settings-wrap">
+          <button class="btn-icon" id="btn-settings" title="Settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </button>
+          <div class="settings-dropdown" id="settings-dropdown">
+            <div class="settings-row">
+              <span class="settings-label">CỠ CHỮ</span>
+              <div class="font-size-ctrl">
+                <button id="font-dec">−</button>
+                <span class="font-size-val" id="font-size-val">16</span>
+                <button id="font-inc">+</button>
+              </div>
+            </div>
+            <div class="settings-row">
+              <span class="settings-label">NỀN</span>
+              <div class="theme-btns">
+                <div class="theme-btn light active" data-theme="light" title="Sáng"></div>
+                <div class="theme-btn sepia" data-theme="sepia" title="Sepia"></div>
+                <div class="theme-btn dark" data-theme="dark" title="Tối"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EPUB Viewer -->
+    <div id="epub-container">
+      <button class="epub-nav prev" id="epub-prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <div id="epub-viewer"></div>
+      <button class="epub-nav next" id="epub-next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- PDF Viewer -->
+    <div id="pdf-container">
+      <div id="pdf-toolbar">
+        <button class="btn-icon" id="pdf-prev" title="Trang trước (←)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="pdf-page-info">
+          <input type="number" class="pdf-page-input" id="pdf-page-input" value="1" min="1">
+          <span>/ <span id="pdf-total-pages">—</span></span>
+        </div>
+        <button class="btn-icon" id="pdf-next" title="Trang sau (→)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="pdf-zoom-ctrl">
+          <button id="pdf-zoom-out" title="Thu nhỏ">−</button>
+          <span class="pdf-zoom-val" id="pdf-zoom-val">100%</span>
+          <button id="pdf-zoom-in" title="Phóng to">+</button>
+        </div>
+      </div>
+      <div id="pdf-scroll-area"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Keyboard hint -->
+<div id="kbd-hint" id="kbd-hint">← → để lật trang • F toàn màn hình</div>
+
+<script>
+// ── STATE ──────────────────────────────────────────────
+const state = {
+  bookId: null,
+  bookMeta: null,
+  type: null,
+  fontSize: 16,
+  theme: 'light',
+  epubBook: null,
+  epubRendition: null,
+  pdfDoc: null,
+  pdfCurrentPage: 1,
+  pdfTotalPages: 0,
+  pdfZoom: 1.0,
+  pdfRendering: false,
+  pdfRenderQueue: null,
+};
+
+// ── UTILS ──────────────────────────────────────────────
+const $  = id => document.getElementById(id);
+const $$ = sel => document.querySelector(sel);
+
+function setLoading(pct, msg) {
+  $('loading-fill').style.width = pct + '%';
+  $('loading-text').textContent = msg;
+}
+
+function showError(msg, detail = '') {
+  $('loading-screen').classList.add('hide');
+  $('error-screen').classList.add('show');
+  $('error-msg').textContent = msg;
+  $('error-code').textContent = detail;
+  $('error-code').style.display = detail ? 'block' : 'none';
+}
+
+function showApp() {
+  setTimeout(() => {
+    $('loading-screen').classList.add('hide');
+    setTimeout(() => {
+      $('loading-screen').style.display = 'none';
+      $('app').classList.add('ready');
+    }, 500);
+  }, 300);
+}
+
+function setProgress(pct) {
+  const p = Math.round(pct * 100) / 100;
+  $('progress-fill').style.width = p + '%';
+  $('progress-pct').textContent = Math.round(p) + '%';
+}
+
+function showKbdHint() {
+  const h = $('kbd-hint');
+  h.classList.add('show');
+  setTimeout(() => h.classList.remove('show'), 3000);
+}
+
+// ── LOAD LINK.JSON ─────────────────────────────────────
+async function loadLinkJson() {
+  setLoading(10, 'loading link.json...');
+  const res = await fetch('link.json');
+  if (!res.ok) throw new Error(`link.json: HTTP ${res.status}`);
+  return await res.json();
+}
+
+// ── BOOK META ──────────────────────────────────────────
+function applyMeta(meta) {
+  state.bookMeta = meta;
+  $('sidebar-title').textContent = meta.title || 'Unknown Title';
+  $('sidebar-author').textContent = meta.author || '';
+  $('topbar-title').textContent = meta.title || 'Book Reader';
+  document.title = (meta.title || 'Book') + ' — Reader';
+
+  if (meta.cover) {
+    $('cover-wrap').innerHTML = `<img src="${meta.cover}" alt="cover" onerror="this.parentNode.innerHTML='<div class=book-cover-placeholder>📖</div>'">`;
+  }
+}
+
+// ── EPUB ───────────────────────────────────────────────
+async function loadEpub(url) {
+  setLoading(30, 'loading epub...');
+  $('epub-container').classList.add('active');
+
+  const book = ePub(url);
+  state.epubBook = book;
+
+  await book.ready;
+  setLoading(60, 'rendering epub...');
+
+  const rendition = book.renderTo('epub-viewer', {
+    width: '100%',
+    height: '100%',
+    flow: 'paginated',
+    allowScriptedContent: true,
+  });
+  state.epubRendition = rendition;
+
+  // Load saved location
+  const savedLoc = localStorage.getItem('reader_loc_' + state.bookId);
+
+  await rendition.display(savedLoc || undefined);
+  setLoading(80, 'loading toc...');
+
+  // Apply font size & theme
+  applyEpubTheme();
+
+  // TOC
+  const nav = await book.loaded.navigation;
+  buildToc(nav.toc, rendition);
+
+  // Progress
+  book.locations.generate(1024).then(() => {
+    rendition.on('relocated', loc => {
+      if (book.locations && book.locations.total > 0) {
+        const pct = book.locations.percentageFromCfi(loc.start.cfi) * 100;
+        setProgress(pct);
+      }
+      localStorage.setItem('reader_loc_' + state.bookId, loc.start.cfi);
+    });
+  });
+
+  setLoading(100, 'done');
+  showApp();
+
+  $('epub-prev').onclick = () => rendition.prev();
+  $('epub-next').onclick = () => rendition.next();
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') rendition.prev();
+    if (e.key === 'ArrowRight') rendition.next();
+  });
+  showKbdHint();
+}
+
+function applyEpubTheme() {
+  const r = state.epubRendition;
+  if (!r) return;
+  const bg = getComputedStyle(document.documentElement).getPropertyValue('--reader-bg').trim();
+  const fg = getComputedStyle(document.documentElement).getPropertyValue('--reader-text').trim();
+  r.themes.default({
+    body: {
+      'font-family': "'Lora', Georgia, serif !important",
+      'font-size': state.fontSize + 'px !important',
+      'color': fg + ' !important',
+      'background': bg + ' !important',
+      'line-height': '1.85 !important',
+      'max-width': '680px !important',
+      'margin': '0 auto !important',
+      'padding': '0 24px !important',
+    },
+    'a': { 'color': 'var(--accent) !important' }
+  });
+  r.themes.select('default');
+}
+
+function buildToc(toc, rendition) {
+  const list = $('toc-list');
+  list.innerHTML = '<div class="toc-title">Mục lục</div>';
+  if (!toc || toc.length === 0) {
+    list.innerHTML += '<div style="padding:12px 20px;font-size:0.8rem;color:var(--ink3);font-style:italic;">Không có mục lục</div>';
+    return;
+  }
+  function addItems(items, depth = 0) {
+    items.forEach(item => {
+      const el = document.createElement('a');
+      el.className = 'toc-item';
+      el.textContent = item.label;
+      el.style.paddingLeft = (20 + depth * 12) + 'px';
+      el.href = '#';
+      el.onclick = e => {
+        e.preventDefault();
+        rendition.display(item.href);
+        document.querySelectorAll('.toc-item').forEach(x => x.classList.remove('active'));
+        el.classList.add('active');
+        // mobile: close sidebar
+        if (window.innerWidth <= 640) closeSidebarMobile();
+      };
+      list.appendChild(el);
+      if (item.subitems && item.subitems.length) addItems(item.subitems, depth + 1);
+    });
+  }
+  addItems(toc);
+}
+
+// ── PDF ────────────────────────────────────────────────
+let pdfjsLib = null;
+
+async function loadPdfJs() {
+  // Try loading pdf.js dynamically
+  if (window.pdfjsLib) { pdfjsLib = window.pdfjsLib; return; }
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    script.onload = () => {
+      pdfjsLib = window.pdfjsLib;
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      resolve();
+    };
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+async function loadPdf(url) {
+  setLoading(20, 'loading pdf.js...');
+  await loadPdfJs();
+
+  setLoading(40, 'downloading pdf...');
+  $('pdf-container').classList.add('active');
+
+  // Use a CORS proxy if direct access fails
+  const loadingTask = pdfjsLib.getDocument({ url, withCredentials: false });
+
+  loadingTask.onProgress = p => {
+    if (p.total) {
+      const pct = 40 + (p.loaded / p.total) * 40;
+      setLoading(pct, `downloading... ${Math.round(p.loaded/1024)}KB`);
+    }
+  };
+
+  const pdf = await loadingTask.promise;
+  state.pdfDoc = pdf;
+  state.pdfTotalPages = pdf.numPages;
+  state.pdfCurrentPage = 1;
+
+  $('pdf-total-pages').textContent = pdf.numPages;
+  $('pdf-page-input').max = pdf.numPages;
+
+  setLoading(85, 'rendering pages...');
+
+  // Build TOC from PDF outline
+  const outline = await pdf.getOutline();
+  buildPdfToc(outline, pdf);
+
+  await renderAllPdfPages();
+
+  setLoading(100, 'done');
+  showApp();
+
+  setupPdfControls();
+  showKbdHint();
+}
+
+async function renderAllPdfPages() {
+  const scroll = $('pdf-scroll-area');
+  scroll.innerHTML = '';
+  const pdf = state.pdfDoc;
+  const zoom = state.pdfZoom;
+
+  // Render pages one by one (lazy-ish: all at once for smaller docs)
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const wrap = document.createElement('div');
+    wrap.className = 'pdf-page-wrap';
+    wrap.id = 'pdf-p-' + i;
+    wrap.innerHTML = `<div class="pdf-loading-page">página ${i}</div>`;
+    scroll.appendChild(wrap);
+  }
+
+  // Intersection observer for lazy render
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const pageNum = parseInt(id.replace('pdf-p-', ''));
+        if (!entry.target.dataset.rendered) {
+          entry.target.dataset.rendered = '1';
+          renderPdfPage(pageNum, entry.target);
+          observer.unobserve(entry.target);
+        }
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  document.querySelectorAll('.pdf-page-wrap').forEach(el => observer.observe(el));
+}
+
+async function renderPdfPage(num, container) {
+  try {
+    const page = await state.pdfDoc.getPage(num);
+    const viewport = page.getViewport({ scale: state.pdfZoom });
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    container.innerHTML = '';
+    container.appendChild(canvas);
+    const lbl = document.createElement('div');
+    lbl.className = 'pdf-page-num';
+    lbl.textContent = num;
+    container.appendChild(lbl);
+  } catch(e) {
+    container.innerHTML = `<div class="pdf-loading-page" style="color:var(--accent)">Lỗi trang ${num}</div>`;
+  }
+}
+
+async function rerenderAllPdf() {
+  const pdf = state.pdfDoc;
+  if (!pdf) return;
+  document.querySelectorAll('.pdf-page-wrap').forEach(el => {
+    const num = parseInt(el.id.replace('pdf-p-', ''));
+    el.removeAttribute('data-rendered');
+    el.innerHTML = `<div class="pdf-loading-page">trang ${num}</div>`;
+  });
+  // re-observe
+  await renderAllPdfPages();
+}
+
+function buildPdfToc(outline, pdf) {
+  const list = $('toc-list');
+  list.innerHTML = '<div class="toc-title">Mục lục</div>';
+  if (!outline || outline.length === 0) {
+    list.innerHTML += '<div style="padding:12px 20px;font-size:0.8rem;color:var(--ink3);font-style:italic;">Không có mục lục</div>';
+    return;
+  }
+  async function addItems(items, depth = 0) {
+    for (const item of items) {
+      const el = document.createElement('a');
+      el.className = 'toc-item';
+      el.textContent = item.title;
+      el.style.paddingLeft = (20 + depth * 12) + 'px';
+      el.href = '#';
+      el.onclick = async e => {
+        e.preventDefault();
+        try {
+          const dest = await pdf.getDestination(item.dest);
+          if (dest) {
+            const ref = dest[0];
+            const pageNum = await pdf.getPageIndex(ref) + 1;
+            scrollToPdfPage(pageNum);
+          }
+        } catch(err) {}
+        document.querySelectorAll('.toc-item').forEach(x => x.classList.remove('active'));
+        el.classList.add('active');
+        if (window.innerWidth <= 640) closeSidebarMobile();
+      };
+      list.appendChild(el);
+      if (item.items && item.items.length) await addItems(item.items, depth + 1);
+    }
+  }
+  addItems(outline);
+}
+
+function scrollToPdfPage(num) {
+  const el = $('pdf-p-' + num);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  state.pdfCurrentPage = num;
+  $('pdf-page-input').value = num;
+  updatePdfProgress();
+}
+
+function setupPdfControls() {
+  $('pdf-prev').onclick = () => {
+    if (state.pdfCurrentPage > 1) scrollToPdfPage(state.pdfCurrentPage - 1);
+  };
+  $('pdf-next').onclick = () => {
+    if (state.pdfCurrentPage < state.pdfTotalPages) scrollToPdfPage(state.pdfCurrentPage + 1);
+  };
+  $('pdf-page-input').onchange = e => {
+    const v = parseInt(e.target.value);
+    if (v >= 1 && v <= state.pdfTotalPages) scrollToPdfPage(v);
+  };
+
+  let pdfZoomLevel = 1.0;
+  $('pdf-zoom-in').onclick = async () => {
+    pdfZoomLevel = Math.min(3, pdfZoomLevel + 0.25);
+    state.pdfZoom = pdfZoomLevel;
+    $('pdf-zoom-val').textContent = Math.round(pdfZoomLevel * 100) + '%';
+    await rerenderAllPdf();
+  };
+  $('pdf-zoom-out').onclick = async () => {
+    pdfZoomLevel = Math.max(0.5, pdfZoomLevel - 0.25);
+    state.pdfZoom = pdfZoomLevel;
+    $('pdf-zoom-val').textContent = Math.round(pdfZoomLevel * 100) + '%';
+    await rerenderAllPdf();
+  };
+
+  // Track current page via scroll
+  const scrollArea = $('pdf-scroll-area');
+  scrollArea.addEventListener('scroll', () => {
+    const pages = document.querySelectorAll('.pdf-page-wrap');
+    let closest = 1;
+    let minDist = Infinity;
+    pages.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const dist = Math.abs(rect.top);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = parseInt(el.id.replace('pdf-p-', ''));
+      }
+    });
+    state.pdfCurrentPage = closest;
+    $('pdf-page-input').value = closest;
+    updatePdfProgress();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      if (state.pdfCurrentPage > 1) scrollToPdfPage(state.pdfCurrentPage - 1);
+    }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      if (state.pdfCurrentPage < state.pdfTotalPages) scrollToPdfPage(state.pdfCurrentPage + 1);
+    }
+  });
+}
+
+function updatePdfProgress() {
+  const pct = (state.pdfCurrentPage / state.pdfTotalPages) * 100;
+  setProgress(pct);
+}
+
+// ── THEME & FONT ───────────────────────────────────────
+function applyTheme(theme) {
+  state.theme = theme;
+  document.documentElement.setAttribute('data-theme', theme);
+  document.querySelectorAll('.theme-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.theme === theme);
+  });
+  localStorage.setItem('reader_theme', theme);
+  if (state.epubRendition) applyEpubTheme();
+}
+
+function applyFontSize(size) {
+  state.fontSize = size;
+  $('font-size-val').textContent = size;
+  localStorage.setItem('reader_fontsize', size);
+  if (state.epubRendition) applyEpubTheme();
+}
+
+// ── SIDEBAR & CONTROLS ─────────────────────────────────
+function closeSidebarMobile() {
+  $('sidebar').classList.remove('open');
+  $('sidebar-overlay').classList.remove('show');
+}
+
+$('btn-sidebar').onclick = () => {
+  if (window.innerWidth <= 640) {
+    $('sidebar').classList.toggle('open');
+    $('sidebar-overlay').classList.toggle('show');
+  } else {
+    $('sidebar').classList.toggle('collapsed');
+  }
+};
+$('sidebar-overlay').onclick = closeSidebarMobile;
+
+$('btn-fullscreen').onclick = () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+};
+document.addEventListener('keydown', e => {
+  if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+  if (e.key === 'Escape') $('settings-dropdown').classList.remove('open');
+});
+
+$('btn-settings').onclick = e => {
+  e.stopPropagation();
+  $('settings-dropdown').classList.toggle('open');
+};
+document.onclick = () => $('settings-dropdown').classList.remove('open');
+$('settings-dropdown').onclick = e => e.stopPropagation();
+
+$('font-inc').onclick = () => applyFontSize(Math.min(28, state.fontSize + 1));
+$('font-dec').onclick = () => applyFontSize(Math.max(10, state.fontSize - 1));
+
+document.querySelectorAll('.theme-btn').forEach(b => {
+  b.onclick = () => applyTheme(b.dataset.theme);
+});
+
+// ── RESTORE PREFERENCES ────────────────────────────────
+const savedTheme = localStorage.getItem('reader_theme') || 'light';
+const savedFont  = parseInt(localStorage.getItem('reader_fontsize')) || 16;
+applyTheme(savedTheme);
+applyFontSize(savedFont);
+
+// ── MAIN INIT ──────────────────────────────────────────
+(async () => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) {
+      showError(
+        'Thiếu tham số ?id=',
+        'Truy cập: read.html?id=your-book-id\nVí dụ: read.html?id=demo-epub'
+      );
+      return;
+    }
+    state.bookId = id;
+
+    const links = await loadLinkJson();
+    const meta = links[id];
+    if (!meta) {
+      showError(
+        `Không tìm thấy sách "${id}"`,
+        `Các ID có sẵn: ${Object.keys(links).join(', ')}`
+      );
+      return;
+    }
+
+    setLoading(20, 'book found: ' + id);
+    applyMeta(meta);
+
+    const type = (meta.type || '').toLowerCase() ||
+                 (meta.url.endsWith('.epub') ? 'epub' : 'pdf');
+    state.type = type;
+
+    if (type === 'epub') {
+      await loadEpub(meta.url);
+    } else if (type === 'pdf') {
+      await loadPdf(meta.url);
+    } else {
+      showError('Định dạng không hỗ trợ: ' + type, 'Chỉ hỗ trợ epub và pdf');
+    }
+  } catch(err) {
+    console.error(err);
+    showError('Lỗi khi tải sách', err.message || String(err));
+  }
+})();
+</script>
+</body>
+</html>
