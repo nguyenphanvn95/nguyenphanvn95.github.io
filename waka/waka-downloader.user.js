@@ -1348,33 +1348,72 @@
         } finally { _isBusy=false; _isWaiting=false; }
       }
 
+      let _placementObserver=null;
+
+      function normalizeTitle(s){ return String(s||'').replace(/\s+/g,' ').trim(); }
+      function findTitleAnchor(){
+        const wanted=normalizeTitle(_title);
+        if(!wanted) return null;
+        const sel='h1,h2,h3,[class*="title" i],[aria-label],[data-testid]';
+        const candidates=Array.from(document.querySelectorAll(sel))
+          .filter(el=>normalizeTitle(el.textContent)===wanted)
+          .map(el=>{ const r=el.getBoundingClientRect(); return {el,left:r.left,top:r.top,area:r.width*r.height}; })
+          .filter(item=>item.area>0);
+        if(!candidates.length){
+          for(const el of Array.from(document.querySelectorAll('*'))){
+            if(normalizeTitle(el.textContent)!==wanted) continue;
+            const r=el.getBoundingClientRect();
+            if(r.width<=0||r.height<=0) continue;
+            candidates.push({el,left:r.left,top:r.top,area:r.width*r.height});
+          }
+        }
+        if(!candidates.length) return null;
+        candidates.sort((a,b)=>a.left-b.left||a.top-b.top||a.area-b.area);
+        return candidates[0].el;
+      }
+      function applyInlineRootStyle(root){
+        root.style.cssText='display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-top:10px;max-width:100%;width:fit-content;font-family:system-ui,-apple-system,sans-serif;position:static;z-index:1';
+      }
+      function applyFloatingRootStyle(root){
+        root.style.cssText='position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;z-index:2147483647;font-family:system-ui,-apple-system,sans-serif';
+      }
       function createReaderUI() {
         if(document.getElementById('wdl-root')) return;
         const root=document.createElement('div');
         root.id='wdl-root';
-        root.style.cssText='position:fixed;bottom:24px;right:20px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;z-index:2147483647;font-family:system-ui,-apple-system,sans-serif';
+        applyInlineRootStyle(root);
         const status=document.createElement('div');
         status.id='wdl-status';
         status.style.cssText='background:rgba(15,15,25,.92);color:#9ca3af;font-size:11px;padding:4px 12px;border-radius:10px;max-width:280px;text-align:right;line-height:1.5;display:none';
         const btn=document.createElement('button');
         btn.id='wdl-btn';
         btn.textContent='⏳ Đang tìm EPUB...';
-        btn.style.cssText='background:#555;color:#fff;border:none;border-radius:28px;padding:11px 22px;font-size:14px;font-weight:700;cursor:default;opacity:.55;box-shadow:0 4px 18px rgba(0,0,0,.4);transition:background .2s,opacity .2s;white-space:nowrap';
+        btn.style.cssText='background:#555;color:#fff;border:none;border-radius:14px;padding:11px 16px;font-size:14px;font-weight:700;cursor:default;opacity:.55;box-shadow:0 4px 18px rgba(0,0,0,.4);transition:background .2s,opacity .2s;white-space:nowrap';
         btn.addEventListener('click',handleClick);
         root.appendChild(status); root.appendChild(btn);
         document.body.appendChild(root);
       }
-
-      function activateBtn() { const btn=document.getElementById('wdl-btn'); if(!btn) return; btn.textContent='⬇ Tải EPUB'; btn.style.background='#e94560'; btn.style.opacity='1'; btn.style.cursor='pointer'; btn.onmouseenter=()=>btn.style.opacity='.82'; btn.onmouseleave=()=>btn.style.opacity='1'; }
-      function setStatus(msg) { let el=document.getElementById('wdl-status'); if(!el){createReaderUI();el=document.getElementById('wdl-status');} if(!el) return; el.style.display='block'; el.textContent=msg; }
-      let _tt;
-      function showToast(msg,isError) {
-        let t=document.getElementById('wdl-toast');
-        if(!t){t=Object.assign(document.createElement('div'),{id:'wdl-toast'});t.style.cssText='position:fixed;bottom:80px;right:20px;background:#111827;color:#f3f4f6;border-radius:12px;padding:12px 18px;font-size:13px;max-width:340px;z-index:2147483647;font-family:system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.5);transition:opacity .3s;pointer-events:none;line-height:1.5';document.body.appendChild(t);}
-        t.style.background=isError?'#3b1a1a':'#111827'; t.textContent=msg; t.style.opacity='1';
-        clearTimeout(_tt); _tt=setTimeout(()=>t.style.opacity='0',5000);
+      function placeUI(){
+        let root=document.getElementById('wdl-root');
+        if(!root){ createReaderUI(); root=document.getElementById('wdl-root'); }
+        if(!root) return;
+        const titleAnchor=findTitleAnchor();
+        if(titleAnchor&&titleAnchor.parentNode){
+          applyInlineRootStyle(root);
+          if(titleAnchor.nextElementSibling!==root) titleAnchor.insertAdjacentElement('afterend',root);
+          return;
+        }
+        applyFloatingRootStyle(root);
+        if(root.parentElement!==document.body) document.body.appendChild(root);
+      }
+      function startPlacementObserver(){
+        if(_placementObserver) return;
+        _placementObserver=new MutationObserver(()=>placeUI());
+        _placementObserver.observe(document.documentElement,{childList:true,subtree:true});
       }
 
+      function activateBtn() { placeUI(); const btn=document.getElementById('wdl-btn'); if(!btn) return; btn.textContent='⬇ Tải EPUB'; btn.style.background='#e94560'; btn.style.opacity='1'; btn.style.cursor='pointer'; btn.onmouseenter=()=>btn.style.opacity='.82'; btn.onmouseleave=()=>btn.style.opacity='1'; }
+      function setStatus(msg) { let el=document.getElementById('wdl-status'); if(!el){placeUI();el=document.getElementById('wdl-status');} if(!el) return; el.style.display='block'; el.textContent=msg; }
       if(document.body) createReaderUI();
       else new MutationObserver((_,obs)=>{if(document.body){createReaderUI();obs.disconnect();}}).observe(document.documentElement,{childList:true});
     })();

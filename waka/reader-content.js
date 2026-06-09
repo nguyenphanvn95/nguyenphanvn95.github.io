@@ -19,6 +19,7 @@
   let _files = new Map();
   let _isBusy = false;
   let _isWaiting = false;
+  let _placementObserver = null;
 
   window.addEventListener('__waka_epub_found__', (e) => {
     _epubUrl = e.detail.url;
@@ -184,15 +185,75 @@
     setTimeout(() => URL.revokeObjectURL(url), 30_000);
   }
 
-  function createUI() {
-    if (document.getElementById('wdl-root')) return;
+  function normalizeTitle(s) {
+    return String(s || '').replace(/\s+/g, ' ').trim();
+  }
 
-    const root = document.createElement('div');
-    root.id = 'wdl-root';
+  function findTitleAnchor() {
+    const wanted = normalizeTitle(_title);
+    if (!wanted) return null;
+
+    const selectors = [
+      'h1',
+      'h2',
+      'h3',
+      '[class*="title" i]',
+      '[aria-label]',
+      '[data-testid]',
+    ].join(', ');
+
+    const candidates = Array.from(document.querySelectorAll(selectors))
+      .filter((el) => normalizeTitle(el.textContent) === wanted)
+      .map((el) => {
+        const rect = el.getBoundingClientRect();
+        return {
+          el,
+          left: rect.left,
+          top: rect.top,
+          area: rect.width * rect.height,
+        };
+      })
+      .filter((item) => item.area > 0);
+
+    if (candidates.length === 0) {
+      for (const el of Array.from(document.querySelectorAll('*'))) {
+        if (normalizeTitle(el.textContent) !== wanted) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.width <= 0 || rect.height <= 0) continue;
+        candidates.push({
+          el,
+          left: rect.left,
+          top: rect.top,
+          area: rect.width * rect.height,
+        });
+      }
+    }
+
+    if (candidates.length === 0) return null;
+    candidates.sort((a, b) => a.left - b.left || a.top - b.top || a.area - b.area);
+    return candidates[0].el;
+  }
+
+  function applyInlineRootStyle(root) {
+    root.style.cssText = [
+      'display:flex',
+      'flex-direction:column',
+      'align-items:flex-start',
+      'gap:6px',
+      'margin-top:10px',
+      'max-width:100%',
+      'width:fit-content',
+      'font-family:system-ui,-apple-system,sans-serif',
+      'position:static',
+      'z-index:1',
+    ].join(';');
+  }
+
+  function applyFloatingRootStyle(root) {
     root.style.cssText = [
       'position:fixed',
-      'bottom:24px',
       'right:20px',
+      'bottom:24px',
       'display:flex',
       'flex-direction:column',
       'align-items:flex-end',
@@ -200,6 +261,14 @@
       'z-index:2147483647',
       'font-family:system-ui,-apple-system,sans-serif',
     ].join(';');
+  }
+
+  function createUI() {
+    if (document.getElementById('wdl-root')) return;
+
+    const root = document.createElement('div');
+    root.id = 'wdl-root';
+    applyInlineRootStyle(root);
 
     const status = document.createElement('div');
     status.id = 'wdl-status';
@@ -222,8 +291,8 @@
       'background:#555',
       'color:#fff',
       'border:none',
-      'border-radius:28px',
-      'padding:11px 22px',
+      'border-radius:14px',
+      'padding:11px 16px',
       'font-size:14px',
       'font-weight:700',
       'cursor:default',
@@ -239,7 +308,42 @@
     document.body.appendChild(root);
   }
 
+  function placeUI() {
+    let root = document.getElementById('wdl-root');
+    if (!root) {
+      createUI();
+      root = document.getElementById('wdl-root');
+    }
+    if (!root) return;
+
+    const titleAnchor = findTitleAnchor();
+    if (titleAnchor && titleAnchor.parentNode) {
+      applyInlineRootStyle(root);
+      if (titleAnchor.nextElementSibling !== root) {
+        titleAnchor.insertAdjacentElement('afterend', root);
+      }
+      return;
+    }
+
+    applyFloatingRootStyle(root);
+    if (root.parentElement !== document.body) {
+      document.body.appendChild(root);
+    }
+  }
+
+  function startPlacementObserver() {
+    if (_placementObserver) return;
+    _placementObserver = new MutationObserver(() => {
+      placeUI();
+    });
+    _placementObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
   function activateBtn() {
+    placeUI();
     const btn = document.getElementById('wdl-btn');
     if (!btn) return;
     btn.textContent = '⬇ Tải EPUB';
@@ -253,7 +357,7 @@
   function setStatus(msg) {
     let el = document.getElementById('wdl-status');
     if (!el) {
-      createUI();
+      placeUI();
       el = document.getElementById('wdl-status');
     }
     if (!el) return;
@@ -295,11 +399,13 @@
   }
 
   if (document.body) {
-    createUI();
+    placeUI();
+    startPlacementObserver();
   } else {
     new MutationObserver((_, obs) => {
       if (document.body) {
-        createUI();
+        placeUI();
+        startPlacementObserver();
         obs.disconnect();
       }
     }).observe(document.documentElement, { childList: true });
