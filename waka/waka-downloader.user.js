@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waka Downloader Vip
 // @namespace    https://nguyenphanvn95.github.io/waka/
-// @version      3.7.1
+// @version      4.0.0
 // @description  Tải sách nói miễn phí (MP3) và full ebook (EPUB) từ Waka.vn
 // @author       nguyenphanvn95
 // @match        https://waka.vn/sach-noi/*
@@ -12,6 +12,9 @@
 // @require      https://nguyenphanvn95.github.io/waka/lib/lame.min.js
 // @require      https://nguyenphanvn95.github.io/waka/lib/jszip.min.js
 // @require      https://nguyenphanvn95.github.io/waka/lib/crypto-js.min.js
+// @downloadURL  https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/blob/main/waka/waka-downloader.user.js
+// @updateURL    https://github.com/nguyenphanvn95/nguyenphanvn95.github.io/blob/main/waka/waka-downloader.user.js
+
 // ==/UserScript==
 
 /**
