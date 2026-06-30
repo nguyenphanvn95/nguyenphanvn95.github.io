@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2500</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1b6e5225-a7f2-4064-b18d-3d21ecbde913</dc:identifier>
+        <dc:title>22 Quy Luật Bất Biến Trong Marketing</dc:title>
+        <dc:creator opf:file-as="Ries, Al" opf:role="aut">Al Ries</dc:creator>
+        <dc:creator opf:file-as="Ries, Al" opf:role="aut">Jack Trout</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:57:49+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuốn sách 22 Quy Luật Bất Biến Trong Marketing trình bày những qui luật cơ bản có khả năng chi phối , quyết định quan trọng đến sự thành bại trong kinh doanh. Đây cũng là công trình tâm huyết của hai tác giả Al Ries và Jack Trout với nhiêù năm nghiên cứu và trải nghiệm thực tế. Những quy luật này mang giá trị thực tiễn cao, dễ nắm bắt, vận dụng và nhanh chóng đưa bạn đến thành công và toả sáng trong vai trò là một nhà Marketing hiệu quả.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Sales-Marketing</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:44:01+00:00"/>
+        <meta name="calibre:title_sort" content="22 Quy Luật Bất Biến Trong Marketing"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

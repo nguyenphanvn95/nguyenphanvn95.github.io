@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1452</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c3eae8dd-0a46-418d-ac72-97a21e33b788</dc:identifier>
+        <dc:title>Khổng Tử tinh hoa</dc:title>
+        <dc:creator opf:file-as="Đan, Vu" opf:role="aut">Vu Đan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-23T04:19:38+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Khổng Tử và học thuyết Nho gia có ảnh hưởng rất lớn đối với các nền văn hóa Á Đông, trong đó có Việt Nam. Bao nhiêu thế hệ trí thức Việt Nam đã tiếp thu và ứng dụng triết lý của ông. Còn ngày nay, sự minh triết trong tư tưởng Khổng Tử có thể giúp gì cho chúng ta khi đối diện với vô số vấn đề của cuộc sống hiện đại?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>First News + NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39+00:00"/>
+        <meta name="calibre:title_sort" content="Khổng Tử tinh hoa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

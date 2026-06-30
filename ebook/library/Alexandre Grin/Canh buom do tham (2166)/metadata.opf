@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2166</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4733692e-8a6f-4820-91b1-2cadaf9750f6</dc:identifier>
+        <dc:title>Cánh buồm đỏ thắm</dc:title>
+        <dc:creator opf:file-as="Grin, Alexandre" opf:role="aut">Alexandre Grin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;br&gt;Thiên truyện Cánh buồm đỏ thắm chan hoà ánh sáng mặt trời và tình người, đã được A-Lếch-Xan-Đrơ Grin viết năm 1920-1921, chính là năm ông vừa thoát khỏi cơn bệnh hiểm nghèo, đói ăn, thiếu mặc, không nhà, không cửa... &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:15+00:00"/>
+        <meta name="calibre:title_sort" content="Cánh buồm đỏ thắm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

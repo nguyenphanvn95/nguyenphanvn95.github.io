@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2444</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">47ce8b68-8a46-46e5-83d3-07763f064146</dc:identifier>
+        <dc:title>Ai hát giữa rừng khuya</dc:title>
+        <dc:creator opf:file-as="Tchya" opf:role="aut">Tchya</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:28+00:00</dc:date>
+        <dc:description>&lt;p&gt;...Cảnh tượng dị kỳ tôi đã được mục đích, nó là hai con ma, hai cái oan hồn uất ức của hai kẻ chịu tử hình, lâu ngày không tiêu đi được nên tụ lại thành bóng, hấp thụ mãi khí thiêng liêng của trời đất, nên mỗi khi bị hoàn cảnh xúc động đến là hiện lên ngay, hiện lên để diễn lại một tấn trò mà xưa kia, hai oan hồn đó thường diễn những giờ cao hứng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:46+00:00"/>
+        <meta name="calibre:title_sort" content="Ai hát giữa rừng khuya"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

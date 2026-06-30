@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1553</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b81abd7c-9c50-4709-98cd-8eb2a5751a20</dc:identifier>
+        <dc:title>Huynh Đệ</dc:title>
+        <dc:creator opf:file-as="Hoa, Dư" opf:role="aut">Dư Hoa</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-29T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tột cùng sung sướng, tột cùng đớn đau. Tột cùng đau đáu, tột cùng dửng dưng. Tột cùng hài, tột cùng bi… Đấy là những gì có trong “Huynh đệ” của Dư Hoa. Đây là cuốn tiểu thuyết được sản sinh sau sự gặp nhau của hai thời đại, cái trước là câu chuyện trong cuộc cách mạng văn hóa, một thời đại của tinh thần cuồng nhiệt, bản năng bị đè nén và những số phận thảm liệt, tương đương thời trung cổ ở châu Âu. Cái về sau là câu chuyện hiện tại, đó là một thời đại luân lý điên đảo, túng dục sống gấp và chúng sinh trưng ra muôn vẻ, hơn cả người châu Âu ngày nay
+ &lt;/p&gt;</dc:description>
+        <dc:publisher>Lý Trọc</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:50.624336+00:00"/>
+        <meta name="calibre:title_sort" content="Huynh Đệ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2218</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f7adece0-73db-4528-a449-7b749f004ea3</dc:identifier>
+        <dc:title>Bông Hồng Mất Tích</dc:title>
+        <dc:creator opf:file-as="Ozkan Serdar" opf:role="aut">Serdar Ozkan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-12T00:57:44+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=bonghongmattich</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:20+00:00"/>
+        <meta name="calibre:title_sort" content="Bông Hồng Mất Tích"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

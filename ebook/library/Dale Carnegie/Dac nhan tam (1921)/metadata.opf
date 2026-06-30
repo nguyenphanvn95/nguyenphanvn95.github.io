@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1921</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">655c6f70-67b1-4abe-9107-781109635540</dc:identifier>
+        <dc:title>Đắc nhân tâm</dc:title>
+        <dc:creator opf:file-as="Carnegie, Dale" opf:role="aut">Dale Carnegie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:42+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Quyển sách Đắc nhắn tâm “Đầu tiên và hay nhất mọi thời đại về nghệ thuật giao tiếp và ứng xử”, quyển sách đã từng mang đến thành công và hạnh phúc cho hàng triệu người trên khắp thế giới. Bản dịch của Nguyễn Hiến Lê&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt; &lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:40+00:00"/>
+        <meta name="calibre:title_sort" content="Đắc nhân tâm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

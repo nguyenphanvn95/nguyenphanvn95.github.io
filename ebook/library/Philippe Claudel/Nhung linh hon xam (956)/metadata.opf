@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">956</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f5e88097-fcfa-4d06-9dc0-df03cc351d02</dc:identifier>
+        <dc:title>Những linh hồn xám</dc:title>
+        <dc:creator opf:file-as="Claudel, Philippe" opf:role="aut">Philippe Claudel</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-23T09:46:43+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Trong một thành phố nhỏ ở hậu phương, đàn ông con trai không phải ra chiến trường vì một nhà máy ở đây đang cần họ. Trong khi cách đó không xa, biết bao sinh linh đang chịu cảnh thịt nát xương tan thì một vài án mạng có nghĩa lý gì? Thế nhưng, có một cái chết che lấp cả hàng ngàn cái chết, có một cái chết xuyên suốt toàn bộ tác phẩm, cái chết của Hoa bìm bìm, một bé gái mười tuổi. Khi xác con gái của chủ quán Bourrache được tìm thấy bên một bờ kênh thì cả thành phố bàng hoàng, dò xét nhau, thậm chí nghi ngờ nhau.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Ai đã giết chết bé gái này? Thủ phạm đáng ngờ nhất là Pierre-Ange Destinat, một quan chức làm nghề kết án tử hình, một ông kiểm sát trưởng. Nhưng thằng nhóc người Bretagne, một kẻ đào ngũ, sau một đêm bị hành hạ dã man, đã thú nhận mình là thủ phạm. Viên cảnh sát chịu trách nhiệm điều tra về vụ án lại là một kẻ đang chán sống, đã thấy quá nhiều điều ghê tởm, phải đối mặt với cái chết thê thảm của người vợ yêu...&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Alpha books + NXB Phụ Nữ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:42+00:00"/>
+        <meta name="calibre:title_sort" content="Những linh hồn xám"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

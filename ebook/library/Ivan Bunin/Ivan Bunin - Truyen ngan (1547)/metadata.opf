@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1547</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c21d04c5-879f-4a65-8015-030c6cb6e76b</dc:identifier>
+        <dc:title>Ivan Bunin - Truyện ngắn</dc:title>
+        <dc:creator opf:file-as="Bunin, Ivan" opf:role="aut">Ivan Bunin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Những truyện ngắn rất hay của I.Bunin&lt;/P&gt; &lt;P&gt;- Say nắng&lt;/P&gt; &lt;P&gt;- Những con đường rợp bóng cây xanh&lt;/P&gt; &lt;P&gt;- Ruxia&lt;/P&gt; &lt;P&gt;- Một chuyện tình nho nhỏ&lt;/P&gt; &lt;P&gt;- Canh khuya&lt;/P&gt; &lt;P&gt;- Hơi thở nhẹ&lt;/P&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:49+00:00"/>
+        <meta name="calibre:title_sort" content="Ivan Bunin - Truyện ngắn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

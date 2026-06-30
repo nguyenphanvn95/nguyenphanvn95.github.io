@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1957</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8399c017-5e65-4344-b365-bba0b421e16d</dc:identifier>
+        <dc:title>Chúa Có Đó Không? Là Con, Margaret</dc:title>
+        <dc:creator opf:file-as="Blume, Judy" opf:role="aut">Judy Blume</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Margaret Simon, cô sắp tròn mười hai, thích tóc dài, cá ngừ, mùi mưa, và những thứ màu hồng. Cô mới từ New York chuyển đến Farbrook, New Jersey. Cô đang lo lắng làm sao hòa nhập được với đám bạn mới gồm Nancy, Gretchen, và Janie. Thế nên khi mấy cô nhóc lập một câu lạc bộ bí mật để tán về những điều riêng tư như bọn con trai, áo lót, và kỳ kinh đầu tiên, Margaret đã hào hứng nhập hội.&lt;/p&gt; &lt;p&gt;Vậy nhưng, không ai biết rằng Margaret có một mối quan hệ đặc biệt khác, với Chúa, theo cách của riêng cô. Với Chúa, cô mới có thể thổ lộ hết, mọi chuyện, về gia đình, bạn bè, về cả hot boy Philip Leroy.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Margaret vừa hài hước, thực tế, lại vừa ngọt ngào, dễ thương. Khi đọc “Chúa có đó không? Là con, Margaret”, bạn sẽ hiểu tại sao cuốn sách là món ăn tinh thần ưa thích của hàng triệu độc giả, và suốt vài thập kỷ qua đã trở thành một tác phẩm kinh điển không thể bỏ qua dành cho tuổi mới lớn. Nói chuyện với Chúa là cách mà Margaret trò chuyện với chính bạn một cách trong trẻo nhất!&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:48+00:00"/>
+        <meta name="calibre:title_sort" content="Chúa Có Đó Không? Là Con, Margaret"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

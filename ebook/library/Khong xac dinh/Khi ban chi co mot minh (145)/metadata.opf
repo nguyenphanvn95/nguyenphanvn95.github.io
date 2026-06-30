@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">145</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d4b1ee3a-eb63-4abd-a190-d7234b222b08</dc:identifier>
+        <dc:title>Khi bạn chỉ có một mình</dc:title>
+        <dc:creator opf:role="aut">Không xác định</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:series" content="Hạt giống tâm hồn"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T02:15:09.355960+00:00"/>
+        <meta name="calibre:title_sort" content="Khi bạn chỉ có một mình"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

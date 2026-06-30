@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1000</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">031c8fb2-63fa-4549-940e-9dc2c8db1995</dc:identifier>
+        <dc:title>Nhìn về toàn cầu hóa</dc:title>
+        <dc:creator opf:file-as="Soros, George" opf:role="aut">George Soros</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Khi nền kinh tế thế giới chuyển đổi trong thập niên 1990 và những năm đầu thế kỷ XXI, không ai trăn trở với những hình ảnh về chính trị và xã hội của toàn cầu hóa nhiều như George Soros. Với vị thế độc nhất của mình - một nhà tài phiệt hàng đầu, một nhà từ thiện quốc tế, và cũng là một người phê phán hệ thống Tư Bản Chủ Nghĩa gay gắt, Soros đã tìm cách vận động cho những “xã hội mở” như là phần bổ sung cho sự mở rộng và bành trướng của thị trường. Phân tích kỹ lưỡng các định chế tài chính - thương mại quốc tế hiện thời, ông nhận thấy các tổ chức này tuy tạo ra nhiều của cải vật chất nhưng lại thất bại trong trong việc cung cấp các hàng hóa công khác cho xã hội. Soros chỉ trích một “liên minh vô tình” giữa những người cực hữu ủng hộ thị trường chính thống và những người cực tả đang nỗ lực lên án toàn cầu hóa, bởi cả hai nhóm đều hướng tới phá hủy những định chế quốc tế hiện tại mà chúng ta đang có. Thay vào đó, tác giả kêu gọi một liên minh khác, với mục tiêu cải tổ và làm những định chế quốc tế đó trở nên mạnh mẽ và hiệu quả hơn.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;b&gt;&lt;i&gt;“Là một bản tổng hợp hùng hồn của những phê phán, chỉ trích dành cho các định chế toàn cầu... ngay cả nếu như bạn không đồng ý với những cải cách mà Soros đề ra.”&lt;/i&gt;&lt;/b&gt;&lt;i&gt; - Business Week&lt;b&gt;&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>DT Books + NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:47+00:00"/>
+        <meta name="calibre:title_sort" content="Nhìn về toàn cầu hóa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

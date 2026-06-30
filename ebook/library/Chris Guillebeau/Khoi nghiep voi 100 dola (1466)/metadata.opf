@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1466</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fff1de10-0e17-4d67-b6d7-f52f68ab4ce0</dc:identifier>
+        <dc:title>Khởi nghiệp với 100 đôla</dc:title>
+        <dc:creator opf:file-as="Guillebeau, Chris" opf:role="aut">Chris Guillebeau</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:rating" content="10"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:40+00:00"/>
+        <meta name="calibre:title_sort" content="Khởi nghiệp với 100 đôla"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2413</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3332ac3a-675d-4e37-875f-804391b8a0bc</dc:identifier>
+        <dc:title>Anh Có Thích Nước Mỹ Không</dc:title>
+        <dc:creator opf:file-as="Ổ, Tân Di" opf:role="aut">Tân Di Ổ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đọc “Anh có thích nước Mỹ không”, thấy một chút nuối tiếc, nhưng lại có không ít sự thỏa lòng trong đó. Đôi khi con người không có được những điều quý giá nhất, nhưng họ vẫn sẽ sống, một cuộc sống hạnh phúc và bình dị…&lt;/p&gt;</dc:description>
+        <dc:publisher>Heragong</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:42+00:00"/>
+        <meta name="calibre:title_sort" content="Anh Có Thích Nước Mỹ Không"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2450</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7d06c562-405f-4a16-81bc-52d4b1c27f69</dc:identifier>
+        <dc:title>7788 em yêu anh</dc:title>
+        <dc:creator opf:file-as="Bà, Cầm Sắt Tỳ" opf:role="aut">Cầm Sắt Tỳ Bà</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T05:32:17+00:00</dc:date>
+        <dc:description>&lt;p&gt;Lần đầu gặp nhau là va chạm xe cộ. Trông ấn tượng của cô, anh là kẻ kiêu ngạo, khó tính, lạnh lùng. Với anh, cô là cô gái trẻ quê mùa, không hiểu biết và vô trách nhiệm. Ai ngờ học trò nhỏ làm chất xúc tác, khiến hai người ngày một gần nhau. Tình yêu vừa mới chớm đã vấp phải sự phản đối của gia tộc, từ tìm cách giam chân đến làm mối, thật chẳng còn thiếu cách gì! Còn anh, vẫn kiên trì thuyết phục&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:47+00:00"/>
+        <meta name="calibre:title_sort" content="7788 em yêu anh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

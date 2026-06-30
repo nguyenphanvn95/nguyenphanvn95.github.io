@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">259</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8c8daadb-0938-4690-9367-b1bc3749d190</dc:identifier>
+        <dc:title>Yêu Đôi Môi Em</dc:title>
+        <dc:creator opf:file-as="Yên, Mộc Khinh" opf:role="aut">Mộc Khinh Yên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-28T02:27:49+00:00</dc:date>
+        <dc:description>&lt;p&gt;Lạc Tiểu Phàm là một cô gái từng bị tổn thương tình cảm, cô dùng tiền để mua một mối tình một đêm, để tạm biệt tình yêu đã từng khiến cô đau khổ. Lâm Nam Vũ là một anh chàng đào hoa thích dùng tiền để kết thúc mối tình một đêm, vào một buổi sáng, anh đã vô tình trở thành nhân vật chính mà Lạc Tiểu Phàm lựa chọn để tạm biệt tình yêu của mình, lòng tự trọng của Lâm Nam Vũ bị tổn thương sâu sắc.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:05.052948+00:00"/>
+        <meta name="calibre:title_sort" content="Yêu Đôi Môi Em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

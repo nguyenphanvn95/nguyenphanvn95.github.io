@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">420</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">006d5bad-13e9-4734-83cc-f00a2a8583cf</dc:identifier>
+        <dc:title>Thế giới như tôi thấy</dc:title>
+        <dc:creator opf:file-as="Einstein, Albert" opf:role="aut">Albert Einstein</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt; tập hợp những bài viết, bài nói chuyện, thư từ và tiểu luận khoa học của một trong những con người vĩ đại nhất của thế kỷ 20: Albert Einstein - Ông là một trong những thiên tài hiếm hoi, người không chỉ vô cùng xuất sắc trong lĩnh vực nghiên cứu của mình, mà còn có ảnh hưởng sâu rộng tới các lĩnh vực khác: tư tưởng, tôn giáo và chính trị.&lt;br&gt;&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:41+00:00"/>
+        <meta name="calibre:title_sort" content="Thế giới như tôi thấy"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1798</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2e1da614-b67e-4886-b52a-0d235d492edd</dc:identifier>
+        <dc:title>Điệu nhạc Blue trên chuyến tàu điện ngầm</dc:title>
+        <dc:creator opf:file-as="Y, Tống Vô" opf:role="aut">Tống Vô Y</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:02+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;div&gt;câu chuyện tình yêu thú vị vừa mang sắc màu hiện đại lại vừa lãng mạn và ngọt ngào làm rung động trái tim của rất nhiều bạn trẻ đang trong quá trình tìm cho mình một nửa cuộc đời.&lt;/div&gt;&lt;div&gt;Tống Vô Y là một chàng trai trẻ chưa kết hôn. Giống như các thanh niên cùng thời khác của Trung Quốc, sau khi tốt nghiệp đại học anh đầu quân cho một công ty có vốn đầu tư nước ngoài và làm việc giống như một con ong chăm chỉ, hàng ngày cần mẫn se một sợi dây thẳng tắp từ nhà đến công ty và lại từ công ty về nhà. &lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:26+00:00"/>
+        <meta name="calibre:title_sort" content="Điệu nhạc Blue trên chuyến tàu điện ngầm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

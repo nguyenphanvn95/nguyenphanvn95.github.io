@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2476</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">97c312a5-de96-4a03-ad01-cfd6303ebe1c</dc:identifier>
+        <dc:title>100 truyện hay cực ngắn</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-05-16T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Năm 1993-1994 NXB Thế Giới đã tổ chức cuộc thi truyện rất ngắn và thu được kết quả tốt đẹp với sự góp mặt khoảng trên 5000 bản thảo của các cây bút chuyên nghiệp lẫn nghiệp dư. Qua cuộc thi này nhiều tên tuổi đã được định vị, nhiều tài năng đã được phát hiện như Phạm Sông Hồng, Nguyễn Quang Thân, Thái Sinh, Quốc Dũng, Nguyễn Bản, Phan Thị Vàng Anh, Phan Truyền Hải, Lý Thanh Thảo, Nguyễn Quốc Văn, Tường Long… Sau cuộc thi tạp chí Thế Giới mới kết hợp với NXB Hội nhà văn đã tuyển chọn để in thành hai tập 45 truyện rất ngắn (tác phẩm chung khảo). Sau đó NXB TP. Hồ Chí Minh lại ra tiếp 100 truyện hay cực ngắn năm 1999.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:58+00:00"/>
+        <meta name="calibre:title_sort" content="100 truyện hay cực ngắn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

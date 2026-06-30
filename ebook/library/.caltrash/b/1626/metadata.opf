@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1626</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0a1f1594-2be2-4d49-a8bb-d33f8b789af3</dc:identifier>
+        <dc:title>Hẹn đẹp như mơ</dc:title>
+        <dc:creator opf:file-as="Tồn, Phí Ngã Tư" opf:role="aut">Phí Ngã Tư Tồn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-30T10:06:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện “Hẹn đẹp như mơ” đã khắc họa đủ đầy vô vàn những cảm xúc yêu đương đầy thi vị, lãng mạn của những người trẻ tuổi. Đó là một Mạnh Hòa Bình, một Vưu Giai Kỳ, với một giấc mơ đẹp đến tinh khôi và dịu dàng, với những ấp ủ như đang đi trong mơ. Thế rồi, khi tuổi trẻ qua đi, khi những nông nổi đã lắng chìm đi bởi sự trải nghiệm sương gió thì thứ tình cảm mơ mộng ấy đã trở nên xa xôi hơn bao giờ hết. Họ bắt đầu những ngày tháng xa cách nhau như cái lẽ tự nhiên nhất của trời đất này. Và từ từ, trái tim của người này khép lại với người kia. Không còn lời hẹn ước đã đi qua. Không còn những giấc mơ của quá khứ. &lt;/p&gt;</dc:description>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:03+00:00"/>
+        <meta name="calibre:title_sort" content="Hẹn đẹp như mơ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

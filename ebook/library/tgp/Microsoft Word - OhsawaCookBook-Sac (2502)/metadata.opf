@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2502</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fc1b7875-4b4a-49b1-a96d-064e374682fd</dc:identifier>
+        <dc:title>Microsoft Word - OhsawaCookBook-SachVo-12-5x8-us.doc</dc:title>
+        <dc:creator opf:file-as="tgp" opf:role="aut">tgp</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-02T22:28:45+00:00</dc:date>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:44:01+00:00"/>
+        <meta name="calibre:title_sort" content="Microsoft Word - OhsawaCookBook-SachVo-12-5x8-us.doc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

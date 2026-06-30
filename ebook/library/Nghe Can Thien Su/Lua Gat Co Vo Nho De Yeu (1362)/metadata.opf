@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1362</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c50b3654-0c70-46f3-a45c-4f90b26ad93d</dc:identifier>
+        <dc:title>Lừa Gạt Cô Vợ Nhỏ Để Yêu</dc:title>
+        <dc:creator opf:file-as="Sứ, Nghệ Cẩn Thiên" opf:role="aut">Nghệ Cẩn Thiên Sứ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MD5">78af41af94ea091d013721045ecdc229</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:29+00:00"/>
+        <meta name="calibre:title_sort" content="Lừa Gạt Cô Vợ Nhỏ Để Yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

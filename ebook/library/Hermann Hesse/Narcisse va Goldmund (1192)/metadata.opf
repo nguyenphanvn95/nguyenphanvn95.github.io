@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1192</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">552d702f-4408-467c-b099-adf9ac25144e</dc:identifier>
+        <dc:title>Narcisse và Goldmund</dc:title>
+        <dc:creator opf:file-as="Hesse, Hermann" opf:role="aut">Hermann Hesse</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-10-22T22:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description"&gt;Truyện: &lt;font class="Apple-style-span" color="#aa55ff"&gt;&lt;b&gt;Narcisse và Goldmund&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Tác giả: &lt;font class="Apple-style-span" color="#55aa00"&gt;&lt;b&gt;Hermann Hesse&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Tạo bởi: &lt;font class="Apple-style-span" color="#00557f"&gt;&lt;b&gt;PHAM HUY HÙNG&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&lt;p class="description"&gt;&lt;/p&gt;&lt;div style="text-align: center;"&gt;&lt;span class="Apple-style-span" style="color: rgb(0, 170, 255); "&gt;Copy Sách Truyện từ Vnthuquan mà không ghi rõ nguồn và người đánh máy là hành động ăn cắp đáng xấu hổ!&lt;/span&gt;&lt;/div&gt;&lt;font class="Apple-style-span" color="#00aaff"&gt;&lt;div style="text-align: center;"&gt;Viễn
+ Nguyên dịch từ bản dịch tiếng Pháp của Fernand Delmas: Narcisset 
+Goldmund. NXB Calmann – Levy. Paris, 1993. NXB Lao động, 2001&lt;/div&gt;&lt;div style="text-align: center;"&gt;Được bạn: Mọt Sách đưa lên&lt;/div&gt;&lt;div style="text-align: center;"&gt;vào ngày: 23 tháng 10 năm 2013&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Việt Nam Thư Quán - Thư Viện Online</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>VH cổ điển nước ngoài</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:10+00:00"/>
+        <meta name="calibre:title_sort" content="Narcisse và Goldmund"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

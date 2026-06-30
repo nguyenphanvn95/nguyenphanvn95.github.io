@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">649</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">59ba3648-e70a-4033-a36b-1ee7828a3a10</dc:identifier>
+        <dc:title>Tâm lý vợ chồng</dc:title>
+        <dc:creator opf:file-as="Carnegie, Dale" opf:role="aut">Dale Carnegie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:57:30+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>psychology</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:07+00:00"/>
+        <meta name="calibre:title_sort" content="Tâm lý vợ chồng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

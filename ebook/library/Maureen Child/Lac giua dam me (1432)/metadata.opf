@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1432</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f5074010-115f-4aff-8fc3-0267b8d856df</dc:identifier>
+        <dc:title>Lạc giữa đam mê</dc:title>
+        <dc:creator opf:file-as="Child, Maureen" opf:role="aut">Maureen Child</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;I&gt;Jefferson King sang &lt;/I&gt;&lt;I&gt;Ireland&lt;/I&gt;&lt;I&gt; với mục đích tìm một trang trại làm trường quay cho bộ phim mới. Lúc duyệt được địa điểm cũng là lúc số phận oái oăm đẩy anh vào một chuyến phiêu lưu tình ái không mong chờ. Cuộc gặp gỡ với Maura Donohue khiến mọi sự quanh Jeff hoàn toàn chạy sai quỹ đạo. Một nông trại u ám mùa đông bỗng trở nên mượt mà thơ mộng như thiên đường. Những buổi thương thảo tẻ nhạt chợt dâng đầy khát khao bứt rứt.&lt;/I&gt;&lt;I&gt;&lt;/I&gt;&lt;/P&gt; &lt;P&gt;&lt;I&gt;Và nàng chủ trại trong mảnh quần lót trơn giản dị lại hấp dẫn hơn bất kỳ cô đào mặc đồ ngủ viền ren lộng lẫy nào. Sau một đêm ngất ngây hoan lạc, Jeff trở về Mỹ. Đổ lỗi cho trái tim loạn nhịp nhất thời, anh vùi đầu vào công việc để lãng quên bờ môi gợi cảm, làn da óng ả và cặp đùi nóng bỏng nơi đảo quốc kia. Nhưng số phận không dễ dàng buông tha đến thế. Giọt tinh túy mà Jeff để lại trong Maura kéo anh tới bên nàng lần nữa. Thật chẳng ngờ, cuộc tái ngộ này hóa ra lại gây mầm cho một trận chiến dữ dội giữa nhục cảm đơn thuần và tình yêu trọn vẹn...&lt;/I&gt;&lt;I&gt;&lt;/I&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:series" content="Kings of California"/>
+        <meta name="calibre:series_index" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:37+00:00"/>
+        <meta name="calibre:title_sort" content="Lạc giữa đam mê"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

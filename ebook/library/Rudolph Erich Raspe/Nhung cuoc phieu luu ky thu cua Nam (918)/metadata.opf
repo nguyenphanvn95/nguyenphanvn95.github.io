@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">918</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ba35c090-b6da-444e-965b-0a23288de394</dc:identifier>
+        <dc:title>Những cuộc phiêu lưu kỳ thú của Nam tước Muynkhaoden</dc:title>
+        <dc:creator opf:file-as="Raspe, Rudolph Erich" opf:role="aut">Rudolph Erich Raspe</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:58+00:00</dc:date>
+        <dc:description>&lt;p&gt;Có một nhân vật nổi tiêng trong văn học dân gian Đức, được biết đến như là hình ảnh của một người luôn phóng đại tất cả những thành tích xấu lẫn tốt của mình. Ổng có ngoại hiệu là Nam tước Muynkhaoden. Ngài Nam tước này rất chi là vui tính và trí tưởng tượng thì thôi, bát ngát bao la.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Children</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:38+00:00"/>
+        <meta name="calibre:title_sort" content="Những cuộc phiêu lưu kỳ thú của Nam tước Muynkhaoden"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

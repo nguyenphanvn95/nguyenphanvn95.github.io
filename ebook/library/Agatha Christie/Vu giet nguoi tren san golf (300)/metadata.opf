@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">300</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bd59b90a-c40f-4a1a-8acf-6ab9f7b182c6</dc:identifier>
+        <dc:title>Vụ giết người trên sân golf</dc:title>
+        <dc:creator opf:file-as="Christie, Agatha" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-12-07T13:00:00+00:00</dc:date>
+        <dc:publisher>ULABS</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:09.442701+00:00"/>
+        <meta name="calibre:title_sort" content="Vụ giết người trên sân golf"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

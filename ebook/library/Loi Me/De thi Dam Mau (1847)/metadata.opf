@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1847</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0a63d7ea-d2fe-4e42-ae0c-ba2ea5dc6ace</dc:identifier>
+        <dc:title>Đề thi Đẫm Máu</dc:title>
+        <dc:creator opf:file-as="Mễ, Lôi" opf:role="aut">Lôi Mễ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-13T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Một tên sát thủ có sở thích uống hỗn hợp máu của nạn nhân với sữa tươi, hắn có căn bệnh gì đặc biệt hay là con quỷ hút máu bất tử nghìn năm trong truyền thuyết?&lt;br&gt;Trong thành phố C liên tiếp xảy ra 4 vụ cưỡng hiếp giết người nạn nhân đều là những cô gái trí thức từ 25 - 35 tuổi, đây rốt cuộc là giết người để trả thù hay đơn giản chỉ là cưỡng dâm?&lt;br&gt;Hàng loạt cái chết bí ẩn thảm khốc của những người sống trong Đại học J liên tiếp xảy ra. Ở mỗi hiện trường vụ án, hung thủ đều để lại gợi ý cho vụ án tiếp theo, nhằm mục đích gì?&lt;br&gt;Trong hàng loạt các vụ án ly kỳ khiến cảnh sát bàng hoàng bó tay, cậu sinh viên Phương Mộc trầm mặc kiệm lời đột nhiên bị cảnh sát lôi vào cuộc. Tên ác quỷ giấu mặt lần lượt giết hại những người bạn của cậu, vì sao? Khi câu trả lời được vén màn bí mật, thì đề thi tàn khốc đã bị tích 5 dấu X đẫm máu. Một cuộc đấu trí so tài khốc liệt đầy kịch tính nổ ra... Ai sẽ là người thắng cuộc?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:32+00:00"/>
+        <meta name="calibre:title_sort" content="Đề thi Đẫm Máu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

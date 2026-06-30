@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2587</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">79ca3dcd-8fb6-4f13-9814-345e895a8ebb</dc:identifier>
+        <dc:title>Việt Nam ngày và đêm - Serguéi Vyssotski, Ilya Glazounov</dc:title>
+        <dc:creator opf:file-as="Serguéi Vyssotski" opf:role="aut">Serguéi Vyssotski</dc:creator>
+        <dc:creator opf:file-as="Serguéi Vyssotski" opf:role="aut">Ilya Glazounov</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2026-05-07T17:00:00+00:00</dc:date>
+        <dc:description>Đây là một cuốn bút ký - họa ký giàu giá trị lịch sử và nghệ thuật, ghi lại hình ảnh Việt Nam trong chiến tranh qua góc nhìn của hai tác giả Liên Xô. Tác phẩm không chỉ kể về bom đạn, mất mát, mà còn làm nổi bật vẻ đẹp văn hóa, lòng quả cảm và sức sống bền bỉ của con người Việt Nam trong những năm tháng khốc liệt.
+
+Sách mở đầu bằng bối cảnh Việt Nam là tâm điểm chú ý của thế giới: một đất nước nhỏ bé nhưng kiên cường chống lại chiến tranh, bom đạn và sự tàn phá. Hai tác giả đi từ Vladivostok đến Hải Phòng trên tàu Liên Xô, chứng kiến sự hỗ trợ của nhân dân Liên Xô dành cho Việt Nam, rồi tiếp tục hành trình qua Hải Phòng, Hà Nội, Thanh Hóa, Nghệ An, Khu 4…
+
+Nội dung chính xoay quanh:
+
+è Việt Nam trong chiến tranh: Tác phẩm mô tả không khí thời chiến rất rõ: còi báo động, máy bay Mỹ, bom đạn, cầu đường bị phá hủy, hầm trú ẩn, xe cộ ngụy trang, người dân vừa lao động vừa sẵn sàng chiến đấu.
+
+è Con người Việt Nam kiên cường: Cuốn sách khắc họa nhiều nhân vật như hoa tiêu Đặng, cán bộ Lê Thanh, các công nhân, dân quân, nghệ sĩ, phụ nữ, trẻ em và đặc biệt là nữ chiến sĩ Ngô Thị Tuyết. Qua họ, tác phẩm nhấn mạnh tinh thần chịu đựng, lòng yêu nước và ý chí chiến đấu của nhân dân Việt Nam.
+
+è Đời sống văn hóa giữa bom đạn: Ngoài chiến tranh, sách cũng ghi lại vẻ đẹp của Hà Nội, Hồ Hoàn Kiếm, chùa Một Cột, Văn Miếu, đền Hai Bà Trưng, Nhà hát Lớn, nghệ thuật dân gian và đời sống phố phường. Điểm đáng chú ý là văn hóa, nghệ thuật và truyền thống dân tộc được nhìn nhận như một nguồn sức mạnh tinh thần.
+
+è Tình đoàn kết Việt Nam - Liên Xô: Tác phẩm thể hiện rất rõ tình cảm ủng hộ của Liên Xô dành cho Việt Nam qua những chuyến tàu chở hàng, thư và quà của thiếu nhi Liên Xô gửi trẻ em Việt Nam, sự giúp đỡ của chuyên gia Liên Xô trong công nghiệp và quốc phòng.
+
+è Họa ký chiến tranh: Điểm đặc biệt của sách là không chỉ kể bằng lời mà còn bằng tranh (chân dung con người, cảnh làng quê, phố Hà Nội, tàu thuyền, nhà máy, chiến sĩ, phụ nữ, trẻ em…) Các ký họa giúp cuốn sách mang giá trị tư liệu và mỹ thuật.
+
+Waka trân trọng giới thiệu Việt Nam ngày và đêm (họa ký chiến tranh) - tác giả Serguéi Vyssotski, Ilya Glazounov.
+
+Rút gọn</dc:description>
+        <dc:publisher>NXB Thuận Hóa</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Lịch sử</dc:subject>
+        <dc:subject>Giáo dục - Văn hóa Xã hội</dc:subject>
+        <dc:subject>Chính trị - Kinh tế - Văn hóa</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:45:59+00:00"/>
+        <meta name="calibre:title_sort" content="Việt Nam ngày và đêm - Serguéi Vyssotski, Ilya Glazounov"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

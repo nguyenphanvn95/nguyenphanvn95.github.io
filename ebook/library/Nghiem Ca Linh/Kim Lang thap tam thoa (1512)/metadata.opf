@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1512</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fd0130b1-bf93-438e-b63f-20ac6d636787</dc:identifier>
+        <dc:title>Kim Lăng thập tam thoa</dc:title>
+        <dc:creator opf:file-as="Linh, Nghiêm Ca" opf:role="aut">Nghiêm Ca Linh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:07+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện kể về cuộc thảm sát khét tiếng của quân đội Nhật tại Nam Kinh, thủ đô của Trung Quốc dưới thời Trung Hoa Dân Quốc những năm 1930. Khi đó, toàn bộ thành phố rơi vào tay quân đội Nhật, chỉ trừ một giáo đường nhỏ. Ở đó, có một nhóm nữ sinh Kim Lăng, 13 cô kỹ nữ phong trần sông Tần Hoài, 2 anh lính thoát ra từ đám xác chết và một vị giáo sĩ người Mỹ... Để bảo vệ những cô bé nữ sinh thoát khỏi sự cưỡng bức tàn ác của lính Nhật, cô kỹ nữ Ngọc Mặc đã dẫn đầu 12 kỹ nữ còn lại tham gia vào một cuộc chiến một mất một còn...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:46+00:00"/>
+        <meta name="calibre:title_sort" content="Kim Lăng thập tam thoa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

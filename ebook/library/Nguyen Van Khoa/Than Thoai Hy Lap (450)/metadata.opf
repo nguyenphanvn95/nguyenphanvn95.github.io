@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">450</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dc640c01-b3b4-41d9-b80c-66c538eb0167</dc:identifier>
+        <dc:title>Thần Thoại Hy Lạp</dc:title>
+        <dc:creator opf:file-as="Khoả, Nguyễn Văn" opf:role="aut">Nguyễn Văn Khoả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Thần Thoại Hy Lạp mang đậm dấu ấn khởi thủy chẳng những của một dân tộc mà còn có ảnh hưởng đến cả một chấu lục, thậm chí có tác động rộng rãi đến rất nhiều dân tộc trên thế giới.Ngay trong thời cổ đại thần thoại Hy Lạp đã "hóa thân" thành thần thoại La Mã. Sự chế biến này của nền văn hóa La Mã gần với nguyên mẫu như sao chép đến nỗi khoa thần thoại học hầu như không có sự phân biệt giữa những vị thần Hy Lạp đổi tên La-tinh với những vị thần Hy Lạp chính cống...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Fairy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:45.109873+00:00"/>
+        <meta name="calibre:title_sort" content="Thần Thoại Hy Lạp"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

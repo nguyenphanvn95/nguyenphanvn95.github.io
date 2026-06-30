@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">401</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">676ec2bd-c541-4440-8ddd-f2ac9eaacd68</dc:identifier>
+        <dc:title>Thiên Thần Và Ác Quỷ</dc:title>
+        <dc:creator opf:file-as="Dan Brown" opf:role="aut">Dan Brown</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2000-01-31T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện xoay quanh cuộc hành trình rượt đuổi theo Kẻ giết người của Robert Langdon và Vittoria Vetra. Tất cả bắt đầu khi những dấu hiệu của Hội kín Illuminati đã trở lại và giết hại Leonardo Vetra với những âm mưu kinh khủng. Phản vật chất - công trình nghiên cứu của cha con Vetra bỗng chốc trở thành một quả bom có sức công phá kinh khủng đe dọa thành phố Roma cũng như giáo hội Vatican trong đêm Mật nghị Hồng y.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Nghệ thuật</dc:subject>
+        <dc:subject>Điều tra</dc:subject>
+        <dc:subject>Phiêu lưu</dc:subject>
+        <dc:subject>Tôn giáo</dc:subject>
+        <meta name="calibre:series" content="Robert Langdon"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:rating" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:27.898676+00:00"/>
+        <meta name="calibre:title_sort" content="Thiên Thần Và Ác Quỷ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

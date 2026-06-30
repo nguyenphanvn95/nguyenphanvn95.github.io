@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1371</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3c9ecb77-e854-441a-9bfe-b4f2b3d2f275</dc:identifier>
+        <dc:title>Lối Thoát Tử Thần</dc:title>
+        <dc:creator opf:file-as="Dashner, James" opf:role="aut">James Dashner</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Giải mã mê cung"/>
+        <meta name="calibre:series_index" content="3"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:30+00:00"/>
+        <meta name="calibre:title_sort" content="Lối Thoát Tử Thần"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">996</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">067fb5df-0a47-47e9-96e1-09b1b7fa111a</dc:identifier>
+        <dc:title>Như Không Hề Có</dc:title>
+        <dc:creator opf:file-as="Ellis, Bret Easton" opf:role="aut">Bret Easton Ellis</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-04-25T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:47+00:00"/>
+        <meta name="calibre:title_sort" content="Như Không Hề Có"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

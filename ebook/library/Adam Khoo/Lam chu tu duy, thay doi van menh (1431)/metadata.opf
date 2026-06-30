@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1431</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">67e400fa-8062-4e33-a08c-72f301705bd4</dc:identifier>
+        <dc:title>Làm chủ tư duy, thay đổi vận mệnh</dc:title>
+        <dc:creator opf:file-as="Khoo, Adam" opf:role="aut">Adam Khoo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:37.444830+00:00"/>
+        <meta name="calibre:title_sort" content="Làm chủ tư duy, thay đổi vận mệnh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

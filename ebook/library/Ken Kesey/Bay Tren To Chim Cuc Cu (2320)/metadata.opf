@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2320</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">696f7bcc-6f66-4440-b0f3-5278b3d0aa84</dc:identifier>
+        <dc:title>Bay Trên Tổ Chim Cúc Cu</dc:title>
+        <dc:creator opf:file-as="Ken Kesey" opf:role="aut">Ken Kesey</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-04-16T16:28:53+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Kinh Điển</dc:subject>
+        <dc:subject>Phim</dc:subject>
+        <dc:subject>Mỹ</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:32+00:00"/>
+        <meta name="calibre:title_sort" content="Bay Trên Tổ Chim Cúc Cu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

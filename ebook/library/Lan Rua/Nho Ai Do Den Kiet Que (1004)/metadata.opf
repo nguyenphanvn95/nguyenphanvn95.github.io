@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1004</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0c40c31d-4699-4b62-a881-e85c4ce40029</dc:identifier>
+        <dc:title>Nhớ Ai Đó Đến Kiệt Quệ</dc:title>
+        <dc:creator opf:file-as="Rùa, Lan" opf:role="aut">Lan Rùa</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-07-04T10:01:28+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://truyenfull.vn/nho-ai-do-den-kiet-que/</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn Tình</dc:subject>
+        <dc:subject>Đông Phương</dc:subject>
+        <dc:subject>Cổ Đại</dc:subject>
+        <dc:subject>Khác</dc:subject>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:48.244486+00:00"/>
+        <meta name="calibre:title_sort" content="Nhớ Ai Đó Đến Kiệt Quệ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

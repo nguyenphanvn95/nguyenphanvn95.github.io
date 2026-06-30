@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1138</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">de4579ab-d0a9-45b7-a5d5-24a63a21e7ea</dc:identifier>
+        <dc:title>Ngày thứ hai đen tối</dc:title>
+        <dc:creator opf:file-as="Reiss, Scott" opf:role="aut">Scott Reiss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:02+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một thứ dịch bệnh sẽ đưa thế giới về những đêm trường Trung cổ.Một thứ dịch bệnh mà không làm ai ốm…Khi những chiếc máy bay đầu tiên tự nhiên rơi xuống - ở châu Âu, Cali, châu Á – người ta đổ trách nhiệm vào những tên khủng bố. Tất cả các chuyến bay được lệnh cấm cất cánh còn các nhà lãnh đạo thế giới cố gắng tìm hiểu xem những vụ tấn công khắp nơi kia đã được phối hợp như thế nào. Và rồi, khi xe cộ, tàu bè, và các nhà máy cũng ngừng hoạt động, người ta hiểu ra rằng đầu mối chung của các sự kiện là xăng dầu. Không hiểu bằng cách nào, một loại vi sinh nhân tạo có thứ gen chuyên phá hủy hydrocacbon, đã lây nhiễm được vào nguồn cung cấp dầu thô trên toàn thế giới. Không có xăng dầu, thế giới loài người dần quay về thời kỳ của những đêm trường Trung cổ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Sci-fi</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:03+00:00"/>
+        <meta name="calibre:title_sort" content="Ngày thứ hai đen tối"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

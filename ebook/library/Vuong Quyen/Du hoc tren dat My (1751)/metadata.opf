@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1751</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ba28ddb5-6f6b-4964-936c-7253b1e79208</dc:identifier>
+        <dc:title>Du học trên đất Mỹ</dc:title>
+        <dc:creator opf:file-as="Quyên, Vương" opf:role="aut">Vương Quyên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-21T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;i&gt;Xin dành tặng cuốn sách này cho những độc giả luôn ủng hộ tôi, cũng như những ai chưa từng nản bước trên con đường thực hiện ước mơ.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;“&lt;i&gt;Trên con đường tìm kiếm lý tưởng, chắc chắn ta sẽ va phải những bức tường kiên cố, nhưng chúng nằm đó không phải để cản bước chúng ta, mà nhằm ngăn trở những kẻ không có khát khao lý tưởng. Những bức tường ấy cho chúng ta một cơ hội để chứng tỏ, rốt cuộc chúng ta mong muốn đạt được điều gì đó ghê gớm tới mức nào.&lt;/i&gt;”&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:21+00:00"/>
+        <meta name="calibre:title_sort" content="Du học trên đất Mỹ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

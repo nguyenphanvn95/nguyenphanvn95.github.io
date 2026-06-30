@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1742</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dfb6c28c-e486-4500-854d-5a80d0b4ac53</dc:identifier>
+        <dc:title>Đứng dậy mạnh mẽ</dc:title>
+        <dc:creator opf:file-as="Nick Vujicic" opf:role="aut">Nick Vujicic</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-05-13T17:00:00+00:00</dc:date>
+        <dc:description>Đứng dậy mạnh mẽ là một cuốn sách đề cập đến nạn bắt nạt, những ảnh hưởng tiêu cực của nó đối với các cá nhân và môi trường phát triển chung của xã hội. Quan trọng hơn, từ kinh nghiệm của bản thân cũng như từ những câu chuyện mà chính các nạn nhân của các vụ bắt nạt kể với mình, Nick đã đưa ra những gợi ý rất bổ ích, giàu tính thực tiễn và tính khích lệ về cách đương đầu với sự bắt nạt.
+
+Không ủng hộ việc sử dụng bạo lực dưới bất kỳ hình thức nào, anh khích lệ những ai đang bị bắt nạt và có nguy cơ trở thành nạn nhân của những kẻ bắt nạt xây dựng hệ thống phòng ngừa sự bắt nạt của chính mình dựa trên một nền tảng tinh thần vững mạnh với ý thức rõ ràng về giá trị của bản thân, tự tin và sáng suốt trong suy nghĩ cũng như trong hành động. Bằng ngôn từ cô đọng anh đã đưa ra phương pháp tạo dải an toàn trong tâm thức nơi bạn có thể “đến” để tìm sự bình tĩnh, bình yên trong khi bạn phải đương đầu với một kẻ bắt nạt muốn trêu chọc, xúc phạm, thậm chí hăm dọa bạn. Anh viết: “Dải an toàn mà tôi đề cập đến ở đây được tạo ra để bảo vệ bạn về mặt cảm xúc để bạn không trở nên căng thẳng hoặc phiền muộn trước sự bắt nạt hoặc những chuyện tiêu cực khác trong cuộc sống.”
+
+Có thể nói phương pháp đương đầu với sự bắt nạt mà Nick nêu ra trong cuốn sách này là cách giải quyết vấn đề một cách căn bản với tầm nhìn rộng, sự sáng suốt, tính nhân văn và tinh thần cao thượng. Nick khuyên những người bị bắt nạt tha thứ cho kẻ bắt nạt mình: “Hãy làm điều đó vì chính bản thân bạn… Có thể kẻ bắt nạt bạn đang phải sống trong một gia đình đầy sự ngược đãi và sóng gió, thiếu vắng tình yêu và sự giúp đỡ.”
+
+Cuốn sách này không chỉ là một cẩm nang hữu ích cho các bạn tuổi mới lớn, cho các học sinh, sinh viên, những đối tượng dễ bị ảnh hưởng bởi sự bắt nạt mà còn là sự tham khảo cần thiết đối với các thầy cô giáo, các bậc cha mẹ và những người làm công tác xã hội. Những câu chuyện cũng như các kỹ năng được chia sẻ trong cuốn sách này có thể góp phần thúc đẩy sự phát triển tinh thần của mỗi bạn đọc. Hy vọng rằng khi gấp cuốn sách lại bạn đọc có thể cảm thấy tự tin hơn, mạnh mẽ hơn, được chuẩn bị tốt hơn để đương đầu không chỉ với sự bắt nạt mà những thách thức khác trong cuộc sống.
+
+Trân trọng giới thiệu!</dc:description>
+        <dc:publisher>NXB Hồng Đức</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Phát triển cá nhân</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:20+00:00"/>
+        <meta name="calibre:title_sort" content="Đứng dậy mạnh mẽ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

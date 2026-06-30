@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1347</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">246bea8e-20ff-4564-8734-07b4655c6152</dc:identifier>
+        <dc:title>Luật sư và bị cáo</dc:title>
+        <dc:creator opf:file-as="James Patterson , Peter De Jonge" opf:role="aut">James Patterson , Peter De Jonge</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-13T05:04:10+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Tom Dunleavy là một luật sư xoàng, nhưng đã tìm được một vụ để đời khi được thuê bào chữa cho một thanh niên địa phương bị buộc tội giết ba thanh niên da trắng trên sân bóng rổ của một tỷ phú. Rồi tiếp đến hai vụ giết người bí ẩn nữa.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Thân chủ của Dunleavy là Dante Halleyville, một nam sinh da đen xuất sắc, ngôi sao bóng rổ đang lên của toàn nước Mỹ; nhưng Dunleavy thừa hiểu vụ này cheo leo bên bờ vực của tiền bạc, của những mưu mẹo gian dối và những dục vọng bị cấm đoán. Thân chủ của anh chỉ là một kẻ giơ đầu chịu báng, trừ khi anh tìm ra chìa khóa để mở những bí mật trong bộ máy dát vàng này.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Tom Dunleavy đã thuyết phục được Kate Costello, bạn gái cũ của anh hiện là một luật sư uy tín giúp anh chứng minh Dante vô tội. Sự khéo léo của Tom và Kate làm rung động phòng xử và dư luận. Họ được tôn vinh là những luật sư danh tiếng đã thắng trong một vụ tầm cỡ thế kỷ. Nhưng kết cục còn sửng sốt và bất ngờ hơn nữa, khi sự thật được thanh tra Connie Raiborne phanh phui, và ai mới là thủ phạm thực sự của năm vụ giết người tàn bạo kia?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Phương Đông + NXB Phụ nữ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:28+00:00"/>
+        <meta name="calibre:title_sort" content="Luật sư và bị cáo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

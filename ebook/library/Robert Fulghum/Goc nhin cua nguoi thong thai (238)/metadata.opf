@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">238</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ed39dd74-da30-48e2-9d5f-aef149203157</dc:identifier>
+        <dc:title>Góc nhìn của người thông thái</dc:title>
+        <dc:creator opf:file-as="Fulghum, Robert" opf:role="aut">Robert Fulghum</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;Góc Nhìn Của Người Thông Thái&lt;/strong&gt; của &lt;strong&gt;Robert Fulghum&lt;/strong&gt; (sinh năm 1937, tác giả của cuốn sách nổi tiếng “Hạt giống yêu đời” – cuốn sách bán chạy nhiều năm liền của Amazon), là quyển sách thuộc thể loại sách kỹ năng rất độc đáo, khác hẳn với những cuốn khác. Khi đọc sách, bạn sẽ có cảm giác như mình đang được trò chuyện cùng một ông chú vui tính và hài hước, sau mỗi chủ đề đều lắng lại một thông điệp bình dị nhưng dưới một góc nhìn thật mới mẻ. Khi nhìn nhận mọi vấn đề dưới góc độ lạc quan và đơn giản hơn, bạn sẽ thấy cuộc sống mình thay đổi.&lt;/p&gt;
+&lt;p&gt;Cuốn sách cũng thể hiện những sự tương phản sâu sắc trong cuộc sống thường nhật. Những mẩu chuyện ngắn được thể hiện dưới góc nhìn của tác giả với cảm xúc mộc mạc chân thành cho chúng ta thấy được những điều bình dị khác lẩn khuất đâu đó mà đôi khi chỉ vì sống quá nhanh, quá vội – chúng ta đã vô tình để trôi qua.&lt;/p&gt;
+&lt;p&gt;Có thể nói,&lt;strong&gt; Fulghum&lt;/strong&gt; đã đưa ra vấn đề, và không ai khác là chính bạn phải có câu trả lời cho riêng mình. Những mẩu chuyện dung dị dưới nhãn quan rộng mở của&lt;strong&gt; Fulghum &lt;/strong&gt;trong &lt;strong&gt;Góc Nhìn Của Người Thông Thái&lt;/strong&gt; đã được viết bằng một phong cách gần gũi và khiêm nhường, dí dỏm và hấp dẫn với sự thông thái của riêng ông. &lt;strong&gt;Góc Nhìn Của Người Thông Thái&lt;/strong&gt; đem lại cảm giác ấm áp như thể ta đang ngồi dưới mái hiên nhà bà mình vào một chiều chủ nhật, thong thả nhấm nháp từng ngụm kem mát lành…&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu đến bạn cuốn sách &lt;strong&gt;“Góc Nhìn Của Người Thông Thái”!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:33.431308+00:00"/>
+        <meta name="calibre:title_sort" content="Góc nhìn của người thông thái"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

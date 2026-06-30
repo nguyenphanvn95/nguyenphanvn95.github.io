@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1208</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">17c09190-bb56-4025-be96-b1154a218d0d</dc:identifier>
+        <dc:title>Mưu sát</dc:title>
+        <dc:creator opf:file-as="Trần, Tử Kim" opf:role="aut">Tử Kim Trần</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-06-30T17:00:00+00:00</dc:date>
+        <dc:description>Từ Sách tốt nghiệp tiến sĩ ngành Tâm lý học ở trường Đại học California của Mỹ. Người mẹ đơn thân của anh bị chết trong vụ phá dỡ nhà của Ban Cải tạo khu vực cũ. Anh ta từ Mỹ trở về để báo thù cho mẹ.
+
+Đầu tiên, anh ta giết hại Phó Giám đốc Sở Công An huyện, gây rúng động cả huyện, khiến Cao Đông, người bạn học cũ của Từ Sách, là cảnh sát hình sự tài giỏi phải vào cuộc để phá án.Từ Sách đã dàn dựng nên kế hoạch trả thù vô cùng hoàn mỹ, liệu Cao Đông có thể ngăn chặn được sự trả thù này hay không?</dc:description>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:12+00:00"/>
+        <meta name="calibre:title_sort" content="Mưu sát"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

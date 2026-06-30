@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1451</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">542862da-3431-4643-9f21-3f4b4e6a6d22</dc:identifier>
+        <dc:title>Không thể bị lừa dối</dc:title>
+        <dc:creator opf:file-as="Lieberman, David" opf:role="aut">David Lieberman</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:57:37+00:00</dc:date>
+        <dc:description>&lt;p&gt;Không thể bị lừa dối thể hiện cuộc đấu trí diễn ra hàng ngày giữa sự thật và cái giả dối. Cuốn sách là một công cụ thú vị và đặc biệt giúp bạn kiểm soát và làm chủ mọi tình huống một cách khôn ngoan nhưng trung thực vì, xét đến cùng, sự trung thực mới chính là nền tảng của tất cả các mối quan hệ, dù là công việc hay cá nhân.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39+00:00"/>
+        <meta name="calibre:title_sort" content="Không thể bị lừa dối"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

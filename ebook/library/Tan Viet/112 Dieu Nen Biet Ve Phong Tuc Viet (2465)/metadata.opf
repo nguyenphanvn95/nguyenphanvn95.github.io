@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2465</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7356662a-58b4-4ef4-8e1e-c78c72eaf596</dc:identifier>
+        <dc:title>112 Điều Nên Biết Về Phong Tục Việt Nam</dc:title>
+        <dc:creator opf:file-as="Việt, Tân" opf:role="aut">Tân Việt</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;font face="Times New Roman"&gt;Những nội dung trình bày dưới dạng hỏi đáp trong cuốn
+    sách này chỉ nhằm giải đáp phần nào xuất xứ của các phong tục đã tồn tại
+    ở nước ta, để các bạn tham khảo, tự phân tích, cái nào hay nên theo, cái
+    nào dở nên bỏ, cái nào còn hạn chế những xét thấy chưa thể bỏ ngay thì
+    tuỳ hoàn cảnh cụ thể mà châm chước vận dụng cho thích hợp...&lt;/font&gt;</dc:description>
+        <dc:publisher>NXB Văn Hóa Dân Tộc</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn Hóa</dc:subject>
+        <dc:subject>Lịch sử</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:49+00:00"/>
+        <meta name="calibre:title_sort" content="112 Điều Nên Biết Về Phong Tục Việt Nam"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

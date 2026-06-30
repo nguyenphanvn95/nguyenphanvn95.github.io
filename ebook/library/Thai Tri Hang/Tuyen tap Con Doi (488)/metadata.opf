@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">488</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dc473a86-0d77-4c36-856e-eba786746ebf</dc:identifier>
+        <dc:title>Tuyển tập Con Dơi</dc:title>
+        <dc:creator opf:file-as="Hằng, Thái Trí" opf:role="aut">Thái Trí Hằng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tuyển tập Con Dơi” Thật ra là ba trung thiên tạo thành, mỗi thiên chừng 3 vạn chữ.3 thiên này phân biệt là “Mix”, “Con Dơi”, “Cầu nhân chi thủy.” Theo lời chính tác giả Thái đầu gấu, anh nhận truyện này mình viết không tệ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:49+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập Con Dơi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

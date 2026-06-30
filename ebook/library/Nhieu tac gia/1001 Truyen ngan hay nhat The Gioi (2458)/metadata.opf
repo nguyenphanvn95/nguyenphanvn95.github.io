@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2458</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">025a51e1-3367-4fbc-97ff-ba0a76b08cee</dc:identifier>
+        <dc:title>1001 Truyện ngắn hay nhất Thế Giới</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">dd254412-6b9e-4e58-898e-c0b05b1a98a9</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>©vctvegroup</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:48+00:00"/>
+        <meta name="calibre:title_sort" content="1001 Truyện ngắn hay nhất Thế Giới"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

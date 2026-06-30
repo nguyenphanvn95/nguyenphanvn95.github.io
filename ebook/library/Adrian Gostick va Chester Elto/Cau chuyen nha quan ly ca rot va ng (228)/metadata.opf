@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">228</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e38d5b12-fb03-405f-8bcd-d7b27cbd3d51</dc:identifier>
+        <dc:title>Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng</dc:title>
+        <dc:creator opf:file-as="Elto, Adrian Gostick và Chester" opf:role="aut">Adrian Gostick và Chester Elto</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Bạn đang đọc cuốn sách đã được dịch ra 15 thứ tiếng và bán ra hơn 200.000 bản trong thời gian gần đây của hai tác giả &lt;strong&gt;Adrian Gostick&lt;/strong&gt; và &lt;strong&gt;Chester Elton&lt;/strong&gt;, những người đã và đang là những nhà quản lý và tư vấn thành công tại Mỹ nhờ triết lý quản trị đang trở thành thương hiệu độc quyền của họ: "Bí quyết củ cà-rốt".&lt;/p&gt;
+&lt;p&gt;Cà-rốt, loại củ hầu như không thể thiếu trong bữa ăn của các gia đình Âu - Mỹ. Sở dĩ cà-rốt chiếm vị trí quan trọng như thế nào trên bàn ăn của họ là vì, như đa số chúng ta đều biết, nó là loại thức ăn vừa bổ dưỡng vừa chứa nhiều loại vitamin thiết yếu có thể giúp cơ thể duy trì sức khoẻ và sự thông minh.&lt;/p&gt;
+&lt;p&gt;Nếu cà-rốt cần thiết cho mọi người, mọi giới, mọi lúc, mọi nơi thì tuyên dương - khen thưởng, theo Gostick và Elton, cũng thế. Thật vậy, một lời khen chân thành, đúng lúc có thể biến một người bình thường thành bậc kỳ tài. Một phần thưởng thoả đáng, đúng người không những giúp bạn giữ được nhân viên sỏi mà còn là một đòn bẩy hữu hiệu để tăng năng suất lao động và duy trì sự phát triển bền vững của công ty, tổ chức bạn.&lt;/p&gt;
+&lt;p&gt;Bằng một câu chuyện ngụ ngôn hiện đại và những diễn dịch hết sức gần gũi, sinh động Gostick và Elton sẽ cho chúng ta thấy tầm quan trọng thực sự của "cà-rốt" trong việc khơi dậy những tiềm năng to lớn đang ngủ yên trong đội ngũ nhân viên của mình.&lt;/p&gt;
+&lt;p&gt;Quyển sách &lt;strong&gt;Câu Chuyện Nhà Quản Lý Cà Rốt Và Nghệ Thuật Khen Thưởng&lt;/strong&gt; này không những trang bị cho các nhà quản lý ngày nay những chiến lược và giải pháp kinh doanh hữu hiệu, mà còn củng cố lòng trung thành và tăng cường hiệu năng lực làm việc của nhân viên bằng cách ghi nhận thành tích của họ thông qua một phương pháp khen thưởng khá đơn giản gọi là "Bí quyết củ cà-rốt".&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:25.248743+00:00"/>
+        <meta name="calibre:title_sort" content="Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

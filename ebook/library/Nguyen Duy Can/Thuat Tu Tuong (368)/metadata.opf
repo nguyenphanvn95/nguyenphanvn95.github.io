@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">368</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dc9064de-0113-43b7-b321-00a8c16c2368</dc:identifier>
+        <dc:title>Thuật Tư Tưởng</dc:title>
+        <dc:creator opf:file-as="Cần, Nguyễn Duy" opf:role="aut">Nguyễn Duy Cần</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-08T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:23+00:00"/>
+        <meta name="calibre:title_sort" content="Thuật Tư Tưởng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

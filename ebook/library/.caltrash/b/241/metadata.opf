@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">241</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">077459d8-7cd7-4272-b88a-0c250fa74651</dc:identifier>
+        <dc:title>Zazie trong tàu điện ngầm</dc:title>
+        <dc:creator opf:file-as="Queneau, Raymond" opf:role="aut">Raymond Queneau</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-09-04T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Zazie là một bé gái 12 tuổi, tò mò, ăn nói bỗ bã, thẳng tính và khá ngây thơ dù thường xuyên cố tỏ ra sỏi đời lắm, sống cùng mẹ là Lalochere tại một thành phố tỉnh lẻ của Pháp, Saint-Montron. Nhân một chuyến lên Paris "hú hí" cùng một anh bồ, Lalochere dẫn Zazie theo và gửi con bé cho cậu Gabriel. Zazie đã rất phấn khởi vì tưởng mình sẽ được đi tầu điện ngầm, nhưng không, vì rủi thay tất cả hệ thống giao thông công cộng của Paris lại đang đình công. Cô bé vô cùng tức giận.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Thế là, trong hai ngày ngắn ngủi ở Paris, Zazie quyết định sẽ tự mình khám phá thành phố này. Việc này đã gây ra biết bao nhiêu rắc rối cho Gabriel và những người bạn của anh. Sức sống và sự năng động của Zazie cũng như những nhân vật xoay quanh cô bé, do tự nguyện hay do bị cô bé lôi kéo theo, tương phản một cách hài hước với sự thụ động, vẻ ủ ê của "Paris và hệ thống tầu điện ngầm tuyệt vời của nó". Cuối cùng, ngay trước khi được trả về cho Lalochere, Zazie cũng được đi tầu điện ngầm, nhưng hài ở chỗ, chính con bé, người mong mỏi điều ấy nhất, lại hoàn toàn không hề hay biết, do đã ngất xỉu trong một tình huống trước đó.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Zazie trông tàu điện ngầm là một tác phẩm thổi một làn gió mới vào trong văn học Pháp nói chung và văn học đương đại Pháp nói riêng, với một lối viết đậm nét Queneau. Tác giả là người đi đầu phong trào phá vỡ lối viết kinh viện truyền thống, đưa văn học trở nên gần gũi với đời sống và ngôn ngữ giao tiếp hàng ngày hơn. Zazie là tác phẩm tiêu biểu của ông trong tinh thần ấy. Đọc Zazie trong tầu điện ngầm, có cảm giác vừa được xem một thước phim hài đúng kiểu Pháp, được quay ngay tại Paris giữa những năm 50, khi châu Âu vừa trải qua cuộc Chiến tranh Thế giới lần II. Nó đem lại cho chúng ta một cái nhìn hoàn toàn mới mẻ, ngộ nghĩnh ẩn chút châm biếm về thành phố quá đỗi quen thuộc này.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Truyện - Tiểu thuyết</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:02+00:00"/>
+        <meta name="calibre:title_sort" content="Zazie trong tàu điện ngầm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

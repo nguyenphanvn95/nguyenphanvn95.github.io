@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1927</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5a4c89ea-1327-4f5b-b66e-48fa5ce2ddee</dc:identifier>
+        <dc:title>Chuyến xe năng lượng</dc:title>
+        <dc:creator opf:file-as="Gordon, Jon" opf:role="aut">Jon Gordon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Mười bí quyết tăng cường nguồn năng lượng mà tác giả mang đến cho các bạn trong cuốn sách này được rút ra từ kinh nghiệm của chính tác giả cũng như của những người mà tác giả có cơ hội tiếp xúc. Họ là những hiệu trưởng đã thay đổi hoàn toàn ngôi trường của mình bằng việc tác động đến nguồn năng lượng tích cực của tập thể giáo viên và học sinh trong trường, là những lãnh đạo đã sử dụng những chiến lược thích hợp để cải thiện môi trường làm việc và giúp cho nhân viên yêu thích công việc của họ hơn, là những vận động viên không ngừng khổ luyện để cải thiện và nâng cao thành tích, là những người đã và đang dũng cảm chống chọi với căn bệnh ung thư hiểm nghèo để sống cuộc đời lạc quan, hữu ích…&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Trẻ + Trí Việt</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:40+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyến xe năng lượng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

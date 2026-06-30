@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2307</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">effbf44c-d2fa-45cb-9f00-020b9bde0b25</dc:identifier>
+        <dc:title>Bí Ẩn Chiếc Nhẫn Ngọc Sapphire</dc:title>
+        <dc:creator opf:file-as="Tinh, Quỷ Mã" opf:role="aut">Quỷ Mã Tinh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Mẹ của Phó Viễn là một mụ phù thủy, thường kiếm sống bằng nghề bói toán. Một ngày, Mạc Lan và Phó Viễn cùng đi về nhà, phát hiện bà ta đang nằm sõng soài trên nền nhà, một con dao lớn cắm trên cổ. Không lâu sau, Phó Viễn trở thành kẻ tình nghi số một của cảnh sát trong vụ án này.&lt;br&gt;&lt;br&gt;Mạc Lan không tin rằng Phó Viễn chính là hung thủ. Thông qua dò hỏi hàng xóm quanh nhà Phó Viễn và những người có liên quan, cô cùng với Cao Cạnh, người bạn làm cảnh sát của mình, đã xác định được hai kẻ tình nghi. Có điều, hai người này lại là một cặp anh em sinh đôi. Họ luôn cùng tiến, cùng lùi, tìm mọi cách để bao che cho nhau. Rốt cuộc, ai mới chính là hung thủ thực sự trong vụ án này?&lt;/p&gt;</dc:description>
+        <dc:publisher>Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:30+00:00"/>
+        <meta name="calibre:title_sort" content="Bí Ẩn Chiếc Nhẫn Ngọc Sapphire"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

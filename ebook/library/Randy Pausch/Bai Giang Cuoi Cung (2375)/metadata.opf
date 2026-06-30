@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2375</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">25956a1a-26b2-42ec-94cc-205ede1a4533</dc:identifier>
+        <dc:title>Bài Giảng Cuối Cùng</dc:title>
+        <dc:creator opf:file-as="Pausch, Randy" opf:role="aut">Randy Pausch</dc:creator>
+        <dc:creator opf:file-as="Pausch, Randy" opf:role="aut">Jeffrey Zaslow</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:48+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bài thuyết trình của Randy, “Thật Sự Đạt Được Những Ước Mơ Tuổi Thơ”, là những triết lý nhẹ nhàng nhưng thâm thúy về cuộc sống. Nó cuốn hút như chính con người ông. Thay vì nói về bệnh tật và cái chết, bài thuyết trình nói về sự sống, về việc thực hiện những ước mơ của chính mình, và tạo điều kiện cho những người khác thực hiện ước mơ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:38+00:00"/>
+        <meta name="calibre:title_sort" content="Bài Giảng Cuối Cùng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

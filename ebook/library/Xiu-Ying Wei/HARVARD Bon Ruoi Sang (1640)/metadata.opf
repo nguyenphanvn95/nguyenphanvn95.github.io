@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1640</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f853b4fe-102b-4bbc-b977-6c41fdf51a46</dc:identifier>
+        <dc:title>HARVARD Bốn Rưỡi Sáng</dc:title>
+        <dc:creator opf:file-as="Wei, Xiu-Ying" opf:role="aut">Xiu-Ying Wei</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-12-24T06:27:46+00:00</dc:date>
+        <dc:description>Harvard bốn rưỡi sáng sử dụng hình ảnh Harvard như một biểu tượng xuyên suốt, kể lại các câu chuyện có tính cách điệu về Harvard như một phương thức nhằm thu hút bạn đọc đến với cuốn sách, để từ đó chuyển tải những chỉ dẫ,khuyến khích, gợi ý cùng thông điệp vừa thực tế vừa bay bổng tới các bạn trẻ đang ngồi trên ghế nhà trường và chuẩn bị bước vào đời. Có nhiều thông điệp gía trị và hữu ích mà bạn sẽ học thu hoạch được từ cuốn sách như:
+- Nếu không chăm chỉ, thiên tài cũng trắng tay
+- Nhiệt tình là sức mạnh thay đổi vận mệnh 
+-Biết tự kiểm soát bản thân để vững bước thành công 
+- Tri thức là vốn quý mà không kẻ trộm nào lấy được
+- Đừng bao giờ lãng phí thời gian vào những việc vô bổ
+" Ai cũng là người cầm lái vận mệnh của chính mình. Và tự tin chính là la bàn chỉ hướng cho con thuyền của đời người. Người ta thành công hay không, hạnh phúc hay không, điều cốt yếu nhất là có tạo lập được niềm tin vững chắc hay không?"</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/132865098</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>harvardbonruoisang</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>Short Story</dc:subject>
+        <dc:subject>hoctaphieuqua</dc:subject>
+        <dc:subject>18</dc:subject>
+        <dc:subject>tfboys</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>harvard</dc:subject>
+        <dc:subject>ngontinh</dc:subject>
+        <dc:subject>xiuyingwei</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:09+00:00"/>
+        <meta name="calibre:title_sort" content="HARVARD Bốn Rưỡi Sáng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

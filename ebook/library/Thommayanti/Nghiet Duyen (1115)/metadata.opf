@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1115</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">de93c858-e287-4a63-be30-8bfebbe2d813</dc:identifier>
+        <dc:title>Nghiệt Duyên</dc:title>
+        <dc:creator opf:file-as="Thommayanti" opf:role="aut">Thommayanti</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-11-24T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">0729e18b-184d-4372-bbb8-da717909b51c</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:00+00:00"/>
+        <meta name="calibre:title_sort" content="Nghiệt Duyên"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

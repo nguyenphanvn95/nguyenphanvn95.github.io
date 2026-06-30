@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1151</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3f2f20aa-4b73-4a31-bc1c-84e74cc67926</dc:identifier>
+        <dc:title>Nửa kia của Hitler</dc:title>
+        <dc:creator opf:file-as="Schmitt, Eric-Emmanuel" opf:role="aut">Eric-Emmanuel Schmitt</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:56+00:00</dc:date>
+        <dc:description>&lt;p&gt;Ở tuổi 20, Adolf Hitler nuôi giấc mộng trở thành họa sĩ. Nhưng sau hai lần bị Đại học Mỹ thuật Viên đánh trượt, Hitler trở thành gã lông bông, nay đây mai đó rồi dần dà tìm được chỗ đứng, trở thành một “con quái vật” khổng lồ của nhân loại nhờ cuộc thế chiến I. Đó là những dòng tiểu sử mà bất cứ ai muốn tìm hiểu đều có thể dễ dàng biết được về một dị nhân của thế kỷ 20, nỗi ám ảnh khôn nguôi của người Do Thái. Đó cũng là căn cứ để tiểu thuyết gia người Pháp bắt đầu một câu chuyện chỉ có trong tưởng tượng. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:05+00:00"/>
+        <meta name="calibre:title_sort" content="Nửa kia của Hitler"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

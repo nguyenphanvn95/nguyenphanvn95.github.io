@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1945</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">11b3419f-8704-493a-a65d-43679df04914</dc:identifier>
+        <dc:title>Chuyện bí ẩn thường ngày</dc:title>
+        <dc:creator opf:file-as="Jennnings, Paul" opf:role="aut">Paul Jennnings</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-25T01:35:06+00:00</dc:date>
+        <dc:description>&lt;p&gt; Chuyện bí ẩn thường ngày là một trong những cuốn truyện thành công nhất của ông viết về đề tài này cho thiếu nhi: Những tình tiết chuỵên cuốn hút, gay cấn và đầy mầu sắc kỳ ảo đến những trang cuối cùng.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Fairy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:47.036122+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện bí ẩn thường ngày"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

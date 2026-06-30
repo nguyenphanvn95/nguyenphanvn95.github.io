@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1942</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">31076185-0bfb-4f63-b263-096dc8e609be</dc:identifier>
+        <dc:title>Chuyện của thiên tài</dc:title>
+        <dc:creator opf:file-as="Linh, Nguyễn Thế Hoàng" opf:role="aut">Nguyễn Thế Hoàng Linh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đã có người gọi Nguyễn Thế Hoàng Linh là thiên tài. Không phải là họ không có lý. Nhưng người khác lại cho rằng thiên tài hay không thiên tài là một thứ… bất khả tri – tức là nhận thức này nằm ngoài khả năng của cái đương đại. Giống như người ta theo thuyết bất khả tri trước việc có thần thánh hay không vậy. Nhưng nói như thế cũng không có nghĩa rằng người đương đại không có khả năng định giá những giá trị của hôm nay&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:46+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện của thiên tài"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

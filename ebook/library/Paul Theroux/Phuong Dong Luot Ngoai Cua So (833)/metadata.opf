@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">833</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0135d8ce-a18b-4d1a-a37f-203236d8bac0</dc:identifier>
+        <dc:title>Phương Đông Lướt Ngoài Cửa Sổ</dc:title>
+        <dc:creator opf:file-as="Theroux, Paul" opf:role="aut">Paul Theroux</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Với Paul Theroux, những chuyến tàu phương Đông giống như những phiên chợ hấp dẫn ông với vẻ tràn trề hương vị và màu sắc, bởi nét bí ẩn, lạ lùng không sao lý giải. Ông đã lên những chuyến tàu ấy, bốn tháng trời đi khắp châu Á, để vẽ nên từng mảnh ghép trên bức tranh phương Đông rộng lớn: Thổ Nhĩ Kỳ với nền văn hóa đặc sắc cùng ẩn ức về giới tính, Afganistan trong cơn bất ổn, Ấn Độ long lanh đền đài nhưng nghèo đói và hoang đường, Singapore ngăn nắp đến từng li, Thái Lan dậy mùi giải trí và tình dục, Nhật Bản tiện nghi nhưng con người dường như đã thành cỗ máy...&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Ông cũng ghé đến Việt Nam, lên con tàu băng qua đèo Hải Vân, ngỡ ngàng nhận ra trong suốt cuộc hành trình, đây là vùng đất của những cảnh tượng thiên nhiên thơ mộng nhất...&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Ngòi bút của ông đã khiến châu Á hiện ra như có thể chạm vào, nếm được, ngửi thấy, và khơi dậy trong ta nỗi thôi thúc một ngày bỏ xa cuộc sống nhàm nhạt quen thuộc, đeo hành lý và nhảy lên một con tàu nào đó, để nếm trải mọi thanh âm của cuộc sống bao la.&lt;/div&gt;</dc:description>
+        <dc:publisher>Thế Giới</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Travel</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:28+00:00"/>
+        <meta name="calibre:title_sort" content="Phương Đông Lướt Ngoài Cửa Sổ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

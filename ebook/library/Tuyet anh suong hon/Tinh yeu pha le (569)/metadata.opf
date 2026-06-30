@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">569</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">32f43c9a-a8b2-4099-bdb7-de49e74cd139</dc:identifier>
+        <dc:title>Tình yêu pha lê</dc:title>
+        <dc:creator opf:file-as="hồn, Tuyết ảnh sương" opf:role="aut">Tuyết ảnh sương hồn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T01:54:35+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bố mất sớm, mẹ đi bước nữa, Lâm Nguyệt Loan sống một mình. Dù một năm chỉ được mẹ thăm nom đôi ba lần nhưng cô chẳng hề oán trách, vẫn sống thật kiên cường và mạnh mẽ. Tại trường cấp III Thần Quang, cô đã gặp Minh Nhật Lãng, Tiêu Tinh Dã và Nguyên Thần Dạ. Tiêu Tinh Dã là ngôi sao thể thao của trường, một chàng trai thẳng thắn, đầy sức sống nhưng thiếu tình thương của mẹ từ thơ bé. Còn Nguyên Thần Dạ lại khiến người khác bị thu hút bởi tài năng, sự lãng tử, ngang tàng và nổi loạn nhưng có ai biết rằng, sự nổi loạn ấy là do cậu là đứa trẻ bị lãng quên, lớn lên như cành non không được uốn nắn. Cả hai chàng trai đều thầm mến Lâm Nguyệt Loan, nhưng trái tim dịu dàng của cô gái nhỏ lại hướng về Minh Nhật Lãng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:58+00:00"/>
+        <meta name="calibre:title_sort" content="Tình yêu pha lê"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

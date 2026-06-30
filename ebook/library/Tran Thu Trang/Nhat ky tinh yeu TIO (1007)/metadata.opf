@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1007</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">eafd9a8e-49ef-4fd1-8eb0-267647825487</dc:identifier>
+        <dc:title>Nhật ký tình yêu TIO</dc:title>
+        <dc:creator opf:file-as="Trang, Trần Thu" opf:role="aut">Trần Thu Trang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T14:53:37+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nhật Ký Tình Yêu TIO kể về những câu chuyện hoàn toàn có thật, của chính tôi và do chính tôi viết ra. Một số người nói với tôi, cái gọi là Nhật ký tình yêu này giúp họ cảm thấy tâm hồn tươi trẻ, họ tìm thấy chính mình trong đó. Một số người khác lại nói, đây là một cẩm nang để tìm hiểu tâm lý con gái và một cuốn sổ ghi chép tạp nham, linh tinh về Thành phố Hà Nội. Rồi cũng có người cho rằng những gì tôi viết là lãng mạn rẻ tiền hoặc là những lời của một đứa không được giáo dục cẩn thận. Với riêng tôi, nó chỉ đơn giản là những trang nhật ký ghi lại những khoảng thời gian rất đáng nhớ với vài sinh hoạt nhỏ nhặt hàng ngày, những suy nghĩ, vui buồn, yêu thương, mơ ước...&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:48+00:00"/>
+        <meta name="calibre:title_sort" content="Nhật ký tình yêu TIO"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

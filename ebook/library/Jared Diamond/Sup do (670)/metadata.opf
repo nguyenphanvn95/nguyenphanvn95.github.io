@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">670</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b4de339f-158e-4f5d-9109-b08ceef3e88b</dc:identifier>
+        <dc:title>Sụp đổ</dc:title>
+        <dc:creator opf:file-as="DIAMOND, JARED" opf:role="aut">Jared Diamond</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-06-09T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:language>eng</dc:language>
+        <dc:language>fra</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:09+00:00"/>
+        <meta name="calibre:title_sort" content="Sụp đổ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

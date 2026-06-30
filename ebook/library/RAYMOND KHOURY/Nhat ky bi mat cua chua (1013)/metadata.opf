@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1013</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c0b42d6a-93ca-400c-abef-1997d6298fb2</dc:identifier>
+        <dc:title>Nhật ký bí mật của chúa</dc:title>
+        <dc:creator opf:file-as="KHOURY, RAYMOND" opf:role="aut">RAYMOND KHOURY</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:49+00:00</dc:date>
+        <dc:description>&lt;p&gt;Với những tri thức khoa học mới nhất, Nhật ký bí mật của Chúa hé lật những tấm màn bí mật khi mở ra những ý tưởng mới mẻ về tôn giáo. Không chỉ có Vance mà ngay cả Tess, nhà khảo cổ học cũng ôm mộng khát khao về “một thế giới mà mọi người không bị lừa gạt bởi bất kỳ trò dối trá nào trong lịch sử”.&lt;/p&gt;</dc:description>
+        <dc:publisher>VH-ebook Project</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:49+00:00"/>
+        <meta name="calibre:title_sort" content="Nhật ký bí mật của chúa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

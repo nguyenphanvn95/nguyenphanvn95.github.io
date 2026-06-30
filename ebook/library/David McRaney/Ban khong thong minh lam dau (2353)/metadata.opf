@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2353</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6b3b32ca-6af1-42ec-a56b-ad33301aaf4d</dc:identifier>
+        <dc:title>Bạn không thông minh lắm đâu</dc:title>
+        <dc:creator opf:file-as="McRaney, David" opf:role="aut">David McRaney</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-04-20T18:19:57+00:00</dc:date>
+        <dc:description>Bạn không thông minh lắm đâu - David McRaney
+Hầu hết kí ức của bạn là giả. Tại sao bạn có quá nhiều bạn bè trên fb? và 46 cách khác nhau bạn đang sử dụng để tự đánh lừa bản thân. 
+Voldy dịch
+NXB: R.E.A.D books
+...</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/145825819</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>bankhongthongminhlamdau</dc:subject>
+        <dc:subject>Non-Fiction</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>davidmcraney</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:35+00:00"/>
+        <meta name="calibre:title_sort" content="Bạn không thông minh lắm đâu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

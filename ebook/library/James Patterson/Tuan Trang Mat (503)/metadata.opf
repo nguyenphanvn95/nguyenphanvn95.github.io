@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">503</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f51e50fc-9ef7-4a65-a89d-b75c9ff1835f</dc:identifier>
+        <dc:title>Tuần Trăng Mật</dc:title>
+        <dc:creator opf:file-as="Patterson, James" opf:role="aut">James Patterson</dc:creator>
+        <dc:creator opf:file-as="Patterson, James" opf:role="aut">Howard Roughan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:25+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Đừng hé mở hồi kết&lt;br&gt;&lt;br&gt;Cảm giác được đàn ông khao khát và phụ nữ ganh tị sẽ như thế nào? Đó chính là cuộc đời mà Nora Sinclar đã mơ ước, cuộc đời cô lăn lộn để có được, cuộc đời mà cô sẽ không bao giờ từ bỏ.&lt;br&gt;&lt;br&gt;Khi Đặc vụ FBI John O’Hara nhìn thấy cô lần đầu tiên, trông cô dường như hoàn hảo. Cô có vẻ nguỵ trang tinh tế. Sức hấp dẫn và gợi cảm trêu ngươi. Cô như một món hàng lạ. Đám đàn ông xếp hàng dài để tán tỉnh cô. Cô không chỉ thu hút, mà còn mê hoặc họ&lt;br&gt;&lt;br&gt;Đừng hé lộ phần mở đầu&lt;br&gt;&lt;br&gt;Vậy tại sao FBI lại quan tâm tới Nora Sinclair? Những chuyện kỳ bí cứ xảy đến với những người xung quanh cô, đặc biệt là đàn ông. Và có một điều gì đó rất nguy hiểm ở Nora-điều gì đó vừa lôi cuốn đặc vụ O’Hara vừa làm anh ngập tràn trong nỗi sợ. Liệu có một bí mật đen tối nào ẩn nấp sau những khoảng trống không lời giải trong quá khứ của cô? Và trong lúc dành ngày càng nhiều thời gian tìm hiểu cô, liệu anh có đeo đuổi sự công bằng? Hay nỗi ám ảnh chết người của chính mình?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:50+00:00"/>
+        <meta name="calibre:title_sort" content="Tuần Trăng Mật"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

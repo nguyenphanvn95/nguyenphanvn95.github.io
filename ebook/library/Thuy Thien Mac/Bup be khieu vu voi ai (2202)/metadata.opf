@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2202</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2eb48158-1639-451d-987b-f92ca74d36eb</dc:identifier>
+        <dc:title>Búp bê khiêu vũ với ai</dc:title>
+        <dc:creator opf:file-as="Mặc, Thủy Thiên" opf:role="aut">Thủy Thiên Mặc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T02:22:49+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Búp bê khiêu vũ với ai” , không chỉ đơn thuần là mối tình “sét đánh” của một cô gái mới bước chân vào ngưỡng cửa trường THPT có cái tên “1-0-2” (độc nhất vô nhị): An Dương Xuân Phi với anh chàng Hạ Sâm Triệt vô cùng điển trai có nụ cười mê đắm lòng người, luôn phải chạy trốn những cô gái hâm mộ, mà còn là những cảm xúc. Bên cạnh đó là những mối quan hệ nhằng nhịt giữa người anh trai trên Thuần Uyên cùng mẹ khác cha, yêu thương và chăm sóc cho em gái hơn cả cha- mẹ ruột của cô. Đó là tình bạn ấm áp, chân thành của Tô Kính Hy- bạn thân của nhất của Thuần Uyên dành cho cô em gái nhỏ của bạn sự yêu thương lớn lao vô bờ “cho” đi mà không cần đáp trả.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:18+00:00"/>
+        <meta name="calibre:title_sort" content="Búp bê khiêu vũ với ai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

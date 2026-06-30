@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">671</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ddb0a8f5-d85e-4d2a-bece-fcdf39267d06</dc:identifier>
+        <dc:title>Sương mù lúc bình minh</dc:title>
+        <dc:creator opf:file-as="Hề, Phiếu A" opf:role="aut">Phiếu A Hề</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-27T13:28:35+00:00</dc:date>
+        <dc:description>&lt;p&gt;Trần Tử Dữu vẫn tin tưởng vững chắc, cuộc sống như tia nắng mai trong màn sương mù, ngay cả khi phía trước còn mịt mờ nhưng có ánh sáng là còn có hy vọng. Khi được Giang Ly Thành tình cờ cứu giúp, khi thương tổn lẫn nhau, rồi khi dứt khoát ra đi… cô đều tin tưởng, giống như sương mù lúc sáng sớm cuối cùng rồi cũng sẽ tiêu tan, anh chung quy cũng chỉ là bản nhạc đệm trong cuộc đời của cô, mà con đường của cô còn rất xa, rất dài. Nhưng là sau khi anh đi, cô mới hiểu được: dù anh có hủy diệt mười năm thanh xuân của cô, thì đó cũng là mười năm hồi ức duy nhất.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:09+00:00"/>
+        <meta name="calibre:title_sort" content="Sương mù lúc bình minh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

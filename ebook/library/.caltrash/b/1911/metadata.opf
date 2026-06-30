@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1911</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">03abfd80-01ca-4915-bc76-c0e7758c8ccc</dc:identifier>
+        <dc:title>Dám thất bại</dc:title>
+        <dc:creator opf:file-as="Lim, Billi P.S" opf:role="aut">Billi P.S Lim</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:47+00:00</dc:date>
+        <dc:description>&lt;p&gt;Lẽ nào thất bại chẳng có chút giá trị nào sao? Quyển sách này đề cập đến một mặt khác của thành công. Đó là một phương diện chúng ta cần thật sự học hỏi. Đối với những ai đã từng cố gắng và đã từng thất bại, quyển sách này đứng về phía bạn.&lt;/p&gt;</dc:description>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Phát triển cá nhân</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:39+00:00"/>
+        <meta name="calibre:title_sort" content="Dám thất bại"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

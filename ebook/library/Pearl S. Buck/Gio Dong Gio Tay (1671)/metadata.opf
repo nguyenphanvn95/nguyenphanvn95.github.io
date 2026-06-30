@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1671</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6cc839a5-1fff-495c-8576-5d009d3a9121</dc:identifier>
+        <dc:title>Gió Đông Gió Tây</dc:title>
+        <dc:creator opf:file-as="Buck, Pearl S." opf:role="aut">Pearl S. Buck</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-10-05T10:31:04+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:12+00:00"/>
+        <meta name="calibre:title_sort" content="Gió Đông Gió Tây"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

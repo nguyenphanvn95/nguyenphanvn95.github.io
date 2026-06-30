@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">624</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">47672212-cf14-48a1-b33c-8c3be512b66f</dc:identifier>
+        <dc:title>Tập truyện văn học mạng - Mẹ Điên</dc:title>
+        <dc:creator opf:file-as="Hạ, Trang" opf:role="aut">Trang Hạ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>Tuyển tâp truyện dịch văn học mạng của Trang Hạ: Mẹ điên, Tiếng kêu của châu ngư, rẽ trái - rẽ phải, cõi luân hồi, bài bút ký đầy nước mắt,đôi vợ chồng trong kho chứa đồ....</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:04.730536+00:00"/>
+        <meta name="calibre:title_sort" content="Tập truyện văn học mạng - Mẹ Điên"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

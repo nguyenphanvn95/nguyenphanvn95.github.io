@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">364</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">abebc49a-3ee7-4f6e-9b83-6fd737ae382f</dc:identifier>
+        <dc:title>Thục nữ PK xã hội đen</dc:title>
+        <dc:creator opf:file-as="Thành, Thuấn Gian Khuynh" opf:role="aut">Thuấn Gian Khuynh Thành</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:39+00:00</dc:date>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:22.987387+00:00"/>
+        <meta name="calibre:title_sort" content="Thục nữ PK xã hội đen"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

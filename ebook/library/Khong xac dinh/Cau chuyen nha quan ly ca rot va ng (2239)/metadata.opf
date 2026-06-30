@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2239</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e1f446aa-55e4-4fa7-9091-e0626a355ed2</dc:identifier>
+        <dc:title>Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng-SachEbook.com</dc:title>
+        <dc:creator opf:file-as="định, Không xác" opf:role="aut">Không xác định</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>1904-01-01T12:42:04+00:00</dc:date>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:22+00:00"/>
+        <meta name="calibre:title_sort" content="Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng-SachEbook.com"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

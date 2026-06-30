@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2129</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c9bc8cc5-4e11-4c58-9f48-0b0ff979c417</dc:identifier>
+        <dc:title>Cố Đô</dc:title>
+        <dc:creator opf:file-as="Kawabata, Yasunari" opf:role="aut">Yasunari Kawabata</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cố Đô” là một trong ba tác phẩm của Yasunari Kawabata được Ủy Ban Giải Thưởng Nobel dẫn chứng khi tặng giải, có cốt truyện phức tạp liên quan tới một cặp chị em song sinh, đã bị chia cách từ lúc mới chào đời nhưng các yếu tố khiến cho các nhân viên cứu xét Giải Thưởng Nobel phải quan tâm, là do tác phẩm đã nói lên các vẻ đẹp của Thành Phố Kyoto và các truyền thống cổ, với các phụ nữ Kyoto còn giữ các vẻ duyên dáng, không bị nền văn hóa phương Tây làm biến chất. Cùng với phần lớn du khách, Kawabata ước muốn rằng lối sống cổ truyền Nhật Bản vẫn được duy trì.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:10+00:00"/>
+        <meta name="calibre:title_sort" content="Cố Đô"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">692</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9eb8f44f-d2eb-4beb-aebb-f9add7522588</dc:identifier>
+        <dc:title>Sự nghèo nàn của thuyết sử luận</dc:title>
+        <dc:creator opf:file-as="Popper, Karl" opf:role="aut">Karl Popper</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-05T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Triết học;Chính trị</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Sự nghèo nàn của thuyết sử luận"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

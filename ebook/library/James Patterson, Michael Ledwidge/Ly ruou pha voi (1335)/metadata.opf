@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1335</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">de956d28-cff6-451d-b799-a7bb69957f9d</dc:identifier>
+        <dc:title>Ly rượu pha vội</dc:title>
+        <dc:creator opf:file-as="James Patterson, Michael Ledwidge" opf:role="aut">James Patterson, Michael Ledwidge</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-17T04:50:51+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Cuốn tiểu thuyết “Ly rượu pha vội” của James Patterson có đầy đủ yếu tố hành động, hồi hộp, ly kỳ và lãng mạn.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Laurent Stillman là một cảnh sát thành đạt, có một cuộc sống hôn nhân tuyệt vời “là một cặp vợ chồng yêu nhau đến rồ dại và là những người bạn thân thiết nhất, là những người có thể chết cùng nhau như Romeo và Juliet”.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Khi tình cờ thấy chồng đi cùng một người phụ nữ khác, Laurent thất vọng và thèm khát trả thù. Chấp nhận ly rượu pha vội, đêm ngoại tình duy nhất đã đẩy cuộc đời chị vào rẽ ngoặt bất ngờ, đe dọa nhấn chìm sự nghiệp, hôn nhân và cả tính mạng.&lt;/em&gt;&lt;/p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Phương Đông + NXB Phụ nữ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:26+00:00"/>
+        <meta name="calibre:title_sort" content="Ly rượu pha vội"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

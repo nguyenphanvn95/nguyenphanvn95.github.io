@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">265</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a6ff724c-2be7-4fe4-ac9d-54d8c52a8a7b</dc:identifier>
+        <dc:title>Ỷ Thiên Đồ Long Ký</dc:title>
+        <dc:creator opf:file-as="Dung, Kim" opf:role="aut">Kim Dung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện xoay quanh truyền thuyết về Đồ Long đao và Ỷ Thiên kiếm là hai báu vật trong võ lâm, nếu ai nắm được cả hai thứ đó sẽ hiệu triệu được thiên hạ&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:05+00:00"/>
+        <meta name="calibre:title_sort" content="Ỷ Thiên Đồ Long Ký"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

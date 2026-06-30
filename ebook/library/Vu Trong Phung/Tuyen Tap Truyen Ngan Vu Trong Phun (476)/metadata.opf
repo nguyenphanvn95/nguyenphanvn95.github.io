@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">476</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6dc5326c-76ec-4734-bc28-35cf00ea732a</dc:identifier>
+        <dc:title>Tuyển Tập Truyện Ngắn Vũ Trọng Phụng</dc:title>
+        <dc:creator opf:file-as="Vũ Trọng Phụng" opf:role="aut">Vũ Trọng Phụng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-02-16T10:11:34+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;/p&gt;&lt;div&gt;&lt;p&gt;&lt;b&gt;Mới thêm: &lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span class="Apple-style-span" style="font-weight: normal; "&gt;Sư cụ triết lý (1935); &lt;/span&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Còn thiếu:&lt;/b&gt; Quyền làm bố (1933); Hai hộp xì gà (1933); Cái hàng rào (1934); Duyên không đi lại (1934): Thầy lang bất hủ (1934); Ông đừng lầm (1934); (1934); Rửa hờn (1935); Mơ ngày Tết (1936); Lỡ lời (1936); Bắt vích (1939); Đoạn tuyệt (???)&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học trước cách mạng</dc:subject>
+        <dc:subject>Tập truyện ngắn</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:48+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển Tập Truyện Ngắn Vũ Trọng Phụng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

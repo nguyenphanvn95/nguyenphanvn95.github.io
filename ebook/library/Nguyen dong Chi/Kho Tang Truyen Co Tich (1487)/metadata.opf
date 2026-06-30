@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1487</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5587cfc1-83b5-4c74-9ccc-aff98d7c5d90</dc:identifier>
+        <dc:title>Kho Tàng Truyện Cổ Tích</dc:title>
+        <dc:creator opf:file-as="Chi, Nguyễn đổng" opf:role="aut">Nguyễn đổng Chi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:12+00:00</dc:date>
+        <dc:description>Truyện: Kho Tàng Truyện Cổ Tích
+Tác giả: Nguyễn đổng Chi
+Tạo bởi: Nguyễn Kim Vỹ</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Fairy</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:43+00:00"/>
+        <meta name="calibre:title_sort" content="Kho Tàng Truyện Cổ Tích"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

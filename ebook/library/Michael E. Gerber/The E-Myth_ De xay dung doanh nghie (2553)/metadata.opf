@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2553</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fb8c055a-b50f-43df-a079-1895b789cbaf</dc:identifier>
+        <dc:title>The E-Myth: Để xây dựng doanh nghiệp hiệu quả</dc:title>
+        <dc:creator opf:file-as="Gerber, Michael E." opf:role="aut">Michael E. Gerber</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Xây dựng một doanh nghiệp cho riêng mình là ước mơ của rất nhiều người. Nhưng phần lớn các doanh nghiệp nhỏ sau khi thành lập đều đi theo mô hình: thành lập - phát triển nhanh chống - phát triển chậm lại - ổn định, không phát triển - suy yếu - chuyển ngượng.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;- Tại sao rất nhiều người bước vào kinh doanh để cuối cùng thất bại?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;- Họ đã rút ra những bài học gì?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;- Tại sao hiện nay có rất nhiều tài liệu hướng dẫn để một doanh nghiệp nhỏ thành công, nhưng rất ít người làm được?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;E-Myth: Để xây dựng doanh nghiệp hiệu quả sẽ trả lời câu hỏi đó. Nếu bạn đang sở hữu hoặc muốn sở hữu một doanh nghiệp nhỏ, thì đây là cuốn sách dành riêng cho bạn. Là một hiện tượng nổi bật trên thị trường sách, E-Myth: Để xây dựng doanh nghiệp hiệu quả đã xoá tan những ngộ nhận về doanh nghiệp. Sau nhiều năm tích luỹ kinh nghiệm trong vai trò cố vấn cho các doanh nghiệp nhỏ, Michael E. Gerber, tác giả cuốn sách, đã chỉ ra cách điều hành doanh nghiệp hiệu quả.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Alphabooks + NXB Lao động Xã hội</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:45:21+00:00"/>
+        <meta name="calibre:title_sort" content="E-Myth: Để xây dựng doanh nghiệp hiệu quả, The"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">225</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">78321125-2974-4db6-b239-09715319b9d3</dc:identifier>
+        <dc:title>Huấn luyện não bộ (Chìa khóa thành công của những đào tạo chuyên nghiệp)</dc:title>
+        <dc:creator opf:file-as="Brann, Amy" opf:role="aut">Amy Brann</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Bạn muốn hiểu rõ cách bộ não vận hành để huấn luyện hiệu quả hơn?&lt;/p&gt;
+&lt;p&gt;Đây chính là cuốn sách dành cho bạn!&lt;/p&gt;
+&lt;p&gt;Không còn những khái niệm khoa học khô khan, cuốn sách này biến những nghiên cứu thần kinh học phức tạp thành công cụ huấn luyện dễ hiểu và dễ áp dụng. Từ cách não ảnh hưởng đến hành vi và cảm xúc, cho đến cách thiết kế các buổi huấn luyện chạm đúng “mạch” nhận thức của khách hàng.&lt;/p&gt;
+&lt;p&gt;Bạn sẽ học được:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cách giúp khách hàng thay đổi hành vi và hình thành thói quen bền vững&lt;/li&gt;
+&lt;li&gt;Chiến lược quản lý căng thẳng và duy trì sức khỏe tinh thần&lt;/li&gt;
+&lt;li&gt;Những case study thực tế cho thấy khoa học thần kinh ứng dụng vào công việc huấn luyện ra sao và hiệu quả thế nào&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;Đặc biệt, phiên bản thứ 3 này cập nhật các nghiên cứu mới nhất trong lĩnh vực thần kinh học - phù hợp cả với người mới vào nghề lẫn huấn luyện viên giàu kinh nghiệm muốn nâng cấp công cụ tư duy của mình.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu &lt;strong&gt;Huấn luyện não bộ (Chìa khóa thành công của những đào tạo chuyên nghiệp)&lt;/strong&gt; &lt;strong&gt;- tác giả Amy Brann.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:24.473469+00:00"/>
+        <meta name="calibre:title_sort" content="Huấn luyện não bộ (Chìa khóa thành công của những đào tạo chuyên nghiệp)"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

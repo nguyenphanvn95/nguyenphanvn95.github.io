@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2001</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">144d68e7-5479-43f3-bbde-d8e7684feb13</dc:identifier>
+        <dc:title>Chìa Khóa Vũ Trụ Của George</dc:title>
+        <dc:creator opf:file-as="Hawking, Stephen &amp; Lucy" opf:role="aut">Stephen Hawking</dc:creator>
+        <dc:creator opf:file-as="Hawking, Stephen &amp; Lucy" opf:role="aut">Lucy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-07-31T17:46:29+00:00</dc:date>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:53+00:00"/>
+        <meta name="calibre:title_sort" content="Chìa Khóa Vũ Trụ Của George"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

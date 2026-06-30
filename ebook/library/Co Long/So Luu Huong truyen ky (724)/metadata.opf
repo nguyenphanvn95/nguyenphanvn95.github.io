@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">724</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">81ac8cf2-2653-4a85-9058-bb1834b9dc11</dc:identifier>
+        <dc:title>Sở Lưu Hương truyền kỳ</dc:title>
+        <dc:creator opf:file-as="Long, Cổ" opf:role="aut">Cổ Long</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-15T05:47:13+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sở Lưu Hương là người chấn danh thiên hạ, trong giang hồ đầy dẩy những lời đồn về nhân vật này. Mẫu hình nhân vật này là một người đàn ông trong mơ tưởng của các phụ nữ, anh ta là đạo soái, đẹp trai, có tánh phong lưu, thích mạo hiểm, thich hưởng thụ, thích cấp thời hành lạc, không bị danh lợi bó buộc, chỉ làm những gì mình thích và không ai có thể cưỡng bức anh ta... Bao gồm 8 phần trong hệ liệt&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:16+00:00"/>
+        <meta name="calibre:title_sort" content="Sở Lưu Hương truyền kỳ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

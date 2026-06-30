@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1895</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7d3dd4bb-d0d9-4350-b474-946bed996899</dc:identifier>
+        <dc:title>Đạo của Buffett</dc:title>
+        <dc:creator opf:file-as="Buffett, Mary" opf:role="aut">Mary Buffett</dc:creator>
+        <dc:creator opf:file-as="Buffett, Mary" opf:role="aut">David Clark</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:57+00:00</dc:date>
+        <dc:description>&lt;p&gt;Như những lời thuyết giảng của triết gia Trung Hoa cổ đại Lão Tử, những lời thông thái của Warren Buffett thoạt nhìn cũng đơn giản nhưng lại rất hiệu nghiệm khi áp dụng. Trong quyển sách Đạo của Warren Buffett, Marry Buffett - đồng thời là tác giả của ba quyển sách khác về phương pháp kinh doanh của Warren Buffett - kết hợp với chuyên gia về Buffett kiêm giảng viên quốc tế David Clark mang đến cho bạn những lời thuyết giảng thông minh nhất, hài hước nhất, đáng nhớ nhất...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:37+00:00"/>
+        <meta name="calibre:title_sort" content="Đạo của Buffett"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

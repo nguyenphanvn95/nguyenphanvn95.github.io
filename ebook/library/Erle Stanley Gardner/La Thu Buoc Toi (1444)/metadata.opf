@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1444</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3989579c-07f9-4a8c-a888-ce361387a24d</dc:identifier>
+        <dc:title>Lá Thư Buộc Tội</dc:title>
+        <dc:creator opf:file-as="Erle Stanley Gardner" opf:role="aut">Erle Stanley Gardner</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <dc:subject>Luật sư</dc:subject>
+        <meta name="calibre:series" content="Perry Mason"/>
+        <meta name="calibre:series_index" content="44"/>
+        <meta name="calibre:rating" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:38+00:00"/>
+        <meta name="calibre:title_sort" content="Lá Thư Buộc Tội"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1118</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c234ad8f-03b1-4b6e-9f23-03be287ef87c</dc:identifier>
+        <dc:title>Nghĩ đúng, nhắm trúng</dc:title>
+        <dc:creator opf:file-as="Stone, William Clement" opf:role="aut">William Clement Stone</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-03-23T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:01+00:00"/>
+        <meta name="calibre:title_sort" content="Nghĩ đúng, nhắm trúng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

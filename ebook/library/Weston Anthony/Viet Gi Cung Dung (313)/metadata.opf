@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">313</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bcfada7d-8d4a-48e3-b6a8-42290410ac8a</dc:identifier>
+        <dc:title>Viết Gì Cũng Đúng</dc:title>
+        <dc:creator opf:file-as="Anthony, Weston" opf:role="aut">Weston Anthony</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-04-16T17:00:00+00:00</dc:date>
+        <dc:description>Tranh luận không phải là tranh cãi, tranh luận giúp ta có thêm kiến thức, vì vậy mỗi người cần có lối tranh luận hợp lý, có sức thuyết phục, không "cãi cùn". Đến với "viết gì cũng đúng " tôi đã có thể biết thêm về lối tư duy cũng như các bước để lập luận chặt chẽ. Sách đề cập đến từng bước lập luận trong quá trình một cách khá cụ thể, kèm theo là những ví dụ minh họa dễ hiểu. Bìa sách không thật sự thu hút, tựa sách gây tò mò, quyển sách nhỏ, gọn, nội dung sách vô cùng thiết thực, xứng đáng được gọi là một cuốn sách giáo khoa bỏ túi về lập luận.
+
+Tranh luận là một điều hiển nhiên trong cuộc sống và chúng ta luôn muốn chiến thắng, Khi đã có chân lý trong tay thì việc phát triển nó và thuyết phục người khác là một trở ngại thực sự. Cuốn sách này rất bổ ích để giúp mọi người luôn tự tin trong tranh luận, nắm phần thắng trong tranh luận. Cuốn sách được tác giả trình bày hiệu quả, ngắn gọi, rõ ràng và khoa học để chúng ta có thể ứng dụng ngay trong đời sống thường ngày. Áp dụng mỗi mẹo là một lần chúng ta phát huy được tiềm năng của bản thân trong tranh luận.</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/145429453</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>vietgi</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>cungdung</dc:subject>
+        <dc:subject>Random</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:10.637772+00:00"/>
+        <meta name="calibre:title_sort" content="Viết Gì Cũng Đúng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

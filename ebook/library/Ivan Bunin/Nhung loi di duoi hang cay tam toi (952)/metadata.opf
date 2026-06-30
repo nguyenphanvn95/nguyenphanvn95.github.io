@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">952</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">919adac9-11c9-4c6a-8b5d-141a70502fb6</dc:identifier>
+        <dc:title>Những lối đi dưới hàng cây tăm tối</dc:title>
+        <dc:creator opf:file-as="Bunin, Ivan" opf:role="aut">Ivan Bunin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-07-07T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Gợi nhớ về những hoài niệm xa xôi, những con người lẻ loi đơn côi mạnh mẽ đi trong điệp trùng bủa vây của số phận, tất cả xuất hiện dưới ngòi bút của Ivan Bunin, nhắc nhớ về một nước Nga đẹp dịu dàng thăm thẳm, nước Nga chất phác nồng nàn, tâm hồn Nga thuần hậu.&lt;/p&gt;</dc:description>
+        <dc:publisher>Happiness Project</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:42+00:00"/>
+        <meta name="calibre:title_sort" content="Những lối đi dưới hàng cây tăm tối"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

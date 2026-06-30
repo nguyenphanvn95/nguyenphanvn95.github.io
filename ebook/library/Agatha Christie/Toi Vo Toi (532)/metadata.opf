@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">532</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">10ce3972-cd14-419d-b383-007892589915</dc:identifier>
+        <dc:title>Tôi Vô Tội</dc:title>
+        <dc:creator opf:file-as="Agatha Christie" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Một bà già đột tử khi chưa làm di chúc... Tiểu thư Elinor Carlisle xinh đẹp bị buộc tội sát hại tình địch là Mary Gerrard. Chỉ Elinor có động cơ và có cả cơ hội gây án. Nhưng trong phòng xử án, có một người cho rằng cô vô tội, trừ phi có bằng chứng chứng minh là có tội: Hercule Poirot. Truyện còn có tựa khác là "Cây bách buồn".&lt;/p&gt;
+&lt;p&gt;~ ~ ~ ~ ~&lt;/p&gt;
+&lt;p&gt;Đánh máy: &lt;b&gt;casau&lt;/b&gt;@VNthuquan.net&lt;br&gt; - Thư viện Online
+Được bạn &lt;b&gt;Ct.Ly&lt;/b&gt; đưa lên 
+vào ngày: 28 tháng 4 năm 2015.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Thời Đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Hình sự</dc:subject>
+        <dc:subject>Trinh thám</dc:subject>
+        <meta name="calibre:series" content="Hercule Poirot Investigates"/>
+        <meta name="calibre:series_index" content="21"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:54+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Vô Tội"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

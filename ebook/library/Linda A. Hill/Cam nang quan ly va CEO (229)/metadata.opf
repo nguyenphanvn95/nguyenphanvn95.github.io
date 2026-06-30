@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">229</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ad65527c-b04f-44d1-8d7d-1bee337abc64</dc:identifier>
+        <dc:title>Cẩm nang quản lý và CEO</dc:title>
+        <dc:creator opf:file-as="Hill, Linda A." opf:role="aut">Linda A. Hill</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;Cẩm nang quản lý và Ceo&lt;/strong&gt; của nữ tác giả &lt;strong&gt;Linda A. Hill&lt;/strong&gt; chứa đựng những quan điểm sáng suốt dành cho các nhà quản lý trẻ và cả những nhà quản lý kỳ cựu, đồng thời là nguồn thông tin vô giá cho cấp lãnh đạo trong việc điều hành các nhà quản lý. Đây cũng là quyển sách cần thiết cho mỗi nhà lãnh đạo và cho bất kỳ nhân viên nào có mong muốn thăng tiến hơn trên con đường sự nghiệp.&lt;/p&gt;
+&lt;p&gt;Việc thăng tiến lên cấp quản lý là cột mốc quan trọng trong sự nghiệp của một cá nhân. Nhưng hành trình từ một nhân viên xuất sắc đến một nhà quản lý giỏi thường không bằng phẳng, bởi rất ít người được dạy những "bài học vỡ lòng" dành cho các nhà quản lý. Và đây chính là chủ đề của Cẩm nang quản lý &amp;amp; Ceo.&lt;/p&gt;
+&lt;p&gt;Các nhà quản lý mới cho rằng điều gì là khó khăn nhất? Họ đã học được điều gì để trở thành nhà quản lý? Họ dựa trên các nguồn lực cá nhân và tổ chức nào? Họ có khả năng học hỏi từ kinh nghiệm và chấp nhận thay đổi bản thân không? Họ có các phẩm chất của "những học viên hoàn hảo" khiến người khác sẵn sàng hướng dẫn không (chẳng hạn, có thể chấp nhận những đánh giá tích cực và cả tiêu cực)? Liệu họ có dám thừa nhận rằng những gì họ biết còn quá ít ỏi? Họ có sẵn sàng yêu cầu người khác giúp đỡ không?&lt;/p&gt;
+&lt;p&gt;Tất cả những câu trả lời này đều có thể tìm thấy trong cuốn sách xuất sắc về thuật quản trị này.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu cuốn sách &lt;strong&gt;Cẩm nang quản lý và CEO - Linda A. Hill.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:25.569277+00:00"/>
+        <meta name="calibre:title_sort" content="Cẩm nang quản lý và CEO"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

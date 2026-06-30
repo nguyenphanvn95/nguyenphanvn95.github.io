@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1428</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">859a7f36-be59-4ed1-b112-838b6f7bcfc9</dc:identifier>
+        <dc:title>Làm Dâu Cõi Chết</dc:title>
+        <dc:creator opf:file-as="Choo, Yangsze" opf:role="aut">Yangsze Choo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2019-12-22T17:00:00+00:00</dc:date>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>TramyDang7</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:37.164406+00:00"/>
+        <meta name="calibre:title_sort" content="Làm Dâu Cõi Chết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

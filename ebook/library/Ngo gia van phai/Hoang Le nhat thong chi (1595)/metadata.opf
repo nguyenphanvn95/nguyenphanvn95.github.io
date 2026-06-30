@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1595</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4612e5d9-79d2-45b1-9ec7-b053d287cf2b</dc:identifier>
+        <dc:title>Hoàng Lê nhất thống chí</dc:title>
+        <dc:creator opf:file-as="phái, Ngô gia văn" opf:role="aut">Ngô gia văn phái</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:07+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:55+00:00"/>
+        <meta name="calibre:title_sort" content="Hoàng Lê nhất thống chí"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

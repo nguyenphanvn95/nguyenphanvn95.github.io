@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1564</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0dd4aec5-b788-4b4b-8f12-7d93d3d7436b</dc:identifier>
+        <dc:title>Hồng Hạnh thổn thức</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:33+00:00</dc:date>
+        <dc:description>&lt;p&gt;Người đàn bà trước cửa đang do dự không biết có nên ngoại tình, ngoại trừ những cơn gió thổi vô định ra, không ai biết cô ấy đang luyến tiếc cái gì ở chính trong ngôi nhà của mình.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:51+00:00"/>
+        <meta name="calibre:title_sort" content="Hồng Hạnh thổn thức"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

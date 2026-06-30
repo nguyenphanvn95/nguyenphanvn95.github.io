@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2131</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3e0506ec-bec5-41d7-be0a-b62c2ce37d9e</dc:identifier>
+        <dc:title>CỎ</dc:title>
+        <dc:creator opf:file-as="Simon, Claude" opf:role="aut">Claude Simon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:10+00:00"/>
+        <meta name="calibre:title_sort" content="CỎ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1242</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7e166cb2-9be2-4ae2-ac1c-736f926a9594</dc:identifier>
+        <dc:title>Mời tình địch ăn cơm</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-03-30T17:30:52+00:00</dc:date>
+        <dc:description>&lt;p&gt;40 truyện về người ốm, mẹ chồng nàng dâu, người nghèo, kẻ yếu thế, cư xử của vợ có chồng đi ngoại tình... tất cả đều là tình huống đời thường được đưa vào tuyển "Truyện cực ngắn Trung Quốc". Tình tiết nhẹ, câu chuyện ngắn đem lại những trải nghiệm thi vị, bổ ích cũng như thêm một cách ứng xử ở đời. "Truyện cực ngắn Trung Quốc" dường như phục vụ cho những độc giả đang sống trong một cuộc sống gấp gáp, cần một chút thông tin, một ít văn học, nhưng mà thời gian lĩnh hội thì... thật ngắn!&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:15+00:00"/>
+        <meta name="calibre:title_sort" content="Mời tình địch ăn cơm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

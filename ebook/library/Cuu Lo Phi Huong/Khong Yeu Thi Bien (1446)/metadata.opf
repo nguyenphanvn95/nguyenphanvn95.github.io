@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1446</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c21935ec-a7e3-4a5a-82f8-448d657350ed</dc:identifier>
+        <dc:title>Không Yêu Thì Biến</dc:title>
+        <dc:creator opf:file-as="Hương, Cửu Lộ Phi" opf:role="aut">Cửu Lộ Phi Hương</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MD5">7ce4e952850c476680b530654976f6d2</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:38+00:00"/>
+        <meta name="calibre:title_sort" content="Không Yêu Thì Biến"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

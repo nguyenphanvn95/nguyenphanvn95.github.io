@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1082</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d9488be8-de31-47f4-b1ee-0109eb8df3ea</dc:identifier>
+        <dc:title>Người hùng trở lại</dc:title>
+        <dc:creator opf:file-as="Coben, Harlan" opf:role="aut">Harlan Coben</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-03-20T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Myron Bolitar, ngôi sao bóng rổ đang tỏa sáng của nước Mỹ bỗng nhiên dở dang sự nghiệp, với vài mối tình đành đoạn và có lẽ chẳng hề định trở thành một người hùng. Nhưng trái tim nhiệt thành, và năng khiếu theo đuổi vấn đề tuyệt vời đã cuốn anh vào loạt vụ án các thiếu nữ trẻ mất tích đột ngột, đương đầu với giới tội phạm chuyên nghiệp nguy hiểm. Vượt qua những manh mối giả tạo dày đặc, tư duy sắc bén và hành động quyết đoán của Bolitar cùng Win, người bạn chí thiết, đã khiến cuộc điều tra đổi hướng một cách bất ngờ đầy ngoạn mục.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:57+00:00"/>
+        <meta name="calibre:title_sort" content="Người hùng trở lại"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1683</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">107e8e93-8ede-49ba-ae5b-619a973f7354</dc:identifier>
+        <dc:title>Giai Thoại Làng Nho</dc:title>
+        <dc:creator opf:file-as="Nhân, Lãng" opf:role="aut">Lãng Nhân</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Từ Bùi Ân Niên đến Vũ Phạm Hàm, các câu chuyện ngắn dài được sắp đặt và kể lại như dã sử, với những dòng thơ trích dịch và lời dẫn giải tường tận. Đôi khi tôi tưởng như đọc Nam Hải Dị Nhân , song lời lẽ ở đây gọn gàng hơn, và tuy nghiêm chỉnh, vẫn không giấu nổi ở nhiều đoạn, nụ cười hóm hỉnh&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Cảo Thơm</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:14+00:00"/>
+        <meta name="calibre:title_sort" content="Giai Thoại Làng Nho"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

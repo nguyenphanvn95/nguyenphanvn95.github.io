@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">593</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">53213cf8-e1e1-468f-9be5-10d5ecc86867</dc:identifier>
+        <dc:title>Tiểu đoạn tuyển tập</dc:title>
+        <dc:creator opf:file-as="Đoạn, Tiểu" opf:role="aut">Tiểu Đoạn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:52+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tiểu Đoạn là tác giả đứng đầu nhóm Thần Châu Tân Ngũ Hiệp của văn đàn võ hiệp TQ, trên cả Phượng Ca và Thương Nguyệt, văn phong rất đặc sắc, ngôn từ trau chuốt nên thơ, mượn hiệp tả tình, trong tình có hiệp..&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:01+00:00"/>
+        <meta name="calibre:title_sort" content="Tiểu đoạn tuyển tập"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

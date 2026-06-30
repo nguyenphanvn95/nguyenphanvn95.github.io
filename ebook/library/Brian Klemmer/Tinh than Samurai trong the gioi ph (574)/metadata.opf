@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">574</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5c444166-fe77-4524-9e67-c69e75727742</dc:identifier>
+        <dc:title>Tinh thần Samurai trong thế giới phẳng</dc:title>
+        <dc:creator opf:file-as="Klemmer, Brian" opf:role="aut">Brian Klemmer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Hầu hết mọi người đều tin rằng họ phải chọn lựa một trong hai cách: hoặc giàu có về tiền bạc nhưng thiếu tình người, hoặc nghèo khó nhưng trong sạch và thánh thiện. Bạn không cần lựa chọn, bởi vì bạn hoàn toàn có thể có được cả hai. Bạn có thể trở thành một người giàu có, sống chan hòa, sẵn sàng cho đi để giúp đỡ người khốn khó, và một chiến binh thực thụ, một người đáng tin cậy với trái tim bao dung, nhân hậu.&lt;/em&gt;&lt;/p&gt;&lt;em&gt;Nếu bạn từng có lúc thấy như mình đang đứng trước ngã ba và phải lựa chọn giữa hai con đường như thế, “Tinh thần Samurai trong thế giới phẳng” sẽ giúp bạn kết hợp cả hai lựa chọn này để đạt được những kết quả phi thường trong một thế giới bình thường, đồng thời duy trì được những chuẩn mực đạo đức cao nhất.&lt;/em&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>First News + NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Self-Improvement</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:59+00:00"/>
+        <meta name="calibre:title_sort" content="Tinh thần Samurai trong thế giới phẳng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

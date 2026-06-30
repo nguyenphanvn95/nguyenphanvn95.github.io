@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1732</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ea71bf36-8237-4c73-916b-6e558dd1d53d</dc:identifier>
+        <dc:title>Dưới ánh sao</dc:title>
+        <dc:creator opf:file-as="Sheldon Sidney" opf:role="aut">Sidney Sheldon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-08-20T15:40:02+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=duoianhsao</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:19+00:00"/>
+        <meta name="calibre:title_sort" content="Dưới ánh sao"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

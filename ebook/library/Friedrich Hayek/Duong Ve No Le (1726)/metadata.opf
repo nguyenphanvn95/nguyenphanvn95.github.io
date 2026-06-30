@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1726</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cc6ecb22-7f88-49a3-a080-2b696e924be9</dc:identifier>
+        <dc:title>Đường Về Nô Lệ</dc:title>
+        <dc:creator opf:file-as="Hayek, Friedrich" opf:role="aut">Friedrich Hayek</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-28T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:19+00:00"/>
+        <meta name="calibre:title_sort" content="Đường Về Nô Lệ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

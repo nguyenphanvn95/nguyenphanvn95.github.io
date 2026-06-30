@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">733</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1d45115c-756c-4831-babf-0d2380425a06</dc:identifier>
+        <dc:title>Siêu Kinh Tế Học Hài Hước</dc:title>
+        <dc:creator opf:file-as="LEVITT, STEVEN D. &amp; DUBNER, STEPHEN J." opf:role="aut">STEVEN D. LEVITT</dc:creator>
+        <dc:creator opf:file-as="LEVITT, STEVEN D. &amp; DUBNER, STEPHEN J." opf:role="aut">STEPHEN J. DUBNER</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-04-04T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:16+00:00"/>
+        <meta name="calibre:title_sort" content="Siêu Kinh Tế Học Hài Hước"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

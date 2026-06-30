@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1580</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0b17a7aa-1ec8-4a2b-b00c-dbe12ee54fb6</dc:identifier>
+        <dc:title>Hồi ức của một geisha - đời kỹ nữ</dc:title>
+        <dc:creator opf:file-as="Golden, Arthur" opf:role="aut">Arthur Golden</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:24+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Đời kỹ nữ”của tác giả Arthur Golden (NXB Vintage, London, Anh - 1997) đã trở thành hiện tượng toàn cầu. Suốt hai năm liền, cuốn sách này luôn giữ vị trí “best- seller” với trên 4 triệu bản tại Mỹ và được dịch sang 32 ngôn ngữ. Điều hấp dẫn độc giả chính là thế giới bí ẩn của các geisha Nhật Bản đã được bóc trần qua câu chuyện của một cựu geisha danh tiếng nhất thời kỳ ấy&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:53+00:00"/>
+        <meta name="calibre:title_sort" content="Hồi ức của một geisha - đời kỹ nữ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

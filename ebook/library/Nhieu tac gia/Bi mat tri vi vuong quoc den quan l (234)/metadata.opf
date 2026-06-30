@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">234</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">80457c0d-01be-448c-8618-1c109ea5605f</dc:identifier>
+        <dc:title>Bí mật trị vì vương quốc đến quản lý công ty</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;Kingdomality – Bí mật trị vì vương quốc đến quản lý công ty&lt;/strong&gt; là câu chuyện rất thú vị về một vị vua gần như hoàn toàn bất lực trong việc trị vì vương quốc lộn xộn của mình khi dựa vào những ý tưởng cục bộ của các quan đại thần và cố vấn triều đình mà không tự mình tư duy, nhìn mọi vấn đề một cách khoa học và tổng thể. Mọi chuyện bắt đầu thay đổi một cách nhiệm mầu kể từ khi nhà vua gặp được một vị phù thủy thông thái. Nhà vua đã từng bước học cách khám phá tâm lý con người để hiểu tính cách và ước muốn của mọi thần dân trong vương quốc mình, từ đó có một cái nhìn mới, biết cách giao trọng trách đúng người đúng việc, để vương quốc phát triển thịnh vượng và ổn định.&lt;/p&gt;
+&lt;p&gt;Câu chuyện và các vấn đề của nhà vua ở vương quốc nọ hoàn toàn có thể áp dụng vào thực tế trong việc quản lý, điều hành và sử dụng con người ở bất kỳ một tổ chức, công ty nào để đạt được hiệu quả và thành công cao nhất.&lt;/p&gt;
+&lt;p&gt;Kingdomality – với phương pháp mới mẻ, cực kỳ ưu việt trong việc quản lý con người và công ty – đã trở thành một hiện tượng không chỉ đối với những nhà lãnh đạo, quản lý mà còn thu hút hàng chục triệu độc giả khắp nơi trên toàn thế giới. Cuốn sách này liên tục được xếp hạng trong danh sách những cuốn sách bán chạy nhất hiện nay.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu!&lt;br&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:27.292079+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật trị vì vương quốc đến quản lý công ty"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

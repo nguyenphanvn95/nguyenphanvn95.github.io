@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">461</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">edcbcc22-9b82-451b-8005-f00f830ffeae</dc:identifier>
+        <dc:title>Thắm sắc hoa đào</dc:title>
+        <dc:creator opf:file-as="Ức, Vương An" opf:role="aut">Vương An Ức</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-12T04:00:07+00:00</dc:date>
+        <dc:description>&lt;p&gt;Với “Thắm sắc hoa đào”, Vương An Ức thực sự đã xây dựng được một nữ nhân vật khiến bất cứ ai đã từng là độc giả cũng phải nghiêng mình. Đọc “Thắm sắc hoa đào”, bạn sẽ thấy thêm yêu cuộc sống này. Cái cuộc sống vốn chẳng bao giờ hoàn toàn lặng gió, nhưng như thế lại là một điều hay. Bởi giống như lửa thử vàng, phải có giông bão, con người ta mới có thể học được cách bám chặt chân vào đất, hiên ngang đứng giữa đời, và vươn lên như loài cỏ dại ăn nắng uống mưa, không gì ngăn cản được.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:46+00:00"/>
+        <meta name="calibre:title_sort" content="Thắm sắc hoa đào"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

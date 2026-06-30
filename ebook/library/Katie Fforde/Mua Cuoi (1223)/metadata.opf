@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1223</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0540b5a5-acf6-44ee-ac73-322fa10cd6d7</dc:identifier>
+        <dc:title>Mùa Cưới</dc:title>
+        <dc:creator opf:file-as="Fforde, Katie" opf:role="aut">Katie Fforde</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;i&gt;Tất cả những gì bạn cần là tình yêu…?&lt;/i&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Sarah là một nhà lên kế hoạch tổ chức đám cưới đang che giấu một sự thật vô cùng phiền phức - cô không tin vào tình yêu. Hoặc không tin vào chính bản thân cô. Nhưng khi những bông hoa giấy tung bay trong làn gió nhẹ tháng Sáu của một đám cưới thành công khác, cô nhận ra mình đã đồng ý nhận lời tổ chức cho thêm hai đám cưới nữa, vào cùng một ngày và chỉ cách thời điểm hiện tại nữa chưa đến hai tháng. Và khi cô dâu là người nổi tiếng lại dễ thương và hiểu biết, thì em gái của cô lại khiến cô điên lên vì những yêu cầu quá cao nhưng đi kèm với một ngân sách hạn chế.&lt;/p&gt; &lt;p&gt;May mắn thay, Sarah có hai người bạn đáng tin cậy để giúp cô. Elsa, một nhà thiết kế áo đầm đầy tài năng nhưng không thích bị mọi người chú ý, và Bron, một thợ cắt tóc đa tài, người đang sống với anh bạn trai gia trưởng. Họ có thể rất giỏi trong công việc nhưng sự lãng mạn lại không được đánh giá cao trong đời sống của họ.&lt;/p&gt;Khi ngày trọng đại đang đến gần, cả ba người phụ nữ nhận ra rằng sự kiên nhẫn chắc chắn là một đức tính tốt trong trò chơi hôn nhân. Và khi tất cả các giờ làm việc miệt mài của họ dành cho việc chuẩn bị cho một đám cưới của năm, họ chắc chắn chẳng có lấy thời gian để suy nghĩ về tình yêu; hay họ có nhỉ?&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Romance</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13+00:00"/>
+        <meta name="calibre:title_sort" content="Mùa Cưới"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

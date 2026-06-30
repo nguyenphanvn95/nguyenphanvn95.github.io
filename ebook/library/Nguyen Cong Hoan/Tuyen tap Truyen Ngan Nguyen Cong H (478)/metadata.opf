@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">478</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bf05674f-3041-4311-91f5-c16d100375ba</dc:identifier>
+        <dc:title>Tuyển tập Truyện Ngắn Nguyễn Công Hoan</dc:title>
+        <dc:creator opf:file-as="Hoan, Nguyễn Công" opf:role="aut">Nguyễn Công Hoan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-09T19:01:37+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Truyện ngắn Nguyễn Công Hoan, rất ngắn, cấu trúc gọn và đầy tính hài hước. Ngôn ngữ của ông giản dị, chữ dùng chọn lọc chính xác gợi những hình ảnh đậm nét, dí dỏm và thông minh. Gấp trang sách, người đọc cảm thấy không thể chịu đựng nổi nếu những cảnh huống như vừa đọc còn tiếp tục diễn ra trong cuộc sống con người. Nghệ thuật trào phúng của ông không chỉ bộc lộ rõ ưu thế trong truyện ngắn.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:48.429838+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập Truyện Ngắn Nguyễn Công Hoan"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">175</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2c60d40b-c57a-4637-9c59-16b6f271ad25</dc:identifier>
+        <dc:title>Ghé thăm Israel</dc:title>
+        <dc:creator opf:file-as="Prazdny, Bronja" opf:role="aut">Bronja Prazdny</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Chào mừng bạn đến với hành trình khám phá Israel – một trong những quốc gia đặc biệt và giàu bản sắc nhất thế giới qua cuốn sách nằm trong bộ sách Thế giới dành cho trẻ em của tác giả Bronja Prazdny. Israel không chỉ là một cái tên trên bản đồ, mà là nơi giao thoa mãnh liệt giữa những giá trị cổ xưa của Kinh Thánh và nhịp sống hối hả của một cường quốc công nghệ hiện đại.&lt;/p&gt;
+&lt;p&gt;Cuốn sách "&lt;strong&gt;Ghé thăm Israel&lt;/strong&gt;" mang đến một cái nhìn toàn diện và sống động về vùng "Đất hứa", nơi mà mỗi tảng đá, mỗi con phố đều kể lại những câu chuyện lịch sử kéo dài hàng nghìn năm. Độc giả sẽ được dẫn dắt qua những vùng cảnh quan đối lập đầy kinh ngạc: từ đỉnh núi Hermon phủ tuyết trắng xóa ở miền Bắc đến những rạn san hô rực rỡ tại Eilat ở cực Nam; từ sự tĩnh lặng của sa mạc Negev chiếm nửa diện tích đất nước đến sự sôi động của "thành phố không ngủ" Tel Aviv.&lt;/p&gt;
+&lt;p&gt;Với lối viết lôi cuốn và những hình ảnh chân thực, tác giả không chỉ giới thiệu về địa lý hay lịch sử mà còn đi sâu vào tâm hồn của người dân Israel thông qua văn hóa, ẩm thực Kosher độc đáo và những truyền thống tôn giáo lâu đời như ngày lễ Shabbat hay nghi thức Bar Mitzvah. Đây là một cuốn cẩm nang tuyệt vời, khơi gợi niềm đam mê khám phá cho các bạn nhỏ và cả những người lớn muốn tìm hiểu về một quốc gia kiên cường, luôn biết cách biến những thách thức về thiên nhiên và xung đột thành động lực phát triển vượt bậc. Hãy cùng lật mở từng trang sách để thấy một Israel rực rỡ và đầy khát vọng.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu cuốn sách "&lt;strong&gt;Ghé thăm Israel&lt;/strong&gt;" - Tác giả &lt;strong&gt;Bronja Prazdny&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:15:28+00:00"/>
+        <meta name="calibre:title_sort" content="Ghé thăm Israel"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

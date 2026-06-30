@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2434</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">08687deb-cbd9-40ac-a223-d59709b40838</dc:identifier>
+        <dc:title>ALEXIS ZORBA con người hoan lạc</dc:title>
+        <dc:creator opf:file-as="Kazantzaki, Nikos" opf:role="aut">Nikos Kazantzaki</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Zorba là một lão già, nhưng tuổi già không hề khiến lão đánh mất niềm vui sống. Lão vẫn hăng say hưởng nhận mọi điều say mê ở đời, từ công việc trong công xưởng, từ sự hồi tưởng về những chuyến phiêu lưu cũ, từ những khinh khi với đám tu sĩ, cho đến cả lạc thú tình ái. Lão sống hoàn toàn bản năng, với tất cả những ham muốn hưởng thụ cuộc đời đến từng khoảnh khắc của mình. Ngọn lửa cháy bùng từ hết thảy vui buồn mà Zorba bao giờ cũng đỏ hừng hực đó là niềm mơ ước của mọi người trong đời sống. Đó chính là sự bất hủ của nhân vật mà Nikos Kazantzaki đã tạo nên.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:45+00:00"/>
+        <meta name="calibre:title_sort" content="ALEXIS ZORBA con người hoan lạc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

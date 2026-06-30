@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">315</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">486b9dee-f81d-4ae7-84cc-089b89eef233</dc:identifier>
+        <dc:title>Viên ngọc trai</dc:title>
+        <dc:creator opf:file-as="Steinbeck, John" opf:role="aut">John Steinbeck</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>Thiện&amp;nbsp;hay ác - Bóng tối&amp;nbsp;hay ánh sáng, tất cả&amp;nbsp;nằm trong bản chất nội tại của con người, ranh giới rất mong manh. Và hiển nhiên là không có điều gì có thể thay đổi được định luật này cả. "Viên ngọc trai" - một câu chuyện ngụ ngôn đầy ý nghĩa, tuy có phần trừu tượng nhưng John Steinbeck đã xây dựng một tiểu thuyết với kỹ năng đạt đến đỉnh cao của nghệ thuật kết cấu, không chỉ hoàn thiện về ý nghĩa biểu tượng mà còn sắc bén với những chi tiết rõ nét, như được quay qua một ống kính máy ảnh.</dc:description>
+        <dc:publisher>Hanki D. Nguyen</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:10+00:00"/>
+        <meta name="calibre:title_sort" content="Viên ngọc trai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

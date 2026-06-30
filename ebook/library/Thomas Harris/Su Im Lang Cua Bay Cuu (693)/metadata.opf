@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">693</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bdaf16f9-3f0e-4aee-bb6f-fb98717e4892</dc:identifier>
+        <dc:title>Sự Im Lặng Của Bầy Cừu</dc:title>
+        <dc:creator opf:file-as="Harris, Thomas" opf:role="aut">Thomas Harris</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description" style="font-family: 'MS Shell Dlg 2', sans-serif; font-size: 12px;"&gt;Truyện kể về vụ án giết người hàng loạt xảy ra nhưng không để lại dấu vết. Điều kỳ lạ là Lecter - một bác sĩ tâm lý bị tâm thần đang điều trị tại Dưỡng Trí Viện biết rất rõ về hành vi của kẻ sát nhân nhưng chỉ im lặng. Cho đến khi con gái của thượng nghị sĩ bị bắt cóc thì cuộc đối đầu của nữ nhân viên thực tập FBI và vị bác sĩ tâm thần đã đến cực điểm. Cuối cùng tất cả cũng đều lộ diên, thủ phạm là một tên có nhân cách bệnh hoạn, một kẻ tâm thần rối loạn cực kỳ nguy hiểm...&lt;/p&gt;&lt;h3&gt;&lt;a href="http://www.taisachhay.com"&gt;http://www.taisachhay.com&lt;/a&gt;&lt;/h3&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Sự Im Lặng Của Bầy Cừu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

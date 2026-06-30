@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1774</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0f37de1d-0075-4869-b930-99eea59d4cd9</dc:identifier>
+        <dc:title>Đồi Gió Hú</dc:title>
+        <dc:creator opf:file-as="Bronte, Emily" opf:role="aut">Emily Bronte</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-12-31T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;{Truyện: Đồi Gió Hú Tác giả: Emily Bronte Tạo bởi: Nguyễn Kim Vỹ&lt;/p&gt;</dc:description>
+        <dc:publisher>Wikiebook</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">6958aa7f-796e-44e1-bd91-2e51c0aa4a2a</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>VH cổ điển nước ngoài</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:24+00:00"/>
+        <meta name="calibre:title_sort" content="Đồi Gió Hú"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

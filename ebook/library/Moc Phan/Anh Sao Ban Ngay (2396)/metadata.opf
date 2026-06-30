@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2396</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7924dd37-95d1-4b3b-a568-c07bd89ed16b</dc:identifier>
+        <dc:title>Ánh Sao Ban Ngày</dc:title>
+        <dc:creator opf:file-as="Phạn, Mộc" opf:role="aut">Mộc Phạn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T04:08:28+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cố Thả Hỷ đã vội vàng trao thân gửi phận cho một chàng trai vô cùng ưu tú – Triệu Vĩ Hàng. Trong khi đó, Triệu Vĩ Hàng cũng từng trải qua một mối tình khắc cốt ghi tâm nhưng cũng gặp thất bại và phải mang trong lòng những vết thương còn đang rỉ máu. Cả hai vội vã tìm đến nhau để lấp chỗ trống trong một cuộc hôn nhân không được xây dựng trên cơ sở tình yêu. Qu&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:41+00:00"/>
+        <meta name="calibre:title_sort" content="Ánh Sao Ban Ngày"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

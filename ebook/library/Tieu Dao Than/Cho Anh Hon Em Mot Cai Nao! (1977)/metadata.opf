@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1977</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">78adca7b-c475-42c2-b938-b925137d9467</dc:identifier>
+        <dc:title>Cho Anh Hôn Em Một Cái Nào!</dc:title>
+        <dc:creator opf:file-as="Thán, Tiêu Dao" opf:role="aut">Tiêu Dao Thán</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T01:42:59+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nam Trạch Lễ – hoàng thái tử của tập đoàn gia phong, bề thế An Huy, vốn là đứa trẻ ngoan ngoãn bỗng biến đổi thành cậu bé nghịch ngợm, ngang tàng, phá phách luôn chống đối bố mình kể từ khi cậu nhận thức được rằng bố cậu – Nam Anh Huy không hề yêu thương mẹ mình – Anh Tử, mà còn có người đàn bà khác. Rồi lúc người mẹ quá cố qua đời cũng là lúc người bạn thanh mai trúc mã bỏ đi theo tiếng gọi của nghệ thuật. Trái tim cậu tan nát, không một chỗ dựa về tinh thần, cậu sống trong tuyệt vọng, cậu lao vào những trò chơi vô bổ, lê la quán bar, gây sự đánh nhau…. có đủ hết. Lúc này, một bờ vai nhỏ bé đã cho anh làm chỗ dựa. Với Trạch Lễ cô là người thân duy nhất, Không ai biết cô có mối quan hệ như thế nào với Trạch Lễ, chỉ biết rằng vì cô anh sả thân, sẵn sàng đánh nhau với bất cứ kẻ nào gây sự với cô, làm mọi thứ để cô vui lòng,…&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:50+00:00"/>
+        <meta name="calibre:title_sort" content="Cho Anh Hôn Em Một Cái Nào!"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

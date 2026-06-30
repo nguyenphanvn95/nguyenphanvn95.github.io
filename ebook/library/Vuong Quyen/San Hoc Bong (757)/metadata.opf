@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">757</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fa528cd5-5500-41af-910f-955a948f52e3</dc:identifier>
+        <dc:title>Săn Học Bỏng</dc:title>
+        <dc:creator opf:file-as="Quyên, Vương" opf:role="aut">Vương Quyên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-02-08T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">f01a0503-3c0e-48cd-8e87-6ebe171576eb</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:20+00:00"/>
+        <meta name="calibre:title_sort" content="Săn Học Bỏng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1259</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5b6d1d15-8213-42b5-8acb-44e254a46045</dc:identifier>
+        <dc:title>Miếng ngon Hà Nội</dc:title>
+        <dc:creator opf:file-as="Bằng, Vũ" opf:role="aut">Vũ Bằng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-04-21T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;"Miếng ngon Hà Nội" là một bút ký của nhà văn Vũ Bằng, một nhà văn người Hà Nội gốc và rất sành về các món ăn Hà Nội. Tác phẩm được viết tại Hà Nội vào mùa thu 1952, sửa chữa và viết thêm tại Sài Gòn năm 1956, 1958, 1959. Cuốn truyện tập trung giới thiệu mười bảy món ăn đặc sản của Hà Nội cũng như cảm nhận , tâm tình và kỷ niệm của tác giả với Hà Nội thông qua các món ăn.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hanhdb</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:17+00:00"/>
+        <meta name="calibre:title_sort" content="Miếng ngon Hà Nội"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

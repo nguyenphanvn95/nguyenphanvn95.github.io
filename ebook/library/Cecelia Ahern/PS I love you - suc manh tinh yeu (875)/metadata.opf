@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">875</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c86ca799-b9e3-4452-abf1-77c9a7a5dfdc</dc:identifier>
+        <dc:title>PS I love you - sức mạnh tình yêu</dc:title>
+        <dc:creator opf:file-as="Ahern, Cecelia" opf:role="aut">Cecelia Ahern</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:14+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nhân vật chính của cuốn sách là Holly Kenedy, một phụ nữ vừa mất chồng, sống ở Dublin, Ireland. Căn bệnh u não cướp đi sự sống của Gerry - người chồng mà cô hết mực yêu thương. Holly suy sụp, rơi vào tận cùng đau khổ. Và rồi, cuộc đời của Holly rẽ sang trang mới khi vào đúng sinh nhật lần thứ 30 của mình, cô nhận được những phong thư của người chồng quá cố gửi trước khi chết.
+Những lá thư này được anh viết rất sâu sắc, từ những điều nhỏ nhặt nhất cho đến những điều động viên lớn lao giúp Holly vượt qua niềm mất mát để sống một cuộc sống bình thường khi không còn anh. Sau mỗi lá thư điều có dòng chữ PS, I Love You - (Tái bút: Anh yêu em). &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:34+00:00"/>
+        <meta name="calibre:title_sort" content="PS I love you - sức mạnh tình yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

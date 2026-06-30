@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">226</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a103959d-1219-4915-bfe6-09b03af7db9d</dc:identifier>
+        <dc:title>Chiến lược để dẫn đầu</dc:title>
+        <dc:creator opf:file-as="Miller, Scott &amp; Morey, David" opf:role="aut">Scott Miller</dc:creator>
+        <dc:creator opf:file-as="Miller, Scott &amp; Morey, David" opf:role="aut">David Morey</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Thế giới luôn thay đổi, đáp án của việc lãnh đạo thành công là một hằng số. Các yếu tố tạo nên thành công trong lãnh đạo lại thay đổi liên tục theo sự biến động của môi trường. Thực tế hiện nay, thị trường không ngừng thay đổi, các đối thủ cạnh tranh không ngừng thay đổi, thái độ của nhân viên thay đổi, và khách hàng cũng thay đổi. Thứ chưa thay đổi chính là phần lớn các chiến lược kinh doanh và chiến lược quản lí.&lt;/p&gt;
+&lt;p&gt;Công ty của bạn không bắt kịp với sự thay đổi của thị trường? Các phương pháp lãnh đạo mà bạn áp dụng mang nhiều tính bảo thủ, khiến cả hệ thống trì trệ, không ứng phó kịp khi có tình huống phát sinh?&lt;/p&gt;
+&lt;p&gt;Nếu đang vướng phải những vấn đề như vậy, hãy bắt đầu tìm hiểu mô hình trong &lt;strong&gt;Chiến lược để dẫn đầu&lt;/strong&gt; mà các nhà tư vấn chính trị như David Morey và Scott Miller đã áp dụng để cải tiến thành công cho các khách hang của họ như Apple, Coca-cola, Citigroup đến Verizon, Walt Disney…&lt;/p&gt;
+&lt;p&gt;Cuốn sách sẽ giúp bạn đưa ra các chiến lược hiệu quả cho công ty, thúc đẩy sự nghiệp của bạn.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu cuốn sách &lt;strong&gt;Chiến lược để dẫn đầu&lt;/strong&gt; của tác giả &lt;strong&gt;Scott Miller &amp;amp; David Morey!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:24.700599+00:00"/>
+        <meta name="calibre:title_sort" content="Chiến lược để dẫn đầu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

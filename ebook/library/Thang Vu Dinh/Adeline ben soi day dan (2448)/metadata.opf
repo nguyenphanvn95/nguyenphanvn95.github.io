@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2448</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">638308aa-9a74-4bf2-b866-24647e1dc302</dc:identifier>
+        <dc:title>Adeline bên sợi dây đàn</dc:title>
+        <dc:creator opf:file-as="Đình, Thang Vũ" opf:role="aut">Thang Vũ Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:32+00:00</dc:date>
+        <dc:description>&lt;p&gt;Không quá đau thương, không quá vui vẻ và vì thế, nó xứng đáng để được đọc một mạch cho đến hết. Đọc quyển sách này, tôi đã đồng cảm với Hiểu Tranh và 2 chàng hòang tử tính cách khác nhau nhưng lại mang một điểm giống nhau mà chỉ khi đọc bạn mới biết được. Tận hưởng nó và bạn sẽ thấy mãn nguyện... &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:47+00:00"/>
+        <meta name="calibre:title_sort" content="Adeline bên sợi dây đàn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">686</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">db113379-a2e6-4cc2-aaa3-a6e7b811c793</dc:identifier>
+        <dc:title>Sử Trung Quốc</dc:title>
+        <dc:creator opf:file-as="Lê, Nguyễn Hiến" opf:role="aut">Nguyễn Hiến Lê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:32+00:00</dc:date>
+        <dc:description>&lt;p&gt;lịch sử Trung Hoa là lịch sử của một nền văn minh vô cùng độc đặc (infiniment originale: Guillermaz), tuy ra đời sau vài nền văn minh khác: Ai Cập, Lưỡng Hà... nhưng tồn tại lâu nhất. Khoảng 3.000 năm trước, nó xuất hiện từ miền trung du sông Hoàng Hà.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:11+00:00"/>
+        <meta name="calibre:title_sort" content="Sử Trung Quốc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

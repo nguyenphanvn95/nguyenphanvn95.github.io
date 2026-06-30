@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">67</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e65566e4-b11c-42c1-b42b-ea22d1a36908</dc:identifier>
+        <dc:title>Viết &amp; Sống</dc:title>
+        <dc:creator opf:file-as="Bird, Bird By" opf:role="aut">Bird By Bird</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Đây là quyển sách thiết yếu dành cho mọi thế hệ nhà văn, dù trẻ hay già. Trong quyển sách, tác giả Anne Lamott đã truyền đạt tất cả những kinh nghiệm của mình trên hành trình viết lách cũng như hành trình làm một nhà văn.&lt;/p&gt;
+&lt;p&gt;Trong suốt 25 năm qua, hơn một triệu độc giả – từ những người viết nghiệp dư đến chuyên nghiệp ở mọi lứa tuổi và trình độ – đã được truyền cảm hứng từ những lời khuyên hài hước, chân thành và giản dị của Anne Lamott. Những lời khuyên đó bắt nguồn từ lời dạy ngắn gọn nhưng đầy ý nghĩa mà cha của Lamott – cũng là một nhà văn – truyền lại: “Ba mươi năm trước, lúc anh trai tôi mười tuổi, anh ấy cần viết một bài báo cáo về các loài chim trong thời hạn ba tháng. Một ngày trước hạn nộp báo cáo, trong ngôi nhà nhỏ của gia đình tại Bolinas, anh trai tôi ngồi ở bàn bếp, gần như sắp khóc, xung quanh là giấy ghi chép, bút chì và những quyển sách về chim còn chưa được mở ra. Anh ấy cảm thấy bất lực trước khối lượng công việc khổng lồ phải hoàn thành. Rồi cha tôi ngồi xuống cạnh anh, choàng tay qua vai anh và nói: ‘Từng con chim một thôi, con trai. Chỉ cần giải quyết từng con chim một’”.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu &lt;span style="font-weight: bold; font-style: italic"&gt;Viết &amp;amp; Sống - Bird By Bird - &lt;/span&gt;&lt;strong&gt;Anne Lamott!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:14:46+00:00"/>
+        <meta name="calibre:title_sort" content="Viết &amp; Sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

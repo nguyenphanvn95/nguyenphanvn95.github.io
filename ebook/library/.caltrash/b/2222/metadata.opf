@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2222</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">49ae3d11-851a-4620-b32a-870ea5d3984c</dc:identifier>
+        <dc:title>Bốn mùa cuộc sống</dc:title>
+        <dc:creator opf:file-as="Rohn, Jim" opf:role="aut">Jim Rohn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-06-22T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Cuốn sách đầu tiên bắt đầu sự nghiệp sáng tác của Jim Rohn chính là: Bốn mùa cuộc sống. Đây chính là tác phẩm được Ronald L.Reynolds đánh giá “được số mệnh lựa chọn để trở thành một kiệt tác trong nền văn học”. Cuộc sống vốn là không hoàn hảo! Con người đã đến với thế giới này, nhiều người đặt ra cho mình những mục tiêu đầy tham vọng, và ôm ấp những giấc mộng lớn lao, nhưng cho tới ngày trút hơi thở cuối cùng, họ chẳng để lại bằng chứng gì nhiều nhặn cho sự tồn tại của mình ngoài tờ giấy khai sinh, một tấm bia mộ. Hay có những người phải từ bỏ những tình cảm cá nhân để theo đuổi sự giàu có để rồi cuối cùng khi đã giàu có thì lại cố gắng tìm về những hạnh phúc mình từng có lúc bần hàn. Hoặc có những người suốt cuộc đời chẳng làm ra tiền của và cuộc sống gia đình cũng chẳng trở nên toàn vẹn. Liệu được mấy ai có được cả sự giàu có, thành công lẫn những hạnh phúc bình dị?&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Lao Động</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Phát triển cá nhân</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:21+00:00"/>
+        <meta name="calibre:title_sort" content="Bốn mùa cuộc sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

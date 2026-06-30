@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1306</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5155f9e7-8ff2-4caf-8bdc-8a95dcab90e9</dc:identifier>
+        <dc:title>Mảnh ghép hôn nhân</dc:title>
+        <dc:creator opf:file-as="Băng, Vũ" opf:role="aut">Vũ Băng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-24T02:47:47+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nhà thiết kế quảng cáo Nhan Hy Hiểu và đồng nghiệp Lý Tử Duệ có chung một ước mơ, đó là kiếm được tấm “thẻ xanh” hộ khẩu ở một thành phố hào hoa…Sau khi hai người biết tin nhà nước đề ra chính sách “Mua nhà được nhập hộ khẩu”. Hai người họ quyết định kết hôn và ký một thỏa thuận: Ba năm sau, đường ai nấy đi, không ai nợ ai. Đối mặt với gia đình hai bên và những mối quan hệ lằng nhằng với tình cũ, với lợi ích kinh tế và tình cảm, pháp luật và luân thường đạo lý, khi thỏa thuận 3 năm kết thúc, họ sẽ quyết định ra sao?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:23+00:00"/>
+        <meta name="calibre:title_sort" content="Mảnh ghép hôn nhân"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

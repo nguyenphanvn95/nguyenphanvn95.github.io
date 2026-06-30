@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1526</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">43a0c716-65a4-4c34-a1ec-a938a0c6503c</dc:identifier>
+        <dc:title>Kết giao tinh tế</dc:title>
+        <dc:creator opf:file-as="Lowndes, Leil" opf:role="aut">Leil Lowndes</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:40+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;font face="arial,helvetica,sans-serif" size="2"&gt;Bậc thầy về giao 
+tiếp Leil Lowndes đã trang bị cho bạn 96 mẹo nhỏ, là những kỹ năng sắc 
+như dao, những kỹ thuật giao tiếp giúp bạn trở thành một trong số những 
+người có thể làm được điều trên.&lt;/font&gt;&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:47+00:00"/>
+        <meta name="calibre:title_sort" content="Kết giao tinh tế"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

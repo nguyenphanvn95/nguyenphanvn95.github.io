@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">260</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9639408c-3175-4681-9158-8726efbae367</dc:identifier>
+        <dc:title>Yes or no những quyết định thay đổi cuộc sống</dc:title>
+        <dc:creator opf:file-as="Johnson, Spencer" opf:role="aut">Spencer Johnson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;câu chuyện kể về hành trình của một chàng trai đi tìm bí quyết của thành công và hạnh phúc từ những quyết định của mình. Chàng trai tham gia vào chuyến thám hiểm để trải nghiệm và học hỏi cách giải quyết các vấn đề một cách hiệu quả và đúng đắn nhất, những kinh nghiệm có thể áp dụng cho bất kỳ ai thấy khó khăn và bế tắc trong công việc và cuộc sống của mình.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:05.143838+00:00"/>
+        <meta name="calibre:title_sort" content="Yes or no những quyết định thay đổi cuộc sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

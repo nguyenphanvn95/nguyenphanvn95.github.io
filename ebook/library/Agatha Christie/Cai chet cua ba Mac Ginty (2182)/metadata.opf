@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2182</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">56c65112-2e18-48d0-a039-33d0f01bf036</dc:identifier>
+        <dc:title>Cái chết của bà Mac Ginty</dc:title>
+        <dc:creator opf:file-as="Christie, Agatha" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-10-12T00:40:58+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Từ quán Bà già đi ra, Hercule Poirot đã vào tới khu phố Soho. Trời đêm không lạnh, ông vẫn kéo cổ áo khoác lên, vì phòng xa hơn là vì cần thiết. Ông thường nói: “Ở tuổi ta, cứ cẩn thận vẫn hơn”.&lt;br&gt;Ông rất mãn nguyện. Món ốc sên của quán Bà già quả là số một. Quán nhỏ, bề ngoài chẳng có gì đáng chú ý, thế mà hay. Poirot đưa lưỡi liếm môi và lấy khăn tay khẽ chùi bộ râu mép rậm.&lt;br&gt;Ăn một bữa ngon rồi, bây giờ làm gì?&lt;br&gt;&lt;/p&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=caichetcuabamacginty</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:16+00:00"/>
+        <meta name="calibre:title_sort" content="Cái chết của bà Mac Ginty"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

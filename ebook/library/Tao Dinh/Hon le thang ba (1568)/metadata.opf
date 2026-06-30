@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1568</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3e0543c8-5e0f-42e3-8764-afebad24b4d7</dc:identifier>
+        <dc:title>Hôn lễ tháng ba</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-12T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Hôn lễ tháng Ba” đầy ắp không khí gia đình. Lấy điểmtựa là những mối quan hệ gia đình như cha con, vợ chồng, anh chị em, và có điểm nhấn đặc biệt vào người phụ nữ trong gia đình, những câu chuyện trong “Hôn lễ tháng Ba” nhiều khi thực sự khiến ta rơi lệ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Hôn lễ tháng ba"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

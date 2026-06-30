@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2303</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">63e63c0c-e8d4-4cad-a867-cd28012fd3af</dc:identifier>
+        <dc:title>Bí mật bị thời gian vùi lấp</dc:title>
+        <dc:creator opf:file-as="Hoa, Đồng" opf:role="aut">Đồng Hoa</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-27T13:24:18+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cậu đã yêu ai nhiều như thế chưa? Yêu thầm người ta mười năm liền? Phải, yêu thầm người ta nhiều đến nỗi, chỉ vì một câu nói “Tiểu học muội, anh ở đây chờ em” mà sống chết cũng phải thi vào Đại học Thanh Hoa, nhiều đêm vừa bật khóc nức nở vì mỏi mệt, vậy mà lại gạt nước mắt lên tiếp tục ôn bài. Cũng chỉ vì người đó, mà ngang nhiên bỏ công việc ổn định hiện tại, cố sống chết cũng phải vào làm cùng chỗ với người ta. Cho dù không thể gặp mặt, chỉ cần hàng ngày hít thở chung bầu không khí, vậy là mãn nguyện rồi.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:29+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật bị thời gian vùi lấp"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

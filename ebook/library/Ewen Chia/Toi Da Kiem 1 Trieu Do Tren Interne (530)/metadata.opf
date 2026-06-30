@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">530</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3172890c-3d3f-4ac5-b68d-5f31fc375890</dc:identifier>
+        <dc:title>Tôi Đã Kiếm 1 Triệu Đô Trên Internet Như Thế Nào</dc:title>
+        <dc:creator opf:file-as="Chia, Ewen" opf:role="aut">Ewen Chia</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>sach</dc:subject>
+        <dc:subject>kinh</dc:subject>
+        <dc:subject>doanh</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:54+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Đã Kiếm 1 Triệu Đô Trên Internet Như Thế Nào"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

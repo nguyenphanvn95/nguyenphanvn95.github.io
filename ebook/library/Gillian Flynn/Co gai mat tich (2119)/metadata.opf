@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2119</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">925be2ef-f10c-4738-8b1c-9ebb748a6db9</dc:identifier>
+        <dc:title>Cô gái mất tích</dc:title>
+        <dc:creator opf:file-as="Flynn, Gillian" opf:role="aut">Gillian Flynn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-11-05T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;div&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; line-height: 25px; text-align: justify; background-color: rgb(255, 255, 255);"&gt;Người ta nói với tôi rằng tình yêu là vô điều kiện. Đó là nguyên tắc, mọi người đều nói như vậy. Nhưng nếu tình yêu không có những ranh giới, không có hạn định, không có điều kiện, vậy thì việc gì người ta phải cố gắng để làm điều đúng đắn? Nếu tôi biết mình sẽ được yêu thương bất kể có chuyện gì xảy ra đi nữa, thì thử thách sẽ nằm ở đâu.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial, Helvetica, sans-serif; line-height: 25px; text-align: justify; background-color: rgb(255, 255, 255);"&gt;Tình yêu nên đòi hỏi cả hai phía lúc nào cũng phải thể hiện hết mình. Tình yêu vô điều kiện là một tình yêu vô kỷ luật, và như tất cả chúng ta thấy, tình yêu vô kỷ luật thì thảm khốc đến như thế  nào.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Lao Động - Alpha Books</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:09+00:00"/>
+        <meta name="calibre:title_sort" content="Cô gái mất tích"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">442</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2bf8d1e5-7ef4-46f8-b247-bdeada7f93ee</dc:identifier>
+        <dc:title>Thành Phố Hồn Rỗng</dc:title>
+        <dc:creator opf:file-as="Rigss, Ransorn" opf:role="aut">Ransorn Rigss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Trại Trẻ Đặc Biệt Của Cô Peregrine"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:44+00:00"/>
+        <meta name="calibre:title_sort" content="Thành Phố Hồn Rỗng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">480</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">764bd60a-7233-4f16-a500-17dcb33a96d0</dc:identifier>
+        <dc:title>Tuyển Tập Truyện Ngắn Ernest Hemingway</dc:title>
+        <dc:creator opf:file-as="Hemingway, Ernest" opf:role="aut">Ernest Hemingway</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-30T16:22:57+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bạn hãy đọc kỹ truyện ngắn của E.Hemingway rồi hãy quên chúng đi. Và chúng sẽ hiện về trong kí ức, trong tâm trạng hay trong suy ngẫm của bạn một lúc nào đó, và đột nhiên bạn nhận ra cỏ xanh hơn, trời trong hơn, dòng sông êm đềm hơn... giữa cõi đời rất đời này.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:48+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển Tập Truyện Ngắn Ernest Hemingway"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

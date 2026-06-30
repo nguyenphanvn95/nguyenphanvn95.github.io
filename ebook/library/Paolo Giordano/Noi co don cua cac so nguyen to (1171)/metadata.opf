@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1171</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">667d96f5-8523-4649-80a3-fbb9997ed6a6</dc:identifier>
+        <dc:title>Nỗi cô đơn của các số nguyên tố</dc:title>
+        <dc:creator opf:file-as="Giordano, Paolo" opf:role="aut">Paolo Giordano</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:02+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Cô bé bảy tuổi Alice Della Rocca bị lạc trong màn sương mù dày đặc trong một buổi đi trượt băng. Trong nỗ lực tìm đường về nhà, cô bé bị thương nặng và đôi chân bị tàn tật vĩnh viễn. Trong khi đó, Mattia Balossino – một cậu bé thông minh – đã vô tình bỏ quên đứa em gái sinh đôi bị thiểu năng trí tuệ tại công viên. Khi cậu quay lại tìm em, cô bé đã biến mất. Hai linh hồn bị tổn thương và dày vò đó đã tồn tại trong cô đơn suốt nhiều năm - họ bị tách xa khỏi đám bạn bè ở trường học, bị cầm tù trong tình yêu thương quá mức của cha mẹ, không một ai thấu hiểu, không biết chia sẻ với ai điều gì…&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:07+00:00"/>
+        <meta name="calibre:title_sort" content="Nỗi cô đơn của các số nguyên tố"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

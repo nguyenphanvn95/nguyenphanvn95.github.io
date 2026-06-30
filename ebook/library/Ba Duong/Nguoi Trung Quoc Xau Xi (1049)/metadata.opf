@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1049</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4ebbe222-0339-4ba8-b553-510c3d417c7e</dc:identifier>
+        <dc:title>Người Trung Quốc Xấu Xí</dc:title>
+        <dc:creator opf:file-as="Dương, Bá" opf:role="aut">Bá Dương</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:39+00:00</dc:date>
+        <dc:description>&lt;p&gt;quyển sách này tuy được viết và xuất bản ban đầu ở Đài Loan, tuy có một cái nhìn độc đáo về văn hóa và các chế độ chính trị Trung Quốc, đặc biệt chỉ trích những phong trào Phản hữu, Cách mạng Văn hóa,v.v...và cả Mao Trạch Đông&lt;/p&gt;</dc:description>
+        <dc:publisher>BookBB.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:53+00:00"/>
+        <meta name="calibre:title_sort" content="Người Trung Quốc Xấu Xí"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">105</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4fc44474-ac1c-4a8e-8055-dfa3fb30164e</dc:identifier>
+        <dc:title>Hành trình thấu hiểu bản thân và tìm thấy tự do</dc:title>
+        <dc:creator opf:file-as="định, Không xác" opf:role="aut">Không xác định</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:14:56.595343+00:00"/>
+        <meta name="calibre:title_sort" content="Hành trình thấu hiểu bản thân và tìm thấy tự do"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

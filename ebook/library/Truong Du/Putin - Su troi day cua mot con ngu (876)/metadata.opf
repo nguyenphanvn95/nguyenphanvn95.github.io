@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">876</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a37f2430-9e87-4d6a-a2f0-b3ef749fc80f</dc:identifier>
+        <dc:title>Putin - Sự trỗi dậy của một con người</dc:title>
+        <dc:creator opf:file-as="Dự, Trương" opf:role="aut">Trương Dự</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-06-07T17:00:00+00:00</dc:date>
+        <dc:description>Đối với một nhân vật như Pu -tin, hẳn phải dùng từ "trỗi dậy" mới có thể diễn tả hết được con đường chính trị thần kỳ của ông. Trở thành lãnh tụ mới của nước Nga chỉ trong một khoảng thời gian ngắn ngủi đến mức kì lạ, Pu - tin đã kiến cho cả thế giới phải đặt dấu hỏi về mình. Ông đã dựa vào đâu để có thể tiến thân nhanh chóng trên chính trường đến thế, chỉ với ba năm ngắn ngủi từ Xanh Pê-téc-bua đến Mát-xcơ-va đã hoàn toàn thay đổi cuộc đời một con người. Một nước Nga thời kì hậu Liên Xô bệ rạc và thiếu sức sống được đặt vào tay Pu - tin, là một bài toán khó khăn bắt ông phải tìm lời giải đáp. Thứ kì tích trong chính trưởng của Pu-tin đã ươm mầm hi vọng cho người dân Nga về sự thay đổi mà ông sẽ tác động lên cuộc sống của họ. Liệu nước Nga trong tay Pu-tin sẽ như thế nào?
+ 
+Chúng ta sẽ tìm được câu trả lời khi ngược dòng thời gian tìm hiểu về quá khứ và quá trình thành công của Pu-tin trong cuốn sách Putin sự trỗi dậy của một con người này.  Về tướng mạo, Pu-tin không phải là người đàn ông đẹp khiến người khác vừa gặp đã yêu, nhưng ông lại có một sức cuốn hút độc đáo. Trong trái tim phụ nữa Nga, Pu-tin là người đàn ông gợi cảm nhất, đầy sức cuốn hút nhất toàn nước Nga. Sự trỗi dậy nhanh chóng của Pu-tin trên chính trường Nga đã được coi là một kỳ tích. Từ Xanh Pê-téc-bua đến Mát-xcơ-va chỉ ba năm, ông đã trở thành lãnh tụ mới của nước Nga. Nước Nga tràn đầy sự kỳ vọng đối với ông, dân chúng đánh giá về ông còn vượt trên cả En-xin.
+ 
+Vậy sức cuốn hút của Pu-tin là ở chỗ nào? Tại sao ông lại tiến nhanh trên con đường chính trị như vậy? Liệu Pu-tin có xứng đáng với sự kỳ vọng của người dân Nga hay không? Nước Nga dưới sự lãnh đạo của Pu-tin liệu có thể tìm lại được quá khứ hào hùng như thời Liên Xô cũ hay không? Cuốn sách Putin – Sự trỗi dậy của một con người sẽ đưa người đọc ngược dòng thời gian khám phá về con người Putin từ xuất thân cho tới khi trưởng thành, những lựa chọn nghề nghiệp để đưa ông tới với con đường chính trị và trở thành vị tổng thống quyền lực, vô cùng được yêu mến ở nước Nga.</dc:description>
+        <dc:publisher>NXB Lao Động</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">ee664f97-7e0f-4e7e-acd2-7e8694a61f54</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:34+00:00"/>
+        <meta name="calibre:title_sort" content="Putin - Sự trỗi dậy của một con người"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

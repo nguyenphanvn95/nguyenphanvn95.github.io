@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1930</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f498f3a6-4e1e-4d91-81ca-22e51205d65b</dc:identifier>
+        <dc:title>Chuyện Tình New York</dc:title>
+        <dc:creator opf:file-as="Kin, Hà" opf:role="aut">Hà Kin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Chuyện tình New York” là một tác phẩm đặc biệt với nhiều cái “đầu tiên”: Cuốn tự truyện đầu tiên trong giới blogger Việt Nam, đồng thời cũng là cuốn sách đầu tiên được xuất bản kèm với một ấn bản đặc biệt dưới dạng “sách nói” (Audio book). &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:40+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện Tình New York"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

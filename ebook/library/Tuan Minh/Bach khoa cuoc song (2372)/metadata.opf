@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2372</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d48f4877-d190-41dc-b617-f33b89ca9721</dc:identifier>
+        <dc:title>Bách khoa cuộc sống</dc:title>
+        <dc:creator opf:file-as="Minh, Tuấn" opf:role="aut">Tuấn Minh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:19:45+00:00</dc:date>
+        <dc:description>&lt;div&gt;Nội dung của cuốn sách này gồm rất nhiều câu hỏi và giải đáp về các lĩnh vực trong cuộc sống: Về các dụng cụ trong gia đình: ti vi, tủ lạnh, điện... Về các thực phẩm dùng hàng ngày như rau, củ, mỳ tôm... v.v...Bách Khoa Cuộc Sống - Những Câu Hỏi Kỳ Thú sẽ góp phần nâng cao nhận thức, bổ sung thêm kiến thức phong phú của bạn&lt;/div&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:38+00:00"/>
+        <meta name="calibre:title_sort" content="Bách khoa cuộc sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

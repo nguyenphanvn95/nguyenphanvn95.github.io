@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1368</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">98f9d2a1-b444-40ae-9678-a6a3741504ab</dc:identifier>
+        <dc:title>Lối xưa xe ngựa</dc:title>
+        <dc:creator opf:file-as="Quỳnh, Nguyễn Thị Chân" opf:role="aut">Nguyễn Thị Chân Quỳnh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:31+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nguyễn Thị Chân-Quỳnh (1931- ) là một tác giả và nhà khảo cứu về sử học Việt Nam.Bà sinh ở Hà Nội đến năm 1952 thì sang Pháp. Bà theo học Đại học Paris IV (Paris-Sorbonne), đậu bằng tiến sĩ Anh văn. Bà từng là giảng viên ở Paris-Sorbonne và hợp tác với ban Việt ngữ đài BBC. Lối xưa xe ngựa là một tác phẩm biên khảo cực kỳ công phu về vấn đề khoa cử, văn hóa, lịch sử trong xã hội phông kiến Việt Nam&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:30+00:00"/>
+        <meta name="calibre:title_sort" content="Lối xưa xe ngựa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

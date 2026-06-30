@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1971</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e121a94f-dc4f-4f8a-b121-9d53f859e144</dc:identifier>
+        <dc:title>Cho Là Nhận</dc:title>
+        <dc:creator opf:file-as="Blanchard, Ken &amp; Cathy, S. Truett" opf:role="aut">Ken Blanchard</dc:creator>
+        <dc:creator opf:file-as="Blanchard, Ken &amp; Cathy, S. Truett" opf:role="aut">S. Truett Cathy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-09-05T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Khám phá câu chuyện, nuôi dưỡng cho chính mình và truyền cho những người xung quanh một cách sống đẹp, sống là cho đi, cho đi nghĩa là nhận lại, ít nhất cũng là những nụ cười cảm kích của người được nhận, giúp lòng ta ấm áp.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:49+00:00"/>
+        <meta name="calibre:title_sort" content="Cho Là Nhận"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

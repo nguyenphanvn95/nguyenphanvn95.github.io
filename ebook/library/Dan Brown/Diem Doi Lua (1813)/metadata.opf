@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1813</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5bc69439-7529-48a1-b878-c86afaa5b94b</dc:identifier>
+        <dc:title>Điểm Dối Lừa</dc:title>
+        <dc:creator opf:file-as="Brown, Dan" opf:role="aut">Dan Brown</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:28+00:00"/>
+        <meta name="calibre:title_sort" content="Điểm Dối Lừa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">977</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">154064c8-a843-410e-b8bb-9f85fdb555c7</dc:identifier>
+        <dc:title>Những cuộc phiêu lưu của Huckleberry Finn</dc:title>
+        <dc:creator opf:file-as="Twain, Mark" opf:role="aut">Mark Twain</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:53+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Những cuộc phiêu lưu của Huckleberry Finn được đánh giá là một trong những tác phẩm vĩ đại nhất trong nền văn học Hoa Kỳ. Câu chuyện về cậu bé Huck thông minh, dũng cảm, nhân hậu và Jim, người bạn da đen của Huck trên con sông Mississippi và miền đất dọc theo dòng sông này. Bạn đọc sẽ có nhiều phen thót tim và hồi hộp với những câu chuyện đầy hấp dẫn, ly kỳ của Huck cùng và Jim.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:45+00:00"/>
+        <meta name="calibre:title_sort" content="Những cuộc phiêu lưu của Huckleberry Finn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

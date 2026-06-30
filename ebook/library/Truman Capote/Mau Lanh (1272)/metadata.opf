@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1272</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a56daf4c-37ab-43e8-883b-dad619fecaa9</dc:identifier>
+        <dc:title>Máu Lạnh</dc:title>
+        <dc:creator opf:file-as="Capote, Truman" opf:role="aut">Truman Capote</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Hiếm có “chuyện có thật” nào đầy máu và nước mắt như vậy lại được tái hiện bằng sức mạnh nghệ thuật lớn lao sánh ngang bất kỳ cuốn tiểu thuyết kinh điển nào đến như vậy. Và, không chỉ vượt ngoài khuôn khổ một tác phẩm “báo chí”, cuốn sách dường như buộc người đọc phải tự trả lời một câu hỏi quan trọng, cốt tử: Rốt cuộc thì những kẻ gây ra thứ tội ác ghê gớm này, chúng có phải là người không? Nếu ta nhìn sâu, nhìn kỹ chúng, liệu ta có vẫn sẽ nhìn ra ở chúng những con người không khác gì nhiều với chúng ta không?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hà Nội</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>True Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:19+00:00"/>
+        <meta name="calibre:title_sort" content="Máu Lạnh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

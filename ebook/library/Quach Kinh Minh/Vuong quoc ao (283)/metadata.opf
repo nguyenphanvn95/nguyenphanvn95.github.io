@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">283</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1d7dc275-3447-4376-ad1b-1b7bff49b791</dc:identifier>
+        <dc:title>Vương quốc ảo</dc:title>
+        <dc:creator opf:file-as="Minh, Quách Kính" opf:role="aut">Quách Kính Minh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-12T05:36:39+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tôi nhìn thấy Tư Duy ( tên gọi trên mạng của Quách Kính Minh ) đặt viên gạch văn tự cuối cùng xây nên tác phẩm văn học của mình rồi đứng dậy phủi bụi trên quần áo và rời xa nó .Một cánh cửa từ từ mở ra : Anh đã mang sự cô đơn từng dưỡng dục đời mình trồng nên một khu rừng rậm rạp , anh đã mang sự yêu mến mãi mãi không quên viết thành một thứ tuyết ngày đêm không ngủ&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:07+00:00"/>
+        <meta name="calibre:title_sort" content="Vương quốc ảo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

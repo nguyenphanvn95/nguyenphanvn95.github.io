@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">292</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d99cb1d0-222b-458d-b49f-12e9175a7733</dc:identifier>
+        <dc:title>Vua Gia Long và người Pháp</dc:title>
+        <dc:creator opf:file-as="Khê, Thụy" opf:role="aut">Thụy Khê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-01-31T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">0e8715a7-5ee3-4fa0-a3e5-e19ca7c07b30</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:08+00:00"/>
+        <meta name="calibre:title_sort" content="Vua Gia Long và người Pháp"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

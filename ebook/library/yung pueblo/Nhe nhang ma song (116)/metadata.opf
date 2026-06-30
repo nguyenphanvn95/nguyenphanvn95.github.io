@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">116</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d2a32bf9-2e27-422d-be0f-e31472e1e1dc</dc:identifier>
+        <dc:title>Nhẹ nhàng mà sống</dc:title>
+        <dc:creator opf:file-as="pueblo, yung" opf:role="aut">yung pueblo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Hành trình chữa lành sâu sắc của yung pueblo chỉ thật sự bắt đầu sau nhiều năm lạm dụng chất kích thích đã khiến cả cơ thể và tinh thần anh suy kiệt. Trong quá trình tìm kiếm một lối đi mới, tác giả nhận ra rằng khi dũng cảm nhìn thẳng vào nỗi lo âu và sợ hãi mà bấy lâu nay mình luôn trốn tránh, anh ấy không còn cảm thấy xa lạ với chính trái tim và tâm trí mình nữa. Khi cam kết tiến bước trên hành trình thiền định và lắng nghe trực giác, yung pueblo bắt đầu cảm thấy tâm trí mình nhẹ nhàng hơn và tình yêu thương dần nảy nở từ bên trong mình. Đó không phải là một hành trình dễ dàng – một hành trình vẫn đang được tiếp diễn – nhưng nó đã cho anh ấy thấy rằng việc chữa lành thật sự là điều hoàn toàn khả dĩ.&lt;/p&gt;
+&lt;p&gt;Trong &lt;span style="font-weight: bold; font-style: italic"&gt;Lighter&lt;/span&gt;, yung pueblo chỉ ra rằng tất cả chúng ta đều có thể tiến bước trên con đường chữa lành: từ việc học cách yêu thương bản thân, buông bỏ quá khứ, cho đến phát triển sự trưởng thành về mặt cảm xúc. Khi những gánh nặng tinh thần dần tan biến, tâm trí ta sẽ không còn bị căng thẳng bủa vây và ta có thể kết nối lại với hiện tại. Thế giới quanh ta cũng sẽ trở nên sống động hơn, dễ đón nhận hơn. Tuy nhiên, đó chỉ là những bước khởi đầu. Khi ta trở nên mạnh mẽ và có ý thức hơn về bản thân, trách nhiệm của chúng ta – đồng thời cũng là một phần của quá trình chữa lành – là hành động để góp phần kiến tạo một thế giới nơi không còn các cấu trúc xã hội gây tổn thương, mà thay vào đó là một hệ thống được xây dựng trên lòng trắc ẩn.&lt;/p&gt;
+&lt;p&gt;yung pueblo mong rằng khi càng có nhiều người tự chữa lành, hành động của chúng ta sẽ trở nên có chủ đích hơn, quyết định của chúng ta sẽ giàu lòng trắc ẩn hơn, suy nghĩ của chúng ta sẽ sáng suốt hơn và tương lai của thế giới sẽ trở nên rực rỡ hơn.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu &lt;span style="font-weight: bold; font-style: italic"&gt;Nhẹ nhàng mà sống&lt;/span&gt;&lt;strong&gt; - Yung Pueblo!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:14:59+00:00"/>
+        <meta name="calibre:title_sort" content="Nhẹ nhàng mà sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

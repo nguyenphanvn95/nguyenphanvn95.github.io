@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1627</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">941dde92-60c6-46d2-baef-7a5235271453</dc:identifier>
+        <dc:title>Hoa Trôi Trên Sóng Nước</dc:title>
+        <dc:creator opf:file-as="Satomi, Myodo" opf:role="aut">Myodo Satomi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2020-05-29T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Hoa Trôi Trên Sóng Nước là cuốn sách nói về cuộc hành trình tìm đạo đầy gian khổ kéo dài hơn 40 năm của tác giả. Khi tạp chí Phật học Kyosho vừa khởi động loạt hồi ký này vào năm 1956, nó đã được các độc giả, nhất là độc giả phái nữ, say mê theo dõi. Lòng nhiệt thành và quyết tâm tìm đạo của bà là một tấm gương sáng cho tất cả những ai muốn bước chân vào cửa đạo. Ngoài ra, sự chứng đắc của bà đã đánh đổ quan niệm cổ hủ cho rằng chỉ có phái nam mới có thể thành công trên con đường tu học mà thôi.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>First News</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:05+00:00"/>
+        <meta name="calibre:title_sort" content="Hoa Trôi Trên Sóng Nước"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">272</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7765e6d2-f518-49f7-b475-17c026290fe9</dc:identifier>
+        <dc:title>Xứ đàng trong năm 1621</dc:title>
+        <dc:creator opf:file-as="Borri, Cristophoro" opf:role="aut">Cristophoro Borri</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:40+00:00</dc:date>
+        <dc:description>&lt;p&gt;"Vào đầu thế kỷ 17, nghĩa là trước đây gần 400 năm, đã có một người Ý tới Đàng Trong. Trong gần năm năm trời, ông đã xem xét và nhận định về đất nước và con người Việt Nam. Rồi vào năm 1621-1622 ông đã viết một bản tường trình rất lạc quan, rất trìu mến.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:06+00:00"/>
+        <meta name="calibre:title_sort" content="Xứ đàng trong năm 1621"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

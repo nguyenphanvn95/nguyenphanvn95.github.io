@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2209</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3d0bc618-7857-4d57-b11b-0f71c8f0bafb</dc:identifier>
+        <dc:title>Bụi trần lắng đọng</dc:title>
+        <dc:creator opf:file-as="Lai, A" opf:role="aut">A Lai</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-12-05T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Với "Bụi trần lắng đọng", bạn đọc sẽ được đến một miền đất lạ - miền bắc
+ của các Thổ ti người dân tộc Tạng, có những phong tục truyền đời kỳ 
+thú.Trong cái thế giới kì thú ấy, bạn sẽ gặp một "thằng ngốc" – sản phẩm
+ của vị Thổ ti hiển hách nhất vùng sau cuộc truy hoan với bà vợ xinh đẹp
+ người Hán. Con người này luôn luôn tự hỏi mình là "thông minh hay 
+ngốc", cha mẹ vẫn hỏi "ngốc hay thông minh", còn các cô gái lại bảo đấy 
+là con người thông minh hơn cả người thông minh.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:19+00:00"/>
+        <meta name="calibre:title_sort" content="Bụi trần lắng đọng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

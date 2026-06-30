@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">524</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7addf48d-d72e-4341-8a04-c04458b723d0</dc:identifier>
+        <dc:title>Tôt-Tô-Chan Cô Bé Bên Cửa Sổ</dc:title>
+        <dc:creator opf:file-as="KUROYANAGI, TETSUKO" opf:role="aut">Tetsuko Kuroyanagi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:23+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuốn sách là một tập hợp nhiều những câu chuyện nho nhỏ, be bé nhưng vô cùng đáng yêu và đáng để suy ngẫm…Truyện không có giá trị nghệ thuật gì nhiều (theo ý kiến chủ quan của tôi ^..^) ngoài việc đã “kể” rất nhẹ nhàng và gần gũi với tâm hồn trẻ nhỏ. Có điều chắc chắn, ai-đã-từng-là-trẻ-con đều sẽ tìm thấy mình trong những câu chuyện ấy.&lt;/p&gt;</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Children</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:53+00:00"/>
+        <meta name="calibre:title_sort" content="Tôt-Tô-Chan Cô Bé Bên Cửa Sổ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

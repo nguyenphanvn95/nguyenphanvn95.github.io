@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1872</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">159d8d26-f724-4cd0-8c5b-62d4b5106b63</dc:identifier>
+        <dc:title>Đấu Trường Sinh Tử</dc:title>
+        <dc:creator opf:file-as="Collins, Suzanne" opf:role="aut">Suzanne Collins</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">f620fbe3-6a90-4425-b439-c8e00409520e</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:34+00:00"/>
+        <meta name="calibre:title_sort" content="Đấu Trường Sinh Tử"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

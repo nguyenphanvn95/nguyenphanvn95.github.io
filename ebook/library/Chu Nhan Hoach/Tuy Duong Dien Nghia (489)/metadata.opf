@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">489</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ace26418-a332-44a6-a165-904798490fdc</dc:identifier>
+        <dc:title>Tùy Đường Diễn Nghĩa</dc:title>
+        <dc:creator opf:file-as="Hoạch, Chử Nhân &amp; Đình, Lê Văn" opf:role="aut">Chử Nhân Hoạch</dc:creator>
+        <dc:creator opf:file-as="Hoạch, Chử Nhân &amp; Đình, Lê Văn" opf:role="aut">Lê Văn Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-06-14T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:49+00:00"/>
+        <meta name="calibre:title_sort" content="Tùy Đường Diễn Nghĩa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

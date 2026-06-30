@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2292</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">890ed544-5ab2-4ae4-a22d-c8d966553664</dc:identifier>
+        <dc:title>Bí mật mê cung</dc:title>
+        <dc:creator opf:file-as="Gulik Robert Van" opf:role="aut">RobertVan Gulik</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-03-05T08:34:08+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Địch Nhân Kiệt một phán quan sống vào thời đại nhà Đường, ông là nhân vật chính trong các tác phẩm của nhà văn Robert Van Gulik.&lt;br&gt;Trong quyển tiểu thuyết " Bí mật mê cung" ( nguyên tác The Chinese Maze Murders ) ông đã đến nhậm chức phán quan tại Lan Phương, một huyện gần biên giới.&lt;br&gt;Trên đường đi ông bị một toán cướp tấn công và khi đến Lan Phương thì không thấy ai ra đón tiếp. Huyện đường đã bị bỏ hoang nhiều năm và người dân nơi đây tỏ ra thờ ơ với mọi chuyện.&lt;br&gt;Chuyện gì đã xảy ra tại đây: một bạo chúa tại địa phương cai trị dân chúng bằng sự độc ác của mình, một cô gái mất tích không rõ nguyên nhân, một vụ kiện về tài sản thừa kế mà chìa khóa nằm trong bức tranh để lại cho người con thứ.&lt;br&gt;&lt;/p&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=bimatmecung</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:28+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật mê cung"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1789</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">392b0209-16e4-4586-baee-141362418b13</dc:identifier>
+        <dc:title>Dinh Dưỡng Và Sức Khoẻ</dc:title>
+        <dc:creator opf:file-as="Đức, Nguyễn Ý" opf:role="aut">Nguyễn Ý Đức</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:37+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một phần quan trọng - gần như trọng tâm của bộ sách - được dành để bàn đến mối tương quan giữa dinh dưỡng và các bệnh tật thường gặp như: tiểu đường, tim mạch, cao huyết áp, viêm gan, táo bón... Tác giả luôn có những lời khuyên hữu ích nhằm đặt căn bản vững chắc cho một cuộc sống khoẻ mạnh, ít bệnh tật.Nói chung, bộ sách nhắm đến trả lời phần lớn những câu hỏi liên quan đến vấn đề ăn uống, nhưng đặc biệt cung cấp cho bạn đọc một cách chi tiết hơn những gì cần biết trong việc ăn uống hằng ngày,  khi đang khoẻ mạnh cũng như khi có bệnh. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Health</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:25+00:00"/>
+        <meta name="calibre:title_sort" content="Dinh Dưỡng Và Sức Khoẻ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

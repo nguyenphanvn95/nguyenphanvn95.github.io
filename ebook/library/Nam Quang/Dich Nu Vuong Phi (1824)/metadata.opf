@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1824</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">68bf4331-96fc-447d-a089-a240c1668c7a</dc:identifier>
+        <dc:title>Đích Nữ Vương Phi</dc:title>
+        <dc:creator opf:file-as="Quang, Nam" opf:role="aut">Nam Quang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-07-04T10:40:12+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://truyenfull.vn/dich-nu-vuong-phi/</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn Tình</dc:subject>
+        <dc:subject>Trọng Sinh</dc:subject>
+        <dc:subject>Cung Đấu</dc:subject>
+        <dc:subject>Gia Đấu</dc:subject>
+        <dc:subject>Cổ Đại</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:29+00:00"/>
+        <meta name="calibre:title_sort" content="Đích Nữ Vương Phi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

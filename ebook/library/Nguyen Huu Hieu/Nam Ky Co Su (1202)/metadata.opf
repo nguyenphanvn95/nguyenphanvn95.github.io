@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1202</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">612e3a91-9885-4b0f-82b0-1d71b50db6d7</dc:identifier>
+        <dc:title>Nam Kỳ Cố Sự</dc:title>
+        <dc:creator opf:file-as="Hiếu, Nguyễn Hữu" opf:role="aut">Nguyễn Hữu Hiếu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-19T13:19:21+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Fairy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:11+00:00"/>
+        <meta name="calibre:title_sort" content="Nam Kỳ Cố Sự"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

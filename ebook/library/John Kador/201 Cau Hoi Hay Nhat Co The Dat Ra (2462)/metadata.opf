@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2462</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">01c96647-539c-4d13-86ea-f0cc4f185e83</dc:identifier>
+        <dc:title>201 Câu Hỏi Hay Nhất Có Thể Đặt Ra Cho Nhà Tuyển Dụng</dc:title>
+        <dc:creator opf:file-as="Kador, John" opf:role="aut">John Kador</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-03-14T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:48+00:00"/>
+        <meta name="calibre:title_sort" content="201 Câu Hỏi Hay Nhất Có Thể Đặt Ra Cho Nhà Tuyển Dụng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

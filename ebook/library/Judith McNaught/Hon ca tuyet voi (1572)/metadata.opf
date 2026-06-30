@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1572</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f6f6a3e3-bfb6-432f-a44d-d9645929f538</dc:identifier>
+        <dc:title>Hơn cả tuyệt vời</dc:title>
+        <dc:creator opf:file-as="McNaught, Judith" opf:role="aut">Judith McNaught</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:34+00:00</dc:date>
+        <dc:description>&lt;p&gt; Bằng bút pháp điêu luyện và hình tượng nghệ thuật vô cùng sống động, các tác giả vừa thể hiện cái tôi chủ thể qua những cung bậc cảm nhận tinh tế, phong phú về cuộc đời, về nhân tình thế thái, vừa phản ánh những sự kiện, những tình huống, những lối sống... của con người trong khung cảnh xã hội, đồng thời cũng chuyển tại các thông điệp quan trọng đến với mọi người, giúp họ vượt lên trên tâm thế bình thường để hướng về những lý tượng cao đẹp&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Hơn cả tuyệt vời"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

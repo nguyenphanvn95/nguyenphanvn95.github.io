@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2151</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">15f2a1ad-848c-4917-93d2-00b274b59faa</dc:identifier>
+        <dc:title>Câu chuyện phía sau Bánh mì</dc:title>
+        <dc:creator opf:file-as="Raum, Elizabeth" opf:role="aut">Elizabeth Raum</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-09-03T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Kiến thức Khoa học</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:13+00:00"/>
+        <meta name="calibre:title_sort" content="Câu chuyện phía sau Bánh mì"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

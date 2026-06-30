@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1554</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">757ffde8-0983-4960-84e6-d02bb2a79e99</dc:identifier>
+        <dc:title>Huyên Thảo Chưa Tàn</dc:title>
+        <dc:creator opf:file-as="Phi, Đồng Phi" opf:role="aut">Đồng Phi Phi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T02:12:04+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tiểu thuyết kể về câu chuyện tình yêu của ba nhân vật chính Là Đồng Đồng, Tề Vũ và Lục Hy Thần. Đồng Đồng - một cô bé trường Mỹ thuật vốn bướng bỉnh, cố chấp, ngang ngược - yêu chàng họa sỹ tranh sơn dầu tài ba, phong độ, luôn được nhiều nữ sinh yêu mến - Tề Vũ...Cô luôn sẵn sàng hi sinh vì người mình yêu, làm mọi việc để nhìn thấy người đó được vui vẻ, hạnh phúc, để rồi lại đau khổ thật nhiều khi thấy chảng hoàng tử trong mơ của mình tay trong tay với người yêu- Hạ Dương; sẵn sàng xả thân đỡ dao cho Tề Vũ khi anh gặp nạn, chăm sóc anh đến quên anh quên ngủ khi anh bị bệnh dù biết rằng tình cảm anh chẳng giành cho mình...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:50+00:00"/>
+        <meta name="calibre:title_sort" content="Huyên Thảo Chưa Tàn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

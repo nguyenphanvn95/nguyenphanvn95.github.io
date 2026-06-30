@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">395</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3ea656b3-acae-487a-a068-302c6cc24833</dc:identifier>
+        <dc:title>Thiền Và Sức Khỏe</dc:title>
+        <dc:creator opf:file-as="Ngọc, Đỗ Hồng" opf:role="aut">Đỗ Hồng Ngọc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nói đến Thiền, đa số chúng ta đều cảm thấy xa lạ và có thái độ muốn xa lánh vì chữ Thiền gợi ra một cái gì thuộc về tôn giáo, tu hành..., không trần tục như chúng ta. Tuy nhiên Thiền có vai trò rất hữu ích đối với sức khỏe.&lt;/p&gt;&lt;p&gt;Với bác sĩ &lt;strong&gt;Đỗ Hồng Ngọc,&lt;/strong&gt; người đến với Thiền rất trễ, gần tuổi 60, đã tự tìm cách chữa căn bệnh tai biến mạch máu não mà không dùng thuốc, vì ông biết bệnh không thể dùng thuốc. Chính vì vậy, những chia sẻ của bác sĩ là những kiến thức mà ông nghiên cứu từ những năm hai mươi tuổi và kinh nghiệm của một người làm bác sĩ như: Thở để chữa bệnh, Thiền và Thở, Thiền và Ăn, Thiền và Ngủ, Thiền và Yoga, Thiền với Trí thức, Thiền với Doanh nhân, Thiền với sinh viên, Những sai lầm thường gặp, Lợi ích của thở bụng.&lt;/p&gt;&lt;p&gt;Bác sĩ cũng dành 26 trang để giải đáp cặn kẽ những câu hỏi thường gặp liên quan, giúp bạn đọc có cái nhìn chi tiết hơn khi muốn thực hành.&lt;/p&gt;&lt;p&gt;Mời các bạn đón đọc &lt;strong&gt;Thiền và sức khỏe - Đỗ Hồng Ngọc!&lt;/strong&gt;&lt;/p&gt;</dc:description>
+        <dc:publisher>NXB Thời Đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn hóa - Xã hội</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:26+00:00"/>
+        <meta name="calibre:title_sort" content="Thiền Và Sức Khỏe"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

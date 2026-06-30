@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1810</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">20f458f7-b430-457f-a486-cc84769ed141</dc:identifier>
+        <dc:title>Điểm mù</dc:title>
+        <dc:creator opf:file-as="Bazerman" opf:role="aut">Bazerman</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-01-26T17:00:00+00:00</dc:date>
+        <dc:description>Trong cuốn sách Điểm mù, những nhà nghiên cứu hàng đầu trong lĩnh vực đạo đức kinh doanh Max Bazerman và Ann Tenbrunsel đã nghiên cứu cách thức chúng ta đánh giá quá cao năng lực để làm những gì chúng ta cho là đúng đắn và chúng ta đã hành xử thiếu đạo đức thế nào dù không có chủ ý. Bằng việc phân tích những vụ bê bối về đạo đức trong quá khứ và hiện tại - bao gồm cả những vụ sụp đổ thị trường tài chính, vụ sụp đổ Enron, những thiếu sót của Ford Pinto, và thảm họa tàu vũ trụ Challenger - nhóm tác giả đã điều tra ra bản chất của những vụ bê bối kiểm soát đạo đức trong thế giới kinh doanh và nhiều hơn thế nữa, tác giả khám phá ra những lý do mà các cách tiếp cận đạo đức truyền thống đều không phát huy tác dụng. Nhóm tác giả đưa ra luận điểm rằng những vụ bê bối sẽ vẫn tiếp tục xảy ra trừ phi những cách tiếp cận này cân nhắc đến vấn đề tâm lý của cá nhân khi đối mặt với những tình thế khó khăn về đạo đức.</dc:description>
+        <dc:publisher>Nhà Xuất Bản Lao Động</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:28+00:00"/>
+        <meta name="calibre:title_sort" content="Điểm mù"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2155</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">24748e7c-cdbd-4631-80d1-2cbf8f6b8991</dc:identifier>
+        <dc:title>Catalonia - Tình Yêu Của Tôi</dc:title>
+        <dc:creator opf:file-as="Orwell, George" opf:role="aut">George Orwell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-11-25T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;kể về giai đoạn nội chiến ở Tây Ban Nha (1936-1939) mà George Orwell từng tham gia. Nếu chỉ đọc Catalolia – Tình yêu của tôi như một bút ký chiến trường thôi thì thật khiếm khuyết. Tài năng vô song của Orwell nằm ở chỗ, ông không chỉ chớp được những sự kiện tươi rói, mà trong sự hỗn loạn của các sự kiện, rát rạt giữa sự sống và cái chết, ông vẫn đủ tinh tế và nhạy cảm để nhìn ra những khuynh hướng lớn đang định hình bức tranh xã hội của một nửa thế gi&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:13+00:00"/>
+        <meta name="calibre:title_sort" content="Catalonia - Tình Yêu Của Tôi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

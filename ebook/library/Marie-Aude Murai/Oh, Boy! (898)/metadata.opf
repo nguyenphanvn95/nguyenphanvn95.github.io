@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">898</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c2470ec5-eb05-40ab-af21-158eb92d67d7</dc:identifier>
+        <dc:title>Oh, Boy!</dc:title>
+        <dc:creator opf:file-as="Murai, Marie-Aude" opf:role="aut">Marie-Aude Murai</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Chúng là ba anh em, một trai và hai gái. Ba đứa trẻ mồ côi.&lt;/p&gt; &lt;p&gt;&lt;i&gt;Siméon Morlevent, 14 tuổi. Mảnh khảnh. Mắt nâu. Đầu óc thần đồng, đang học năm cuối trung học.&lt;/i&gt;&lt;/p&gt; &lt;p&gt;&lt;i&gt;Morgane Morlevent, 8 tuổi. Mắt nâu. Hai tai rất to. Đứng đầu lớp nhưng lại luôn bị người lớn quên mất sự có mặt của mình.&lt;/i&gt;&lt;/p&gt; &lt;p&gt;&lt;i&gt;Venise Morlevent, 5 tuổi. Mắt xanh, tóc vàng, rạng rỡ. Một cô bé ai ai cũng thích. Cô còn biết thêu dệt ra những chuyện tình cực kỳ nồng cháy cho các nàng búp bê Barbie của mình&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;Nhưng bọn trẻ hoàn toàn không muốn giao phó số phận mình vào tay cô bảo trợ xã hội. Chúng quyết tâm rời khỏi trại trẻ mồ côi, tìm cho mình một gia đình.&lt;/p&gt; &lt;p&gt;Vào lúc đó, có hai người xuất hiện. Họ đều có thể nhận nuôi chúng. Bởi thiện ý và cũng bởi ác ý. Một người không hoàn toàn tốt bụng; người kia thì sống thiếu trách nhiệm, và còn điều nữa, hai người này đặc biệt ghét nhau.&lt;/p&gt; &lt;p&gt;Rồi chuyện gì sẽ xảy ra?&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Là một trong những tác phẩm thiếu nhi hay nhất của Marie-Aude Murail, &lt;i&gt;Oh, boy!&lt;/i&gt; ra mắt năm 2000 và giành được nhiều giải thưởng, trong đó có Giải thưởng văn học viết dành cho thanh thiếu niên Pháp.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:36+00:00"/>
+        <meta name="calibre:title_sort" content="Oh, Boy!"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

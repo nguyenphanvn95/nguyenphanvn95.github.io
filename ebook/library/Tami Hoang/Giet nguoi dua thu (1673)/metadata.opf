@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1673</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7b42c434-b211-4c4d-898e-cd9cb1dcb1e1</dc:identifier>
+        <dc:title>Giết người đưa thư</dc:title>
+        <dc:creator opf:file-as="Hoang, Tami" opf:role="aut">Tami Hoang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;Kho sách miễn Phí tại &lt;a href="http://www.sachvui.com"&gt;&lt;b&gt;www.Sachvui.com&lt;/b&gt;&lt;/a&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:13+00:00"/>
+        <meta name="calibre:title_sort" content="Giết người đưa thư"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1621</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e0c4518c-4256-43e5-8e37-2329d9abf4cd</dc:identifier>
+        <dc:title>Hiến Pháp Mỹ</dc:title>
+        <dc:creator opf:file-as="Bình, Nguyễn Cảnh" opf:role="aut">Nguyễn Cảnh Bình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:58+00:00"/>
+        <meta name="calibre:title_sort" content="Hiến Pháp Mỹ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

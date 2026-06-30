@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1032</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">17388077-e8f6-4303-967f-b7d9883262c3</dc:identifier>
+        <dc:title>Nguyên lý thứ năm</dc:title>
+        <dc:creator opf:file-as="Senge, Peter M." opf:role="aut">Peter M. Senge</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;i&gt;Nguyên lý thứ Năm được Tạp chí THE FINANCIAL TIMES vinh danh là một trong năm quyển sách kinh doanh hay nhất của mọi thời đại&lt;/i&gt;&lt;/p&gt; &lt;p&gt;Tác phẩm kinh điển bán chạy nhất của Peter Senge, Nguyên lý thứ Năm, được tái bản dựa trên mười lăm năm kinh nghiệm áp dụng những ý tưởng trong sách vào thực tiễn. Như Senge làm rõ, trong dài hạn lợi thế cạnh tranh bền vững duy nhất là khả năng học hỏi nhanh chóng hơn so vối đối thủ cạnh tranh. Những câu chuyện quản lý trong sách cho thấy nhiều ý tưởng cốt lõi trong Nguyên lý thứ Năm, vốn được xem là cấp tiến trong lần xuất bản đầu tiên năm 1990, nay đã hòa nhập sâu sắc vào quan điểm cũng như vào thực tế công tác quản lý của nhiều người.&lt;/p&gt; &lt;p&gt;Trong Nguyên lý thứ Năm, Senge cho thấy nhiều công ty được giải thoát khỏi tình trạng “thiểu năng học tập” vốn đe dọa hiệu quả kinh doanh và thành công của họ bằng cách áp dụng những chiến lược của các tổ chức học tập - những công ty cho phép các mô hình tư duy mới và mở rộng phát triển, hình thành cảm hứng tập thể, và mọi người liên tục học cách tạo ra những kết quả họ thật sự khao khát.&lt;/p&gt; &lt;p&gt;&lt;b&gt;http://tve-4u.org&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>DT Books + NXB Thời Đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:51+00:00"/>
+        <meta name="calibre:title_sort" content="Nguyên lý thứ năm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

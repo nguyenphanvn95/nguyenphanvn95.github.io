@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1605</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8c8f50df-c930-4c8e-a108-9d37c2b8bd45</dc:identifier>
+        <dc:title>Hoa hồng xứ khác</dc:title>
+        <dc:creator opf:file-as="Ánh, Nguyễn Nhật" opf:role="aut">Nguyễn Nhật Ánh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-08-22T14:08:20+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=hoahongxukhac</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:56+00:00"/>
+        <meta name="calibre:title_sort" content="Hoa hồng xứ khác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

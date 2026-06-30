@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">541</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1e8c90b7-c1a7-45cf-992b-02dc05ccb95b</dc:identifier>
+        <dc:title>Tôi nói gì khi nói về chạy bộ</dc:title>
+        <dc:creator opf:file-as="Murakami, Haruki" opf:role="aut">Haruki Murakami</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:17+00:00</dc:date>
+        <dc:description>&lt;p&gt;Liệu có gì chung giữa viết văn và chạy bộ? Có, Haruki Murakami trả lời, giản dị, tự tin, bằng hành động viết và bằng cuộc sống của chính mình. Nhà văn Nhật Bản nổi tiếng, tác giả Rừng Na Uy, Biên niên ký chim vặn dây cót, Kafka bên bờ biển... bên cạnh khả năng viết xuất chúng còn là một người chạy bộ cừ khôi. Trong cuốn sách nhỏ mà thú vị này, bằng giọng văn lôi cuốn, thoải mái nhưng đầy sức mạnh, Murakami kể về quá trình tham gia môn chạy bộ cùng những suy tưởng của ông về ý nghĩa của chạy bộ, và rộng hơn nữa, của vận động cơ thể - sự tuân theo một kỷ luật khắt khe về phương diện thể xác - đối với hoạt động chuyên môn của ông trong tư cách nhà văn.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:55+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi nói gì khi nói về chạy bộ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

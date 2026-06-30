@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2344</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f66e7387-e3cd-4087-a497-1be85c77260f</dc:identifier>
+        <dc:title>Bàn Về Trung Quốc</dc:title>
+        <dc:creator opf:file-as="Kissinger, Henry A." opf:role="aut">Henry A. Kissinger</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-08-09T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="WWW.DTV-EBOOK.COM">41d91fcd-3d01-423a-8602-f1c32d49d460</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:34+00:00"/>
+        <meta name="calibre:title_sort" content="Bàn Về Trung Quốc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

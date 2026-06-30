@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">625</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0e6a8d26-0093-491e-9e68-6cb107e67bf5</dc:identifier>
+        <dc:title>Tanh</dc:title>
+        <dc:creator opf:file-as="Mân, Lý Tây" opf:role="aut">Lý Tây Mân</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-06T12:01:36+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Câu chuyện là một bức tranh toàn cảnh cuộc sống của người dân thị trấn Đường -thị trấn hoang vu ven núi. Thị trấn Đường mùa mưa mới thật khắc nghiệt, trời đất như rung chuyển, dòng suối như được tiếp thêm sức mạnh có thể phá vỡ con đập bảo vệ thị trấn. Nơi rừng núi heo hút hoang vu lại chứa đựng những bí ẩn kinh người, sự chết chóc như muốn đeo bám lấy họ - những người dân khốn khổ đang giành giật cuộc sống từng ngày. Trong màn đêm u ám tối tăm, mọi việc đều có thể xảy ra, ngày mai không biết ai trong số họ sẽ phải vĩnh biệt cuộc sống này, họ sống trong sợ hãi và sự nghi ngờ. &lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:04+00:00"/>
+        <meta name="calibre:title_sort" content="Tanh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

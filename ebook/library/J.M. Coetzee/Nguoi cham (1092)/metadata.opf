@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1092</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">43958b8b-0886-49cf-ae2d-089023b4d84f</dc:identifier>
+        <dc:title>Người chậm</dc:title>
+        <dc:creator opf:file-as="Coetzee, J.M." opf:role="aut">J.M. Coetzee</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt; &lt;p class="MsoNormal" style="text-align:justify;line-height:150%"&gt;&lt;span style="mso-bidi-font-size:8.0pt;line-height:150%"&gt;Khi nhà nhiếp ảnh Paul Rayment bị mất một chân trong tai nạn xe đạp, cuộc sống cô đơn của ông đã thay đổi không ngờ. Nhất quyết từ chối lắp chân giả, Paul trở về căn hộ độc thân của ông ở &lt;place w:st="on"&gt;&lt;city w:st="on"&gt;Adelaide&lt;/city&gt;&lt;/place&gt;, không thoải mái vì phải phụ thuộc vào người khác. Ông đã phải vật lộn vô vọng khi nhìn lại sáu mươi năm đời mình, nhưng tinh thần ông phấn chấn lên khi yêu Marijana, nữ điều dưỡng của ông, một phụ nữ Croatia đang vất vả nuôi gia đình trên mảnh đất xa lạ. Khi Paul dự định chiếm trái tim chị, ông được nhà văn bí ẩn &lt;place w:st="on"&gt;&lt;city w:st="on"&gt;Elizabeth&lt;/city&gt;&lt;/place&gt; đến thăm, khuyến khích Paul tích cực lên trong đời…&lt;p&gt;&lt;/p&gt;&lt;/span&gt;&lt;/p&gt; &lt;p class="MsoNormal" style="text-align:justify;line-height:150%"&gt;&lt;span style="mso-bidi-font-size:8.0pt;line-height:150%"&gt;Giống các tác phẩm văn học lớn khác, &lt;i style="mso-bidi-font-style:normal"&gt;Người chậm&lt;/i&gt; đưa ra những câu hỏi rất hiếm khi có trả lời; đây là chân dung một con người đang tìm kiếm sự thật. Tai nạn của Paul Rayment đã biến đổi tiền đồ của ông, và là một đáp số ông gửi đến cho những mối băn khoăn chung, xác định những thuộc tính của tất cả chúng ta: Cái gì là tốt? Trong đời chúng ta, điều gì là ý nghĩa nhất? Được yêu hay được quan tâm có ý nghĩa hơn? Chúng ta định nghĩa ra sao nơi ta gọi là “tổ ấm”? Bằng giọng văn chắc chắn và kiên quyết, Coetzee vật lộn với các vấn đề này, và cho ra đời một câu chuyện cảm động sâu sắc về tình yêu và cái chết làm người đọc sững sở ở từng trang.&lt;p&gt;&lt;/p&gt;&lt;/span&gt;&lt;/p&gt; &lt;/div&gt;</dc:description>
+        <dc:publisher>Bách Việt</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:58+00:00"/>
+        <meta name="calibre:title_sort" content="Người chậm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

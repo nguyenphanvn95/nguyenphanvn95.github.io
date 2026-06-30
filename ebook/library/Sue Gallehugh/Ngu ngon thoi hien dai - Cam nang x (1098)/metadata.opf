@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1098</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">71d7f424-e8a5-4a55-8cc4-98f7477dd4ac</dc:identifier>
+        <dc:title>Ngụ ngôn thời hiện đại - Cẩm nang xử thế</dc:title>
+        <dc:creator opf:file-as="Gallehugh, Sue" opf:role="aut">Sue Gallehugh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Cuốn sách tập hợp những câu chuyện được viết lại qua phong cách ngụ ngôn thời hiện đại, được ví như “cẩm nang xử thế” gối đầu giường dành cho tất cả chúng ta.&lt;/em&gt;&lt;/p&gt;&lt;em&gt;Giờ đây bạn hãy đọc-suy ngẫm để học cách yêu thương người khác, yêu thương bản thân và sẵn sàng sẻ chia.&lt;/em&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn Lang + NXB Văn Hóa Thông Tin</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Self-Improvement</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:58+00:00"/>
+        <meta name="calibre:title_sort" content="Ngụ ngôn thời hiện đại - Cẩm nang xử thế"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

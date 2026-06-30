@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1695</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9667294f-341c-48ee-82d0-d90b6103b5da</dc:identifier>
+        <dc:title>Giá đâu đó có người đợi tôi</dc:title>
+        <dc:creator opf:file-as="Gavalda, Anna" opf:role="aut">Anna Gavalda</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-04T13:22:51+00:00</dc:date>
+        <dc:description>&lt;p&gt;Mười hai truyện ngắn trong tập truyện ngắn đã phác hoạ rõ nét chân dung những con người tràn đầy hy vọng phù phiếm hay mang nỗi thất vọng nặng nề. Họ không phải là những người hùng, họ chỉ đơn thuần là con người. Họ không tìm cách thay đổi thế giới. Chúng ta vẫn gặp họ hàng ngày nhưng không hề chú ý đến họ, không hề để tâm đến gánh nặng tình cảm mà họ đang mang và bỗng nhiên tất cả được hiện diện dưới ngòi bút vô cùng tinh tế của Anna Gavalda.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:15+00:00"/>
+        <meta name="calibre:title_sort" content="Giá đâu đó có người đợi tôi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

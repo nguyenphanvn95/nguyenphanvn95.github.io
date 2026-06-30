@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">941</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fb928292-96a3-4dc0-8ca7-9c8b0360b0d9</dc:identifier>
+        <dc:title>Những người thích đùa</dc:title>
+        <dc:creator opf:file-as="Nesin, Azit" opf:role="aut">Azit Nesin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:36+00:00</dc:date>
+        <dc:description>Những chi tiết nhỏ nhặt trong cuộc sống như chuyện uống trà, cưới hỏi, vệ sinh ǎn uống,..., qua con mắt của Nexin đều mang một ý nghĩa hài hước và thú vị bởi ông luôn có những liên tưởng hết sức độc đáo, sáng tạo. Những châm biếm đả kích của ông lại rất tế nhị mà sâu sắc, khiến người đọc cười đó mà cũng không khỏi suy ngẫm. Những truyện ngắn trào phúng đặc sắc nhất của Azit Nexin đã được chọn lọc tập hợp trong cuốn Những người thích đùa.</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:41+00:00"/>
+        <meta name="calibre:title_sort" content="Những người thích đùa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

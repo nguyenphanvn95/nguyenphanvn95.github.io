@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1379</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f96ac23e-e206-4d20-916d-a36003a464e7</dc:identifier>
+        <dc:title>Lời ngỏ từ cõi tâm linh</dc:title>
+        <dc:creator opf:file-as="Weiss, Brian L." opf:role="aut">Dr. Brian L. Weiss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">b453ef3c-e39e-4aec-9f4a-b235bbc17039</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:31+00:00"/>
+        <meta name="calibre:title_sort" content="Lời ngỏ từ cõi tâm linh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

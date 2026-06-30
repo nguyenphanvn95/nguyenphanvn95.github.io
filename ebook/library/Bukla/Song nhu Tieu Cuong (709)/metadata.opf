@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">709</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cfcb7578-74f8-4626-9361-d2dd63a391fb</dc:identifier>
+        <dc:title>Sống như Tiểu Cường</dc:title>
+        <dc:creator opf:file-as="Bukla" opf:role="aut">Bukla</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-15T08:25:52+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tiểu Cường, người thị trấn Tam Thủy, sớm được coi là một nhân tài kiệt xuất trong "thôn lừa đảo", sở trường của cậu là dùng kỹ xảo để tạo ra các tình huống như: giả khóc, đóng vai đáng thương, bịa ra những câu chuyện hết sức thương tâm, uy hiếp người khác... Một lần ngẫu nhiên Tiểu Cường lên thành phố và ở đây cậu đã có cơ hội để trổ hết tài năng thiên bẩm của mình, vừa hành sự vừa dùng mưu trí đối phó với cảnh sát. Tạo hóa xoay vần, chỉ sau một lần làm việc tốt, một Tiểu Cường luôn gặp may trong nghề bỗng trở thành kẻ gặp vận hạn đen đủi không ngừng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:14+00:00"/>
+        <meta name="calibre:title_sort" content="Sống như Tiểu Cường"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">487</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6246889c-ddfa-422c-80d8-fed94c28d277</dc:identifier>
+        <dc:title>Tuyển tập Hạt Giống Tâm Hồn</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-11T15:49:23+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tập sách này bao gồm những câu chuyện rất giản dị nhưng đầy ý nghĩa, súc tích, cảm động và sâu sắc. Mỗi câu chuyện là một thế giới riêng, đề cập đến những khía cạnh tâm tư của con người, sự trong sáng của tình yêu, sự nồng ấm chân thành của tình bạn, những nghĩa cử nhân ái, những bài học đầy tình người... "Mỗi chúng ta ít nhiều đều đã và đang trải nghiệm những khoảnh khắc ý nghĩa và giá trị của cuộc sống, nhưng có thể vì nhiều lý do khác nhau mà đôi khi chúng ta vô tình không nhận ra hoặc đã bỏ lỡ..."&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:49+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập Hạt Giống Tâm Hồn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

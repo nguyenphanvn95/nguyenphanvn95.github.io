@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">426</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ecd2b5f2-16b4-479b-a071-7b9d613ed057</dc:identifier>
+        <dc:title>Thế giới 5000 năm</dc:title>
+        <dc:creator opf:file-as="Chí, Chu Hữu" opf:role="aut">Chu Hữu Chí</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-04T10:52:04+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bộ sách những mẩu chuyện lịch sử Thế Giới 5000 Năm có thể hé mở cánh cửa kho báu, phủi bụi thời gian, giúp bạn đọc ít nhiều trong việc tìm kiếm những tri thức, những bài học kinh nghiệm phong phú tích lũy hàng mấy ngàn năm của loài người. Những câu chuyện đều phản ánh những nội dung cơ bản trong các giai đoạn lịch sử, tôn trọng sự thật lịch sử, bám sát các sự kiện, phác họa đúng đắn chân dung nhân vật, nhưng được viết dưới dạng kể chuyện, những truyện ngắn, ký sự... &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>History</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:42.126864+00:00"/>
+        <meta name="calibre:title_sort" content="Thế giới 5000 năm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

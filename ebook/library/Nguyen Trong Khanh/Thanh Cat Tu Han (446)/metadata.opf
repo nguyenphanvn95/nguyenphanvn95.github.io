@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">446</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7d817eb2-1ebb-422e-acd2-fa71a3f7e399</dc:identifier>
+        <dc:title>Thành Cát Tư Hãn</dc:title>
+        <dc:creator opf:file-as="Khanh, Nguyễn Trọng" opf:role="aut">Nguyễn Trọng Khanh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:36+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuộc đời của ông là một hình ảnh thu gọn lại mười hai thế kỷ mà dân du mục miền đồng cỏ đã tràn ra bốn phương tàn phá các dân tộc định cư có nền văn minh vững chãi. Trước ông không có nhà chinh phục nào gây được uy vũ làm kinh hoàng cả thiên hạ, đến nỗi khi dân Âu Châu nghe đến tên Thành-Cát-Tư-Hãn đều hãi hùng cho là “ngày tận thế đã tới rồi!”. Ông áp dụng triệt để lối khủng bố để cai trị và thẳng tay tàn sát để ngăn ngừa những cuộc quật khởi chống đối. Những gì mà Âu Châu đã lên án Attila và Ấn Độ đã lên án Mihirakonia thật chẳng thấm vào đâu so với những cuộc tàn phá của Thành-Cát-Tư-Hãn ở những nước bại trận như Trung Quốc, Đại Hồi…&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:44+00:00"/>
+        <meta name="calibre:title_sort" content="Thành Cát Tư Hãn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

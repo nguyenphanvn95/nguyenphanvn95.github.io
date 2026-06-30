@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">921</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6ab1dfbe-c172-4960-8187-bdba898a36ab</dc:identifier>
+        <dc:title>Những bài thuốc trị bệnh bằng trái cây</dc:title>
+        <dc:creator opf:file-as="Hà Duyệt Phi, Vương Lợi Kiệt" opf:role="aut">Hà Duyệt Phi, Vương Lợi Kiệt</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:27+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Trong trái cây tươi có nhiều thành phần rất cần thiết cho cơ thể người như các loại vitamin, hợp chất cacbon, protein, lipit, xenluylô, các chất khoáng v.v... Dùng trái cây làm "thuốc" chữa bệnh chẳng những ít gây ảnh hưởng phụ như các loại thuốc tân dược, mà còn có tác dụng làm cân bằng sinh lý cơ thể, lại ăn ngon miệng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Health</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:39+00:00"/>
+        <meta name="calibre:title_sort" content="Những bài thuốc trị bệnh bằng trái cây"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

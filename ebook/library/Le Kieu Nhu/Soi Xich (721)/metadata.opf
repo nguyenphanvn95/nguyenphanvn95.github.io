@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">721</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">38f64f05-348f-42f2-ae2f-997576441254</dc:identifier>
+        <dc:title>Sợi Xích</dc:title>
+        <dc:creator opf:file-as="Như, Lê Kiều" opf:role="aut">Lê Kiều Như</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-08-03T03:02:19+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;Tôi đã trăn trở nhiều đêm và bị ám ảnh bởi người phụ nữ đáng thương đó, bi kịch và hình ảnh ấy xâm chiếm tôi suốt bao năm qua. Nhiều khi tôi rơi nước mắt nghĩ đến sự thật, giả trong cuộc sống... Có đêm tôi thức trắng, viết về số phận, những đau đớn của tình yêu. Sau sự thiếu thốn, mất mát, họ trở thành một dạng người khao khát hưởng sự khoái lạc bản năng và tự biến mình trở thành nô lệ cho, lạc lối trong cuộc sống, nối theo sự cùng quẫn của lý trí, và bi kịch trút lên cuộc đời họ! Tôi muốn viết về những bản năng nhục thể của con người, mặt phải và mặt trái của... Tôi muốn viết trên khía cạnh giá trị mãnh liệt, trân trọng tình yêu khi có. Nhờ mà thế giới con người tồn tại cho đến hôm nay, làm con người tươi tốt, thăng hoa trong cuộc sống... Nhưng cũng là m cho con người khổ đau, cùng quẫn... &lt;/p&gt;&lt;p class="description"&gt;Lòng ham muốn nhục dục, đánh thức lòng ham muốn sở hữu... Tôi cần có một tình yêu cao đẹp, biết sống vì nhau... vượt trên cả những gì người ta cho là...&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=soixich</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:15+00:00"/>
+        <meta name="calibre:title_sort" content="Sợi Xích"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

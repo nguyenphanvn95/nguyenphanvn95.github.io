@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">696</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7d8b4aa6-d730-4a86-b316-2618802759e2</dc:identifier>
+        <dc:title>Sứ giả của thần chết</dc:title>
+        <dc:creator opf:file-as="Sheldon, Sidney" opf:role="aut">Sidney Sheldon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-09-05T20:08:14+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=sugiacuathanchet</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12.587186+00:00"/>
+        <meta name="calibre:title_sort" content="Sứ giả của thần chết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

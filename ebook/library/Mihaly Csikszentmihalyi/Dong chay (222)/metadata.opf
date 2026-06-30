@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">222</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a2171953-13a4-4652-940f-e65e8915ee4a</dc:identifier>
+        <dc:title>Dòng chảy</dc:title>
+        <dc:creator opf:file-as="Csikszentmihalyi, Mihaly" opf:role="aut">Mihaly Csikszentmihalyi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Dành cho những ai muốn tối ưu khả năng tập trung để tìm kiếm sự gắn kết trong công việc, hướng đến sự viên mãn, và hạnh phúc trong mọi trải nghiệm cuộc sống.&lt;/p&gt;
+&lt;p&gt;Có bao giờ bạn hoàn toàn chìm đắm vào một cuốn sách hay, một công việc, hay một buổi trình diễn đến mức không nhận thấy hàng giờ đồng hồ đã trôi qua, thậm chí bạn chẳng có ý niệm gì về mọi thứ xung quanh hay sự tồn tại của chính mình? Thời khắc ấy, một sự khoan khoái kỳ lạ tuôn chảy trong con người bạn, đến mức bạn không ngừng tìm kiếm để có lại những cảm giác tương tự, nhưng điều đó dường như là không thể, bởi bạn chưa thật sự hiểu cảm giác đó là gì, cũng như nguồn gốc hình thành nên trải nghiệm tuyệt vời ấy.&lt;/p&gt;
+&lt;p&gt;Câu trả lời sẽ được tìm thấy trong “Dòng chảy” (Flow), cuốn sách tổng hợp công trình trọn đời của nhà tâm lý học người Mỹ gốc Hungary Mihaly Csikszentmihalyi - cây đại thụ của ngành Tâm lý học đương đại. Trạng thái dòng chảy (Flow) là trạng thái ý thức đạt trật tự hài hòa, “trong đó con người tham gia vào một hoạt động sâu sắc đến mức dường như chẳng còn điều gì khác là quan trọng”, người ta sẽ quyết tâm thực hiện hoạt động chỉ bởi lợi ích tự thân khi làm việc đó.&lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;Dòng chảy - Mihaly Csikszentmihalyi&lt;/strong&gt;!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:22.833941+00:00"/>
+        <meta name="calibre:title_sort" content="Dòng chảy"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

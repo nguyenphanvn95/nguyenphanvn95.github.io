@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">548</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d28e576a-7dd2-4899-b7d5-937fe4bda4ac</dc:identifier>
+        <dc:title>Tôi Là Jemima</dc:title>
+        <dc:creator opf:file-as="Green, Jane" opf:role="aut">Jane Green</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;b&gt;Một cuốn tiểu thuyết ngọt ngào và hài hước từ Jane Green, mẹ đẻ của thể loại chicklit!&lt;/b&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Jemima Jones là một cô nàng thừa cân. Chính xác là thừa 45 cân. Vậy mà trớ trêu thay, vây quanh cô toàn là những con người đẹp đẽ: hai cô bạn cùng nhà mảnh mai và hãnh tiến, cô nàng cùng cơ quan Geraldine kém tài nhưng lại được trả lương cao hơn, anh chàng đồng nghiệp Ben quyến rũ mà nàng thầm say mê nhưng chẳng thể nào với tới. Niềm an ủi duy nhất của cô chỉ còn là ăn, ăn, và ăn.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Nhưng tất cả đã thay đổi, nhờ có Internet. Jemima Jones đứng trước cơ hội hoàn hảo để biến mình thành hình mẫu cô hằng mơ ước: một JJ thon thả, xinh đẹp và chăm chỉ tập luyện. Trên mạng.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Với tiết tấu khẩn trương, liên tục và một cái kết bất ngờ mà không độc giả nào có thể đoán trước, &lt;i&gt;Tôi Là Jemima&lt;/i&gt; là nhật ký của một phụ nữ về hành trình trở thành người mình mong muốn, cùng với đó là rất nhiều bài học về sức cuốn hút, niềm đam mê và ý nghĩa của tình yêu đích thực.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Romance</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Là Jemima"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

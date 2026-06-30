@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">551</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">871baf8b-7203-4605-bac4-dd1b5e2f22c8</dc:identifier>
+        <dc:title>Tôi Đúng, Bạn Sai - Giờ Thì Sao?</dc:title>
+        <dc:creator opf:file-as="Amador, Xavier" opf:role="aut">Xavier Amador</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;Trong rất nhiều tình huống của cuộc sống: trong gia đình, trường học, công sở và mọi nơi khác, chúng ta thường xuyên phải đối mặt với sự tranh luận. Vậy có bao nhiêu lần bạn chiến thắng trong khi biết là mình đúng?&lt;/p&gt;&lt;div&gt; &lt;p&gt;Vấn đề là ở chỗ người kia cũng nghĩ rằng họ đúng còn bạn mới là người quá ngoan cố không chịu thừa nhận. Đến giờ bạn đã làm gì để có thể khiến đối phương cùng nhìn nhận mọi việc theo cách của bạn? Tranh luận một cách lý trí? Cố gắng làm cho người kia thấy có lỗi? Giận dỗi? La hét? Đe dọa? Có ích gì không? Bạn có được điều mình muốn không? Và quan trọng hơn - bạn có được điều bạn thực sự cần không?”&lt;/p&gt; &lt;p&gt;Với Tôi đúng, bạn sai, giờ thì sao? Tiến sĩ Amador đã cho độc giả những tình huống cụ thể, những lời khuyên về cách giao tiếp, cách lắng nghe và giải quyết những bế tắc. Ông phải mất đến hơn mười năm mới nghĩ ra được một phương pháp tin cậy cho mọi bế tắc, một bản đồ chỉ dẫn đường đi nước bước cho gần như mọi bất đồng thực sự tồn tại trong các mối quan hệ giữa con người với con người - đó là Lắng nghe - Đồng cảm - Đồng ý - Phối hợp, hay LEAP (Listen - Empathy - Agree - Partner).&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Self-Improvement</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Đúng, Bạn Sai - Giờ Thì Sao?"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

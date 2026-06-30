@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2437</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5ed46152-f8b8-413d-b5d8-7903653f801e</dc:identifier>
+        <dc:title>Alain nói về hạnh phúc</dc:title>
+        <dc:creator opf:file-as="Chartier, Émile" opf:role="aut">Émile Chartier</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;em&gt;Alain Nói Về Hạnh Phúc là tập hợp những đoản luận của Alain - một triết gia nổi tiếng và quan trọng của Pháp vào đầu thế kỷ thứ 20, về một trong những câu hỏi lớn nhất của nhân loại: hạnh phúc. Ta khám phá, hoặc tái khám phá, thông qua những bài viết sâu sắc của ông, những thái độ sống khôn ngoan nhưng không phải ai cũng từng nghĩ đến, hoặc giả, đã từng nghĩ đến nhưng không đủ kiên trì và dũng cảm để làm theo và phát huy đến cùng. Sách dành cho tất cả những ai từng ít nhất một lần tự đặt cho mình câu hỏi sau: “Hạnh phúc là gì?”&lt;/em&gt;</dc:description>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:45+00:00"/>
+        <meta name="calibre:title_sort" content="Alain nói về hạnh phúc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

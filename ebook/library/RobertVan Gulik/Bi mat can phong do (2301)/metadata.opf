@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2301</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">501f5a09-3ca7-4f4c-8934-ee9ea0774706</dc:identifier>
+        <dc:title>Bí mật căn phòng đỏ</dc:title>
+        <dc:creator opf:file-as="Gulik, RobertVan" opf:role="aut">RobertVan Gulik</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-01-04T09:53:42+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;Một năm sau khi xảy ra vụ án trong ngôi chùa của những nhà sư đồi truỵ ( xem truyện Bí mật quả chuông ) Địch công cùng người thuộc hạ thân tín Mã Tông được triệu tập về kinh đô để giải trình về vụ án đó.&lt;/p&gt;&lt;div&gt;
+&lt;p class="description"&gt;Trên đường trở về Phổ Dương, một trận lũ buộc ông phải đi ngang qua đảo Thiên Đường thuộc huyện Tần Hoài. Vì đang mùa lễ hội của người chết nên ông không tìm được nơi ở đành phải vào trú ngụ trong khách điếm Thiên Phúc và được bố trí ở tại Căn Phòng Đỏ. &lt;/p&gt;
+&lt;p class="description"&gt;Căn Phòng Đỏ này cách đây mấy hôm vừa xảy ramột vụ tự tử bí ẩn mà nạn nhân là Viện sĩ của viện Hàn Lâm. Ông được người bạn thân là thẩm phán Lỗ nhờ điều tra giúp nguyên nhân của vụ tự tử. &lt;/p&gt;
+&lt;p class="description"&gt;Cuộc điều tra chưa bắt đầu thì Nguyệt Thu, hoa hậu của đảo Thiên Đường, cũng bị giết chết tại Căn Phòng Đỏ và xa hơn nữa, 30 năm về trước, cũng có một án mạng tại Căn Phòng Đỏ này. &lt;/p&gt;
+&lt;p class="description"&gt;Cả ba cái chết tại Căn Phòng Đỏ có liên quan gì đến nhau hay không và ai là thủ phạm giấu mặt của cả ba vụ án này, tất cả được giải đáp trong truyện Bí mật Căn Phòng Đỏ của tác giả Robert van Gulik.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=bimatcanphongdo</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:29+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật căn phòng đỏ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

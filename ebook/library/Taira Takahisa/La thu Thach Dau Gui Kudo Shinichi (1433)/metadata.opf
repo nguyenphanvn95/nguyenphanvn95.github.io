@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1433</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9e6ca273-ce41-4245-bc64-dc76a2d6c0a8</dc:identifier>
+        <dc:title>Lá thư Thách Đấu Gửi Kudo Shinichi</dc:title>
+        <dc:creator opf:file-as="Takahisa, Taira" opf:role="aut">Taira Takahisa</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-05-29T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;div&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Kho sách miễn phí tại &lt;a href="http://www.sachvui.com"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Thám Tử lừng danh Conan"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:37+00:00"/>
+        <meta name="calibre:title_sort" content="Lá thư Thách Đấu Gửi Kudo Shinichi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

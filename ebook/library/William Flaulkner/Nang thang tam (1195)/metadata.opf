@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1195</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c7bb8892-cc73-4522-b12e-d8e9f9fed970</dc:identifier>
+        <dc:title>Nắng tháng tám</dc:title>
+        <dc:creator opf:file-as="Flaulkner, William" opf:role="aut">William Flaulkner</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Cái ánh sáng đầu thu ở Mississippi như ảo ảnh, như sương đọng, như huyền thoại. Cái ánh sáng tháng tám đó cũng là phưong ngữ chỉ trạng thái hoài thai.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Đó là ánh sáng của sinh nở, sáng tạo.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Bóng một người nữ mang thai đi trên con đường vô định.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;&lt;strong&gt;Nắng Tháng Tám&lt;/strong&gt; là vầng hào quang mang đầy những gương mặt người.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Phương Nam + NXB Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Classics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:10+00:00"/>
+        <meta name="calibre:title_sort" content="Nắng tháng tám"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

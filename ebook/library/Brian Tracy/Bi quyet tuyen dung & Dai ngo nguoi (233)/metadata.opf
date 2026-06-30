@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">233</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">313d953f-789c-49c4-ba7b-90ee0bf5f880</dc:identifier>
+        <dc:title>Bí quyết tuyển dụng &amp; Đãi ngộ người tài</dc:title>
+        <dc:creator opf:file-as="Tracy, Brian" opf:role="aut">Brian Tracy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;"Bí Quyết Tuyển Dụng Và Đãi Ngộ Người Tài" &lt;/strong&gt;của&lt;strong&gt; Brian Tracy&lt;/strong&gt; là một cuốn sách hữu ích cho tất cả những nhà quản lý, doanh nhân, nhân viên điều hành... những người có công việc liên quan đến công tác tuyển dụng. Qua mỗi chương, bạn sẽ từng bước học được những bí quyết, những phương pháp và kỹ thuật mà bạn có thể áp dụng ngay để chiêu mộ nhân tài và nâng cao hiệu quả làm việc của họ sau khi tuyển dụng.&lt;/p&gt;
+&lt;p&gt;Việc lựa chọn và giữ chân những nhân viên giỏi không phải là một việc có thể học được nhờ giáo trình và những khoá đào tạo. Công việc này đòi hỏi cả một nghệ thuật cùng với những kỹ năng cần thiết mà chúng ta chỉ có thể được từ những trải nghiệm thực tế - dĩ nhiên là sau khi đã phạm phải không ít sai lầm. Chúng ta thường xem việc tìm người để lấp vào vị trí còn trống là một vấn đề phải giải quyết càng sớm càng tốt để chúng ta có thời gian tập trung vào công việc của mình. Thế nhưng, chính chúng ta đã quên một điều rằng lựa chọn đúng người cho vị trí đó mới là việc quan trọng nhất mà chúng ta cần phải làm.&lt;/p&gt;
+&lt;p&gt;Nếu bạn là một trong số những nhà quản lý như thế thì đây thật sự là một cuốn sách cần thiết cho bạn. Cuốn sách đưa ra những phương pháp có thể áp dụng một cách nhanh chóng và hiệu quả trong việc tuyển dụng những người tài giỏi cũng như những cách thức có thể khơi dậy ở họ sự nhiệt tình, năng nổ ngay từ lúc họ bắt đầu tiếp nhận công việc.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:26.846756+00:00"/>
+        <meta name="calibre:title_sort" content="Bí quyết tuyển dụng &amp; Đãi ngộ người tài"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

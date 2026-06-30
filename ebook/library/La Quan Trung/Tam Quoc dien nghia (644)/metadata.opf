@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">644</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e7e8299a-526c-4ab1-9490-37e08c3d0fcd</dc:identifier>
+        <dc:title>Tam Quốc diễn nghĩa</dc:title>
+        <dc:creator opf:file-as="Trung, La Quán" opf:role="aut">La Quán Trung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-12-31T17:00:00+00:00</dc:date>
+        <dc:publisher>Wikiebook</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">1c3091e4-6aef-47b8-bd8d-2d317c8b55c8</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>tam quoc chi</dc:subject>
+        <dc:subject>tam quoc dien nghia</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:06+00:00"/>
+        <meta name="calibre:title_sort" content="Tam Quốc diễn nghĩa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

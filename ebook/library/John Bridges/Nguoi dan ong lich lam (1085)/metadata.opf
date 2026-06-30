@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1085</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4c50a930-f056-4721-9ee6-e166de43107f</dc:identifier>
+        <dc:title>Người đàn ông lịch lãm</dc:title>
+        <dc:creator opf:file-as="Bridges, John" opf:role="aut">John Bridges</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Ai cũng có thể học hỏi để trở thành người lịch lãm nếu người đó có được những chỉ dẫn cần thiết. Cuốn sách này ra đời cũng đem lại sự hài lòng cho tất cả phụ nữ trên khắp thế giới.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:57+00:00"/>
+        <meta name="calibre:title_sort" content="Người đàn ông lịch lãm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

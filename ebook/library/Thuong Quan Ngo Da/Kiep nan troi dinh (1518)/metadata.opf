@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1518</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5a1e5505-876f-4e0e-9fcb-a5ec172f1f83</dc:identifier>
+        <dc:title>Kiếp nạn trời định</dc:title>
+        <dc:creator opf:file-as="Dạ, Thượng Quan Ngọ" opf:role="aut">Thượng Quan Ngọ Dạ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-03-02T03:48:13+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cổ Tiểu Yên từ khi sinh ra được cảnh báo mang kiếp nạn trời định, thầy bói đã dặn dò kỹ lưỡng không được để cô rời bỏ quê hương. Nhưng cuối cùng, cô cũng vẫn rời khỏi đó, và từ khoảnh khắc này, bắt đầu một cơn ác mộng kinh hoàng… Ngôi nhà ma thần bí trong rừng sâu, sự kiện Điệp tiên giết người ly kỳ hãi hùng… Tất cả những sự việc quái dị này là do ma quỷ tác oai tác quái hay do con người biến thái gây ra? Hàng loạt những sự kiện kinh hoàng khiếp sợ dồn dập kéo đến, khi Cổ Tiểu Yên tỉnh lại, phát hiện ra khuôn mặt và thân phận của mình đã trở thành một người hoàn toàn khác: Lôi Hiểu - cô con gái độc nhất của Lôi Cận Nam - Tổng giám đốc Tập đoàn Quốc tế Vạn kim, người thừa kế số tài sản khổng lồ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:46.808732+00:00"/>
+        <meta name="calibre:title_sort" content="Kiếp nạn trời định"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

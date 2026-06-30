@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">668</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">14b18268-7e67-4c0a-b989-c8a8be0f9588</dc:identifier>
+        <dc:title>Tà Áo Học Sinh</dc:title>
+        <dc:creator opf:file-as="Mạn, Nhiêu Tuyết" opf:role="aut">Nhiêu Tuyết Mạn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T22:46:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tà áo học sinh kể về câu chuyện tuổi thơ đầy đau khổ, biệt ly của thiếu nữ Y Lam. Về tình yêu đơn phương và tươi đẹp của cậu bé Đồng Tiểu Lạc ở thị trấn Thanh Mộc Hà. Sự thần tượng và lầm lẫn trong tình cảm với thầy giáo Bo Quách. Hay tình yêu đích thực với một người đàn ông đứng tuổi. Tất cả những tình tiết lâm ly được Nhiêu Tuyết Mạn chậm rãi đan dệt bởi hợp lưu của những dòng nước mắt. &lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:09+00:00"/>
+        <meta name="calibre:title_sort" content="Tà Áo Học Sinh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

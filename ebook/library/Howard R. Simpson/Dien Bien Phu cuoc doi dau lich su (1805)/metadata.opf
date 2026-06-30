@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1805</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8606cd31-c417-4ef7-a679-87c9ae007741</dc:identifier>
+        <dc:title>Điện Biên Phủ cuộc đối đầu lịch sử mà nước Mỹ muốn quên đi</dc:title>
+        <dc:creator opf:file-as="Simpson, Howard R." opf:role="aut">Howard R. Simpson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">7827451a-44f8-4ce0-a438-b801165c8896</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:27+00:00"/>
+        <meta name="calibre:title_sort" content="Điện Biên Phủ cuộc đối đầu lịch sử mà nước Mỹ muốn quên đi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

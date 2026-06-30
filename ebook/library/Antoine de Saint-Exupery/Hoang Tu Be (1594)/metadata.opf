@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1594</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7ca0591f-b2f4-4611-ab2f-a43f208d3f57</dc:identifier>
+        <dc:title>Hoàng Tử Bé</dc:title>
+        <dc:creator opf:file-as="Saint-Exupéry, Antoine de" opf:role="aut">Antoine de Saint-Exupéry</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;b&gt;Dịch giả:&lt;/b&gt; Bùi Giáng&lt;div&gt;&lt;b&gt;Giới thiệu:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px; "&gt;Câu chuyện về một phi công phải hạ cánh khẩn cấp trong sa mạc. Anh gặp một cậu bé, người hóa ra là một hoàng tử từ hành tinh khác đến. Hoàng tử kể về những cuộc phiêu lưu của em trên Trái Đất và về bông hồng quí giá trên hành tinh của em. Em thất vọng khi phát hiện ra hoa hồng là loài bình thường như bao loài khác trên Trái Đất. Một con cáo sa mạc khuyên em nên yêu thương chính bông hồng của em và hãy tìm kiếm trong đó ý nghĩa của cuộc đời mình. Nhận ra điều ấy, hoàng tử quay trở về hành tinh của em.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style="text-align: right; "&gt;&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px; "&gt;&lt;i&gt;(Sưu tầm trên mạng)&lt;/i&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>An Tiêm</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Fiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:55+00:00"/>
+        <meta name="calibre:title_sort" content="Hoàng Tử Bé"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

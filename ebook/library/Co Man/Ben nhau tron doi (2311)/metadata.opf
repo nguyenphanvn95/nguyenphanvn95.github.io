@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2311</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7b1137ea-be13-4dd7-8af3-0c6a706ad6dd</dc:identifier>
+        <dc:title>Bên nhau trọn đời</dc:title>
+        <dc:creator opf:file-as="mạn, Cố" opf:role="aut">Cố Mạn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-10T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tác phẩm đăng liên tục trên mạng bắt đầu từ tháng 9 năm 2003 cho đến nay vẫn là tác phẩm được bạn đọc trong và ngoài mạng yêu thích bởi lối viết dung dị và chan chứa yêu thương.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:30+00:00"/>
+        <meta name="calibre:title_sort" content="Bên nhau trọn đời"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

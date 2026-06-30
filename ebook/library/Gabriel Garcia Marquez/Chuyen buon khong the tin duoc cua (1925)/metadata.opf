@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1925</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6fd0bf1a-8b89-4e24-aa0e-1cb1e0503e55</dc:identifier>
+        <dc:title>Chuyện buồn không thể tin được của Êrênhđira ngây thơ và người bà bất lương</dc:title>
+        <dc:creator opf:file-as="Marquez, Gabriel Garcia" opf:role="aut">Gabriel Garcia Marquez</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:40+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện buồn không thể tin được của Êrênhđira ngây thơ và người bà bất lương"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

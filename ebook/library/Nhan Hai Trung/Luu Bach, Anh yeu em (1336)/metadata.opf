@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1336</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">001a4abe-1927-4d6e-962b-5d0a9417daf2</dc:identifier>
+        <dc:title>Lưu Bạch, Anh yêu em</dc:title>
+        <dc:creator opf:file-as="Trung, Nhân Hải" opf:role="aut">Nhân Hải Trung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:41+00:00</dc:date>
+        <dc:description>&lt;p&gt;Lưu Bạch - một phụ nữ xinh đẹp, dáng người nhỏ nhắn, yếu đuối nhưng tính cách lại rất mạnh mẽ.Một ngày kia, Lưu Bạch tình cờ gặp Sở Thừa - chàng công tử giàu có, hào hoa và yêu cô tha thiết. Trước tấm chân tình của Sở Thừa, cô đã gạt mọi mặc cảm về hoàn cảnh và thân phận của mình để đón nhận tình yêu của anh. Nhưng hạnh phúc chưa được bao lâu thì gia tộc họ Sở khét tiếng giàu có và đầy quyền lực đã ép cô phải từ bỏ tình yêu đó.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:26+00:00"/>
+        <meta name="calibre:title_sort" content="Lưu Bạch, Anh yêu em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

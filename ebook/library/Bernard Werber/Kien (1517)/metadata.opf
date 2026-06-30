@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1517</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">25b0ad87-7338-4a24-87e3-0c74ea27c7bd</dc:identifier>
+        <dc:title>Kiến</dc:title>
+        <dc:creator opf:file-as="Werber, Bernard" opf:role="aut">Bernard Werber</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Trong vài giây bạn đọc những dòng này, trên Trái đất có bốn mươi người được sinh ra nhưng có tới bảy trăm triệu con kiến ra đời. Từ hơn trăm triệu năm trước chúng ta, chúng đã ở đó, được chia thành nhiều đội, nhiều tổ, nhiều đế chế trên toàn bề mặt trái đất. Chúng đã tạo ra một nền văn minh song song, xây dựng những vương quốc thực sự, phát minh ra vũ khí tối tân, thiết kế cả nghệ thuật chiến tranh, làm chủ một nền công nghiệp đáng kinh ngạc. Chúng có những &lt;i&gt;Attila&lt;/i&gt;, &lt;i&gt;Christophe Colomb&lt;/i&gt;, &lt;i&gt;Jules César&lt;/i&gt;, &lt;i&gt;Machiavel&lt;/i&gt; hay &lt;i&gt;Léonard de Vinci&lt;/i&gt; của chính mình.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Khi bước vào kho chứa đồ ngôi nhà mà ông bác là nhà côn trùng học giả di tặng, Jonathan Wells còn lâu mới nghĩ rằng anh sẽ gặp... kiến, cùng cái thế giới giàu có ngoài sức tưởng tượng, ly kỳ, rùng rợn của chúng...&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Hãy chú ý nơi bạn đặt chân. Đọc xong cuốn tiểu thuyết này rồi, bạn sẽ không còn nhìn thực tế theo cách hiện giờ nữa.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;&lt;i&gt;Kiến&lt;/i&gt; đã được dịch ra hơn 30 thứ tiếng, giành giải thưởng của độc giả tờ &lt;i&gt;Sciences et Avenir&lt;/i&gt;, và là tác phẩm nổi tiếng nhất của Bernard Werber, nhà văn Pháp được đọc nhiều nhất trên thế giới.&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science Fiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:46+00:00"/>
+        <meta name="calibre:title_sort" content="Kiến"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

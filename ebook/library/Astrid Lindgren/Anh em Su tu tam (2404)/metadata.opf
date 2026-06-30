@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2404</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">26d133b7-ae03-4aca-9a3c-d2dba166c5f8</dc:identifier>
+        <dc:title>Anh em Sư tử tâm</dc:title>
+        <dc:creator opf:file-as="Lindgren, Astrid" opf:role="aut">Astrid Lindgren</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-23T03:19:36+00:00</dc:date>
+        <dc:description>&lt;p&gt;Lung linh sắc màu huyền ảo và vô cùng cuốn hút, Anh em Tim Sư tử là một trong những tác phẩm thành công nhất của nhà văn Astrid Lindgren, từng giành Giải thưởng Văn học Quốc tế Janusz-Korczak năm 1979 và được đề cử Giải thưởng văn học Đức dành cho Thanh thiếu niên… &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Children</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:41+00:00"/>
+        <meta name="calibre:title_sort" content="Anh em Sư tử tâm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

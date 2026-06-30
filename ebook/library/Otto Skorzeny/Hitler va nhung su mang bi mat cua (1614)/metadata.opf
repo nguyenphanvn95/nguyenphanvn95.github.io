@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1614</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9f41e343-c61e-4c18-b9dc-9c21bae24eff</dc:identifier>
+        <dc:title>Hitler và những sứ mạng bí mật của Skorzeny</dc:title>
+        <dc:creator opf:file-as="Skorzeny, Otto" opf:role="aut">Otto Skorzeny</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:01+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt; SKORZENY – chúng ta hãy tỏ ra công bằng đối với ông ta – là NGƯỜI ĐÃ THỰC HIỆN NHỮNG ĐIỀU KHÔNG THỂ THỰC HIỆN ĐƯỢC. Giải thoát Mussolini, chiếm đóng kinh thành Budapest là các hành động vượt xa các nhân vật của Alexandre Dumas, hay các găng tơ được khai sinh trong trí tưởng tượng phong phú của các tác giả&lt;/p&gt;</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:57+00:00"/>
+        <meta name="calibre:title_sort" content="Hitler và những sứ mạng bí mật của Skorzeny"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

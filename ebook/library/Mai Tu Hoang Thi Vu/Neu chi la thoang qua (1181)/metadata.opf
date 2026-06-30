@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1181</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a61ba555-1701-4c4a-bda1-2e7b49e8f53f</dc:identifier>
+        <dc:title>Nếu chỉ là thoáng qua</dc:title>
+        <dc:creator opf:file-as="Vũ, Mai Tử Hoàng Thì" opf:role="aut">Mai Tử Hoàng Thì Vũ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-27T07:41:11+00:00</dc:date>
+        <dc:description>&lt;p&gt;Suốt nhiều năm dài một mình bươn chải với cuộc sống, cộng thêm nỗi đau mất cha từ thuở nhỏ đã khiến Triệu Tử Mặc - một nữ trí thức trẻ thành thị - sớm luyện cho mình tính cách lạnh lùng, tỉnh táo, tựa một đóa hàn mai giữa chốn trần ai huyên náo. Vậy nên dù đã câu được con cá vàng nhưng cô vẫn không dám ôm bất kỳ ảo tưởng nào. Có lẽ chính sự thanh khiết không màng chút danh lợi đó đã hấp dẫn chàng lãng tử tình trường Giang Tu Nhân.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:08+00:00"/>
+        <meta name="calibre:title_sort" content="Nếu chỉ là thoáng qua"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

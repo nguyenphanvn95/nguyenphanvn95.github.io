@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">646</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f65fab68-0fbe-4a2e-9951-6a82ae00a24a</dc:identifier>
+        <dc:title>Tam Quốc Chí - Tập 2: Thục Chí</dc:title>
+        <dc:creator opf:file-as="Thọ, Trần" opf:role="aut">Trần Thọ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-12-05T17:00:00+00:00</dc:date>
+        <dc:description>&lt;b&gt;Tam quốc chí&lt;/b&gt; (giản thể: 三国志; phồn thể: 三國志; Wade-Giles: Sanguo Chih; bính âm: Sānguó Zhì), là một sử liệu chính thức và có căn cứ về thời đại Tam Quốc của Trung Quốc từ năm 189 đến năm 280, do Trần Thọ (陳壽) biên soạn vào thế kỉ thứ 3. Tác phẩm này hình thành từ các mẩu chuyện nhỏ kể về các nước Ngụy, Thục và Ngô của thời đại này, đồng thời là nền tảng cho cuốn tiểu thuyết lịch sử rất phổ biến là Tam quốc diễn nghĩa được viết vào thế kỉ 14. Tam quốc chí là một phần trong bộ Tiền tứ sử của tổng tập Nhị thập tứ sử, cùng với Sử ký, Hán thư và Hậu Hán thư.</dc:description>
+        <dc:identifier opf:scheme="MOBI-ASIN">e3f256b0-3924-4536-a505-5b54151ccebc</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trung Hoa</dc:subject>
+        <meta name="calibre:series" content="Tam Quốc"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:07+00:00"/>
+        <meta name="calibre:title_sort" content="Tam Quốc Chí - Tập 2: Thục Chí"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

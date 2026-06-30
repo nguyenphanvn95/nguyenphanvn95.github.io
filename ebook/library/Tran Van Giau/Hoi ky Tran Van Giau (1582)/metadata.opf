@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1582</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3f3b6f3a-dd1e-42b6-bc3f-f539de81807b</dc:identifier>
+        <dc:title>Hồi ký Trần Văn Giàu</dc:title>
+        <dc:creator opf:file-as="Giàu, Trần Văn" opf:role="aut">Trần Văn Giàu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-23T07:48:33+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Với tuổi trời chẵn một trăm, hơn 80 năm cống hiến cho sự nghiệp cách mạng, ông ung dung đi vào lịch sử không chỉ với tư cách một người thầy dạy sử, một người nghiên cứu lịch sử mà trọn vẹn nhất là với tư cách một người cách mạng theo ý nghĩa cao đẹp nhất của nó để góp phần viết nên lịch sử của dân tộc. Tập hồi ký chỉ gói gọn trong 5 năm ngắn ngủi nhưng đã hé lộ cho người đọc ít nhiều về nhân vật quan trọng bậc nhất của cách mạng Việt Nam&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:53+00:00"/>
+        <meta name="calibre:title_sort" content="Hồi ký Trần Văn Giàu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">133</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6a136ed1-479c-41df-8c66-81cddaa51163</dc:identifier>
+        <dc:title>Đánh Thức Năng Lực Vô Hạn</dc:title>
+        <dc:creator opf:file-as="Robbins, Anthony" opf:role="aut">Anthony Robbins</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Nếu bạn chưa bao giờ mơ tưởng mình sẽ có được cuộc sống tốt hơn, &lt;strong&gt;Đánh Thức Năng Lực Vô Hạn (Unlimited Power)&lt;/strong&gt; sẽ chỉ cho bạn cách để có cuộc sống như ý muốn và xứng đáng thụ hưởng, thông qua một lĩnh vực khoa học mới giúp phát huy thành tựu xuất sắc của cá nhân. Tác giả sẽ giúp bạn:&lt;/p&gt;
+&lt;p&gt;- Nhận ra bạn thật sự mong muốn điều gì&lt;/p&gt;
+&lt;p&gt;- Khám phá 7 giả phỏng về thành công&lt;/p&gt;
+&lt;p&gt;- Tái lập trình cho trí não để vượt qua nỗi sợ và nỗi ám ảnh&lt;/p&gt;
+&lt;p&gt;- Tạo ra sự hòa hợp ngay tức thì với những người lần đầu tiên gặp gỡ&lt;/p&gt;
+&lt;p&gt;- Sở hữu 5 chìa khóa mang lại hạnh phúc và thịnh vượng&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Đánh Thức Năng Lực Vô Hạn (Unlimited Power)&lt;/strong&gt; là một quyển sách mang tính “cách mạng” dành cho trí não, từng bước hướng dẫn bạn phát huy tối đa năng lực của bản thân trong khi vẫn cảm thấy thoải mái và an tâm về tài chính, rèn khả năng lãnh đạo và nuôi dưỡng lòng tự tin, đắc nhân tâm và có được sự hợp tác của mọi người.&lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;Đánh thức năng lực vô hạn - Anthony Robbins&lt;/strong&gt;!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:15:04+00:00"/>
+        <meta name="calibre:title_sort" content="Đánh Thức Năng Lực Vô Hạn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

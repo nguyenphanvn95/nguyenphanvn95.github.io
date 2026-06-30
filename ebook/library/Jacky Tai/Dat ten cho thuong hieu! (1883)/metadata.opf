@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1883</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0a240148-1b68-48a9-ab64-860a665744a4</dc:identifier>
+        <dc:title>Đặt tên cho thương hiệu!</dc:title>
+        <dc:creator opf:file-as="Tai, Jacky" opf:role="aut">Jacky Tai</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-01T07:44:40+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Trong cuốn sách này, sẽ nói cho bạn biết cần phải làm gì và làm như thế nào với việc đặt tên thương hiệu sau khi đi qua 10 nguyên tắc đặt tên và những cái bẫy trong chiến lược đặt tên. Bên cạnh đó tác giả còn minh họa những tình huống các công ty đã tìm được những cái tên tuyệt vời như thế nào.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Hãy nghĩ xem: trong một đất nước nhỏ bé như Sigapore mà đã có đến hơn 150.000 doanh nghiệp đang họat động. Với số lượng đông đảo như thế này trên thị trường thì làm sao thương hiệu của bạn tồn tại được nếu thiếu đi một cái tên hay? Tệ hơn nữa là những cái tên mà bạn nghĩ đến đều đã đựơc người khách đăng ký và trở thành nhãn hiệu thương mại.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Và điều quan trọng nhất : những gì bạn có thể làm hôm nay thì các đối thủ của bạn có thể sao chép được vào ngày mai. Thậm chí họ có thể làm tốt hơn bạn.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;&lt;b&gt;Với Đặt Tên Cho Thương Hiệu&lt;/b&gt; - tác giả đã tổng hợp lại những điều cốt lõi để chế tác ra một tên thương hiệu tuyệt vời. Bạn sẽ được khuyến khích tư duy khác đi... Không phải chỉ là chuyện cái tên!&lt;/em&gt;&lt;/p&gt;&lt;b&gt;&lt;em&gt;http://tve-4u.org&lt;/em&gt;&lt;/b&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Trẻ + DTBooks</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:35+00:00"/>
+        <meta name="calibre:title_sort" content="Đặt tên cho thương hiệu!"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1411</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f35ab7bc-509a-4826-8a37-3e784432eaa4</dc:identifier>
+        <dc:title>Larry Page Và Google - Sắp Xếp Lại Hệ Thống Thông Tin Toàn Cầu</dc:title>
+        <dc:creator opf:file-as="Hoàng, Nguyễn Ngọc" opf:role="aut">Nguyễn Ngọc Hoàng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:26+00:00</dc:date>
+        <dc:description>&lt;p&gt;Làm ra của cải là một đạo lý lớn, không thể coi thường” “KIẾM TIỀN” hay phụng sự xã hội?” là câu hỏi và cũng là câu trả lời của tác giả dành cho thiên tài tin học Larry Page – người sáng lập ra công cụ tìm kiếm trực tuyến Google. Chính nhờ chữ “G” cùng hàng loạt chữ “o” huyền thoại mà hành triệu triệu người có thể tìm kiếm thông tin nhanh trong chớp mắt. Tổ chức lại hệ thống thông tin toàn cầu nhằm phục vụ cho con người là mục đích chính mà Google được tạo ra và cũng là cái“đạo” kinh doanh của Larry: kinh doanh vì một thế giới tốt đẹp hơn, bảo vệ đến cùng quyền lợi của người tiêu dung và cống hiến hết mình cho sự sáng tạo.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:35+00:00"/>
+        <meta name="calibre:title_sort" content="Larry Page Và Google - Sắp Xếp Lại Hệ Thống Thông Tin Toàn Cầu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

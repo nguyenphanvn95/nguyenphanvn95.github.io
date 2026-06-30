@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">899</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6cdee935-0bde-44f8-a372-6b7ebbbc902d</dc:identifier>
+        <dc:title>Ốc Sên Chạy</dc:title>
+        <dc:creator opf:file-as="Linh, Điệp Chi" opf:role="aut">Điệp Chi Linh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:05+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tiểu thuyết kể về câu chuyện tình yêu của ba nhân vật chính Vệ Nam , Hứa Chi Hằng, Lục Song. Hứa Chi Hằng, chàng hoàng tử hắc mã với vẻ đẹp trai lạnh lùng, cá tính đã làm thổn thức trái tim của biết bao bạn gái ngây thơ, trong sáng. Và cô bé Vệ Nam lúc ấy mới học lớp 6 cũng không thể cưỡng lại tiếng gọi của trái tim.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:36.644359+00:00"/>
+        <meta name="calibre:title_sort" content="Ốc Sên Chạy"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1035</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">66d33e94-5572-49ca-aa64-d4d43d879582</dc:identifier>
+        <dc:title>Nguyễn Huy Thiệp - Tuyển tập truyện ngắn</dc:title>
+        <dc:creator opf:file-as="Thiệp, Nguyễn Huy" opf:role="aut">Nguyễn Huy Thiệp</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-29T09:09:44+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuốn sách gồm 33 truyện ngắn của nhà văn Nguyễn Huy Thiệp mà khi lần lượt được xuất hiện trên văn đàn đã gây ra sự chú ý đặc biệt. Sở dĩ đặc biệt là vì cách viết, lời văn và nội dung mỗi truyện ngắn chỉ có ở Nguyễn Huy Thiệp. Có lời khen, tiếng chê, lại cho đó là "hiện tượng"... và cũng đã có những truyện được dựng thành phim. Cũng chính vì sự nổi danh trên văn đàn với những lời khen xen lẫn tiếng chê, lời khen thì lên tận mây xanh (có người đề nghị thưởng huân chương cho Nguyễn HUy Thiệp), tiếng chê cũng xuống tới tận cùng (đòi "bỏ tù" Nguyễn Huy Thiệp), cũng như sự nổi danh ngoài văn đàn (nghe đâu ông đã quyết định "rửa tay gác kiếm", rồi chuyển sang làm doanh nhân, lại theo con lên trại cai nghiện... tất cả những điều ấy càng chứng tỏ ông được dư luận chú ý, được bạn đọc lưu tâm, đấy là điều không phải ai dễ gì có được.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:51+00:00"/>
+        <meta name="calibre:title_sort" content="Nguyễn Huy Thiệp - Tuyển tập truyện ngắn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

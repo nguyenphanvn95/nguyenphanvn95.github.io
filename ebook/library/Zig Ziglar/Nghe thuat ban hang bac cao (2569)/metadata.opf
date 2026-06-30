@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2569</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">22157b8f-70af-4e96-8d16-adf0d5d1de54</dc:identifier>
+        <dc:title>Nghệ thuật bán hàng bậc cao</dc:title>
+        <dc:creator opf:file-as="Ziglar, Zig" opf:role="aut">Zig Ziglar</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;em&gt;Triết lý chứa đựng trong cuốn sách &lt;strong&gt;Nghệ Thuật Bán Hàng Bậc Cao &lt;/strong&gt;thật đơn giản: “bạn có thể có được những tất cả mọi thứ trong cuộc sống nếu bạn biết giúp người khác đạt được điều họ muốn”, thậm chí còn đúng đắn và cần thiết hơn trong cuộc sống hiện nay so với thời kỳ khi cuốn &lt;strong&gt;Nghệ Thuật Bán Hàng Bậc Cao &lt;/strong&gt;được xuất bản lần đầu. Mục tiêu cuả một thương vụ là đảm bảo khách hàng nhận được giá trị tương xứng, nhưng nếu bạn mang đến cho khách hàng những giá trị còn cao hơn giá trị mà lẽ ra họ sẽ nhận được thì không những bạn đã có một thương vụ thành công mà bạn còn có thêm một khách hàng sẵn lòng giúp bạn có thêm nhiều khách hàng khác nữa.&lt;/em&gt;&lt;/p&gt;</dc:description>
+        <dc:publisher>https://downloadsachmienphi.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>&lt;p&gt;&lt;em&gt;Triết lý chứa đựng trong cuốn sách &lt;strong&gt;Nghệ Thuật Bán Hàng Bậc Cao &lt;/strong&gt;thật đơn giản: “bạn có thể có được những tất cả mọi thứ trong cuộc sống nếu bạn biết giúp người khác đạt được điều họ muốn”</dc:subject>
+        <dc:subject>thậm chí còn đúng đắn và cần thiết hơn trong cuộc sống hiện nay so với thời kỳ khi cuốn &lt;strong&gt;Nghệ Thuật Bán Hàng Bậc Cao &lt;/strong&gt;được xuất bản lần đầu. Mục tiêu cuả một thương vụ là đảm bảo khách hàng nhận được giá trị tương xứng</dc:subject>
+        <dc:subject>nhưng nếu bạn mang đến cho khách hàng những giá trị còn cao hơn giá trị mà lẽ ra họ sẽ nhận được thì không những bạn đã có một thương vụ thành công mà bạn còn có thêm một khách hàng sẵn lòng giúp bạn có thêm nhiều khách hàng khác nữa.&lt;/em&gt;&lt;/p&gt;</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:45:36+00:00"/>
+        <meta name="calibre:title_sort" content="Nghệ thuật bán hàng bậc cao"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

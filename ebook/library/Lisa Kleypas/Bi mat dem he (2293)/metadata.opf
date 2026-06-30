@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2293</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">721b0a9c-54d1-4e56-b302-70ed495adae4</dc:identifier>
+        <dc:title>Bí mật đêm hè</dc:title>
+        <dc:creator opf:file-as="Kleypas, Lisa" opf:role="aut">Lisa Kleypas</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Bốn quý cô gia nhập xã hội thượng lưu Luân Đôn với cùng một mục tiêu: sử dụng mọi mưu chước hòng kiếm được một ông chồng. Và thế là một kế hoạch bẫy-chồng liều lĩnh đã ra đời.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Khát khao cứu gia đình thoát khỏi cảnh khốn cùng, Annabelle Peyton quyết định sử dụng nhan sắc và trí tuệ để quyến rũ một quý ngài đáng kính nào đó. Nhưng người mê đắm và kiên trì theo đuổi Annabelle nhất - chàng Simon Hunt giàu có, quyền lực - lại tỏ rõ rằng chàng chỉ có thể đem lại cho nàng niềm vui sướng khó cưỡng chứ không phải một lời cầu hôn. Annabelle quyết tâm bác bỏ lời đề nghị không cần nghĩ đến của chàng... nhưng đương đầu với một khả năng cám dỗ lão luyện như thế là một việc không tưởng.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Những người bạn của nàng góp tay giúp sức để tìm kiếm một quý ông phù hợp hơn với Annabelle, hy vọng giúp nàng an toàn thoát khỏi Simon - và cả những ham muốn mãnh liệt của cá nhân nàng. Nhưng một buổi tối mùa hè, Annabelle đã không thể chống đỡ nổi sự ôm ấp đam mê và những nụ hôn cám dỗ của Simon... và nàng phát hiện ra rằng tình yêu là trò chơi nguy hiểm nhất trên đời.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam + NXB Thời Đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Romance</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:28+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật đêm hè"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

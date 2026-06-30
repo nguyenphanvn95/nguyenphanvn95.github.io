@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">393</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bae6e08e-5bab-4555-9ac2-2ff7913a00b9</dc:identifier>
+        <dc:title>Thính Tuyết Lâu Hệ Liệt</dc:title>
+        <dc:creator opf:file-as="Nguyệt, Thương" opf:role="aut">Thương Nguyệt</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:40+00:00</dc:date>
+        <dc:description>&lt;p&gt;Toàn thể Thính Tuyết Lâu hệ liệt là một chuỗi bi kịch kéo dài, thậm chí cho đến lúc câu chuyện khép lại, bi kịch vẫn cứ còn tiếp diễn.Những câu chuyện có yêu, có hận, có tham luyến… đến cuối cùng vẫn là một cái chết không thể tránh khỏi. Có người nói chết chính là một sự giải thoát, là một cái kết tốt đẹp. Nhưng những cái kết “tốt đẹp” đó từng chút từng chút một vẽ nên bi kịch cho A Tĩnh và Tiêu Ức Tình. Rồi cái chết của hai người họ lại vẽ nên bi kịch cho Minh Yên.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:26+00:00"/>
+        <meta name="calibre:title_sort" content="Thính Tuyết Lâu Hệ Liệt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

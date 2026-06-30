@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1796</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f3580c5f-0dd5-402b-a59e-4322931e55df</dc:identifier>
+        <dc:title>Điều lệnh thứ 11</dc:title>
+        <dc:creator opf:file-as="Archer, Jefferey" opf:role="aut">Jefferey Archer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:26+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nếu Maffia bảo vệ vương quốc của mình bằng luật Omerta (im lặng) thì CIA (Cục tình báo Trung ương Mỹ) biết che giấu những bí mật của mình bởi Điều lệnh thứ 11. Tiểu thuyết kể về cuộc đời của Connor Fitzgeralid, một sát thủ bí mật của CIA. Suốt 28 năm trời, con người này sống cuộc đời hai mặt, vừa tỏ ra là một công dân đứng đắn, tôn trọng pháp luật, vừa bí mật thực hiện những vụ ám sát theo đơn đặt hàng của CIA. Gã đã từng là kẻ săn đuổi, nhưng cuối cùng lại trở thành kẻ bị săn đuổi bởi đã biết quá nhiều điều bí mật của chủ nhân. Mọi thứ đều có giới hạn, vậy giới hạn của Điều lệnh thứ 11 ở đâu?...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:26+00:00"/>
+        <meta name="calibre:title_sort" content="Điều lệnh thứ 11"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

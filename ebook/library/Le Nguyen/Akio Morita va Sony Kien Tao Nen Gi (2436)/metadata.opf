@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2436</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9aacb8c1-8b2d-491a-806d-da804ce999f8</dc:identifier>
+        <dc:title>Akio Morita và Sony Kiến Tạo Nền Giải Trí Tương Lai</dc:title>
+        <dc:creator opf:file-as="Nguyễn, Lê" opf:role="aut">Lê Nguyễn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>www.dtv-ebook.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Đạo Kinh Doanh Việt Nam Và Thế Giới"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:45+00:00"/>
+        <meta name="calibre:title_sort" content="Akio Morita và Sony Kiến Tạo Nền Giải Trí Tương Lai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

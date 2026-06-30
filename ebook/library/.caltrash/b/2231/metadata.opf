@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2231</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9fc20c2a-c660-4213-8ce6-618528822314</dc:identifier>
+        <dc:title>Bố già</dc:title>
+        <dc:creator opf:file-as="Puzo, Mario" opf:role="aut">Mario Puzo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-02-21T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;"Bố Già" là cuốn tiểu thuyết nổi tiếng của nhà văn, nhà biên kịch người Mỹ, Mario Puzo. Tác giả Mario Puzo đã khiến Bố già trở thành tác phẩm kinh điển, khi viết về mafia nhưng không nói nhiều về ma túy, máu và cờ bạc mà lại tập trung miêu tả những âm mưu, những biến cố của gia đình, cách mà từng thành viên của gia tộc ứng biến với khó khăn. Để rồi sau tất cả tình cảm gia đình, thứ thiêng liêng cao đẹp luôn được đặt ở trên hết, ngay cả trong một gia đình tội phạm. Tác phẩm còn đặc biệt ở chỗ Mario Puzo viết về Bố già nhưng lại đậm đặc chất đàn ông mà mọi cánh mày râu đều ao ước. Với kết cấu hoàn hảo, cốt truyện không thiếu những pha hành động gay cấn, tình tiết bất ngờ và không khí kình địch đến nghẹt thở, Bố già xứng đáng là đỉnh cao trong sự nghiệp văn chương của Mario Puzo.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Đang cập nhật</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Truyện - Tiểu thuyết</dc:subject>
+        <dc:subject>Tác phẩm kinh điển</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:22+00:00"/>
+        <meta name="calibre:title_sort" content="Bố già"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

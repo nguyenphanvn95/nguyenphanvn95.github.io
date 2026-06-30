@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1155</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">00d7b955-af85-464d-97d2-80d12bbf613d</dc:identifier>
+        <dc:title>Nữ hoàng tin đồn</dc:title>
+        <dc:creator opf:file-as="My, Thẩm Thương" opf:role="aut">Thẩm Thương My</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T21:57:34+00:00</dc:date>
+        <dc:description>&lt;p&gt;Trong câu chuyện có chàng hoàng tử, nhưng hoàng tử lại biến thành chú ếch. Có cô gái Lọ Lem nhưng cô gái Lọ Lem lại biến thành nàng công chúa nhảy khỏi chiếc giường có hạt đậu. Có thái hậu độc ác muốn chia rẽ hai người yêu nhau, nhưng cuối cùng đã thất bại…Một cô gái lạ mặt, không chút tiếng tăm đã trở thành vợ chưa cưới của chàng thiếu gia nhà họ Đường, con trai của chủ tịch tập đoàn Bắc Thần – Đường Ca Nam. Cô là ai mà có thể trói buộc được trái tim của chàng trai đào hoa, phóng túng, lúc nào cũng có một tá scandal tình ái vây quanh.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:05+00:00"/>
+        <meta name="calibre:title_sort" content="Nữ hoàng tin đồn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

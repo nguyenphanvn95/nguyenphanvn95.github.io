@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1365</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">42411fc2-8122-44f9-9495-47a9aa43979b</dc:identifier>
+        <dc:title>Lớn Lên Trên Đảo Vắng</dc:title>
+        <dc:creator opf:file-as="Wyss, Johann" opf:role="aut">Johann Wyss</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-02-09T17:52:57+00:00</dc:date>
+        <dc:description>&lt;p&gt;Trên đường sang châu Mỹ lập nghiệp, ông William cùng vợ và bốn cậu con trai không may bị đắm tàu và dạt lên một hoang đảo. Tại đây, họ bắt đầu cuộc sống như người nguyên thủy khi phải làm nhà trong hang, đắp lũy, bắn chim, săn thú, trồng trọt, thuần hóa thú hoang...Cứ như thế, mỗi ngày trôi qua là một chuyến phiêu lưu đầy hấp dẫn nhưng cũng không thiếu hiểm nguy.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Advanture</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:30+00:00"/>
+        <meta name="calibre:title_sort" content="Lớn Lên Trên Đảo Vắng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

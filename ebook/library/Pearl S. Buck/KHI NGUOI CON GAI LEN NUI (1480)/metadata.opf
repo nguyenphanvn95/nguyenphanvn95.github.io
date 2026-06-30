@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1480</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3dce9d48-cde7-469b-a0dd-270083819b38</dc:identifier>
+        <dc:title>KHI NGƯỜI CON GÁI LÊN NÚI</dc:title>
+        <dc:creator opf:file-as="Buck, Pearl S." opf:role="aut">Pearl S. Buck</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-05-28T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;div&gt;KHI NGƯỜI CON GÁI LÊN NÚI&lt;/div&gt;&lt;div&gt;Tác giả: Pearl S. Buck &lt;/div&gt;&lt;div&gt;Phóng tác: Nguyễn Vạn Lý &lt;/div&gt;&lt;div&gt;Nguồn: Isach.info &lt;/div&gt;&lt;div&gt;Biên tập &amp;amp; Hiệu đính: VC &lt;/div&gt;&lt;div&gt;Tạo bìa, ebook: inno14&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:42+00:00"/>
+        <meta name="calibre:title_sort" content="KHI NGƯỜI CON GÁI LÊN NÚI"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1873</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9a081e8e-39ba-406b-ae98-438b8ab50965</dc:identifier>
+        <dc:title>Đấu Tranh Đến Cùng Cho Tình Yêu</dc:title>
+        <dc:creator opf:file-as="Vy, Cô Nham Nhụy" opf:role="aut">Cô Nham Nhụy Vy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:36+00:00</dc:date>
+        <dc:description>&lt;p&gt;Để báo thù, anh nhất định phải lấy cô, cô ngoan ngoãn chấp nhận, chỉ vì muốn lấy lại di vật của người mẹ ruột và bảo vệ em gái. Ngày kết hôn anh ném nhẫn đi, nói cho cô biết anh lấy cô chỉ vì báo thù; Cô đau khổ tột cùng, tìm kiếm nhẫn cưới, sau đó đem bán lấy giá cao. Anh luôn luôn dày vò cô, trêu hoa ghẹo cỏ khắp nơi, liên tục có scadal tình ái; Cô lúc nào cũng dịu dàng, yếu đuối, cắn răng chịu đựng, cuối cùng chọn cách tự tử nhưng không thành, sau đó anh đồng ý ly hôn, trả cô về với tự do…&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:34+00:00"/>
+        <meta name="calibre:title_sort" content="Đấu Tranh Đến Cùng Cho Tình Yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

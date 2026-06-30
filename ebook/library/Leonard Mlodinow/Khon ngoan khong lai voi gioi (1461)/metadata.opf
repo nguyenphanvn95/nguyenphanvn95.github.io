@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1461</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">26339c5a-1b9c-4fc9-8062-693e57370f81</dc:identifier>
+        <dc:title>Khôn ngoan không lại với giời</dc:title>
+        <dc:creator opf:file-as="Mlodinow, Leonard" opf:role="aut">Leonard Mlodinow</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:40.492150+00:00"/>
+        <meta name="calibre:title_sort" content="Khôn ngoan không lại với giời"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

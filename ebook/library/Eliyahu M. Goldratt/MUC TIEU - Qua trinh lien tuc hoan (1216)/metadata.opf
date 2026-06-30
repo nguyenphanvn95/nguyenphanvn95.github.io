@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1216</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2a08f3fc-5180-4c93-be15-e580960ed8da</dc:identifier>
+        <dc:title>MỤC TIÊU - Quá trình liên tục hoàn thiện</dc:title>
+        <dc:creator opf:file-as="Goldratt, Eliyahu M." opf:role="aut">Eliyahu M. Goldratt</dc:creator>
+        <dc:creator opf:file-as="Goldratt, Eliyahu M." opf:role="aut">Jeff Cox</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:45+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:12+00:00"/>
+        <meta name="calibre:title_sort" content="MỤC TIÊU - Quá trình liên tục hoàn thiện"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

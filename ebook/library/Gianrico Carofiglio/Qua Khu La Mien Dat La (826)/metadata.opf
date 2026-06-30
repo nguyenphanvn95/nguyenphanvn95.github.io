@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">826</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0ee79af0-ac76-407b-9340-f17d9a76c322</dc:identifier>
+        <dc:title>Quá Khứ Là Miền Đất Lạ</dc:title>
+        <dc:creator opf:file-as="Carofiglio, Gianrico" opf:role="aut">Gianrico Carofiglio</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;b&gt;Giorgio&lt;/b&gt;: hai mươi hai tuổi, sinh viên kiểu mẫu, con nhà trung lưu gia giáo, một tương lai đang vạch sẵn trước mắt.&lt;/p&gt; &lt;p&gt;&lt;b&gt;Francesco&lt;/b&gt;: chỉ một từ, NGUY HIỂM.&lt;/p&gt; &lt;p&gt;Nhưng phàm những gì nguy hiểm lại luôn có hấp lực khôn cưỡng. Với một chút chút tò mò, một chút phấn khích, một chút sợ hãi, Giorgio đánh bạn với Francesco, để rồi ngay lập tức bị lôi tuột từ chiếu bạc ổ chuột này sang biệt thự sang trọng khác, xoay trong thế giới nháo nhào của cờ gian bạc lận, phiêu lưu tình ái, và tiền. Rất nhiều tiền... Cho đến một ngày kinh hoàng khi cậu nhận ra mình đã bỏ lại quá khứ ở phía sau quá xa.&lt;/p&gt; &lt;p&gt;Trong khi đó, ở đầu kia thành Bari, hàng loạt vụ bạo dâm dã man đang phủ màn u ám lên lực lượng trị an. Không rõ hành tung, nạn nhân bất kỳ, chưa một ai từng thấy thủ phạm: một bóng ma theo mọi nghĩa. Một vụ án bí ẩn, đáng sợ rồi đây sẽ nối kết cả Giorgio, Francesco và Trung úy Chiti?&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Bối cảnh cổ điển của miền Nam Ý những năm 80 đã không làm mất đi sức cuốn hút từ lối viết sành điệu, nhanh, kịch tính mà đan dệt chất thơ của bậc thầy tiểu thuyết trinh thám nước Ý: Gianrico Carofiglio. Cuốn trinh thám tâm lý tội phạm này đã mang lại cho tác giả giải văn học uy tín Premio Bancarella năm 2005 - giải thưởng từng vinh danh Ernest Hemmingway.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:27.964110+00:00"/>
+        <meta name="calibre:title_sort" content="Quá Khứ Là Miền Đất Lạ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

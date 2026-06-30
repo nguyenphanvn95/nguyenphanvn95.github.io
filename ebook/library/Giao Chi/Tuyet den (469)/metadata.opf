@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">469</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">67fe2207-7b6b-4e6f-8111-5c465afa7310</dc:identifier>
+        <dc:title>Tuyết đen</dc:title>
+        <dc:creator opf:file-as="Chi, Giao" opf:role="aut">Giao Chi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:13+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Tuyết Đen tràn ngập các forum, xâm lấn các blog khác, được các "fan cuồng nhiệt" mang đi chia sẻ khắp nơi tạo nên cơn sốt "tuyết", với những lời giới thiệu tận mây xanh. Tuyết Đen nhanh chóng được báo Mực tím đăng tải. Mỗi tuần, hàng trăm tranh vẽ do độc giả khắp nơi gửi đến phác hoạ nhân vật Tuyết Đen với trí tưởng tượng và tài múa cọ cực kì phong phú.&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:47+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyết đen"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

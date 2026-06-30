@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1773</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c1596970-8216-421c-b8a4-d02a1eadd083</dc:identifier>
+        <dc:title>Đời ngắn đừng ngủ dài</dc:title>
+        <dc:creator opf:file-as="Sharma, Robin" opf:role="aut">Robin Sharma</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;“Đời ngắn đừng ngủ dài" là một cuốn sách đầy cảm hứng của Robin Sharma, một trong những tác giả nổi tiếng về phát triển bản thân và lãnh đạo. Sharma được biết đến qua những cuốn sách best-seller như "Nhà lãnh đạo không chức danh" và "Vị tu sĩ bán chiếc Ferrari". Trong "Đời ngắn đừng ngủ dài", Sharma mang đến những bài học quý giá và lời khuyên chân thành giúp người đọc sống một cuộc đời ý nghĩa và trọn vẹn hơn.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Cuốn sách là sự kết hợp của những câu chuyện ngắn, những trích dẫn truyền cảm hứng và những lời khuyên thực tiễn. Mỗi chương là một bài học, một thông điệp mà Sharma muốn truyền tải đến độc giả, nhằm khơi dậy trong họ niềm đam mê sống, sự nhiệt huyết và quyết tâm thay đổi cuộc sống theo hướng tích cực hơn.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu Đời ngắn lắm đừng ngủ dài - Robin Sharma!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Phát triển cá nhân</dc:subject>
+        <meta name="calibre:timestamp" content="2014-05-08T08:42:24+00:00"/>
+        <meta name="calibre:title_sort" content="Đời ngắn đừng ngủ dài"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

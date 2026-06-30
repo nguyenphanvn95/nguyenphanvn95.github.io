@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1228</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cc586afe-3441-4f0b-8f64-ce8bf58d318f</dc:identifier>
+        <dc:title>Một Phát Một Mạng</dc:title>
+        <dc:creator opf:file-as="Child, Lee" opf:role="aut">Lee Child</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Jack Reacher.&lt;/p&gt; &lt;p&gt;Đàn ông ước được như anh.&lt;/p&gt; &lt;p&gt;Đàn bà ước được ở cùng anh.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Sáu phát. Năm mạng. Một thành phố miệt trong rơi vào cảnh kinh hoàng. Nhưng chỉ trong vài giờ đồng hồ cảnh sát đã giải quyết xong vụ việc. Một vụ ăn chắc. Trừ một điều. Kẻ bị buộc tội khăng khăng: &lt;i&gt;Các ông bắt lầm người rồi.&lt;/i&gt; Rồi tiếp theo, tất cả những gì hắn nói là: &lt;i&gt;Tìm Reacher cho tôi&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;Jack Reacher sống kiểu tự cung tự cấp. Kẻ độc hành luôn chẳng tha những chuyện bất bằng, có sức hấp dẫn đàn bà không cưỡng nổi. Mối liên kết nào giữa một cựu quân cảnh với kẻ rõ ràng là tâm thần bất ổn này đây?&lt;/p&gt; &lt;p&gt;Những người từng trải gọi Reacher là “người hùng hành động của những độc giả có đầu óc”. Sắc sảo, kích thích, đọc là nghiện ngay, &lt;i&gt;Một phát một mạng&lt;/i&gt;, cuốn best-seller trinh thám nổi tiếng nhất của Lee Child chắc chắn sẽ khiến bạn không rời mắt nổi.&lt;/p&gt;&lt;i&gt;Một phát một mạng&lt;/i&gt; là cuốn sách thứ chín trong mười một cuốn sách về Jack Reacher đã xuất bản. Loạt sách này của Lee Child đã được bán bản quyền đến ba mươi chín quốc gia.&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn hóa Sài Gòn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:14+00:00"/>
+        <meta name="calibre:title_sort" content="Một Phát Một Mạng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

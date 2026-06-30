@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1622</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4fc2f5b8-6b12-417e-afb6-cd310ba51ab4</dc:identifier>
+        <dc:title>Henry Ford và Ford - Đặt thế giới lên 4 bánh xe</dc:title>
+        <dc:creator opf:file-as="Toàn, Lê Minh" opf:role="aut">Lê Minh Toàn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;EM&gt;Cả thế giới đang di chuyển trên những chiếc xe bốn bánh có gắn động cơ. Không chỉ Mỹ hay Châu Âu - cái nôi của những sáng chế đầu tiên về xe hơi, mà ngay cả rất nhiều nước Châu Á, ôtô- đã trở thành một vật dụng quen thuộc của các gia đình. Có nhận định rằng, ôtô đã làm thay đổi rất lớn lối sống của người Mỹ tới mức kh1o có thể tưởng tượng rằng họ có thể sống mà không có nó. Ôtô cũng không phải là giấc mơ xa với với những người có thu nhập trung bình nữa.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;EM&gt;Henry Ford, vị thánh ấy đã làm gì và đã làm như thế nào? Cuốn sách nhỏ bé này sẽ hé lộ về Ford, không phải là chân dung về ông, mà về những gì ông đã làm để giúp cho chiếc xe trở thành phương tiện của đại chúng.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;B&gt;http://tve-4u.org&lt;/B&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>www.dtv-ebook.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:series" content="Đạo Kinh Doanh Việt Nam Và Thế Giới"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:58+00:00"/>
+        <meta name="calibre:title_sort" content="Henry Ford và Ford - Đặt thế giới lên 4 bánh xe"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

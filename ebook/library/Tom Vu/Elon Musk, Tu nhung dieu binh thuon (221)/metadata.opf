@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">221</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">729e416a-86ff-4717-9ebe-40df4d2961a1</dc:identifier>
+        <dc:title>Elon Musk, Từ những điều bình thường tạo nên con người phi thường</dc:title>
+        <dc:creator opf:file-as="Vu, Tom" opf:role="aut">Tom Vu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;“Tôi nghĩ rằng người bình thường có thể lựa chọn trở thành người phi thường”, Elon Musk đã nói như vậy vào năm 2008. Ông là minh chứng sống cho câu nói này.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;Doanh nhân người Nam Phi Elon Musk đã làm nên lịch sử vào đầu năm 2021 khi vượt qua ông chủ Amazon Jeff Bezos, trở thành người giầu nhất thế giới. Dù tài sản của ông làm ra trên Trái đất, ước mơ của ông Musk lại là được chôn cất ở một hành tinh xa xôi. Ông từng nói sẽ chưa hạnh phúc cho tới khi con người được sống trên Sao Hỏa.&lt;/p&gt;
+&lt;p&gt;Cuốn sách này sẽ như một thước phim tua lại thời thơ ấu đến khi đứng trên đỉnh vinh quang như bây giờ của Elon Musk. Hãy đọc cuốn sách này để hiểu được từ những tác động nhỏ nhất của thời thơ ấu, hay những lần thất bại, đến những cuộc mua bán chấn động thế giới đã tạo nên con người phí thường Elon Musk như thế nào. Cuốn sách gồm 75 chương kể về 75 cuộc hành trình của Elon Musk từ lúc mới sinh ra đến nay, từ đó cuối mỗi chương sẽ là sự đúc rút ra bài học từ những sự việc, biến cố như vậy đã hình thành nên tính cách nào của trong Musk.&lt;/p&gt;
+&lt;p&gt;Cuốn sách dễ đọc dành cho các bạn trẻ tuổi từ 18-35.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;"Elon Musk - Từ những điều bình thường tạo nên con người phi thường" - Tom Vu!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:22.551658+00:00"/>
+        <meta name="calibre:title_sort" content="Elon Musk, Từ những điều bình thường tạo nên con người phi thường"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">176</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">56ceee3c-f42c-457b-a2ab-1a7afc3116e3</dc:identifier>
+        <dc:title>Dành cho những cô gái đang yêu</dc:title>
+        <dc:creator opf:file-as="Kent, Margaret" opf:role="aut">Margaret Kent</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;Dành cho những cô gái đang yêu&lt;/strong&gt; của &lt;strong&gt;Margaret Kent&lt;/strong&gt; là cuốn sách dành cho những phụ nữ muốn được yêu và kết hôn cùng người đàn ông mình mong muốn nhưng lại chưa có được kỹ năng cần thiết để biến ước mơ đó thành hiện thực.&lt;/p&gt;
+&lt;p&gt;Hãy quan sát những phụ nữ xung quanh bạn. Bạn sẽ thấy có những phụ nữ không hề hấp dẫn, trẻ trung, thanh mảnh, thông minh, có trình độ hay thành đạt như bạn. Thế nhưng có nhiều người trong số họ lại tìm được mẫu đàn ông mà bạn mong muốn. Lúc đó, bạn có thể nghĩ: “Rõ ràng, những phụ nữ đó có gì hay ho đâu mà sao họ vẫn lấy được chồng?”.Tại sao họ lại lấy được chồng, trong khi bạn vẫn lẻ loi một mình?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dành cho những cô gái đang yêu&lt;/strong&gt; sẽ tiết lộ cùng bạn những bí mật nằm sau thành công của những phụ nữ đó. Bên cạnh đó, nó cũng sẽ cung cấp cho bạn những kỹ năng để bạn có thể áp dụng khi hẹn hò cùng nam giới, phát triển mối quan hệ tình cảm giữa đôi bên cũng như tiến tới cuộc sống hôn nhân vững bền.&lt;/p&gt;
+&lt;p&gt;Bạn không nhất thiết phải sống độc thân. Những chiến lược trong cuốn sách này sẽ giúp bạn thoát khỏi khu rừng độc thân lạnh lẽo để đến với cuộc hôn nhân hạnh phúc bên người đàn ông mà bạn chọn, lần lượt qua mười hai chương được trình bày trong sách.&lt;/p&gt;
+&lt;p&gt;Tìm kiếm bạn đời là cả một cuộc phiêu lưu hấp dẫn. Mục đích của cuốn sách này là làm thế nào để cuộc phiêu lưu đó của bạn trở nên dễ dàng và gặt hái được thành công. Cuốn sách dành cho tất cả những phụ nữ đang trên đường tìm kiếm hôn nhân cho mình, kể cả những người mà hôn nhân luôn là một sự bí ẩn đến nỗi khiến họ mụ cả người!&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu tới bạn đọc cuốn sách &lt;strong&gt;Dành cho những cô gái đang yêu - Margaret Kent&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:15:33+00:00"/>
+        <meta name="calibre:title_sort" content="Dành cho những cô gái đang yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

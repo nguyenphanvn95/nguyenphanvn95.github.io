@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">869</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f585bb98-98bd-421e-8833-a3e188ff745d</dc:identifier>
+        <dc:title>Phấn Hoa Lầu Xanh</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T17:18:58+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sở Sở một tiểu thư xinh đẹp, cành vàng lá ngọc được dạy dỗ cẩn thận trong một gia đình gia giáo, cầm kì thi họa đều tinh thông uyên bác, song cuộc đời nàng lại thực sự “lắm nỗi truân chuyên”. Lẽ ra một người hiền lành biết lẽ phải, trái như thế sẽ phải được hưởng một cuộc đời êm ấm, vậy mà tưởng chừng như bao nhiêu cay đắng của đời người lại đổ dồn hết vào cái con người bé nhỏ, yếu đuối ấy.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:33+00:00"/>
+        <meta name="calibre:title_sort" content="Phấn Hoa Lầu Xanh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

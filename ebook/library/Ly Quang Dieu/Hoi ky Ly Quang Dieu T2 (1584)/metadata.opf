@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1584</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">94e3821c-8978-4057-882b-e9c64580576d</dc:identifier>
+        <dc:title>Hồi ký Lý Quang Diệu T2</dc:title>
+        <dc:creator opf:file-as="Diệu, Lý Quang" opf:role="aut">Lý Quang Diệu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align: justify;"&gt; Tập 2 &lt;span style="color: rgb(0, 0, 0);"&gt;&lt;strong&gt;Bí quyết hóa rồng&lt;/strong&gt;&lt;/span&gt; (1965-2000) được xuất bản năm 1999. Trong tập hồi ký này, ngoài việc tiếp tục theo dõi bước chân bôn ba của ông Lý, người đọc sẽ còn có cơ hội hóa thân làm một nhà lãnh đạo đất nước Singapore từ buổi đầu đầy khó khăn qua lời kể khách quan và hết sức chi tiết của tác giả.&lt;/p&gt;&lt;p style="text-align: justify;"&gt;          Nhà lãnh đạo ấy phải đối mặt với rất nhiều thách thức và phải xây dựng mọi thứ gần như từ đầu: quốc phòng, ngoại giao, tài chính, thu hút đầu tư nước ngoài, an sinh xã hội, ngôn ngữ, nhân lực…&lt;/p&gt;&lt;p style="text-align: justify;"&gt;          Cuối cùng, ông đã thành công khi dẫn dắt con tàu Singapore trở thành một trung tâm tài chính lớn, với một nền kinh tế khỏe mạnh, chính sách an sinh xã hội tốt, với dàn lãnh đạo và viên chức nhà nước thanh liêm và một môi trường sống xanh sạch bậc nhất thế giới&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:54+00:00"/>
+        <meta name="calibre:title_sort" content="Hồi ký Lý Quang Diệu T2"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

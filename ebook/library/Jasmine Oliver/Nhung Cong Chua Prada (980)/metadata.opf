@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">980</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">adc2eb3c-d776-4163-8362-466ad8c006b0</dc:identifier>
+        <dc:title>Những Công Chúa Prada</dc:title>
+        <dc:creator opf:file-as="Oliver, Jasmine" opf:role="aut">Jasmine Oliver</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-12-16T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">08e7575e-f5a5-4113-a672-176f9779aab1</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Câu Chuyện Thời Trang"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:45+00:00"/>
+        <meta name="calibre:title_sort" content="Những Công Chúa Prada"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

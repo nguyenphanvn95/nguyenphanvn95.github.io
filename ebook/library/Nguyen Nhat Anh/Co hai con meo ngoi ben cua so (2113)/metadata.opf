@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2113</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2fbb4b0b-2811-4e81-972a-2fd14484951a</dc:identifier>
+        <dc:title>Có hai con mèo ngồi bên cửa sổ</dc:title>
+        <dc:creator opf:file-as="Ánh, Nguyễn Nhật" opf:role="aut">Nguyễn Nhật Ánh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-14T06:07:41+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:08+00:00"/>
+        <meta name="calibre:title_sort" content="Có hai con mèo ngồi bên cửa sổ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

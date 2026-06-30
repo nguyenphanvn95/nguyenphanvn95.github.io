@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2523</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">029e6754-bf91-49bb-bb62-36503b5f5e9e</dc:identifier>
+        <dc:title>7 Chiến Lược Thịnh Vượng Và Hạnh Phúc</dc:title>
+        <dc:creator opf:file-as="Rohn, Jim" opf:role="aut">Jim Rohn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:11+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:44:03+00:00"/>
+        <meta name="calibre:title_sort" content="7 Chiến Lược Thịnh Vượng Và Hạnh Phúc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

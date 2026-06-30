@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2382</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">13e58cc6-3ca6-4f0c-a856-3a9832b4dd09</dc:identifier>
+        <dc:title>Ba Giai - Tú Xuất</dc:title>
+        <dc:creator opf:file-as="Danh, Khuyết" opf:role="aut">Khuyết Danh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:18+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;{Truyện: Ba Giai - Tú Xuất&lt;br&gt;Tác giả: Khuyết Danh&lt;br&gt;Tạo bởi: Nguyễn Kim Vỹ&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:39+00:00"/>
+        <meta name="calibre:title_sort" content="Ba Giai - Tú Xuất"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1781</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ecffd89c-d9d1-4fe2-a417-a6e578f122bc</dc:identifier>
+        <dc:title>Dốc Hết Trái Tim - Cách Starbucks Xây Dựng Công Ty Bằng Từng Tách Cà Phê</dc:title>
+        <dc:creator opf:file-as="Schultz, Howard" opf:role="aut">Howard Schultz</dc:creator>
+        <dc:creator opf:file-as="Schultz, Howard" opf:role="aut">Dori Jones Yang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Thành công của Công ty Cà phê Starbucks là một trong những câu chuyện kỳ diệu nhất về kinh doanh trong suốt nhiều thập kỷ. Một cửa hàng nhỏ ven sông ở Seattle rốt cuộc lại lớn mạnh và phát triển nên hơn một ngàn sáu trăm cửa hàng trên khắp thế giới và mỗi ngày lại có thêm một cửa hàng mới mọc lên. Tuyệt vời hơn cả, Starbucks đã thành công trong việc giữ vững cam kết về chất lượng sản phẩm ưu việt và mang lại những gì tốt đẹp nhất cho nhân viên của mình.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:24.871695+00:00"/>
+        <meta name="calibre:title_sort" content="Dốc Hết Trái Tim - Cách Starbucks Xây Dựng Công Ty Bằng Từng Tách Cà Phê"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

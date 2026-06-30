@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">542</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d30fb7ef-755b-4b70-981f-86f97ae731c1</dc:identifier>
+        <dc:title>Tối nay có việc không về nhà</dc:title>
+        <dc:creator opf:file-as="Bang, Truong Kien" opf:role="aut">Truong Kien Bang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:19:41+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuốn sách là những câu chuyện nhỏ (về dung lượng) nhưng gắn với một vấn 
+đề không nhỏ chút nào: ngoại tình. Qua những câu chuyện ấy, ngoại tình 
+hiện ra với muôn màu muôn vẻ: lúc là thủ phạm gây đổ vỡ gia đình, lúc là
+ "suối nguồn tươi trẻ" bù đắp cho những nhàm chán trong hôn nhân, lúc 
+lại khiến người ta nhận ra rằng gia đình vẫn là nơi ấm áp nhất...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>psychology</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:55+00:00"/>
+        <meta name="calibre:title_sort" content="Tối nay có việc không về nhà"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

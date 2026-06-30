@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">691</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">af0c81e3-bdfd-4d71-98b6-987ae7da4b0f</dc:identifier>
+        <dc:title>Sự Tuyệt Chủng Của Con Người Kinh Tế</dc:title>
+        <dc:creator opf:file-as="Shermer, Michael" opf:role="aut">Michael Shermer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-09-30T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Kinh Doanh - Đầu Tư</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Sự Tuyệt Chủng Của Con Người Kinh Tế"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

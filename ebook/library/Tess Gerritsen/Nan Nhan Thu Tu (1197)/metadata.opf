@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1197</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">34a3ee1a-38cf-44a3-8cb7-83f9c984f0e6</dc:identifier>
+        <dc:title>Nạn Nhân Thứ Tư</dc:title>
+        <dc:creator opf:file-as="Gerritsen, Tess" opf:role="aut">Tess Gerritsen</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Hắn lẻn vào những ngôi nhà khi đêm đến. Hắn tiến lại gần mép giường, nơi các cô gái đang ngủ say. Họ sẽ thức dậy và gặp cơn ác mộng kinh khủng nhất trong đời. Tính chính xác trong cách thức hoạt động của hắn cho thấy hắn là một bác sỹ bệnh hoạn, điều đó khiến báo chí gọi hắn bằng cái tên “Bác sỹ phẫu thuật”. Dẫn đầu là thám tử Moore và Rizzoli, các cảnh sát tìm ra nạn nhân của một loại tội phạm tương tự. Hai năm trước, bác sỹ Catherine Cordell đã chống cự và giết chết kẻ tấn công mình trước khi hắn có thể hoàn thành việc tra tấn cô.&lt;/P&gt;Giờ tên sát nhân mới tái tạo lại một cách chính xác đến rợn người cung cách giết người mà Andrew đã làm với bác sỹ Cordell. Sau mỗi vụ giết người, hắn muốn làm cô hoang mang. Hắn tiếp cận cô ngày càng gần hơn ở cả bệnh viện nơi cô làm việc và căn hộ của cô. Cả Moore và Rizzoli đều không thể bảo vệ Cordell khỏi tên sát nhân máu lạnh. Bằng cách thức nào đó, hắn hiểu hết và cảm nhận được nỗi sợ hãi của tất cả những cô gái bị hắn giết.</dc:description>
+        <dc:publisher>Văn Hóa Thông Tin</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:10+00:00"/>
+        <meta name="calibre:title_sort" content="Nạn Nhân Thứ Tư"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

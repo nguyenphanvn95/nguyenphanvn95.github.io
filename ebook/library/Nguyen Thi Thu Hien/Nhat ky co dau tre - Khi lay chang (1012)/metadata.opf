@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1012</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6c5fd915-aa50-40d6-a45f-6e41f73ccbbb</dc:identifier>
+        <dc:title>Nhật ký cô dâu trẻ - Khi lấy chàng</dc:title>
+        <dc:creator opf:file-as="Hiền, Nguyễn Thị Thu" opf:role="aut">Nguyễn Thị Thu Hiền</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:33+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Khi lấy chàng” đã cuốn người đọc theo dòng tâm trạng với đầy đủ mọi trạng thái hỉ nộ ái ố, và cả những tình tiết đầy kịch tính, thêm chút hài hước, hóm hỉnh. &lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:49+00:00"/>
+        <meta name="calibre:title_sort" content="Nhật ký cô dâu trẻ - Khi lấy chàng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">553</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0ebd3ac2-7dba-478c-8ab6-bb31a603a8a7</dc:identifier>
+        <dc:title>Tôi Có Quyền Hủy Hoại Bản Thân</dc:title>
+        <dc:creator opf:file-as="Ha, Kim Young" opf:role="aut">Kim Young Ha</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;Tiểu thuyết ngắn này được dẫn dắt bởi một người dẫn chuyện không tên, như một bóng ma ám theo những cư dân bị tổn thương và lạc lối của cuộc sống đô thị, mời chào họ tìm sự ủy an nơi cái chết. Hai anh em C và K cùng yêu một cô gái tên Se Yeon. Cô gái Hồng Kông từng làm nghề ma nơ canh kỳ lạ. Nữ nghệ sĩ trình diễn chưa một lần cho phép ai được ghi hình. Dòng chảy cuộc đời họ có thể giao nhau, có thể không, nhưng sự tồn tại của họ trong suốt các trang sách này đều chưa từng ngưng thống khổ. Bằng một thứ văn chương mơ màng và đậm chất xi nê, gợi tình và uể oải, Kim Young Ha đã viết về cuộc vật lộn vô vọng để tìm kiếm mối liên hệ của cá nhân và thế giới nơi họ sống, về nỗi tuyệt vọng dưới hình hài sự chán chường, sự giải thoát được sinh ra từ hủy diệt, về cái chết trở thành một phần của sự sống; để rồi đến khi tựu hình, &lt;i&gt;Tôi có quyền hủy hoại bản thân&lt;/i&gt; thực sự là một hư cấu không mấy dễ đọc, không mấy dễ chịu, nhưng đầy sức ám ảnh với những ai kiếm tìm điều gì đó nằm bên ngoài ánh sáng và niềm hân hoan đơn thuần.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Có Quyền Hủy Hoại Bản Thân"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">305</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3b393052-1955-47a2-a6f9-58d68132293a</dc:identifier>
+        <dc:title>Vụ án trường The Oxford</dc:title>
+        <dc:creator opf:file-as="Martínez, Guillermo" opf:role="aut">Guillermo Martínez</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Một sinh viên trẻ trở về từ Viện Toán phát hiện ra bà chủ nhà bị ám sát tại phòng khách trong ngôi nhà vắng ở Oxford. Một nhà logic học nức tiếng nhận được lời nhắn nặc danh với một ký hiệu toán học… Và rồi những bí ẩn đầu tiên hé lộ. Cái chết và những con số. Tội ác và những xâu chuỗi. Mối liên quan. Giả định. Suy đoán. Ai đó đang dùng những cái chết này để mô tả một định lý toán học chăng? Liệu án mạng hoàn hảo kia có phải là vụ án không thể tìm ra thủ phạm?&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Lôi cuốn và đầy kịch tính, sự kết hợp giữa ẩn số toán học và bí ẩn đằng sau những án mạng đã làm nên sự hấp dẫn trí tuệ rất riêng của &lt;i&gt;Vụ án trường Oxford&lt;/i&gt;. Tác phẩm được viết năm 2003, mang lại cho tác giả giải thưởng Planeta cùng năm đó, và được đạo diễn nổi danh Alex de la Iglesia dựng thành phim năm 2008.&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn hóa Sài Gòn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:09+00:00"/>
+        <meta name="calibre:title_sort" content="Vụ án trường The Oxford"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

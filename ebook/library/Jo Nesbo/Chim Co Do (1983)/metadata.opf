@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1983</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d7224c27-a054-44d1-b645-9b1d7c3872f4</dc:identifier>
+        <dc:title>Chim Cổ Đỏ</dc:title>
+        <dc:creator opf:file-as="JO NESBO" opf:role="aut">Jo Nesbo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2000-03-17T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <dc:subject>Phát xít</dc:subject>
+        <dc:subject>Na Uy</dc:subject>
+        <dc:subject>Chiến tranh</dc:subject>
+        <meta name="calibre:series" content="Harry Hole"/>
+        <meta name="calibre:series_index" content="3"/>
+        <meta name="calibre:rating" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:51+00:00"/>
+        <meta name="calibre:title_sort" content="Chim Cổ Đỏ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

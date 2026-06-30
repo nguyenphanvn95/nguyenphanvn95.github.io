@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">965</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ba796bc4-877f-4141-bcd4-275f5897741d</dc:identifier>
+        <dc:title>Những đống lửa trên vịnh Tây Tử</dc:title>
+        <dc:creator opf:file-as="Hạ, Trang" opf:role="aut">Trang Hạ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-29T02:09:42+00:00</dc:date>
+        <dc:description>&lt;p&gt;tập truyện ngắn về những ngọn lửa rực cháy khát khao và hoàn toàn lập thể. Truyện mà dường như không phải truyện! Những vụn vặt, những chắp nhặt đầy màu sắc từ bức tranh của cảm xúc và suy nghĩ khiến người đọc không thể dứt khỏi. Những “entry” cứ khắc khoải một nỗi niềm cô đơn không tên và rực cháy khát vọng tự do tột đỉnh. Ai đó đọc qua chợt ngỡ ngàng như thểđang soi gương và thấy chính mình trong đó? Ai đó lại thấy như lạ, như quen, như thấy lòng mình được trải ra trên từng trang giấy? Những “nhặt nhạnh” của Trang Hạ khiến không ít người trở về với chính mình và nhìn những cảm xúc đã bị lãng quên. Điểm nhấn trong tản văn của chị còn là cách xử lý câu chữ, hình ảnh tinh tế, mạnh bạo và cá tính. Cứ tưởng sẽ là sexy hay na ná như “linglei” của Trung Quốc mà không phải - tản văn của chị nữ tính, “đời” và “đàn bà” hơn thật…&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:43+00:00"/>
+        <meta name="calibre:title_sort" content="Những đống lửa trên vịnh Tây Tử"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

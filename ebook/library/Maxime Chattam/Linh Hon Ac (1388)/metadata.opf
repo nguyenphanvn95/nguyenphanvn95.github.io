@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1388</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a32816b8-92e2-4d9c-827f-f47235c43336</dc:identifier>
+        <dc:title>Linh Hồn Ác</dc:title>
+        <dc:creator opf:file-as="Chattam, Maxime" opf:role="aut">Maxime Chattam</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-02-29T03:22:39+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Maxime Chattam sinh năm 1976 tại Herblay, Val-d’Oise. Thuở nhỏ, anh rất hay đến Mỹ và thường xuyên lưu lại New York, Denver hoặc Portland – nơi anh lấy làm bối cảnh cho tiểu thuyết Linh Hồn Ác. Năm 23 tuổi, sau khi viết hai tác phẩm mà không gửi tới bất kỳ nhà xuất bản nào, Maxime đăng ký theo học một khóa về tội phạm học ở trường Saint-Denis. &lt;/p&gt; &lt;p&gt;Cuốn tiểu thuyết kinh dị đầu tay của anh, Triều Đại Thứ Năm, đã được xuất bản dưới danh Maxime Williams vào năm 2003 và đạt giải Tiểu thuyết hư cấu tại Liên hoan Gérardmer. Hiện Maxime Chattam dành toàn bộ thời gian của mình cho sự nghiệp viết lách, đặc biệt chuyên về thể loại trinh thám kinh dị. &lt;/p&gt; &lt;p&gt;Sau bộ ba tiểu thuyết Linh Hồn Ác, Trong Bóng Đêm và Những Bùa Chú, anh còn viết ba tiểu thuyết hết sức ăn khách khác: Máu Thời Gian, Những Bí ẩn Của Sự Hỗn Loạn và Những Loài Ăn Mồi. Linh Hồn Ác được trao giải Sang d’Encre cho tiểu thuyết trinh thám xuất sắc nhất.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:32+00:00"/>
+        <meta name="calibre:title_sort" content="Linh Hồn Ác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2248</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4707b68b-3d93-45b1-96c7-025bf3d90ff7</dc:identifier>
+        <dc:title>Biến bất kỳ ai thành khách hàng</dc:title>
+        <dc:creator opf:file-as="Hayden, C. J." opf:role="aut">C. J. Hayden</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-01-19T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:rating" content="10"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:23+00:00"/>
+        <meta name="calibre:title_sort" content="Biến bất kỳ ai thành khách hàng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

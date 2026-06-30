@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1590</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">84c32ba1-cb0d-4d28-86e6-9a779a2a99d1</dc:identifier>
+        <dc:title>Học Từ Thất Bại</dc:title>
+        <dc:creator opf:file-as="Maxwell, John C." opf:role="aut">John C. Maxwell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;(Sách sẽ hết hạn vào ngày 31/12/2018, quý độc giả vui lòng đọc sách trước ngày 31/12/2018.) John bàn luận trong cuốn sách là những  sự khác biệt lớn giữa người biết học hỏi từ thất bại của bản thân với những không làm được điều đó. Bạn muốn tinh thần của mình nằm kẹt cứng trong bệnh viện, quá mệt mỏi đến mức chẳng còn sức lực gì nữa? Hay bạn muốn nắm lấy cơ hội được học tập, đánh giá và cân nhắc vấn đề vừa xảy ra và sử dụng tri thức đó để trang bị cho bản thân có thể ứng phó với cuộc đời? Những nguyên tắc cần thiết cho việc học hỏi mà John nêu trong cuốn sách này là kết quả của những quan sát vô cùng sâu sắc như cách thức diễn tiến của một quá trình và ông chỉ ra một cách chính xác tính cách hay thuộc tính nào sẽ ra đời từ quy trình nào. Bằng cách phân tích “ADN của những người biết học hỏi”, mà thực tế là ông đã thực hiện rất súc tích, John dẫn dắt và giới thiệu cho ta những yếu tố cần thiết để đối phó với những kiểu thất bại khác nhau, biến những bài học đó thành vũ khí lợi hại vừa giúp ta tránh né, phòng thủ lẫn phản công những thách thức trong tương lai. Bất kỳ ai vừa trải qua cảm giác thất bại, thất vọng hoặc vừa nhận tin xấu (nói chung là bất kỳ ai có mặt trên trái đất này) sau khi đọc thông điệp của John chắc chắn sẽ tìm ra ít nhất một quan điểm có thể thay đổi mạnh mẽ những gì họ hình dung về những khoảnh khắc đen tối của cuộc đời mình. Nếu ta làm theo lời khuyên của John và học cách xem những thất bại như cơ hội để phát triển thông qua học hỏi thì ta sẽ trở nên bất bại. Cuộc đời chứa đầy những thất bại nhưng nếu được trang bị phù hợp, ta sẽ vượt qua được những thất bại đó. Bởi khi một người rút ra được điều gì đó quý giá từ những giây phút khó khăn, họ sẽ tự giải thoát mình khỏi sự kiểm soát của hoàn cảnh đó đối với tâm trí, thân thể, trái tim và tâm hồn mình.  Những trang sách này không chỉ là cuốn cẩm nang chỉ dẫn cách thức vượt qua những giai đoạn khó khăn, nó còn trao cho ta món quà giá trị nhất: Hy vọng. Trân trọng giới thiệu!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Phát triển cá nhân</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:54+00:00"/>
+        <meta name="calibre:title_sort" content="Học Từ Thất Bại"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

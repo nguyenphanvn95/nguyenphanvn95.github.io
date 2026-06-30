@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1169</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cbabed6a-fe3b-44f4-a549-0e15c63aad6b</dc:identifier>
+        <dc:title>Nỗi đau của đom đóm</dc:title>
+        <dc:creator opf:file-as="Nữ, Quỷ Cổ" opf:role="aut">Quỷ Cổ Nữ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-05T13:51:40+00:00</dc:date>
+        <dc:description>&lt;p&gt;Quan Kiện là người có khả năng đặc biệt, tiên tri được những cái chết sẽ đến, nhưng không gian và thời gian đã cản trở anh đi cứu các nạn nhân.Anh thường cảm nhận được mọi đau đớn thể xác mà các nạn nhân phải chịu.Thế nhưng, chính anh cũng không thể cứu được bạn gái của mình – Hoàng Thi Di, khỏi cái chết tàn nhẫn. Một nhóm các nhà khoa học y học Nhật Bản đã tìm đến Quan Kiện, hy vọng sẽ có cơ hội nghiên cưú về khả năng đặc biệt của anh. Đồng thời, họ cũng muốn giúp anh điều tra sự thật về cái chết của Hoàng Thi Di.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:07+00:00"/>
+        <meta name="calibre:title_sort" content="Nỗi đau của đom đóm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

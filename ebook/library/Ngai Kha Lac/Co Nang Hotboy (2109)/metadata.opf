@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2109</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0a68b085-88f0-4501-bd15-4478852432dd</dc:identifier>
+        <dc:title>Cô Nàng Hotboy</dc:title>
+        <dc:creator opf:file-as="Lạc, Ngải Khả" opf:role="aut">Ngải Khả Lạc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T04:08:22+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện kể về cô nàng Minh Hiểu Ưu xinh đẹp, trẻ trung cá tính, và cùng với những tình huống oái oăm, dở khóc, dở cười trong cuộc sống mà cô gặp phải. Nội dung chính là vì tấm vé xem quần vợt quốc tế mà cô giả làm con trai đến câu lạc bộ của một trường học, mục đích giúp trường đó đoạt giải cao trong cuộc thi quần vợt quốc tế. Tuy nhiên, khi đến học ở trường thì cô lại phải ở chung phòng với một chàng trai cao to nam tính, cô đã gặp không ít khó xử. Là con gái nhưng lại phải đi vào phòng vệ sinh nam? Là bác sĩ thú y nhưng lại bị bắt đi phẫu thuật cho người? Là chuột xám nhưng lại bị đưa vào phòng thí nghiệm? Là đầu bếp nhưng lại bị bắt ép làm giáo viên mầm non?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:07+00:00"/>
+        <meta name="calibre:title_sort" content="Cô Nàng Hotboy"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

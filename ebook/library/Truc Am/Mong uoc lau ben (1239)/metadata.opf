@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1239</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d2d29aab-f5a1-4568-89db-6f4b71376339</dc:identifier>
+        <dc:title>Mong ước lâu bền</dc:title>
+        <dc:creator opf:file-as="Âm, Trúc" opf:role="aut">Trúc Âm</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T01:51:46+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một tình yêu tuổi trẻ cuồng nhiệt của đôi nam thanh nữ tú- giữa cô gái xinh đẹp thông minh, quyết đoán, có gia cảnh nghèo hèn với chàng trai tuấn tú, con cháu một gia tộc giàu có, nắm giữ những trọng điểm kinh tế và chính trị của Trung Hoa Đại Lục. Họ bị ngăn cản bởi tay một bà mẹ quyền lực, song luôn quyết tâm đến cùng cho dù sau này có chuyện gì sảy ra họ cùng sẽ ở bên nhau suốt đời.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:15+00:00"/>
+        <meta name="calibre:title_sort" content="Mong ước lâu bền"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

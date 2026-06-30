@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2020</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9c68aa71-4516-4677-9ffe-215ca1512e1e</dc:identifier>
+        <dc:title>Chàng Ngốc</dc:title>
+        <dc:creator opf:file-as="Fyodor Dostoievsky" opf:role="aut">Fyodor Dostoievsky</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Chàng Ngốc – Hoàng thân Myshkin – là con trai cuối cùng trong một gia đình thuộc dõng dõi hoàng gia đã bị phá sản. Sau một thời gian sang Thụy Sĩ trị bệnh, chàng trở về nước Nga và từ đây, chứng kiến nhiều chuyện khóc cười trong lòng một xã hội đang bước vào thời nhốn nháo.&lt;/p&gt;
+&lt;p&gt;Độc giả có thể tìm thấy ở chàng một chút của Chúa Jesus, một chút của Don Quixote, một chút của Pickwick để hình dung ra hình ảnh lý tưởng về một tín đồ đạo Thiên chúa.&lt;/p&gt;
+&lt;p&gt;Dostoievsky không xây dựng Myshkin như một nhân vật mang tính biểu tượng, trong một thế giới phi thực tế mà đặt chàng vào thế giới thực, sống động. Bằng cách đưa Chàng Ngốc vào một thế giới trần tục, Dostoievsky đã thể hiện cái nhìn phê phán và đả kích của mình đối với chế độ quân chủ tư sản và sự ngự trị của quyền lực trong xã hội nước Nga lúc bấy giờ.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Gassie</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>©vctvegroup</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:55+00:00"/>
+        <meta name="calibre:title_sort" content="Chàng Ngốc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">871</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3739efde-90ce-4a36-b34e-103076114c67</dc:identifier>
+        <dc:title>Phải lấy người như anh</dc:title>
+        <dc:creator opf:file-as="Trang, Trần Thu" opf:role="aut">Trần Thu Trang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T14:53:22+00:00</dc:date>
+        <dc:description>&lt;p&gt;Phải lấy người như anh là một câu chuyện xoay quanh tình yêu của hai người trẻ tuổi, mở đầu bằng đám tắc đường giữa Hà Nội, tiếp diễn trong một đêm đầy sao thơ mộng ở Sapa và kết thúc với khung cảnh bình yên cổ kính của Hội An.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:33+00:00"/>
+        <meta name="calibre:title_sort" content="Phải lấy người như anh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

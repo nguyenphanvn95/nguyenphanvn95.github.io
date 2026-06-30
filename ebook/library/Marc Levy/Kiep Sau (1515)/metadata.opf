@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1515</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5ebc0a1f-dc39-4129-b2e5-b313ddc13ca0</dc:identifier>
+        <dc:title>Kiếp Sau</dc:title>
+        <dc:creator opf:file-as="Levy, Marc" opf:role="aut">Marc Levy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2008-01-09T17:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Một cốt truyện hấp dẫn có sự hòa trộn của nhiều yếu tố: tâm linh, trinh thám, lãng mạn. Một lối viết không dụng đến những ẩn dụ khó hiểu. Một môtip đậm chất cổ tích. Và hơn hết, đó là câu chuyện kể xúc động về một tình yêu bất tử. &lt;/P&gt; &lt;P&gt;&lt;EM&gt;Kiếp sau&lt;/EM&gt; - cuốn tiểu thuyết từng làm rung động hàng triệu trái tim người Pháp năm 2004. &lt;EM&gt;Kiếp sau&lt;/EM&gt; được tạp chí Paris Match ngợi ca là một &lt;I&gt;Romeo và Juliet&lt;/I&gt; của hôm nay.&lt;/P&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:46+00:00"/>
+        <meta name="calibre:title_sort" content="Kiếp Sau"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

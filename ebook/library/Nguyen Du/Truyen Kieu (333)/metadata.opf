@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">333</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e54a568c-df37-4638-bd1d-0b3c5a0ab588</dc:identifier>
+        <dc:title>Truyện Kiều</dc:title>
+        <dc:creator opf:file-as="Du, Nguyễn" opf:role="aut">Nguyễn Du</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-04-26T17:00:00+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Kho sách miễn phí tại &lt;a href="http://www.sachvui.com"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:18+00:00"/>
+        <meta name="calibre:title_sort" content="Truyện Kiều"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

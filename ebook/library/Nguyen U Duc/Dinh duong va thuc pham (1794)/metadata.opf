@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1794</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">de1a316d-4dbc-4720-b89a-03c79470d276</dc:identifier>
+        <dc:title>Dinh dưỡng và thực phẩm</dc:title>
+        <dc:creator opf:file-as="Đức, Nguyễn Ý" opf:role="aut">Nguyễn Ý Đức</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:38+00:00</dc:date>
+        <dc:description>&lt;p&gt;Ngoài việc sử dụng thuốc men và các phương thức trị liệu, dinh dưỡng cũng giữ một vai trò rất quan trọng đối với người bệnh. Một bệnh nhân tiểu đường nếu biết cách ăn uống có thể sẽ hạn chế hậu quả xấu khi lượng đường trong máu lên quá cao... Cuốn sách này đưa ra những hướng dẫn về cách ăn uống để có thể hỗ trợ việc trị bệnh đã được nghiên cứu khoa học và thực tế chứng minh là mang lại hiệu quả cao. Một phần quan trọng - gần như trọng tâm của bộ sách này là dành để bàn tới mối tương quan giữa dinh dưỡng và các bệnh tật thường gặp như: Tiểu đường, tim mạch, huyết áp, viêm gan... Tác giả luôn dành những lời khuyên hữu ích nhằm đạt căn bản vững chắc cho cuộc sống khỏe mạnh, ít bệnh tật... &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Health</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:26+00:00"/>
+        <meta name="calibre:title_sort" content="Dinh dưỡng và thực phẩm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

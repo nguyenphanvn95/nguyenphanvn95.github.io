@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2203</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7f847d35-0b38-4f08-8cd8-cd07c4769d71</dc:identifier>
+        <dc:title>Buông xả phiền não</dc:title>
+        <dc:creator opf:file-as="Nghiêm, Thích Thánh" opf:role="aut">Thích Thánh Nghiêm</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;Ebook miễn phí được chia sẻ tại &lt;a href="http://www.sachvui.com"&gt;www.Sachvui.Com&lt;/a&gt; .&lt;/div&gt;</dc:description>
+        <dc:publisher>Grizli777</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">d90b468b-ef9a-456e-9270-645442146423</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:19+00:00"/>
+        <meta name="calibre:title_sort" content="Buông xả phiền não"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

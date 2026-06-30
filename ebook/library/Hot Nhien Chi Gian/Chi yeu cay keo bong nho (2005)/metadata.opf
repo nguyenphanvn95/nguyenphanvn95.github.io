@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2005</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">98dc773a-27e8-490a-b25b-f85019071d5d</dc:identifier>
+        <dc:title>Chỉ yêu cây kẹo bông nhỏ</dc:title>
+        <dc:creator opf:file-as="Gian, Hốt Nhiên Chi" opf:role="aut">Hốt Nhiên Chi Gian</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-24T23:14:50+00:00</dc:date>
+        <dc:description>&lt;p&gt;Có rất nhiều nữ sinh vây quanh anh nhưng anh không thể xóa được hình bóng cô trong trái tim minh. Mùi hương dìu dịu, điệu cười tít mắt, bô dạng e thẹn của cô... tất cả đều in sâu trong lòng anh. Anh yêu tất cả những gì thuộc về cô.Nhưng cô lại ngốc nghếch không tin những lời anh nói. Bởi vậy, anh phải khiến cô thất bại trong việc giảm cân.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:53+00:00"/>
+        <meta name="calibre:title_sort" content="Chỉ yêu cây kẹo bông nhỏ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

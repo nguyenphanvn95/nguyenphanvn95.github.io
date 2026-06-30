@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1573</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e6bf4623-9b23-4636-8362-073649f17675</dc:identifier>
+        <dc:title>Homo Deus: Lược sử tương lai</dc:title>
+        <dc:creator opf:file-as="Harari, Yuval Noah &amp; Bàn, Lê Dọn" opf:role="aut">Yuval Noah Harari</dc:creator>
+        <dc:creator opf:file-as="Harari, Yuval Noah &amp; Bàn, Lê Dọn" opf:role="aut">Lê Dọn Bàn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-09-05T16:00:00+00:00</dc:date>
+        <dc:publisher>Lê Dọn Bàn</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">4fdd8cbc-5ae2-473b-a382-3e61ba234bd4</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Homo Deus: Lược sử tương lai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

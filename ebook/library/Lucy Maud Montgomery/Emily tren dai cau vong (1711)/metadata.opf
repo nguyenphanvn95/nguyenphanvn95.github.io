@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1711</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2e930259-c5e5-4a54-be14-79c50e261f4a</dc:identifier>
+        <dc:title>Emily trên dải cầu vồng</dc:title>
+        <dc:creator opf:file-as="Montgomery, Lucy Maud" opf:role="aut">Lucy Maud Montgomery</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>Nhã Nam + NXB Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Emily"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:17+00:00"/>
+        <meta name="calibre:title_sort" content="Emily trên dải cầu vồng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

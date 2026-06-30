@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">673</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1a7c46ff-582c-4c8c-9e35-d01ab517304d</dc:identifier>
+        <dc:title>SÚNG, VI TRÙNG VÀ THÉP</dc:title>
+        <dc:creator opf:file-as="Diamond, Jared" opf:role="aut">Jared Diamond</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;Jared Mason Diamond (10/9/1937) là nhà khoa học Mỹ và tác giả nổi tiếng với các tác phẩm: Loài tinh tinh thứ ba; Súng, vi trùng và thép; Sụp đổ; Thế giới cho đến ngày hôm qua, v.v… Tuy theo học và có bằng tiến sĩ về sinh lý học, nhưng kiến thức của ông bao trùm hầu như mọi ngành, từ kiến trúc, ngôn ngữ, khảo cổ, đến động vật học, y học. Ông cũng không phải là một học giả “tháp ngà” khi từng chu du nhiều châu lục, thậm chí sống nhiều năm ở những nơi “tận cùng thế giới” (như đảo Tân Ghi-nê, đảo Phục Sinh). Ông cũng được xếp vào hàng ngũ những nhà tư tưởng hiện đại có nhiều ảnh hưởng nhất ở Mỹ.&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:10+00:00"/>
+        <meta name="calibre:title_sort" content="SÚNG, VI TRÙNG VÀ THÉP"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

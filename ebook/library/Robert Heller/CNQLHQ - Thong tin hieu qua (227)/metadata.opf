@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">227</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e3320892-36d1-4e11-a82e-1f1319857b03</dc:identifier>
+        <dc:title>CNQLHQ - Thông tin hiệu quả</dc:title>
+        <dc:creator opf:file-as="định, Không xác" opf:role="aut">Robert Heller</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Nghệ thuật truyền tải thông tin hiệu quả là một phần rất quan trọng tạo nên sự thành công của người quản lý. Tuy nhiên, không phải ai cũng xuất sắc trong việc này. Để truyền tải thông tin hiệu quả, bạn phải nắm rõ:&lt;/p&gt;
+&lt;p&gt;- Những rào cản tâm lý, ảnh hưởng đến khả năng truyền tải thông tin của bạn.&lt;br&gt;- Những mẹo nhỏ giúp bạn tự điều chỉnh tinh thần và hành động của mình trong lúc truyền tải thông tin.&lt;br&gt;- Những phương pháp nhận biết ngôn ngữ cơ thể của bản thân và đối tác&lt;br&gt;- Những bí quyết hữu ích giúp bạn khai thác thông tin, truyền đạt thông điệp và duy trì sự giao tiếp giữa các bên.&lt;/p&gt;
+&lt;p&gt;Với cách thể hiện sinh động, 101 bí quyết trong cuốn sách &lt;strong&gt;CNQLHQ - Thông tin hiệu quả&lt;/strong&gt; này sẽ giúp bạn giải quyết những vấn đề trên. Thêm nữa, khi bạn tự trả lời những câu hỏi ở cuối quyển sách sẽ giúp bạn có thể tự đánh giá khả năng trao đổi thông tin của mình, từ đó rút ra những kinh nghiệm cho bản thân diễn đạt tốt hơn.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:24.994668+00:00"/>
+        <meta name="calibre:title_sort" content="CNQLHQ - Thông tin hiệu quả"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

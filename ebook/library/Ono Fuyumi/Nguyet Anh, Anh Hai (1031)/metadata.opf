@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1031</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3ad071c4-a86b-47c8-b9bf-c3f3c9098768</dc:identifier>
+        <dc:title>Nguyệt Ảnh, Ảnh Hải</dc:title>
+        <dc:creator opf:file-as="Fuyumi, Ono" opf:role="aut">Ono Fuyumi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-09-10T17:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;STRONG&gt;“Nguyệt Ảnh, Ảnh Hải”&lt;/STRONG&gt; (月の影・影の海; &lt;EM&gt;Tsuki no Kage, Kage no Umi&lt;/EM&gt;) là phần đầu tiên của hệ tiểu thuyết “&lt;STRONG&gt;Thập nhị quốc ký”&lt;/STRONG&gt; (十二国記; &lt;EM&gt;Juuni Kokuki&lt;/EM&gt;) của nữ tác giả Fuyumi Ono. Tựa đề “&lt;STRONG&gt;Nguyệt Ảnh, Ảnh Hải”&lt;/STRONG&gt; có nghĩa là &lt;I&gt;“Bên kia bóng trăng là biển bóng”&lt;/I&gt;. Nguyệt Ảnh, Ảnh Hải được chia làm hai quyển, mỗi quyển gồm bốn chương, được xuất bản lần đầu tiên tại Nhật năm 1992.&lt;?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Giả tưởng</dc:subject>
+        <meta name="calibre:series" content="Thập nhị quốc ký"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:51+00:00"/>
+        <meta name="calibre:title_sort" content="Nguyệt Ảnh, Ảnh Hải"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">638</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f880ed6b-1562-4e8a-8a56-15b3137d3a2f</dc:identifier>
+        <dc:title>Tấm Vải Đỏ</dc:title>
+        <dc:creator opf:file-as="Tử, Hồng Nương" opf:role="aut">Hồng Nương Tử</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-05T23:56:31+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sức hút của Tấm vải đỏ không chỉ nằm trong những chi tiết hư cấu về một thế giới ma quái rùng rợn mà nó còn nằm trong kết cấu đặc biệt mà Hồng Nương Tử dày công xây dựng. Toàn bộ câu chuyện như một căn nhà lớn mà trong đó mỗi căn phòng chính là một chương truyện, chúng logic với nhau về mặt nội dung nhưng cũng rất độc lập trong cách kể, trong mỗi tình huống&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:06+00:00"/>
+        <meta name="calibre:title_sort" content="Tấm Vải Đỏ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

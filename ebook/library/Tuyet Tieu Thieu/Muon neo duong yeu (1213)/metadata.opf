@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1213</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3e4bf3c1-44b4-48ce-968c-7d01857b0156</dc:identifier>
+        <dc:title>Muôn nẻo đường yêu</dc:title>
+        <dc:creator opf:file-as="Thiều, Tuyết Tiểu" opf:role="aut">Tuyết Tiểu Thiều</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T13:59:08+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Muôn nẻo đường yêu” là câu chuyện cảm động về cuộc đời ba cô gái: Phần Na, Hiểu Lối và Tiểu Bạch. Họ là những cô gái thân với nhau từ nhỏ nhưng mỗi người có một tính cách khác nhau, vì thế số phận, “đường yêu” của họ cũng khác nhau. Hiểu Lối xinh đẹp dịu dàng nhưng dường như “không thể yêu” và không có cảm tình với bất kỳ một người đàn ông nào. Phần Na với tính cách phóng khoáng, bất cần đã yêu sớm nhất và cũng là người gặp nhiều ngang trái nhất trong tình yêu. Tiểu Bạch - nhân vật chính, là cô gái tưởng như may mắn và thuận lợi trong “đường yêu” khi có một tình yêu đầu đời với nhiều rung động sâu sắc vậy mà tình yêu đó cũng phải trải qua bao sóng gió thăng trầm&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:12+00:00"/>
+        <meta name="calibre:title_sort" content="Muôn nẻo đường yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

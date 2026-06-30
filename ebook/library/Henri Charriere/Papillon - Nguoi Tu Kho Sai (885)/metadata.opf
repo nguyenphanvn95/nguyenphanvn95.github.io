@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">885</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">71be82b0-7318-4720-9593-a8306cc7f2d1</dc:identifier>
+        <dc:title>Papillon - Người Tù Khổ Sai</dc:title>
+        <dc:creator opf:file-as="Charriere, Henri" opf:role="aut">Henri Charriere</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:18+00:00</dc:date>
+        <dc:description>&lt;p&gt;Papillon, người tù khổ sai - một tác phẩm tự truyện của Henry Charriere đã thật sự lôi cuốn tôi từ đầu cho đến hết tập truyện. Đó là câu chuyện về một hành trình dài đầy gian lao, khắc nghiệt và nguy hiểm, một cuộc phiêu lưu sống động và hồi hộp không kém gì Rôbinxơn.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:35+00:00"/>
+        <meta name="calibre:title_sort" content="Papillon - Người Tù Khổ Sai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

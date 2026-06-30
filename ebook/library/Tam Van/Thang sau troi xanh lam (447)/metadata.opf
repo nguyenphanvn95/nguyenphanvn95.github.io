@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">447</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e002b839-5516-4bee-be09-a1a42ec50885</dc:identifier>
+        <dc:title>Tháng sáu trời xanh lam</dc:title>
+        <dc:creator opf:file-as="Văn, Tâm" opf:role="aut">Tâm Văn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:34+00:00</dc:date>
+        <dc:description>&lt;p&gt;Vi Lam, một cô gái không xinh đẹp, gầy gò, nhút nhát, giống như không chịu được mưa rơi gió thổi nhưng lại cố tình tỏ ra kiên cường. Đôi mắt đen láy sáng ngời chứa đầy vẻ ngang ngạnh và thách thức đã cuốn hút Tần Thiên Lãng. Anh như nhìn thấy rõ hình ảnh mình trên con người Vi Lam. Anh tìm thấy được sự đồng cảm của những kẻ chung cảnh ngộ và đã đem lòng yêu cô từ ánh mắt đầu tiên. Tần Thiên Lãng, một đứa con hoang đầy cao ngạo nhưng lại rất yếu đuối, có bao cô gái xinh đẹp, si tình vây quanh nhưng trái tim luôn hướng về Vi Lam.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:44+00:00"/>
+        <meta name="calibre:title_sort" content="Tháng sáu trời xanh lam"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

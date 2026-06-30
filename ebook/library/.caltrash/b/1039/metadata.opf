@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1039</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a850e364-8277-4b53-89d3-d201dbf95072</dc:identifier>
+        <dc:title>Nguồn Cội</dc:title>
+        <dc:creator opf:file-as="Brown, Dan" opf:role="aut">Dan Brown</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-08-17T01:46:57+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description" style="font-family: 'Segoe UI', sans-serif; font-size: 13px;"&gt;Robert Langdon chờ đợi một tuyên bố quan trọng -  "sẽ thay đổi bộ mặt khoa học mãi mãi" – từ Edmond Kirsch - một tỷ phú bốn mươi tuổi, một nhà tiên tri với những phát minh kỹ thuật cao, nhưng khi tuyên bố đó chưa thành lời thì Kirsch bị ám sát trước mắt mọi người...  &lt;/p&gt;&lt;p class="description" style="font-family: 'Segoe UI', sans-serif; font-size: 13px;"&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li style="font-family: 'Segoe UI', sans-serif; font-size: 13px;"&gt;Soát lỗi lần 2: Caruri&lt;/li&gt;&lt;li style="font-family: 'Segoe UI', sans-serif; font-size: 13px;"&gt;Soát lỗi lần 1: Quandeptrai &lt;/li&gt;&lt;li style="font-family: 'Segoe UI', sans-serif; font-size: 13px;"&gt;Tài trợ sách: Kaoaye.&lt;/li&gt;&lt;li&gt;&lt;font face="Segoe UI, sans-serif" size="2"&gt;Nguyễn Xuân Hồng (dịch)&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Lao Động</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>@.Tây Ban Nha</dc:subject>
+        <dc:subject>Tôn giáo</dc:subject>
+        <dc:subject>Khoa học</dc:subject>
+        <dc:subject>Phiêu lưu</dc:subject>
+        <meta name="calibre:series" content="Robert Langdon"/>
+        <meta name="calibre:series_index" content="5"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:52+00:00"/>
+        <meta name="calibre:title_sort" content="Nguồn Cội"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

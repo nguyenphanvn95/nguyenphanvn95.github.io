@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2452</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a0799c51-7c04-41be-8531-1bf5d6451b4f</dc:identifier>
+        <dc:title>1984</dc:title>
+        <dc:creator opf:file-as="ORWELL, GEORGE" opf:role="aut">George Orwell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-09-17T15:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">7c97f903-85f1-4004-8f20-c71d70d0c848</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:47+00:00"/>
+        <meta name="calibre:title_sort" content="1984"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

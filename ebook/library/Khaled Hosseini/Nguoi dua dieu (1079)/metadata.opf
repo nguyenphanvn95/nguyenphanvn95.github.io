@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1079</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e45f1719-fa6f-4079-b5b1-75075cb767a5</dc:identifier>
+        <dc:title>Người đua diều</dc:title>
+        <dc:creator opf:file-as="Hosseini, Khaled" opf:role="aut">Khaled Hosseini</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Người đua diều là món quà tặng xúc động và đầy ý nghĩa nhà văn Khaled 
+Hosseini gửi lại cho quê hương mình, nơi cuộc sống yên bình vẫn chưa trở
+ lại. &lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:56+00:00"/>
+        <meta name="calibre:title_sort" content="Người đua diều"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

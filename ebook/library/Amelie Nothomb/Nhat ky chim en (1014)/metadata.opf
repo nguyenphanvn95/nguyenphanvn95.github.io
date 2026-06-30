@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1014</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1a6c959a-971d-42b0-a5db-d5027a7ce245</dc:identifier>
+        <dc:title>Nhật ký chim én</dc:title>
+        <dc:creator opf:file-as="Nothomb, Amelie" opf:role="aut">Amelie Nothomb</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Một gã chạy việc lặt vặt đổi danh tính để trở thành một tay giết thuê có hạng. Cho tới một ngày, gã tình cờ đọc được nhật ký của một cô bé mười sáu tuổi, nạn nhân của gã. Cuốn nhật ký khiến gã bừng tỉnh. Cuộc đời gã rẽ sang một trang mới, tình yêu trong gã nảy nở, tâm hồn gã trở nên ngây thơ hơn, trong sạch hơn... nhưng mọi chuyện liệu có quá muộn?&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Một lần nữa, cuộc chiến giữa Thiện và Ác, giữa Tình yêu và Hận thù trở thành chủ đề chính trong sáng tạo của Amelie Nothomb. Vẫn với lối tượng trưng hóa và liên tưởng tài tình, cùng một loạt các đoạn hội thoại sắc sảo, lạ lùng, không bao giờ nhàm chán, Nhật ký Chim Én từng giúp tác giả của nó trở thành một trong những nhà văn trẻ nhất có tên trong danh sách đề cử giải Goncourt năm 2006.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam + NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:49+00:00"/>
+        <meta name="calibre:title_sort" content="Nhật ký chim én"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

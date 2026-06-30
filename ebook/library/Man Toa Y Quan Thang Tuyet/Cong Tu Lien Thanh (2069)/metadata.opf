@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2069</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ff9de66e-610c-4fc7-9d0c-35c38ab5eb5f</dc:identifier>
+        <dc:title>Công Tử Liên Thành</dc:title>
+        <dc:creator opf:file-as="Tuyết, Mãn Tọa Y Quan Thắng" opf:role="aut">Mãn Tọa Y Quan Thắng Tuyết</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-27T12:50:51+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sau một lần thăng cấp với quy mô lớn, game online “Truyền Thuyết Anh Hùng” mở hệ thống thành chiến, đồng thời chuẩn bị tiến hành PK liên server mang tính toàn quốc, chỉ trong thời gian ngắn phát triển ào ào như vũ bão, giới giang hồ vốn đang trào dâng như thuỷ triều giờ lại dấy lên những đợt sóng cao ngất trời. Trong server có tên là Thịnh Thế, đệ nhất bang phái nổi tiếng là Khải Hoàn Hào Môn có tứ đại công tử – Công Tử Tiểu Bạch, Công Tử Liên Thành, Công Tử Vô Kỵ, Công Tử Phù Tô, đều là những nhân vật có thực lực mạnh mẽ, kiêu dũng thiện chiến. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:01+00:00"/>
+        <meta name="calibre:title_sort" content="Công Tử Liên Thành"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

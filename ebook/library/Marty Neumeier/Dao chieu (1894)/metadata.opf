@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1894</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8131f194-09c5-4a5a-953a-316432986714</dc:identifier>
+        <dc:title>Đảo chiều</dc:title>
+        <dc:creator opf:file-as="Neumeier, Marty" opf:role="aut">Marty Neumeier</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Trong thời đại tràn lan sản phẩm “nhái” và truyền thông trực tuyến, việc theo kịp đối thủ cạnh tranh không còn là chiến lược để chiến thắng nữa.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Ngày nay, bạn phải thật sự khác biệt về hành động và khác biệt về khả năng sáng tạo so với đối thủ cạnh tranh. Và nguyên tắc mới? Giống như trò chơi zig - zag, khi đám đông “thuận chiều” thì chúng ta phải “đảo chiều”.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Trong cuốn sách bestseller của mình, The Brand Gap (Khoảng cách), Neumeier đã chỉ cho các công ty cách thu hẹp khoảng cách giữa chiến thuật và khả năng sáng tạo. Bây giờ, trong Zag (Đảo chiều), ông chỉ ra cho chúng ta chiến lược số một của những thương hiệu hàng đầu - đó là “khác biệt hoàn toàn”.&lt;/em&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt;&lt;p&gt;&lt;b&gt;http://tve-4u.org&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Alphabooks+NXB Lao Động Xã Hội</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:37+00:00"/>
+        <meta name="calibre:title_sort" content="Đảo chiều"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

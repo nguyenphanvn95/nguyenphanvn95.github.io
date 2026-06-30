@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2255</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e30628c3-6f8a-4dc2-a519-d94fbfb79ca7</dc:identifier>
+        <dc:title>Bí quyết thành công của các doanh nhân thành đạt</dc:title>
+        <dc:creator opf:file-as="Hà, Nguyễn Thị Hồng" opf:role="aut">Nguyễn Thị Hồng Hà</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-09-20T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;“Chìa khóa cho thành công là luôn phải gieo hạt giống. Bạn biết nó sẽ mọc lên loại cây nào, nhưng khi bạn gieo càng nhiều, cơ hội để có một loại cây ưng ý sẽ tăng lên”. Điều này đồng nghĩa với việc bạn có thể luận bàn về công việc kinh doanh ở bất cứ đâu, vào bất cứ lúc nào. Đảm bảo mình luôn trong tình trạng lên dây cót trước mọi cơ hội tiềm ẩn, chứ không tự đặt mình vào thế bị động khi nó xuất hiện. Cuốn sách “Bí quyết thành công của các doanh nhân thành đạt” sẽ giúp bạn tìm tòi, nghiên cứu và học hỏi những bí quyết thành công nổi tiếng, từ những tấm gương thành đạt được ngưỡng mộ. Kèm theo đó còn là các ví dụ được trích dẫn để bạn hình dung được phương thức, phương pháp áp dụng trong thực tiến. Cuốn sách sẽ là cẩm nang thành công của những ai ham học hỏi. Mời các bạn đón đọc!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Thời Đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Kinh doanh</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:24+00:00"/>
+        <meta name="calibre:title_sort" content="Bí quyết thành công của các doanh nhân thành đạt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

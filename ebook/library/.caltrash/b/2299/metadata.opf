@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2299</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1dd6c100-ddfd-4a9b-b68d-b240cff81b6d</dc:identifier>
+        <dc:title>Bí mật của đàn ông</dc:title>
+        <dc:creator opf:file-as="Hạnh, Lê" opf:role="aut">Lê Hạnh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;"Mỗi người đàn ông là một cuốn sách nếu ta biết đọc nó".&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Tâm lý đàn ông luôn là một câu hỏi lớn cần được giải đáp của phái đẹp. Phải làm thế nào để hiểu được chàng? Đàn ông thường quan tâm đến điều gì trong cuộc sống? Đàn ông đối với tình yêu như thế nào? Đàn ông có thực sự là phái mạnh? Có vô vàn những câu hỏi về các chàng mà không phải lúc nào phụ nữ cũng có thể đọc vị được. Bởi bản tính của đàn ông là không thích bộc lộ quá nhiều về mình.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Vì vậy, cuốn sách cuốn sách “Bí mật đàn ông” là cẩm nang bổ ích giúp chúng ta thích nghi một cách hoàn hảo với đấng mày râu.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Mời các bạn đón đọc!&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Văn Hóa Thông Tin</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Sức khỏe - Làm đẹp</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:29+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật của đàn ông"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

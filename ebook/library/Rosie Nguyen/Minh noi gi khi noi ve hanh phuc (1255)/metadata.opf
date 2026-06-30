@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1255</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">647bb454-912a-419b-9169-c4a924397bb4</dc:identifier>
+        <dc:title>Mình nói gì khi nói về hạnh phúc</dc:title>
+        <dc:creator opf:file-as="Nguyễn, Rosie" opf:role="aut">Rosie Nguyễn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-04-21T06:48:48+00:00</dc:date>
+        <dc:description>Khi đăng cuốn sách "Mình nói gì khi nói về hạnh phúc _ Rosie Nguyễn" mình rất mong các bạn sẽ trả lời, rằng hạnh phúc trong các bạn là gì?  Rằng các bạn sẽ làm gì để có được hạnh phúc ? 
+Đối với mình hạnh phúc đơn giản lắm,  mình hạnh phúc lắm khi được ngồi ở một góc quán quen thuộc nhâm nhi tách cafe cùng vài cuốn sách thật hay, thỉnh thoảng nhìn qua ô cửa kính rồi thấy đời thật bình yên.
+ Hạnh phúc lắm là khi mình thả hồn vào từng mạch chuyện của đời thường đặt mình vào vị trí của người khác mà suy nghĩ để thấy mọi việc đều rất đổi bình thường. 
+Hạnh phúc lắm là khi vắt mình trên chiếc cầu khỉ hóng gió thu,  bình yên lắm thông thả lắm thanh bình lắm nhờ làn gió lồng lộng của trời chiều phả vào hồn một kí ức nào đó tưởng chừng đã quên, và mòn biết gió đang thay mình ôn lại những kỉ niệm xưa cũ.
+Và sau mỗi mục sách sẽ là cảm nghĩ của mình, rất mong các bạn khi đọc rồi sẽ để lại suy nghĩ của các bạn nhé,  để chúng ta có thể đi sâu vào tâm hồn nhau hơn, để ta biết rằng sách là công cụ giúp những tâm hồn va chạm nhau để ta trở thành một phần trong cuộc đời nhau.</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/145879459</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>samlan</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>Random</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:17+00:00"/>
+        <meta name="calibre:title_sort" content="Mình nói gì khi nói về hạnh phúc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

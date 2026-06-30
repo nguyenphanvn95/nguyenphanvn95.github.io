@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1841</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0e478453-9b51-466f-9936-ffc49efd1cae</dc:identifier>
+        <dc:title>Đêm chủ nhật dài</dc:title>
+        <dc:creator opf:file-as="Williams, Charler" opf:role="aut">Charler Williams</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-02-13T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Một tay trung lưu an phận bỗng dưng bị cuốn vào một án mạng nghiêm trọng mà chính mình cũng không hiểu vì sao. Bỗng dưng trở thành nghi can chính và mọi chứng cứ đều chống lại mình. Anh ta đành bỏ trốn và thuê thám tử để tự phá án trong khi vợ phản bội, bạn bè hại ngầm. Truyện vô cùng hấp dẫn, lôi cuốn với nhiều tình tiết li kỳ, hết sức bất ngờ.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:31.374564+00:00"/>
+        <meta name="calibre:title_sort" content="Đêm chủ nhật dài"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

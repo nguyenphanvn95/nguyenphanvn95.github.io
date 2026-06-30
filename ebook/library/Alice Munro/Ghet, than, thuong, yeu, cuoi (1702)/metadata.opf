@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1702</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3247f89e-ed6f-409c-88bd-73ffd239e790</dc:identifier>
+        <dc:title>Ghét, thân, thương, yêu, cưới</dc:title>
+        <dc:creator opf:file-as="Alice Munro" opf:role="aut">Alice Munro</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>Gassie</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>©vctvegroup</dc:subject>
+        <dc:subject>Tập truyện ngắn</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:16+00:00"/>
+        <meta name="calibre:title_sort" content="Ghét, thân, thương, yêu, cưới"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

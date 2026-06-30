@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1401</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5a4a92dc-8ce4-40bb-b08a-f556e6312f5c</dc:identifier>
+        <dc:title>Lễ tình nhân đến muộn</dc:title>
+        <dc:creator opf:file-as="Trừng, Tử" opf:role="aut">Tử Trừng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-24T04:54:38+00:00</dc:date>
+        <dc:description>&lt;p&gt;Không muốn tâm huyết cả đời của cha bị hủy hoại, Kế Chỉ Tường đã đồng ý một "cuộc hôn nhân doanh nghiệp” với Cận Trọng Kỳ, tổng giám đốc của tập đoàn xây dựng nổi tiếng, để có thể cứu công ty của gia đình đang trên bờ vực phá sản. Bắt đầu một cuộc hôn nhân không tình yêu, Chỉ Tường vốn không hy vọng vào sự rung động của trái tim nhưng không biết từ bao giờ Trọng Kỳ đã trở thành một phần không thể thiếu trong cuộc sống của cô.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:34+00:00"/>
+        <meta name="calibre:title_sort" content="Lễ tình nhân đến muộn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

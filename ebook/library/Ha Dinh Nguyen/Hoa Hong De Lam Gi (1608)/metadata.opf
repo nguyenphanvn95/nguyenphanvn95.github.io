@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1608</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fbebd8aa-1cfc-4623-adbc-5a26cb9e93c7</dc:identifier>
+        <dc:title>Hoa Hồng Để Làm Gì</dc:title>
+        <dc:creator opf:file-as="Nguyen, Ha Dinh" opf:role="aut">Ha Dinh Nguyen</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:56+00:00"/>
+        <meta name="calibre:title_sort" content="Hoa hong de lam gi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

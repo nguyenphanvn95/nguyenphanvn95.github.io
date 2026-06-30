@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1926</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d88e6b09-38ed-4364-a305-f61afa6bdbe8</dc:identifier>
+        <dc:title>Chuyện Xưa Chuyện nay</dc:title>
+        <dc:creator opf:file-as="Sơn, Bùi Văn Lam" opf:role="aut">Bùi Văn Lam Sơn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-22T16:45:22+00:00</dc:date>
+        <dc:description>&lt;p&gt;Mục ‘Câu chuyện triết học’ trên báo Sài Gòn tiếp thị những bài viết tuyệt vời của Bùi Văn Nam Sơn. Đấy là những bài ngắn, giản dị, hấp dẫn về những vấn đề triết học cơ bản. Đương nhiên không phải ai cũng cần trở thành nhà triết học, nhưng những hiểu biết sơ đẳng về triết học, “biết đôi chút cái mùi triết học” như có người nói, là cần cho mọi người, bởi lịch sử triết học cũng chính là lịch sử hình thành và phát triển tư duy của loài người, trong quá trình lâu dài trăn trở làm người, từ mông muội cho đến trưởng thành.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:40.594249+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện Xưa Chuyện nay"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

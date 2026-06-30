@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1576</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2b62b035-44f2-4df6-9a3b-045293b9cc26</dc:identifier>
+        <dc:title>Hồi Ký Hillary Clinton Và Chính Trường Nước Mỹ</dc:title>
+        <dc:creator opf:file-as="Clinton, Hillary Rodham" opf:role="aut">Hillary Rodham Clinton</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Hillary Rodham Clinton hiện được hàng trăm triệu người trên thế giới quan tâm không chỉ vì bà là phu nhân của cựu Tổng thống Mỹ Bill Clinton hay vì Hillary là một người phụ nữ có tính cách đặc biệt mà còn vì bà hiện là một Thượng nghị sĩ Đảng Dân chủ có thế lực trên chính trường và có thể tranh cử Tổng thống nước Mỹ vào năm 2008. Tuy thế, chỉ một số bạn bè, người thân mới biết đến hành trình phi thường và khả năng viết đặc biệt của bà. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:53+00:00"/>
+        <meta name="calibre:title_sort" content="Hồi Ký Hillary Clinton Và Chính Trường Nước Mỹ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

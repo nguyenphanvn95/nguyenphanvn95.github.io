@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2181</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e53920bd-c756-4689-9662-19a539da7852</dc:identifier>
+        <dc:title>Cái Chết Huy Hoàng</dc:title>
+        <dc:creator opf:file-as="Robb, J. D." opf:role="aut">J. D. Robb</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Giải xong một vụ án hóc búa cùng mối tình với chàng tỷ phú độc thân nổi tiếng nhất thế giới - cả hoa hồng lẫn chông gai đang trải ra trước mắt Eve, nữ trung úy thông minh của sở cảnh sát New York. Khi một số người nổi tiếng đồng loạt bị giết bởi cùng một lưỡi dao, cô vào cuộc trong nỗi hoang mang sâu sắc. Bởi lẽ tất cả nạn nhân đều ít nhiều liên can đến Roarke - người mà cô yêu say đắm nhưng chưa đủ dũng khí để mở lòng. Bế tắc trong suy luận, thử thách trong tình cảm, áp lực nặng nề từ truyền thông, Eve đứng trước thời điểm khắc nghiệt nhất của sự nghiệp cũng như cuộc sống cá nhân. Liệu cô có tìm ra động cơ đằng sau những xác người ăn vận lộng lẫy nằm trên ngõ tối, và tìm ra cách bước tiếp trên con đường tình yêu mà cô chưa từng đặt chân?&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Nối tiếp thành công &lt;i&gt;Cái Chết Trần Trụi&lt;/i&gt;, &lt;i&gt;Cái Chết Huy Hoàng&lt;/i&gt; - tập thứ hai của bộ &lt;i&gt;In Death&lt;/i&gt; - khẳng định mạnh mẽ hơn tên tuổi của J. D. Robb trong mảng tiểu thuyết lãng mạn - ly kỳ, dòng sách mà bà không có địch thủ trong nhiều năm nay.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:16+00:00"/>
+        <meta name="calibre:title_sort" content="Cái Chết Huy Hoàng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

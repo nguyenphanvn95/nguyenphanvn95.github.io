@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">224</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9bc45dd7-4fe5-4dd7-b3fb-d6471cc2b1a9</dc:identifier>
+        <dc:title>Chúng ta cách nhau một bước chân</dc:title>
+        <dc:creator opf:file-as="Lê, Tùng" opf:role="aut">Tùng Lê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://307a0e78.vws.vegacdn.vn/view/v2/image/img.book/0/0/1/46738.jpg?v=1&amp;amp;w=480&amp;amp;h=700" alt="Chúng ta cách nhau một bước chân"&gt;&lt;/p&gt;
+&lt;p&gt;Hội viên&lt;img src="https://waka.vn/svgs/icon-member.svg" alt="icon-member"&gt;&lt;/p&gt;
+&lt;h1&gt;Chúng ta cách nhau một bước chân&lt;/h1&gt;
+&lt;p&gt;5.0&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://waka.vn/svgs/icon-star.svg" alt="icon-star"&gt;&lt;img src="https://waka.vn/svgs/icon-star.svg" alt="icon-star"&gt;&lt;img src="https://waka.vn/svgs/icon-star.svg" alt="icon-star"&gt;&lt;img src="https://waka.vn/svgs/icon-star.svg" alt="icon-star"&gt;&lt;img src="https://waka.vn/svgs/icon-star.svg" alt="icon-star"&gt;&lt;/p&gt;
+&lt;p&gt;・1 đánh giá&lt;/p&gt;
+&lt;p&gt;Tác giả&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://waka.vn/author/tung-le-eWQ1"&gt;&lt;span style="color: #6cb4ee"&gt;Tùng Lê&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thể loại&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://waka.vn/ebook/truyen-tieu-thuyet-gAvQW.html"&gt;&lt;span style="color: #6cb4ee"&gt;Truyện - Tiểu thuyết&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nhà xuất bản&lt;/p&gt;
+&lt;p&gt;NXB Lao Động&lt;/p&gt;
+&lt;p&gt;Gói cước&lt;/p&gt;
+&lt;p&gt;Hội viên&lt;/p&gt;
+&lt;p&gt;Phát hành&lt;/p&gt;
+&lt;p&gt;17/11/2023&lt;/p&gt;
+&lt;p&gt;Chọn loại sách&lt;/p&gt;
+&lt;p&gt;Sách điện tử&lt;/p&gt;
+&lt;p&gt;Sách nói&lt;/p&gt;
+&lt;p&gt;Sách tương tác&lt;/p&gt;
+&lt;p&gt;Chọn nội dung&lt;/p&gt;
+&lt;p&gt;Đầy đủ&lt;/p&gt;
+&lt;p&gt;Tóm tắt&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://waka.vn/svgs/icon-book-blank.svg" alt="icon-book-blank"&gt;Đọc sách&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://waka.vn/svgs/icon-play.svg" alt="icon-play"&gt;&lt;/p&gt;
+&lt;p&gt;Nghe sách&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://waka.vn/svgs/icon-heart.svg" alt="icon-heart"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://waka.vn/svgs/icon-share.svg" alt="icon-share"&gt;&lt;/p&gt;
+&lt;p&gt;“Đau khổ nhất không phải là mất đi người mình yêu thương, mà là phải quên đi họ, phải không!”&lt;/p&gt;
+&lt;p&gt;“Chúng ta không chết. Chỉ là lần này, chúng ta sống mãi trong nhau.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chúng ta cách nhau một bước chân&lt;/strong&gt; gửi gắm đến độc giả thông điệp về gia đình, tình yêu, hạnh phúc đôi lứa, xen lẫn sự mất mát và hi sinh của cha mẹ dành cho con cái.&lt;/p&gt;
+&lt;p&gt;Mời các bạn đón đọc tiểu thuyết &lt;strong&gt;Chúng ta cách nhau một bước chân&lt;/strong&gt; của tác giả &lt;strong&gt;Tùng Lê&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:23.149093+00:00"/>
+        <meta name="calibre:title_sort" content="Chúng ta cách nhau một bước chân"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

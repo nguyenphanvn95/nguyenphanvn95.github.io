@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">681</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ca832f6f-ba8b-410e-824a-699e1ff7aaf8</dc:identifier>
+        <dc:title>Sức mạnh của 6-Sigma</dc:title>
+        <dc:creator opf:file-as="Chowdhury, Subir" opf:role="aut">Subir Chowdhury</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:19:37+00:00</dc:date>
+        <dc:description>&lt;p&gt;6-Sigma đã trở thành một phần trung tâm của việc thành công trong kinh doanh, mỗi người phải biết và áp dụng các nguyên tắc này đối với các tổ chức của mình. 'Sức mạnh của 6-Sigma' sẽ cải thiện việc tham gia ở tất cả các cấp của tổ chức, bở vì nó đã biến một chủ đề phức tạp thành dễ hiểu và muốn đọc. Cuốn sách này sẽ trở thành một bộ mã nguồn cho những ai muốn hiểu và thức 6-Sigma thành công."&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Management</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:10+00:00"/>
+        <meta name="calibre:title_sort" content="Sức mạnh của 6-Sigma"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2306</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">56ee8bcc-8715-4141-b5b8-d413a82fdabd</dc:identifier>
+        <dc:title>Bi Kịch Cuối Cùng</dc:title>
+        <dc:creator opf:file-as="Queen, Ellery" opf:role="aut">Ellery Queen</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-07-03T02:26:36+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;div class="translator"&gt;Dịch giả: &lt;b&gt;Đinh Trọng Nhân&lt;/b&gt;&lt;/div&gt;&lt;div class="original_title"&gt;Nguyên tác: &lt;b&gt;Drury Lane’s Last Case &lt;i&gt;(1933)&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;&lt;div class="series"&gt;Bộ sách: &lt;b&gt;Tấn Bi Kịch &lt;i&gt;[4]&lt;/i&gt;&lt;/b&gt;&lt;/div&gt;
+     &lt;p class="description"&gt;Bi kịch cuối cùng được bắt đầu từ việc một người đàn ông kỳ lạ với bộ râu Joseph sặc sỡ đến gặp Thanh tra Thumm để gửi ông giữ một chiếc phong bì. Đây chính là mấu chốt để giải quyết hàng loạt những vụ án bí ẩn phía sau. 2 người trong đoàn giáo viên đến tham quan Bảo tàng nổi tiếng Britannic bị mất tích, đó là 2 người lạ mặt, không hề có trong đoàn giáo viên nhưng vẫn lên được xe nhờ lậu vé. Trong quá trình tham quan, một cuốn sách cổ, có giá trị lớn bị đánh cắp ngay trong Bảo tàng và được thay thế bởi cuốn sách còn có giá trị hơn rất nhiều. Một tên trộm có tâm? Các manh mối dẫn đội điều tra (gồm Thám tử Thumm, con gái Thumm là Patience, một anh chàng làm việc trong bảo tàng, mê đắm Patience là Rowe, và đương nhiên không thể thiếu người nghệ sĩ già đã nghỉ hưu, thích phá án, Drury Lane) đến một vụ án khác.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:identifier opf:scheme="GOODREADS">33147685</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <dc:subject>Cổ điển</dc:subject>
+        <dc:subject>@.Mỹ</dc:subject>
+        <dc:subject>$</dc:subject>
+        <meta name="calibre:series" content="Tấn Bi Kịch"/>
+        <meta name="calibre:series_index" content="4"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:30+00:00"/>
+        <meta name="calibre:title_sort" content="Bi Kịch Cuối Cùng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

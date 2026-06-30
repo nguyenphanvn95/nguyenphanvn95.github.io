@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2184</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2a2ea84d-a0bd-459e-acb9-c5848a203d03</dc:identifier>
+        <dc:title>Cái chai em cầm</dc:title>
+        <dc:creator opf:file-as="Tran Dai Du" opf:role="aut">Tran Dai Du</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-04-02T10:27:35+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=caichaiemcam</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:17+00:00"/>
+        <meta name="calibre:title_sort" content="Cái chai em cầm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

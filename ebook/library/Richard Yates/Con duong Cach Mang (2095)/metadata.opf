@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2095</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a8a30699-171c-4fdc-aaf0-4f609bc7a2ec</dc:identifier>
+        <dc:title>Con đường Cách Mạng</dc:title>
+        <dc:creator opf:file-as="Yates, Richard" opf:role="aut">Richard Yates</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Cuốn tiểu thuyết là một trong những khúc ca bi tráng nhất về sự cô độc của con người trong lịch sử văn học nhân loại. Năm 2005, tiểu thuyết Con đường cách mạng được tạp chí Time bình chọn là một trong 100 cuốn sách viết bằng tiếng Anh kinh điển nhất từ năm 1923 đến nay. Tác phẩm đã được đạo diễn Sam Mendes khởi dựng thành phim và đạt nhiều thành công vang dội.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Phương Đông + NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Classics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:05+00:00"/>
+        <meta name="calibre:title_sort" content="Con đường Cách Mạng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

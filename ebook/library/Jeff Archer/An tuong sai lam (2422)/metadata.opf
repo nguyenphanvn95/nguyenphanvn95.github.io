@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2422</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b9c9da72-02f4-401d-a38a-62758410cbbc</dc:identifier>
+        <dc:title>Ấn tượng sai lầm</dc:title>
+        <dc:creator opf:file-as="Archer, Jeff" opf:role="aut">Jeff Archer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Nhân vật chính trong Ấn tượng sai lầm là Anna Petrescu, một ngôi sao điền kinh đồng thời là tiến sĩ về lĩnh vực lịch sử tranh nghệ thuật của Đại học Pennsylvania. Cô bắt đầu làm việc ở Sotheby’s và sau đó làm cho một ngân hàng, nơi có vị giám đốc Bryce Fenston cũng là một chuyên gia sưu tầm tranh.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Chuyến phiêu lưu qua Toronto, London, Bucharest, rồi Hồng Kông, Tokyo, lúc nào cũng cận kề nguy hiểm khi luôn có sự theo sát của Olga Krantz, nữ sát thủ chuyên nghiệp, đam mê giết người bằng nhát cứa cổ họng “rất ngọt”, và anh chàng đặc vụ FBI Jack, người theo dõi cô từ lâu. Anna và bức họa danh tiếng kia trở thành “mục tiêu” săn đuổi tới cùng của các âm mưu đen tối. Hành trình tìm câu trả lời cho những nghi vấn trong đầu Anna đã dần hé lộ rất nhiều sự thật về: ông chủ giàu có Fenston cùng những kẻ đứng sau hắn ta, gia đình quý tộc Wentworth, thương gia người Nhật thích sưu tầm những kiệt tác nghệ thuật và ngay cả người bạn thân thiết nhất của cô, Tina, cô thư ký của Fenston…&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Phương Đông + NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:43+00:00"/>
+        <meta name="calibre:title_sort" content="Ấn tượng sai lầm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

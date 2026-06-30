@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">999</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">847f9d8c-b9fc-4eb2-b26a-8cea8ab6d294</dc:identifier>
+        <dc:title>Nhìn vẻ bề ngoài biết ngay tâm lý tính cách con người</dc:title>
+        <dc:creator opf:file-as="Mông, Mênh" opf:role="aut">Mênh Mông</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-02-25T18:35:45+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:identifier opf:scheme="MOBI-ASIN">246ce7e8-e89d-4f99-a637-74decb5386c9</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:47+00:00"/>
+        <meta name="calibre:title_sort" content="Nhìn vẻ bề ngoài biết ngay tâm lý tính cách con người"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

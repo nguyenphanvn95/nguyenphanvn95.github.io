@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1790</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">008add80-e222-4055-8608-f432246fdb2e</dc:identifier>
+        <dc:title>Đỉnh cao chói lọi</dc:title>
+        <dc:creator opf:file-as="Hương, Dương thu" opf:role="aut">Dương Thu Hương</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:29+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Tác phẩm này đề cập tới nhân vật chính là Chủ tịch, người nhìn lại quãng đời về già của mình sau khi qua nhiều vinh nhục, ông cảm thấy cô đơn và trống vắng. Chủ tịch cảm thấy tủi nhục khi từng leo lên đỉnh cao chói lọi nhưng không đủ sức để bảo vệ người yêu của mình&lt;/p&gt;</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:25+00:00"/>
+        <meta name="calibre:title_sort" content="Đỉnh cao chói lọi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

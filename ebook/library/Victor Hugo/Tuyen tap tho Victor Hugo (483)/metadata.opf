@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">483</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bdd02df2-3466-4388-9b50-633a56520074</dc:identifier>
+        <dc:title>Tuyển tập thơ Victor Hugo</dc:title>
+        <dc:creator opf:file-as="Hugo, Victor" opf:role="aut">Victor Hugo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;"Hugo ... đã trở thành nhà thơ lớn vào tuổi đời mà người khác còn rất non trẻ" .&lt;/P&gt; &lt;P&gt;&lt;I&gt;( Banzăc )&lt;/I&gt;&lt;/P&gt; &lt;P&gt;"Tính nhạc của thơ Hugo thích ứng với những hoà âm sâu lắng của thiên nhiên ; nhà điêu khắc , ông gọt rũa trong các khổ thơ cái dáng vẻ không thể nào quên của các sự vật ; là hoạ sĩ , ông làm cho chúng rạng rỡ lên bằng những màu sắc thích hợp" .&lt;/P&gt; &lt;P&gt;&lt;I&gt;( Bôđơle )&lt;/I&gt;&lt;/P&gt; &lt;P&gt;"Nhà thơ Pháp lớn nhất , chà ! ... "&lt;/P&gt;</dc:description>
+        <dc:publisher>Herakler</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Classics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:48+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập thơ Victor Hugo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

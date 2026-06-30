@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">628</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">65504e9c-546c-4f98-9925-6acce3ba56d8</dc:identifier>
+        <dc:title>Tặng một vầng trăng</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-12T06:26:44+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tập truyện cực ngắn này của nhiều nhà văn tên tuổi Trung Quốc do dịch giả Vũ Công Hoan biên dịch. Điểm nổi bật của tập truyện này là sự ngắn gọn, xúc tích, nhiều tầng lớp ý nghĩa gói gọn trong một số lượng câu chữ ít ỏi. Truyện ngắn nhất chỉ có hơn 200 chữ, truyện dài nhất chỉ tương đương một truyện ngắn thông thường. Đó là những câu chuyện mang đầy tính nhân văn và tình người. Con người ở đây thật bình dị, dù chưa hoàn thiện hay còn nhiều thiếu sót, vẫn luôn sáng đẹp một phẩm chất người cao cả, luôn bao dung, chia sẻ niềm vui nỗi buồn cùng nhau, luôn sẵn sàng hy sinh vì người khác. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:05+00:00"/>
+        <meta name="calibre:title_sort" content="Tặng một vầng trăng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

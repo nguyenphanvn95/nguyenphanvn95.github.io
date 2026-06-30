@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1717</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c56a8604-fdcf-406b-bdb7-75ae2d41509a</dc:identifier>
+        <dc:title>Ếch</dc:title>
+        <dc:creator opf:file-as="Ngôn, Mạc" opf:role="aut">Mạc Ngôn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;EM&gt;“ẾCH” do NXB Văn nghệ Thượng Hải xuất bản, vừa phát hành tại Trung Quốc vào những ngày cuối tháng 12 này, đã nhanh chóng thu hút đông đảo độc giả Trung Quốc và dấy lên làn sóng tò mò háo hức của độc giả nhiều nước vốn mê thích truyện của Mạc Ngôn. Cuốn sách xoay quanh cuộc đời và công việc của nhân vật chính – một nữ bác sĩ chuyên đỡ đẻ ở khắp nông thôn Cao Mật, phải chuyển sang nghề thắt ống dẫn tinh cho nam giới và nạo phá thai. Đây là một đề tài cực kỳ hiếm hoi trong văn học, được nhà văn Mạc Ngôn miêu tả vô cùng khéo léo và đầy kịch tính. Cuốn sách như một bức tranh xã hội sâu sắc ở Trung Quốc, phản ánh được những tác động của chính sách kế hoạch hóa gia đình kéo dài hơn 30 năm tới cuộc sống của người dân nước này.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;STRONG&gt;http://tve-4u.org&lt;/STRONG&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>Chibooks + NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:18+00:00"/>
+        <meta name="calibre:title_sort" content="Ếch"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1756</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">31214dbe-b89f-4bf5-8503-f256128244fc</dc:identifier>
+        <dc:title>Dòng Thác Cuốn</dc:title>
+        <dc:creator opf:file-as="Lý, Nguyễn Vạn" opf:role="aut">Nguyễn Vạn Lý</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-29T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Dòng Thác Cuốn là câu chuyện trong cái dinh cơ giầu có của nhà họ Cao 
+tại Thành Đô tỉnh Tứ Xuyên. Trong cái gia đình Tứ đại đồng đường này bốn
+ thế hệ sống chung với nhau, cùng với rất nhiều gia nhân nô tỳ. Đó là 
+một hình ảnh tương phản giữa nước Trung Hoa cổ và những đợt sóng mới 
+trào dâng lên để hủy diệt cái xã hội cổ ấy, được biểu thị trong đời sống
+ hàng ngày của nhà họ Cao, và đặc biệt là ba anh em nhà họ Cao còn trẻ 
+là Cao Giác Tân, Cao Giác Dân và Cao Giác Tuệ.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:22+00:00"/>
+        <meta name="calibre:title_sort" content="Dòng Thác Cuốn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1122</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8382ed38-64c7-4450-b88e-5a1e4d893160</dc:identifier>
+        <dc:title>Nghệ Thuật Hiểu Thấu Tâm Lý Người Khác</dc:title>
+        <dc:creator opf:file-as="Nguyễn Công Khanh, Nguyễn Minh Đức" opf:role="aut">Nguyễn Công Khanh, Nguyễn Minh Đức</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-06-26T17:00:00+00:00</dc:date>
+        <dc:publisher>NXB Thanh Niên</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:01+00:00"/>
+        <meta name="calibre:title_sort" content="Nghệ Thuật Hiểu Thấu Tâm Lý Người Khác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

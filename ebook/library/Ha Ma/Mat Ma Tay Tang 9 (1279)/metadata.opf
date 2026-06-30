@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1279</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ef4fb1f2-0e9d-4d83-9fa7-3817cbc1cae5</dc:identifier>
+        <dc:title>Mật Mã Tây Tạng 9</dc:title>
+        <dc:creator opf:file-as="Mã, Hà" opf:role="aut">Hà Mã</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:12+00:00</dc:date>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Advanture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <dc:subject>Mật mã Tây Tạng</dc:subject>
+        <meta name="calibre:series" content="Mật mã Tây Tạng"/>
+        <meta name="calibre:series_index" content="9"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:20+00:00"/>
+        <meta name="calibre:title_sort" content="Mật Mã Tây Tạng 9"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

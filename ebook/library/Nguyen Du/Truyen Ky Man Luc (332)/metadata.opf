@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">332</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f93cea29-044e-4c7c-8ac8-df5cb419cd6b</dc:identifier>
+        <dc:title>Truyền Kỳ Mạn Lục</dc:title>
+        <dc:creator opf:file-as="Dữ, Nguyễn" opf:role="aut">Nguyễn Dữ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sao chép tản mạn những truyện lạ), là tác phẩm duy nhất của danh sĩ Nguyễn Dữ[1], sống vào khoảng thế kỷ 16 tại Việt Nam. Đây là tác phẩm được Hà Thiện Hán viết lời Tựa, Nguyễn Bỉnh Khiêm (thầy dạy tác giả) phủ chính, Nguyễn Thế Nghi,[2] dịch ra chữ Nôm, và đã được Tiến sĩ Vũ Khâm Lân (1702-?), đánh giá là một "thiên cổ kỳ bút". &lt;/p&gt;</dc:description>
+        <dc:publisher>teokak@</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Cảo Thơm</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:18+00:00"/>
+        <meta name="calibre:title_sort" content="Truyền Kỳ Mạn Lục"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

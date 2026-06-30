@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">346</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d6826607-a34a-4323-8251-2470a0bb05f6</dc:identifier>
+        <dc:title>Trà trộn phòng con gái</dc:title>
+        <dc:creator opf:file-as="Mộng, Thương Hải Nhất" opf:role="aut">Thương Hải Nhất Mộng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-04T06:33:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Chuyện kể về Lương Mân, một nhân viên cao cấp của nhà xuất bản An Mặc. Vì vô tình mà anh bị cô gái Tô Tô hiểu nhầm là gay, cô gái đã lôi anh về ở cùng căn hộ chung cư với ba cô gái khác. Đang lúc không có chỗ ở, nên anh chàng chấp nhận ở chung với bốn cô gái: Tô Tô, Linh Huyên, Hiểu Ngưng, Trình Lộ. Một anh chàng hào hoa phong nhã giả gay sống giữa bốn mỹ nữ đẹp như tiên sẽ có những gì xảy ra? Vì coi anh là gay nên bốn cô gái không cần giữ ý, thoải mái tâm sự những chuyện thầm kín, khiến anh dở cười dở khóc..&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:20+00:00"/>
+        <meta name="calibre:title_sort" content="Trà trộn phòng con gái"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

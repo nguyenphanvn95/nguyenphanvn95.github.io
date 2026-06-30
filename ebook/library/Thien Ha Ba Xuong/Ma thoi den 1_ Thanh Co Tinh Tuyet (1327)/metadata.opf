@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1327</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bf443f75-1fae-48e8-9c9a-2f3b65b2086b</dc:identifier>
+        <dc:title>Ma thổi đèn 1: Thành Cổ Tinh Tuyệt</dc:title>
+        <dc:creator opf:file-as="Xướng, Thiên Hạ Bá" opf:role="aut">Thiên Hạ Bá Xướng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Ma Thổi Đèn"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:25+00:00"/>
+        <meta name="calibre:title_sort" content="Ma thổi đèn 1: Thành Cổ Tinh Tuyệt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

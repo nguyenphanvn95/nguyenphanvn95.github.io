@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1308</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f8c9f969-a36c-464d-8f55-1c8aa3a8edd5</dc:identifier>
+        <dc:title>Makerting du kích trong 30 ngày</dc:title>
+        <dc:creator opf:file-as="Levinson, Jay Conrad" opf:role="aut">Jay Conrad Levinson</dc:creator>
+        <dc:creator opf:file-as="Levinson, Jay Conrad" opf:role="aut">Al Lautenslage</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:27+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Marketing du kích trong 30 ngày tập hợp rất nhiều thông tin hữu ích về mọi vấn đề trong lĩnh vực marketing. Nó đưa ra những chỉ dẫn cụ thể như cách xây dựng kế hoạch marketing, lập kế hoạch marketing qua thư trực tiếp, và lựa chọn thời điểm thích hợp để sử dụng PR thay cho marketing truyền thống. Cuốn sách được chia thành 30 bài giảng ngắn, rõ ràng, rất cơ bản, giúp độc giả có thể hiểu và tự áp dụng cho từng ngày&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Sales-Marketing</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:23+00:00"/>
+        <meta name="calibre:title_sort" content="Makerting du kích trong 30 ngày"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

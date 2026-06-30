@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">751</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ff67c65b-5d0f-4bb7-b28e-498509e419d2</dc:identifier>
+        <dc:title>Sáu người đi khắp thế gian</dc:title>
+        <dc:creator opf:file-as="James Albert Michener" opf:role="aut">James Albert Michener</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Sáu Người Đi Khắp Thế Gian, như cái tên đã chuyển tải, là một cuộc hành trình của những kẻ lang bạt, hơn thế, là hành trình của những con người miệt mài trên những chặng đường vô tận để tìm cho mình một nơi dừng chân. Sáu con người, Joe, Cato, Yigal, Gretchen, Britta và Monica, là sáu mảnh đời, sáu số phận. Điểm chung duy nhất giữa họ chính là đều đang chạy trốn hiện tại đầy hỗn loạn.&lt;/p&gt;
+
+&lt;p&gt;Và thế là câu chuyện được kể lại, thông qua một ông già ít nhiều quen biết cả sáu người, quen biết cả những gì họ chối bỏ, những gì họ muốn thoát khỏi để dấn thân vào cuộc du hành với đầy đủ mọi góc cạnh của cuộc sống đương thời. Sức mạnh, cám dỗ, cảm xúc, nhục cảm, buông thả, thương tổn... mọi trạng thái tinh thần hiện lên trong trang sách thông qua hình ảnh của những kẻ bỏ xứ để trôi dạt vô định.&lt;/p&gt;
+
+&lt;p&gt;Sáu Người Đi Khắp Thế Gian có bóng dáng của một thiên tiểu thuyết sử thi khi lồng ghép nhiều câu chuyện vào một, tái hiện lại những khung cảnh thông qua cách kể vừa như tường thuật, vừa như nhìn thấu mà lại vừa như chiêm nghiệm.&lt;/p&gt;
+
+&lt;p&gt;Sau cùng, Sáu Người Đi Khắp Thế Gian là hành trình vô tận con người tìm kiếm chính mình, tìm kiếm một nơi mình thuộc về dù hành trình ấy có khi kết thúc trong một cái kết hoàn hảo nhưng có khi để ngỏ vô định và mờ mịt.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:19+00:00"/>
+        <meta name="calibre:title_sort" content="Sáu người đi khắp thế gian"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">968</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6c9b4c99-597f-4e5a-91e6-f92708d9ff0e</dc:identifier>
+        <dc:title>Những điều cần biết về da</dc:title>
+        <dc:creator opf:file-as="Group, WallE" opf:role="aut">WallE Group</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:06+00:00</dc:date>
+        <dc:description>&lt;p&gt;Chăm sóc da, đặc biệt là đối với da mặt đòi hỏi sự khéo léo vì làn da của chúng ta rất nhạy cảm. Da bạn dễ bị dị ứng, ngứa, nổi mụn khi tiếp xúc với điều kiện thời tiết khắc nghiệt và tác nhân gây hại cho da, điều này làm việc lựa chọn các sản phẩm cho da trở nên khó khăn và mang tính quyết định. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Health</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:44+00:00"/>
+        <meta name="calibre:title_sort" content="Những điều cần biết về da"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

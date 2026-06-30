@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">373</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">537daeb5-19a9-4f78-b99f-006e21f4695a</dc:identifier>
+        <dc:title>Thuật bán hàng</dc:title>
+        <dc:creator opf:file-as="Tracy, Brian" opf:role="aut">Brian Tracy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-04-14T17:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">48f448f1-fc09-45f2-9a88-7b7fbb2021e7</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Quản trị</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:24+00:00"/>
+        <meta name="calibre:title_sort" content="Thuật bán hàng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">582</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9b997300-c560-4440-93b9-7b83c648e66d</dc:identifier>
+        <dc:title>Tín đồ Shopping oanh tạc Manhattan</dc:title>
+        <dc:creator opf:file-as="Kinsella, Sophie" opf:role="aut">Sophie Kinsella</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:08+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuộc sống của Rebecca Bloomwood lẽ ra đã hoàn hảo: một sự nghiệp đang lên như diều, một tình yêu bừng nở, một cuộc sống tuyệt vời. Nhưng đằng sau tất cả những điều đó là vô số rắc rối: không ai tin nàng đang hẹn hò với chàng Luke đẹp trai, thành đạt; cô nghi ngờ có gì không bình thường đang xảy ra với Luke - kẻ vốn có tiếng là nghiện công việc – có cái gì đó được sắp đặt trước, và tệ nhất là cô Không thể ngừng Shopping.&lt;/p&gt;</dc:description>
+        <dc:publisher>zero</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <dc:subject>Tín đồ shopping</dc:subject>
+        <meta name="calibre:series" content="Tín đồ shopping"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:00+00:00"/>
+        <meta name="calibre:title_sort" content="Tín đồ Shopping oanh tạc Manhattan"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

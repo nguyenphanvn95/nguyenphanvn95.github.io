@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1339</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7f09165e-90a6-4c48-bdd1-081645a3cfda</dc:identifier>
+        <dc:title>Lương Văn Can - Xây Dựng Đạo Kinh Doanh Cho Người Việt</dc:title>
+        <dc:creator opf:file-as="Dung, Nguyễn Hồng" opf:role="aut">Nguyễn Hồng Dung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;EM&gt;&lt;STRONG&gt;Bộ Sách Đạo Kinh Doanh Việt Nam Và Thế Giới - Lương Văn Can - Xây Dựng Đạo Kinh Doanh Cho Người Việt &lt;/STRONG&gt;thuộc bộ &lt;STRONG&gt;Đạo kinh doanh,&lt;/STRONG&gt; viết về cuộc đời một nhân vật lỗi lạc trong lịch sử Việt Nam - chí sĩ Lương văn Can. Ông là người thành lập trường Đông Kinh Nghĩa Thục, khởi xướng cho phong trào yêu nước ở Việt Nam những năm đầu thế kỷ 20, ông cũng là người cổ vũ cho nền thương nghiệp nước nhà, thể hiện niềm tin và nghị lực mạnh mẽ để góp phần làm thay đổi xã hội theo chiều hướng tích cực.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;EM&gt;Tám mươi năm trước, một nhân sĩ người Việt đã nói câu chuyện “Thế giới đi lại như một nhà” với đông đảo người dân, đề cao việc mở rộng buôn bán trong và ngoài nước, cổ vũ việc học tập và rèn luyện các kỹ năng kinh doanh để bằng với thiên hạ trên thế giới... Đó là Lương Văn Can, một nhà yêu nước, một trí thức lớn, một nhà doanh nghiệp và là tác giả bộ sách dạy kinh doanh đầu tiên của Việt Nam “Thương học phương châm”. Sau gần 100 năm, hậu thế lần giở những trang ghi chép tâm huyết trong cuộc đời và sự nghiệp của ông, mới thấy, cách đây rất lâu, người Việt đã tìm đường kinh thương và viết nên những trang đầu tiên của “đạo kinh doanh” - mà cho tới bây giờ, có thể những doanh nhân của thời hiện đại còn phải cố lắm mới ngộ ra và theo kịp bước khởi đầu...&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;B&gt;http://tve-4u.org&lt;/B&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>www.dtv-ebook.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:series" content="Đạo Kinh Doanh Việt Nam Và Thế Giới"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:27+00:00"/>
+        <meta name="calibre:title_sort" content="Lương Văn Can - Xây Dựng Đạo Kinh Doanh Cho Người Việt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

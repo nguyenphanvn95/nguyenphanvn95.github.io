@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">813</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cae14c58-d7d2-4d8d-92fa-f62169242ba0</dc:identifier>
+        <dc:title>Quân Vương</dc:title>
+        <dc:creator opf:file-as="Machiavelli, Niccolo" opf:role="aut">Niccolo Machiavelli</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:58+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif" size="3"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;Le Prince nguyên tác của Machiavel, bản dịch của Phan Huy Chiêm. Quán Văn xuất bản lần thứ tư năm 1971 Sài Gòn Việt Nam. Cuốn Quân Vương là cuốn sách có tính chất có minh bạch hiển nhiên làm chói mắt mọi người và các học giả cũng như những độc giả tầm thường chỉ phí công khi muốn tìm hiểu sự huyền bí của nó, tác giả Machiavel muốn nói lên những gì? Ông muốn giáo huấn Vua hay là nhân dân? Ông đứng về phe nào? Phe độc tài chuyên chế hay phe Cộng hòa? Hay là ông chẳng ở phe nào cả?...&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Political</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:26+00:00"/>
+        <meta name="calibre:title_sort" content="Quân Vương"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

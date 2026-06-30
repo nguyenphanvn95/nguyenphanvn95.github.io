@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2006</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7258b25a-d886-4c7e-a90a-a98b27459e80</dc:identifier>
+        <dc:title>Chị ơi ... Anh yêu em</dc:title>
+        <dc:creator opf:file-as="Cusiu" opf:role="aut">Cusiu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:41+00:00</dc:date>
+        <dc:description>&lt;p&gt;Được phát triển từ truyện dài đăng trên vozforums của một thành viên nickname là Cusiu. Với lối viết của dân IT không hoa mỹ và lai láng , dễ đọc dễ hiểu đã thu hút tới hơn 400 ngàn lượt view và hơn 4 ngàn comment trong vòng một tháng và lấy đi không cảm xúc của các thành viên thuộc diễn đàn công nghệ thông tin đa phần là con trai này&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:53+00:00"/>
+        <meta name="calibre:title_sort" content="Chị ơi ... Anh yêu em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2192</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3d4301ad-ff72-4c0d-b23d-f10aac8d5787</dc:identifier>
+        <dc:title>Các Ẩn Số Chính Trị Trong Tiểu Thuyết Võ Hiệp KIM DUNG</dc:title>
+        <dc:creator opf:file-as="Huy, Nguyễn Ngọc" opf:role="aut">Nguyễn Ngọc Huy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:27+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một tác phẩm đặc biệt rất hay mặc dù đề tài chỉ nói về tiểu thuyết võ hiệp vốn chỉ có giá trị khi trà dư tửu hậu hay lúc tâm hồn cô đơn trống rỗng. Cuốn sách sẽ giải thích những quan điểm chính trị của tác gia Kim Dung trên góc độ học thuật. Bên cạnh đó giúp bạn đọc giải đáp nhiều thắc mắc khi đọc truyện Kim Dung&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Swashbuckler</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:17+00:00"/>
+        <meta name="calibre:title_sort" content="Các Ẩn Số Chính Trị Trong Tiểu Thuyết Võ Hiệp KIM DUNG"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

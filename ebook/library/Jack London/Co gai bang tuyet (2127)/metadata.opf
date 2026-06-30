@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2127</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">01b4d478-4d19-460e-8830-e4306c2c9bec</dc:identifier>
+        <dc:title>Cô gái băng tuyết</dc:title>
+        <dc:creator opf:file-as="London Jack" opf:role="aut">Jack London</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-10-11T23:45:34+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description"&gt;Cô gái băng tuyết là tác phẩm đầu tay của Jack London.&lt;br&gt;Cuốn sách nói về những nguời đầu tiên đi khai phá miền đất Alaska băng giá nơi thử thách gay gắt sức mạnh và ý chí con người, nơi kẻ yếu, kẻ hèn nhát bị loại trừ, ca ngợi tình bạn, tình yêu chân chính, lòng dũng cảm và những vẻ đẹp của nam tính.&lt;br&gt;Một cô gái đẹp, thông minh và can đảm đã sánh vai được với cánh đàn ông trong các tình huống khó khăn, nguy hiểm nhưng trong tình yêu, cô đã lầm lẫn, ngộ nhận, thậm chí mù quáng, nhưng một khi nhận ra tính cách hèn nhát của người yêu, cô đã ghê tởm khi nghĩ đến những cái hôn với hắn.&lt;/p&gt;
+
+&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=cogaibangtuyet</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:10+00:00"/>
+        <meta name="calibre:title_sort" content="Co Gai Bang Tuyet"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

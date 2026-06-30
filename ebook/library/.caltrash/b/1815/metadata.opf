@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1815</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">83b99797-c944-4b98-92cd-db6a5689317f</dc:identifier>
+        <dc:title>Điểm bùng phát</dc:title>
+        <dc:creator opf:file-as="Gladwell, Malcolm" opf:role="aut">Malcolm Gladwell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:45+00:00</dc:date>
+        <dc:description>&lt;p&gt;Là một chuyến thám hiểm đầy trí tuệ được viết bằng giọng văn sôi nổi, nhiệt huyết, rất dễ làm nảy sinh các ý tưởng mới, "điểm bùng phát" đã vạch rõ lộ trình cho sự thay đổi với một thông điệp đầy hứa hẹn: mỗi cá nhân sáng tạo, biết sử dụng chiếc đòn bẩy đúng lúc là người có thể nâng bổng cả thế giới.
+&lt;/p&gt;</dc:description>
+        <dc:publisher>NXB Lao Động</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Kinh Doanh - Đầu Tư</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:28+00:00"/>
+        <meta name="calibre:title_sort" content="Điểm bùng phát"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

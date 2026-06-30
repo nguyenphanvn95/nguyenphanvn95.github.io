@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2060</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dec81f18-5fd6-444c-8a0e-9b5e441a20ec</dc:identifier>
+        <dc:title>Củ khoai tây ngồi ghế bành</dc:title>
+        <dc:creator opf:file-as="Schlosser, Eric" opf:role="aut">Eric Schlosser</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Cuốn sách Củ khoai tây ngồi ghế bành là một trong những cuốn sách bán chạy nhất, nó là câu chuyện kể về lịch sử phát triển, ánh hào quang choáng ngợp cũng như những thực tế trần trụi ẩn giấu đằng sau ngành công nghiệp đồ ăn nhanh. Với những dẫn chứng cụ thể, những số liệu thống kê chi tiết, tác giả Eric Schlosser đã mang đến cho độc giả những trải nghiệm và cảm xúc hoàn toàn trái ngược: cảm giác thăng hoa với những điều thú vị về quá trình khởi nghiệp và phát triển của các nhà tư bản như McDonald, Harland Sanders (KFC)...&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Khoa học xã hội + Alpha books</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:00+00:00"/>
+        <meta name="calibre:title_sort" content="Củ khoai tây ngồi ghế bành"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

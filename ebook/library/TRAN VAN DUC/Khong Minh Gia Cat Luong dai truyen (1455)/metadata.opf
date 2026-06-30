@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1455</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4748a4f8-0137-4d93-bce0-d96d7c517dbe</dc:identifier>
+        <dc:title>Khổng Minh Gia Cát Lượng đại truyện</dc:title>
+        <dc:creator opf:file-as="ĐỨC, TRẦN VĂN" opf:role="aut">TRẦN VĂN ĐỨC</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-10-31T23:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description"&gt;&lt;/p&gt;&lt;p class="description" style="text-align: center; "&gt;&lt;span class="Apple-style-span" style="color: rgb(255, 0, 0); "&gt;Copy Sách Truyện từ Vnthuquan mà không ghi rõ nguồn và người đánh máy là hành động ăn cắp đáng xấu hổ!&lt;/span&gt;&lt;/p&gt;&lt;div style="text-align: center; "&gt;&lt;br&gt;&lt;/div&gt;&lt;div style="text-align: center; "&gt;&lt;font class="Apple-style-span" color="#00aaff"&gt;Đánh máy: &lt;b&gt;hoi_ls&lt;/b&gt;&lt;br&gt;NHÀ XUẤT BẢN VĂN HOÁ - THÔNG TIN, 2003 (Tái bản lần II)&lt;br&gt;
+        
+Nguồn: Vnthuquan - Thư viện Online&lt;/font&gt;&lt;/div&gt;&lt;div style="text-align: center; "&gt;&lt;font class="Apple-style-span" color="#00aaff"&gt;&lt;br&gt;
+
+
+Được bạn: Mọt Sách đưa lên&lt;br&gt;
+        vào ngày: 1 tháng 11 năm 2013&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Việt Nam Thư Quán - Thư Viện Online</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Nhân Vật Lịch sử</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39+00:00"/>
+        <meta name="calibre:title_sort" content="Khổng Minh Gia Cát Lượng đại truyện"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

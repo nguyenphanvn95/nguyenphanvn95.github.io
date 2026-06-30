@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1323</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">839053e8-bbd2-4e1a-9ccb-ae48fd97579c</dc:identifier>
+        <dc:title>Ma thổi đèn 6: Nam Hải Quy Khư</dc:title>
+        <dc:creator opf:file-as="Xướng, Thiên Hạ Bá" opf:role="aut">Thiên Hạ Bá Xướng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;b&gt;Siêu phẩm kết hợp Mật mã Da Vinci và Tomb Raider  - thống trị bảng xếp hạng sách Trung Quốc nhiều năm qua.&lt;/b&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;&lt;i&gt;Trong vũ trụ bao la này chuyện gì mà chẳng có&lt;/i&gt;&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Trước ngày sang Mỹ cùng Shirley Dương, trong lòng Hồ Bát Nhất không khỏi có nhiều lưu luyến. Đang lúc tìm cách thoái thác không giao bùa Mô Kim vào tay Shirley Dương để chứng tỏ quyết tâm rửa tay gác kiếm, anh lại tái ngộ với giáo sư Trần,  người đồng hành năm xưa đã cùng bọn họ đến Thành cổ Tinh Tuyệt.&lt;/p&gt; &lt;p&gt;Giáo sư Trần khẩn khoản muốn họ tìm lại món bảo vật quốc gia Tần Vương Chiếu Cốt kính. Nể lời ông, các Mô Kim hiệu úy vốn bao phen chết hụt nơi rừng xanh núi đỏ lại bước vào cuộc phiêu lưu mới, lần đầu tiên dấn thân ra biển lớn.&lt;/p&gt;Trên con tàu liễu biển bí hiểm, họ đến vùng biển San Hô, là nơi theo truyền thuyết dường như có chốn vực sâu Quy Khư - “nước từ tám phương trời, chín vùng đất, và nước sông Ngân Hà cùng đổ vào, thế mà nước ở đấy chẳng tăng chẳng giảm.” Họ đương đầu với sóng nước dữ dội đảo lộn đất trời, với bầy cá mập khát máu, với cả những sinh vật quái dị tưởng chừng đã tuyệt diệt trên thế gian. Họ rơi xuống vùng tàn tích của một đất nước huyền bí cổ xưa chỉ còn lưu danh trong truyền thuyết, đối mặt với những khoảnh khắc mà cơ may trở về từ cõi chết như đã vuột khỏi tầm tay...&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:series" content="Ma Thổi Đèn"/>
+        <meta name="calibre:series_index" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:25+00:00"/>
+        <meta name="calibre:title_sort" content="Ma thổi đèn 6: Nam Hải Quy Khư"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

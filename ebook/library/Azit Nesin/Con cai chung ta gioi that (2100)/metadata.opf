@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2100</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">af1875de-eb9a-4e7b-b5d7-1e82df0e150b</dc:identifier>
+        <dc:title>Con cái chúng ta giỏi thật</dc:title>
+        <dc:creator opf:file-as="Nesin, Azit" opf:role="aut">Azit Nesin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:34+00:00</dc:date>
+        <dc:description>Cuốn truyện này được viết dưới dạng những bức thư được viết cho nhau của hai học sinh lớp 5 do tác giả tưởng tượng ra. Đặt mình vào địa vị của các em, tác giả đã viết ra những câu chuyện thật hấp dẫn và gần gũi với cuộc sống trẻ thơ. Những câu chuyện mà các em kể cho nhau nghe nhiều khi khiến người lớn chúng ta không khỏi bật cười, phải thốt lên: con cái chúng ta giỏi thật!</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:06+00:00"/>
+        <meta name="calibre:title_sort" content="Con cái chúng ta giỏi thật"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2195</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4d4b046d-fa73-47ff-979e-19cf9b47150f</dc:identifier>
+        <dc:title>Các giai thoại Nam Kỳ lục tỉnh</dc:title>
+        <dc:creator opf:file-as="Hoành, Hứa" opf:role="aut">Hứa Hoành</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-30T12:42:41+00:00</dc:date>
+        <dc:description>&lt;p&gt;Những chuyện kể ra trong sách nầy đều là chuyện thật không phải tiểu thuyết Các chuyện ấy xảy ra trên đất Nam kỳ trên dưới 100 năm nay, nhưng không có tài liệu chính thức nào ghi chép. Với ý định viết bộ sách về Nam Kỳ Lục Tỉnh, cho nên hơn mười năm qua, kể từ ngày còn trong trại tị nan tại Mã Lai, chúng tôi bắt đầu sưu tầm tài liệu. Các tư liệu ấy rải rác trong sách báo xưa, hoặc nằm trong ký ức của những vị cố cựu đất Nam Kỳ mà chúng tôi có dịp gặp gỡ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:18+00:00"/>
+        <meta name="calibre:title_sort" content="Các giai thoại Nam Kỳ lục tỉnh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

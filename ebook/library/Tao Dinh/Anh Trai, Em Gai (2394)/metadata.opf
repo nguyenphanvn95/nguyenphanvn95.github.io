@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2394</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8ba7332e-4247-43f8-bdce-ee676382ba6c</dc:identifier>
+        <dc:title>Anh Trai, Em Gái</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;ếu nói rằng: “Yêu là mỗi sợi tơ. Tấm vải tình yếu nhất định phải do hai người dệt từng sợi một mới tạo nên hạnh phúc” thì yêu đơn phương, hỏi có phải tình yêu? Yêu đơn phương đã khổ. Yêu chính anh trai của mình lại càng khổ hơn nữa. Mai Mai yêu anh trai Dương Dương, một tình yêu tội lỗi nhưng không bệnh hoạn, tội lỗi mà vẫn đáng thương.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:40+00:00"/>
+        <meta name="calibre:title_sort" content="Anh Trai, Em Gái"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

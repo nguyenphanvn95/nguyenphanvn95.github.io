@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1567</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8cb1b05d-5758-452c-b669-589aec1d5253</dc:identifier>
+        <dc:title>Hồn Ma Đêm Giáng Sinh</dc:title>
+        <dc:creator opf:file-as="Dickens, Charles" opf:role="aut">Charles Dickens</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;i&gt;Hồn ma đêm Giáng sinh&lt;/i&gt; là một câu chuyện kể, một “khúc ca” cất lên từ trải nghiệm cuộc đời của tác giả, từ những quan sát trong cuộc sống, từ những ước vọng tốt đẹp cho tương lai.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Câu chuyện khắc họa sống động nhân vật Ebenezer Scrooge keo kiệt, ưa gắt gỏng; tuy nhiên đã có những chuyển biến lớn về tư tưởng, tình cảm và nhận thức về giá trị nhân bản sau cuộc ghé thăm của những “vị khách siêu nhiên” là Hồn ma vất vưởng Jacob Marley và ba Hồn ma của Giáng sinh Quá khứ, Hiện tại và Tương lai, để cuối cùng ông trở thành người mang giá trị nhân ái của Giáng sinh lan tỏa đến mọi người.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Bản thân Ebenezer Scrooge là hiện thân của mùa đông khắc nghiệt. Song mùa đông nào rồi cũng phải qua đi để mùa xuân vui tươi rộn ràng trải rộng nơi nơi. Vì vậy trái tim của Scrooge dù thật băng giá, hà khắc nhưng trong sâu thẳm vẫn lấp lánh ngọn lửa thiện ý ấm áp tình người, và càng lúc càng bùng lên mạnh mẽ, làm tan chảy lớp nhận thức ích kỷ chai lạnh khi những Hồn ma giúp ông lần giở từng trang đời mình.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;&lt;i&gt;Hồn ma đêm Giáng sinh&lt;/i&gt; đã vượt khỏi khuôn khổ là một quyển sách dành riêng cho mùa lễ trọng hàng năm, nó là lời nhắc nhở, hướng con người quay về những giá trị tinh thần cao đẹp, sống đúng theo quy luật cuộc đời, quy luật của tình người.&lt;/div&gt;</dc:description>
+        <dc:publisher>Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Classics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Hồn Ma Đêm Giáng Sinh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1535</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1c124c4d-204e-42eb-8fa5-139d70ea4a4a</dc:identifier>
+        <dc:title>Kẻ Giết Người Đội Lốt</dc:title>
+        <dc:creator opf:file-as="Erle Stanley Gardner" opf:role="aut">Erle Stanley Gardner</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>1952-10-15T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Perry Mason"/>
+        <meta name="calibre:series_index" content="40"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:48+00:00"/>
+        <meta name="calibre:title_sort" content="Kẻ Giết Người Đội Lốt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

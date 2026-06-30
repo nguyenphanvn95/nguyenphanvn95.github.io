@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2102</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0799f273-aac4-4935-b0f8-52ea5eb697dc</dc:identifier>
+        <dc:title>Colorful</dc:title>
+        <dc:creator opf:file-as="Eto, Mori" opf:role="aut">Mori Eto</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-07-27T17:00:00+00:00</dc:date>
+        <dc:publisher>www.dtv-ebook.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:06+00:00"/>
+        <meta name="calibre:title_sort" content="Colorful"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

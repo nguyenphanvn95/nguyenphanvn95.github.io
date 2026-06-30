@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1366</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6afcab3f-8ef3-4eeb-b711-ba57e956a8a0</dc:identifier>
+        <dc:title>Lửa Thiêu Rừng Hạnh</dc:title>
+        <dc:creator opf:file-as="Ưng, Tùng" opf:role="aut">Tùng Ưng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Hai đại gia bất động sản Lĩnh Nam lần lượt chết một cách kì bí. Trước khi chết hai người lần lượt nhận được “Giấy báo tử”, trong đó có một dãy số và một hình vẽ kì quái... Từ đó đã hé mở một vụ án lớn kinh thiên động địa từ hai mươi tám năm trước, bức rèm lịch sử cuối cùng đã được vén lên!&lt;/P&gt; &lt;P&gt;Cả cuốn sách tràn đầy bí ẩn, sôi sục sóng ngầm. Tác giả xây dựng kết cấu “án trong án”, thời gian từ cuối thế kỉ trước đến đầu thế kỉ này, không gian từ bờ biển phía nam Trung Quốc đến biên thùy Vân Nam, từng bước kéo người đọc vào một vòng xoáy kì lạ.&lt;/P&gt;Cuốn tiểu thuyết đã đề cập rất sâu rộng đến nhiều vấn đề xã hội, khiến chính bản thân nó vượt qua ranh giới của một cuốn tiểu thuyết trinh thám bình thường.</dc:description>
+        <dc:publisher>Quảng Văn</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">a6905c02-8321-430f-869e-5f7d2e8a50d1</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:30+00:00"/>
+        <meta name="calibre:title_sort" content="Lửa Thiêu Rừng Hạnh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

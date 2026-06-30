@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">506</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">86bb5162-85ea-41c5-b9e5-47a621775fc8</dc:identifier>
+        <dc:title>Tự Yêu - Du Phong</dc:title>
+        <dc:creator opf:file-as="Phong, Du" opf:role="aut">Du Phong</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>EbookFull.Net</dc:publisher>
+        <dc:identifier opf:scheme="MD5">4e1a7555bce5571b0f59a6ada028f7ad</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:51+00:00"/>
+        <meta name="calibre:title_sort" content="Tự Yêu - Du Phong"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

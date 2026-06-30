@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2050</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5515d5a8-8fd0-4dc1-b733-4dec6b0df338</dc:identifier>
+        <dc:title>Cùng nhau viết câu chuyện của chúng ta</dc:title>
+        <dc:creator opf:file-as="Miêu, Mộc Tử Miêu" opf:role="aut">Mộc Tử Miêu Miêu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T21:53:52+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Kỳ nghỉ hè ở tuổi lên năm, Khinh Vãn đã gặp Phạm Như Sênh – con nuôi của một người nhặt rác. Cậu luôn bị bọn trẻ cùng lứa cô lập và khinh thường, chỉ có Khinh Vãn là không thể dời mắt khỏi cậu. Liệu có phải vì sự kiên cường của chàng trai nhỏ hay là sự dịu dàng ấm áp mà cậu dành cho em? Không rõ là lý do nào, chỉ biết từ lúc ấy, cô đã bị cuốn hút và bắt đầu theo đuổi, dù cho cậu chưa từng nói với cô một lời nào. Kỳ nghỉ hè kết thúc, Khinh Vãn trở về thành phố, khi ra đi Phạm Như Sênh vẫn không biết tên cô&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:59+00:00"/>
+        <meta name="calibre:title_sort" content="Cùng nhau viết câu chuyện của chúng ta"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

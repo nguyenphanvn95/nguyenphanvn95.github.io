@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1448</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">11b9cb15-962a-4673-8b7a-5ab8882448f2</dc:identifier>
+        <dc:title>Không bao giờ là thất bại, tất cả là thử thách</dc:title>
+        <dc:creator opf:file-as="Yung, Chung Ju" opf:role="aut">Chung Ju Yung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-04T17:00:00+00:00</dc:date>
+        <dc:description>&lt;font face="MS Shell Dlg 2, sans-serif"&gt;&lt;span style="font-size: 12px;"&gt;http://www.taisachhay.com&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39+00:00"/>
+        <meta name="calibre:title_sort" content="Không bao giờ là thất bại, tất cả là thử thách"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

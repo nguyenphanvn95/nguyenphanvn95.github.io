@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2110</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">aba8e1e1-d9e8-4a97-9eab-e3c8e230df46</dc:identifier>
+        <dc:title>Có một tình yêu không thể nào quên</dc:title>
+        <dc:creator opf:file-as="Đường Tiểu Lam" opf:role="aut">Đường Tiểu Lam</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-10-25T04:17:37+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Nếu yêu một người nhưng lại không thể không làm tổn thương cô ấy .Điều đó sẽ tàn nhẫn thế nào đây?Nếu hận một người nhưng lại không thể không tha thứ cho anh ấy Sẽ đau khổ biết nhường nào? Ba năm trước, sự vô tâm của anh làm cho gia đình nàng tan tác, anh có
+ thể ngừng thở, nhưng lại không thể ngừng yêu nàng, anh muốn chuộc tội, 
+nhưng không thể nào tìm ra dấu vết của nàng …&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:08+00:00"/>
+        <meta name="calibre:title_sort" content="Có một tình yêu không thể nào quên"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

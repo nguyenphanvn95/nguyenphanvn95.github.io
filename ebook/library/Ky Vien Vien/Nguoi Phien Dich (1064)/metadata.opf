@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1064</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a418c4cf-991e-421a-8904-a6f70c77e7bb</dc:identifier>
+        <dc:title>Người Phiên Dịch</dc:title>
+        <dc:creator opf:file-as="Viện, Kỷ Viện" opf:role="aut">Kỷ Viện Viện</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T21:45:58+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện kể về cuộc hành trình đi tìm hạnh phúc của hai nhân vật Trình Gia Dương và Kiều Phi. Trình Gia Dương là anh chàng thư sinh tài giỏi từng đi du học tại Paris ngành phiên dịch cấp cao, là thần tượng của tất cả các thiếu nữ trường đại học ngoại ngữ nơi Kiều Phi đang học, anh chàng này luôn phải chịu sự sắp đặt của gia đình - kể cả tình yêu. anh yêu thầm một người bạn hơn tuổi từ thủa nhỏ, nhưng cô lại lạnh lùng đi lấy chồng bỏ lại chàng trai tài giỏi trong công việc nhưng khờ khạo trong tình yêu. Còn Kiều Phi là cô gái có xuất thân nghèo khó luôn phải tự vươn lên trong cuộc sống, để có tiền trang trải học hành cô phải đi làm thêm ở quán rượu - Đây là công việc không tránh khỏi điều tiếng thiên hạ. Nhưng cô luôn tỏ ra mình là cô gái vững vàng và lạc quan. thế nhưng điều không may đã xảy ra khi cô buộc phải bán mình để lấy tiền chữa chạy cho cha.....số phận cho 2 kẻ có duyên gặp nhau. Họ yêu nhau say đắm nhưng cuộc đời đâu chỉ có đẹp đẽ như tình yêu họ có? Lời đáp nào cho bài toán tình yêu này?...&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:55+00:00"/>
+        <meta name="calibre:title_sort" content="Người Phiên Dịch"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

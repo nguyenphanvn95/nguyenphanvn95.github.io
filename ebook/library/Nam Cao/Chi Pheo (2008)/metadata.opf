@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2008</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">071ee7a3-32f6-490b-91f2-46dec17a6e82</dc:identifier>
+        <dc:title>Chí Phèo</dc:title>
+        <dc:creator opf:file-as="Cao, Nam" opf:role="aut">Nam Cao</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T14:15:08+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;Tác phẩm Chí Phèo mang giá trị nhân đạo sâu sắc, thể hiện tấm lòng yêu hương, trân trọng của Nam Cao đốI vớI những ngườI khốn khổ. Chí Phèo còn là tiếng kêu cứu thiết tha của những ngướI bất hạnh. Hãy bảo vệ và đấu tranh cho quyền được làm ngườI của những con ngườI kương thiện. Họ phảI được sống và sống hạnh phúc, không còn những thế lực đen tốI của xã hộI đẩy họ vào chổ cùng khốn, bế tắc, đầy bi kịch xót xa…&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:54+00:00"/>
+        <meta name="calibre:title_sort" content="Chí Phèo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2210</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">138bc292-7e05-4e03-8a0e-040291aa9d27</dc:identifier>
+        <dc:title>Bụi Lý Chua Máu</dc:title>
+        <dc:creator opf:file-as="Arnaldur Indriđason" opf:role="aut">Arnaldur Indriđason</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-09T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <dc:subject>Iceland</dc:subject>
+        <dc:subject>Tâm lý</dc:subject>
+        <meta name="calibre:series" content="Inspector Erlundur"/>
+        <meta name="calibre:series_index" content="4"/>
+        <meta name="calibre:rating" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:19+00:00"/>
+        <meta name="calibre:title_sort" content="Bụi Lý Chua Máu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">253</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6f57bbe5-6eac-4232-8e14-253bb22051bc</dc:identifier>
+        <dc:title>Yêu người tình một đêm</dc:title>
+        <dc:creator opf:file-as="Huyên, Kim" opf:role="aut">Kim Huyên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:27+00:00</dc:date>
+        <dc:description>&lt;p&gt;Anh và cô, hai người xa lạ, nhưng vận mệnh lại gắn kết họ với nhau sau một đêm tình. Cô chơi tình một đêm vì muốn thoát khỏi nỗi đau từ mối tình đầu, còn anh, ban đầu là tò mò, rồi mê mẩn, yêu hết thuốc chữa, nguyện vì cô mà thay đổi. Cô ngỡ rằng anh theo đuổi cô là vì đứa con cô đang mang trong bụng, nhưng liệu đó có phải là sự thật?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:04+00:00"/>
+        <meta name="calibre:title_sort" content="Yêu người tình một đêm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

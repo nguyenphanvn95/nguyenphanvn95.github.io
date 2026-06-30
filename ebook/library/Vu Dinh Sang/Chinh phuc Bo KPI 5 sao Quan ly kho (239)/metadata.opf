@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">239</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">902c5f65-a202-4aa7-be86-8b5f90dbe844</dc:identifier>
+        <dc:title>Chinh phục Bộ KPI 5 sao Quản lý kho hiệu quả</dc:title>
+        <dc:creator opf:file-as="Sáng, Vũ Đình" opf:role="aut">Vũ Đình Sáng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Bằng cách phân tích các chỉ số KPI quan trọng, cuốn sách giúp bạn hiểu rõ cách đo lường và đánh giá hiệu quả công việc trong Kho vật tư. Các nghiệp vụ cụ thể cũng được phân tích để bạn có thể “chinh phục” các mục tiêu KPI và nâng cao chất lượng công việc.&lt;/p&gt;
+&lt;p&gt;Cuốn sách này dành cho:&lt;/p&gt;
+&lt;p&gt;- Những người đang làm việc trong lĩnh vực kho: Cải tiến quy trình làm việc và quản lý kho để phục vụ doanh nghiệp tốt hơn.&lt;/p&gt;
+&lt;p&gt;- Sinh viên, người mới muốn theo đuổi nghề: Cung cấp cái nhìn toàn diện về nghề nghiệp và những câu hỏi phỏng vấn phổ biến.&lt;/p&gt;
+&lt;p&gt;- Chủ doanh nghiệp, nhà quản trị, nhân sự, tuyển dụng: Giúp bạn giao nhiệm vụ hiệu quả, đánh giá và đào tạo nhân viên kho, sử dụng các chỉ số KPI để đưa ra các chỉ tiêu hoạt động.&lt;/p&gt;
+&lt;p&gt;- Bộ phận tài chính/kế toán kho: Cung cấp thông tin về quản lý kho, cách tạo mã số định danh, xuất nhập hàng hóa.&lt;/p&gt;
+&lt;p&gt;- Bộ phận thương mại, mua sắm: Hiểu rõ quy trình kho để phối hợp việc nhập hàng an toàn, đúng chất lượng.&lt;/p&gt;
+&lt;p&gt;- Bộ phận bảo dưỡng, sửa chữa: Nắm rõ yếu tố ảnh hưởng đến độ tin cậy của báo cáo tồn kho và phối hợp với kho trong việc tối ưu hóa chi phí vật tư.&lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;Chinh phục Bộ KPI 5 sao Quản lý kho hiệu quả - Vũ Đình Sáng.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:33.710684+00:00"/>
+        <meta name="calibre:title_sort" content="Chinh phục Bộ KPI 5 sao Quản lý kho hiệu quả"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

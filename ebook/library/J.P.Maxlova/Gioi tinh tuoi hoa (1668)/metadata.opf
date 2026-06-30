@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1668</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f7104b86-d456-4073-97eb-048e73c5e904</dc:identifier>
+        <dc:title>Giới tính tuổi hoa</dc:title>
+        <dc:creator opf:file-as="J.P.Maxlova" opf:role="aut">J.P.Maxlova</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:22+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tuổi vị thành niên chính là thời kỳ của những thay đổi lớn lao về mặt thể chất và tinh thần. Ý thức tình dục được thức tỉnh, những đột biến từng bước một, những xúc động lớn lao và những câu hỏi vô tận luôn được đặt ra. Những câu hỏi riêng tư kiểu như vậy liệu bạn có thể thổ lộ cùng ai? bạn trai? bố mẹ? thầy cô giáo, hay bác sĩ gia đình? Quả thật không phải bao giờ điều này cũng có thể nói ra một cách rõ ràng. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Health</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:12+00:00"/>
+        <meta name="calibre:title_sort" content="Giới tính tuổi hoa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

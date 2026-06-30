@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">614</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f55484ad-8aa4-4ac6-b6dc-08f1ad284da2</dc:identifier>
+        <dc:title>Tể Tướng Lưu Gù</dc:title>
+        <dc:creator opf:file-as="Thạc, Ân Văn" opf:role="aut">Ân Văn Thạc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Dã sử</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:03+00:00"/>
+        <meta name="calibre:title_sort" content="Tể Tướng Lưu Gù"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

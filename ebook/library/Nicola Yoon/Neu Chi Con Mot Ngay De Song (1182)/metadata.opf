@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1182</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">99588a4c-9eea-48d7-8839-7c0123aae4bc</dc:identifier>
+        <dc:title>Nếu Chỉ Còn Một Ngày Để Sống</dc:title>
+        <dc:creator opf:file-as="Yoon, Nicola" opf:role="aut">Nicola Yoon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-06-24T02:52:08+00:00</dc:date>
+        <dc:description>Tác giả : Nicola Yoon
+
+"Nếu cuộc đời tôi là một cuốn sách thì bạn đọc ngược từ dưới lên cũng sẽ chẳng có gì thay đổi"
+Hôm nay chẳng khác gì hôm qua. 
+Ngày mai cũng giống hệt ngày hôm nay
+Trong cuốn sách về cuộc đời em, chương nào cũng giống hệt chương nào.
+Cho tới khi anh xuất hiện.</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/152881225</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>blue</dc:subject>
+        <dc:subject>1st</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>best-seller</dc:subject>
+        <dc:subject>sky</dc:subject>
+        <dc:subject>Teen Fiction</dc:subject>
+        <dc:subject>times</dc:subject>
+        <dc:subject>newyork</dc:subject>
+        <dc:subject>moon</dc:subject>
+        <dc:subject>evertything</dc:subject>
+        <dc:subject>sun</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:08+00:00"/>
+        <meta name="calibre:title_sort" content="Nếu Chỉ Còn Một Ngày Để Sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

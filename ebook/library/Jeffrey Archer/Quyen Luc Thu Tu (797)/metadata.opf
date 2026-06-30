@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">797</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2302a4aa-a616-4803-9d82-15b6d4c683e8</dc:identifier>
+        <dc:title>Quyền Lực Thứ Tư</dc:title>
+        <dc:creator opf:file-as="Archer, Jeffrey" opf:role="aut">Jeffrey Archer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-12-28T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;Báo chí – như một số quan niệm cho rằng: đó là quyền lực thứ tư, cùng với lập pháp, hành pháp và tư pháp của nhà nước; hoặc có người cho rằng, báo chí có một sức mạnh mà không một sức mạnh nào có thể so sánh…&lt;/p&gt;
+&lt;p&gt;Ở một góc nhìn nào đó thì quan niệm trên có lý, song cuộc đời vốn tương đối, nên chẳng có một “sức mạnh” nào là tuyệt đối cả. Nhưng, liệu có chắc rằng, tại các nước tiên tiến trên thế giới, mọi tờ báo đều thật sự là “của dân, cho dân, vì dân”? Có hoàn toàn là “tự do ngôn luận”? Hay đó cũng đều là “sự tương đối” dễ hiểu…&lt;/p&gt;
+&lt;p&gt;Cuốn tiểu thuyết ấn tượng nhất của Jeffrey Archer kể câu chuyện về hai người đàn ông đặc biệt nhất trong thời đại chúng ta.&lt;/p&gt;
+&lt;p&gt;Thoáng qua thì thấy Richard Arstrong và Keith Townsend dường như không có điểm chung. Một người sinh ra trong gia đình nông dân nghèo khổ và thất học ở một nơi hẻo lánh của châu Âu bị tàn phá bởi cuộc chiến tranh thế giới thứ hai khốc liệt. Còn người kia lớn lên trong lâu đài ở nơi xa bên kia thế giới khi mà cuộc chiến tranh đó chỉ là một phần nhỏ của bản tin.&lt;/p&gt;
+&lt;p&gt;Một người đầy nghị lực, một tên cướp, sẵn sàng gian trá với tất cả, thậm chí với cả nhận dạng bản thân nếu chuyện đó có thể mang lại cho anh ta những lợi ích trước mắt. Còn người kia xuất thân từ gia đình quý tộc danh giá, được chuẩn bị bước ra công chúng từ những năm trẻ thơ; một người nổi loạn không thèm quan tâm xem người khác có tán thành những việc anh ta làm hay không.&lt;/p&gt;
+&lt;p&gt;Một người thèm khát sự giàu có, sự nổi danh, địa vị xã hội. Còn người kia lại sớm nhận ra quyền lực thực sự xuất phát từ sự nặc danh. Nhưng họ đều có một điểm chung: cả hai đều là những con bạc. Cả hai đều được chuẩn bị để đánh liều tất cả trong cuộc chiến của họ nhằm kiểm soát đế quốc báo chí lớn nhất thế giới.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:24.675787+00:00"/>
+        <meta name="calibre:title_sort" content="Quyền Lực Thứ Tư"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

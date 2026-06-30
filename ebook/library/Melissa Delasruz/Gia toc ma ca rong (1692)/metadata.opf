@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1692</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e9859f09-091f-4dbd-a3c8-79fe01e7db05</dc:identifier>
+        <dc:title>Gia tộc ma cà rồng</dc:title>
+        <dc:creator opf:file-as="Delasruz, Melissa" opf:role="aut">Melissa Delasruz</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-15T23:22:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;trong gia tộc đều là những người giàu có, đầy quyền lực - và thật ra họ không phải là con người. Họ là Gia Tộc Ma Cà Rồng, một nhóm Ma Cà Rồng cổ.Schuyler Van Alen chưa bao giờ hòa nhập được với Duchesne, một ngôi trường tư có uy tín ở thành phố New York. Cô thích mặc những bộ quần áo mang phong cách cổ điển, rộng thùng thình thay vì phải mang trên người những bộ đồ hiệu Prada hay những thứ ngọc trai như các bạn học khác, cô sống với bà ngoại, một người thích sống ẩn dật trong một tòa nhà cũ kĩ. Schuyler sống thui thủi một mình... và cô thấy hạnh phúc với cách sống này.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <dc:subject>Gia tộc ma cà rồng</dc:subject>
+        <meta name="calibre:series" content="Gia tộc ma cà rồng"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:15+00:00"/>
+        <meta name="calibre:title_sort" content="Gia tộc ma cà rồng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

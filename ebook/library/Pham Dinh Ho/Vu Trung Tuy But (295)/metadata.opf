@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">295</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b967d34f-d9c4-4243-8ce5-7c5328cb1a3f</dc:identifier>
+        <dc:title>Vũ Trung Tùy Bút</dc:title>
+        <dc:creator opf:file-as="Hổ, Phạm Đình" opf:role="aut">Phạm Đình Hổ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:28+00:00</dc:date>
+        <dc:description>&lt;p&gt;Vũ trung tùy bút, hiểu theo nghĩa tùy theo ngọn bút viết trong khi mưa, được viết khoảng thời Lê mạt Nguyễn sơ, ghi lại nhiều sự việc xảy ra vào cuối đời Lê và đời Tây Sơn.Tuy Phạm Đình Hổ gọi tác phẩm của mình là tùy bút, nhưng nó không phải được viết theo lối tùy bút bây giờ, mà với nghĩa nôm na là "muốn viết cái gì thì viết, không cần hệ thống, kết cấu và mạch lạc"&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:08.951757+00:00"/>
+        <meta name="calibre:title_sort" content="Vũ Trung Tùy Bút"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">471</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d607c345-6a5f-4cf2-a971-e07c38fe1b57</dc:identifier>
+        <dc:title>Tuyển tập truyện ngắn From A twist in the tale</dc:title>
+        <dc:creator opf:file-as="Archer, Jefferey" opf:role="aut">Jefferey Archer</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T03:47:12+00:00</dc:date>
+        <dc:description>&lt;div&gt;Tập truyện ngắn xuất bản năm 1988 của tác giả trinh thám nổi tiếng Jefferey Archer. &lt;span id="result_box" class="" lang="vi"&gt;&lt;span class="hps"&gt;Từ&lt;/span&gt; &lt;span class="hps"&gt;châu&lt;/span&gt; &lt;span class="hps"&gt;Phi&lt;/span&gt; &lt;span class="hps"&gt;đến Trung Đông&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span class="hps"&gt;và&lt;/span&gt; &lt;span class="hps"&gt;từ&lt;/span&gt; &lt;span class="hps"&gt;London&lt;/span&gt; &lt;span class="hps"&gt;đến Bắc Kinh&lt;/span&gt;&lt;span&gt;,&lt;/span&gt; &lt;span class="hps"&gt;Archer&lt;/span&gt; &lt;span class="hps"&gt;đưa người đọc&lt;/span&gt; &lt;span class="hps"&gt;đến những nơi&lt;/span&gt; &lt;span class="hps"&gt;chúng&lt;/span&gt; &lt;span class="hps"&gt;ta&lt;/span&gt; &lt;span class="hps"&gt;chưa bao giờ&lt;/span&gt; &lt;span class="hps"&gt;thấy&lt;/span&gt; &lt;span class="hps"&gt;và&lt;/span&gt; &lt;span class="hps"&gt;với những nhân vật &lt;/span&gt; bạn &lt;span class="hps"&gt;sẽ không bao giờ&lt;/span&gt; &lt;span class="hps"&gt;quên&lt;/span&gt;&lt;span class=""&gt;. &lt;/span&gt;&lt;/span&gt;Bao gồm 12 truyện ngắn tác giả khắc họa một hành trình về tham vọng, niềm đam mê và danh dự&lt;/div&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:47+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập truyện ngắn From A twist in the tale"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

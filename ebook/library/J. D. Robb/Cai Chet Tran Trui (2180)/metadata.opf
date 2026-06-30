@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2180</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f3dff351-6486-4489-b27b-a88739e987f0</dc:identifier>
+        <dc:title>Cái Chết Trần Trụi</dc:title>
+        <dc:creator opf:file-as="Robb, J. D." opf:role="aut">J. D. Robb</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Dallas, năm 2036, một bé gái tám tuổi hoảng loạn bỏ trốn trong con ngõ nhỏ sau thời gian dài bị cưỡng bức, đánh đập. Hai mươi hai năm sau, không mấy ai biết được đó là quá khứ của Eve Dallas, nữ trung úy xinh đẹp và sắc sảo nhất của Sở Cảnh sát New York. Và ngay cả bản thân cô cũng không bao giờ muốn biết hay muốn nhớ...&lt;/p&gt; &lt;p&gt;Eve Dallas trở thành chuyên viên điều tra những tay giết người tàn bạo. Hơn mười năm trong lực lượng, cô đã biết cách sống sót trong nghề nhờ bản năng nhạy bén và sự cứng rắn. Thế nhưng vẫn có những phút giây yếu mềm tưởng chừng như có thể hạ gục cô. Đó là khi Eve chứng kiến ba người phụ nữ bị giết ở tư thế khỏa thân. Là khi đứng trước Roarke - một tỷ phú người gốc Ailen, nghi can chính của vụ án - và nỗ lực đến tuyệt vọng để cưỡng lại sức hút của anh. Đó cũng chính là khi cô phải đối diện với những gì cô tưởng mình đã quên từ lâu.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;&lt;i&gt;Cái Chết Trần Trụi&lt;/i&gt; là tập đầu của bộ tiểu thuyết vị lai &lt;i&gt;In Death&lt;/i&gt; nổi tiếng của J. D. Robb. Ly kỳ và lãng mạn, lạnh lùng nhưng cũng vô cùng cảm động, đây là cuốn sách bán chạy nhất của một trong những nhà văn ăn khách hàng đầu thế giới hiện nay.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:16+00:00"/>
+        <meta name="calibre:title_sort" content="Cái Chết Trần Trụi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

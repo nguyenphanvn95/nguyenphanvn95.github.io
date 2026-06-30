@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1144</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">beec3e8f-73af-461e-b2d8-e66978786753</dc:identifier>
+        <dc:title>Ngầm</dc:title>
+        <dc:creator opf:file-as="Murakami Haruki" opf:role="aut">Haruki Murakami</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-04-09T09:35:53+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;&lt;b&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;Ngầmcủa Murakami được mô tả là một tác phẩm báo chí đẫm chất văn chương, khẳng định tài năng của ông - vốn gần như không cần tranh cãi trong lĩnh vực tiểu thuyết - ở thể loại phi hư cấu. Loạt phỏng vấn với 60 nạn nhân và tám thành viên giáo phái Aum, không chỉ đem lại cái nhìn khách quan và khá toàn diện về vụ tấn công mà còn phản tỉnh về một nước Nhật “ngủ yên” trong vật chất và mê mụ, không còn khả năng phản xạ tức thì trước cơn nguy biến; nỗi cô độc, trạng thái kiệt lực trong một xã hội duy lý đã đẩy những người bình thường thành đồng lõa với “kẻ thủ ác”... Tuy nhiên, tinh thần hy sinh cao quý của mỗi công dân bình thường, như người gác đường ray, đêm nào đi làm cũng dặn vợ, “có thể đêm nay anh không về”, lại khiến chúng ta cảm động vô cùng về chính nước Nhật đó.Ngầmcủa Murakami được mô tả là một tác phẩm báo chí đẫm chất văn chương, khẳng định tài năng của ông - vốn gần như không cần tranh cãi trong lĩnh vực tiểu thuyết - ở thể loại phi hư cấu. Loạt phỏng vấn với 60 nạn nhân và tám thành viên giáo phái Aum, không chỉ đem lại cái nhìn khách quan và khá toàn diện về vụ tấn công mà còn phản tỉnh về một nước Nhật “ngủ yên” trong vật chất và mê mụ, không còn khả năng phản xạ tức thì trước cơn nguy biến; nỗi cô độc, trạng thái kiệt lực trong một xã hội duy lý đã đẩy những người bình thường thành đồng lõa với “kẻ thủ ác”... Tuy nhiên, tinh thần hy sinh cao quý của mỗi công dân bình thường, như người gác đường ray, đêm nào đi làm cũng dặn vợ, “có thể đêm nay anh không về”, lại khiến chúng ta cảm động vô cùng về chính nước Nhật đó.Ngầmcủa Murakami được mô tả là một tác phẩm báo chí đẫm chất văn chương, khẳng định tài năng của ông - vốn gần như không cần tranh cãi trong lĩnh vực tiểu thuyết - ở thể loại phi hư cấu. Loạt phỏng vấn với 60 nạn nhân và tám thành viên giáo phái Aum, không chỉ đem lại cái nhìn khách quan và khá toàn diện về vụ tấn công mà còn phản tỉnh về một nước Nhật “ngủ yên” trong vật chất và mê mụ, không còn khả năng phản xạ tức thì trước cơn nguy biến; nỗi cô độc, trạng thái kiệt lực trong một xã hội duy lý đã đẩy những người bình thường thành đồng lõa với “kẻ thủ ác”... Tuy nhiên, tinh thần hy sinh cao quý của mỗi công dân bình thường, như người gác đường ray, đêm nào đi làm cũng dặn vợ, “có thể đêm nay anh không về”, lại khiến chúng ta cảm động vô cùng về chính nước Nhật đó.</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=ngam</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:04+00:00"/>
+        <meta name="calibre:title_sort" content="Ngầm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

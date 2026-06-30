@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1374</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">adcaaad6-e659-4f20-971a-f98be9c31efc</dc:identifier>
+        <dc:title>Lời thách đố tình yêu</dc:title>
+        <dc:creator opf:file-as="Nhi, Ni Xảo" opf:role="aut">Ni Xảo Nhi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-26T22:47:46+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cậu ta là một nhân vật xuất chúng trong trường. Chín mươi chín phần trăm nữ sinh trong trường đều bị khuất phục dưới đôi giày thể thao màu trắng của cậu ta, trong số đó bao gồm cả Trương Nhã Tuyên - người bạn thân của Thu Hạ Hạ cô. Đáng tiếc là ngoại hình của Trương cô nương không có gì nổi bật nên không những không thể "cưa đổ" được hotboy mà lại còn bị hoa khôi của trường là Chung Ngọc Thanh cười nhạo. Thu Hạ Hạ tức giận công khai "tuyên chiến" với Chung Ngọc Thanh. Nếu cô "cưa đổ" được cậu ta thì sẽ xả được hận cho bạn chí cốt - Trương Nhã Tuyên. Cô sử dụng mọi kế sách, cuối cùng cũng tiếp cận được với cậu ta, nhưng không ngờ nhân tài của cả trường như cậu ta lại sống rất bừa bãi, đồ ăn do cậu chế biến có thể hạ độc giết chết hàng nghìn con bò! Lẽ nào vì muốn "cưa cẩm" cậu ta mà Thu Hạ Hạ cô lại chịu hy sinh thân mình làm ô-sin cho cậu ta?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:31+00:00"/>
+        <meta name="calibre:title_sort" content="Lời thách đố tình yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

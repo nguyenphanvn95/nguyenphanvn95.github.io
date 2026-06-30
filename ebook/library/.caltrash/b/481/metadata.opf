@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">481</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3366b520-b87e-4e5e-a69a-e91db3398fb7</dc:identifier>
+        <dc:title>TUYỂN TẬP TRUYỆN NGẮN ĐẶC SẮC</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-07-19T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;em&gt;Tuyển tập truyện ngắn đặc sắc&lt;/em&gt; là tập hợp 13 truyện ngắn chọn lọc của các cây bút tiêu biểu trong văn học Việt Nam đương đại, do Nhà xuất bản Văn Học ấn hành. Tuyển tập quy tụ những tên tuổi quen thuộc như Ma Văn Kháng, Nguyễn Ngọc Tư, Sương Nguyệt Minh, Lý Lan, Đỗ Tiến Thụy, Phạm Thị Ngọc Liên cùng nhiều tác giả khác, mang đến những góc nhìn phong phú về đời sống và con người Việt Nam qua nhiều vùng miền, từ phố cổ, miền núi cao đến vùng sông nước Nam Bộ.&lt;/p&gt;
+&lt;p&gt;Mỗi truyện trong tập là một thế giới riêng với những số phận, những nỗi niềm và cách kể chuyện mang đậm dấu ấn cá nhân của từng tác giả: có câu chuyện xoay quanh nghề thợ bạc nơi phố núi, có những trăn trở của tình mẫu tử và hôn nhân tan vỡ, có không khí liêu trai huyền hoặc của đêm rừng, và cả những trang viết lấy cảm hứng từ lịch sử với nhân vật mang màu sắc truyền kỳ. Sự đa dạng về đề tài, bút pháp và giọng điệu giữa các tác giả tạo nên một bức tranh sinh động về truyện ngắn Việt Nam hiện đại, vừa giàu chất hiện thực vừa thấm đẫm chất thơ.&lt;/p&gt;
+&lt;p&gt;Cuốn sách phù hợp với độc giả yêu thích truyện ngắn Việt Nam, muốn khám phá nhiều phong cách viết khác nhau trong cùng một tuyển tập.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Truyện ngắn</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:48+00:00"/>
+        <meta name="calibre:title_sort" content="TUYỂN TẬP TRUYỆN NGẮN ĐẶC SẮC"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

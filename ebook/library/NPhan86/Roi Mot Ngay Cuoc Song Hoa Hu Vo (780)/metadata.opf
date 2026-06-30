@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">780</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">caa8e728-69b0-4cab-bbc3-88d0ac7df301</dc:identifier>
+        <dc:title>Rồi Một Ngày Cuộc Sống Hóa Hư Vô</dc:title>
+        <dc:creator opf:file-as="NPhan86" opf:role="aut">NPhan86</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-11-15T17:00:00+00:00</dc:date>
+        <dc:description>Cuốn sách dành cho phần đông mọi người</dc:description>
+        <dc:publisher>www.wattpad.com</dc:publisher>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/167621009</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>một</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>hư</dc:subject>
+        <dc:subject>ngày</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>cuộc</dc:subject>
+        <dc:subject>Random</dc:subject>
+        <dc:subject>sống</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:22+00:00"/>
+        <meta name="calibre:title_sort" content="Rồi Một Ngày Cuộc Sống Hóa Hư Vô"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

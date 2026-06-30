@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">547</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3ae0681d-0b1b-4808-9068-a9216958d3a3</dc:identifier>
+        <dc:title>Tôi Là Số Bốn</dc:title>
+        <dc:creator opf:file-as="Lore, Pittacus" opf:role="aut">Pittacus Lore</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;i&gt;Tôi Là Số Bốn&lt;/i&gt; là phần đầu tiên trong bộ sách 6 cuốn của Pittacus Lore (bút danh của hai nhà văn James Frey &amp;amp; Jobie Hughes). Nhân vật chính là anh chàng trai John Smith (hay còn gọi là Số Bốn). John là một trong 9 thiếu niên ngoài hành tinh đổ bộ xuống trái đất để chạy trốn kẻ thù độc ác đang truy đuổi họ.&lt;/p&gt; &lt;p&gt;Tại đây, John Smith hòa nhập vào cuộc sống của người trái đất, anh liên tục thay đổi thân thế, liên tục di chuyển từ thành phố này sang thành phố khác cùng người giám hộ Henri. Anh tưởng mình đã không còn mối liên hệ nào với quá khứ nhưng tại thị trấn nhỏ Paradise, John bắt đầu vướng phải “sự cố” nằm ngoài dự kiến và có thể sẽ làm thay đổi số phận của anh. Đó là tiếng sét ái tình, anh đã tìm thấy tình yêu đầu đời.&lt;/p&gt;Tuy nhiên, 3 trong số 8 thanh niên cùng hành tinh với anh đã bị giết chết một cách bí ẩn tại trái đất. Cùng lúc đó, anh phát hiện ra những khả năng mới của mình và anh dùng nó để chống lại những kẻ đang truy đuổi.&lt;/div&gt;</dc:description>
+        <dc:publisher>Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Là Số Bốn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

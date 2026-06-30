@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2308</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7e800b0e-49d9-4190-8383-841026fc230a</dc:identifier>
+        <dc:title>Bến Xe</dc:title>
+        <dc:creator opf:file-as="Vi, Thương Thái" opf:role="aut">Thương Thái Vi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MD5">0d40e3f5f0936a8c32e123cbe1e76466</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:30+00:00"/>
+        <meta name="calibre:title_sort" content="Bến Xe"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">411</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fc97735a-271d-4e5f-84af-62893d1b04da</dc:identifier>
+        <dc:title>Thiên Bình và tình yêu</dc:title>
+        <dc:creator opf:file-as="Goodman, Linda" opf:role="aut">Linda Goodman</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-12-15T03:28:01+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;EM&gt;Cái Đẹp thật nguy hiểm, cũng thật khó cưỡng. Đó là cảnh bảo đầu tiên nếu bạn chuẩn bị yêu một chàng trai hay cô gái &lt;STRONG&gt;Thiên Bình&lt;/STRONG&gt;. Duyên dáng, lịch thiệp,&lt;B&gt; &lt;/B&gt;Thiên Bình chỉ xuất hiện thôi cũng đủ sức khiến bạn phải mỉm cười quý mến. Nếu chỉ sau một vài giao tiếp xã giao, một cuộc trò chuyện mà bạn phải lòng họ thì cũng không có gì đáng ngạc nhiên. Họ quả là những sát thủ tình trường dễ thương khiến rất nhiều cô nàng/anh chàng xiêu lòng.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;EM&gt;Cũng chính sức hút đó sẽ là mầm tai họa cho những cuộc xung đột, ghen tuông trong tình yêu giữa Thiên Bình và các cung hoàng đạo khác. Nếu bạn đang hoặc sẽ yêu một Thiên Bình, Linda Goodman khuyên bạn nên nghiên cứu cẩn thận sự khác biệt giữa từ “giao thiệp rộng” và “không chung thủy”, phải nhớ rằng hai từ này thực sự khác biệt. Sẽ có một chút khó chịu từ người yêu của &lt;STRONG&gt;Thiên Bình&lt;/STRONG&gt;, nhưng họ sẽ nhanh chóng hóa giải nó bằng thứ vũ khí tối thương - sự lãng mạn dịu dàng.&lt;/EM&gt;&lt;/P&gt; &lt;P&gt;&lt;B&gt;http://tve-4u.org&lt;/B&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>NXB Lao Động + Cẩm Phong</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science &amp; Technical</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:33+00:00"/>
+        <meta name="calibre:title_sort" content="Thiên Bình và tình yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2332</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">31a4b9db-c97f-4d66-9284-39aeeac25088</dc:identifier>
+        <dc:title>Bắt Lửa</dc:title>
+        <dc:creator opf:file-as="Collins, Suzanne" opf:role="aut">Suzanne Collins</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Bảo vệ được mạng sống cho bản thân cùng người bạn đồng hành sau Đấu trường Sinh tử chưa phải là một kết thúc có hậu với Katniss. Chuyến Diễu hành Chiến thắng dọc đất nước Panem đang gần kề và cô gái trẻ phải đón một vị khách không mời mà đến, cùng lời đe dọa nhằm vào sinh mạng của những người cô yêu quý. Một ngọn lửa sục sôi sắp bùng cháy, phải đóng kịch như thế nào để dập tắt nó? Liệu những người dân lầm than có bị đánh lừa? Đấu trường khốc liệt trước đây hóa ra chỉ là một chuyện nhỏ trước viễn cảnh hãi hùng mà Katniss phải đối mặt.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Vẫn với giọng văn súc tích, vẫn những tình tiết bất ngờ, dồn dập, vẫn với thế giới viễn tưởng vừa đầy ắp những điều bất khả lại vừa hết sức thân quen, &lt;i&gt;Bắt lửa&lt;/i&gt; là câu chuyện của một cô gái mới lớn, chưa hết băn khoăn trước sự rắc rối của tình yêu và choáng ngợp trước bàn cờ chính trị. Một cuốn sách khiến bạn không thể đặt xuống khi đã cầm lên, một cuốn sách để bạn có thêm dũng khí, và một cuốn sách để bạn nhớ mãi trong cuộc đời mình.&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:33.573301+00:00"/>
+        <meta name="calibre:title_sort" content="Bắt Lửa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

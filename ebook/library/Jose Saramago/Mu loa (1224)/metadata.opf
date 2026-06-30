@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1224</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a86dc00a-b43f-47b2-8e2c-1b50119d8f4d</dc:identifier>
+        <dc:title>Mù lòa</dc:title>
+        <dc:creator opf:file-as="Saramago, Jose" opf:role="aut">Jose Saramago</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-06-25T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một người đàn ông đang lái xe ô tô bỗng dưng hóa mù. Một người qua đường đưa ông ta về nhà cũng hóa mù theo. Người bác sĩ nhãn khoa khám cho người đàn ông bị mù đầu tiên cùng những người bệnh trong phòng chờ hôm ấy đều bỗng dưng chẳng nhìn thấy gì nữa ngoài một sắc trắng như “bơi giữa biển sữa”. Bệnh mù trắng như căn bệnh lây lan khắp nơi, khiến tâm lý người dân hoảng loạn.&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;Đây quả là một cơn ác mộng thực sự: một xã hội thành thị bậc cao nhanh chóng trở lại trạng thái xã hội man rợ khi toàn bộ cơ sở hạ tầng của cộng đồng sụp đổ và sự ủng hộ lẫn nhau cũng như nghĩa vụ giữa mọi người bị phá vỡ. Xác chết ngập đường, lương thực thiếu thốn, người nọ vào chiếm cứ nhà người kia, v.v… Và một lần nữa, bà vợ ông bác sỹ lại lèo lái giúp nhóm người của mình vượt qua cơn khủng hoảng này.&lt;/p&gt;
+&lt;p&gt;Với lối viết tỉ mỉ, châm biếm, Jose Saramago đã cuốn hút người đọc vào từng trang sách, cười khóc với các nhân vật trong truyện, và hơn hết là một sự suy ngẫm về con người chúng ta, như lời bà vợ ông bác sĩ: “Em không nghĩ chúng ta đã hóa mù, em nghĩ từ trước đến giờ chúng ta vẫn mù, Mù nhưng nhìn được, Những người mù có thể nhìn được, nhưng không thấy”.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13+00:00"/>
+        <meta name="calibre:title_sort" content="Mù lòa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

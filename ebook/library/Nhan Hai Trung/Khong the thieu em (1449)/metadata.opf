@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1449</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">763f1237-cfe5-4441-9888-d11ed937f148</dc:identifier>
+        <dc:title>Không thể thiếu em</dc:title>
+        <dc:creator opf:file-as="Nhân Hải Trung" opf:role="aut">Nhân Hải Trung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-08T09:15:06+00:00</dc:date>
+        <dc:description>&lt;p&gt;Không thể thiếu em kể về một câu chuyện tình chân thật, gần gũi với đời thực nhưng không hề thiếu phần lãng mạn và bay bổng. Đổng Tri Vy không phải là Lọ Lem, dù rằng gia cảnh nghèo khó, địa vị bình thường, ngoại hình mờ nhạt. Vì cô thực tế, lý trí và sống nghiêm túc, luôn tự lực cánh sinh, không bao giờ dựa dẫm vào người khác hay chờ mong vận may từ trên trời rơi xuống. Tri Vy luôn phân định rạch ròi ranh giới giữa lãnh đạo và nhân viên trước một người chủ hào hoa phong nhã như Viên Cảnh Thụy. Cô như một hạt olive, luôn che giấu vị ngọt ngào dưới lớp vỏ cứng rắn, nếu không cắn vỡ vỏ thì sẽ chẳng ai cảm nhận được.&lt;/p&gt;</dc:description>
+        <dc:publisher>AC87</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39.276929+00:00"/>
+        <meta name="calibre:title_sort" content="Không thể thiếu em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

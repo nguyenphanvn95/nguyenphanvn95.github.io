@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1527</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8296e18a-58ff-418c-91c3-f7566f002922</dc:identifier>
+        <dc:title>Kẻ Nhắc Tuồng</dc:title>
+        <dc:creator opf:file-as="Carrisi, Donato" opf:role="aut">Donato Carrisi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Năm bé gái lần lượt bị mất tích.&lt;/p&gt; &lt;p&gt;Năm cánh tay trái được tìm thấy trong khu rừng vắng.&lt;/p&gt; &lt;p&gt;Khi phát hiện ra cánh tay thứ sáu, nhóm điều tra phải nhờ đến sự giúp đỡ của Mila Vasquez, nữ cảnh sát chuyên điều tra các vụ mất tích.&lt;/p&gt;Số phận của bé gái thứ sáu sẽ ra sao khi hung thủ tỏ ra rất khôn ngoan và luôn đi trước nhóm điều tra một bước.&lt;/div&gt;</dc:description>
+        <dc:publisher>Phụ Nữ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:47+00:00"/>
+        <meta name="calibre:title_sort" content="Kẻ Nhắc Tuồng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

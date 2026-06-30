@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">453</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ea9a4207-cc36-411f-a386-ccab9486ff99</dc:identifier>
+        <dc:title>Thần Người và Đất Việt</dc:title>
+        <dc:creator opf:file-as="Tường, Tạ Chí Đại" opf:role="aut">Tạ Chí Đại Tường</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:19:47+00:00</dc:date>
+        <dc:description>&lt;p&gt;Chuyên khảo Thần, người và đất Việt trình bày sự hình thành và biến chuyển của các hệ thống thần linh của người Việt từ cổ đại tới cận đại, từ hệ thống các nhiên thần (các thần cây, đá; các thần sông nước) đến các nhân thần sơ khai, tiếp đó là các hệ thần mới, nảy sinh do tiến trình hình thành thể chế quân chủ tập quyền, đồng thời do sự giao lưu với tín ngưỡng và tôn giáo của các dân tộc phương Bắc và phương Nam trong tiến trình lịch sử của cộng đồng Việt.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:45+00:00"/>
+        <meta name="calibre:title_sort" content="Thần Người và Đất Việt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

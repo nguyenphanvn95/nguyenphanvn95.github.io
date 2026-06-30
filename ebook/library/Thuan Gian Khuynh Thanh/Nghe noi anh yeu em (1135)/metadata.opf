@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1135</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6bb23a85-c5e3-4abf-82c9-e5c5e99741fe</dc:identifier>
+        <dc:title>Nghe nói anh yêu em</dc:title>
+        <dc:creator opf:file-as="Thành, Thuấn Gian Khuynh" opf:role="aut">Thuấn Gian Khuynh Thành</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T04:13:15+00:00</dc:date>
+        <dc:description>&lt;p&gt;Anh, con người do dự, rốt cuộc đã đến chậm một bước. Chính vào lúc đôi nam nữ từng yêu nhau nhìn qua một con đường, anh đã lựa chọn cách đứng lại nhìn theo bóng họ rời xa. Và cũng chính lúc ấy, anh mới phát hiện ra rằng nỗi đau mà cô đã từng cố quên và gần quên đi, dường như đã trở lại.Ánh cúi đầu, đưa tay dụi dụi đầu thuốc lá lên tường, lặng lẽ lấy bật lửa ra châm, rít một hơi thật sâu rồi buồn bã quay người đi.Cô không muốn cho người khác thấy được nỗi đau của mình. Anh biết điều đó. Vì họ đã ở bên nhau bốn năm rồi. Cũng lâu như người ấy.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:03+00:00"/>
+        <meta name="calibre:title_sort" content="Nghe nói anh yêu em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

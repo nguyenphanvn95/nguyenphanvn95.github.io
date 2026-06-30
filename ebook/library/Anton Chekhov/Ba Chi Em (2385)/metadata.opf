@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2385</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0e6fe675-8601-4581-b888-aee0c57494be</dc:identifier>
+        <dc:title>Ba Chị Em</dc:title>
+        <dc:creator opf:file-as="Chekhov, Anton" opf:role="aut">Anton Chekhov</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-07-21T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:39+00:00"/>
+        <meta name="calibre:title_sort" content="Ba Chị Em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

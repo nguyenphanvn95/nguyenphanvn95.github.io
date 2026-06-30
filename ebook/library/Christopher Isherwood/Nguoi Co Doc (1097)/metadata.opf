@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1097</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">61d34406-be14-4570-a92b-fbd5ffcfdba8</dc:identifier>
+        <dc:title>Người Cô Độc</dc:title>
+        <dc:creator opf:file-as="Isherwood, Christopher" opf:role="aut">Christopher Isherwood</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Khi &lt;i&gt;Người cô độc&lt;/i&gt; được xuất bản lần đầu tiên năm 1964, nó đã gây ra một cơn chấn động ở Mỹ bởi bức chân dung sinh động của một người trung niên đồng tính, chân thực và cảm động.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Câu chuyện miêu tả lại 24 giờ một ngày bình thường của George - giáo sư người Anh sống ở khu ngoại ô Nam California - đang thích ứng với cuộc sống của mình sau cái chết bất ngờ của người bạn đời - Jim - người đã cùng ông chung sống suốt 16 năm. Ông vật lộn dai dẳng với những thói quen cuộc sống thường nhật. Châm biếm, sâu sắc, vui buồn thất thường, hài hước, và nỗi buồn miên man của một con người đã mất đi lẽ sống, &lt;i&gt;chỉ còn ba phần người&lt;/i&gt;, cuốn tiểu thuyết này đã lột tả bộ mặt của cuộc sống một cách sắc sảo.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Gay &amp; Lesbian</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:58+00:00"/>
+        <meta name="calibre:title_sort" content="Người Cô Độc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

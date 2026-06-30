@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2354</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">41a56dbf-b59c-4ae2-b0ac-b08a8dc7d62c</dc:identifier>
+        <dc:title>Ban Ki Moon</dc:title>
+        <dc:creator opf:file-as="NXB Crayon House Co.,Ltd - Shin, Woong-Jin" opf:role="aut">NXB Crayon House Co.,Ltd - Shin, Woong-Jin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-07-12T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:36+00:00"/>
+        <meta name="calibre:title_sort" content="Ban Ki Moon"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

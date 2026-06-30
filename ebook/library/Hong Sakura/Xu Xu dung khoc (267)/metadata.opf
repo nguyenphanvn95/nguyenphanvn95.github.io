@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">267</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0f06fb5c-84b5-41d1-a9b4-e20139072ce3</dc:identifier>
+        <dc:title>Xu Xu đừng khóc</dc:title>
+        <dc:creator opf:file-as="Sakura, Hồng" opf:role="aut">Hồng Sakura</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Xu Xu, don’t cry là câu chuyện về đời sống của một nữ sinh có cái tên đẹp – Trường Xuân, tên thường gọi ở nhà là Xu Xu, nhưng do tính cách hồn nhiên, trong sáng, nhiều khi ngốc nghếch một cách đáng yêu nên bị gọi là Xu…khờ. Chính sự ngốc nghếch đáng yêu trong tính cách, mà thực tế lại phản ánh một tâm hồn trong sáng, trí thông minh đạt điểm IQ cao đã giúp Xu Xu có những người bạn tuyệt vời…&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:05+00:00"/>
+        <meta name="calibre:title_sort" content="Xu Xu đừng khóc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

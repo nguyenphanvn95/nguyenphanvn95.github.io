@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2123</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4f594c25-6688-4642-b8d7-f67df503d138</dc:identifier>
+        <dc:title>Cô gái chọc tổ ong bầu</dc:title>
+        <dc:creator opf:file-as="Larsson Stieg" opf:role="aut">Stieg Larsson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-10-19T00:15:05+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align:center;"&gt;Bắt đầu từ phần kết “không thể nghẹt thở hơn” của Cô gái đùa với lửa, Salander được người bạn đồng hành Blomkvist đưa đi cấp cứu sau khi cô bị chính bố đẻ bắn trọng thương, bị người anh cùng cha khác mẹ chôn sống… Từ đây, trong Cô gái chọc tổ ong bầu, cảnh sát điều tra, nhân viên tư pháp và giới báo chí chính thức bước vào cái gọi là “Vụ Salander”.&lt;/p&gt;&lt;p class="description"&gt;Họ lục vào quá khứ của cô, họ lần theo những đầu mối bị mất hoặc bị đánh lạc hướng, họ lựa chọn đứng về lợi ích của cá nhân hay số đông… và họ bàng hoàng trước sự thật, chân thực và nghiệt ngã.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=cogaichotoongbau</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:09+00:00"/>
+        <meta name="calibre:title_sort" content="Cô gái chọc tổ ong bầu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

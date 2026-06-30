@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2111</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3ce05993-708f-4de5-a2ea-c1fa16da3166</dc:identifier>
+        <dc:title>Cỗ máy bán hàng tối ưu</dc:title>
+        <dc:creator opf:file-as="Holmes, Chet" opf:role="aut">Chet Holmes</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-02-08T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:rating" content="10"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:08+00:00"/>
+        <meta name="calibre:title_sort" content="Cỗ máy bán hàng tối ưu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

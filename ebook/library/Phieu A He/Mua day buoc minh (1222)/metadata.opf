@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1222</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d0d30490-fd2b-495b-b739-c47883387153</dc:identifier>
+        <dc:title>Mua dây buộc mình</dc:title>
+        <dc:creator opf:file-as="Hề, Phiếu A" opf:role="aut">Phiếu A Hề</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:34+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nhiều năm trước, Trịnh Hài thề rằng: “Nếu tôi có bất cứ ý đồ gì khác với Hòa Hòa, tôi sẽ bị sét đánh!” Sức mạnh lý trí kiên định của anh mạnh gấp vạn lần sức mạnh cảm tính. Nhiều năm sau, anh dùng cách thức mà bản thân mình chưa từng nghĩ đến, đồng thời đã bị sét trời và sét đất đánh trúng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13+00:00"/>
+        <meta name="calibre:title_sort" content="Mua dây buộc mình"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

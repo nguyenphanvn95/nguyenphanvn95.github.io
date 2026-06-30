@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2378</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">30a26890-e7dd-446e-8170-5f91b5df35d4</dc:identifier>
+        <dc:title>Ba Phút Sự Thật</dc:title>
+        <dc:creator opf:file-as="Quán, Phùng" opf:role="aut">Phùng Quán</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:37+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Phùng Quán là nhà văn để lại nhiều dấu ấn khó quên trong lịch sử văn học Cách mạng Việt Nam từ nửa sau thế kỷ XX. Ông là một nhà văn chiến sĩ trọn đời trung thành với lý tưởng mà mình đã chọn từ thuở thiếu thời. Đi theo Vệ Quốc Đoàn chiến đấu vì Tổ quốc vì nhân dân; Dù phải vượt qua vô vàn tai ương đau khổ suốt 30 năm trời, tư sau vụ "nhân văn giai phẩm"; dù phải đi lao động cải tạo từ Thái Nguyên, Việt Trì, Thanh Hoá, Thái Bình, không nhà cửa, lấy vợ có hai con rồi mà 20 năm ròng không có chỗ trú thân. &lt;/p&gt;</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:38+00:00"/>
+        <meta name="calibre:title_sort" content="Ba Phút Sự Thật"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

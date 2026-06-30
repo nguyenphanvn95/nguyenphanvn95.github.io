@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1178</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1ae83408-7474-419a-83be-3b6541fcd98a</dc:identifier>
+        <dc:title>Nếu em thấy anh bây giờ - Cecelia Ahern</dc:title>
+        <dc:creator opf:file-as="Ahern, Cecelia" opf:role="aut">Cecelia Ahern</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:09+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;Những người như anh được gọi là người bạn tưởng tượng, người bạn vô hình. Nhưng gọi như thế nào và tin hay không, điều đó không quan trọng. Thế giới Tỉn Phai của anh tồn tại không để người ta nói đến hay tán tụng, mà để đáp ứng nhu cầu của những ai cần đến nó. Và anh sẽ trở thành người thay đổi cuộc đời em... chỉ cần em nhìn thấy anh... Thế giới của em là những mảnh ước mơ tan vỡ. Em đã tự đóng cửa trái tim mình, tự giết chết những mơ mộng và chôn vùi hy vọng của chính mình. Tất cả những gì em có, lẽ ra chỉ là những vết thương mãi mãi không thể lành... nếu em không nhìn thấy anh... Gặp em, quen biết em, và hơn hết là yêu em... Nhìn thấy anh, tin anh, và hơn hết là yêu anh... Đó chính là bầu trời sau cơn mưa tươi sáng nhất...&lt;/p&gt;</dc:description>
+        <dc:publisher>Heragong</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:08+00:00"/>
+        <meta name="calibre:title_sort" content="Nếu em thấy anh bây giờ - Cecelia Ahern"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1271</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">282c0e82-16e4-416a-96c9-35c6b2916d74</dc:identifier>
+        <dc:title>Mây trên đồng bay mãi</dc:title>
+        <dc:creator opf:file-as="Mạch, An Dĩ" opf:role="aut">An Dĩ Mạch</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-12-19T03:42:16+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:19+00:00"/>
+        <meta name="calibre:title_sort" content="Mây trên đồng bay mãi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

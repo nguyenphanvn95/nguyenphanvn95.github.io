@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1569</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ff33ea89-bd4d-4ba2-9a41-ac29f5a6fa01</dc:identifier>
+        <dc:title>Hồn Hoang Xác Ảo</dc:title>
+        <dc:creator opf:file-as="Yager, Fred" opf:role="aut">Fred Yager</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Một vụ đánh cắp nhân dạng đặc biệt…&lt;/p&gt; &lt;p&gt;Đó là khi một thiên tài máy tính - trở thành tàn tật do bị kẹt giữa làn đạn trên phố, sử dụng một trò chơi trên Internet có tên là “Cybersona” để chiếm cơ thể người chơi - một thầy giáo khoa học đã bị sa thải - nhằm trả thù những kẻ có liên quan tới vụ tai nạn.&lt;/p&gt;Người thầy giáo, trong nỗ lực nhằm quay lại cơ thể của mình, đã chiếm cơ thể của người chơi tiếp theo, chỉ có điều anh không ngờ rằng người đó lại là một cậu bé 10 tuổi.&lt;/div&gt;</dc:description>
+        <dc:publisher>Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science Fiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Hồn Hoang Xác Ảo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

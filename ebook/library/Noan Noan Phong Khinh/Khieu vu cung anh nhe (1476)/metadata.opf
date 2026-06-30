@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1476</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">625bd7f9-271c-427e-a785-49015329bdfe</dc:identifier>
+        <dc:title>Khiêu vũ cùng anh nhé</dc:title>
+        <dc:creator opf:file-as="Khinh, Noãn Noãn Phong" opf:role="aut">Noãn Noãn Phong Khinh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T02:21:56+00:00</dc:date>
+        <dc:description>&lt;p&gt;"Tình yêu không thể miễn cưỡng, tình yêu không phải là sự chiếm hữu, tình yêu là cánh diều tự do, người cầm dây do định mệnh sắp đặt sẽ thả nó bay lên"...Kha Mộng Kì gặp Trình Vũ Kiệt trong ngày đầu tiên đến trường Khải Thịnh, trong khung cảnh sương mờ giăng giăng, anh cúi đầu hôn một cô gái không rõ mặt.Kha Mộng Kì là người vô tình bắt gặp Trình Vũ Kiệt đụng độ với bọn cho vay nặng lãi, cô đứng ra nhận lời trả nợ cho anh. Trình Vũ Kiệt là một chàng trai bí ẩn, âu sầu. Chàng trai ấy có vỏ bọc bên ngoài là một ứng cử viên sáng giá của cuộc thi Super Boy, nhưng sâu thẳm bên trong là những nỗi đau khó lành. Chính Kha Mộng Kì là người đã nhìn thấy những nỗi đau ấy, truyền cho anh cảm hứng và sự tự tin. Cô làm tất cả vì anh, nhưng anh lại đẩy cô ra xa.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:42+00:00"/>
+        <meta name="calibre:title_sort" content="Khiêu vũ cùng anh nhé"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

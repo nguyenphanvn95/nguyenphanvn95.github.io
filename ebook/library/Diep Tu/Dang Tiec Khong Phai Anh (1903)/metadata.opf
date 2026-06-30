@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1903</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">491e5b7a-d8d7-4db9-9a7f-f36040c0e712</dc:identifier>
+        <dc:title>Đáng Tiếc Không Phải Anh</dc:title>
+        <dc:creator opf:file-as="Tử, Diệp" opf:role="aut">Diệp Tử</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T05:50:02+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện tình lãng mạn của Diệp Tử và Hướng Huy bắt đầu từ đại học, đã từng hứa hẹn sẽ nắm tay nhau đi suốt cuộc đời. Nhưng những lời thề thốt đẹp đẽ đến mấy cũng không thắng nổi nỗi đau của số mệnh.
+Hướng Huy phải sang Anh quốc thay gia đình trả một khoản nợ, buộc phải rời xa Diệp Tử.
+Thời gian và khoảng cách, liệu tình yêu của họ có đủ để chiến thắng số mệnh? 2 người yêu nhau có trở về bên nhau ?!
+Sau 4 năm dài, với bao hiểu lầm xảy ra, quá khứ và hiện tại, liệu Diệp Tử còn tin tưởng và tha thứ cho Hướng Huy?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:38+00:00"/>
+        <meta name="calibre:title_sort" content="Đáng Tiếc Không Phải Anh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

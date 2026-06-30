@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2425</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c5264039-8ea0-478c-8aba-5ea7326afd52</dc:identifier>
+        <dc:title>Ăn mày dĩ vãng</dc:title>
+        <dc:creator opf:file-as="Lai, Chu" opf:role="aut">Chu Lai</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-16T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Cuộc Chiến VN</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:44+00:00"/>
+        <meta name="calibre:title_sort" content="Ăn mày dĩ vãng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

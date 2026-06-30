@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1453</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7c3b5438-85a7-4e63-9f2f-dc3b9b504015</dc:identifier>
+        <dc:title>Không phải tinh hờ</dc:title>
+        <dc:creator opf:file-as="Gibson, Rachel" opf:role="aut">Rachel Gibson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:45+00:00</dc:date>
+        <dc:description>&lt;p&gt;Adele Harris đã hẹn hò với tất cả các loại đàn ông - quái dị có, nói dối có, cả những kẻ thất bại. Những người ích kỷ, những kẻ cuồng dâm, và những kẻ điên. Điều đó đủ làm cho một cô gái quyết định từ bỏ việc hẹn hò mãi mãi.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:39+00:00"/>
+        <meta name="calibre:title_sort" content="Không phải tinh hờ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

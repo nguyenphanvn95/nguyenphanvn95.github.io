@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1665</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">21520320-d46e-4723-b5e8-02064308d593</dc:identifier>
+        <dc:title>Giọt Rừng</dc:title>
+        <dc:creator opf:file-as="Prisvin, Mikhain" opf:role="aut">Mikhain Prisvin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-04-03T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:12+00:00"/>
+        <meta name="calibre:title_sort" content="Giọt Rừng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

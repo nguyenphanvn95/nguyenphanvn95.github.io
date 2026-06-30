@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2178</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">63b5d1b3-7bb6-40b8-9635-19e5fdeef3aa</dc:identifier>
+        <dc:title>Cái Ghế Trống</dc:title>
+        <dc:creator opf:file-as="Deaver, Jeffery" opf:role="aut">Jeffery Deaver</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-01-01T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Rời New York, Rhyme cùng Amelia Sachs và người trợ lý trung thành Thom đến Bắc Carolina để tiến hành cuộc phẫu thuật mà anh đã chờ đợi từ lâu. Nhưng vừa đặt chân đến Tanner’s Corner, họ bị lôi kéo ngay vào vụ án đang làm náo loạn nơi này. Hai cô gái bị bắt cóc, những cái chết vì ong bắp cày… Có vẻ như tất cả đều liên quan đến Thằng Bọ, và chỉ cần lần ra dấu vết của gã trai, vụ án sẽ khép lại.&lt;/p&gt; &lt;p&gt;Nhưng mọi chuyện không đơn giản như vậy, sự kém cỏi và phức tạp của cảnh sát địa phương, mưu mô của những kẻ phá bĩnh đã khiến cho vụ án ngày càng rắc rối. Rhyme cứ mãi quẩn quanh với những chứng cứ và nghi vấn: liệu Thằng Bọ có phải là thủ phạm? Cuộc truy tìm tưởng như đã rơi vào bế tắc chỉ thực sự bắt đầu khi Amelia giải thoát cho Thằng Bọ và chạy trốn cùng hắn và phía đầm lầy Sầu Thảm.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Văn Học &amp; Bách Việt</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:16+00:00"/>
+        <meta name="calibre:title_sort" content="Cái Ghế Trống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1384</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cbfcbf08-ab79-4781-8509-c6f70120d744</dc:identifier>
+        <dc:title>Lỡ tay chạm ngực con gái</dc:title>
+        <dc:creator opf:file-as="Oni" opf:role="aut">Oni</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-04T13:22:52+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Lỡ tay chạm ngực con gái” là một điển hình của văn học mạng, nơi bạn đọc quyết định tác phẩm chứ không phải người viết có quyền đó. Bạn đọc chán, truyện ngắn hay những tiểu luận của bạn chả ai copy về xem, bạn đọc muốn, một cái "lỡ tay chạm ngực bạn gái" sẽ phải kéo dài ra, có thể trở thành một câu chuyện kinh điển khắp các mạng. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:32+00:00"/>
+        <meta name="calibre:title_sort" content="Lỡ tay chạm ngực con gái"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">581</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">17c59843-8b45-4b1b-acaa-a4dce4c81995</dc:identifier>
+        <dc:title>Tín ngưỡng Việt Nam</dc:title>
+        <dc:creator opf:file-as="Ánh, Toan" opf:role="aut">Toan Ánh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-01T18:37:26+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:59+00:00"/>
+        <meta name="calibre:title_sort" content="Tín ngưỡng Việt Nam"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

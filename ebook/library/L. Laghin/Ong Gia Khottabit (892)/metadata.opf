@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">892</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a4a02df7-0edc-46be-90c2-73846023b3d2</dc:identifier>
+        <dc:title>Ông Già Khốttabít</dc:title>
+        <dc:creator opf:file-as="Laghin, L." opf:role="aut">L. Laghin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:31+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;ông già Khốttabít là một vị thần trong truyện cổ Nghìn lẻ một đêm, bị nhốt trong một cái bình gốm phủ rêu đã yểm bùa có khắc tên đức Alla hàng nghìn năm dưới đáy sông Moskva, được Volka, một đội viên thiếu niên trẻ (12 tuổi) mò lên và giải thoát. &lt;/p&gt;</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Children</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:35+00:00"/>
+        <meta name="calibre:title_sort" content="Ông Già Khốttabít"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

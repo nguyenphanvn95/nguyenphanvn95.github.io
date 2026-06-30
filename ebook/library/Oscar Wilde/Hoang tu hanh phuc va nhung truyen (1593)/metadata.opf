@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1593</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9639112d-232c-48ee-9cc7-c701dd00a5f3</dc:identifier>
+        <dc:title>Hoàng tử hạnh phúc và những truyện khác</dc:title>
+        <dc:creator opf:file-as="Wilde, Oscar" opf:role="aut">Oscar Wilde</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Hoàng Tử Hạnh Phúc Và Những Truyện Khác &lt;/strong&gt;là một trong hai tập truyện thần tiên mà nhà văn nổi tiếng người Ireland - Oscar Wilde (1854 - 1900) viết cho hai cậu con trai của ông. Mặc dù không viết nhiều cho thiếu nhi, nhưng hai tập truyện thần tiên của ông đã để lại dấu ấn riêng trong văn học thiếu nhi. Truyện thần tiên của ông có phong cách riêng vừa đầy chất thơ vừa thấm đẫm chất suy tưởng. Chính vì thế mà nó được dành cho cả người lớn trong những chiêm nghiệm về cuộc đời.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Tales &amp; Fables</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:55+00:00"/>
+        <meta name="calibre:title_sort" content="Hoàng tử hạnh phúc và những truyện khác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

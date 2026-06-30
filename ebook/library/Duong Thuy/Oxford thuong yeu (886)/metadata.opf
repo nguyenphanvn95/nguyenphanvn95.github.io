@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">886</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">02929fb2-967c-4739-b4fd-d0706844b861</dc:identifier>
+        <dc:title>Oxford thương yêu</dc:title>
+        <dc:creator opf:file-as="Thụy, Dương" opf:role="aut">Dương Thụy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:32+00:00</dc:date>
+        <dc:description>&lt;p&gt;Oxford Thương Yêu lôi cuốn người dọc bằng những đoạn tả cảnh thiên nhiên tuyệt đẹp, những quan niệm sống cởi mở và hướng thiện của một lớp thanh niên trưởng thành trong giai đoạn đất nước được đổi mới. Ở nhiều đoạn, tác phẩm được khắc họa như một bức tranh lung linh màu sắc và sống động hiện thực.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Văn học Việt Nam</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:35+00:00"/>
+        <meta name="calibre:title_sort" content="Oxford thương yêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

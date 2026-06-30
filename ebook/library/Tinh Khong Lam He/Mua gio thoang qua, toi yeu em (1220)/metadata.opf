@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1220</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a44ea0ef-85bb-4742-a419-2f7c954a3722</dc:identifier>
+        <dc:title>Mưa gió thoáng qua, tôi yêu em</dc:title>
+        <dc:creator opf:file-as="Hề, Tình Không Lam" opf:role="aut">Tình Không Lam Hề</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:57+00:00</dc:date>
+        <dc:description>&lt;p&gt;Chu Tử Hành một tổng giám đốc phong độ, hào hoa, niềm mơ ước của bao cô gái. Họ tình cờ gặp nhau một lần ở mảnh đất cổ kính, đẹp mộng mơ Lệ Giang. Gặp lại nhau ở thành phố nhộn nhịp. Họ lựa chọn cách tiếp tục yêu nhau trong thầm lặng, không cần khoa trương với thiên hạ, họ chỉ cần có được sự ấm áp.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13.350946+00:00"/>
+        <meta name="calibre:title_sort" content="Mưa gió thoáng qua, tôi yêu em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

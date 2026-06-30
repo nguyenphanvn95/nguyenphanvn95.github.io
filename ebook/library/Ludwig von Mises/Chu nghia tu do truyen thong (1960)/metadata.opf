@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1960</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f041a516-8f81-4bc0-9fca-e869abc6f0ab</dc:identifier>
+        <dc:title>Chủ nghĩa tự do truyền thống</dc:title>
+        <dc:creator opf:file-as="Mises, Ludwig von" opf:role="aut">Ludwig von Mises</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-07-08T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <dc:subject>Political</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:48+00:00"/>
+        <meta name="calibre:title_sort" content="Chủ nghĩa tự do truyền thống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

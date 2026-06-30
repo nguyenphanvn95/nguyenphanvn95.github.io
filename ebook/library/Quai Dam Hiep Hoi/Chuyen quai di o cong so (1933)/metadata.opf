@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1933</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bd3202f4-386d-4788-9727-67d41c0be1d6</dc:identifier>
+        <dc:title>Chuyện quái dị ở công sở</dc:title>
+        <dc:creator opf:file-as="Hội, Quái Đàm Hiệp" opf:role="aut">Quái Đàm Hiệp Hội</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2009-11-30T17:00:00+00:00</dc:date>
+        <dc:description>Chuyện quái dị ở công sở gồm Vết nứt cánh hoa và Chết yểu trong hoa. Tất cả bắt đầu từ khi nhà khoa học quái dị Tần Xuyên dồn hết tâm sức tạo ra một con rô bốt mã số 153 có trí tuệ như người để nó “tẩy bỏ đi tính nhân loại bẩn thỉu”. Rồi truyện chuyển đến Tần Mỹ Đình, một cô gái mới ra đời đi làm cho công ty Hoa Hồng Tâm Duyên, luôn tự hào vì có người bạn trai tuấn tú phi thường - Tiểu Ảnh. Cho tới một hôm khi đang gọi xe, cô bỗng phát hiện ra cái bóng của bạn trai cô nghiêng đi như cái cột điện, rồi cái bóng thoáng chuyển động, cái đầu lắc lư đó không phải là Tiểu Ảnh. Tần Mỹ Đình hiểu rằng có một kẻ nào đó đang tồn tại bên trong bạn trai mình. Cái bóng đó ngày càng hoành hành nó dụ dỗ Tần Mỹ Đình và Tần Ảnh cùng nhảy lầu... Câu chuyện ma quái lại tiếp nối ở Chết yểu trong hoa.</dc:description>
+        <dc:publisher>Phương Đông</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ma Quái</dc:subject>
+        <dc:subject>Tiểu thuyết Kinh dị</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:41+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện quái dị ở công sở"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

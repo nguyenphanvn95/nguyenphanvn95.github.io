@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">714</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b576a068-452a-49ef-aed3-1e98b914db7d</dc:identifier>
+        <dc:title>Sông Đông êm đềm</dc:title>
+        <dc:creator opf:file-as="Sholokhov Mikhail" opf:role="aut">Mikhail Sholokhov</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-08-24T06:56:45+00:00</dc:date>
+        <dc:description>Sông Đông êm đềm là bộ tiểu thuyết vĩ đại nhất của nhà văn Nga Mikhail Aleksandrovich Sholokhov. Với tác phẩm này, Sholokhov đã được tặng Giải Nobel văn học năm 1965.
+Sông Đông êm đềm miêu tả một giai đoạn lịch sử mười năm từ 1912 đến 1922 trong phạm vi địa lý rộng lớn: mặt trận miền Tây nước Nga trong Thế chiến thứ nhất, Ukraina, Ba Lan, Romania cho đến Sankt-Peterburg, Moskva nhưng chủ yếu diễn ra ở hai bờ sông Đông và tập trung vào một làng Cossack ven sông.
+Gregori Melekhov là con thứ hai trong một gia đình cha là người Cossack, mẹ là người Thổ Nhĩ Kỳ. Gregori đem lòng yêu Aksinia, vợ một người hàng xóm và nhằm ngăn cản mối quan hệ này, gia đình Melekhov cưới Natalia cho chàng. Để được tiếp tục sống bên nhau, Gregori và Aksinia cùng bỏ nhà đi làm thuê. Tủi nhục, phẫn uất, Natalia đã quyên sinh nhưng không chết. Gregori phải đi lính khi đến tuổi và cùng với những chàng trai Cossack khác, trong đó có người anh Pyotr nhập ngũ trước đó chiến đấu chống lại quân Áo, Đức trong những năm đầu của Thế chiến thứ nhất.
+Tham gia chiến tranh, do cứu sống một Trung tá bị thương, chàng được tặng Huân chương thánh Gorge đồng thời cảm nhận thấy tính chất tàn bạo, vô nghĩa của chiến tranh và luôn day dứt về điều đó. Ở quê nhà, Aksinia sống trong cơ cực, cô đơn, tuyệt vọng, đứa con đầu lòng cũng không sống nổi vì bệnh tật, nàng đã chấp nhận quan hệ với Evgeni, con trai của chủ nhà. Bị thương và về phép, biết được chuyện của Aksinia, Gregori quay trở về sống với Natalia và sau khi chàng trở lại quân ngũ ít lâu thì Natalia sinh đôi một trai, một gái. Cách mạng tháng Mười nổ ra, trong những ngày hỗn loạn ấy, Gregori bị xô đẩy hết từ "bên Đỏ" rồi lại sang "bên Trắng". Mặc dù chán ghét và không ý thức được mình chém giết để làm gì nhưng vó ngựa Cossack của Gregori vẫn phiêu bạt khắp các chiến trường, lao vào những trận đánh đẫm máu. Bất chấp những gì đã xảy ra, Gregori và Aksinia vẫn yêu nhau và họ đã nối lại quan hệ. Tuyệt vọng, Natalia nhờ một bà lang băm bỏ đi giọt máu của mình và Gregori mà nàng đang mang trong người rồi chết do mất máu. Không lâu sau, con gái của Gregori và Natalia cũng chết do thiếu thốn, bệnh tật. Sau khi giải ngũ về quê, đã chán ghét cảnh chém giết trên chiến trường chàng chỉ mong có một cuộc sống bình yên cùng Aksinia. Bất chấp điều đó và mặc dù giữa em gái Gregori với Miska Kosevoi, một người bạn của chàng đã trở thành đại diện cho chính quyền Xô viết trong vùng yêu nhau tha thiết, chàng luôn sống trong sự đe dọa phải trả giá cho những gì đã gây ra khi chống lại chính quyền mới. Lo sợ trước nguy cơ bị bắt giam và xét xử, Gregori bỏ trốn theo quân thổ phỉ của Fomin. Chính quyền Xô viết ngày càng được củng cố và toán phỉ của Fomin không còn đất dung thân, Gregori đem Aksinia bỏ trốn đi một nơi xa mong có được cuộc sống yên ổn nhưng trên đường trốn chạy bị phát hiện, truy đuổi, Aksinia trúng đạn chết trên tay Gregori. Tất cả những gì còn lại của Gregori trên đời là đứa con trai duy nhất.</dc:description>
+        <dc:publisher>Viet Messenger</dc:publisher>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=songdongemdem</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:14+00:00"/>
+        <meta name="calibre:title_sort" content="Sông Đông êm đềm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

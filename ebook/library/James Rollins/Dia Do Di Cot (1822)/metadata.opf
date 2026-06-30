@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1822</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7cd01ed9-7f0c-48d9-bcde-be99acc8a85f</dc:identifier>
+        <dc:title>Địa Đồ Di Cốt</dc:title>
+        <dc:creator opf:file-as="Rollins, James" opf:role="aut">James Rollins</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <meta name="calibre:series" content="A Sigma Force"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:29+00:00"/>
+        <meta name="calibre:title_sort" content="Địa Đồ Di Cốt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

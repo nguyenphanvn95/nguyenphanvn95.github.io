@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">831</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b0936a28-ac12-4502-96b3-6efdfc4520b0</dc:identifier>
+        <dc:title>Phương pháp học tập siêu tốc</dc:title>
+        <dc:creator opf:file-as="Bobbi Deporter, Mike Hernaki" opf:role="aut">Bobbi Deporter, Mike Hernaki</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-27T04:49:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Trước đây chưa từng có một cuốn sách nào đưa ra được phương pháp hướng dẫn phù hợp với phong cách học tập riêng của từng người. Dù bạn là ai, giáo viên, sinh viên hay đơn giản chỉ là một người muốn thay đổi và cải thiện khả năng học tập thì cách hướng dẫn đặc biệt trong cuốn sách cũng sẽ giúp bạn nâng cao được năng lực cá nhân, học tập hiệu quả hơn, thành đạt hơn...&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Study</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:28+00:00"/>
+        <meta name="calibre:title_sort" content="Phương pháp học tập siêu tốc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

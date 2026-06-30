@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2208</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">41e964b8-6748-44cc-8dcf-5c15f0715ba0</dc:identifier>
+        <dc:title>Bước đường cùng</dc:title>
+        <dc:creator opf:file-as="Hoan, Nguyễn Công" opf:role="aut">Nguyễn Công Hoan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-04-17T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Tiểu Thuyết</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:19+00:00"/>
+        <meta name="calibre:title_sort" content="Bước đường cùng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

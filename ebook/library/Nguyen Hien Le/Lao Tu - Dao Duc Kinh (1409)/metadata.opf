@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1409</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1b054a1a-d778-4e6e-8812-d939829e1a98</dc:identifier>
+        <dc:title>Lão Tử – Đạo Đức Kinh</dc:title>
+        <dc:creator opf:file-as="Lê, Nguyễn Hiến" opf:role="aut">Nguyễn Hiến Lê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-06-08T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:34+00:00"/>
+        <meta name="calibre:title_sort" content="Lão Tử – Đạo Đức Kinh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

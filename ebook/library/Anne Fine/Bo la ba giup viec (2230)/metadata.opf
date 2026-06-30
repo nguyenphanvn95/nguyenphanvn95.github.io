@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2230</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">58cdf8cc-b704-4e35-a61a-5d03fd738ee6</dc:identifier>
+        <dc:title>Bố là bà giúp việc</dc:title>
+        <dc:creator opf:file-as="Fine, Anne" opf:role="aut">Anne Fine</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Bà giúp việc mới tới người to uỵch, mặt bứ phấn, trông rõ là kém duyên. Vậy mà lũ trẻ đứa nào cũng thích bà, chả là vì chúng biết bà là bố Daniel chứ chẳng ai xa lạ. Chỉ mẹ Miranda là không biết.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Để có thêm thời gian bên các con, Daniel đã phải đóng giả bà Doubtfire tới nhà vợ cũ xin làm giúp việc. Có biết bao tình huống dở khóc dở cười bởi Daniel cứ quên mình đang là bà Doubtfire. Những lần như thế lũ trẻ lại được chứng kiến tài diễn xuất cũng như sự giảo hoạt của bố chúng.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Nhưng lần này, Daniel phải đau đầu không biết xoay xở ra sao, phân thân thế nào, để đồng thời đóng cả hai vai: bà giúp việc Doubtfire kiêm người mẫu khỏa thân cho lớp vẽ của bà hàng xóm.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam + NXB Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:21+00:00"/>
+        <meta name="calibre:title_sort" content="Bố là bà giúp việc"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

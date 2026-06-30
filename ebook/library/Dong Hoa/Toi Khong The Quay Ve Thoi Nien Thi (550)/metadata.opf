@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">550</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">28576826-0944-4d1d-b591-2554d67b85e6</dc:identifier>
+        <dc:title>Tôi Không Thể Quay Về Thời Niên Thiếu Đó</dc:title>
+        <dc:creator opf:file-as="Hoa, Đồng" opf:role="aut">Đồng Hoa</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T01:39:47+00:00</dc:date>
+        <dc:description>&lt;font class="Apple-style-span" face="'MS Shell Dlg 2', sans-serif"&gt;&lt;span class="Apple-style-span" style="font-size: 12px;"&gt;“Tôi không thể quay về thời niên thiếu đó” dùng tình cảm chân thành tha thiết, chi tiết chân thật, để nói về quãng thời niên thiếu vào những năm đó của —— cô gái tên La Kì Kì có thiên tính cao ngạo kiệt xuất, không chịu khuất phục. Thời thanh xuân của cô xoay quanh hai thế giới hoàn toàn bất đồng: bài tập, cuộc thi, nhóm nhỏ trong khuôn viên trường; phòng game, vũ trường. Cô được nhìn đời đầu tiên của vũ trường mở ra ở Trung Quốc… Cuộc sống và tư tưởng của mỗi người đều diễn ra những thay đổi mạnh mẽ. Cô cũng cùng bạn bè chia sẻ ngọt ngào, ưu thương, bàng hoàng, mê hoặc… Trong cuốn sách này, bạn có thể thấy được những gì bạn từng nhiệt tình yêu thương lại đang dần bị lãng quên, càng có thể nhìn thấy sự trưởng thành của bản thân.&lt;/span&gt;&lt;/font&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Không Thể Quay Về Thời Niên Thiếu Đó"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

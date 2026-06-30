@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1900</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">943be121-d8eb-4829-8fa5-1920412663d3</dc:identifier>
+        <dc:title>Danh pháp trong Chúa tể những chiếc nhẫn</dc:title>
+        <dc:creator opf:file-as="Tolkien, J. R. R." opf:role="aut">J. R. R. Tolkien</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Chu giai</dc:subject>
+        <meta name="calibre:series" content="Chua te nhung chiec Nhan"/>
+        <meta name="calibre:series_index" content="4"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:37+00:00"/>
+        <meta name="calibre:title_sort" content="Danh pháp trong Chúa tể những chiếc nhẫn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">570</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">73f188df-1be8-48f8-9c17-0511585cbf50</dc:identifier>
+        <dc:title>Tình Yêu Là Một Lần Cảm Cúm</dc:title>
+        <dc:creator opf:file-as="Hạ, Đào Tử" opf:role="aut">Đào Tử Hạ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T22:44:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bạn đã từng bị tại nạn, đã từng được chữa trị như thế nào? Nếu đã một lần thoát khỏi tay thần chết, bạn sẽ cảm nhận được hết thế nào là chết đi sống lại…Nếu đã từng mất đi người thân, bạn sẽ cảm nhận thế nào là mất mát.Song cuộc sống thật trớ trêu, trái đất thì quá nhỏ, đi đâu cũng gặp người quen. Và không chỉ có thế, người bạn yêu thương nhất cũng là người có nhiều mối thâm thù với bạn nhất.
+&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:58+00:00"/>
+        <meta name="calibre:title_sort" content="Tình Yêu Là Một Lần Cảm Cúm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

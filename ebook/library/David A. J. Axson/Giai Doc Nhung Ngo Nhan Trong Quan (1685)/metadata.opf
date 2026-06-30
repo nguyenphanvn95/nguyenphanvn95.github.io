@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1685</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">007d1c64-9bbd-460b-a670-5fbbb872cc82</dc:identifier>
+        <dc:title>Giải Độc Những Ngộ Nhận Trong Quản Trị</dc:title>
+        <dc:creator opf:file-as="Axson, David A. J." opf:role="aut">David A. J. Axson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-03-14T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Kinh tế - Kinh doanh</dc:subject>
+        <meta name="calibre:rating" content="10"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:14+00:00"/>
+        <meta name="calibre:title_sort" content="Giải Độc Những Ngộ Nhận Trong Quản Trị"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

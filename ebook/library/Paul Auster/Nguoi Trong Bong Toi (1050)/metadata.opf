@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1050</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">76364889-1fbc-41d3-beb0-f41856a20059</dc:identifier>
+        <dc:title>Người Trong Bóng Tối</dc:title>
+        <dc:creator opf:file-as="Auster, Paul" opf:role="aut">Paul Auster</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;I&gt;Người trong bóng tối&lt;/I&gt; là câu chuyện về August Brill, một nhà phê bình văn học 72 tuổi, bị tai nạn phải ngồi một chỗ. Trong khi ông ngồi trên xe lăn hay nằm lì trên giường, chong chong mất ngủ, thì một thế giới khác, một “thực tại song hành” đang diễn ra với đầy những phức tạp và phi lý. Thực tại ấy đúng là do trí tưởng tượng của August Brill tạo ra, đưa đẩy ảo thuật gia Owen Brick vào một nước Mỹ khói lửa của cuộc nội chiến lần thứ hai, như cách lý giải của tác giả: “&lt;I&gt;Chuyện chiến tranh. Cứ mất cảnh giác một tí thôi là chúng ào đến, từng trận một, từng trận một&lt;/I&gt;”. Và chiến tranh vẫn chỉ là cái cớ để Paul Auster kể những câu chuyện nhiều ngụ ý của mình.&lt;/P&gt; &lt;P&gt;&lt;B&gt;http://www.tve-4u.org&lt;/B&gt;&lt;/P&gt;</dc:description>
+        <dc:publisher>Phương Nam + NXB Hội Nhà Văn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Novels</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:53+00:00"/>
+        <meta name="calibre:title_sort" content="Người Trong Bóng Tối"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

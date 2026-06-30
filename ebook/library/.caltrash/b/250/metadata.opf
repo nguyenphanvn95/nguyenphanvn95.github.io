@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">250</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1af63b8a-8c32-4713-80ea-950b129639d9</dc:identifier>
+        <dc:title>You Can - Không Gì Là Không Thể</dc:title>
+        <dc:creator opf:file-as="Adams, George Matthew" opf:role="aut">George Matthew Adams</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-01-01T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:series" content="Hạt Giống Tâm Hồn"/>
+        <meta name="calibre:series_index" content="4"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:03+00:00"/>
+        <meta name="calibre:title_sort" content="You Can - Không Gì Là Không Thể"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

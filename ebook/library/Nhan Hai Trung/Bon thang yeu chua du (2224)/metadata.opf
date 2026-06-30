@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2224</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a9767278-d8ed-45d9-a733-5e4b3ff15a30</dc:identifier>
+        <dc:title>Bốn tháng yêu chưa đủ</dc:title>
+        <dc:creator opf:file-as="Trung, Nhân Hải" opf:role="aut">Nhân Hải Trung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-02T00:25:59+00:00</dc:date>
+        <dc:description>&lt;p&gt;Họ đến với nhau thật bất ngờ… họ yêu nhau như chưa từng được yêu, bất chấp chênh lệch tuổi tác: mối quan hệ ràng buộc bởi Khổng Dịch Nhân chính là bố vợ của Chu Thừa Khải, người yêu cũ của Tịnh Ngôn; những mâu thuẫn nội bộ trong gia tộc họ Khổng khiến Tịnh Ngôn tưởng như mình đã rơi vào vòng xoáy của tử thần… &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:21+00:00"/>
+        <meta name="calibre:title_sort" content="Bốn tháng yêu chưa đủ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

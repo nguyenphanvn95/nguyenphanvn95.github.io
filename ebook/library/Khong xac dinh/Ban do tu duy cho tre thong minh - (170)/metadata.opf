@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">170</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">707b8ec3-916a-4731-9d96-69e8104b2c06</dc:identifier>
+        <dc:title>Bản đồ tư duy cho trẻ thông minh - Các kỹ năng học giỏi</dc:title>
+        <dc:creator opf:role="aut">Không xác định</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:15:20.207478+00:00"/>
+        <meta name="calibre:title_sort" content="Bản đồ tư duy cho trẻ thông minh - Các kỹ năng học giỏi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

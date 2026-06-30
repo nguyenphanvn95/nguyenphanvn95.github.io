@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1816</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">04bb2759-354c-4d43-819c-5b0acb441598</dc:identifier>
+        <dc:title>Dịch vụ thượng hạng, Lợi nhuận bền vững</dc:title>
+        <dc:creator opf:file-as="Inghilleri, Leonardo" opf:role="aut">Leonardo Inghilleri</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:28+00:00"/>
+        <meta name="calibre:title_sort" content="Dịch vụ thượng hạng, Lợi nhuận bền vững"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

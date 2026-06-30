@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">880</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9136b9c1-6ed3-436e-a6b1-1fc626ece632</dc:identifier>
+        <dc:title>Plato và con thú mỏ vịt bước vào quán bar...</dc:title>
+        <dc:creator opf:file-as="Cathcart, Thomas &amp; Klein, Daniel" opf:role="aut">Thomas Cathcart</dc:creator>
+        <dc:creator opf:file-as="Cathcart, Thomas &amp; Klein, Daniel" opf:role="aut">Daniel Klein</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-04-26T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Qua truyện cười để hiểu lịch sử triết học cổ kim, đưa ra những câu trả lời đơn giản đến bất ngờ cho những ai muốn đi sâu vào bản chất Các Câu Hỏi Lớn mà không bị chìm nghỉm trong lý luận hàn lâm. Từ đây, các nhà tư tưởng lớn từ cổ chí kim như Aristotle, Plato, Descartes Kant, Hegel, Wittgenstein, Sartre... với ta không còn quá xa cách&lt;/p&gt;</dc:description>
+        <dc:publisher>coughgerm</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:34+00:00"/>
+        <meta name="calibre:title_sort" content="Plato và con thú mỏ vịt bước vào quán bar..."/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

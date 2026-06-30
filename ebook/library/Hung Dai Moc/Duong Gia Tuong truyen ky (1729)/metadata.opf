@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1729</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3b852b32-195a-4653-af8a-40f1ff2b8bfb</dc:identifier>
+        <dc:title>Dương Gia Tướng truyền kỳ</dc:title>
+        <dc:creator opf:file-as="Mộc, Hùng Đại" opf:role="aut">Hùng Đại Mộc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T14:01:25+00:00</dc:date>
+        <dc:description>&lt;p class="description"&gt;vào đời triều đại Tống ở Trung Quốc có một gia tộc họ Dương đã cống hiến
+ cho Tổ Quốc hầu hết các thanh viên của gia đình mình cho công cuộc bảo 
+vệ đất nước (Trung Quốc lúc ấy đang bị đe doạ bởi sức mạnh ngoại xâm của
+ các dân tộc Mông, Kim…) mà ở Việt Nam còn khá ít người biết đến. Những 
+tấm gương trung dũng anh hùng của gia tộc họ Dương được kể lại khá hấp 
+dẫn trong tiểu thuyết lịch sử truyền kỳ “Dương gia tướng diễn nghĩa” rất
+ nổi tiếng trong lịch sử văn hoá cổ điển Trung Quốc. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:19+00:00"/>
+        <meta name="calibre:title_sort" content="Dương Gia Tướng truyền kỳ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

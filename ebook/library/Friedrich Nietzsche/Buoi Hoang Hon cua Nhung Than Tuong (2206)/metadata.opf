@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2206</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d112531e-e065-4104-8f6f-4c9e5e3c5771</dc:identifier>
+        <dc:title>Buổi Hoàng Hôn của Những Thần Tượng</dc:title>
+        <dc:creator opf:file-as="Nietzsche, Friedrich" opf:role="aut">Friedrich Nietzsche</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-24T23:50:58+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tác phẩm cuối cùng mà Nietzsche tự ngợi ca chẳng ngại ngùng như là một tiền sảnh để bước vào tòa lâu đài triết học của ông, như một bản toát yếu nhất trong số tất cả sách ông viết, xù lên lởm chởm những từ ngữ chiết xuất từ sinh lý học, bệnh lý học, triệu chứng học và dược học..&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <dc:subject>Lang:en</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:19+00:00"/>
+        <meta name="calibre:title_sort" content="Buổi Hoàng Hôn của Những Thần Tượng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

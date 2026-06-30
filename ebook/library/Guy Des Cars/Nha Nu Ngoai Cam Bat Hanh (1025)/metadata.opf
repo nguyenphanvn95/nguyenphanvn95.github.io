@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1025</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">9639cbbb-83aa-4cf2-b554-a3915b4d2f92</dc:identifier>
+        <dc:title>Nhà Nữ Ngoại Cảm Bất Hạnh</dc:title>
+        <dc:creator opf:file-as="Cars, Guy Des" opf:role="aut">Guy Des Cars</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-10-04T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:50+00:00"/>
+        <meta name="calibre:title_sort" content="Nhà Nữ Ngoại Cảm Bất Hạnh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">325</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3a2eabea-3ee6-48af-97d4-ebf58775bc02</dc:identifier>
+        <dc:title>Truyện ngắn đặc sắc của tác giả được giải thưởng Nobel</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-05T23:56:30+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:12.478709+00:00"/>
+        <meta name="calibre:title_sort" content="Truyện ngắn đặc sắc của tác giả được giải thưởng Nobel"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

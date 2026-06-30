@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">958</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f22fce44-20be-4a2f-a49a-2485a462d0c1</dc:identifier>
+        <dc:title>Những khám phá về hoàng đế Quang Trung</dc:title>
+        <dc:creator opf:file-as="Bang, Đỗ" opf:role="aut">Đỗ Bang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:12+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nguyễn Huệ (1753 – 1792), còn được biết đến là Quang Trung Hoàng đế, vua Quang Trung hay Bắc Bình Vương, là vị hoàng đế thứ hai của nhà Tây Sơn (ở ngôi từ 1788 tới 1792) sau Thái Đức Hoàng đế Nguyễn Nhạc. Ông là một trong những lãnh đạo chính trị tài giỏi với nhiều cải cách xây dựng đất nước, quân sự xuất sắc trong lịch sử Việt Nam với những trận đánh trong nội chiến và chống ngoại xâm chưa thất bại lần nào. Do có nhiều công lao, Nguyễn Huệ cũng được xem là người anh hùng áo vải của dân tộc Việt Nam.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:43+00:00"/>
+        <meta name="calibre:title_sort" content="Những khám phá về hoàng đế Quang Trung"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

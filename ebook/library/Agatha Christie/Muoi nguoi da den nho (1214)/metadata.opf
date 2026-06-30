@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1214</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">fbbf8c90-4e4d-45ff-9b40-75bd49daf3ff</dc:identifier>
+        <dc:title>Mười người da đen nhỏ</dc:title>
+        <dc:creator opf:file-as="Christie, Agatha" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-01T08:21:53+00:00</dc:date>
+        <dc:description>&lt;p&gt;nguyên bản tựa gốc tiếng Anh: Ten Little Niggers (10 gã mọi đen nhỏ) hoặc And Then There Were None (Và rồi chẳng còn ai) là một tiểu thuyết hình sự của nhà văn Agatha Christie được nhà xuất bản Collins Crime Club phát hành lần đầu ở Anh ngày 6 tháng 11 năm 1939. Tác phẩm đôi khi còn được xuất bản (và chuyển thể thành phim) dưới tên Ten Little Indians (10 gã da đỏ nhỏ). Tiểu thuyết nói về vụ án bí ẩn trên hòn đảo Soldier Island với 10 người bằng cách này hay cách khác đã thiệt mạng mà không hề có sự hiện diện hay dấu vết của thủ phạm. Đây được coi là một trong những tiểu thuyết hình sự xuất sắc và nổi tiếng nhất của Agatha Christie, trên 100 triệu bản sách đã được bán ra khiến tác phẩm này trở thành tiểu thuyết hình sự bán chạy nhất trong lịch sử xuất bản thế giới. Mười người da đen nhỏ cũng là tác phẩm của Agatha Christie được chuyển thể nhiều lần nhất, cả trực tiếp và gián tiếp, dưới dạng phim điện ảnh, truyền hình và kịch sân khấu.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:12+00:00"/>
+        <meta name="calibre:title_sort" content="Mười người da đen nhỏ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

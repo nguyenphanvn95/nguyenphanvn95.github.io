@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1848</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4a2155bd-a7fb-4b5d-8bc3-624272452d82</dc:identifier>
+        <dc:title>Để yên cho bác sĩ "Hiền"</dc:title>
+        <dc:creator opf:file-as="Hùng, Ngô Đức" opf:role="aut">Ngô Đức Hùng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-05-15T06:24:42+00:00</dc:date>
+        <dc:description>Tác giả: bác sĩ Ngô Đức Hùng
+Tốt nghiệp trường đại học Y Hà Nội với bằng giỏi sau 11 năm học liên tục. Được đi tu nghiệp nhiều nước trên thế giới nhưng vẫn quyết định ở lại Việt Nam làm anh bác sĩ quèn. Hiện tại đang làm việc tại một bệnh viện ở Hà Nội, và luôn sẵn sàng đóng góp cho cuộc đời một trái tim.</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/148456831</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>truyenngan</dc:subject>
+        <dc:subject>bácsĩ</dc:subject>
+        <dc:subject>Random</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>Completed</dc:subject>
+        <dc:subject>nghềy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:32+00:00"/>
+        <meta name="calibre:title_sort" content="Để yên cho bác sĩ &quot;Hiền&quot;"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

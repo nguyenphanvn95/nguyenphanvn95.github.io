@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2362</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ba7fc996-a2fe-4b92-bd69-e99f7ab3f2e4</dc:identifier>
+        <dc:title>Bàn có năm chỗ ngồi</dc:title>
+        <dc:creator opf:file-as="Ánh, Nguyễn Nhật" opf:role="aut">Nguyễn Nhật Ánh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-09-01T04:35:06+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=banconamchongoi</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:36+00:00"/>
+        <meta name="calibre:title_sort" content="Bàn có năm chỗ ngồi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

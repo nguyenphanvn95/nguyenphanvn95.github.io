@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1750</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0e9b7bde-4396-467f-b6b8-a644c44b5b9b</dc:identifier>
+        <dc:title>Dư vị trà chiều</dc:title>
+        <dc:creator opf:file-as="Khê, Minh Hiểu" opf:role="aut">Minh Hiểu Khê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:29+00:00</dc:date>
+        <dc:description>&lt;p&gt;Hạ Dạ Huân và Tiểu Tuyền, một người là ngôi sao nổi tiếng có vẻ ngoài lạnh lùng nhưng trái tim mềm yếu, vì những bóng đen từ thời niên thiếu nên anh luôn luôn tìm cách trốn tránh các phóng viên và giới truyền thông; một người là nhà báo có tài với vẻ ngoài trong sáng và nội tâm mạnh mẽ, có thể không từ thủ đoạn để moi móc các vụ scandal và tin giật gân. Trong một lần tình cờ, hai con người vốn dĩ không thể gần gũi nhau ấy bỗng chốc trở thành bạn bè.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:21+00:00"/>
+        <meta name="calibre:title_sort" content="Dư vị trà chiều"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

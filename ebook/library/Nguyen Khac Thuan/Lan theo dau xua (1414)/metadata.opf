@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1414</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c14c7c25-ae94-440d-acb2-fe201951440f</dc:identifier>
+        <dc:title>Lần theo dấu xưa</dc:title>
+        <dc:creator opf:file-as="Thuần, Nguyễn Khắc" opf:role="aut">Nguyễn Khắc Thuần</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đọc "Lần theo dấu xưa", chúng ta sẽ có dịp biết thêm về chuyện tình duyên của các công chúa thời Lý; về thân phận chẳng hoàn toàn sung sướng của các bà hoàng; về nỗi đau xé lòng của nàng Bình Khương, chồng bị Hồ Quý Ly đem chôn sống trong thành Tây Đô; về thiên tình sử thật lâm ly của bà hoàng Cô Tế Minh đầu thời nhà Nguyễn; về tài đá cầu của Thám hoa Đinh Lưu; về cái giá của học vị trạng nguyên nhà họ Nguyễn; về vị nữ tiến sĩ Nho học đầu tiên và duy nhất của nước ta...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:35+00:00"/>
+        <meta name="calibre:title_sort" content="Lần theo dấu xưa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1653</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">238347f7-310a-4e56-9716-b183a3a123f1</dc:identifier>
+        <dc:title>Hành trình chữ viết</dc:title>
+        <dc:creator opf:file-as="Quốc, Lê Minh" opf:role="aut">Lê Minh Quốc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Chữ viết đến với chúng ta xuyên qua hàng ngàn năm của cuộc hành trình vĩ đại của nhân loại, để kể với chúng ta về con người trong quá khứ. Nhân loại đã trải qua một con đường dài - từ ngày muốn thông tin với nhau còn phải dùng ngôn ngữ của điệu bộ hoặc vẽ hình ảnh... Ngày nay, hàng ngàn nhật báo, hàng ngàn tạp chí, hàng vạn quyển sách ồ ạt rời khỏi nhà in.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Triệu triệu tờ báo được bán ra mỗi ngày và trên toàn thế giới, triệu triệu quyển sách được xuất bản mỗi năm. Chỉ riêng ở Việt Nam, báo định kỳ, tạp chí, đặc san chuyên ngành cũng đã lên đến con số trên năm trăm. Và cả nước có gần 60 Nhà xuất bản thì mỗi năm in ra cũng hàng triệu bản in. Do đó, không phải ngẫu nhiên có một học giả uyên bác nhận định: “Sự phát minh của chữ viết, chỉ riêng nó thôi, còn quan trọng hơn toàn bộ những trận đánh trên toàn thế giới”.&lt;/em&gt;&lt;/p&gt;&lt;em&gt;&lt;b&gt;Hành Trình Chữ Viết&lt;/b&gt; ra đời chính từ tầm quan trọng lớn lao của chữ viết, nhằm thỏa mãn nhu cầu phổ thông dành cho độc giả trẻ, nhất là các bạn thanh thiếu niên.&lt;/em&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Science &amp; Technical</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:10.861563+00:00"/>
+        <meta name="calibre:title_sort" content="Hành trình chữ viết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

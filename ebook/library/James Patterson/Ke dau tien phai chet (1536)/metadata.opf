@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1536</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">51ddd55f-6202-4b55-892a-befa34cd1c04</dc:identifier>
+        <dc:title>Kẻ đầu tiên phải chết</dc:title>
+        <dc:creator opf:file-as="Patterson, James" opf:role="aut">James Patterson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:25+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bối cảnh trong Kẻ đầu tiên phải chết diễn ra trên tầng 30 của Khách sạn Grant Hyatt (San Francisco, Mỹ). Một đôi trai gái trẻ vẫn còn nguyên trang phục cô dâu chú rể đã bị một kẻ lạ mặt (đóng vai hầu phòng) lần lượt hạ sát bằng những nhát dao lạnh lùng, sắc ngọt. Máu thấm đẫm trên váy cưới...Tại sao lại có một thảm kịch kì lạ đến như vậy giữa lòng nước Mỹ văn minh? Và người ta lại tiếp tục đặt câu hỏi tại sao to hơn khi sau này còn có tới 2 cặp uyên ương cũng bị giết tương tự khi họ đang vô cùng hạnh phúc trong tuần trăng mật.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:48+00:00"/>
+        <meta name="calibre:title_sort" content="Kẻ đầu tiên phải chết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

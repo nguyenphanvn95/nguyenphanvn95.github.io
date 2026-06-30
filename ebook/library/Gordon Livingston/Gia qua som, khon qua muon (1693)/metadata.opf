@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1693</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3a01c287-c74c-45e0-b16d-6888f8e0d597</dc:identifier>
+        <dc:title>Già quá sớm, khôn quá muộn</dc:title>
+        <dc:creator opf:file-as="Livingston, Gordon" opf:role="aut">Gordon Livingston</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:15+00:00</dc:date>
+        <dc:description>&lt;p&gt; Già quá sớm, Khôn quá muộn là một sự lựa chọn nhẹ nhàng khiến cho quá trình thử nghiệm và sai lầm trở thành một tài sản quý giá. Đối với những ai cảm thấy sự khẩn khiết của dòng đời đang qua mau mà mình vẫn chưa đạt được những điều mình muốn, nó mang đến cả niềm an ủi, sự hướng dẫn lẫn niềm hy vọn&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:15+00:00"/>
+        <meta name="calibre:title_sort" content="Già quá sớm, khôn quá muộn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

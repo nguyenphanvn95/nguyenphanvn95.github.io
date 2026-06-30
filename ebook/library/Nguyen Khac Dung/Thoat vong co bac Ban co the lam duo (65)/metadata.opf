@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">65</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">501688c4-4d97-48ff-a3dc-6abe6efb0cda</dc:identifier>
+        <dc:title>Thoát vòng cờ bạc Bạn có thể làm được</dc:title>
+        <dc:creator opf:file-as="Dũng, Nguyễn Khắc" opf:role="aut">Nguyễn Khắc Dũng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-09-28T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Cờ bạc - trong mắt nhiều người, chỉ đơn giản là một trò giải trí, một cuộc chơi may rủi. Nhưng thực tế, với không ít người, cờ bạc trở thành một hành vi khó kiểm soát, dần dần phát triển thành rối loạn cờ bạc - một dạng nghiện hành vi đã được Tổ chức Y tế Thế giới (WHO) và các hệ thống chẩn đoán quốc tế như DSM-5 (Hiệp hội Tâm thần Hoa Kỳ) chính thức công nhận. Đây không phải là vấn đề về ý chí đơn thuần hay chỉ là thói quen xấu; nó là một rối loạn tâm thần với cơ chế sinh học, tâm lý và xã hội phức tạp, đòi hỏi can thiệp chuyên môn bài bản.&lt;/p&gt;
+&lt;p&gt;Trong suốt 13 năm công tác trong lĩnh vực sức khỏe tâm thần, đặc biệt là gần 10 năm đồng hành cùng những người có vấn đề với cờ bạc, tôi đã gặp rất nhiều trường hợp phải chịu đựng hậu quả nặng nề về tài chính, mối quan hệ, sự nghiệp và cả sức khỏe tâm thần. Bác sĩ Nguyễn Khắc Dũng đã lắng nghe họ, đồng hành qua từng lần điều trị, qua cả những lần họ ngã quỵ và những lần họ đứng dậy. Trong quá trình thực hiện luận án tiến sĩ về rối loạn cờ bạc, bác sĩ Nguyễn Khắc Dũng có cơ hội tiếp cận với các tài liệu học thuật, nghiên cứu lâm sàng và các phương pháp điều trị hiện đại trên thế giới. Việc nghiên cứu sâu về cờ bạc giúp bác sĩ Dũng hiểu rằng đây không chỉ là cuộc chiến cá nhân của người bệnh, mà còn là thách thức của cả gia đình, cộng đồng và hệ thống hỗ trợ chuyên nghiệp.&lt;/p&gt;
+&lt;p&gt;Cuốn sách này ra đời với mong muốn: Giúp người bệnh hiểu rõ hơn về bản thân, về cơ chế của hành vi đánh bạc và các phương pháp thực tế để từng bước thay đổi. Giúp gia đình, người thân hiểu cách đồng hành hiệu quả, thay vì mù quáng hỗ trợ tài chính hay chì chiết khiến mối quan hệ ngày càng rạn nứt. Giúp những ai quan tâm có thêm kiến thức để phòng ngừa cho chính mình hoặc hỗ trợ cho cộng đồng. Gửi tới các nhà chuyên môn một số góc nhìn thực tiễn và các dữ liệu lâm sàng có thể tham khảo trong điều trị.&lt;/p&gt;
+&lt;p&gt;Hành trình thoát khỏi cờ bạc là một con đường dài, không dễ dàng. Nhưng với kiến thức đúng, với sự kiên trì của người bệnh và sự đồng hành đúng cách của gia đình, cơ hội thay đổi là hoàn toàn có thể.&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu &lt;span style="font-weight: bold; font-style: italic"&gt;Thoát vòng cờ bạc - Bạn có thể làm được&lt;/span&gt;&lt;strong&gt; - BS Nguyễn Khắc Dũng!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T02:14:45+00:00"/>
+        <meta name="calibre:title_sort" content="Thoát vòng cờ bạc Bạn có thể làm được"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

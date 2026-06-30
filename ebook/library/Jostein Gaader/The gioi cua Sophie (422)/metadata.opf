@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">422</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0773b435-e503-4f2d-87c6-14ccb5c30723</dc:identifier>
+        <dc:title>Thế giới của Sophie</dc:title>
+        <dc:creator opf:file-as="Gaader, Jostein" opf:role="aut">Jostein Gaader</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-02-18T09:32:38+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cuốn sách đã được dịch ra hơn 50 thứ tiếng với hơn 25 triệu bản đã được bán, và được xếp hạng "sách bán chạy nhất thế giới" năm 1995. Phần lớn nội dung bao gồm các đoạn đối thoại giữa nhân vật chính Sophie và một người đàn ông bí ẩn tên là Alberto Knox, đan xem với các tình tiết ngày càng bí hiểm và kỳ quặc hơn. Đây vừa là một tiểu thuyết, vừa là một hướng dẫn căn bản về triết học phương Tây.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Philosophy</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:41+00:00"/>
+        <meta name="calibre:title_sort" content="Thế giới của Sophie"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

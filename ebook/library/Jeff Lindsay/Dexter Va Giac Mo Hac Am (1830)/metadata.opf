@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1830</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cd5e7fe2-4343-4a10-9398-7c8ca97b6bab</dc:identifier>
+        <dc:title>Dexter Và Giấc Mơ Hắc Ám</dc:title>
+        <dc:creator opf:file-as="Lindsay, Jeff" opf:role="aut">Jeff Lindsay</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Dexter Morgan, một anh chàng đẹp trai quyến rũ, nhưng bên trong vẻ ngoài đẹp đẽ ấy là một bí mật chết người - anh là một kẻ giết người hàng loạt. Nhưng không giống như những tên cuồng sát khác, anh luôn hành động theo một quy tắc vàng: chỉ giết kẻ có tội. Công việc phân tích máu giúp cho anh có thể dễ dàng xác định mục tiêu và cô bạn gái Rita là một vỏ bọc tuyệt vời giúp anh giống như một người hoàn toàn bình thường.&lt;/p&gt;Nhưng tới một ngày, nhận được cuộc điện thoại từ cô em Deborah, anh tới hiện trường một vụ án mạng mà kẻ thủ ác có cách ra tay gần như y hệt anh, thậm chí còn tinh vi hơn. Khi càng ngày càng có nhiều nạn nhân hơn, anh quyết tâm tìm ra hung thủ, vừa để giúp cô em gái thăng tiến trong sự nghiệp, và cũng để trả lời câu hỏi kinh hoàng nhất: liệu kẻ đó có phải là chính anh?</dc:description>
+        <dc:publisher>Thời đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:30+00:00"/>
+        <meta name="calibre:title_sort" content="Dexter Và Giấc Mơ Hắc Ám"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

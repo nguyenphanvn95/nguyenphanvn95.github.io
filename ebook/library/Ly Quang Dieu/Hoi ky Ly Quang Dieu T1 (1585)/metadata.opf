@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1585</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c8d1b349-7a46-482f-adb7-3e956de7080d</dc:identifier>
+        <dc:title>Hồi ký Lý Quang Diệu T1</dc:title>
+        <dc:creator opf:file-as="Diệu, Lý Quang" opf:role="aut">Lý Quang Diệu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p style="text-align: center;"&gt;&lt;strong&gt;Nhân vật&lt;/strong&gt; : &lt;a href="http://www.ebookandyou.com/portfolio/ly-quang-dieu-thu-tuong-singapore/" target="_blank"&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;Lý Quang Diệu – Ông là ai&lt;/span&gt; ?&lt;/a&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;          Trong tập 1 Hồi ký Lý Quang Diệu (được bắt đầu viết từ năm 1994), ông kể lại những ký ức đáng tự hào về thành công của một chàng sinh viên giỏi của các thuộc địa vùng eo biển đến những ngày tháng du học trên đất Anh, từ câu chuyện tình yêu cảm động của ông với người vợ đến những hoài bão của chàng thanh niên trẻ tuổi, những kết giao, những mối quan hệ, từng bước thâm nhập chính trường, đối nhân xử thế, xây dựng đảng, lèo lái đất nước vượt qua những khó khăn cả từ bên trong lẫn bên ngoài.&lt;/p&gt;&lt;p style="text-align: justify;"&gt;          Tập 1 kết thúc ở thời điểm Singapore chính thức tuyên bố độc lập năm 1965 sau khi tách ra từ Liên bang Malaysia, cũng là lúc đánh dấu một cột mốc quan trọng trong quá trình hình thành suy nghĩ, tính cách của ông Lý.&lt;/p&gt;&lt;p style="text-align: justify;"&gt;           Ngoài ra, đọc tập 1, qua những bước đi “bươn chải” của một nhà lãnh đạo năng động tới khắp nơi trên thế giới, chúng ta có thể có thêm một góc nhìn về tình hình thế giới thời chiến tranh lạnh, về phong trào không liên kết, Mỹ, Anh, Nga, Trung Quốc và các nước khác thời điểm còn đang “ẩn tàng” ở hai bên bức màn sắt, về Liên minh châu Âu thời kỳ hình thành, về khối Thịnh vượng chung và những liên minh, hiệp ước khác.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:54+00:00"/>
+        <meta name="calibre:title_sort" content="Hồi ký Lý Quang Diệu T1"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1219</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">af476b94-a51a-4dae-b2dc-1b374876390d</dc:identifier>
+        <dc:title>Mùa Hè Năm Đó Chúng Ta Cùng Tốt Nghiệp</dc:title>
+        <dc:creator opf:file-as="Nguy, Lý" opf:role="aut">Lý Nguy</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:43+00:00</dc:date>
+        <dc:description>&lt;p&gt;với lối hành văn theo thể thơ phú tác giả  đã kể lại nhưng ưu sầu và đau đớn tuổi trưởng thành. Lý Nguy đã dùng ngòi bút hình tượng sinh động để khắc hoạ Hạ Noãn Noãn, Lê Phi Nhi, An Doãn Thần, Lộ Tiểu Bắc, Tề Lạc... những bạn trẻ có những tính cách khác nhau.Hạnh phúc hay không, biết rồi, hoá ra đều chẳng qua chỉ là một giấc mơ mãi không tỉnh lại.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13+00:00"/>
+        <meta name="calibre:title_sort" content="Mùa Hè Năm Đó Chúng Ta Cùng Tốt Nghiệp"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

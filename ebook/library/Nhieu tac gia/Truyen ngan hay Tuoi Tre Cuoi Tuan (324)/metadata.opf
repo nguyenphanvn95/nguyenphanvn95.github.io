@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">324</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4ced88c2-6916-4234-8d25-9b30f1225f9a</dc:identifier>
+        <dc:title>Truyện ngắn hay Tuổi Trẻ Cuối Tuần 2006 - 2007</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T18:43:15+00:00</dc:date>
+        <dc:description>&lt;p&gt;Các tựa sách "Những truyện ngắn hay" tuyển chọn trong 3 năm hoặc 2 năm từ tuần báo Tuổi Trẻ Chủ Nhật (nay là Tuổi Trẻ Cuối Tuần) của Tủ sách Tuổi Trẻ và Nhà xuất bản Trẻ vài năm gần đây đã trở nên một "thương hiệu" riêng. Do chính chất lượng của các truyện ngắn được tuyển chọn - trước đó vốn đã được sàng lọc kỹ từ rất nhiều truyện ngắn của các nhà văn và bạn đọc viết gửi về tòa báo...&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:12+00:00"/>
+        <meta name="calibre:title_sort" content="Truyện ngắn hay Tuổi Trẻ Cuối Tuần 2006 - 2007"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

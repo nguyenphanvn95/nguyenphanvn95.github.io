@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2360</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">068d9272-d27d-49cc-859e-e57bab9a5fa7</dc:identifier>
+        <dc:title>Bản Chất Của Dối Trá</dc:title>
+        <dc:creator opf:file-as="Ariely, Dan" opf:role="aut">Dan Ariely</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>sach kinh doanh</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:36+00:00"/>
+        <meta name="calibre:title_sort" content="Bản Chất Của Dối Trá"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

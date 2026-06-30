@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">605</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">00b71869-0afe-4589-a5c1-31a5d4cbf021</dc:identifier>
+        <dc:title>Tiếng cười Bác Ba Phi</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-18T07:50:18+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bác Ba Phi là một nhân vật trong văn học dân gian. Ông là nhân vật chính trong những câu chuyện kể về cuộc sống sinh hoạt thường ngày nhưng được cường điệu quá đáng (như rắn tát cá, chọi đá làm máy bay rơi, leo cây ớt té gãy chân...) và được trình bày một cách tự nhiên khiến người nghe hoàn toàn bất ngờ và bật cười. Ông là nhân vật cận đại nhất trong lịch sử kho tàng truyện trạng (nói dóc) của văn học Việt Nam.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:02+00:00"/>
+        <meta name="calibre:title_sort" content="Tiếng cười Bác Ba Phi"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

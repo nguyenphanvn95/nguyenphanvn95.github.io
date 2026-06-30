@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1741</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ad64a874-760d-4164-acd0-060064e8f43f</dc:identifier>
+        <dc:title>Đừng để cô ấy cô đơn</dc:title>
+        <dc:creator opf:file-as="Thắng, Huỳnh" opf:role="aut">Huỳnh Thắng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-04-05T02:53:09+00:00</dc:date>
+        <dc:description>Tác giả Huỳnh Thắng
+
+Cuốn sách mà mình thấy nó có quá nhiều câu chuyện như viết ra nỗi lòng của mình vậy. 
+Nhân một ngày buồn ơi là buồn nên ngồi chép lại ra. :)</dc:description>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/144178568</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>FanFiction</dc:subject>
+        <dc:subject>ngẫunhiên</dc:subject>
+        <dc:subject>tanvan</dc:subject>
+        <dc:subject>Completed</dc:subject>
+        <dc:subject>donphuong</dc:subject>
+        <dc:subject>Random</dc:subject>
+        <dc:subject>codon</dc:subject>
+        <dc:subject>thattinh</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:20+00:00"/>
+        <meta name="calibre:title_sort" content="Đừng để cô ấy cô đơn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

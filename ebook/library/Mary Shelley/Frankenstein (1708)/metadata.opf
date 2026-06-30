@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1708</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0db6cb51-d7ef-4bc9-9cb7-2acfa810436a</dc:identifier>
+        <dc:title>Frankenstein</dc:title>
+        <dc:creator opf:file-as="Shelley, Mary" opf:role="aut">Mary Shelley</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-24T21:55:32+00:00</dc:date>
+        <dc:description>&lt;p&gt;Frankenstein hay còn gọi là Prometheus hiện đại, nói chung được biết đến với cái tên Frankenstein, là Văn học tiểu thuyết viết bởi Mary Shelley. Shelley bắt đầu sự nghiệp viết tiểu thuyết khi bà mới 18 tuổi và quyển tiểu thuyết đầu tiên được phát hành khi bà 21 tuổi. Frankenstein được in ấn lần đầu tiên không bao gồm tên bà tại London vào năm 1818. Tên tuổi Shelley xuất hiện trên lần xuất bản thứ hai vào năm 1831. Tựa đề của cuốn truyện liên quan tới một nhà khoa học là Victor Frankenstein,&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:17+00:00"/>
+        <meta name="calibre:title_sort" content="Frankenstein"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1410</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">dfff2808-411f-444b-9d4a-8f2bc3d3a40b</dc:identifier>
+        <dc:title>Làng Thiên Nga Đen</dc:title>
+        <dc:creator opf:file-as="Mitchell, David" opf:role="aut">David Mitchell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-10-24T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;br&gt;&lt;p style="text-align:center;"&gt;&lt;span&gt;&lt;b&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:35+00:00"/>
+        <meta name="calibre:title_sort" content="Làng Thiên Nga Đen"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

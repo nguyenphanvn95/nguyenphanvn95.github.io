@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">908</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0ba23f6c-e638-4d5d-9ef7-9dd66387f81f</dc:identifier>
+        <dc:title>Những nguyên lý quản trị bất biến mọi thời đại</dc:title>
+        <dc:creator opf:file-as="Drucker, Peter F." opf:role="aut">Peter F. Drucker</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-12-31T16:14:56+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Drucker &lt;/strong&gt;không chỉ khai phá những chân trời mới của lĩnh vực tri thức: ươm mầm cho những ý tưởng cốt lõi về quản trị để ngày nay chúng ta được hưởng những thành quả mà chúng mang lại. Mỗi năm, các nhà quản lý lại khám phá ra những sự tương đồng và chính xác đến kinh ngạc trong những bài báo và những cuốn sách ông đã viết ngay cả trước khi họ, thậm chí là cha mẹ học, ra đời. “Không có gì vô ích hơn việc cố công thực hiện hiệu quả những điều lẽ ra chẳng nên làm”. Câu nói đó được viết năm 1963 - cách đây cả hai thế hệ - nhưng tôi đoan chắc rằng, chỉ một vài ngày trước đây thôi, ở đâu đó trên thế giới này có một nhà quản lý trẻ đã dùng viết dạ quang để đánh dấu nó.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;br&gt;&lt;em&gt;Các nhà quản trị vẫn cần được nhắc nhở rằng, công việc của họ là làm những gì đúng đắn cho doanh nghiệp chứ không chỉ cho cổ đông, và dĩ nhiên không chỉ cho chính bản thân họ. Nhà quản lý cần phải nghĩ đến nhân viên của mình:”Họ không chỉ là nhân viên, mà họ còn là những con người”. Các nhà quản trị phải quản lý. Nhiệm vụ đó rõ ràng không đơn giản, nhưng không đáng lo ngại nhờ vào sự rõ ràng, tầm nhìn bao quát và sự khôn ngoan mang tính thực tiễn cao của bậc thầy về quản trị Peter Drucker.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>First News + NXB Trẻ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:37+00:00"/>
+        <meta name="calibre:title_sort" content="Những nguyên lý quản trị bất biến mọi thời đại"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

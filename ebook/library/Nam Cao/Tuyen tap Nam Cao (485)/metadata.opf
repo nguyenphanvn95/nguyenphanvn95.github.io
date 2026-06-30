@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">485</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7ca1eba8-a2ad-4b72-be24-32ac3d03e406</dc:identifier>
+        <dc:title>Tuyển tập Nam Cao</dc:title>
+        <dc:creator opf:file-as="Cao, Nam" opf:role="aut">Nam Cao</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-15T01:23:42+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đời văn Nam Cao không dài. Trên mười năm sáng tác ở cả hai thời kỳ trước và sau Cách mạng, Nam Cao đã để lại nhiều tác phẩm có giá trị. Thời gian trôi qua, tác phẩm của Nam Cao như càng bộc lộ thêm những phẩm chất mới, những giá trị mới. Chúng ta càng thêm yêu quý ông, một tâm hồn trung thực và cao đẹp trong cuộc đời cũng như trên trang sách; một nhà văn chiến sĩ với ý nghĩa đích thực và trọn vẹn của danh hiệu này.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:49+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyển tập Nam Cao"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

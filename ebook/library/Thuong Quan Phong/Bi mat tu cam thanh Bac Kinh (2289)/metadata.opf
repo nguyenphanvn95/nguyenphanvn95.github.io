@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2289</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2d4452bc-5139-4179-861d-c8c7cbee2f8b</dc:identifier>
+        <dc:title>Bí mật tử cấm thành Bắc Kinh</dc:title>
+        <dc:creator opf:file-as="Phong, Thượng Quan" opf:role="aut">Thượng Quan Phong</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:44+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tử Cấm Thành không chỉ niềm tự hào của ngân dân Trung Quốc mà còn là sự ngưỡng mộ của thế giới. Với vẻ đẹp thâm nghiêm, tráng lệ và tinh xảo, Tử Cấm Thành thật xứng đáng là một Viện Bảo tàng hiện đại về văn hóa lịch sử và nghệ thuật của cung đình hai triều Minh – Thanh, và là một quần thể kiến trúc hùng vĩ vào bậc nhất thế giới. Trước đây, do phép tắc cung cấm, quy chế ngặt nghèo, những bí mật trong nội cung của Tử Cấm Thành luôn gây sự tò mò và là đề tài bàn cãi không dứt trong nhiều thập kỉ. Giờ đây, khi các nhà khảo cổ, các nhà nghiên cứu bắt tay vào việc khám phá Tử Cấm Thành, thì những bí mật nơi chốn thâm nghiêm mới dần được hé lộ gây nhiều hứng thú đối với du khách trong và ngoài nước.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:28+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật tử cấm thành Bắc Kinh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

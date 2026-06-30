@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">702</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">af15047a-1d7a-4400-8d1a-0d0c5c75508b</dc:identifier>
+        <dc:title>Steve Jobs</dc:title>
+        <dc:creator opf:file-as="Isaacson, Walter" opf:role="aut">Walter Isaacson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:10+00:00</dc:date>
+        <dc:description>Cuốn tiểu sử đầu tiên và cũng là duy nhất về Steve Jobs, do cựu thư ký tòa soạn của tạp chí “Time”, Walter Isaacson biên soạn, dựa trên 40 cuộc phỏng vấn với Steve Jobs trong 2 năm cùng các cuộc phỏng vấn với hơn 100 người thân, bạn bè, đồng nghiệp và đối thủ của ông. Sách được phát hành trên Amazon vào ngày 24/10 và đang liên tục đứng vị trí số 1 danh sách sách bán chạy nhất của cả Amazon lẫn Barnes &amp; Nobles.</dc:description>
+        <dc:publisher>manzzzzz</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:13+00:00"/>
+        <meta name="calibre:title_sort" content="Steve Jobs"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

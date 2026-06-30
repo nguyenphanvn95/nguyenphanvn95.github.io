@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2259</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e214ff53-3624-48db-b34e-2efb47eb11c7</dc:identifier>
+        <dc:title>Bí quyết đơn giản hóa cuộc sống</dc:title>
+        <dc:creator opf:file-as="Küstenmacher, Werner Tiki" opf:role="aut">Werner Tiki Küstenmacher</dc:creator>
+        <dc:creator opf:file-as="Küstenmacher, Werner Tiki" opf:role="aut">Lothar Seiwert</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:13+00:00</dc:date>
+        <dc:description>&lt;p&gt;"Bí quyết đơn giản hóa cuộc sống" đề cập đến cách tiếp cận cuộc sống với sự hiểu biết, nhằm giải phóng tiềm năng trong con người bạn, đồng thời đưa bạn đến với hạnh phúc và sự viên mãn.
+&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:24+00:00"/>
+        <meta name="calibre:title_sort" content="Bí quyết đơn giản hóa cuộc sống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

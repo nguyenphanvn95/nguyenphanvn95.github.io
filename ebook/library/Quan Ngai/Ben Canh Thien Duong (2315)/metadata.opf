@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2315</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">04707275-f278-414c-ab54-637a584b4444</dc:identifier>
+        <dc:title>Bên Cạnh Thiên Đường</dc:title>
+        <dc:creator opf:file-as="Ngai, Quản" opf:role="aut">Quản Ngai</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-27T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Không ồn ã, khoa trương, hoa mỹ, tác giả Quản Ngai người Trung Quốc chỉ nhẹ nhàng kể lại những trải nghiệm của cuộc đời mình.Thế nhưng lần theo bước chân của Quản Ngai người đọc ít nhiều nhận ra rằng Thiên Đường chẳng ở đâu xa, nó hiện hữu ngay trong cuộc sống mỗi người. Chính vì thế, cuốn sách Bên cạnh Thiên Đường được đánh giá là một câu chuyện dung dị nhưng đầy xúc động cho giới trẻ.&lt;/p&gt;</dc:description>
+        <dc:publisher>Quản Ngai</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:31+00:00"/>
+        <meta name="calibre:title_sort" content="Bên Cạnh Thiên Đường"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

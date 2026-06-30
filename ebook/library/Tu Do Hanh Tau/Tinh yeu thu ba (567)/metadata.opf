@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">567</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4c718ce7-47d5-4d45-aae1-ced61daf299b</dc:identifier>
+        <dc:title>Tình yêu thứ ba</dc:title>
+        <dc:creator opf:file-as="Tẩu, Tự Do Hành" opf:role="aut">Tự Do Hành Tẩu</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T21:15:46+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nếu bạn là một người từng yêu, nếu bạn là người từng hoang mang bối rối, nếu bạn hy vọng tìm thấy trong tiểu thuyết tâm trạng mình từng có, việc mình từng trải qua, có thể đọc cuốn tiểu thuyết này.Anh yêu cô ngay cả khi cô còn chưa biết anh là ai.Anh muốn cho cô tất cả, nhưng điều anh cần là thời gian.Cô cũng như vậy, thậm chí cô không cách nào chống đỡ được ánh mắt trong veo của anh.Không nên bắt đầu nhưng rồi đều đã bắt đầu, ngay khi bắt đầu thì chỉ có thể trầm luân trong ngọt ngào và đau khổ.&lt;/p&gt;</dc:description>
+        <dc:publisher>JINI83 DICH</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:58+00:00"/>
+        <meta name="calibre:title_sort" content="Tình yêu thứ ba"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

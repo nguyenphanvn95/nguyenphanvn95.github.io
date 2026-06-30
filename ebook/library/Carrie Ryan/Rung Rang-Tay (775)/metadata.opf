@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">775</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">db5d66e0-5723-43aa-9374-52f450052269</dc:identifier>
+        <dc:title>Rừng Răng-Tay</dc:title>
+        <dc:creator opf:file-as="Ryan, Carrie" opf:role="aut">Carrie Ryan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Trong thế giới của Mary, luôn tồn tại một sự thật rất giản đơn.&lt;/p&gt; &lt;p&gt;Các xơ luôn là người hiểu biết nhất. Những Người bảo vệ sẽ bảo vệ phụng sự dân làng.&lt;/p&gt; &lt;p&gt;Và Vùng vô định thì không bao giờ biến mất.&lt;/p&gt; &lt;p&gt;Và bạn phải luôn chú ý đến dãy hàng rào bao quanh làng. Dãy hàng rào đó bảo vệ dân làng trước khu rừng Răng-Tay.&lt;/p&gt; &lt;p&gt;Nhưng dần dần, sự thật của Mary đã hạ gục cô. Cô biết được những điều mà cô không bao giờ muốn biết về các xơ và bí mật của họ, về những Người bảo vệ và sức mạnh của họ. Và khi hàng rào bị tấn công, cả thế giới xung quanh cô rơi vào một đám hỗn độn, đó là thế giới của Vùng vô định và sự tàn nhẫn của chúng.&lt;/p&gt;Giờ thì cô phải lựa chọn giữa ngôi làng và tương lai của chính mình, giữa người cô yêu và người yêu cô. Cô phải đối mặt với sự thật về rừng Răng-Tay. Liệu có tồn tại một cuộc sống bên ngoài thế giới luôn bị bao quanh bởi Thần Chết?&lt;/div&gt;</dc:description>
+        <dc:publisher>Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:22+00:00"/>
+        <meta name="calibre:title_sort" content="Rừng Răng-Tay"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

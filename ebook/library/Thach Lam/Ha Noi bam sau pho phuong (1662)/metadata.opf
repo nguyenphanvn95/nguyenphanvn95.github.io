@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1662</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3ddd9f9b-29ee-4b05-8c53-fc767416eb63</dc:identifier>
+        <dc:title>Hà Nội băm sáu phố phường</dc:title>
+        <dc:creator opf:file-as="Lam, Thạch" opf:role="aut">Thạch Lam</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:24+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đặt trong bối cảnh đương thời thì Hà Nội băm sáu phố phường là một tác phẩm rất có ý nghĩa. Nó trân trọng vẻ đẹp của đất nước nói chung và Hà Nội nói riêng. Cuốn sách mỏng, xinh xắn với chỉ 70 trang nhưng cho đến nay, khi người ta nói đến Hà Nội và những tác phẩm thể hiện được tinh hoa, vẻ đẹp của Hà Nội thì người ta vẫn nhắc đến Hà Nội băm sáu phố phường. Sau khi Thạch Lam mất đến nay đã nửa thế kỷ, đã có rất nhiều sách viết về Hà Nội nhưng với sự tinh tế của mình, Hà Nội băm sáu phố phường vẫn có vị trí rất đặc biệt trong số các tác phẩm viết về Hà Nội, khiến cho người đọc không thể quên được".&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:11+00:00"/>
+        <meta name="calibre:title_sort" content="Hà Nội băm sáu phố phường"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

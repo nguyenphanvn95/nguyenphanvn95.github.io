@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">467</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b99ad4fe-fd45-42bc-92f2-5cc3fddf9939</dc:identifier>
+        <dc:title>Tuyệt thực đi về đâu</dc:title>
+        <dc:creator opf:file-as="Thái Khắc Lễ, Phạm Thị Ngọc Trâm" opf:role="aut">Thái Khắc Lễ, Phạm Thị Ngọc Trâm</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:47.327227+00:00"/>
+        <meta name="calibre:title_sort" content="Tuyệt thực đi về đâu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

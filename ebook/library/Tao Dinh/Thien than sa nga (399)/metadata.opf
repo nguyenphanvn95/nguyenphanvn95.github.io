@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">399</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">27c3ce85-82ed-4c7a-9e77-d741ec276f64</dc:identifier>
+        <dc:title>Thiên thần sa ngã</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-12T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một "tấn trò đời" với đủ âm mưu, thủ đoạn, tình tiết éo le, trớ trêu, tiền, tình, hỉ, nộ, ái, ố, tham... đầy bi hài đã diễn ra. Tất cả những người trong cuộc ai cũng nghĩ mình là kẻ nhận được của Trời cho, nhưng hoá ra đó chỉ là trò chơi oái ăm của ông Trời, song phải có bao nhiêu tiền thì người ta mới hiểu ra được điều này?
+&lt;/p&gt;</dc:description>
+        <dc:publisher>Heragong</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:27+00:00"/>
+        <meta name="calibre:title_sort" content="Thiên thần sa ngã"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">546</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6aeb0954-eb01-4a70-8de1-321f5780a244</dc:identifier>
+        <dc:title>Tôi Là Tất Cả Của Tên Ấy</dc:title>
+        <dc:creator opf:file-as="Hỷ, Lâm Ngân" opf:role="aut">Lâm Ngân Hỷ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-25T22:04:11+00:00</dc:date>
+        <dc:description>&lt;p&gt;Phác Tuấn Hỷ, một cô nữ sinh mười bảy tuổi xinh đẹp, do vừa chia tay bạn trai cũ là Kim Dân Hữu, rồi bố cô muốn đến Suwon lập nghiệp, nên cả gia đình cô đều chuyển hết đến đó. Tuấn Hỷ vào học trường Du Lâm Thượng Cao, còn Phác Tuấn Anh – em trai thua cô một tuổi – thì vào học trường nam sinh Đại Lâm Công Cao. Phác Tuấn Hỷ đã tình cờ gặp Khương Cẩm Thánh, nam sinh nổi tiếng nhất trường Đại Lâm Công Cao, cùng các bạn anh là Lý Vân Quân, Hy Thái Dân và Mẫn Chí Hồi. Khương Cẩm Thánh đã để ý Phác Tuấn Hỷ ngay từ cái nhìn đầu tiên và ra sức theo đuổi cô. Dần dần, Phác Tuấn Hỷ đã quên được mối tình đầu và đón nhận Khương Cẩm Thánh.&lt;/p&gt;</dc:description>
+        <dc:publisher>Tiểu Dương</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:56+00:00"/>
+        <meta name="calibre:title_sort" content="Tôi Là Tất Cả Của Tên Ấy"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

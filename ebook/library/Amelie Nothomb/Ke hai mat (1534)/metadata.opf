@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1534</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">38b6fb5a-d1f8-4a9d-8ad9-2cb5454c6e30</dc:identifier>
+        <dc:title>Kẻ hai mặt</dc:title>
+        <dc:creator opf:file-as="Nothomb, Amélie" opf:role="aut">Amélie Nothomb</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;Blanche, 16 tuổi, nhút nhát, chưa từng có bạn bất ngờ được Christa, xinh đẹp, quyến rũ, nổi trội nhất khoa đến kết bạn. Không chỉ Blanche, cả cha mẹ cô cũng bị cuốn vào “cơn lốc” Christa. Từ một người xa lạ, Christa bốc chốc trở thành bạn, người ở nhờ rồi nhân vật trung tâm trong gia đình Blanche. Nhưng rồi Blanche nhanh chóng nhận ra một cái bẫy đang được giăng ra với mình và cha mẹ. Cô đã hành động và tìm ra được sự thật về Christa. Một sự thật đáng buồn và bất ngờ tuyệt đối...&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;em&gt;Bằng lối dẫn chuyện giản dị, ngôn ngữ hiện đại, Amélie Nothomb đưa độc giả đến gần hơn với những thực tế đôi khi quá trần trụi trong tình bạn, tình yêu và những vấn đề của thanh niên Bỉ hiện nay.&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam + NXB Văn Học</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>psychology</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:48+00:00"/>
+        <meta name="calibre:title_sort" content="Kẻ hai mặt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1687</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5da7cb4d-6ef3-482b-9c7f-f18d5e2a260c</dc:identifier>
+        <dc:title>Giấc Mộng Đế Vương</dc:title>
+        <dc:creator opf:file-as="cuồng, Cuồng càng thêm" opf:role="aut">Cuồng càng thêm cuồng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-07-06T06:40:28+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://truyenfull.vn/giac-mong-de-vuong/</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn Tình</dc:subject>
+        <dc:subject>Cung Đấu</dc:subject>
+        <dc:subject>Cổ Đại</dc:subject>
+        <dc:subject>Sủng</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:14+00:00"/>
+        <meta name="calibre:title_sort" content="Giấc Mộng Đế Vương"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

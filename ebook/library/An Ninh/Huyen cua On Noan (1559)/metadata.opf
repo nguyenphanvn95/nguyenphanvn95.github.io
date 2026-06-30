@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1559</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c1642e60-c805-4789-8ed6-8a503279f595</dc:identifier>
+        <dc:title>Huyền của Ôn Noãn</dc:title>
+        <dc:creator opf:file-as="Ninh, An" opf:role="aut">An Ninh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-26T10:07:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Huyền của Ôn Noãn, Ôn Noãn và Chiếm Nam Huyền của cô, trong ánh nắng chan hòa nơi đây, dưới tiếng đàn du dương, kể một câu chuyện cũ thiên trường địa cửu đã rất lâu. Tuổi trẻ non nớt yêu vô cùng sâu sắc, chia tay tàn nhẫn lại không có nguyên nhân, khiến hai người xa xăm cách trở mười năm, để cái tên cấm kị kia trở thành một vết thương lòng. Cho dù bên cạnh đã có một người khác bầu bạn, nhưng sâu trong tâm trí vẫn không thể bình ổn khi hoài niệm.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:51+00:00"/>
+        <meta name="calibre:title_sort" content="Huyền của Ôn Noãn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

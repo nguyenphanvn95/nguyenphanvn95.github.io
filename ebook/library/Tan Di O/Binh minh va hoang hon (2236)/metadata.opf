@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2236</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">af4a5eda-b725-4f97-ae46-54da9f93f009</dc:identifier>
+        <dc:title>Bình minh và hoàng hôn</dc:title>
+        <dc:creator opf:file-as="Ổ, Tân Di" opf:role="aut">Tân Di Ổ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-27T11:04:45+00:00</dc:date>
+        <dc:description>&lt;p&gt;Gia đình họ Kỉ và gia đình họ Cố là hai gia đình rất thân thiết với nhau. Từ nhỏ, con trai nhà họ Kỉ là Kỉ Đình đã là bạn “thanh mai trúc mã” với hai cô con gái song sinh nhà họ Cố là Cố Chỉ Di và Cố Chỉ An. Chỉ Di và Chỉ An hồi nhỏ giống nhau như hai giọt nước, nhưng tính cách lại khác nhau một trời một vực. Chỉ Di dịu dàng, nữ tính, có phần trầm mặc, yếu đuối, trong khi Chỉ An lại nghịch ngợm, hiếu động và có phần ương bướng. Chỉ Di từ nhỏ đã thầm yêu Kỉ Đình. Kỉ Đình thì luôn thấy mình phải có trách nhiệm bảo vệ, chăm sóc cho Chỉ Di thánh thiện, nhưng khi trưởng thành, anh lại phát hiện ra người mình yêu chính là Chỉ An. Đằng sau vẻ ngoài bướng bỉnh, ngang tàng của Chỉ An là một tâm hồn khao khát được yêu thương. Từ nhỏ, Chỉ An đã biết mình không phải là con đẻ của mẹ. Cô chỉ là đứa con rơi của bố với một người em họ của mẹ, nên từ lúc sinh ra cô đã là đứa trẻ không được ai mong đợi. Vậy nên, cô luôn có cảm giác cô đơn. Lúc Kỉ Đình và Chỉ An hiểu rõ tâm tư nhau, tưởng như sắp đến được với nhau thì một vụ tai nạn xảy ra đã làm cuộc đời họ rẽ ngoặt.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:22+00:00"/>
+        <meta name="calibre:title_sort" content="Bình minh và hoàng hôn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

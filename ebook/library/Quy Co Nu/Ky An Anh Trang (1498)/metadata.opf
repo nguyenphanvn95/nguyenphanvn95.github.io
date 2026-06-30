@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1498</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bb2beb4c-1c6d-456a-b16d-9ede39ac6acd</dc:identifier>
+        <dc:title>Kỳ Án Ánh Trăng</dc:title>
+        <dc:creator opf:file-as="Nữ, Quỷ Cổ" opf:role="aut">Quỷ Cổ Nữ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-11T04:40:16+00:00</dc:date>
+        <dc:description>&lt;p&gt;Những cô sinh viên xinh đẹp cứ tuần tự nhảy lầu tự sát vào đêm 16-6 hằng năm, tất cả họ cùng ở phòng 405 khu nhà 13 ký túc xá trường y, tất cả đều bị một sự sợ hãi khủng khiếp khiến khuôn mặt trở nên nát vụn và họ đều thốt lên một từ rất trùng hợp: ánh trăng. Diệp Hinh là cô gái thứ 13 ở căn phòng 405 và hình như định mệnh đã chọn cô làm người thứ 13 thốt lên cái từ “ánh trăng” đó. Nhưng cô kiên quyết không đầu hàng cái gọi là định mệnh.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:44+00:00"/>
+        <meta name="calibre:title_sort" content="Kỳ Án Ánh Trăng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2335</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d3dfe42b-9abe-4fa4-8167-2f24ca04a8fc</dc:identifier>
+        <dc:title>Báo Ứng</dc:title>
+        <dc:creator opf:file-as="Roth, Philip" opf:role="aut">Philip Roth</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-12-20T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một tiểu thuyết về sự đau thương và mạnh mẽ. Như cách ta phản ứng lại cuộc đời này: một là gục ngã, và một là tạo ra giá trị của chính mình&lt;/p&gt;</dc:description>
+        <dc:publisher>Happiness Project</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:33+00:00"/>
+        <meta name="calibre:title_sort" content="Báo Ứng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

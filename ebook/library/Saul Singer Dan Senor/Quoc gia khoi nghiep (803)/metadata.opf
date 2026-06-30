@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">803</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">df25da22-1618-454b-81d0-b20bb78ca2ea</dc:identifier>
+        <dc:title>Quốc gia khởi nghiệp</dc:title>
+        <dc:creator opf:file-as="Dan Senor, Saul Singer" opf:role="aut">Saul Singer Dan Senor</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;“Quốc gia khởi nghiệp”&lt;/strong&gt; là câu chuyện viết về sự phát triển thần kỳ của nền kinh tế Israel từ lúc lập quốc cho đến khi trở thành quốc gia có nền công nghệ hàng đầu thế giới. Quyển sách này có thể trả lời cho những thắc mắc làm thế nào một đất nước nhỏ bé lại có thể tồn tại giữa sự thù địch của các quốc gia lân cận, đối phó với những cuộc chiến giữ vững bờ cõi mà vẫn tạo ra sự sáng tạo vượt bậc trong các lĩnh vực công nghệ, quân sự và dân sự.&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;http://tve-4u.org&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Alphabooks + NXB Thế Giới</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economics</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:25+00:00"/>
+        <meta name="calibre:title_sort" content="Quốc gia khởi nghiệp"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

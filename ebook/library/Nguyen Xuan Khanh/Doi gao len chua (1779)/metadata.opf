@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1779</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8269d73f-8477-43eb-a322-65f58d287c06</dc:identifier>
+        <dc:title>Đội gạo lên chùa</dc:title>
+        <dc:creator opf:file-as="Khánh, Nguyễn Xuân" opf:role="aut">Nguyễn Xuân Khánh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-08-01T17:00:00+00:00</dc:date>
+        <dc:description>Đội Gạo Lên Chùa là một cuộc phiêu lưu kỳ lạ. Hai chị em chú bé An, sau một trận càn dữ dội của giặc Pháp, cha mẹ đều chết, đã phải rời bỏ quê hương trốn chạy. Họ trôi dạt đến một ngôi chùa, được sư cụ dang tay cứu vớt. Số phận An được gắn với chùa Sọ và làng Cọ, quê hương mới của chú. Làng Sọ, một làng quê nhỏ bé êm đềm trong nửa thế kỷ, đã trải qua hai cuộc chiến tranh, và những biến động lớn lao. Số phận của ngôi chùa làng và những con người gắn bó với nó sẽ ra sao?</dc:description>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=ddoigaolenchua</dc:identifier>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:24+00:00"/>
+        <meta name="calibre:title_sort" content="Đội gạo lên chùa"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2117</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">20481de6-be8c-4329-b5d0-c59d6e3e027d</dc:identifier>
+        <dc:title>Cô Gái Thứ Ba</dc:title>
+        <dc:creator opf:file-as="Christie, Agatha" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-04-16T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <dc:subject>Hình sự</dc:subject>
+        <dc:subject>Trinh thám</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:09+00:00"/>
+        <meta name="calibre:title_sort" content="Cô Gái Thứ Ba"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

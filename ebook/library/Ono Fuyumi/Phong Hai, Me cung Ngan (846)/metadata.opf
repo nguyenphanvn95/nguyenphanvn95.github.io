@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">846</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">eeac6912-4bff-434e-8c3d-5a820b651a8c</dc:identifier>
+        <dc:title>Phong Hải, Mê cung Ngạn</dc:title>
+        <dc:creator opf:file-as="Fuyumi, Ono" opf:role="aut">Ono Fuyumi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-09-27T17:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;&lt;STRONG&gt;Kaze no Umi, Meikyuu no Kishi&lt;/STRONG&gt; (風の海 迷宮の岸; &lt;EM&gt;Phong Hải, Mê cung Ngạn; Sea of Wind, Shore of the Labyrinth&lt;/EM&gt;) là phần thứ hai của hệ tiểu thuyết &lt;STRONG&gt;Juuni Kokuki &lt;/STRONG&gt;(十二国記; &lt;EM&gt;Thập nhị quốc ký&lt;/EM&gt;) của nữ tác giả Fuyumi Ono. Tựa đề &lt;STRONG&gt;Phong Hải, Mê cung Ngạn&lt;/STRONG&gt; có nghĩa là “Bên kia biển gió là bờ mê cung”. Phong Hải, Mê cung Ngạn được chia làm hai quyển và 15 chương, được xuất bản lần đầu tiên tại Nhật năm 1993.&lt;/P&gt;</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Giả tưởng</dc:subject>
+        <meta name="calibre:series" content="Thập nhị quốc ký"/>
+        <meta name="calibre:series_index" content="2"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:30+00:00"/>
+        <meta name="calibre:title_sort" content="Phong Hải, Mê cung Ngạn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

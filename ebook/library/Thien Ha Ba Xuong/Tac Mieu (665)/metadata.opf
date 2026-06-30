@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">665</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">320d5950-c9a2-4eee-9d6e-375935c212ba</dc:identifier>
+        <dc:title>Tặc Miêu</dc:title>
+        <dc:creator opf:file-as="Xướng, Thiên Hạ Bá" opf:role="aut">Thiên Hạ Bá Xướng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-03-12T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:09+00:00"/>
+        <meta name="calibre:title_sort" content="Tặc Miêu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

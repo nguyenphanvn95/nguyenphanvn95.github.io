@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">563</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5d227308-049f-4405-8a44-4140ff63c102</dc:identifier>
+        <dc:title>Tình Dục Thuở Hồng Hoang</dc:title>
+        <dc:creator opf:file-as="Cacilda Jethá &amp; Lê Khánh Toàn (dịch)" opf:role="aut">Christopher Ryan</dc:creator>
+        <dc:creator opf:file-as="Cacilda Jethá &amp; Lê Khánh Toàn (dịch)" opf:role="aut">Cacilda Jethá</dc:creator>
+        <dc:creator opf:file-as="Cacilda Jethá &amp; Lê Khánh Toàn (dịch)" opf:role="aut">Lê Khánh Toàn (dịch)</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;br&gt;&lt;p style="text-align:center;"&gt;&lt;span&gt;&lt;b&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Gassie</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>©vctvegroup</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:57+00:00"/>
+        <meta name="calibre:title_sort" content="Tình Dục Thuở Hồng Hoang"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

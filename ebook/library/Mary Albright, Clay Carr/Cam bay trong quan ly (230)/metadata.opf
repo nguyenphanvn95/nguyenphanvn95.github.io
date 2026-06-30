@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">230</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f569ef8e-f097-44ad-a777-fb0f6e027073</dc:identifier>
+        <dc:title>Cạm bẫy trong quản lý</dc:title>
+        <dc:creator opf:file-as="Mary Albright, Clay Carr" opf:role="aut">Mary Albright, Clay Carr</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;&lt;strong&gt;Cạm bẫy trong quản lý&lt;/strong&gt; của nhóm tác giả &lt;strong&gt;Mary Albright - Clay Carr&lt;/strong&gt; là một cuốn cẩm nang chỉ ra những sai lầm mà người quản lý rất dễ dàng mắc phải - từ đó đưa ra những phương pháp quản lý hữu ích và hiệu quả nhất.&lt;/p&gt;
+&lt;p&gt;Các chương trình đào tạo quản lý dạy bạn rất nhiều việc phải làm, từ đánh giá năng lực nhân viên, tổ chức cuộc họp, phân chia công việc đến quản lý thời gian..., trong khi lại bỏ qua những việc bạn không nên làm: đó là những sai lầm sơ đẳng, ngớ ngẩn lẫn tinh vi, khó phát hiện trong công việc quản lý - những điều có thể khiến bạn phải dừng bước trên chiếc thang sự nghiệp...&lt;/p&gt;
+&lt;p&gt;Từ những ví dụ thực tế trong cuốn sách này, bạn sẽ biết cách tránh khỏi các lỗi như :&lt;/p&gt;
+&lt;p&gt;- Không có mục tiêu rõ ràng&lt;/p&gt;
+&lt;p&gt;- Giao phó công việc không phù hợp&lt;/p&gt;
+&lt;p&gt;- Có thái độ phòng thủ trước sự phê bình, góp ý&lt;/p&gt;
+&lt;p&gt;- Phớt lờ các chính sách của công ty&lt;/p&gt;
+&lt;p&gt;- Triển khai các dự án có tính mạo hiểm cao với kết quả không đáng kể&lt;/p&gt;
+&lt;p&gt;- Cho phép các nhà quản lý khác "cướp mất" nhân viên của bạn&lt;/p&gt;
+&lt;p&gt;Và nhiều điều khác nữa...&lt;/p&gt;
+&lt;p&gt;Khi đã có cẩm nang này trong tay, bạn sẽ không còn đối diện với nguy cơ chấm dứt sự nghiệp quản lý sau khi phải tự rút ra bài học cay đắng và nhận lãnh hậu quả nghiêm trọng...Bởi vì bạn sẽ biết đích xác mình nên nói gì và làm gì trong bất cứ hoàn cảnh nào của môi trường kinh doanh…&lt;/p&gt;
+&lt;p&gt;Waka trân trọng giới thiệu cuốn sách &lt;strong&gt;Cạm bẫy trong quản lý - Mary Albright, Clay Carr&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:25.857135+00:00"/>
+        <meta name="calibre:title_sort" content="Cạm bẫy trong quản lý"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

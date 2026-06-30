@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2312</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">93957e54-5187-4ccc-b823-278f191e44f7</dc:identifier>
+        <dc:title>Bên lề chính sử</dc:title>
+        <dc:creator opf:file-as="Vĩ, Đinh Công" opf:role="aut">Đinh Công Vĩ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:08+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Bên lề chính sử” là sự bổ sung cho những thiếu sót, chưa đúng, những sự không công bằng của chính sử với những sử nô viết dưới quyền uy của các vương triều quá khứ. Những ai chưa thỏa mãn với chính sử cũ, muốn tìm để hiểu lại những bí ẩn, những sự mờ ảo, không rõ ràng trong sử sách xưa kia, chủ yếu là từ thời Nguyễn về trước có thể tìm đọc “Bên lề chính sử”. Để hoàn thành cuốn sách, Đinh Công Vĩ đã phải đọc kỹ lại, đối chiếu mấy chục bộ chính sử (chủ yếu từ thời Lê đến Nguyễn), tìm lại cả những sử sách đã tham sao thất bản trước thời Lê, những tài liệu khảo cổ về thời Hùng Vương, An Dương Vương... Không chỉ có vậy Đinh Công Vĩ còn đọc kỹ cả những tác phẩm mang tính bách khoa của Lê Quý Đôn, Phan Huy Chú, Phạm Đình Hổ, Đặng Xuân Bảng... đọc cả truyền thuyết, văn thơ dân gian. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:30+00:00"/>
+        <meta name="calibre:title_sort" content="Bên lề chính sử"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

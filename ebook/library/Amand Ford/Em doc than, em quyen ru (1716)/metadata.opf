@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1716</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2ad539d6-71ba-4a5d-b060-c962ff6f3015</dc:identifier>
+        <dc:title>Em độc thân, em quyến rũ</dc:title>
+        <dc:creator opf:file-as="Ford, Amand" opf:role="aut">Amand Ford</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:07+00:00</dc:date>
+        <dc:description>&lt;p&gt;7 chương sách lần lượt giải quyết từng khúc mắc của cuộc sống "một mình", như một hành trình mà độc giả song hành cùng nhân vật "tôi" trong cuốn sách. Nó khiến Em độc thân, em quyến rũ lôi cuốn tới mức độc giả sẽ bật cười theo từng trang sách, khi thấy những tình huống hay chỉ dẫn của tác giả quá đỗi chân thật và... giống trường hợp của chính mình!&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>psychology</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:18+00:00"/>
+        <meta name="calibre:title_sort" content="Em độc thân, em quyến rũ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1215</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f9a27196-54e3-405e-b9b8-7702a4de2544</dc:identifier>
+        <dc:title>Mùi Hương</dc:title>
+        <dc:creator opf:file-as="Süskind, Patrick" opf:role="aut">Patrick Süskind</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:03+00:00</dc:date>
+        <dc:description>&lt;p&gt;Hắn có hình dong kỳ dị, và tâm hồn cũng bệnh hoạn. Mọi người ghẻ lạnh, khinh miệt hắn. Hắn đã từng phải sống trong cô độc và đói rét. Nhưng một biệt tài đã giúp cho hắn tìm một con đường sống. Hắn có khả năng khứu giác đặc biệt. Hắn có thể nhận biết, phân biệt và hơn thế, ghi nhớ các mùi hương. Nhờ vào đó, hắn trở thành một thiên tài trong giới sản xuất nước hoa Pháp.&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:12+00:00"/>
+        <meta name="calibre:title_sort" content="Mùi Hương"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

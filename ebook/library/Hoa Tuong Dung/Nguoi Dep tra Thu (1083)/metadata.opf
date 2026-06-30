@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1083</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">74742cc4-8188-4462-bb1b-23f8aa20467e</dc:identifier>
+        <dc:title>Người Đẹp trả Thù</dc:title>
+        <dc:creator opf:file-as="Dung, Hoa Tưởng" opf:role="aut">Hoa Tưởng Dung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:19+00:00</dc:date>
+        <dc:description>&lt;p&gt;Một đứa bé gái được sinh ra từ tình yêu của bố mẹ, nhưng tiếc thay bé gái lại là một quái thai. Để người mẹ trẻ không phải hứng chịu sự đau khổ này, bố của đứa bé đã chấp nhận trao đổi theo lời đề nghị của người bạn làm bác sĩ đã đỡ đẻ cho vợ mình. Đón nhận một đứa bé trai thay vào cái quái thai, những tưởng cuộc sống sẽ êm đẹp trôi đi khi đứa bé quái thai đã được bà bác sĩ trao cho một người bạn để “xử lý.....&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:57+00:00"/>
+        <meta name="calibre:title_sort" content="Người Đẹp trả Thù"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

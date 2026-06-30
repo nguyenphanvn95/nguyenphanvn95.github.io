@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2428</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b93fff60-3d99-4a2e-8e80-17ea4e48609c</dc:identifier>
+        <dc:title>Âm Phủ</dc:title>
+        <dc:creator opf:file-as="Gordon, Roderick &amp; Williams, Brian" opf:role="aut">Roderick Gordon</dc:creator>
+        <dc:creator opf:file-as="Gordon, Roderick &amp; Williams, Brian" opf:role="aut">Brian Williams</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Có bao giờ bạn tưởng tượng rằng:&lt;/P&gt; &lt;P&gt;… Cha của bạn đột ngột mất tích&lt;/P&gt; &lt;P&gt;Và… Chính bạn phải tìm cách giải cứu cha ra khỏi thế giới tăm tối, đầy rẫy những điều hắc ám đang diễn ra?&lt;/P&gt; &lt;P&gt;Nhưng&lt;BR&gt;Bạn phát hiện bạn thuộc về thế giới đó…&lt;/P&gt; &lt;P&gt;Nhân vật chính của truyện, Will Burrows là một đứa trẻ 14 tuổi sống cùng gia đình ở London. Cậu bé có rất ít điểm chung với mọi người trong nhà trừ niềm đam mê đào bới khảo cổ với cha mình - một tiến sĩ cổ vật không gặp thời.&lt;/P&gt; &lt;P&gt;Khi người cha đột nhiên biến mất, Will cùng người bạn là Chester quyết định lần theo một đường hầm bí mật để tìm tung tích cha mình, đồng thời cũng là thỏa mãn thú đam mê đào bới để lý giải những điều chưa từng được ai biết đến. Ngay khi chúng tìm thấy một thế giới kỳ dị dưới lòng đất, hai đứa trẻ cũng phát hiện ra một sự thật kỳ bí và kinh hoàng - một sự thật mà có thể lấy đi cả mạng sống của chúng…&lt;/P&gt;Những người dưới lòng đất rất căm ghét người Trần-gian, tức dân trên mặt đất. Xã hội dưới lòng đất cũng phân chia giai cấp nặng nề và nhiều định kiến dã man. Dưới lòng đất, có các vùng đất khác nhau như Thuộc địa, Âm Phủ, Địa Ngục, Thành phố Vĩnh viễn, trong đó Âm Phủ và Địa Ngục là nơi lưu đầy những người phạm tội trong điều kiện sống khủng khiếp…</dc:description>
+        <dc:publisher>Trẻ</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">ba54ad86-45ae-4263-a563-1814a659649a</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Action &amp; Adventure</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:44+00:00"/>
+        <meta name="calibre:title_sort" content="Âm Phủ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

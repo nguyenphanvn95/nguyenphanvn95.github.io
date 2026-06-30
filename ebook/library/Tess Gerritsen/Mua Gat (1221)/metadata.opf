@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1221</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cea04e69-f96b-45a5-884b-0ffddb5d8645</dc:identifier>
+        <dc:title>Mùa Gặt</dc:title>
+        <dc:creator opf:file-as="Gerritsen, Tess" opf:role="aut">Tess Gerritsen</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Một quyết định đáng kinh ngạc và có tính sống còn đã hủy hoại toàn bộ nghề nghiệp cũng như những cơ hội lớn của nữ bác sĩ Abby. Cô và nhóm trưởng đã quyết định dành quả tim của một nạn nhân tử vong vì tai nạn giao thông cho cậu bé mười bảy tuổi thay vì cho một phụ nữ rất giàu và có địa vị trong xã hội. Bệnh viện, nơi cô đang làm việc đã sắp xếp người phụ nữ giàu có này sẽ là bệnh nhân được cấp phép quả tim giá trị kia. Ai cũng biết rằng làm trái quyết định và sự sắp xếp của bệnh viện quả là&amp;nbsp; một việc làm vô cùng táo bạo. Chính việc làm đó đã khiến bác sĩ Chao bị mất việc, còn Abby bị giáng một cú sốc khá nghiêm trọng.&lt;/P&gt;Sau đó, đột nhiên bệnh viện có thêm một quả tim mới, người phụ nữ giàu có kia được ghép tim và Abby đã phát hiện ra một sự thật khủng khiếp - một đường dây mua bán nội tạng phi pháp, có được nội tạng bằng cách giết người… Và trên một con thuyền thả neo ở bến cảng Boston, sự thật cuối cùng đang đợi cô khám phá…</dc:description>
+        <dc:publisher>Văn Hóa Thông Tin</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">40a0091d-759a-48f4-b0a5-0035e573a2e7</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:13+00:00"/>
+        <meta name="calibre:title_sort" content="Mùa Gặt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

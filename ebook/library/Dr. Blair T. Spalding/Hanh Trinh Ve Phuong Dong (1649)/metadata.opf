@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1649</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">337e9c73-92c2-4238-b8a0-858b12544d55</dc:identifier>
+        <dc:title>Hành Trình Về Phương Đông</dc:title>
+        <dc:creator opf:file-as="Spalding, Blair T." opf:role="aut">Dr. Blair T. Spalding</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:58:21+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Culture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:10+00:00"/>
+        <meta name="calibre:title_sort" content="Hành Trình Về Phương Đông"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

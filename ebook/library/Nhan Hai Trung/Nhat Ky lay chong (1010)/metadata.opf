@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1010</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a9be21cf-6423-4572-a26c-4f9c4f0b5f78</dc:identifier>
+        <dc:title>Nhật Ký lấy chồng</dc:title>
+        <dc:creator opf:file-as="Trung, Nhân Hải" opf:role="aut">Nhân Hải Trung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-06-02T02:27:33+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tiền Đa Đa là một cô gái giỏi giang và thành đạt, nhưng gần ba mươi mà vẫn chưa lập gia đình. Trước áp lực của người thân, cô đã đi xem mặt vài lần nhưng chẳng lần nào được như ý.Giữa lúc ấy, anh chàng Hứa Phi vừa từ nước ngoài trở về đã chen ngang cuộc đời Tiền Đa Đa. Hứa Phi là ai? Anh chính là cậu đàn em của Tiền Đa Đa, năm nay hai mươi bảy tuổi, một nhân tài xuất sắc; đồng thời, anh cũng chính là cậu sinh viên trước đây đã từng nói với cô: “Tôi muốn theo đuổi chị”, và bị cô từ chối thẳng thừng: “Bao giờ cậu giỏi hơn tôi thì hẵng nói tới hai chữ theo đuổi”… và bây giờ anh trở về, giành mất vị trí trong công ty mà tưởng như đã chắc chắn thuộc về cô.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:48+00:00"/>
+        <meta name="calibre:title_sort" content="Nhật Ký lấy chồng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2229</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">bc71b345-7ca6-4fe3-ad0c-87e34abe9ec9</dc:identifier>
+        <dc:title>Bộ Sưu Tập Tội Ác</dc:title>
+        <dc:creator opf:file-as="Baldacci, David" opf:role="aut">David Baldacci</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Annabelle, một cao thủ lợi hại và rất xinh đẹp, đang lên kế hoạch cho một vụ trộm thế kỷ.&lt;/p&gt; &lt;p&gt;Jonathan DeHaven, một trưởng phòng tính tình rụt rè làm việc ở Thư viện Quốc hội, thì chẳng lên kế hoạch cho việc gì ngoài một ngày bình yên ở bên bộ sưu tập sách ưa thích của mình. Nhưng có một việc chết người đang đợi ông ta trong nhà hầm... Sau khi xác Jonathan được phát hiện, các thành viên của Hội Camel quyết tâm điều tra cái chết khó hiểu này. Và người ta nhanh chóng thấy rằng còn có rất nhiều điều liên quan đến người thủ thư này, chứ không chỉ là một tính cách hòa nhã và niềm đam mê dành cho sách.&lt;/p&gt; &lt;p&gt;Trong khi Annabelle bỏ trốn khỏi những hậu quả kinh khủng từ phi vụ của mình thì Hội Camel nhận ra họ đang phải đối mặt với những kẻ thù ghê gớm không chùn tay trước bất kỳ điều gì để bảo vệ một âm mưu bí mật - và mật mã che giấu âm mưu ấy - khỏi bị tiết lộ...&lt;/p&gt; &lt;p&gt; &lt;/p&gt;Một cuộc rượt đuổi nghẹt thở qua những thế giới tối tăm của cờ bạc gian lận, chính trị và gián điệp. &lt;i&gt;Bộ Sưu Tập Tội Ác&lt;/i&gt; là tác phẩm xuất sắc nhất của David Baldacci.&lt;/div&gt;</dc:description>
+        <dc:publisher>Thời đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:21+00:00"/>
+        <meta name="calibre:title_sort" content="Bộ Sưu Tập Tội Ác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

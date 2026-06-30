@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">440</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e0c0ae50-d86a-4f0a-a7dd-1f967d5e347f</dc:identifier>
+        <dc:title>Thành Phố Trộm</dc:title>
+        <dc:creator opf:file-as="Đỗ Tuấn Anh (dịch)" opf:role="aut">David Benioff</dc:creator>
+        <dc:creator opf:file-as="Đỗ Tuấn Anh (dịch)" opf:role="aut">Đỗ Tuấn Anh (dịch)</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>©vctvegroup</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:43+00:00"/>
+        <meta name="calibre:title_sort" content="Thành Phố Trộm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

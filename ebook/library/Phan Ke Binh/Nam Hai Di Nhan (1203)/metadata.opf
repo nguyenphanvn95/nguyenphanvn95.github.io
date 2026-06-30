@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1203</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">306249a4-f9e9-4fb6-9315-8b9f568860fe</dc:identifier>
+        <dc:title>Nam Hải Dị Nhân</dc:title>
+        <dc:creator opf:file-as="Bính, Phan Kế" opf:role="aut">Phan Kế Bính</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:30+00:00</dc:date>
+        <dc:description>&lt;p&gt;Vả chăng mình là người nước Nam, mà sự tích các bậc danh giá trong nước Nam mình không biết, chẳng hóa ra kiến thức của mình còn kém lắm dư? Khác với những quyển chính sử đồ sộ, các câu chuyện tương đối ngắn lần lượt được kể thành từng cụm khác nhau, mỗi cụm là một danh sách các bậc cao nhân trong cùng một trường như: các vị thần linh ứng, các bậc đại anh kiệt, mãnh tướng, văn tài… Sau đó, trong bản thân từng chương, thời gian tuyến tính lại được áp dụng để giúp những cái tên lần lượt xuất hiện theo dòng chảy lịch sử. Nhờ đó, người đọc có thể kết hợp “ôn đi ôn lại” lịch sử nước nhà xuyên suốt bảy chương sách.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>History</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:11+00:00"/>
+        <meta name="calibre:title_sort" content="Nam Hải Dị Nhân"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

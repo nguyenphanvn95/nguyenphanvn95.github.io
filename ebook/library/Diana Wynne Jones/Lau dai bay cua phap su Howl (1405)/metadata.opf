@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1405</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">30b4ddae-aff8-4501-871f-248c0808acd6</dc:identifier>
+        <dc:title>Lâu đài bay của pháp sư Howl</dc:title>
+        <dc:creator opf:file-as="Jones, Diana Wynne" opf:role="aut">Diana Wynne Jones</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-01-09T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cô gái Sophie Hatter đang sống và làm việc yên ổn trong cửa hiệu bán mũ 
+của bố mẹ ở Ingary, xứ sở của những đôi ủng bảy lý và áo tàng hình thì 
+bỗng một ngày, mụ phù thuỷ xứ Waste xuất hiện biến cô thành bà già xấu 
+xí. Quyết tâm giải cứu bản thân mình...&lt;/p&gt;</dc:description>
+        <dc:publisher>mrnguyentla</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Children</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:34.533168+00:00"/>
+        <meta name="calibre:title_sort" content="Lâu đài bay của pháp sư Howl"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

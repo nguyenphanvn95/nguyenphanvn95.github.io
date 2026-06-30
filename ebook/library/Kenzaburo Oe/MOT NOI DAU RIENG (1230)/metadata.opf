@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1230</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">7791f005-35f7-42d5-8ae9-7a895a31dd71</dc:identifier>
+        <dc:title>MỘT NỖI ĐAU RIÊNG</dc:title>
+        <dc:creator opf:file-as="Oe, Kenzaburo" opf:role="aut">Kenzaburo Oe</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:14+00:00"/>
+        <meta name="calibre:title_sort" content="MỘT NỖI ĐAU RIÊNG"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

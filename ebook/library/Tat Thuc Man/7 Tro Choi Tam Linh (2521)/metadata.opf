@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2521</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">07d4a8bb-2595-487c-a4c9-37ef64a6b950</dc:identifier>
+        <dc:title>7 Trò Chơi Tâm Linh</dc:title>
+        <dc:creator opf:file-as="Mẫn, Tất Thục" opf:role="aut">Tất Thục Mẫn</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:22+00:00</dc:date>
+        <dc:description>&lt;p&gt;Nếu bạn tới bệnh viện để kiểm tra sức khỏe chắc chắn bác sĩ sẽ viết ra một danh sách các cuộc xét nghiệm rất dài để kiểm tra máu, để soi phổi của bạn. Thậm chí nếu cần thiết, bạn còn có thể bị đưa vào những thiết bị máy móc “lạnh ngắt” để chụp chiếu toàn bộ cơ thể… Đối với tâm hồn cũng vậy, trước tiên cũng cần phải hiểu được “tình trạng” của nó rồi mới có thể “kê thuốc” phù hợp. Nhưng làm thế nào để biết được tâm hồn mình rốt cuộc khỏe mạnh hay không? Rất có thể cuốn sách này sẽ giúp bạn tìm ra lời giải đáp. Cuốn sách này sưu tập vài trò chơi tâm lý đơn giản. Tôi đã hoàn thành từng trò chơi với tâm trạng rất hứng thú, vui vẻ. Trong quá trình chơi, tôi đã vô tình chạm vào hòn đá ngầm dưới đáy biển lúc nào không hay biết, thoáng chốc nhìn thấy những con san hô đang khoe dáng và những chú cá mập đang bơi gấp trong góc sâu tâm hồn mình. Người Trung Quốc có câu: “Biết mình biết người, trăm trận trăm thắng”. Bạn càng hiểu rõ về mình thì bạn càng nắm chắc tương lai của mình”.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:44:03+00:00"/>
+        <meta name="calibre:title_sort" content="7 Trò Chơi Tâm Linh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

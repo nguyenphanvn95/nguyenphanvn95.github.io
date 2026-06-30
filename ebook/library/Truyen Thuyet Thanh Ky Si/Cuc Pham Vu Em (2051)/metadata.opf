@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2051</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ed916536-7e24-44b1-b621-f66849168e78</dc:identifier>
+        <dc:title>Cực Phẩm Vú Em</dc:title>
+        <dc:creator opf:file-as="Sĩ, Truyền Thuyết Thánh Kỵ" opf:role="aut">Truyền Thuyết Thánh Kỵ Sĩ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-07-27T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:59.617009+00:00"/>
+        <meta name="calibre:title_sort" content="Cực Phẩm Vú Em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

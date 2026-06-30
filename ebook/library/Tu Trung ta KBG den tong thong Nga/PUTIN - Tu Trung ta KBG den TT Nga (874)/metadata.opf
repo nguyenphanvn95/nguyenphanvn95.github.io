@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">874</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e5ac920e-18c2-452d-ac05-25c7c23777c1</dc:identifier>
+        <dc:title>PUTIN - Từ Trung tá KBG đến TT Nga</dc:title>
+        <dc:creator opf:file-as="Nga, Từ Trung tá KBG đến tổng thống" opf:role="aut">Từ Trung tá KBG đến tổng thống Nga</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">5661148a-ee9d-4b95-bc56-b43b2e36fc91</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:34+00:00"/>
+        <meta name="calibre:title_sort" content="PUTIN - Từ Trung tá KBG đến TT Nga"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

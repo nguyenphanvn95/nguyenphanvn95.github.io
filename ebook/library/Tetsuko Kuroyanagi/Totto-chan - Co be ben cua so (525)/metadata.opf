@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">525</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2bbdae3c-743d-4461-b64b-520b88fd4b41</dc:identifier>
+        <dc:title>Totto-chan - Cô bé bên cửa sổ</dc:title>
+        <dc:creator opf:file-as="Kuroyanagi, Tetsuko" opf:role="aut">Tetsuko Kuroyanagi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-04-21T03:11:08+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">91944975-6ebb-4d55-8a53-ebbe2a18fa7c</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:53+00:00"/>
+        <meta name="calibre:title_sort" content="Totto-chan - Cô bé bên cửa sổ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

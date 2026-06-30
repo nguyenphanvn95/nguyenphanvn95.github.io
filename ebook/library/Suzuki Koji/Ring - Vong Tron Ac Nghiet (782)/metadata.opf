@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">782</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f3388cce-14e3-479e-a51b-e24d8e1c1b3d</dc:identifier>
+        <dc:title>Ring - Vòng Tròn Ác Nghiệt</dc:title>
+        <dc:creator opf:file-as="Koji, Suzuki" opf:role="aut">Suzuki Koji</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:29+00:00</dc:date>
+        <dc:description>&lt;p&gt;Cái chết đến từ một cuộn băng. Hai đôi nam nữ vị thành niên lần lượt chết bởi cơn đau bót nghẹt tim một tuần sau khi xem phải một cuộn băng lạ trong một nhà nghỉ ngoại ô Tokyo, bên trên một cái giếng cũ...Mê mẩn khám phá ra bí ẩn đằng sau những cái chết kinh hoàng đó, Asakawa, một phóng viên đang háo hức vì danh vọng lao vào cuộc truy tìm dấu vết. Đến mức gã tự mình xem cuộn băng, và đối mặt với lời đe doạ hãi hùng kẻ nào đó đã đặt trong những hình ảnh cuộn băng ghi lại. Bảy ngày còn lại, vòng quay của Ring bắt đầu, sự khiếp hải của kẻ đã thấy ngọn núi lửa phun trào, những cái mặt ma quái, và cuối cùng, cái giếng cũ tiêu điều giữa khu rừng vắng... bắt đầu ngấm vào trong tim. Sự thật là đâu? Đâu là lời nguyền, đâu là lời giải?&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:23+00:00"/>
+        <meta name="calibre:title_sort" content="Ring - Vòng Tròn Ác Nghiệt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

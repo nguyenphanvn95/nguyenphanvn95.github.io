@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1636</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cce7b389-d469-4257-b945-f306ff991aec</dc:identifier>
+        <dc:title>Hãy nói yêu thôi, đừng nói yêu mãi mãi 1</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:46+00:00</dc:date>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Shortstory</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <dc:subject>Hãy yêu thôi đừng nói yêu mãi</dc:subject>
+        <meta name="calibre:series" content="Hãy yêu thôi đừng nói yêu mãi"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:09+00:00"/>
+        <meta name="calibre:title_sort" content="Hãy nói yêu thôi, đừng nói yêu mãi mãi 1"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

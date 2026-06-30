@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">694</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d50d5abf-8169-44ab-9266-fccd859323a1</dc:identifier>
+        <dc:title>Sự Hiền Hòa Của Sói</dc:title>
+        <dc:creator opf:file-as="Penney, Stef" opf:role="aut">Stef Penney</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;P&gt;Chuyện xảy ra vào năm 1867 tại một vùng xa xôi ở miền Bắc Canada. Ở đây, mỗi cộng đồng dân cư như là một đơn vị kinh tế và hành chính khá khép kín. Giao thông chủ yếu là ngựa và xe trượt tuyết, một số cộng đồng kết nối được với các thành phố lớn bằng các chuyến tàu hơi nước.&lt;/P&gt; &lt;P&gt;&lt;?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /&gt;&amp;nbsp;&lt;/P&gt;Bắt nguồn từ cái chết của một người thợ săn - Laurent Jammet và nghi phạm của vụ án là Francis, con nuôi của bà Ross, người phát hiện và kể lại câu chuyện này. Không tin rằng Francis phạm tội, bà lên đường tìm lại đứa con đã mất tích của mình. Với Parker, người dẫn đường và là bạn của nạn nhân Jammet, bà đã phát hiện ra rất nhiều chuyện bí ẩn được che giấu: con bà là người đồng tính, những đứa trẻ thất lạc hơn 30 năm được cho là đã chết, những kẻ đại diện của công ty thu mua đã giết người và trộm cắp sản phẩm của công ty. Quan trọng hơn, bà đã tìm được tình cảm của những người xung quanh. Với những tội ác mà con người gây ra cho nhau, thì bầy sói chỉ là những con vật hiền hòa. Sói chỉ tấn công vì cái ăn, còn con người hại nhau nhiều khi chẳng vì điều gì.</dc:description>
+        <dc:publisher>Văn hóa Sài Gòn</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Sự Hiền Hòa Của Sói"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">773</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">8a5ed090-4e9a-4343-a446-7483087a63c1</dc:identifier>
+        <dc:title>Rượu Độc Lóng Lánh</dc:title>
+        <dc:creator opf:file-as="Agatha Christie" opf:role="aut">Agatha Christie</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sáu người tập trung lại để tưởng nhớ Rosemary Barton xinh đẹp mất vừa tròn một năm. Người chị yêu thương, người chồng đau khổ, thư ký tận tụy, hai tình nhân, người vợ bị phản bội. Không ai quên được Rosemary. Nhưng phải chăng có người trong số họ đã ra tay sát hại nàng?&lt;br&gt;&lt;/p&gt;</dc:description>
+        <dc:language>vie</dc:language>
+        <dc:subject>Trinh thám</dc:subject>
+        <meta name="calibre:rating" content="6"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:22+00:00"/>
+        <meta name="calibre:title_sort" content="Rượu Độc Lóng Lánh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

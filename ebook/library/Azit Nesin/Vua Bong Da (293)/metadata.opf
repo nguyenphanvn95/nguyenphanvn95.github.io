@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">293</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e62de40b-6de1-4235-bbe7-80032c10e3cd</dc:identifier>
+        <dc:title>Vua Bóng Đá</dc:title>
+        <dc:creator opf:file-as="Nesin, Azit" opf:role="aut">Azit Nesin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T18:15:20+00:00</dc:date>
+        <dc:description>&lt;p&gt; Bóng đá chân chính là môn thể thao dũng cảm và đẹp mắt, hấp dẫn lôi cuốn và đầy rung động, nó chứng tỏ - ở mức độ cao nhất - khả năng tinh thần, thể chất và trí tuệ của con người. Chính vì thế Bóng Đá - viết bằng chữ hoa - đã lôi cuốn trái tim và khối óc của hàng triệu con người.Nhưng nhân vật chính trong cuốn tiểu thuyết Vua Bóng Đá của Azit Nexin lại thấy ghê tởm những mặt xấu xa của nền thể thao gắn liền với lừa dối và hạ thấp phẩm giá con người, một nền thể thao bị những kẻ giàu có lũng đoạn, đi ngược lại với khát vọng của đông đảo quần chúng.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:08+00:00"/>
+        <meta name="calibre:title_sort" content="Vua Bóng Đá"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

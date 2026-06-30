@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">951</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4a893a6e-6b9d-4019-9be4-046a5d5b3e0b</dc:identifier>
+        <dc:title>Những nẻo đường đời và những bản tình ca khác</dc:title>
+        <dc:creator opf:file-as="Clézio, Le" opf:role="aut">Le Clézio</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-01-13T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt; &lt;p class="calibre1" style="margin:0in;margin-bottom:.0001pt;text-align:justify; text-indent:24.0pt;line-height:150%"&gt;Chủ nhân giải thưởng Nobel Văn chương năm 2008 có một năng lực kỳ lạ trong việc tạo ra màn sương mỏng dịu dàng trên số phận nhiều khi khốc liệt mà các nhân vật của ông phải trải nghiệm. Le Clézio, biệt tài về thấu hiểu đời nhưng con người bên lề hoặc ở trên đường biên của các thế giới, quả đúng là người thuộc về “những khời hành mới” như Viện Hàn lâm Thụy Điển từng vinh danh ông. Ở những nẻo đường đời mỏng manh này, đó là những khởi hành mới của niềm hi vọng vào con người.&lt;/p&gt; &lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:42+00:00"/>
+        <meta name="calibre:title_sort" content="Những nẻo đường đời và những bản tình ca khác"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1937</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c4263ebc-e654-41d0-9890-1b8d10ad4fee</dc:identifier>
+        <dc:title>Chuyện đời trong quán rượu</dc:title>
+        <dc:creator opf:file-as="Nesin, Azit" opf:role="aut">Azit Nesin</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:35+00:00</dc:date>
+        <dc:description>&lt;p&gt;Azit Nexin là nhà văn trào phúng nổi tiếng của Thổ Nhĩ Kỳ. Dưới con mắt ông, những chi tiết nhỏ nhặt đời thường cũng trở nên hài ước. Ông suy ngẫm về số phận con người, nhìn cuộc đời cũng dưới con mắt hài hước, châm biếm. Song đọc kỹ các tác phẩm của ông, độc giả sẽ không khỏi không suy ngẫm về những vấn đề tưởng chừng là hài hước và đầy vẻ châm biếm đấy, bởi lối viết đả kích rất tế nhị, sâu sắc và thâm thuý.
+Cuốn Chuyện đời trong quán rượu bao gồm 22 truyện ngắn hài hước, đặc sắc của ông chắc chắn sẽ mang đến cho các bạn những phút cười sảng khoái&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Humor</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:43+00:00"/>
+        <meta name="calibre:title_sort" content="Chuyện đời trong quán rượu"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

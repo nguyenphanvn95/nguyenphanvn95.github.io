@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1256</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4a29147f-512a-4709-b952-efeaaa9ce2ac</dc:identifier>
+        <dc:title>Mình Từng Là Điều Đặc Biệt Của Nhau</dc:title>
+        <dc:creator opf:file-as="giả, Nhiều tác" opf:role="aut">Nhiều tác giả</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-08-05T07:49:49+00:00</dc:date>
+        <dc:identifier opf:scheme="URL">https://www.wattpad.com/story/157682296</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Random</dc:subject>
+        <dc:subject>In-Progress</dc:subject>
+        <dc:subject>truyenngan</dc:subject>
+        <dc:subject>FanFiction</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:17.604781+00:00"/>
+        <meta name="calibre:title_sort" content="Mình Từng Là Điều Đặc Biệt Của Nhau"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

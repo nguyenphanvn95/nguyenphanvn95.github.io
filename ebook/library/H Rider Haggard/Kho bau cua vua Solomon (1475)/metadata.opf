@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1475</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">35b7ad5d-6004-42ac-a79e-a928ea5c0ef1</dc:identifier>
+        <dc:title>Kho báu của vua Solomon</dc:title>
+        <dc:creator opf:file-as="Haggard, H Rider" opf:role="aut">H Rider Haggard</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:59:24+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tác phẩm “Kho báu của vua Solomon” được coi là “tiểu thuyết thuộc địa” rất phổ biến tại văn học Tây Âu những năm cuối thế kỷ XIX, đầu thế kỷ XX. Trong tác phẩm, ông đã giúp những người bản xứ, những người thời đó bị coi là “mọi đen” lên án sự áp bức bóc lột của tộc người da trắng. Ngay từ trang đầu ông đã viết: “Trong đời, tôi đã gặp nhiều mọi đen. Không, tôi xin xoá chữ ấy, tôi không thích dùng nó. Tôi đã gặp nhiều người bản xứ thực sự là những người tử tế, đáng kính. Tôi cũng biết không ít những người da trắng đểu cáng, tồi tệ và chẳng bao giờ là người tử tế, dù họ có rất nhiều tiền…”.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Advanture</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:42+00:00"/>
+        <meta name="calibre:title_sort" content="Kho báu của vua Solomon"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

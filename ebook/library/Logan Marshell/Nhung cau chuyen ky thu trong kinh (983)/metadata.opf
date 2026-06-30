@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">983</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4a680d62-5e22-4b1e-a66c-0ad71a5370af</dc:identifier>
+        <dc:title>Những câu chuyện kỳ thú trong kinh thánh</dc:title>
+        <dc:creator opf:file-as="Marshell, Logan" opf:role="aut">Logan Marshell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-02T07:31:27+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Những câu chuyện kỳ thú trong Kinh Thánh” chọn lọc những câu chuyện kỳ thú, hấp dẫn, có phần thần thoại được trích trong Kinh Thánh, phần lớn là trong Kinh Cựu ước và một phần của Kinh Tân ước. Mỗi câu chuyện là một bài học nhỏ về tình thương, lòng nhân ái… giúp các em nhỏ học được nhiều điều hay, lẽ phải. Thông qua đó, các em có thể nhận thức rõ ràng hơn về quy luật cuộc sống, biết sống lạc quan, tự tin, trung thực để trở thành những công dân có ích cho xã hội.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Fairy</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:45+00:00"/>
+        <meta name="calibre:title_sort" content="Những câu chuyện kỳ thú trong kinh thánh"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

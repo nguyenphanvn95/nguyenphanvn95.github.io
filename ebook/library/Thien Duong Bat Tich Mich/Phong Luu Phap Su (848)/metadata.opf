@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">848</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5d245daf-7d4e-431a-88ec-4819288635f5</dc:identifier>
+        <dc:title>Phong Lưu Pháp Sư</dc:title>
+        <dc:creator opf:file-as="Mịch, Thiên Đường Bất Tịch" opf:role="aut">Thiên Đường Bất Tịch Mịch</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-07-06T11:47:14+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://truyenfull.vn/phong-luu-phap-su/</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Tiên Hiệp</dc:subject>
+        <dc:subject>Sắc</dc:subject>
+        <dc:subject>Xuyên Không</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:30+00:00"/>
+        <meta name="calibre:title_sort" content="Phong Lưu Pháp Sư"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

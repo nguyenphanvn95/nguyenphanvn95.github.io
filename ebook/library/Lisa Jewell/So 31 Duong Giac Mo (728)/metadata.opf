@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">728</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">efa56eff-3d25-456a-b0b5-37fc0ea73e09</dc:identifier>
+        <dc:title>Số 31 Đường Giấc Mơ</dc:title>
+        <dc:creator opf:file-as="Jewell, Lisa" opf:role="aut">Lisa Jewell</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Một cuốn sách đem lại sự tự tin, tình yêu và cuộc sống.&lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;Nhiều năm nay, Leah và Toby sống cách nhau một con đường mà chưa hề chạm mặt nhau bao giờ... và Leah cực kỳ muốn nhìn trộm vào đằng sau cánh cửa ngôi nhà lập dị của Toby, nơi toàn những người thuê nhà kỳ quặc nhưng thú vị sinh sống. Cuối cùng, khi định mệnh mở cửa cho Leah bước vào ngôi nhà, cô ngạc nhiên nhận ra là có lẽ mình cũng cần Toby không kém gì Toby cần cô. Đôi lúc cuộc sống cần đến sự trợ giúp và với sự mơ mộng thấp thoáng cùng sức lôi cuốn đặc biệt, những giấc mơ của Toby và Leah đã có cơ may trở thành sự thật.&lt;/p&gt; &lt;p&gt; &lt;/p&gt;&lt;i&gt;Số 31 Đường Giấc Mơ&lt;/i&gt; là cuốn tiểu thuyết sâu sắc, ấm áp đến diệu kỳ sẽ mê hoặc và làm tâm hồn bạn thấy bình yên.&lt;/div&gt;</dc:description>
+        <dc:publisher>Thời đại</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Romance</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:16+00:00"/>
+        <meta name="calibre:title_sort" content="Số 31 Đường Giấc Mơ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1890</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">522ee731-3247-4edb-82bf-b3a6a3a9e02e</dc:identifier>
+        <dc:title>Đảo kinh hoàng</dc:title>
+        <dc:creator opf:file-as="Lehane, Dennis" opf:role="aut">Dennis Lehane</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:57:47+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đặc vụ FBI Teddy Daniels được cử đến đảo Sutter trên vịnh Massachusetts để điều tra vụ mất tích bí ẩn của người phụ nữ có tên Rachel Solando, bệnh nhân tại khu điều trị tâm thần đặc biệt dành cho tội phạm trên đảo. Nhân chứng là những người điên từ cấp độ nhẹ cho đến cuồng bạo, đã từng gây thảm án. Cộng sự là các bác sĩ hành tung bí ẩn, thù địch. Shutter Island được dựng thành phim năm 2009&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:36+00:00"/>
+        <meta name="calibre:title_sort" content="Đảo kinh hoàng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

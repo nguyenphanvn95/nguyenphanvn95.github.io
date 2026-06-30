@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">494</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e697a1aa-9d64-44ae-adf0-f680d3dd5adf</dc:identifier>
+        <dc:title>Tường Vi Đêm Đầu Tiên</dc:title>
+        <dc:creator opf:file-as="Khê, Minh Hiểu" opf:role="aut">Minh Hiểu Khê</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:25+00:00</dc:date>
+        <dc:description>&lt;p&gt;Con người ta, nên chăng hãy để những hờn ghen, những thù hận phôi phai theo năm tháng? Con người ta, nên chăng hãy quên những đau đớn của ngày hôm qua để sống cho hiện tại của mình? Đọc Tường Vi Đêm Đầu Tiên, bạn đọc sẽ được trải nghiệm quá trình đấu tranh, kiếm tìm những giá trị đích thực. Đó là con đường phải đi qua nhiều đau đớn, nhiều âm mưu và nước mắt của cô gái mang tên Diệp Anh. Tường Vi Đêm Đầu Tiên thực sự đã chuyển tải được những giằng xé nội tâm, diễn biến tâm lí phức tạp trong lớp ngôn từ nhẹ nhàng, uyển chuyển và tinh tế.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:50+00:00"/>
+        <meta name="calibre:title_sort" content="Tường Vi Đêm Đầu Tiên"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

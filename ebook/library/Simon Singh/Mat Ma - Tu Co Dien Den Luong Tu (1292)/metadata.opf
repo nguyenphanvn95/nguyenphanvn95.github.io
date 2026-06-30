@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1292</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e87b756e-9b70-4938-877c-00c7475c223f</dc:identifier>
+        <dc:title>Mật Mã - Từ Cổ Điển Đến Lượng Tử</dc:title>
+        <dc:creator opf:file-as="Singh, Simon" opf:role="aut">Simon Singh</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2000-08-29T04:00:00+00:00</dc:date>
+        <dc:identifier opf:scheme="ISBN">9780385495325</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>Khoa Học Kĩ Thuật</dc:subject>
+        <meta name="calibre:rating" content="8"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:21+00:00"/>
+        <meta name="calibre:title_sort" content="Mật Mã - Từ Cổ Điển Đến Lượng Tử"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

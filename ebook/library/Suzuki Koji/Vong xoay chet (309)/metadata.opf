@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">309</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0140123b-95ef-4386-beaf-3ee57dda226e</dc:identifier>
+        <dc:title>Vòng xoáy chết</dc:title>
+        <dc:creator opf:file-as="Koji, Suzuki" opf:role="aut">Suzuki Koji</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-08T09:17:33+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tập truyện thứ 2 trong loạt truyện kinh dị Ringu. Truyện đã được dựng thành phim Rasen vào năm 1999.Vòng Xoáy Chết có nội dung xoay quanh nhân vật Mitsuo Ando, một bác sĩ pháp y đang vô cùng đau khổ. Đứa con trai nhỏ của anh chết đuối kéo theo cuộc hôn nhân tan vỡ, còn anh thì liên tục bị những cơn ác mộng về đại dương ám ảnh, hành hạ. Lối thoát duy nhất của Ando là công việc.Thế giới đắm chìm trong cô đơn, tuyệt vọng và sám hối của Ando đã rung chuyển bởi cái chết lạ lùng của một người bạn cũ- Ruyji Takayama&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Horror</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:10.256439+00:00"/>
+        <meta name="calibre:title_sort" content="Vòng xoáy chết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

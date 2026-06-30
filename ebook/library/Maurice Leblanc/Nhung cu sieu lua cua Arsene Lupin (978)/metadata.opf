@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">978</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">6ab61aa9-2f6b-4346-9a02-94a180dbdf70</dc:identifier>
+        <dc:title>Những cú siêu lừa của Arséne Lupin</dc:title>
+        <dc:creator opf:file-as="Leblanc, Maurice" opf:role="aut">Maurice Leblanc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-03T13:51:27+00:00</dc:date>
+        <dc:description>&lt;p&gt;Arsène Lupin có óc phân đoán, sự tinh nhạy, kỳ tài páh án "ngang ngửa" với Sheerlock Holmes. Và họ đều có một điểm chung là... trên tài cá giới cảnh sát điều tra. Song khác với sự công khai, đàng hoàng của chiến - sĩ - công - lý Sherlock Holmes, Arsène Lupin thực thi công lý theo một cách thức khác: lên án chống lại những kẻ giàu sang, lấy tiền bạc và của cải của họ giúp đỡ cho những người nghèo khó.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Detective</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:45+00:00"/>
+        <meta name="calibre:title_sort" content="Những cú siêu lừa của Arséne Lupin"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

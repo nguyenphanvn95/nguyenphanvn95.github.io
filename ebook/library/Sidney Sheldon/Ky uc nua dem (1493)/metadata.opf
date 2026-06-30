@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1493</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ec814461-9a42-4536-8fce-03e749e3a1f2</dc:identifier>
+        <dc:title>Ký ức nửa đêm</dc:title>
+        <dc:creator opf:file-as="Sheldon Sidney" opf:role="aut">Sidney Sheldon</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-08-03T13:04:58+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://vietmessenger.com/books/?title=kyucnuadem</dc:identifier>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:43+00:00"/>
+        <meta name="calibre:title_sort" content="Ký ức nửa đêm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

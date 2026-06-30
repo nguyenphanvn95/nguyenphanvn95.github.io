@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">518</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cbb33e57-6bb2-4196-90f0-b28771924b24</dc:identifier>
+        <dc:title>Tư duy một hệ thống</dc:title>
+        <dc:creator opf:file-as="Bohm, David" opf:role="aut">David Bohm</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-08-22T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p style="text-align:center;"&gt;&lt;span&gt;&lt;b&gt;Ebook miễn phí tại : &lt;a href="http://sachvui.com/"&gt;www.Sachvui.Com&lt;/a&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;</dc:description>
+        <dc:publisher>www.Sachvui.Com</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:series" content="Tủ sách Tinh Hoa"/>
+        <meta name="calibre:series_index" content="1"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:52+00:00"/>
+        <meta name="calibre:title_sort" content="Tư duy một hệ thống"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

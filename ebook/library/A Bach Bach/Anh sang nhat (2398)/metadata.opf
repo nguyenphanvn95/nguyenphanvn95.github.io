@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2398</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">1ab63cf7-bc71-4077-a7d7-4c425829559a</dc:identifier>
+        <dc:title>Ánh sáng nhạt</dc:title>
+        <dc:creator opf:file-as="A Bạch Bạch" opf:role="aut">A Bạch Bạch</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-07-30T16:06:27+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:41+00:00"/>
+        <meta name="calibre:title_sort" content="Ánh sáng nhạt"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

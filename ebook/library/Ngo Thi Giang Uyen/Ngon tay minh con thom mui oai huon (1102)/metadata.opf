@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1102</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d5a5af72-2105-4988-9303-08f9fe18825b</dc:identifier>
+        <dc:title>Ngón tay mình còn thơm mùi oải hương</dc:title>
+        <dc:creator opf:file-as="Uyên, Ngô Thị Giáng" opf:role="aut">Ngô Thị Giáng Uyên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2008-12-07T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Có một cô gái Việt Nam nhỏ nhắn, chiếc kính trắng trông vừa thông minh vừa nghịch ngợm trên khuôn mặt có đôi chút trẻ thơ. Cô gái trông chỉ ngoài tuổi đôi mươi ấy có cái duyên may mà bao người ao ước: được rong ruổi đó đây ở nhiều xứ sở xa xôi. Trên những chặng đường đi qua, cô khám phá không chỉ vẻ đẹp mê đắm của thiên nhiên, sự quyến rũ của những công trình kiến trúc cổ xưa, mà còn khám phá cả những món ăn thức uống ngon lành và hấp dẫn. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Prose</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:59+00:00"/>
+        <meta name="calibre:title_sort" content="Ngón tay mình còn thơm mùi oải hương"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

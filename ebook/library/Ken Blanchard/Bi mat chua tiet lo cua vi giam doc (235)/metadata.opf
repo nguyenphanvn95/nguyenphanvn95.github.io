@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">235</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">30a55cd2-442e-4831-80b5-664e5baf4737</dc:identifier>
+        <dc:title>Bí mật chưa tiết lộ của vị giám đốc một phút</dc:title>
+        <dc:creator opf:file-as="Blanchard, Ken" opf:role="aut">Ken Blanchard</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Xưa nay, hành động xin lỗi luôn đòi hỏi con người phải tỉnh táo, sáng suốt và can đảm, nên đối với nhiều người, việc thừa nhận sai lầm, sửa chữa chúng để từ đó rút ra những bài học hữu ích là hết sức khó khăn.&lt;/p&gt;
+&lt;p&gt;Ken Blanchard và Margret McBride đã chỉ cho chúng ta một cách sửa chữa sai lầm rất hiệu quả thông qua câu chuyện về Matt - một nhân viên trẻ, nhiệt huyết và trung thành. Khi công ty nơi anh làm rơi vào khủng hoảng, Matt đã tìm gặp Vị Giám Đốc Một Phút để học cách ứng phó và thay đổi tình trạng. Sau khi lĩnh hội được một bí quyết đặc biệt, anh lập tức trở về tìm cách giúp giám đốc của mình đưa công ty thoát khỏi giai đoạn khó khăn.&lt;/p&gt;
+&lt;p&gt;Dõi theo hành trình của Matt, bạn sẽ nhận ra rằng đó cũng chính là hành trình tự khám phá bản thân của mỗi người chúng ta nhằm vượt qua mọi trở ngại trong công việc, cũng như trong cuộc sống gia đình. Không những thế, cuốn sách này còn giúp chúng ta nhận biết thời điểm mình phạm sai lầm và nên làm gì để bày tỏ sự hối cải theo cách đặc biệt nhất. Chỉ bằng hành động xin lỗi này, chúng ta có thể làm cho mọi thứ trở nên tốt đẹp hơn.&lt;/p&gt;
+&lt;p&gt;Cuộc sống của chúng ta ẩn chứa nhiều biến động và “Bí mật chưa tiết lộ của Vị Giám Đốc Một Phút” hé mở cho chúng ta bí quyết để ứng phó với những biến động đó. Những điều tìm thấy trong cuốn sách này sẽ khiến bạn phải suy ngẫm. Một khi áp dụng bí quyết này vào cuộc sống, bạn sẽ biết cách đưa ra những quyết định sáng suốt để có sống tốt hơn và gặt hái nhiều thành công hơn.&lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;Bí mật chưa tiết lộ của vị giám đốc một phút - Ken Blanchard&lt;/strong&gt;!&lt;/p&gt;
+&lt;p&gt;Rút gọn&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:27.497633+00:00"/>
+        <meta name="calibre:title_sort" content="Bí mật chưa tiết lộ của vị giám đốc một phút"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

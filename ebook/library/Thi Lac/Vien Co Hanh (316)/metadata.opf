@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">316</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">282d4f9e-b4e6-4d0b-8feb-14a2b6dac453</dc:identifier>
+        <dc:title>Viễn Cổ Hành</dc:title>
+        <dc:creator opf:file-as="Lạc, Thi" opf:role="aut">Thi Lạc</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2018-07-25T05:22:08+00:00</dc:date>
+        <dc:identifier opf:scheme="URI">http://truyenfull.vn/vien-co-hanh/</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Xuyên Không</dc:subject>
+        <dc:subject>Thám Hiểm</dc:subject>
+        <dc:subject>Điền Văn</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:11+00:00"/>
+        <meta name="calibre:title_sort" content="Viễn Cổ Hành"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

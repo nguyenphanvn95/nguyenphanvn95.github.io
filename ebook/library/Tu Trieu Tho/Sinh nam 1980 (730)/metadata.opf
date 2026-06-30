@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">730</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">55a73a49-8de5-4c03-a40d-a68ea07ab9f6</dc:identifier>
+        <dc:title>Sinh năm 1980</dc:title>
+        <dc:creator opf:file-as="Thọ, Từ Triệu" opf:role="aut">Từ Triệu Thọ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-25T17:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p class="description"&gt;"Sinh năm 1980" được đánh giá là một trong những cuốn sách cần đọc của thanh niên đương đại và là một trong những tác phẩm bán chạy được sinh viên yêu thích nhất năm 2002 tại Trung Quốc.&lt;/p&gt;
+&lt;p class="description"&gt;"Sinh năm 1980" được gọi là "tự truyện của Giả Bảo Ngọc hiện đại" - cuốn tiểu thuyết đã miêu tả chân thực và sâu sắc đời sống tinh thần của thế hệ 8x.&lt;/p&gt;
+&lt;p class="description"&gt;Chuyện bắt đầu bằng lời độc thoại của chàng trai sinh năm 1980 kể về mối tình của mình. Một cô gái lướt qua trong buổi chiều nhàn nhạt, một dáng vẻ của nàng Leda trong thần thoại và tình yêu bắt đầu từ cái nhìn đầu tiên. Nếu chỉ đơn thuần là làm quen, là gặp gỡ, là yêu đương thì gấp sách lại và ngủ một giấc dài đi thôi, chứ chờ đợi gì ở những thứ sắp đặt trước cho một tiểu thuyết ấy?&lt;/p&gt;
+&lt;p class="description"&gt;Nhưng không, Hồ Tử Kiệt - cái anh chàng có ánh mắt nhìn ngơ ngẩn với nàng Leda không phải vậy. Cậu không để người đọc gấp sách lại hay quay mặt đi buồn chán về câu chuyện tình nhạt nhẽo ấy. Ở cậu, ngoài chữ tình, còn là sự đấu tranh cho cả một thế hệ. 8X - một thế hệ của sức sống, của sự sáng tạo, của cái tôi cá nhân lớn lao. 8X - tình yêu không phải chỉ là những tình cảm sên sến màu hồng. 8X có thừa thãi những khát khao mà lớp tuổi đi trước không thể có. Ấy vậy mà vẫn bí bách, vẫn muốn thoát ra khỏi những cái thừa thãi ấy. Tình yêu cũng không đơn giản, duy nhất mà càng ngày càng phong phú, đa sắc bởi trái tim con người quá phức tạp và dễ rung cảm.&lt;/p&gt;
+&lt;p class="description"&gt;Cuộc đời của Hồ Tử Kiệt - chàng trai đào hoa và cũng là nhân vật chính của truyện - đã có bao người con gái đi qua? Ai cũng giàu yêu thương và nhiều đắm đuối. Tâm tư Tử Kiệt lúc nào cũng bị khuấy động bởi nhớ nhung, hờn giận, bởi những cung bậc xúc cảm, bởi những day dứt riêng tư… Hết lòng vì yêu và không toan tính, phải chăng đó là diện mạo tình yêu của thế hệ 8x? Nhưng có lẽ, dù tình yêu mang hình hài nào trên thế gian này, có một yếu tố sẽ mãi còn, đó là sự chân thành của trái tim. Đó cũng là điều, để cho câu chuyện tình yêu của Tử Kiệt chắc chắn sẽ nhận được sự chia sẻ và đồng cảm của nhiều thế hệ.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Heragong</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Chinese-Litarature</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:16+00:00"/>
+        <meta name="calibre:title_sort" content="Sinh năm 1980"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

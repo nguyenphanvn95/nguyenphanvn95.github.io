@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">793</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">aae2e9c9-ab69-47ca-91b5-058d568c2559</dc:identifier>
+        <dc:title>Rắc rối với ngày valentine</dc:title>
+        <dc:creator opf:file-as="Gibson, Rachel" opf:role="aut">Rachel Gibson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:47+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bị bạn trai đá, khủng hoảng trong công việc, nữ thám tử tư Kate Hamilton thấy chán nản, mệt mỏi và tuyệt vọng. Cô chuyển từ kinh thành ánh sáng Las Vegas đến Gospel hoang dã ở Idaho với hy vọng thay đổi cuộc sống hiện tại. Nhưng sau nỗ lực đầu tiên quyến rũ một anh chàng tốt bụng xa lạ bị thất bại, cô tự hỏi, liệu điều xấu nữa sẽ xảy ra? &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Literature</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:24+00:00"/>
+        <meta name="calibre:title_sort" content="Rắc rối với ngày valentine"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

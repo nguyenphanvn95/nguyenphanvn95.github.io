@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1602</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e3f733f5-8946-40f3-b871-42119891cbdf</dc:identifier>
+        <dc:title>Hoa Tư Dẫn</dc:title>
+        <dc:creator opf:file-as="Đường Thất Công Tử" opf:role="aut">Đường thất công tử</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-08T09:01:56+00:00</dc:date>
+        <dc:description>&lt;p&gt;Những ngày thành tan nước mất, công chúa Vệ Quốc là Diệp Trăn đã hi sinh thân mình vì nước, và nhờ viên giao châu nên chết đi sống lại.
+Khi nàng gảy lên điệu Hoa Tư, có thể khiến người sống người chết đều trắng xương và bước vào mộng cảnh và hồi ức.Trong những khúc nhạc được tạo thành từ ma thuật chính là xót xa và đau khổ của người đời.
+Mà nàng và thế tử Trần quốc – hết lần này tới lần khác gặp nhau trong mộng cảnh, thân phận nặng nề, duyên cũng nặng nề.Điệu Hoa Tư thanh bình, liệu có thể khiến mỗi người nhớ nhung về những ngày đã qua, không còn đau thương nữa?
+&lt;/p&gt;</dc:description>
+        <dc:publisher>AC87</dc:publisher>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:56+00:00"/>
+        <meta name="calibre:title_sort" content="Hoa Tư Dẫn"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

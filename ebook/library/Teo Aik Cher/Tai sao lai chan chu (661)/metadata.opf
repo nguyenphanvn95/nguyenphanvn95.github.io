@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">661</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a1a57ffd-2e51-4b85-8d33-416453dfacc5</dc:identifier>
+        <dc:title>Tại sao lại chần chừ</dc:title>
+        <dc:creator opf:file-as="Cher, Teo Aik" opf:role="aut">Teo Aik Cher</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-11-22T02:25:49+00:00</dc:date>
+        <dc:identifier opf:scheme="MOBI-ASIN">0d4b68ad-40bc-4520-98fd-173db77820ba</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:08+00:00"/>
+        <meta name="calibre:title_sort" content="Tại sao lại chần chừ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

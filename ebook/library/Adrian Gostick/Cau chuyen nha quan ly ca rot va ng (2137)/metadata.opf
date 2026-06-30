@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2137</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">34737766-cccd-4469-8a71-c07fd5ba3636</dc:identifier>
+        <dc:title>Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng</dc:title>
+        <dc:creator opf:file-as="Gostick, Adrian" opf:role="aut">Adrian Gostick</dc:creator>
+        <dc:creator opf:file-as="Gostick, Adrian" opf:role="aut">Chester Elton</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T22:57:45+00:00</dc:date>
+        <dc:description>&lt;p&gt;Bằng một câu chuyện ngụ ngôn hiện đại và những diễn dịch hết sức gần gũi, sinh động Gostick và Elton sẽ cho chúng ta thấy tầm quan trọng thực sự của " cà-rốt " trong việc khơi dậy những tiềm năng to lớn đang ngủ yên trong đội ngũ nhân viên của mình. Quyển sách này không những trang bị cho các nhà quản lý ngày nay những chiến lược và giải pháp kinh doanh hữu hiệu, mà còn củng cố lòng trung thành và tăng cường hiệu năng lực làm việc của nhân viên bằng cách ghi nhận thành tích của họ thông qua một phương pháp khen thưởng khá đơn giản gọi là " Bí quyết củ cà-rốt "&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Management</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:11+00:00"/>
+        <meta name="calibre:title_sort" content="Câu chuyện nhà quản lý cà rốt và nghệ thuật khen thưởng"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

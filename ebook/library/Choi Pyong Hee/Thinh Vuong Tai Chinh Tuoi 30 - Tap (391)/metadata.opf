@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">391</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0f6e2fb0-a724-4616-93dc-f6de22d3d2f0</dc:identifier>
+        <dc:title>Thịnh Vượng Tài Chính Tuổi 30 - Tập 1</dc:title>
+        <dc:creator opf:file-as="Hee, Choi Pyong &amp; Seong, Go Deuk &amp; Seong, Jeong" opf:role="aut">Choi Pyong Hee</dc:creator>
+        <dc:creator opf:file-as="Hee, Choi Pyong &amp; Seong, Go Deuk &amp; Seong, Jeong" opf:role="aut">Go Deuk Seong</dc:creator>
+        <dc:creator opf:file-as="Hee, Choi Pyong &amp; Seong, Go Deuk &amp; Seong, Jeong" opf:role="aut">Jeong Seong</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-12-07T17:00:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:26.316853+00:00"/>
+        <meta name="calibre:title_sort" content="Thịnh Vượng Tài Chính Tuổi 30 - Tập 1"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

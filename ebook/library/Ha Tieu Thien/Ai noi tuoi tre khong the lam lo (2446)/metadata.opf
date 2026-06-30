@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2446</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">e5ba1473-7815-4ccf-9294-3380ebcf6ee6</dc:identifier>
+        <dc:title>Ai nói tuổi trẻ không thể lầm lỡ</dc:title>
+        <dc:creator opf:file-as="Thiên, Hà Tiểu" opf:role="aut">Hà Tiểu Thiên</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:13+00:00</dc:date>
+        <dc:description>Những tình tiết trong truyện được đan xen rất chặt chẽ và hấp dẫn... Độc giả sẽ bị lôi cuốn từ những trang đầu, và dần về cuối, mối thắt càng lên cao trào, tôi tin chắc rằng không ai có thể gấp cuốn sách lại mà vẫn chưa đọc đến trang cuối cùng... Những kỷ niệm trong truyện tưởng chừng như đơn thuần chỉ là ký ức đẹp mà Trương Văn Lễ kể lại, nhưng không phải thế, nó ẩn chứa một bí mật, một sự thật, mà đến cuối truyện, ta mới có thể thấy được cái mặt ẩn chứa đó..</dc:description>
+        <dc:publisher>Trương Văn Lễ</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:46+00:00"/>
+        <meta name="calibre:title_sort" content="Ai nói tuổi trẻ không thể lầm lỡ"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1506</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">90bbdf7f-b5ce-4173-9a41-a08594dea10b</dc:identifier>
+        <dc:title>Kinh Thánh Của Một Người</dc:title>
+        <dc:creator opf:file-as="Kiện, Cao Hành" opf:role="aut">Cao Hành Kiện</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2014-05-27T17:00:00+00:00</dc:date>
+        <dc:description>&lt;span class="Apple-style-span" style="font-family: 'Times New Roman'; background-color: rgb(255, 255, 255); font-size: medium; "&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;&lt;b&gt;Kinh Thánh Của Một Người&lt;/b&gt;&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Tác giả: Cao Hành Kiện&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Dịch giả: Thái Nguyễn Bạch Liên&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Công ty phát hành: Phương Nam&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Nhà xuất bản: NXB Công An Nhân Dân&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Kích thước: 13,5x20,5 cm&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Số trang: 384&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Ngày xuất bản: 09/2007&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;* * *&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Nguồn text: pdf&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Thực hiện ebook: tamchec&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Ngày hoàn thành: 28/05/2014&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;Nguồn: &lt;a href="http://tve-4u.org"&gt;http://tve-4u.org&lt;/a&gt;&lt;/div&gt;&lt;div style="text-align: center; font-size: 14pt; "&gt;* * *&lt;/div&gt;&lt;/span&gt;</dc:description>
+        <dc:publisher>http://tve-4u.org</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:45+00:00"/>
+        <meta name="calibre:title_sort" content="Kinh Thánh Của Một Người"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

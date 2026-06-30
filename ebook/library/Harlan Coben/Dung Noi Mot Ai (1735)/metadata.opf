@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1735</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">cc2c28d9-4634-43c7-b0f4-ca2cb7b1e160</dc:identifier>
+        <dc:title>Đừng Nói Một Ai</dc:title>
+        <dc:creator opf:file-as="Coben, Harlan" opf:role="aut">Harlan Coben</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Với bác sĩ David Beck, sự mất mát là quá mức chịu đựng nổi. Và tám năm qua đi, từng ngày một nỗi kinh hoàng về những gì đã xảy ra cũng dần dần nguôi ngoai. Hồ nước lấp lánh. Ánh trăng bàng bạc. Những tiếng hét thất thanh. Cái đêm vợ anh bị mang đi. Mới đêm trước anh vẫn thấy vợ mình còn sống.&lt;/p&gt;Mọi người nói với anh rằng đã đến lúc phải chôn chặt quá khứ mà sống tiếp. Nhưng với David Beck, không thể có sự kết thúc. Một tin nhắn xuất hiện trong máy tính của anh, cụm từ mà chỉ có anh và người vợ đã mất biết mà thôi. Đột nhiên Beck bị trêu ngươi bởi một điều bất khả - rằng bằng cách nào đó, và ở nơi nào đó vợ anh vẫn còn sống… và anh được cảnh báo là đừng nói một ai.</dc:description>
+        <dc:publisher>Nhã Nam</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:19+00:00"/>
+        <meta name="calibre:title_sort" content="Đừng Nói Một Ai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1617</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">0337f68d-7bda-45b1-971f-4b14c4291fac</dc:identifier>
+        <dc:title>Hiểu nghèo thoát nghèo</dc:title>
+        <dc:creator opf:file-as="Abhijit V. Banerjee, Esther Duflo" opf:role="aut">Abhijit V. Banerjee, Esther Duflo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-03-01T08:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Kinh tế học</dc:subject>
+        <meta name="calibre:series" content="Cánh Cửa Mở Rộng"/>
+        <meta name="calibre:series_index" content="24"/>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:57+00:00"/>
+        <meta name="calibre:title_sort" content="Hiểu nghèo thoát nghèo"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

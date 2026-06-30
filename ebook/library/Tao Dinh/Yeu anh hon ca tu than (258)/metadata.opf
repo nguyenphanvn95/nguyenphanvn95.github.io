@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">258</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">121b853f-3d48-4681-92ae-9367171c374a</dc:identifier>
+        <dc:title>Yêu anh hơn cả tử thần</dc:title>
+        <dc:creator opf:file-as="Đình, Tào" opf:role="aut">Tào Đình</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-10T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Quay trở lại với độc giả Việt Nam lần này với “Yêu anh hơn cả tử thần” Tào Đình mang đến cho bạn đọc Việt Nam những câu chuyện rất thật về một thế hệ trẻ say mê “dịch chuyển” trong xã hội Trung Quốc hiện đại&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:04.906881+00:00"/>
+        <meta name="calibre:title_sort" content="Yêu anh hơn cả tử thần"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

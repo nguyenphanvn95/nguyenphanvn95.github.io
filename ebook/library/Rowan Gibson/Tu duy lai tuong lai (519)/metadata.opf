@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">519</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">42ff7eb4-948b-4709-833a-60f7425605d3</dc:identifier>
+        <dc:title>Tư duy lại tương lai</dc:title>
+        <dc:creator opf:file-as="Gibson, Rowan" opf:role="aut">Rowan Gibson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tương lai sẽ không còn giống như những gì mà các nhà kinh doanh vẫn hình dung. Do đó nhất thiết phải tư duy lại tương lai. Những nhà lãnh đạo kinh doanh và những nhà chiến lược kinh doanh nào muốn thành công trong một môi trường đang biến đổi dữ dội như hiện nay, không nên bỏ qua quyển sách này!&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:39:53+00:00"/>
+        <meta name="calibre:title_sort" content="Tư duy lại tương lai"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

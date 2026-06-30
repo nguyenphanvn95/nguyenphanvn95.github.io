@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1070</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4524eed1-5e1c-44ef-9f2a-09cda24d37bc</dc:identifier>
+        <dc:title>Người Phát Ngôn Của Thần Chết</dc:title>
+        <dc:creator opf:file-as="Trần, Tử Kim" opf:role="aut">Tử Kim Trần</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-12-21T14:57:09+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Trong một buổi liên hoan của Phòng Công thương, đội trưởng đội Quản lí thị trường bị sát hại trước mắt bao người, nhưng không một ai đứng lên chỉ ra hung thủ. Vài tháng sau, cả đoàn người tham gia vào chuyến du lịch tập thể của Phòng Công thương đột ngột biến mất. Cuộn băng ghi hình từ camera theo dõi ghi nhận chiếc xe chở đoàn người đã tiến vào khu vực trạm nghỉ khép kín nhưng không hề thấy chiếc xe đó đi ra. Kỳ lạ là chiếc xe đó lại xuất hiện ở khu vực cách xa trạm nghỉ kia. Hai vụ án liệu có liên quan?&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"&gt;Truyện này anh Tử Kim Trần viết vặn vẹo phết - &lt;b&gt;NQK&lt;/b&gt;&lt;/blockquote&gt;&lt;ul&gt;&lt;li&gt;Sửa mấy chục lỗi chính tả, một số chỗ sai, thêm một chút điều chỉnh hình thức, ngắt đoạn.&lt;/li&gt;&lt;li&gt;2017-12-19: Chỉnh chút thiết kế, bắt đầu đọc&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>NXB Văn Học</dc:publisher>
+        <dc:identifier opf:scheme="MOBI-ASIN">c74fbdcc-d46b-4485-b345-47addcacff9b</dc:identifier>
+        <dc:language>vie</dc:language>
+        <dc:subject>Điều tra.Cảnh sát</dc:subject>
+        <dc:subject>@.Khựa</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:55+00:00"/>
+        <meta name="calibre:title_sort" content="Người Phát Ngôn Của Thần Chết"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

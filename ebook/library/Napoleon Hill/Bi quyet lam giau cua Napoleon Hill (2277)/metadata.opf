@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2277</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">2570b552-4b5d-43d6-a03f-90de156ee2c9</dc:identifier>
+        <dc:title>Bí quyết làm giàu của Napoleon Hill</dc:title>
+        <dc:creator opf:file-as="Hill, Napoleon" opf:role="aut">Napoleon Hill</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:22:05+00:00</dc:date>
+        <dc:description>&lt;p&gt;“Cuốn sách này sẽ không thể đem lại cho bạn hạnh phúc, sức khoẻ và sự giàu có. Nhưng nếu đó là điều bạn khao khát muốn có, thì cuốn sách này sẽ giúp bạn nảy sinh những ý tưởng mới và đi đúng hướng trên con đường chinh phục mục tiêu. Bạn sẽ tìm được những cơ hội mới mà trước đây bạn chưa thấy rõ. Và, điều quan trọng hơn cả là bạn sẽ được truyền them sức mạnh để tiếp bước bằng hành động. Nếu bạn thực hành theo các nguyên tắc mà Napoleon Hill đưa ra trong quyển sách này, bạn – cũng như hàng triệu người khác - sẽ nhanh chóng hiểu ra rằng rào cản duy nhất đối với bạn chính là những chướng ngại vô hình mà bạn đã tự dựng lên trong tâm trí mình”&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:26+00:00"/>
+        <meta name="calibre:title_sort" content="Bí quyết làm giàu của Napoleon Hill"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

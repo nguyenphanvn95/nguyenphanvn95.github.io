@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2124</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">c9ab1947-f00f-4de8-9096-4a1c0d8d70f4</dc:identifier>
+        <dc:title>Cô Gái Của Bố</dc:title>
+        <dc:creator opf:file-as="Scottoline, Lisa" opf:role="aut">Lisa Scottoline</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-03-06T05:47:45+00:00</dc:date>
+        <dc:description>&lt;div&gt;&lt;p&gt;Khi anh bạn đồng nghiệp Angus - kẻ lập dị của khoa luật - thuyết phục Nat cùng đến dạy trong lớp học pháp lý tại một nhà tù địa phương, thế giới dù không thực sự hoàn hảo nhưng rất yên bình của cô bỗng chốc đảo lộn.&lt;/p&gt; &lt;p&gt;Hoảng loạn giữa một cuộc bạo động dữ dội trong tù, chứng kiến tận mắt hai cái chết, đột nhiên thấy mình là nghi can trong một vụ sát hại dã man, cuộc sống tình cảm bấp bênh, sự nghiệp lâm nguy và mạng sống treo đầu chỉ mành, cô giáo sư luật vốn ngây thơ rụt rè, cô con gái cưng của gia đình, giờ đây buộc phải tự giải cứu bản thân bằng cách giải mã câu đố đằng sau lời trăng trối của viên gác ngục đã tử nạn: “&lt;i&gt;Nói với vợ tôi, nó ở dưới sàn&lt;/i&gt;.”&lt;/p&gt;Tiết tấu nhanh, nhân vật thú vị, chuyện gia đình, chuyện tình tay ba, bí ẩn lịch sử, những màn rượt bắt bằng xe hơi, những vụ nổ, luật pháp và công bằng - mỗi thứ một chút, làm nên một tác phẩm đầy ắp thông tin và cuốn hút từ đầu đến cuối. Lisa Scottoline xứng đáng là một trong những cây bút viết về tội ác có phong cách nhất theo lời ca ngợi của &lt;i&gt;The&lt;/i&gt; &lt;i&gt;New York Times&lt;/i&gt;.&lt;/div&gt;</dc:description>
+        <dc:publisher>Nhã Nam</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Mystery &amp; Crime</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:10+00:00"/>
+        <meta name="calibre:title_sort" content="Cô Gái Của Bố"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

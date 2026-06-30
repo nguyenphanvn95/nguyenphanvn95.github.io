@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">699</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d4295e48-e69f-4c05-adeb-17ff2fe0dccb</dc:identifier>
+        <dc:title>Steve Jobs và Apple thay đổi cách nghe nhạc của thế giới</dc:title>
+        <dc:creator opf:file-as="Tuyền, Trần Thanh" opf:role="aut">Trần Thanh Tuyền</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:19:27+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Biography</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Steve Jobs và Apple thay đổi cách nghe nhạc của thế giới"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">957</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">b9c42a53-f2eb-4395-9bb0-925b9ecb8b59</dc:identifier>
+        <dc:title>Những kỳ nghỉ của nhóc Nicolas</dc:title>
+        <dc:creator opf:file-as="Goscinny, Sempe" opf:role="aut">Sempe Goscinny</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-28T15:10:08+00:00</dc:date>
+        <dc:description>&lt;p&gt;Đầu tiên là khách sạn Bờ Biển Đẹp, cùng bọn bạn mới: Blaise, Fructueux, Mamert, Irénée, Fabrice và Coome. Kế đến là vụ cho đỗ nảy mầm hụt trước khi đến Trại Xanh nghỉ hè, nơi cả lũ chơi vui kinh lên được. Ôi những kỳ nghỉ hè của nhóc, hết sảy biết bao nhiêu! Thế mà khi về nhà, cái con Marie-Edwige lại còn dám trộ Nicolas nữa chứ!&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Children</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:43+00:00"/>
+        <meta name="calibre:title_sort" content="Những kỳ nghỉ của nhóc Nicolas"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

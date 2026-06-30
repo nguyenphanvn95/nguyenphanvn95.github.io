@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1367</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">87be5ef6-0b10-493b-8d87-55153f43d3fa</dc:identifier>
+        <dc:title>Lối Mòn Của Tư Duy Cảm Tính</dc:title>
+        <dc:creator opf:file-as="Brafman, Ori &amp; Brafman, Rom" opf:role="aut">Ori</dc:creator>
+        <dc:creator opf:file-as="Brafman, Ori &amp; Brafman, Rom" opf:role="aut">Brafman Brafman</dc:creator>
+        <dc:creator opf:file-as="Brafman, Ori &amp; Brafman, Rom" opf:role="aut">Rom Brafman</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2017-04-01T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:30+00:00"/>
+        <meta name="calibre:title_sort" content="Lối Mòn Của Tư Duy Cảm Tính"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

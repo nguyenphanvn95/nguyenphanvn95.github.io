@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">698</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">50786638-65f0-4b16-9d55-4f20a33e6c82</dc:identifier>
+        <dc:title>Sự chờ đợi của Lương Thần</dc:title>
+        <dc:creator opf:file-as="Hề, Tình Không Lam" opf:role="aut">Tình Không Lam Hề</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:20:59+00:00</dc:date>
+        <dc:description>&lt;p&gt;Câu chuyện về Tô Lương Thần, một cô gái xinh đẹp sắp lên xe hoa về nhà chồng.Lăng Diệc Phong, tài phiệt của giới truyền thông, áo gấm vinh quy. Đôi tình nhân năm năm trước của trường đại học từng khiến mọi người ngưỡng mộ, năm năm sau gặp lại đã cảm thấy sự đùa cợt và khiêu khích của số phận.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:40:12+00:00"/>
+        <meta name="calibre:title_sort" content="Sự chờ đợi của Lương Thần"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

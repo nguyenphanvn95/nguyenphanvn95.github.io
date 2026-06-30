@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">231</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">37fae2c2-df66-4bc4-804e-68b0e3ec1912</dc:identifier>
+        <dc:title>Bí quyết trở thành nhà quản lý tài ba</dc:title>
+        <dc:creator opf:file-as="Zhuo, Julie" opf:role="aut">Julie Zhuo</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;Cuốn sách Bí quyết trở thành nhà quản lý tài ba đã mở đầu bằng câu chuyện ký ức của một nữ quản lý lừng danh của thung lũng Silicon và được kể bằng cảm xúc chân thật của người từng đi qua những áp lực, nỗi sợ vô hình của một nhân viên đột ngột được đề bạt lên vai trò quản lý. Tình huống của cô và cả những sai lầm mà cô phạm phải đã đưa ra một khía cạnh có tính quy luật của cuộc sống: Thử làm điều gì đó. Ở trong quá trình đầy thử thách đó, nhà quản lý trẻ sẽ học hỏi không ngừng và cần không ít can đảm cũng như niềm tin vào bản thân.&lt;br&gt;&lt;br&gt;Bí quyết trở thành nhà quản lý tài ba tập hợp những kinh nghiệm của &lt;strong&gt;Julie Zhuo&lt;/strong&gt; trong 10 năm kể từ ngày đầu tiên cô được đề bạt lên vị trí quản lý tại Facebook khi mạng xã hội này vẫn còn ít người biết đến. &lt;strong&gt;Julie Zhuo&lt;/strong&gt; đã bắt đầu với một danh sách dài những công việc, từ tuyển dụng cho đến sa thải, từ họp hành cho đến nhắn tin, từ lên kế hoạch cho đến lao vào hỗ trợ… Cô cũng phải đối diện với hàng ngàn câu hỏi, cùng những tình huống không chắc chắn.&lt;br&gt;&lt;br&gt;“Bí quyết trở thành nhà quản lý tài ba” đề cập đến mọi khía cạnh mà một nhà quản lý “mới toanh” cần đối mặt: Ba điểm cốt lõi của quản lý (mục tiêu, con người, quy trình); Cách giúp nhân viên “chạm” đến sức mạnh của bản thân; Bí quyết phỏng vấn, họp hành, đưa phản hồi… Bên cạnh đó,&lt;strong&gt; Julie Zhuo&lt;/strong&gt; chia sẻ kinh nghiệm quản lý chính mình, cách kiểm soát sự việc bất ngờ và nuôi dưỡng văn hoá cho đội nhóm. Tất cả được trình bày dưới văn phong chặt chẽ, cô đọng nhưng giàu cảm xúc với tất cả các dẫn chứng đều là câu chuyện có thật từ trải nghiệm của tác giả.&lt;/p&gt;
+&lt;p&gt;Waka xin trân trọng giới thiệu &lt;strong&gt;Trở thành nhà quản lý tài ba - Julie Zhuo!&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:language>vi</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-08T08:06:26.212728+00:00"/>
+        <meta name="calibre:title_sort" content="Bí quyết trở thành nhà quản lý tài ba"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

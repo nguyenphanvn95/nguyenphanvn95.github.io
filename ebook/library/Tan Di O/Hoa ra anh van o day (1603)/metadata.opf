@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1603</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">5814fc62-6ede-4548-844b-35752e7731a5</dc:identifier>
+        <dc:title>Hóa ra anh vẫn ở đây</dc:title>
+        <dc:creator opf:file-as="Ổ, Tân Di" opf:role="aut">Tân Di Ổ</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-11-10T17:00:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Tình yêu cuồng nhiệt, đôi khi là mù quáng, sự đau đớn, lìa xa, hạnh phúc, khổ đau cùng đan xen và được thể hiện vô cùng độc đáo, ấn tượng dưới ngòi bút của nữ nhà văn Tân Di Ổ &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:56+00:00"/>
+        <meta name="calibre:title_sort" content="Hóa ra anh vẫn ở đây"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

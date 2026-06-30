@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2250</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">16cfa610-e7cd-493c-a393-2cbc2fd05fa6</dc:identifier>
+        <dc:title>Bích Huyết Kiếm</dc:title>
+        <dc:creator opf:file-as="Dung, Kim" opf:role="aut">Kim Dung</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2011-03-16T17:00:00+00:00</dc:date>
+        <dc:description>{Truyện: Bích Huyết Kiếm
+Tác giả: Kim Dung
+Tạo bởi: Nguyễn Kim Vỹ</dc:description>
+        <dc:publisher>Nguyễn Kim Vỹ - nguyenkimvy@gmail.com</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Kiếm Hiệp</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:43:23+00:00"/>
+        <meta name="calibre:title_sort" content="Bích Huyết Kiếm"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

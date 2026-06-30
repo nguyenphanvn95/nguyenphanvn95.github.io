@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1187</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">68a43a1b-c9e1-4f87-ae7a-587b5de4748e</dc:identifier>
+        <dc:title>Nền Kinh Tế Tăng Trưởng Và Sụp Đổ Như Thế Nào?</dc:title>
+        <dc:creator opf:file-as="Schiff, Peter D. &amp; Schiff, Andrew J." opf:role="aut">Peter D. Schiff</dc:creator>
+        <dc:creator opf:file-as="Schiff, Peter D. &amp; Schiff, Andrew J." opf:role="aut">Andrew J. Schiff</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2015-07-12T17:00:00+00:00</dc:date>
+        <dc:language>vie</dc:language>
+        <dc:subject>Economic</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:09+00:00"/>
+        <meta name="calibre:title_sort" content="Nền Kinh Tế Tăng Trưởng Và Sụp Đổ Như Thế Nào?"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1571</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">76e294fd-8a1a-4017-8993-3d030bd03ba1</dc:identifier>
+        <dc:title>Hôn cái nào cô nàng xấu tính</dc:title>
+        <dc:creator opf:file-as="Đồng, Mễ" opf:role="aut">Mễ Đồng</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-28T04:09:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Doãn Đa Lâm và Hàn Thừa Tầm là đôi bạn thanh mai trúc mã. Hai người từ nhỏ đã rất thân thiết, đi đâu cũng có nhau. Giữa hai người nảy sinh tình cảm. Thừa Tầm tuy trong lòng rất quan tâm đến Đa Lâm nhưng bên ngoài lại luôn tỏ ra lạnh nhạt, đôi khi chọc ghẹo khiến cô phát khóc. Cậu còn giả vờ tỏ ra thân thiện với cô bạn gái học giỏi, xinh đẹp tên Thành Vũ Tuyết khiến Đa Lâm thất vọng. Cô tưởng Thừa Tầm chẳng để ý gì đến mình nên cũng cố kìm chế tình cảm. Trã đũa, cô còn nói bừa là muốn qua lại với "tiền bối" Khương Tải Hoán - học sinh trên cô một khóa. Cứ thế, hiểu lầm nối tiếp hiểu lầm dẫn đến hai người phải xa nhau ba năm trời&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>eng</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:52+00:00"/>
+        <meta name="calibre:title_sort" content="Hôn cái nào cô nàng xấu tính"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

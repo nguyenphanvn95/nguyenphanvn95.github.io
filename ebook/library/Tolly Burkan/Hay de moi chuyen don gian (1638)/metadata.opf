@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1638</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">3f6cff67-3206-42d7-8ddc-681356cee348</dc:identifier>
+        <dc:title>Hãy để mọi chuyện đơn giản</dc:title>
+        <dc:creator opf:file-as="Burkan, Tolly" opf:role="aut">Tolly Burkan</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-04-22T23:21:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;Hãy để mọi chuyện đơn giản là một phương thức giúp bạn nhìn lại cuộc đời mình từ đó nhận ra những điều còn thiếu sót để có được một cuộc sống như bạn từng ước mơ - hạnh phúc, vui vẻ và tràn đầy ý nghĩa. Chìa khoá dẫn đến thành công chỉ dành cho những ai thật lòng muốn tìm hiểu, không ngừng khám phá và có những hành động thích hợp, từng bước chuyển biến cuộc sống theo hướng tốt đẹp hơn.&lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Selfhelp</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:42:09+00:00"/>
+        <meta name="calibre:title_sort" content="Hãy để mọi chuyện đơn giản"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1234</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">55bcaded-85de-4dfe-b5cc-935088cd25b9</dc:identifier>
+        <dc:title>Một đời chỉ cần có em</dc:title>
+        <dc:creator opf:file-as="Gian, Hốt Nhiên Chi" opf:role="aut">Hốt Nhiên Chi Gian</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (9.9.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-05-09T22:19:21+00:00</dc:date>
+        <dc:description>&lt;p&gt;Sau khi được đọc cuốn nhật ký của Chu Đồng, Chung Tình càng dằn vặt khôn nguôi rằng cô và Mạnh Tưởng chính là kẻ gián tiếp lấy đi cuộc sống của người bạn thân nhất. Trốn chạy ra nước ngoài như một cách để chôn vùi quá khứ, nhưng bao đau buồn vẫn bám riết lấy cô trong những đêm dài mộng mị: "Anh còn trách em không? Trách em đã nói với anh những lời như thế? Nếu như em sớm biết những tâm sự trong lòng anh, nhất định em đã không nói những lời như thế, đánh chết em cũng không nói”. &lt;/p&gt;</dc:description>
+        <dc:publisher>Hoang Nghia Hanh</dc:publisher>
+        <dc:language>vie</dc:language>
+        <dc:subject>Ngôn tình Trung Quốc</dc:subject>
+        <dc:subject>Lang:vi</dc:subject>
+        <meta name="calibre:timestamp" content="2026-06-08T08:41:14+00:00"/>
+        <meta name="calibre:title_sort" content="Một đời chỉ cần có em"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Bìa sách" href="cover.jpg"/>
+    </guide>
+</package>
