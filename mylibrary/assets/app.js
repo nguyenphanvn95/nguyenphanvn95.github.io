@@ -780,10 +780,41 @@ function renderFileActions(book) {
   });
 }
 
-// Formats that open in the dedicated reader page (reader.html) instead of
-// being read inline here — see openBookFile below.
+// ── MỞ FILE BẰNG DỊCH VỤ ĐỌC/NGHE ONLINE BÊN NGOÀI ──────────────
+// Sách (EPUB/PDF/MOBI) và audiobook (MP3/M4B/AAC/OGG/FLAC) không còn đọc/nghe
+// trực tiếp trong trang mylibrary nữa (đã bỏ reader.html + audio bar). Thay
+// vào đó, mở 1 tab mới trỏ tới trang đọc/nghe online, kèm URL trực tiếp của
+// file (URL này đi qua Apps Script proxy, đã public/CORS-mở nên site ngoài
+// fetch/stream được bình thường, không cần Drive auth gì thêm).
 const READABLE_FMTS = ['EPUB', 'PDF', 'MOBI'];
 const AUDIO_FMTS = ['MP3', 'M4B', 'AAC', 'OGG', 'FLAC'];
+
+// Trang đọc sách online dùng cho từng định dạng — muốn đổi sang trang khác
+// chỉ cần sửa hàm này, phần còn lại của code không cần đụng tới.
+//  - PDF: PDF.js (viewer chính thức của Mozilla) — đọc PDF qua URL rất ổn định.
+//  - EPUB / MOBI: ofoct.com có API "viewer_url.php" hỗ trợ mở file theo URL
+//    (tài liệu chính thức: ?fileurl=...&filetype=epub). Lưu ý MOBI không nằm
+//    trong danh sách định dạng chính thức của ofoct nên có thể hiển thị không
+//    đẹp — nếu gặp vậy, tải file MOBI về máy và mở bằng ứng dụng đọc sách vẫn
+//    chắc ăn hơn.
+function buildExternalReaderUrl(fileUrl, format) {
+  if (format === 'PDF') {
+    return `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(fileUrl)}`;
+  }
+  return `https://www.ofoct.com/viewer/viewer_url.php?fileurl=${encodeURIComponent(fileUrl)}&filetype=epub`;
+}
+
+// Trang nghe audio online cho audiobook.
+// Ghi chú: driveplayer.com (Music Player for Google Drive) yêu cầu người
+// nghe tự đăng nhập Google + cấp quyền truy cập Drive riêng cho từng tài
+// khoản, nên không thể mở thẳng bằng 1 URL công khai của thư viện này — ai
+// mở thư viện cũng phải tự đăng nhập/uỷ quyền rất bất tiện. Thay vào đó, mở
+// thẳng link file audio (qua proxy) trong tab mới: Chrome/Edge/Firefox/Safari
+// sẽ tự hiện 1 trình phát audio có sẵn (play/pause/tua/âm lượng) ngay trên
+// tab đó — không cần đăng nhập, không phụ thuộc trang thứ 3 nào, luôn ổn định.
+function buildExternalAudioUrl(fileUrl) {
+  return fileUrl;
+}
 
 async function openBookFile(bookId, bookPath, fileName, format) {
   const btn = document.getElementById(`fbtn-${bookId}-${format}`);
@@ -795,21 +826,19 @@ async function openBookFile(bookId, bookPath, fileName, format) {
   const url = btn.dataset.url || await getFileUrl(bookPath, fileName, format);
   if (!url) { alert('Không tìm thấy file. Hãy kiểm tra lại thư viện.'); return; }
 
-  // EPUB / PDF / MOBI: open in the dedicated reader page instead of reading
-  // the file inline in index.html.
+  // EPUB / PDF / MOBI: mở trang đọc online bên ngoài ở tab mới.
   if (READABLE_FMTS.includes(format)) {
-    const fileId = getFormatFileId(bookPath, format) || '';
-    const params = new URLSearchParams({ url, title: niceTitle, format, id: fileId });
-    window.location.href = 'reader.html?' + params.toString();
+    window.open(buildExternalReaderUrl(url, format), '_blank', 'noopener');
     return;
   }
 
+  // MP3 / M4B / AAC / OGG / FLAC: mở tab mới để nghe online.
   if (AUDIO_FMTS.includes(format)) {
-    await openAudioFile(url, niceTitle, format, bookPath, fileName);
+    window.open(buildExternalAudioUrl(url), '_blank', 'noopener');
     return;
   }
 
-  // Other formats: still download, but with a proper filename
+  // Định dạng còn lại: vẫn tải về máy với tên file rõ ràng
   downloadAs(url, niceTitle, format);
 }
 
@@ -826,84 +855,6 @@ function downloadAs(url, title, format) {
 
 function sanitizeFilename(name) {
   return (name || 'sach').replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 150);
-}
-
-// ── AUDIO PLAYBACK (MP3 / M4B / AAC / OGG / FLAC) ───────────────
-// Pointing an <audio> element straight at a Google Drive "uc?export=download"
-// link very often gets a 403 (Drive's anti-bot / anti-hotlink throttling on
-// that endpoint, especially for larger audiobook files). To fix this we fetch
-// the file's bytes ourselves first — reusing the same driveFetch() fallback
-// chain (direct links → CORS proxies → optional Apps Script proxy) already
-// used for EPUB/PDF/covers — then hand the player a local blob: URL, which
-// never has to talk to Drive directly.
-function ensureAudioBar() {
-  let bar = document.getElementById('audioPlayerBar');
-  if (!bar) {
-    bar = document.createElement('div');
-    bar.id = 'audioPlayerBar';
-    bar.style.cssText = `
-      position:fixed;bottom:0;left:0;right:0;z-index:999;
-      background:var(--ink);color:white;
-      padding:10px 20px;display:flex;align-items:center;gap:12px;
-      box-shadow:0 -4px 20px rgba(0,0,0,.3);
-    `;
-    document.body.appendChild(bar);
-  }
-  return bar;
-}
-
-function showAudioLoading(name, format) {
-  const bar = ensureAudioBar();
-  bar.innerHTML = `
-    <span style="font-size:18px">${fmtIcon(format)}</span>
-    <div style="flex:1;min-width:0">
-      <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">⏳ Đang tải file âm thanh…</div>
-    </div>
-    <button onclick="this.parentElement.remove()" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:4px">✕</button>
-  `;
-}
-
-function showAudioError(name, format, msg, publicLink) {
-  const bar = ensureAudioBar();
-  bar.innerHTML = `
-    <span style="font-size:18px">⚠️</span>
-    <div style="flex:1;min-width:0">
-      <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</div>
-      <div style="font-size:12px;color:#ffb4a8;margin-top:4px">Không phát được: ${esc(msg || '')}</div>
-    </div>
-    ${publicLink ? `<button onclick="window.open('${escAttr(publicLink)}','_blank')" style="background:var(--accent2);border:none;color:#fff;font-size:12px;border-radius:6px;padding:6px 10px;cursor:pointer;white-space:nowrap">Mở trên Drive</button>` : ''}
-    <button onclick="this.parentElement.remove()" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:4px">✕</button>
-  `;
-}
-
-// Fetch the audio file's bytes first (fixes the 403), then play it from a
-// local blob: URL.
-async function openAudioFile(url, name, format, bookPath, fileName) {
-  showAudioLoading(name, format);
-  try {
-    const fileObj = await getFileObject(bookPath, fileName, format);
-    if (!fileObj) throw new Error('Không tải được file âm thanh từ Google Drive.');
-    const blobUrl = URL.createObjectURL(fileObj);
-    openAudioPlayer(blobUrl, name, format);
-  } catch (err) {
-    const link = getGdrivePublicLink(bookPath, format);
-    showAudioError(name, format, err.message, link);
-  }
-}
-
-// Mini audio player — url here is always a local blob: URL (see openAudioFile).
-function openAudioPlayer(url, name, format) {
-  const bar = ensureAudioBar();
-  bar.innerHTML = `
-    <span style="font-size:18px">${fmtIcon(format)}</span>
-    <div style="flex:1;min-width:0">
-      <div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</div>
-      <audio controls autoplay style="width:100%;height:32px;margin-top:4px" src="${url}"></audio>
-    </div>
-    <button onclick="downloadAs('${url}', '${escAttr(name)}', '${format}')" title="Tải xuống" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;padding:4px">⬇</button>
-    <button onclick="this.parentElement.remove()" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:4px">✕</button>
-  `;
 }
 
 function closeModal(e) {
