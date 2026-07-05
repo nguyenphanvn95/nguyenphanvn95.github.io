@@ -1,64 +1,766 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Thư viện sách/audio."
-  />
-  <link rel="shortcut icon" href="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png">
-  <title>Thư viện ebook, sách nói</title>
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calibre Web Mini — Thư viện sách</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink:       #1a1410;
+    --paper:     #f7f3ed;
+    --warm:      #e8e0d4;
+    --accent:    #8b4513;
+    --accent2:   #c0832a;
+    --muted:     #7a6e64;
+    --line:      #d4c9bc;
+    --card:      #ffffff;
+    --tag-bg:    #ede7df;
+    --tag-text:  #5c4a35;
+    --radius:    6px;
+    --shadow:    0 2px 12px rgba(26,20,16,.08);
+    --shadow-lg: 0 8px 32px rgba(26,20,16,.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── TOP BAR ── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    white-space: nowrap;
+    color: var(--paper);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent2); }
+
+  .search-wrap {
+    flex: 1;
+    max-width: 480px;
+    position: relative;
+  }
+  #searchInput {
+    width: 100%;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 24px;
+    padding: 7px 16px 7px 38px;
+    color: white;
+    font-size: 13.5px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: background .2s, border-color .2s;
+  }
+  #searchInput::placeholder { color: rgba(255,255,255,.45); }
+  #searchInput:focus { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.4); }
+  .search-icon {
+    position: absolute; left: 12px; top: 50%;
+    transform: translateY(-50%); opacity: .5; pointer-events: none;
+  }
+
+  .header-right {
+    margin-left: auto;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: rgba(255,255,255,.6);
+  }
+  .view-btns { display: flex; gap: 4px; }
+  .view-btn {
+    background: none; border: 1px solid rgba(255,255,255,.2);
+    border-radius: 4px; color: rgba(255,255,255,.6);
+    width: 28px; height: 28px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .15s;
+  }
+  .view-btn.active, .view-btn:hover {
+    background: rgba(255,255,255,.15); color: white; border-color: rgba(255,255,255,.35);
+  }
+
+  /* folder indicator in header */
+  .folder-indicator {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; color: rgba(255,255,255,.55);
+    cursor: pointer; padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px; transition: all .15s;
+    white-space: nowrap; max-width: 200px; overflow: hidden;
+  }
+  .folder-indicator:hover { background: rgba(255,255,255,.1); color: rgba(255,255,255,.8); }
+  .folder-indicator .folder-name { overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── LAYOUT ── */
+  .app { display: flex; min-height: calc(100vh - 56px); }
+
+  /* ── SIDEBAR ── */
+  aside {
+    width: 240px; flex-shrink: 0;
+    background: var(--card); border-right: 1px solid var(--line);
+    padding: 20px 0; overflow-y: auto;
+    max-height: calc(100vh - 56px);
+    position: sticky; top: 56px;
+  }
+  .sidebar-section { margin-bottom: 6px; }
+  .sidebar-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); padding: 6px 20px 4px;
+  }
+  .sidebar-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 20px; cursor: pointer; border-radius: 0;
+    font-size: 13px; color: var(--ink); transition: background .12s;
+    user-select: none; border: none; background: none; width: 100%; text-align: left;
+  }
+  .sidebar-item:hover { background: var(--warm); }
+  .sidebar-item.active { background: var(--accent); color: white; font-weight: 500; }
+  .sidebar-item.active .badge { background: rgba(255,255,255,.25); color: white; }
+  .badge {
+    font-size: 10px; font-family: 'JetBrains Mono', monospace;
+    background: var(--tag-bg); color: var(--muted);
+    padding: 1px 6px; border-radius: 10px; flex-shrink: 0;
+  }
+  .sidebar-divider { height: 1px; background: var(--line); margin: 8px 16px; }
+  .tag-list { max-height: 260px; overflow-y: auto; }
+  .tag-list::-webkit-scrollbar { width: 4px; }
+  .tag-list::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+  /* ── MAIN ── */
+  main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+  /* ── FOLDER BANNER (shown when no folder selected) ── */
+  .folder-banner {
+    background: linear-gradient(135deg, #fdf6ee, #f5ede0);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 24px;
+    display: flex; align-items: center; gap: 14px;
+    flex-wrap: wrap;
+  }
+  .folder-banner-text { flex: 1; min-width: 200px; }
+  .folder-banner-text strong { color: var(--accent); font-size: 13.5px; }
+  .folder-banner-text p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .btn-folder {
+    background: var(--accent); color: white;
+    border: none; border-radius: var(--radius);
+    padding: 8px 18px; cursor: pointer;
+    font-size: 13px; font-family: 'Inter', sans-serif;
+    font-weight: 500; transition: background .15s;
+    display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .btn-folder:hover { background: #7a3c10; }
+  .btn-folder.secondary {
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .btn-folder.secondary:hover { background: #fdf0e8; }
+
+  /* ── TOOLBAR ── */
+  .toolbar {
+    background: var(--card); border-bottom: 1px solid var(--line);
+    padding: 10px 24px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .result-count { font-size: 13px; color: var(--muted); margin-right: auto; }
+  .result-count strong { color: var(--ink); }
+
+  select.filter-select {
+    font-family: 'Inter', sans-serif; font-size: 12.5px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 5px 28px 5px 10px;
+    color: var(--ink); cursor: pointer; outline: none;
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a6e64'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 10px center;
+  }
+  select.filter-select:focus { border-color: var(--accent); }
+
+  /* ── GRID ── */
+  .book-grid {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+    gap: 20px;
+  }
+  body.list-view .book-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
+
+  /* CARD */
+  .book-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden; cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+    display: flex; flex-direction: column;
+  }
+  .book-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+  .cover-wrap {
+    aspect-ratio: 2/3; background: var(--warm);
+    position: relative; overflow: hidden;
+  }
+  .cover-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; padding: 12px;
+  }
+  .cover-placeholder-icon { font-size: 28px; opacity: .35; }
+  .cover-placeholder-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px; font-weight: 600; text-align: center;
+    line-height: 1.3; color: var(--muted); word-break: break-word;
+  }
+  .cover-placeholder[data-hue="0"] { background: #ede4f0; }
+  .cover-placeholder[data-hue="1"] { background: #e4edf0; }
+  .cover-placeholder[data-hue="2"] { background: #f0ede4; }
+  .cover-placeholder[data-hue="3"] { background: #e4f0ea; }
+  .cover-placeholder[data-hue="4"] { background: #f0e4e4; }
+  .cover-placeholder[data-hue="5"] { background: #e4e8f0; }
+  .cover-placeholder[data-hue="6"] { background: #f0e9e4; }
+  .cover-placeholder[data-hue="7"] { background: #eaf0e4; }
+
+  .format-badges {
+    position: absolute; bottom: 6px; left: 6px;
+    display: flex; gap: 3px; flex-wrap: wrap;
+  }
+  .fmt-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500;
+    padding: 1px 5px; border-radius: 3px;
+    background: rgba(0,0,0,.55); color: white; backdrop-filter: blur(4px);
+  }
+  .fmt-badge.epub { background: rgba(45,106,79,.85); }
+  .fmt-badge.pdf  { background: rgba(139,69,19,.85); }
+  .fmt-badge.mp3, .fmt-badge.m4b, .fmt-badge.aac { background: rgba(90,45,130,.85); }
+
+  .card-info {
+    padding: 10px 10px 12px; flex: 1;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 12.5px; font-weight: 600; line-height: 1.35; color: var(--ink);
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .card-author {
+    font-size: 11px; color: var(--muted);
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .card-rating { font-size: 11px; color: var(--accent2); margin-top: auto; padding-top: 4px; }
+
+  /* LIST VIEW */
+  body.list-view .book-card {
+    border-radius: 0; border-left: none; border-right: none; border-top: none;
+    flex-direction: row; transform: none !important; box-shadow: none !important;
+  }
+  body.list-view .book-card:hover { background: var(--warm); }
+  body.list-view .cover-wrap {
+    width: 52px; flex-shrink: 0; aspect-ratio: unset;
+    height: 70px; margin: 10px 14px 10px 20px;
+    border-radius: 3px; overflow: hidden;
+  }
+  body.list-view .cover-placeholder-title { display: none; }
+  body.list-view .cover-placeholder-icon { font-size: 18px; }
+  body.list-view .format-badges { bottom: 2px; left: 2px; }
+  body.list-view .fmt-badge { font-size: 8px; padding: 0 3px; }
+  body.list-view .card-info {
+    flex-direction: row; align-items: center;
+    gap: 0; padding: 10px 20px 10px 0;
+  }
+  body.list-view .card-title { flex: 1; font-size: 13.5px; -webkit-line-clamp: 1; }
+  body.list-view .card-author { width: 160px; flex-shrink: 0; margin-left: 12px; font-size: 12px; }
+  body.list-view .card-rating { width: 60px; flex-shrink: 0; text-align: right; margin-top: 0; padding-top: 0; }
+
+  /* ── PAGINATION ── */
+  .pagination {
+    display: flex; align-items: center; justify-content: center;
+    gap: 6px; padding: 24px; flex-wrap: wrap;
+  }
+  .page-btn {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 5px 10px;
+    cursor: pointer; color: var(--ink); transition: all .12s;
+    min-width: 32px; text-align: center;
+  }
+  .page-btn:hover { background: var(--warm); border-color: var(--accent); }
+  .page-btn.active { background: var(--accent); color: white; border-color: var(--accent); font-weight: 600; }
+  .page-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.55);
+    z-index: 200; display: flex; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(3px);
+    opacity: 0; pointer-events: none; transition: opacity .2s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--card); border-radius: 10px;
+    width: 100%; max-width: 700px; max-height: 90vh;
+    overflow-y: auto; box-shadow: var(--shadow-lg);
+    transform: translateY(16px); transition: transform .2s;
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+
+  .modal-top {
+    display: flex; gap: 24px; padding: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .modal-cover {
+    width: 130px; flex-shrink: 0; aspect-ratio: 2/3;
+    border-radius: 4px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  }
+  .modal-cover img { width: 100%; height: 100%; object-fit: contain; background: var(--warm, #f3efe8); }
+
+  .modal-meta { flex: 1; min-width: 0; }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 6px;
+  }
+  .modal-author { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 14px; }
+
+  .meta-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .meta-pill {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    background: var(--tag-bg); color: var(--tag-text); font-weight: 500;
+  }
+  .meta-pill.format { font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+
+  /* ── FILE BUTTONS in modal ── */
+  .file-actions { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .file-actions-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 2px;
+  }
+  .file-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .file-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: var(--radius);
+    font-size: 12.5px; font-family: 'Inter', sans-serif; font-weight: 500;
+    cursor: pointer; border: none; text-decoration: none;
+    transition: all .15s;
+  }
+  .file-btn.open {
+    background: var(--accent); color: white;
+  }
+  .file-btn.open:hover { background: #7a3c10; }
+  .file-btn.download {
+    background: var(--tag-bg); color: var(--tag-text);
+    border: 1px solid var(--line);
+  }
+  .file-btn.download:hover { background: var(--warm); }
+  .file-btn.disabled {
+    background: var(--warm); color: var(--muted);
+    cursor: not-allowed; opacity: .6;
+  }
+  .no-folder-hint {
+    font-size: 11.5px; color: var(--muted);
+    background: #fff8f0; border: 1px solid #f0d8b8;
+    border-radius: var(--radius); padding: 8px 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .no-folder-hint a { color: var(--accent); cursor: pointer; text-decoration: underline; }
+
+  .modal-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin-top: 14px;
+  }
+  .stat-box { background: var(--warm); border-radius: 6px; padding: 10px; text-align: center; }
+  .stat-val {
+    font-size: 18px; font-weight: 700;
+    font-family: 'Playfair Display', serif; color: var(--accent);
+  }
+  .stat-lbl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+
+  .modal-body { padding: 24px 28px; }
+  .modal-body h3 {
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+  .modal-desc { font-size: 13.5px; line-height: 1.7; color: var(--ink); }
+  .modal-desc h2 { font-size: 15px; margin: 16px 0 6px; font-family: 'Playfair Display', serif; }
+  .modal-desc p { margin-bottom: 10px; }
+  .modal-desc ul { padding-left: 20px; margin-bottom: 10px; }
+
+  .modal-close {
+    position: sticky; top: 0; float: right;
+    margin: 10px 10px 0 0;
+    background: var(--warm); border: none; border-radius: 50%;
+    width: 32px; height: 32px; cursor: pointer; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); transition: all .12s; z-index: 10;
+  }
+  .modal-close:hover { background: var(--line); color: var(--ink); }
+
+  /* ── READER (EPUB / PDF) ── */
+  .reader-overlay {
+    position: fixed; inset: 0; z-index: 500;
+    background: var(--card, #fff);
+    display: none; flex-direction: column;
+  }
+  .reader-overlay.open { display: flex; }
+  .reader-topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px; border-bottom: 1px solid var(--line);
+    background: var(--card, #fff); flex-shrink: 0; flex-wrap: wrap;
+  }
+  .reader-back, .reader-close, .reader-download {
+    background: var(--warm, #f3efe8); border: 1px solid var(--line);
+    border-radius: 7px; padding: 7px 12px; font-size: 13px; font-weight: 600;
+    color: var(--ink); cursor: pointer; white-space: nowrap;
+  }
+  .reader-back:hover, .reader-close:hover, .reader-download:hover { background: var(--line); }
+  .reader-download { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .reader-download:hover { opacity: .88; background: var(--accent); }
+  .reader-close { font-size: 15px; padding: 7px 11px; }
+  .reader-title {
+    flex: 1; min-width: 80px; font-weight: 700; font-size: 14px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-family: 'Playfair Display', serif;
+  }
+  .reader-tools { display: flex; align-items: center; gap: 6px; }
+  .reader-tools button {
+    background: var(--warm, #f3efe8); border: 1px solid var(--line);
+    border-radius: 6px; width: 30px; height: 30px; font-size: 14px;
+    cursor: pointer; color: var(--ink);
+  }
+  .reader-tools button:hover { background: var(--line); }
+  .reader-tools span { font-size: 12px; color: var(--muted); min-width: 36px; text-align: center; }
+  .reader-body { flex: 1; min-height: 0; position: relative; overflow: hidden; }
+
+  /* EPUB */
+  #epubViewer { width: 100%; height: 100%; }
+  .epub-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,.08); border: none; width: 42px; height: 64px;
+    font-size: 20px; cursor: pointer; color: var(--ink); border-radius: 6px;
+    z-index: 10;
+  }
+  .epub-nav-btn:hover { background: rgba(0,0,0,.16); }
+  .epub-nav-btn.prev { left: 6px; }
+  .epub-nav-btn.next { right: 6px; }
+
+  /* PDF */
+  #pdfViewer {
+    width: 100%; height: 100%; overflow: auto; text-align: center;
+    background: var(--bg, #efe9df); padding: 18px 0 60px;
+  }
+  #pdfViewer canvas {
+    box-shadow: 0 4px 18px rgba(0,0,0,.18); margin: 0 auto 16px; display: block;
+    background: #fff;
+  }
+
+  .reader-loading {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    color: var(--muted); font-size: 13px;
+  }
+
+  /* ── READ ALOUD ── */
+  .reader-tools button.ra-toggle-btn { width: auto; padding: 0 10px; gap: 6px; display: flex; align-items: center; font-size: 12.5px; font-weight: 600; }
+  .reader-tools button.ra-toggle-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .ra-bar {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--ink); color: var(--paper);
+    box-shadow: 0 -6px 24px rgba(0,0,0,.28);
+    padding: 10px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+    animation: raSlideUp .18s ease;
+  }
+  @keyframes raSlideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .ra-bar .ra-playbtn {
+    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+    background: var(--accent2); border: none; color: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
+    transition: transform .12s, background .15s;
+  }
+  .ra-bar .ra-playbtn:hover { background: var(--accent); }
+  .ra-bar .ra-playbtn:active { transform: scale(.92); }
+  .ra-bar .ra-playbtn:disabled { opacity: .5; cursor: default; }
+  .ra-bar .ra-stopbtn {
+    width: 30px; height: 30px; border-radius: 6px; flex-shrink: 0;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: var(--paper);
+    cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;
+  }
+  .ra-bar .ra-stopbtn:hover { background: rgba(255,255,255,.2); }
+  .ra-bar .ra-info { min-width: 90px; flex-shrink: 0; }
+  .ra-bar .ra-info .ra-status-main { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+  .ra-bar .ra-info .ra-status-sub { font-size: 11px; color: rgba(255,255,255,.55); white-space: nowrap; }
+  .ra-bar select.ra-voice-select {
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
+    color: var(--paper); border-radius: 6px; padding: 5px 8px; font-size: 12px;
+    outline: none; max-width: 190px; font-family: 'Inter', sans-serif;
+  }
+  .ra-bar .ra-speed-wrap { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255,255,255,.6); }
+  .ra-bar input.ra-speed-range { width: 80px; accent-color: var(--accent2); cursor: pointer; }
+  .ra-bar .ra-speed-val { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; min-width: 30px; color: var(--paper); }
+  .ra-bar .ra-closebtn {
+    margin-left: auto; background: none; border: none; color: rgba(255,255,255,.55);
+    font-size: 17px; cursor: pointer; padding: 4px 6px; flex-shrink: 0;
+  }
+  .ra-bar .ra-closebtn:hover { color: #fff; }
+  .ra-bar .ra-error-msg {
+    font-size: 11.5px; color: #ffb4a8; background: rgba(255,255,255,.06);
+    padding: 4px 10px; border-radius: 6px; flex: 1; min-width: 160px;
+  }
+  .ra-bar .ra-progress-track {
+    width: 100%; height: 3px; background: rgba(255,255,255,.12); border-radius: 2px;
+    position: absolute; top: 0; left: 0; overflow: hidden;
+  }
+  .ra-bar .ra-progress-fill { height: 100%; background: var(--accent2); transition: width .2s linear; }
+
+  /* ── UPLOAD ZONE ── */
+  .upload-zone {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: calc(100vh - 56px); gap: 20px; padding: 40px 20px;
+  }
+  .upload-card {
+    background: var(--card); border: 2px dashed var(--line);
+    border-radius: 12px; padding: 48px 56px;
+    text-align: center; max-width: 480px; width: 100%;
+    transition: border-color .2s, background .2s;
+  }
+  .upload-card.dragover { border-color: var(--accent); background: #fdf8f4; }
+  .upload-icon { font-size: 48px; margin-bottom: 16px; }
+  .upload-card h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+  .upload-card p { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+  .upload-btn {
+    display: inline-block; background: var(--accent); color: white;
+    padding: 10px 24px; border-radius: 6px; cursor: pointer;
+    font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif;
+    border: none; transition: background .15s;
+  }
+  .upload-btn:hover { background: #7a3c10; }
+  #fileInput { display: none; }
+  #folderInputHidden { display: none; }
+
+  /* Loading / Empty */
+  .loading {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 16px; padding: 80px 20px; color: var(--muted); width: 100%;
+  }
+  .spinner {
+    width: 36px; height: 36px; border: 3px solid var(--line);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .empty { display: flex; flex-direction: column; align-items: center; padding: 80px 20px; gap: 12px; color: var(--muted); font-size: 14px; }
+  .empty-icon { font-size: 40px; }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+
+  @media (max-width: 700px) {
+    aside { display: none; }
+    .book-grid { padding: 12px; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    .modal-top { flex-direction: column; }
+    .modal-cover { width: 80px; }
+    .modal-stats { grid-template-columns: repeat(2, 1fr); }
+    body.list-view .card-author { display: none; }
+    .folder-indicator .folder-name { max-width: 80px; }
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <a class="brand" href="./" aria-label="Trang chủ">
-        <img src="./assets/logo.png" alt="Thư viện ebook, sách nói" />
-      </a>
 
-      <nav class="navbar">
-        <div class="nav-dropdown">
-          <button class="nav-link nav-toggle" type="button">Thể Loại Sách <span class="caret">▼</span></button>
-          <div id="categoryMenu" class="dropdown-menu"></div>
-        </div>
-      </nav>
-
-      <form class="search-form" id="searchForm" role="search">
-        <input id="searchInput" type="search" placeholder="Search" autocomplete="off" />
-        <button type="submit" aria-label="Tìm kiếm">⌕</button>
-      </form>
-    </header>
-
-    <main class="page">
-      <section class="content-grid">
-        <div class="main-column">
-          <div class="status-line" id="statusLine">Đang tải dữ liệu...</div>
-          <div id="bookList" class="book-list"></div>
-          <div id="pagination" class="pagination"></div>
-          <div id="emptyState" class="empty-state" hidden>
-            Không tìm thấy kết quả phù hợp.
-          </div>
-        </div>
-
-        <aside class="sidebar">
-          <div class="box">
-            <div class="box-title">Thể Loại Sách</div>
-            <div id="sidebarCategories" class="cat-list"></div>
-          </div>
-        </aside>
-      </section>
-    </main>
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">📚 Calibre <span>Web Mini</span></a>
+  <div class="search-wrap" id="searchWrap" style="display:none">
+    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Tìm tiêu đề, tác giả, tag…">
   </div>
-
-  <dialog id="bookDialog" class="dialog">
-    <div class="dialog-card">
-      <button class="dialog-close" type="button" aria-label="Đóng">×</button>
-      <div id="dialogBody"></div>
+  <div class="header-right">
+    <span id="totalCount" style="display:none"></span>
+    <div id="folderIndicator" style="display:none" class="folder-indicator" onclick="changeLibrarySource()" title="Đổi nguồn thư viện">
+      <span id="folderIndicatorIcon">📁</span>
+      <span class="folder-name" id="folderName">Chọn thư mục</span>
     </div>
-  </dialog>
+    <div class="view-btns" id="viewBtns" style="display:none">
+      <button class="view-btn active" id="btnGrid" title="Dạng lưới" onclick="setView('grid')">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+          <rect x="0" y="0" width="6" height="6" rx="1"/><rect x="10" y="0" width="6" height="6" rx="1"/>
+          <rect x="0" y="10" width="6" height="6" rx="1"/><rect x="10" y="10" width="6" height="6" rx="1"/>
+        </svg>
+      </button>
+      <button class="view-btn" id="btnList" title="Dạng danh sách" onclick="setView('list')">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+          <rect x="0" y="1" width="16" height="2" rx="1"/><rect x="0" y="7" width="16" height="2" rx="1"/>
+          <rect x="0" y="13" width="16" height="2" rx="1"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <script src="./app.js"></script>
+<!-- UPLOAD ZONE -->
+<div class="upload-zone" id="uploadZone">
+  <div class="upload-card" id="dropZone">
+    <div class="upload-icon">📚</div>
+    <h2>Mở thư viện Calibre</h2>
+    <p>Chọn thư mục gốc thư viện Calibre của bạn (thư mục chứa file <strong>metadata.db</strong>).<br>
+    Ứng dụng sẽ tự tìm metadata.db và toàn bộ sách bên trong — chỉ cần chọn một lần.</p>
+    <button class="upload-btn" id="pickLibraryBtn" onclick="pickFolder()">📂 Chọn thư mục thư viện</button>
+    <p style="font-size:12px;color:var(--muted);margin-top:10px">
+      Hoặc <label for="fileInput" style="text-decoration:underline;cursor:pointer">chỉ chọn file metadata.db</label>
+      (sẽ không mở được EPUB/PDF/audio trực tiếp)
+    </p>
+    <input type="file" id="fileInput" accept=".db,.sqlite,.sqlite3" style="display:none">
+    <div style="margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)">
+      <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px">
+        📡 Hoặc tải thư viện từ <strong>metadata_public.json</strong> (ảnh bìa &amp; file lấy trực tiếp từ Google Drive, không cần chọn thư mục)
+      </p>
+      <button class="upload-btn" id="pickJsonBtn" onclick="document.getElementById('jsonInput').click()" style="background:var(--accent2)">
+        🌐 Chọn file metadata_public.json
+      </button>
+      <input type="file" id="jsonInput" accept=".json,application/json" style="display:none">
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted)">🔒 Dữ liệu xử lý hoàn toàn trên trình duyệt — không upload lên server</p>
+</div>
+
+<!-- MAIN APP -->
+<div class="app" id="appZone" style="display:none">
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Bộ lọc</div>
+      <button class="sidebar-item active" data-filter="all" onclick="filterBy('all',this)">
+        📚 Tất cả sách <span class="badge" id="badgeAll">0</span>
+      </button>
+      <button class="sidebar-item" data-filter="has_cover" onclick="filterBy('has_cover',this)">
+        🖼 Có bìa sách <span class="badge" id="badgeCover">0</span>
+      </button>
+      <button class="sidebar-item" data-filter="rated" onclick="filterBy('rated',this)">
+        ⭐ Có đánh giá <span class="badge" id="badgeRated">0</span>
+      </button>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Định dạng</div>
+      <div id="formatList"></div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Ngôn ngữ</div>
+      <div id="langList"></div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Thể loại</div>
+      <div class="tag-list" id="tagList"></div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Nhà xuất bản</div>
+      <div class="tag-list" id="publisherList"></div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Folder Banner -->
+    <div class="folder-banner" id="folderBanner">
+      <div class="folder-banner-text">
+        <strong>📁 Chọn thư mục gốc Calibre hoặc tải metadata_public.json để mở file sách</strong>
+        <p>Sau khi chọn, bạn có thể nhấn để mở EPUB, PDF, MP3… trực tiếp từ thư viện hoặc từ Google Drive.</p>
+      </div>
+      <button class="btn-folder" onclick="pickFolder()">
+        <span>📂</span> Chọn thư mục Calibre
+      </button>
+      <button class="btn-folder secondary" onclick="document.getElementById('jsonInput').click()">
+        <span>🌐</span> Chọn metadata_public.json
+      </button>
+    </div>
+
+    <div class="toolbar">
+      <span class="result-count" id="resultCount"></span>
+      <select class="filter-select" id="sortSelect" onchange="applySort()">
+        <option value="title_asc">Tên A→Z</option>
+        <option value="title_desc">Tên Z→A</option>
+        <option value="author_asc">Tác giả A→Z</option>
+        <option value="date_desc">Mới nhất trước</option>
+        <option value="date_asc">Cũ nhất trước</option>
+        <option value="rating_desc">Đánh giá cao nhất</option>
+      </select>
+    </div>
+
+    <div id="loadingMain" class="loading">
+      <div class="spinner"></div>
+      <span>Đang tải dữ liệu…</span>
+    </div>
+
+    <div class="book-grid" id="bookGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </main>
+</div>
+
+<!-- BOOK DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-top">
+      <div class="modal-cover" id="modalCover"></div>
+      <div class="modal-meta">
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-author" id="modalAuthor"></div>
+        <div class="meta-row" id="modalFormats"></div>
+        <div class="meta-row" id="modalTags"></div>
+        <div class="file-actions" id="fileActions"></div>
+        <div class="modal-stats" id="modalStats"></div>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- READER OVERLAY (EPUB / PDF) -->
+<div class="reader-overlay" id="readerOverlay">
+  <div class="reader-topbar">
+    <button class="reader-back" onclick="closeReader()">‹ Quay lại</button>
+    <div class="reader-title" id="readerTitle"></div>
+    <div class="reader-tools" id="readerTools"></div>
+    <button class="reader-download" id="readerDownloadBtn" title="Tải xuống">⬇ Tải xuống</button>
+    <button class="reader-close" onclick="closeReader()">✕</button>
+  </div>
+  <div class="reader-body" id="readerBody"></div>
+</div>
+
+<!-- Hidden folder input -->
+<input type="file" id="folderInputHidden" webkitdirectory multiple accept="">
+
+<!-- Embedded libraries (no CDN / network needed, works on file:// ) -->
+<script src="assets/sql-wasm.js"></script>
+<script src="assets/jszip.min.js"></script>
+<script src="assets/pdf.min.js"></script>
+<script src="assets/embedded-assets.js"></script>
+<script src="assets/epub.min.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>
