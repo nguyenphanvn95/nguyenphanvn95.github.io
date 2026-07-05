@@ -47,7 +47,7 @@ async function autoLoadLibrary(forceReload = false) {
   document.getElementById('autoloadCard').innerHTML = `
     <div class="autoload-icon">🌐</div>
     <h2>Đang tải thư viện…</h2>
-    <p>Đang tải danh sách sách từ Google Drive (metadata_public.json).</p>`;
+    <p>Đang tải danh sách sách từ Google Drive.</p>`;
   document.getElementById('appZone').style.display = 'none';
 
   // Nếu đã có dữ liệu được cache trong phiên làm việc này (sessionStorage),
