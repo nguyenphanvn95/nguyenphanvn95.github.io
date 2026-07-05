@@ -402,6 +402,21 @@ function buildSidebar() {
     </button>`).join('');
 }
 
+// ── SIDEBAR DRAWER (mobile) ─────────────────────────────────────
+// Trên màn hình hẹp (≤700px), sidebar bộ lọc trở thành 1 drawer trượt từ
+// trái, mở/đóng qua nút hamburger trên header hoặc nút ✕ / backdrop.
+function toggleSidebar(force) {
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar || !backdrop) return;
+  const open = typeof force === 'boolean' ? force : !sidebar.classList.contains('open');
+  sidebar.classList.toggle('open', open);
+  backdrop.classList.toggle('open', open);
+}
+function closeSidebarOnMobile() {
+  if (window.matchMedia('(max-width: 700px)').matches) toggleSidebar(false);
+}
+
 // ── FILTERS ──────────────────────────────────────────────────
 function clearSidebarActive() {
   document.querySelectorAll('#sidebar .sidebar-item').forEach(el => el.classList.remove('active'));
@@ -409,31 +424,31 @@ function clearSidebarActive() {
 function filterBy(type, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = type; currentTag = null; currentFormat = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters();
+  currentPage = 1; applyFilters(); closeSidebarOnMobile();
 }
 function filterByFormat(fmt, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'format'; currentFormat = fmt;
   currentTag = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters();
+  currentPage = 1; applyFilters(); closeSidebarOnMobile();
 }
 function filterByLang(lang, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'lang'; currentLang = lang;
   currentTag = null; currentFormat = null; currentPublisher = null;
-  currentPage = 1; applyFilters();
+  currentPage = 1; applyFilters(); closeSidebarOnMobile();
 }
 function filterByTag(tag, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'tag'; currentTag = tag;
   currentFormat = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters();
+  currentPage = 1; applyFilters(); closeSidebarOnMobile();
 }
 function filterByPublisher(pub, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'publisher'; currentPublisher = pub;
   currentTag = null; currentFormat = null; currentLang = null;
-  currentPage = 1; applyFilters();
+  currentPage = 1; applyFilters(); closeSidebarOnMobile();
 }
 function applySort() {
   currentSort = document.getElementById('sortSelect').value;

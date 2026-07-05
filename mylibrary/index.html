@@ -39,7 +39,7 @@
     background: var(--ink);
     color: var(--paper);
     padding: 0 24px;
-    height: 56px;
+    min-height: 56px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -47,6 +47,7 @@
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    flex-wrap: wrap;
   }
   .logo {
     font-family: 'Playfair Display', serif;
@@ -58,6 +59,17 @@
     text-decoration: none;
   }
   .logo span { color: var(--accent2); }
+
+  /* hamburger button — only shown on mobile to open the filter sidebar */
+  .menu-toggle {
+    display: none;
+    background: none; border: 1px solid rgba(255,255,255,.2);
+    border-radius: 4px; color: var(--paper);
+    width: 32px; height: 32px; cursor: pointer;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .menu-toggle:hover { background: rgba(255,255,255,.1); }
 
   .search-wrap {
     flex: 1;
@@ -146,6 +158,24 @@
   .tag-list { max-height: 260px; overflow-y: auto; }
   .tag-list::-webkit-scrollbar { width: 4px; }
   .tag-list::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+  /* close button inside the sidebar drawer — only visible on mobile */
+  .sidebar-close {
+    display: none;
+    background: var(--warm); border: none; border-radius: 50%;
+    width: 30px; height: 30px; margin: 0 16px 12px auto;
+    align-items: center; justify-content: center;
+    cursor: pointer; color: var(--muted); font-size: 15px;
+  }
+
+  /* dark overlay behind the sidebar drawer on mobile */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 149;
+  }
+  .sidebar-backdrop.open { display: block; }
 
   /* ── MAIN ── */
   main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
@@ -439,13 +469,43 @@
   ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 
   @media (max-width: 700px) {
-    aside { display: none; }
+    /* header wraps to 2 rows: [hamburger|logo|actions] then [search] full-width */
+    header { padding: 8px 12px; gap: 8px 10px; }
+    .menu-toggle { display: flex; order: 1; }
+    .logo { order: 2; font-size: 17px; }
+    .header-right { order: 3; margin-left: auto; gap: 6px; }
+    .search-wrap { order: 4; flex-basis: 100%; max-width: 100%; }
+    #totalCount { display: none !important; }
+    .folder-indicator { padding: 4px 8px; }
+    .folder-indicator .folder-name { max-width: 70px; }
+    .view-btn { width: 26px; height: 26px; }
+
+    /* sidebar becomes a slide-in drawer instead of being hidden */
+    aside {
+      display: block;
+      position: fixed; top: 0; left: 0;
+      width: 78vw; max-width: 300px;
+      height: 100vh; max-height: 100vh;
+      transform: translateX(-100%);
+      transition: transform .22s ease;
+      z-index: 150;
+      box-shadow: var(--shadow-lg);
+    }
+    aside.open { transform: translateX(0); }
+    .sidebar-close { display: flex; }
+
+    .toolbar { padding: 10px 12px; }
     .book-grid { padding: 12px; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
     .modal-top { flex-direction: column; }
     .modal-cover { width: 80px; }
     .modal-stats { grid-template-columns: repeat(2, 1fr); }
     body.list-view .card-author { display: none; }
-    .folder-indicator .folder-name { max-width: 80px; }
+  }
+
+  @media (max-width: 380px) {
+    .book-grid { grid-template-columns: repeat(2, 1fr); }
+    .modal-body { padding: 18px 16px; }
+    .modal-top { padding: 20px; }
   }
 </style>
 </head>
@@ -453,6 +513,11 @@
 
 <!-- HEADER -->
 <header>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" title="Mở bộ lọc" aria-label="Mở bộ lọc">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <rect x="0" y="1.5" width="16" height="2" rx="1"/><rect x="0" y="7" width="16" height="2" rx="1"/><rect x="0" y="12.5" width="16" height="2" rx="1"/>
+    </svg>
+  </button>
   <a class="logo" href="#">📚 Calibre <span>Web Mini</span></a>
   <div class="search-wrap" id="searchWrap" style="display:none">
     <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
@@ -496,6 +561,7 @@
 <div class="app" id="appZone" style="display:none">
   <!-- SIDEBAR -->
   <aside id="sidebar">
+    <button class="sidebar-close" onclick="toggleSidebar(false)" title="Đóng" aria-label="Đóng bộ lọc">✕</button>
     <div class="sidebar-section">
       <div class="sidebar-label">Bộ lọc</div>
       <button class="sidebar-item active" data-filter="all" onclick="filterBy('all',this)">
@@ -529,6 +595,7 @@
       <div class="tag-list" id="publisherList"></div>
     </div>
   </aside>
+  <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar(false)"></div>
 
   <!-- MAIN CONTENT -->
   <main>
