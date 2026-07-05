@@ -150,17 +150,7 @@
   /* ── MAIN ── */
   main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
-  /* ── FOLDER BANNER (shown when no folder selected) ── */
-  .folder-banner {
-    background: linear-gradient(135deg, #fdf6ee, #f5ede0);
-    border-bottom: 1px solid var(--line);
-    padding: 14px 24px;
-    display: flex; align-items: center; gap: 14px;
-    flex-wrap: wrap;
-  }
-  .folder-banner-text { flex: 1; min-width: 200px; }
-  .folder-banner-text strong { color: var(--accent); font-size: 13.5px; }
-  .folder-banner-text p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  /* ── ACTION BUTTON (used e.g. by retry button in autoload zone) ── */
   .btn-folder {
     background: var(--accent); color: white;
     border: none; border-radius: var(--radius);
@@ -175,6 +165,7 @@
     border: 1px solid var(--accent);
   }
   .btn-folder.secondary:hover { background: #fdf0e8; }
+
 
   /* ── TOOLBAR ── */
   .toolbar {
@@ -414,148 +405,21 @@
   }
   .modal-close:hover { background: var(--line); color: var(--ink); }
 
-  /* ── READER (EPUB / PDF) ── */
-  .reader-overlay {
-    position: fixed; inset: 0; z-index: 500;
-    background: var(--card, #fff);
-    display: none; flex-direction: column;
-  }
-  .reader-overlay.open { display: flex; }
-  .reader-topbar {
-    display: flex; align-items: center; gap: 12px;
-    padding: 10px 16px; border-bottom: 1px solid var(--line);
-    background: var(--card, #fff); flex-shrink: 0; flex-wrap: wrap;
-  }
-  .reader-back, .reader-close, .reader-download {
-    background: var(--warm, #f3efe8); border: 1px solid var(--line);
-    border-radius: 7px; padding: 7px 12px; font-size: 13px; font-weight: 600;
-    color: var(--ink); cursor: pointer; white-space: nowrap;
-  }
-  .reader-back:hover, .reader-close:hover, .reader-download:hover { background: var(--line); }
-  .reader-download { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .reader-download:hover { opacity: .88; background: var(--accent); }
-  .reader-close { font-size: 15px; padding: 7px 11px; }
-  .reader-title {
-    flex: 1; min-width: 80px; font-weight: 700; font-size: 14px;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    font-family: 'Playfair Display', serif;
-  }
-  .reader-tools { display: flex; align-items: center; gap: 6px; }
-  .reader-tools button {
-    background: var(--warm, #f3efe8); border: 1px solid var(--line);
-    border-radius: 6px; width: 30px; height: 30px; font-size: 14px;
-    cursor: pointer; color: var(--ink);
-  }
-  .reader-tools button:hover { background: var(--line); }
-  .reader-tools span { font-size: 12px; color: var(--muted); min-width: 36px; text-align: center; }
-  .reader-body { flex: 1; min-height: 0; position: relative; overflow: hidden; }
-
-  /* EPUB */
-  #epubViewer { width: 100%; height: 100%; }
-  .epub-nav-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(0,0,0,.08); border: none; width: 42px; height: 64px;
-    font-size: 20px; cursor: pointer; color: var(--ink); border-radius: 6px;
-    z-index: 10;
-  }
-  .epub-nav-btn:hover { background: rgba(0,0,0,.16); }
-  .epub-nav-btn.prev { left: 6px; }
-  .epub-nav-btn.next { right: 6px; }
-
-  /* PDF */
-  #pdfViewer {
-    width: 100%; height: 100%; overflow: auto; text-align: center;
-    background: var(--bg, #efe9df); padding: 18px 0 60px;
-  }
-  #pdfViewer canvas {
-    box-shadow: 0 4px 18px rgba(0,0,0,.18); margin: 0 auto 16px; display: block;
-    background: #fff;
-  }
-
-  .reader-loading {
-    position: absolute; inset: 0; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 10px;
-    color: var(--muted); font-size: 13px;
-  }
-
-  /* ── READ ALOUD ── */
-  .reader-tools button.ra-toggle-btn { width: auto; padding: 0 10px; gap: 6px; display: flex; align-items: center; font-size: 12.5px; font-weight: 600; }
-  .reader-tools button.ra-toggle-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .ra-bar {
-    position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
-    background: var(--ink); color: var(--paper);
-    box-shadow: 0 -6px 24px rgba(0,0,0,.28);
-    padding: 10px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-    font-family: 'Inter', sans-serif;
-    animation: raSlideUp .18s ease;
-  }
-  @keyframes raSlideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-  .ra-bar .ra-playbtn {
-    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-    background: var(--accent2); border: none; color: #fff; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; font-size: 15px;
-    transition: transform .12s, background .15s;
-  }
-  .ra-bar .ra-playbtn:hover { background: var(--accent); }
-  .ra-bar .ra-playbtn:active { transform: scale(.92); }
-  .ra-bar .ra-playbtn:disabled { opacity: .5; cursor: default; }
-  .ra-bar .ra-stopbtn {
-    width: 30px; height: 30px; border-radius: 6px; flex-shrink: 0;
-    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: var(--paper);
-    cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;
-  }
-  .ra-bar .ra-stopbtn:hover { background: rgba(255,255,255,.2); }
-  .ra-bar .ra-info { min-width: 90px; flex-shrink: 0; }
-  .ra-bar .ra-info .ra-status-main { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
-  .ra-bar .ra-info .ra-status-sub { font-size: 11px; color: rgba(255,255,255,.55); white-space: nowrap; }
-  .ra-bar select.ra-voice-select {
-    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
-    color: var(--paper); border-radius: 6px; padding: 5px 8px; font-size: 12px;
-    outline: none; max-width: 190px; font-family: 'Inter', sans-serif;
-  }
-  .ra-bar .ra-speed-wrap { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255,255,255,.6); }
-  .ra-bar input.ra-speed-range { width: 80px; accent-color: var(--accent2); cursor: pointer; }
-  .ra-bar .ra-speed-val { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; min-width: 30px; color: var(--paper); }
-  .ra-bar .ra-closebtn {
-    margin-left: auto; background: none; border: none; color: rgba(255,255,255,.55);
-    font-size: 17px; cursor: pointer; padding: 4px 6px; flex-shrink: 0;
-  }
-  .ra-bar .ra-closebtn:hover { color: #fff; }
-  .ra-bar .ra-error-msg {
-    font-size: 11.5px; color: #ffb4a8; background: rgba(255,255,255,.06);
-    padding: 4px 10px; border-radius: 6px; flex: 1; min-width: 160px;
-  }
-  .ra-bar .ra-progress-track {
-    width: 100%; height: 3px; background: rgba(255,255,255,.12); border-radius: 2px;
-    position: absolute; top: 0; left: 0; overflow: hidden;
-  }
-  .ra-bar .ra-progress-fill { height: 100%; background: var(--accent2); transition: width .2s linear; }
-
-  /* ── UPLOAD ZONE ── */
-  .upload-zone {
+  /* ── AUTO-LOAD SCREEN (loading / error while fetching metadata_public.json) ── */
+  .autoload-zone {
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     min-height: calc(100vh - 56px); gap: 20px; padding: 40px 20px;
   }
-  .upload-card {
-    background: var(--card); border: 2px dashed var(--line);
+  .autoload-card {
+    background: var(--card); border: 1px solid var(--line);
     border-radius: 12px; padding: 48px 56px;
     text-align: center; max-width: 480px; width: 100%;
-    transition: border-color .2s, background .2s;
   }
-  .upload-card.dragover { border-color: var(--accent); background: #fdf8f4; }
-  .upload-icon { font-size: 48px; margin-bottom: 16px; }
-  .upload-card h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
-  .upload-card p { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-  .upload-btn {
-    display: inline-block; background: var(--accent); color: white;
-    padding: 10px 24px; border-radius: 6px; cursor: pointer;
-    font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif;
-    border: none; transition: background .15s;
-  }
-  .upload-btn:hover { background: #7a3c10; }
-  #fileInput { display: none; }
-  #folderInputHidden { display: none; }
+  .autoload-icon { font-size: 48px; margin-bottom: 16px; }
+  .autoload-card h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+  .autoload-card p { color: var(--muted); font-size: 13px; line-height: 1.6; margin-bottom: 6px; }
+  .btn-folder.retry { margin-top: 14px; }
 
   /* Loading / Empty */
   .loading {
@@ -598,9 +462,9 @@
   </div>
   <div class="header-right">
     <span id="totalCount" style="display:none"></span>
-    <div id="folderIndicator" style="display:none" class="folder-indicator" onclick="changeLibrarySource()" title="Đổi nguồn thư viện">
-      <span id="folderIndicatorIcon">📁</span>
-      <span class="folder-name" id="folderName">Chọn thư mục</span>
+    <div id="folderIndicator" style="display:none" class="folder-indicator" onclick="autoLoadLibrary()" title="Tải lại thư viện từ Google Drive">
+      <span id="folderIndicatorIcon">🌐</span>
+      <span class="folder-name" id="folderName">Thư viện Google Drive</span>
     </div>
     <div class="view-btns" id="viewBtns" style="display:none">
       <button class="view-btn active" id="btnGrid" title="Dạng lưới" onclick="setView('grid')">
@@ -619,30 +483,13 @@
   </div>
 </header>
 
-<!-- UPLOAD ZONE -->
-<div class="upload-zone" id="uploadZone">
-  <div class="upload-card" id="dropZone">
-    <div class="upload-icon">📚</div>
-    <h2>Mở thư viện Calibre</h2>
-    <p>Chọn thư mục gốc thư viện Calibre của bạn (thư mục chứa file <strong>metadata.db</strong>).<br>
-    Ứng dụng sẽ tự tìm metadata.db và toàn bộ sách bên trong — chỉ cần chọn một lần.</p>
-    <button class="upload-btn" id="pickLibraryBtn" onclick="pickFolder()">📂 Chọn thư mục thư viện</button>
-    <p style="font-size:12px;color:var(--muted);margin-top:10px">
-      Hoặc <label for="fileInput" style="text-decoration:underline;cursor:pointer">chỉ chọn file metadata.db</label>
-      (sẽ không mở được EPUB/PDF/audio trực tiếp)
-    </p>
-    <input type="file" id="fileInput" accept=".db,.sqlite,.sqlite3" style="display:none">
-    <div style="margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)">
-      <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px">
-        📡 Hoặc tải thư viện từ <strong>metadata_public.json</strong> (ảnh bìa &amp; file lấy trực tiếp từ Google Drive, không cần chọn thư mục)
-      </p>
-      <button class="upload-btn" id="pickJsonBtn" onclick="document.getElementById('jsonInput').click()" style="background:var(--accent2)">
-        🌐 Chọn file metadata_public.json
-      </button>
-      <input type="file" id="jsonInput" accept=".json,application/json" style="display:none">
-    </div>
+<!-- AUTO-LOAD ZONE (shown while metadata_public.json is being fetched from Google Drive, or on error) -->
+<div class="autoload-zone" id="autoloadZone">
+  <div class="autoload-card" id="autoloadCard">
+    <div class="autoload-icon">🌐</div>
+    <h2>Đang tải thư viện…</h2>
+    <p>Đang tải danh sách sách từ Google Drive (metadata_public.json).</p>
   </div>
-  <p style="font-size:12px;color:var(--muted)">🔒 Dữ liệu xử lý hoàn toàn trên trình duyệt — không upload lên server</p>
 </div>
 
 <!-- MAIN APP -->
@@ -685,20 +532,6 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- Folder Banner -->
-    <div class="folder-banner" id="folderBanner">
-      <div class="folder-banner-text">
-        <strong>📁 Chọn thư mục gốc Calibre hoặc tải metadata_public.json để mở file sách</strong>
-        <p>Sau khi chọn, bạn có thể nhấn để mở EPUB, PDF, MP3… trực tiếp từ thư viện hoặc từ Google Drive.</p>
-      </div>
-      <button class="btn-folder" onclick="pickFolder()">
-        <span>📂</span> Chọn thư mục Calibre
-      </button>
-      <button class="btn-folder secondary" onclick="document.getElementById('jsonInput').click()">
-        <span>🌐</span> Chọn metadata_public.json
-      </button>
-    </div>
-
     <div class="toolbar">
       <span class="result-count" id="resultCount"></span>
       <select class="filter-select" id="sortSelect" onchange="applySort()">
@@ -740,27 +573,7 @@
   </div>
 </div>
 
-<!-- READER OVERLAY (EPUB / PDF) -->
-<div class="reader-overlay" id="readerOverlay">
-  <div class="reader-topbar">
-    <button class="reader-back" onclick="closeReader()">‹ Quay lại</button>
-    <div class="reader-title" id="readerTitle"></div>
-    <div class="reader-tools" id="readerTools"></div>
-    <button class="reader-download" id="readerDownloadBtn" title="Tải xuống">⬇ Tải xuống</button>
-    <button class="reader-close" onclick="closeReader()">✕</button>
-  </div>
-  <div class="reader-body" id="readerBody"></div>
-</div>
 
-<!-- Hidden folder input -->
-<input type="file" id="folderInputHidden" webkitdirectory multiple accept="">
-
-<!-- Embedded libraries (no CDN / network needed, works on file:// ) -->
-<script src="assets/sql-wasm.js"></script>
-<script src="assets/jszip.min.js"></script>
-<script src="assets/pdf.min.js"></script>
-<script src="assets/embedded-assets.js"></script>
-<script src="assets/epub.min.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đọc sách — Calibre Web Mini</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink:       #1a1410;
+    --paper:     #f7f3ed;
+    --warm:      #e8e0d4;
+    --accent:    #8b4513;
+    --accent2:   #c0832a;
+    --muted:     #7a6e64;
+    --line:      #d4c9bc;
+    --card:      #ffffff;
+    --radius:    6px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .reader-page { height: 100vh; display: flex; flex-direction: column; }
+
+  .reader-topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px; border-bottom: 1px solid var(--line);
+    background: var(--card); flex-shrink: 0; flex-wrap: wrap;
+  }
+  .reader-back, .reader-close, .reader-download {
+    background: var(--warm); border: 1px solid var(--line);
+    border-radius: 7px; padding: 7px 12px; font-size: 13px; font-weight: 600;
+    color: var(--ink); cursor: pointer; white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .reader-back:hover, .reader-close:hover, .reader-download:hover { background: var(--line); }
+  .reader-download { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .reader-download:hover { opacity: .88; background: var(--accent); }
+  .reader-download:disabled { opacity: .45; cursor: not-allowed; }
+  .reader-close { font-size: 15px; padding: 7px 11px; }
+  .reader-title {
+    flex: 1; min-width: 80px; font-weight: 700; font-size: 14px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-family: 'Playfair Display', serif;
+  }
+  .reader-tools { display: flex; align-items: center; gap: 6px; }
+  .reader-tools button {
+    background: var(--warm); border: 1px solid var(--line);
+    border-radius: 6px; width: 30px; height: 30px; font-size: 14px;
+    cursor: pointer; color: var(--ink);
+  }
+  .reader-tools button:hover { background: var(--line); }
+  .reader-tools span { font-size: 12px; color: var(--muted); min-width: 36px; text-align: center; }
+  .reader-body { flex: 1; min-height: 0; position: relative; overflow: hidden; }
+
+  /* EPUB */
+  #epubViewer { width: 100%; height: 100%; }
+  .epub-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,.08); border: none; width: 42px; height: 64px;
+    font-size: 20px; cursor: pointer; color: var(--ink); border-radius: 6px;
+    z-index: 10;
+  }
+  .epub-nav-btn:hover { background: rgba(0,0,0,.16); }
+  .epub-nav-btn.prev { left: 6px; }
+  .epub-nav-btn.next { right: 6px; }
+
+  /* PDF */
+  #pdfViewer {
+    width: 100%; height: 100%; overflow: auto; text-align: center;
+    background: #efe9df; padding: 18px 0 60px;
+  }
+  #pdfViewer canvas {
+    box-shadow: 0 4px 18px rgba(0,0,0,.18); margin: 0 auto 16px; display: block;
+    background: #fff;
+  }
+
+  .reader-loading {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    color: var(--muted); font-size: 13px;
+  }
+  .spinner {
+    width: 36px; height: 36px; border: 3px solid var(--line);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .empty {
+    height: 100%; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 14px; color: var(--muted); font-size: 14px;
+    padding: 40px 24px; text-align: center; max-width: 480px; margin: 0 auto;
+  }
+  .empty-icon { font-size: 40px; }
+
+  /* ── READ ALOUD ── */
+  .reader-tools button.ra-toggle-btn { width: auto; padding: 0 10px; gap: 6px; display: flex; align-items: center; font-size: 12.5px; font-weight: 600; }
+  .reader-tools button.ra-toggle-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .ra-bar {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: var(--ink); color: var(--paper);
+    box-shadow: 0 -6px 24px rgba(0,0,0,.28);
+    padding: 10px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .ra-bar .ra-playbtn {
+    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+    background: var(--accent2); border: none; color: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
+    transition: transform .12s, background .15s;
+  }
+  .ra-bar .ra-playbtn:hover { background: var(--accent); }
+  .ra-bar .ra-playbtn:active { transform: scale(.92); }
+  .ra-bar .ra-playbtn:disabled { opacity: .5; cursor: default; }
+  .ra-bar .ra-stopbtn {
+    width: 30px; height: 30px; border-radius: 6px; flex-shrink: 0;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: var(--paper);
+    cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px;
+  }
+  .ra-bar .ra-stopbtn:hover { background: rgba(255,255,255,.2); }
+  .ra-bar .ra-info { min-width: 90px; flex-shrink: 0; }
+  .ra-bar .ra-info .ra-status-main { font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+  .ra-bar .ra-info .ra-status-sub { font-size: 11px; color: rgba(255,255,255,.55); white-space: nowrap; }
+  .ra-bar select.ra-voice-select {
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
+    color: var(--paper); border-radius: 6px; padding: 5px 8px; font-size: 12px;
+    outline: none; max-width: 190px; font-family: 'Inter', sans-serif;
+  }
+  .ra-bar .ra-speed-wrap { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255,255,255,.6); }
+  .ra-bar input.ra-speed-range { width: 80px; accent-color: var(--accent2); cursor: pointer; }
+  .ra-bar .ra-speed-val { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; min-width: 30px; color: var(--paper); }
+  .ra-bar .ra-closebtn {
+    margin-left: auto; background: none; border: none; color: rgba(255,255,255,.55);
+    font-size: 17px; cursor: pointer; padding: 4px 6px; flex-shrink: 0;
+  }
+  .ra-bar .ra-closebtn:hover { color: #fff; }
+  .ra-bar .ra-error-msg {
+    font-size: 11.5px; color: #ffb4a8; background: rgba(255,255,255,.06);
+    padding: 4px 10px; border-radius: 6px; flex: 1; min-width: 160px;
+  }
+  .ra-bar .ra-progress-track {
+    width: 100%; height: 3px; background: rgba(255,255,255,.12); border-radius: 2px;
+    position: absolute; top: 0; left: 0; overflow: hidden;
+  }
+  .ra-bar .ra-progress-fill { height: 100%; background: var(--accent2); transition: width .2s linear; }
+</style>
+</head>
+<body>
+
+<div class="reader-page" id="readerPage">
+  <div class="reader-topbar">
+    <button class="reader-back" onclick="goBack()">‹ Quay lại</button>
+    <div class="reader-title" id="readerTitle">Đang tải…</div>
+    <div class="reader-tools" id="readerTools"></div>
+    <button class="reader-download" id="readerDownloadBtn" title="Tải xuống" disabled>⬇ Tải xuống</button>
+    <button class="reader-close" onclick="goBack()">✕</button>
+  </div>
+  <div class="reader-body" id="readerBody">
+    <div class="reader-loading" id="initialLoading">
+      <div class="spinner"></div>
+      <span>Đang tải sách…</span>
+    </div>
+  </div>
+</div>
+
+<!-- Embedded libraries (no CDN / network needed, works on file:// ) -->
+<script src="assets/jszip.min.js"></script>
+<script src="assets/pdf.min.js"></script>
+<script src="assets/embedded-assets.js"></script>
+<script src="assets/epub.min.js"></script>
+<script src="assets/reader.js"></script>
+</body>
+</html>
