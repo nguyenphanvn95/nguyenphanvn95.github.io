@@ -363,8 +363,8 @@ function getGdrivePublicLink(bookPath, format) {
   return fileId ? driveViewLink(fileId) : null;
 }
 
-// The book's file_id for a given format — used by openBookFile to pass a
-// fallback ID to reader.html alongside the proxy URL (see reader.js).
+// The book's file_id for a given format — used by openBookFile to build the
+// Google Drive "view" preview link (driveViewLink) when opening a file.
 function getFormatFileId(bookPath, format) {
   const entry = gdriveBooks[bookPath];
   const fmtEntry = entry && entry.formats && entry.formats[format];
@@ -780,81 +780,22 @@ function renderFileActions(book) {
   });
 }
 
-// ── MỞ FILE BẰNG DỊCH VỤ ĐỌC/NGHE ONLINE BÊN NGOÀI ──────────────
-// Sách (EPUB/PDF/MOBI) và audiobook (MP3/M4B/AAC/OGG/FLAC) không còn đọc/nghe
-// trực tiếp trong trang mylibrary nữa (đã bỏ reader.html + audio bar). Thay
-// vào đó, mở 1 tab mới trỏ tới trang đọc/nghe online, kèm URL trực tiếp của
-// file (URL này đi qua Apps Script proxy, đã public/CORS-mở nên site ngoài
-// fetch/stream được bình thường, không cần Drive auth gì thêm).
-const READABLE_FMTS = ['EPUB', 'PDF', 'MOBI'];
-const AUDIO_FMTS = ['MP3', 'M4B', 'AAC', 'OGG', 'FLAC'];
-
-// Trang đọc sách online dùng cho từng định dạng — muốn đổi sang trang khác
-// chỉ cần sửa hàm này, phần còn lại của code không cần đụng tới.
-//  - PDF: PDF.js (viewer chính thức của Mozilla) — đọc PDF qua URL rất ổn định.
-//  - EPUB / MOBI: ofoct.com có API "viewer_url.php" hỗ trợ mở file theo URL
-//    (tài liệu chính thức: ?fileurl=...&filetype=epub). Lưu ý MOBI không nằm
-//    trong danh sách định dạng chính thức của ofoct nên có thể hiển thị không
-//    đẹp — nếu gặp vậy, tải file MOBI về máy và mở bằng ứng dụng đọc sách vẫn
-//    chắc ăn hơn.
-function buildExternalReaderUrl(fileUrl, format) {
-  if (format === 'PDF') {
-    return `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(fileUrl)}`;
-  }
-  return `https://www.ofoct.com/viewer/viewer_url.php?fileurl=${encodeURIComponent(fileUrl)}&filetype=epub`;
-}
-
-// Trang nghe audio online cho audiobook.
-// Ghi chú: driveplayer.com (Music Player for Google Drive) yêu cầu người
-// nghe tự đăng nhập Google + cấp quyền truy cập Drive riêng cho từng tài
-// khoản, nên không thể mở thẳng bằng 1 URL công khai của thư viện này — ai
-// mở thư viện cũng phải tự đăng nhập/uỷ quyền rất bất tiện. Thay vào đó, mở
-// thẳng link file audio (qua proxy) trong tab mới: Chrome/Edge/Firefox/Safari
-// sẽ tự hiện 1 trình phát audio có sẵn (play/pause/tua/âm lượng) ngay trên
-// tab đó — không cần đăng nhập, không phụ thuộc trang thứ 3 nào, luôn ổn định.
-function buildExternalAudioUrl(fileUrl) {
-  return fileUrl;
-}
-
+// ── MỞ FILE: DÙNG THẲNG TRANG XEM TRƯỚC (PREVIEW) CỦA GOOGLE DRIVE ──
+// Khi bấm vào 1 định dạng file (EPUB/PDF/MOBI/MP3/M4B/...), mở tab mới tới
+// trang "view" gốc của Google Drive cho đúng file đó, dạng:
+//   https://drive.google.com/file/d/<file_id>/view
+// Trang này do Google cung cấp sẵn: xem trước được nhiều định dạng (PDF, ảnh,
+// audio...) ngay trên trình duyệt, và luôn có nút tải xuống — không cần đăng
+// nhập gì thêm (miễn file đã chia sẻ "Anyone with the link"), không phụ thuộc
+// bất kỳ dịch vụ đọc/nghe online bên thứ 3 nào.
 async function openBookFile(bookId, bookPath, fileName, format) {
   const btn = document.getElementById(`fbtn-${bookId}-${format}`);
   if (!btn || btn.classList.contains('disabled')) return;
 
-  const book = allBooks.find(b => b.id === bookId);
-  const niceTitle = book ? book.title : fileName;
+  const fileId = getFormatFileId(bookPath, format);
+  if (!fileId) { alert('Không tìm thấy file. Hãy kiểm tra lại thư viện.'); return; }
 
-  const url = btn.dataset.url || await getFileUrl(bookPath, fileName, format);
-  if (!url) { alert('Không tìm thấy file. Hãy kiểm tra lại thư viện.'); return; }
-
-  // EPUB / PDF / MOBI: mở trang đọc online bên ngoài ở tab mới.
-  if (READABLE_FMTS.includes(format)) {
-    window.open(buildExternalReaderUrl(url, format), '_blank', 'noopener');
-    return;
-  }
-
-  // MP3 / M4B / AAC / OGG / FLAC: mở tab mới để nghe online.
-  if (AUDIO_FMTS.includes(format)) {
-    window.open(buildExternalAudioUrl(url), '_blank', 'noopener');
-    return;
-  }
-
-  // Định dạng còn lại: vẫn tải về máy với tên file rõ ràng
-  downloadAs(url, niceTitle, format);
-}
-
-// Force-download a blob URL with a human-readable filename
-function downloadAs(url, title, format) {
-  const safeName = sanitizeFilename(title) + '.' + format.toLowerCase();
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = safeName;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-}
-
-function sanitizeFilename(name) {
-  return (name || 'sach').replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 150);
+  window.open(driveViewLink(fileId), '_blank', 'noopener');
 }
 
 function closeModal(e) {
