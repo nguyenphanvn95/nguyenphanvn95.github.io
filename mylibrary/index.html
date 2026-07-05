@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thư viện sách</title>
+<title>Calibre Web Mini — Thư viện sách</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -462,7 +462,7 @@
   </div>
   <div class="header-right">
     <span id="totalCount" style="display:none"></span>
-    <div id="folderIndicator" style="display:none" class="folder-indicator" onclick="autoLoadLibrary()" title="Tải lại thư viện từ Google Drive">
+    <div id="folderIndicator" style="display:none" class="folder-indicator" onclick="autoLoadLibrary(true)" title="Tải lại thư viện từ Google Drive (bỏ qua cache phiên này)">
       <span id="folderIndicatorIcon">🌐</span>
       <span class="folder-name" id="folderName">Thư viện Google Drive</span>
     </div>
@@ -535,11 +535,13 @@
     <div class="toolbar">
       <span class="result-count" id="resultCount"></span>
       <select class="filter-select" id="sortSelect" onchange="applySort()">
+        <option value="added_desc" selected>Mới nhập → Cũ</option>
+        <option value="added_asc">Nhập cũ → Mới</option>
         <option value="title_asc">Tên A→Z</option>
         <option value="title_desc">Tên Z→A</option>
         <option value="author_asc">Tác giả A→Z</option>
-        <option value="date_desc">Mới nhất trước</option>
-        <option value="date_asc">Cũ nhất trước</option>
+        <option value="date_desc">Ngày xuất bản: Mới → Cũ</option>
+        <option value="date_asc">Ngày xuất bản: Cũ → Mới</option>
         <option value="rating_desc">Đánh giá cao nhất</option>
       </select>
     </div>

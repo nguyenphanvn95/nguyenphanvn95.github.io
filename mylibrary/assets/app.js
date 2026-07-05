@@ -10,8 +10,12 @@ let currentTag = null;
 let currentFormat = null;
 let currentLang = null;
 let currentPublisher = null;
-let currentSort = 'title_asc';
+let currentSort = 'added_desc';
 let comments = {};
+
+// Key used to cache the raw metadata_public.json text in sessionStorage, so
+// it's only fetched once per browser tab session instead of on every reload.
+const METADATA_CACHE_KEY = 'mylibrary_metadata_cache_v1';
 
 // Library source: always 'gdrive' once the metadata_public.json has loaded successfully.
 let folderMode = null;
@@ -35,7 +39,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Fetch metadata_public.json straight from its fixed Google Drive location and
 // build the library from it — no manual file/folder picking required.
-async function autoLoadLibrary() {
+//
+// forceReload = true bỏ qua cache trong sessionStorage và luôn tải lại từ
+// Google Drive (dùng khi người dùng bấm nút "Tải lại thư viện" trên header).
+async function autoLoadLibrary(forceReload = false) {
   document.getElementById('autoloadZone').style.display = 'flex';
   document.getElementById('autoloadCard').innerHTML = `
     <div class="autoload-icon">🌐</div>
@@ -43,16 +50,38 @@ async function autoLoadLibrary() {
     <p>Đang tải danh sách sách từ Google Drive (metadata_public.json).</p>`;
   document.getElementById('appZone').style.display = 'none';
 
+  // Nếu đã có dữ liệu được cache trong phiên làm việc này (sessionStorage),
+  // dùng lại luôn thay vì gọi lại Google Drive — giúp mở lại trang / chuyển
+  // qua lại giữa index.html và reader.html trong cùng 1 phiên không phải tải
+  // lại metadata_public.json nhiều lần.
+  if (!forceReload) {
+    try {
+      const cached = sessionStorage.getItem(METADATA_CACHE_KEY);
+      if (cached) {
+        const data = JSON.parse(cached);
+        showAppZoneLoading();
+        loadPublicJsonData(data);
+        return;
+      }
+    } catch (err) {
+      // Cache hỏng hoặc sessionStorage không khả dụng (chế độ ẩn danh, quota...)
+      // -> bỏ qua, tải lại bình thường từ Google Drive bên dưới.
+    }
+  }
+
   try {
     const res = await driveFetch(METADATA_JSON_DRIVE_LINK);
     const text = await res.text();
     const data = JSON.parse(text);
-    document.getElementById('autoloadZone').style.display = 'none';
-    document.getElementById('appZone').style.display = 'flex';
-    document.getElementById('loadingMain').style.display = 'flex';
-    document.getElementById('loadingMain').innerHTML = `<div class="spinner"></div><span>Đang xử lý dữ liệu…</span>`;
-    document.getElementById('bookGrid').innerHTML = '';
-    document.getElementById('pagination').innerHTML = '';
+
+    try {
+      sessionStorage.setItem(METADATA_CACHE_KEY, text);
+    } catch (err) {
+      // Thư viện quá lớn vượt quota sessionStorage, hoặc trình duyệt chặn lưu
+      // trữ — bỏ qua, không ảnh hưởng đến việc hiển thị thư viện lần này.
+    }
+
+    showAppZoneLoading();
     loadPublicJsonData(data);
   } catch (err) {
     document.getElementById('autoloadCard').innerHTML = `
@@ -60,8 +89,19 @@ async function autoLoadLibrary() {
       <h2>Không tải được thư viện</h2>
       <p>Không lấy được metadata_public.json từ Google Drive.</p>
       <p style="font-size:12px">${esc(err.message || '')}</p>
-      <button class="btn-folder retry" onclick="autoLoadLibrary()">🔄 Thử lại</button>`;
+      <button class="btn-folder retry" onclick="autoLoadLibrary(true)">🔄 Thử lại</button>`;
   }
+}
+
+// Chuyển từ màn hình "đang tải" sang khung app chính, hiện spinner xử lý dữ
+// liệu — dùng chung cho cả đường tải từ cache và đường tải mới từ Drive.
+function showAppZoneLoading() {
+  document.getElementById('autoloadZone').style.display = 'none';
+  document.getElementById('appZone').style.display = 'flex';
+  document.getElementById('loadingMain').style.display = 'flex';
+  document.getElementById('loadingMain').innerHTML = `<div class="spinner"></div><span>Đang xử lý dữ liệu…</span>`;
+  document.getElementById('bookGrid').innerHTML = '';
+  document.getElementById('pagination').innerHTML = '';
 }
 
 
@@ -115,6 +155,11 @@ function loadPublicJsonData(data) {
     const langsArr = Array.isArray(entry.languages) ? entry.languages.filter(Boolean)
       : (entry.languages ? [entry.languages] : []);
     const pubdate = entry.pubdate || '';
+    // Ngày sách được NHẬP vào thư viện (khác với pubdate = ngày xuất bản).
+    // Chấp nhận vài tên trường phổ biến tuỳ theo cách metadata_public.json
+    // được xuất ra từ Calibre; nếu không có trường nào, sẽ dùng book_id để
+    // suy ra thứ tự nhập trước/sau (id lớn hơn = nhập sau) khi sắp xếp.
+    const added = entry.timestamp || entry.date_added || entry.added || entry.import_date || '';
 
     if (entry.comments) comments[id] = entry.comments;
 
@@ -127,6 +172,7 @@ function loadPublicJsonData(data) {
       tags: tagsArr.join(','),
       tags_arr: tagsArr,
       pubdate,
+      added,
       year: pubdate ? String(pubdate).substring(0, 4) : '',
       has_cover: entry.has_cover != null ? !!entry.has_cover : !!(entry.cover && entry.cover.file_id),
       path: String(id),          // used as the lookup key into gdriveBooks for this mode
@@ -418,6 +464,21 @@ function applyFilters() {
       case 'date_desc':   return (b.pubdate||'').localeCompare(a.pubdate||'');
       case 'date_asc':    return (a.pubdate||'').localeCompare(b.pubdate||'');
       case 'rating_desc': return (b.rating||0) - (a.rating||0);
+      // Sắp xếp theo thời điểm sách được NHẬP vào thư viện (không phải ngày
+      // xuất bản). Nếu có trường 'added' thì so sánh theo đó; nếu không, coi
+      // book_id lớn hơn là sách nhập sau (đúng với cách Calibre cấp id tăng dần).
+      case 'added_desc': {
+        if (a.added && b.added) return String(b.added).localeCompare(String(a.added));
+        if (a.added && !b.added) return -1;
+        if (!a.added && b.added) return 1;
+        return (b.id||0) - (a.id||0);
+      }
+      case 'added_asc': {
+        if (a.added && b.added) return String(a.added).localeCompare(String(b.added));
+        if (a.added && !b.added) return 1;
+        if (!a.added && b.added) return -1;
+        return (a.id||0) - (b.id||0);
+      }
     }
     return 0;
   });
