@@ -54,6 +54,7 @@ let opfCache = {};           // bookId → parsed metadata.opf extra fields (or 
 // thư viện nào khác trước đó trên trình duyệt này).
 const LIBRARIES = [
   { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1cnlQaEaUUKpWWuREqybUWGtbWq80CL7I/view?usp=drive_link' },
+  { id: 'lib2', name: 'Old books', link: 'https://drive.google.com/file/d/1UdwpHQG0Fox-BF1_5nmZ0Upgs01zVNK5/view?usp=drive_link' }
   // { id: 'lib2', name: 'Tên thư viện thứ 2', link: 'https://drive.google.com/file/d/.../view?usp=drive_link' },
 ];
 
