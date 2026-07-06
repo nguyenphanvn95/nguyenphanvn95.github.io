@@ -15,6 +15,7 @@ let comments = {};
 
 // Key used to cache the raw metadata_public.json text in sessionStorage, so
 // it's only fetched once per browser tab session instead of on every reload.
+// (Mỗi thư viện có 1 cache riêng, xem hàm metadataCacheKey() bên dưới.)
 const METADATA_CACHE_KEY = 'mylibrary_metadata_cache_v1';
 
 // Library source: always 'gdrive' once the metadata_public.json has loaded successfully.
@@ -24,9 +25,60 @@ let folderMode = null;
 let gdriveBooks = {};        // bookId (number) → raw book entry from metadata_public.json
 let opfCache = {};           // bookId → parsed metadata.opf extra fields (or null if failed)
 
-// Fixed Google Drive location of metadata_public.json — the library is loaded
-// automatically from here on page load, no manual file/folder picking needed.
-const METADATA_JSON_DRIVE_LINK = 'https://drive.google.com/file/d/1cnlQaEaUUKpWWuREqybUWGtbWq80CL7I/view?usp=drive_link';
+// ================================================================
+// DANH SÁCH THƯ VIỆN (GOOGLE DRIVE) — THÊM THƯ VIỆN MỚI TẠI ĐÂY
+// ================================================================
+// Mỗi thư viện là 1 file metadata_public.json khác nhau trên Google Drive.
+// Người dùng bấm vào nút "Thư viện" trên thanh header để mở hộp thoại chọn
+// giữa các thư viện được khai báo trong mảng LIBRARIES dưới đây.
+//
+// Mỗi phần tử trong mảng gồm:
+//   - id:   mã định danh duy nhất, viết liền không dấu (vd: 'default', 'lib2'...)
+//           dùng để lưu lựa chọn của người dùng và làm khoá cache riêng.
+//   - name: tên hiển thị cho người dùng trong hộp thoại & trên thanh header.
+//   - link: link chia sẻ Google Drive (hoặc file_id trần) của file
+//           metadata_public.json của thư viện đó. File này (và mọi file sách/
+//           bìa mà nó trỏ tới) phải được chia sẻ ở chế độ
+//           "Anyone with the link" (Bất kỳ ai có đường liên kết).
+//
+// ➕ CÁCH THÊM 1 THƯ VIỆN MỚI:
+//   1. Tạo/lấy link chia sẻ Google Drive của file metadata_public.json cho
+//      thư viện đó (chuột phải file → Share → Copy link).
+//   2. Thêm 1 dòng mới vào mảng LIBRARIES bên dưới, ví dụ:
+//        { id: 'sachnoiviet', name: 'Sách nói Việt', link: 'https://drive.google.com/file/d/XXXXXXXXXXXXXXXXXXXXXXXXX/view?usp=drive_link' }
+//   3. Lưu file app.js lại — thư viện mới sẽ tự xuất hiện trong hộp thoại
+//      chọn thư viện, không cần sửa gì thêm ở index.html hay chỗ khác.
+//
+// Thư viện đầu tiên trong danh sách (LIBRARIES[0]) là thư viện mặc định,
+// được tự động tải khi mở trang lần đầu (nếu người dùng chưa từng chọn
+// thư viện nào khác trước đó trên trình duyệt này).
+const LIBRARIES = [
+  { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1cnlQaEaUUKpWWuREqybUWGtbWq80CL7I/view?usp=drive_link' },
+  // { id: 'lib2', name: 'Tên thư viện thứ 2', link: 'https://drive.google.com/file/d/.../view?usp=drive_link' },
+];
+
+// localStorage key ghi nhớ thư viện người dùng đã chọn lần gần nhất, để lần
+// mở trang sau (kể cả tắt hẳn trình duyệt) vẫn vào đúng thư viện đó.
+const SELECTED_LIBRARY_KEY = 'mylibrary_selected_library_id';
+
+// id của thư viện đang được chọn/hiển thị — khởi tạo dựa theo lựa chọn đã lưu
+// trước đó (nếu còn hợp lệ trong LIBRARIES), hoặc mặc định LIBRARIES[0].
+let currentLibraryId = (() => {
+  try {
+    const saved = localStorage.getItem(SELECTED_LIBRARY_KEY);
+    if (saved && LIBRARIES.some(l => l.id === saved)) return saved;
+  } catch (err) { /* localStorage không khả dụng — dùng mặc định */ }
+  return LIBRARIES[0].id;
+})();
+
+function getLibraryById(id) {
+  return LIBRARIES.find(l => l.id === id) || LIBRARIES[0];
+}
+// Cache key riêng cho từng thư viện, để chuyển qua lại giữa các thư viện
+// không bị lẫn/ghi đè dữ liệu cache của nhau trong sessionStorage.
+function metadataCacheKey(libId) {
+  return `${METADATA_CACHE_KEY}::${libId}`;
+}
 
 // Note: the Google Apps Script proxy used to fetch Drive files (metadata_public.json,
 // EPUB/PDF/audio/covers/opf) is configured further down, near the Drive helper
@@ -37,18 +89,27 @@ window.addEventListener('DOMContentLoaded', () => {
   autoLoadLibrary();
 });
 
-// Fetch metadata_public.json straight from its fixed Google Drive location and
-// build the library from it — no manual file/folder picking required.
+// Fetch metadata_public.json of a given library (mặc định là thư viện đang
+// được chọn — currentLibraryId) và build thư viện sách từ đó — không cần
+// thao tác chọn file/folder thủ công.
 //
 // forceReload = true bỏ qua cache trong sessionStorage và luôn tải lại từ
-// Google Drive (dùng khi người dùng bấm nút "Tải lại thư viện" trên header).
-async function autoLoadLibrary(forceReload = false) {
+// Google Drive (dùng khi người dùng bấm nút "Tải lại thư viện" trên header,
+// hoặc khi chuyển sang 1 thư viện khác).
+// libId = id thư viện muốn tải (mặc định currentLibraryId, tức thư viện đang chọn).
+async function autoLoadLibrary(forceReload = false, libId = currentLibraryId) {
+  const lib = getLibraryById(libId);
+  currentLibraryId = lib.id;
+  try { localStorage.setItem(SELECTED_LIBRARY_KEY, lib.id); } catch (err) { /* ignore */ }
+
   document.getElementById('autoloadZone').style.display = 'flex';
   document.getElementById('autoloadCard').innerHTML = `
     <div class="autoload-icon">🌐</div>
     <h2>Đang tải thư viện…</h2>
-    <p>Đang tải danh sách sách từ Google Drive.</p>`;
+    <p>Đang tải danh sách sách từ Google Drive (${esc(lib.name)}).</p>`;
   document.getElementById('appZone').style.display = 'none';
+
+  const cacheKey = metadataCacheKey(lib.id);
 
   // Nếu đã có dữ liệu được cache trong phiên làm việc này (sessionStorage),
   // dùng lại luôn thay vì gọi lại Google Drive — giúp mở lại trang / chuyển
@@ -56,11 +117,11 @@ async function autoLoadLibrary(forceReload = false) {
   // lại metadata_public.json nhiều lần.
   if (!forceReload) {
     try {
-      const cached = sessionStorage.getItem(METADATA_CACHE_KEY);
+      const cached = sessionStorage.getItem(cacheKey);
       if (cached) {
         const data = JSON.parse(cached);
         showAppZoneLoading();
-        loadPublicJsonData(data);
+        loadPublicJsonData(data, lib);
         return;
       }
     } catch (err) {
@@ -70,27 +131,61 @@ async function autoLoadLibrary(forceReload = false) {
   }
 
   try {
-    const res = await driveFetch(METADATA_JSON_DRIVE_LINK);
+    const res = await driveFetch(lib.link);
     const text = await res.text();
     const data = JSON.parse(text);
 
     try {
-      sessionStorage.setItem(METADATA_CACHE_KEY, text);
+      sessionStorage.setItem(cacheKey, text);
     } catch (err) {
       // Thư viện quá lớn vượt quota sessionStorage, hoặc trình duyệt chặn lưu
       // trữ — bỏ qua, không ảnh hưởng đến việc hiển thị thư viện lần này.
     }
 
     showAppZoneLoading();
-    loadPublicJsonData(data);
+    loadPublicJsonData(data, lib);
   } catch (err) {
     document.getElementById('autoloadCard').innerHTML = `
       <div class="autoload-icon">⚠️</div>
       <h2>Không tải được thư viện</h2>
-      <p>Không lấy được metadata_public.json từ Google Drive.</p>
+      <p>Không lấy được metadata_public.json từ Google Drive (${esc(lib.name)}).</p>
       <p style="font-size:12px">${esc(err.message || '')}</p>
-      <button class="btn-folder retry" onclick="autoLoadLibrary(true)">🔄 Thử lại</button>`;
+      <button class="btn-folder retry" onclick="autoLoadLibrary(true)">🔄 Thử lại</button>
+      <button class="btn-folder secondary retry" onclick="openLibraryModal()">📚 Chọn thư viện khác</button>`;
   }
+}
+
+// ── HỘP THOẠI CHỌN THƯ VIỆN ──────────────────────────────────
+function renderLibraryList() {
+  const container = document.getElementById('libraryList');
+  if (!container) return;
+  container.innerHTML = LIBRARIES.map(lib => `
+    <button class="sidebar-item library-item ${lib.id === currentLibraryId ? 'active' : ''}"
+      style="border:1px solid var(--line);border-radius:var(--radius);margin-bottom:8px;padding:10px 14px"
+      onclick="selectLibrary('${escAttr(lib.id)}')">
+      <span>🌐 ${esc(lib.name)}</span>
+      ${lib.id === currentLibraryId ? '<span class="badge">Đang dùng</span>' : ''}
+    </button>`).join('');
+}
+
+function openLibraryModal() {
+  renderLibraryList();
+  document.getElementById('libraryModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLibraryModal(e) {
+  if (e.target === document.getElementById('libraryModalOverlay')) closeLibraryModalDirect();
+}
+function closeLibraryModalDirect() {
+  document.getElementById('libraryModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Người dùng chọn 1 thư viện trong hộp thoại — đóng hộp thoại lại và tải
+// thư viện đó (luôn tải mới, bỏ qua cache, để phản ánh đúng lựa chọn).
+function selectLibrary(libId) {
+  closeLibraryModalDirect();
+  if (libId === currentLibraryId) { autoLoadLibrary(true, libId); return; }
+  autoLoadLibrary(true, libId);
 }
 
 // Chuyển từ màn hình "đang tải" sang khung app chính, hiện spinner xử lý dữ
@@ -131,12 +226,17 @@ function finalizeBooksLoaded() {
 }
 
 // Parse the already-loaded JSON object and build allBooks[] / fileFormats{} from it.
-function loadPublicJsonData(data) {
+// lib = { id, name, link } của thư viện vừa tải (dùng để cập nhật tên hiển thị
+// trên thanh header — mặc định là thư viện đang chọn nếu không truyền vào).
+function loadPublicJsonData(data, lib = getLibraryById(currentLibraryId)) {
   comments = {};
   fileFormats = {};
   gdriveBooks = {};
   opfCache = {};
   folderMode = 'gdrive';
+
+  const folderNameEl = document.getElementById('folderName');
+  if (folderNameEl) folderNameEl.textContent = lib.name;
 
   // Tolerate both the newer flat shape ({ "23": {...}, "45": {...} }) and an
   // older { "books": { "23": {...} } } wrapper.
@@ -182,7 +282,13 @@ function loadPublicJsonData(data) {
       formats: formatKeys.join(','),
       formats_arr: formatKeys,
       rating: normalizeCalibreRating(entry.rating),
-      lang: normalizeLangCode(langsArr[0] || '')
+      lang: normalizeLangCode(langsArr[0] || ''),
+      // Chuỗi tìm kiếm đã bỏ dấu tiếng Việt + viết thường, tính sẵn 1 lần lúc
+      // nạp thư viện để tìm kiếm không dấu (xem hàm normalizeSearchText) nhanh,
+      // không phải tính lại mỗi lần gõ phím.
+      search_blob: normalizeSearchText([
+        entry.title || '', authorsStr, tagsArr.join(' '), entry.publisher || '', entry.series || ''
+      ].join(' '))
     };
   });
 
@@ -402,21 +508,6 @@ function buildSidebar() {
     </button>`).join('');
 }
 
-// ── SIDEBAR DRAWER (mobile) ─────────────────────────────────────
-// Trên màn hình hẹp (≤700px), sidebar bộ lọc trở thành 1 drawer trượt từ
-// trái, mở/đóng qua nút hamburger trên header hoặc nút ✕ / backdrop.
-function toggleSidebar(force) {
-  const sidebar = document.getElementById('sidebar');
-  const backdrop = document.getElementById('sidebarBackdrop');
-  if (!sidebar || !backdrop) return;
-  const open = typeof force === 'boolean' ? force : !sidebar.classList.contains('open');
-  sidebar.classList.toggle('open', open);
-  backdrop.classList.toggle('open', open);
-}
-function closeSidebarOnMobile() {
-  if (window.matchMedia('(max-width: 700px)').matches) toggleSidebar(false);
-}
-
 // ── FILTERS ──────────────────────────────────────────────────
 function clearSidebarActive() {
   document.querySelectorAll('#sidebar .sidebar-item').forEach(el => el.classList.remove('active'));
@@ -424,31 +515,31 @@ function clearSidebarActive() {
 function filterBy(type, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = type; currentTag = null; currentFormat = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters(); closeSidebarOnMobile();
+  currentPage = 1; applyFilters();
 }
 function filterByFormat(fmt, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'format'; currentFormat = fmt;
   currentTag = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters(); closeSidebarOnMobile();
+  currentPage = 1; applyFilters();
 }
 function filterByLang(lang, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'lang'; currentLang = lang;
   currentTag = null; currentFormat = null; currentPublisher = null;
-  currentPage = 1; applyFilters(); closeSidebarOnMobile();
+  currentPage = 1; applyFilters();
 }
 function filterByTag(tag, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'tag'; currentTag = tag;
   currentFormat = null; currentLang = null; currentPublisher = null;
-  currentPage = 1; applyFilters(); closeSidebarOnMobile();
+  currentPage = 1; applyFilters();
 }
 function filterByPublisher(pub, el) {
   clearSidebarActive(); el.classList.add('active');
   currentFilter = 'publisher'; currentPublisher = pub;
   currentTag = null; currentFormat = null; currentLang = null;
-  currentPage = 1; applyFilters(); closeSidebarOnMobile();
+  currentPage = 1; applyFilters();
 }
 function applySort() {
   currentSort = document.getElementById('sortSelect').value;
@@ -465,8 +556,9 @@ function applyFilters() {
     if (currentFilter === 'tag' && !b.tags_arr.includes(currentTag)) return false;
     if (currentFilter === 'publisher' && b.publisher !== currentPublisher) return false;
     if (q) {
-      const haystack = [b.title, b.authors, b.tags, b.publisher, b.series].join(' ').toLowerCase();
-      return haystack.includes(q);
+      // Tìm không dấu: cả từ khoá lẫn dữ liệu sách đều được bỏ dấu trước khi
+      // so khớp, nên gõ "nguyen nhat anh" vẫn tìm ra "Nguyễn Nhật Ánh".
+      return b.search_blob.includes(normalizeSearchText(q));
     }
     return true;
   });
@@ -731,6 +823,12 @@ function applyOpfExtrasToModal(book, extra) {
   if (extra.pubdate) { book.pubdate = extra.pubdate; book.year = extra.pubdate.substring(0, 4); }
   if (extra.description) comments[book.id] = extra.description;
 
+  // Cập nhật lại chuỗi tìm kiếm không dấu vì tags/publisher/series có thể vừa
+  // được bổ sung thêm từ metadata.opf ở trên.
+  book.search_blob = normalizeSearchText(
+    [book.title, book.authors, book.tags, book.publisher, book.series].join(' ')
+  );
+
   let statsHtml = '';
   if (book.year && book.year > '1900')
     statsHtml += `<div class="stat-box"><div class="stat-val">${book.year}</div><div class="stat-lbl">Năm XB</div></div>`;
@@ -855,6 +953,17 @@ function normalizeLangCode(code) {
   const c = code.trim().toLowerCase();
   const map = {vi:'vie',en:'eng',zh:'zho',ja:'jpn',ko:'kor',fr:'fra',de:'deu',it:'ita',es:'spa'};
   return map[c] || c;
+}
+// Bỏ dấu tiếng Việt + viết thường, dùng cho tìm kiếm không dấu (gõ "sach nau
+// an" vẫn tìm ra "Sách nấu ăn"). NFD tách chữ cái ra khỏi dấu thanh/dấu phụ
+// cho hầu hết ký tự có dấu; riêng "đ/Đ" không tách được bằng NFD (nó là 1 chữ
+// cái riêng chứ không phải "d" + dấu) nên phải thay thế thủ công.
+function normalizeSearchText(s) {
+  if (!s) return '';
+  return String(s)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+    .toLowerCase();
 }
 function debounce(fn, ms) {
   let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
