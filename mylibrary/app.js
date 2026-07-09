@@ -53,7 +53,7 @@ let opfCache = {};           // bookId → parsed metadata.opf extra fields (or 
 // được tự động tải khi mở trang lần đầu (nếu người dùng chưa từng chọn
 // thư viện nào khác trước đó trên trình duyệt này).
 const LIBRARIES = [
-  { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1cnlQaEaUUKpWWuREqybUWGtbWq80CL7I/view?usp=drive_link' },
+  { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1TAT8ju0V2eWLrdfkmpYe08H1NydFoBUB/view?usp=drive_link' },
   { id: 'lib2', name: 'Old books', link: 'https://drive.google.com/file/d/1if99pKLix_ybc4IPAzfhRaQAm8ICqlK_/view?usp=drivesdk' }
   // { id: 'lib2', name: 'Tên thư viện thứ 2', link: 'https://drive.google.com/file/d/.../view?usp=drive_link' },
 ];
