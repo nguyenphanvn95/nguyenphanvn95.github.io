@@ -50,13 +50,13 @@ let opfCache = {};           // bookId → parsed metadata.opf extra fields (or 
 //      chọn thư viện, không cần sửa gì thêm ở index.html hay chỗ khác.
 //
 // Thư viện đầu tiên trong danh sách (LIBRARIES[0]) là thư viện mặc định,
-// được tự động tải khi mở trang lần đầu (nếu người dùng chưa từng chọn
+// được tự động tải khi mở trang lần đầu (nếu người dùng chưa từng chọnhthttps://drive.google.com/open?id=&usp=drive_fs
 // thư viện nào khác trước đó trên trình duyệt này).
 const LIBRARIES = [
-  { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1cnlQaEaUUKpWWuREqybUWGtbWq80CL7I/view?usp=drive_link' },
+  { id: 'default', name: 'Thư viện mặc định', link: 'https://drive.google.com/file/d/1TAT8ju0V2eWLrdfkmpYe08H1NydFoBUB/view?usp=drive_link' },
    { id: 'english', name: 'Sách ngoại văn', link: 'https://drive.google.com/file/d/109kD__pNaFNXou9-JIQgg_ytqB93RXIB/view?usp=drive_link' },
    { id: 'fiction', name: 'Truyện, tiểu thuyết', link: 'https://drive.google.com/file/d/1Yc9bOM_sMRhFE4Cz07pOELRp-CEikguO/view?usp=drive_link' },
-  { id: 'lib2', name: 'Old books', link: 'https://drive.google.com/file/d/1UdwpHQG0Fox-BF1_5nmZ0Upgs01zVNK5/view?usp=drive_link' }
+  { id: 'lib2', name: 'Old books', link: 'https://drive.google.com/file/d/1if99pKLix_ybc4IPAzfhRaQAm8ICqlK_/view?usp=drive_link' }
   // { id: 'lib2', name: 'Tên thư viện thứ 2', link: 'https://drive.google.com/file/d/.../view?usp=drive_link' },
 ];
 
