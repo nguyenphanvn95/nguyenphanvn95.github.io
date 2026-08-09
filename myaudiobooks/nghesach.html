@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nghe sách</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink:       #1a1410;
+    --paper:     #f7f3ed;
+    --warm:      #e8e0d4;
+    --accent:    #8b4513;
+    --accent2:   #c0832a;
+    --muted:     #7a6e64;
+    --line:      #d4c9bc;
+    --card:      #ffffff;
+    --tag-bg:    #ede7df;
+    --tag-text:  #5c4a35;
+    --radius:    6px;
+    --shadow:    0 2px 12px rgba(26,20,16,.08);
+    --shadow-lg: 0 8px 32px rgba(26,20,16,.14);
+    --player-h:  84px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: var(--player-h);
+  }
+
+  header {
+    background: var(--ink); color: var(--paper);
+    padding: 0 20px; height: 56px;
+    display: flex; align-items: center; gap: 14px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  }
+  .back-btn {
+    color: var(--paper); text-decoration: none; font-size: 18px;
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; flex-shrink: 0;
+  }
+  .back-btn:hover { background: rgba(255,255,255,.12); }
+  #headerTitle {
+    font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .autoload-zone {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: calc(100vh - 56px); gap: 20px; padding: 40px 20px; text-align: center;
+  }
+  .autoload-icon { font-size: 48px; }
+  .autoload-zone h2 { font-family: 'Playfair Display', serif; font-size: 22px; }
+  .autoload-zone p { color: var(--muted); font-size: 13px; max-width: 420px; }
+  .spinner {
+    width: 36px; height: 36px; border: 3px solid var(--line);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .btn-folder {
+    background: var(--accent); color: white; border: none; border-radius: var(--radius);
+    padding: 8px 18px; cursor: pointer; font-size: 13px; font-weight: 500;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-folder:hover { background: #7a3c10; }
+
+  .book-zone { display: none; max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; gap: 28px; flex-direction: column; }
+
+  .book-header { display: flex; gap: 22px; }
+  .book-cover {
+    width: 130px; flex-shrink: 0; aspect-ratio: 2/3; border-radius: 6px; overflow: hidden;
+    box-shadow: var(--shadow-lg); background: var(--warm);
+  }
+  .book-cover img { width: 100%; height: 100%; object-fit: contain; }
+  .cover-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .cover-placeholder[data-hue="0"] { background: #ede4f0; }
+
+  .book-meta { flex: 1; min-width: 0; }
+  .book-title {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    line-height: 1.3; margin-bottom: 6px;
+  }
+  .book-creators { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 12px; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .meta-pill {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    background: var(--tag-bg); color: var(--tag-text); font-weight: 500;
+  }
+  .meta-pill.format { font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+
+  .desc-wrap { position: relative; }
+  .modal-desc { font-size: 13px; line-height: 1.7; color: var(--ink); }
+  .modal-desc.collapsed {
+    max-height: 4.6em; overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  #descToggleBtn {
+    background: none; border: none; color: var(--accent); font-size: 12px; font-weight: 600;
+    cursor: pointer; padding: 6px 0; display: block;
+  }
+
+  .section-label {
+    font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  .chapter-list { display: flex; flex-direction: column; gap: 2px; }
+  .chapter-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px; border: none; border-radius: var(--radius);
+    background: var(--card); border: 1px solid var(--line);
+    cursor: pointer; text-align: left; font-family: 'Inter', sans-serif;
+    font-size: 13.5px; color: var(--ink); transition: background .12s, border-color .12s;
+    margin-bottom: 6px;
+  }
+  .chapter-row:hover { background: var(--warm); }
+  .chapter-row.active { border-color: var(--accent); background: #fdf0e8; }
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted);
+    width: 28px; flex-shrink: 0; text-align: right;
+  }
+  .chapter-row.active .chapter-num { color: var(--accent); font-weight: 600; }
+  .chapter-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chapter-playing { width: 18px; flex-shrink: 0; text-align: center; color: var(--accent); font-size: 12px; }
+
+  /* ── PLAYER BAR (sticky bottom) ── */
+  .player-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; height: var(--player-h);
+    background: var(--ink); color: var(--paper);
+    box-shadow: 0 -4px 20px rgba(0,0,0,.25);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8px 18px 12px; z-index: 150;
+  }
+  .player-now {
+    font-size: 11.5px; color: rgba(255,255,255,.7);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px;
+  }
+  .player-controls { display: flex; align-items: center; gap: 10px; }
+  .player-btn {
+    background: none; border: none; color: var(--paper); cursor: pointer;
+    font-size: 18px; width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: background .12s;
+  }
+  .player-btn:hover { background: rgba(255,255,255,.12); }
+  .player-btn:disabled { opacity: .3; cursor: not-allowed; }
+  .player-btn.play-toggle {
+    background: var(--accent2); width: 40px; height: 40px; font-size: 17px;
+  }
+  .player-btn.play-toggle:hover { background: #d6942f; }
+  .player-time {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,.75);
+    flex-shrink: 0; min-width: 34px; text-align: center;
+  }
+  input[type="range"].seekbar {
+    flex: 1; height: 4px; -webkit-appearance: none; appearance: none;
+    background: rgba(255,255,255,.25); border-radius: 2px; outline: none; cursor: pointer;
+  }
+  input[type="range"].seekbar::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%;
+    background: var(--accent2); cursor: pointer; margin-top: -4.5px;
+  }
+  select.speed-select {
+    background: rgba(255,255,255,.1); color: var(--paper); border: 1px solid rgba(255,255,255,.25);
+    border-radius: 4px; font-size: 11px; padding: 4px 6px; cursor: pointer; flex-shrink: 0;
+  }
+  select.speed-select option { color: var(--ink); }
+
+  @media (max-width: 700px) {
+    .book-header { flex-direction: column; align-items: center; text-align: center; }
+    .book-cover { width: 110px; }
+    .meta-row { justify-content: center; }
+    .player-btn.play-toggle { width: 36px; height: 36px; }
+    :root { --player-h: 76px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-btn" id="backLink" href="myaudiobooks.html" title="Quay lại danh sách">←</a>
+  <div id="headerTitle">Nghe sách</div>
+</header>
+
+<div class="autoload-zone" id="loadingZone">
+  <div class="autoload-icon">🎧</div>
+  <h2>Đang tải sách…</h2>
+  <p>Đang lấy thông tin và danh sách chương từ Google Drive.</p>
+  <div class="spinner"></div>
+</div>
+
+<div class="book-zone" id="bookZone">
+  <div class="book-header">
+    <div class="book-cover" id="bookCover"></div>
+    <div class="book-meta">
+      <div class="book-title" id="bookTitle"></div>
+      <div class="book-creators" id="bookCreators"></div>
+      <div class="meta-row" id="bookPills"></div>
+      <div class="desc-wrap">
+        <div class="modal-desc collapsed" id="bookDesc"></div>
+        <button id="descToggleBtn" onclick="toggleDesc()">Xem thêm ▾</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-label">Danh sách chương</div>
+    <div class="chapter-list" id="chapterList"></div>
+  </div>
+</div>
+
+<!-- PLAYER BAR -->
+<div class="player-bar">
+  <div class="player-now" id="nowPlayingTitle">Chưa phát chương nào</div>
+  <div class="player-controls">
+    <button class="player-btn" id="btnPrev" onclick="playPrev()" title="Chương trước">⏮</button>
+    <button class="player-btn" onclick="seekBy(-15)" title="Lùi 15 giây">⏪</button>
+    <button class="player-btn play-toggle" onclick="togglePlay()" title="Phát / Tạm dừng">
+      <span id="btnPlayIcon">▶</span>
+    </button>
+    <button class="player-btn" onclick="seekBy(15)" title="Tiến 15 giây">⏩</button>
+    <button class="player-btn" id="btnNext" onclick="playNext()" title="Chương sau">⏭</button>
+    <span class="player-time" id="curTime">0:00</span>
+    <input type="range" class="seekbar" id="seekbar" min="0" max="1000" value="0" oninput="onSeekInput(event)">
+    <span class="player-time" id="durTime">0:00</span>
+    <select class="speed-select" onchange="setSpeed(this.value)">
+      <option value="0.75">0.75×</option>
+      <option value="1" selected>1×</option>
+      <option value="1.25">1.25×</option>
+      <option value="1.5">1.5×</option>
+      <option value="1.75">1.75×</option>
+      <option value="2">2×</option>
+    </select>
+  </div>
+  <audio id="player" preload="metadata"></audio>
+</div>
+
+<script src="audiobooks-common.js"></script>
+<script src="nghesach.js"></script>
+</body>
+</html>
