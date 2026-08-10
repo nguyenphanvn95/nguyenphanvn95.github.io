@@ -21,7 +21,6 @@
     --radius:    6px;
     --shadow:    0 2px 12px rgba(26,20,16,.08);
     --shadow-lg: 0 8px 32px rgba(26,20,16,.14);
-    --player-h:  84px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -31,7 +30,6 @@
     min-height: 100vh;
     font-size: 14px;
     line-height: 1.6;
-    padding-bottom: var(--player-h);
   }
 
   header {
@@ -72,7 +70,7 @@
   }
   .btn-folder:hover { background: #7a3c10; }
 
-  .book-zone { display: none; max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; gap: 28px; flex-direction: column; }
+  .book-zone { display: none; max-width: 920px; margin: 0 auto; padding: 24px 20px 60px; gap: 28px; flex-direction: column; }
 
   .book-header { display: flex; gap: 22px; }
   .book-cover {
@@ -107,78 +105,52 @@
     cursor: pointer; padding: 6px 0; display: block;
   }
 
+  .section-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-bottom: 10px; flex-wrap: wrap;
+  }
   .section-label {
     font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 10px;
+    color: var(--muted);
   }
+  .btn-download-all {
+    background: var(--accent); color: white; border: none; border-radius: var(--radius);
+    padding: 8px 16px; cursor: pointer; font-size: 12.5px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-download-all:hover { background: #7a3c10; }
+  .btn-download-all:disabled { opacity: .5; cursor: not-allowed; }
+
   .chapter-list { display: flex; flex-direction: column; gap: 2px; }
   .chapter-row {
     display: flex; align-items: center; gap: 12px;
-    padding: 11px 14px; border: none; border-radius: var(--radius);
+    padding: 11px 14px; border-radius: var(--radius);
     background: var(--card); border: 1px solid var(--line);
-    cursor: pointer; text-align: left; font-family: 'Inter', sans-serif;
-    font-size: 13.5px; color: var(--ink); transition: background .12s, border-color .12s;
+    font-size: 13.5px; color: var(--ink);
     margin-bottom: 6px;
   }
-  .chapter-row:hover { background: var(--warm); }
-  .chapter-row.active { border-color: var(--accent); background: #fdf0e8; }
   .chapter-num {
     font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted);
     width: 28px; flex-shrink: 0; text-align: right;
   }
-  .chapter-row.active .chapter-num { color: var(--accent); font-weight: 600; }
   .chapter-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .chapter-playing { width: 18px; flex-shrink: 0; text-align: center; color: var(--accent); font-size: 12px; }
-
-  /* ── PLAYER BAR (sticky bottom) ── */
-  .player-bar {
-    position: fixed; left: 0; right: 0; bottom: 0; height: var(--player-h);
-    background: var(--ink); color: var(--paper);
-    box-shadow: 0 -4px 20px rgba(0,0,0,.25);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 8px 18px 12px; z-index: 150;
+  .chapter-size {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); flex-shrink: 0;
   }
-  .player-now {
-    font-size: 11.5px; color: rgba(255,255,255,.7);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px;
+  .chapter-dl-btn {
+    background: var(--tag-bg); color: var(--accent); border: 1px solid var(--line);
+    border-radius: 50%; width: 32px; height: 32px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 15px; text-decoration: none; transition: background .12s, border-color .12s;
   }
-  .player-controls { display: flex; align-items: center; gap: 10px; }
-  .player-btn {
-    background: none; border: none; color: var(--paper); cursor: pointer;
-    font-size: 18px; width: 34px; height: 34px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    transition: background .12s;
-  }
-  .player-btn:hover { background: rgba(255,255,255,.12); }
-  .player-btn:disabled { opacity: .3; cursor: not-allowed; }
-  .player-btn.play-toggle {
-    background: var(--accent2); width: 40px; height: 40px; font-size: 17px;
-  }
-  .player-btn.play-toggle:hover { background: #d6942f; }
-  .player-time {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,.75);
-    flex-shrink: 0; min-width: 34px; text-align: center;
-  }
-  input[type="range"].seekbar {
-    flex: 1; height: 4px; -webkit-appearance: none; appearance: none;
-    background: rgba(255,255,255,.25); border-radius: 2px; outline: none; cursor: pointer;
-  }
-  input[type="range"].seekbar::-webkit-slider-thumb {
-    -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%;
-    background: var(--accent2); cursor: pointer; margin-top: -4.5px;
-  }
-  select.speed-select {
-    background: rgba(255,255,255,.1); color: var(--paper); border: 1px solid rgba(255,255,255,.25);
-    border-radius: 4px; font-size: 11px; padding: 4px 6px; cursor: pointer; flex-shrink: 0;
-  }
-  select.speed-select option { color: var(--ink); }
+  .chapter-dl-btn:hover { background: var(--warm); border-color: var(--accent); }
+  .chapter-dl-btn.done { color: #2e7d32; border-color: #2e7d32; background: #eaf6ea; }
 
   @media (max-width: 700px) {
     .book-header { flex-direction: column; align-items: center; text-align: center; }
     .book-cover { width: 110px; }
     .meta-row { justify-content: center; }
-    .player-btn.play-toggle { width: 36px; height: 36px; }
-    :root { --player-h: 76px; }
+    .chapter-title { white-space: normal; }
   }
 </style>
 </head>
@@ -211,35 +183,12 @@
   </div>
 
   <div>
-    <div class="section-label">Danh sách chương</div>
+    <div class="section-head">
+      <div class="section-label">Danh sách chương</div>
+      <button class="btn-download-all" id="btnDownloadAll" onclick="downloadAllChapters()">⬇ Tải xuống tất cả</button>
+    </div>
     <div class="chapter-list" id="chapterList"></div>
   </div>
-</div>
-
-<!-- PLAYER BAR -->
-<div class="player-bar">
-  <div class="player-now" id="nowPlayingTitle">Chưa phát chương nào</div>
-  <div class="player-controls">
-    <button class="player-btn" id="btnPrev" onclick="playPrev()" title="Chương trước">⏮</button>
-    <button class="player-btn" onclick="seekBy(-15)" title="Lùi 15 giây">⏪</button>
-    <button class="player-btn play-toggle" onclick="togglePlay()" title="Phát / Tạm dừng">
-      <span id="btnPlayIcon">▶</span>
-    </button>
-    <button class="player-btn" onclick="seekBy(15)" title="Tiến 15 giây">⏩</button>
-    <button class="player-btn" id="btnNext" onclick="playNext()" title="Chương sau">⏭</button>
-    <span class="player-time" id="curTime">0:00</span>
-    <input type="range" class="seekbar" id="seekbar" min="0" max="1000" value="0" oninput="onSeekInput(event)">
-    <span class="player-time" id="durTime">0:00</span>
-    <select class="speed-select" onchange="setSpeed(this.value)">
-      <option value="0.75">0.75×</option>
-      <option value="1" selected>1×</option>
-      <option value="1.25">1.25×</option>
-      <option value="1.5">1.5×</option>
-      <option value="1.75">1.75×</option>
-      <option value="2">2×</option>
-    </select>
-  </div>
-  <audio id="player" preload="metadata"></audio>
 </div>
 
 <script src="audiobooks-common.js"></script>

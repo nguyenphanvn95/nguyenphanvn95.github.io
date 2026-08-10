@@ -1,28 +1,10 @@
 // ── STATE ──────────────────────────────────────────────────────
 let book = null;            // record trả về từ buildAudiobookRecord()
 let libId = null;
-let currentChapterIdx = -1;
-let isPlaying = false;
-let saveTimer = null;
-
-const audioEl = document.getElementById('player');
+let isDownloadingAll = false;
 
 function qs(name) {
   return new URLSearchParams(location.search).get(name);
-}
-function progressKey(key) {
-  return `nghesach_progress::${key}`;
-}
-function loadProgress(key) {
-  try {
-    const raw = localStorage.getItem(progressKey(key));
-    return raw ? JSON.parse(raw) : null;
-  } catch (err) { return null; }
-}
-function saveProgress(key, chapterIdx, time) {
-  try {
-    localStorage.setItem(progressKey(key), JSON.stringify({ chapterIdx, time, savedAt: Date.now() }));
-  } catch (err) { /* ignore */ }
 }
 
 // ── INIT ──────────────────────────────────────────────────────
@@ -96,126 +78,90 @@ function renderBook() {
 
   renderChapterList();
 
-  // Khôi phục tiến trình nghe dở lần trước (nếu có), nếu không thì bắt đầu
-  // từ chương đầu tiên.
-  const progress = loadProgress(book.key);
-  let startIdx = 0;
-  let startTime = 0;
-  if (progress && progress.chapterIdx >= 0 && progress.chapterIdx < book.chapters.length) {
-    startIdx = progress.chapterIdx;
-    startTime = progress.time || 0;
-  }
-  playChapter(startIdx, { autoplay: false, seekTo: startTime });
+  const btnAll = document.getElementById('btnDownloadAll');
+  if (btnAll) btnAll.disabled = book.chapters.length === 0;
 }
 
 function renderChapterList() {
   const container = document.getElementById('chapterList');
   container.innerHTML = book.chapters.map(ch => `
-    <button class="chapter-row" id="chrow-${ch.index}" onclick="playChapter(${ch.index - 1}, {autoplay:true})">
+    <div class="chapter-row" id="chrow-${ch.index}">
       <span class="chapter-num">${ch.index}</span>
-      <span class="chapter-title">${esc(ch.title)}</span>
-      <span class="chapter-playing" id="chplay-${ch.index}"></span>
-    </button>`).join('');
+      <span class="chapter-title" title="${escAttr(ch.title)}">${esc(ch.title)}</span>
+      ${ch.size ? `<span class="chapter-size">${fmtBytes(ch.size)}</span>` : ''}
+      <button class="chapter-dl-btn" id="chdl-${ch.index}" title="Tải xuống chương này"
+        onclick="downloadChapter(${ch.index - 1})">⬇</button>
+    </div>`).join('');
 }
 
-function highlightChapter(idx) {
-  document.querySelectorAll('.chapter-row').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.chapter-playing').forEach(el => el.innerHTML = '');
+// ── TẢI XUỐNG ─────────────────────────────────────────────────
+// Link tải trực tiếp của Google Drive (bỏ qua trang cảnh báo virus-scan
+// cho file lớn nhờ tham số confirm=t). Dùng navigation <a download> thay vì
+// fetch() để tránh vướng CORS (Drive không set header CORS cho các link này,
+// nhưng điều hướng trình duyệt bình thường thì không bị chặn).
+function chapterDownloadUrl(ch) {
+  const id = resolveDriveFileId(ch.file_id);
+  if (!id) return null;
+  return `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`;
+}
+
+function downloadChapter(idx) {
   const ch = book.chapters[idx];
   if (!ch) return;
-  const row = document.getElementById(`chrow-${ch.index}`);
-  if (row) {
-    row.classList.add('active');
-    row.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  }
-  const marker = document.getElementById(`chplay-${ch.index}`);
-  if (marker) marker.innerHTML = isPlaying ? '▶' : '⏸';
-}
+  const url = chapterDownloadUrl(ch);
+  const btn = document.getElementById(`chdl-${ch.index}`);
 
-// ── PLAYER ────────────────────────────────────────────────────
-function playChapter(idx, { autoplay = true, seekTo = 0 } = {}) {
-  if (idx < 0 || idx >= book.chapters.length) return;
-  currentChapterIdx = idx;
-  const ch = book.chapters[idx];
-
-  document.getElementById('nowPlayingTitle').textContent = `${ch.index}. ${ch.title}`;
-  highlightChapter(idx);
-
-  const candidates = driveAudioCandidates(ch.file_id);
-  if (!candidates.length) {
-    document.getElementById('nowPlayingTitle').textContent = `${ch.index}. ${ch.title} — ⚠️ Không có file audio`;
+  if (!url) {
+    if (btn) btn.title = 'Không có file audio cho chương này';
+    alert(`Chương ${ch.index}. ${ch.title} — không có file audio.`);
     return;
   }
 
-  loadMediaWithFallback(audioEl, candidates, 0, () => {
-    if (seekTo > 0) audioEl.currentTime = seekTo;
-    if (autoplay) audioEl.play().catch(() => {});
-  });
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = ch.filename || `${ch.title}.mp3`;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 
-  document.getElementById('btnPrev').disabled = idx <= 0;
-  document.getElementById('btnNext').disabled = idx >= book.chapters.length - 1;
-}
-
-function togglePlay() {
-  if (currentChapterIdx < 0) return;
-  if (audioEl.paused) audioEl.play().catch(() => {}); else audioEl.pause();
-}
-function playPrev() {
-  if (currentChapterIdx > 0) playChapter(currentChapterIdx - 1, { autoplay: true });
-}
-function playNext() {
-  if (currentChapterIdx < book.chapters.length - 1) playChapter(currentChapterIdx + 1, { autoplay: true });
-}
-function seekBy(seconds) {
-  if (!audioEl.duration) return;
-  audioEl.currentTime = Math.max(0, Math.min(audioEl.duration, audioEl.currentTime + seconds));
-}
-function setSpeed(v) {
-  audioEl.playbackRate = parseFloat(v);
-}
-function onSeekInput(e) {
-  if (!audioEl.duration) return;
-  audioEl.currentTime = (parseFloat(e.target.value) / 1000) * audioEl.duration;
-}
-
-audioEl.addEventListener('play', () => {
-  isPlaying = true;
-  document.getElementById('btnPlayIcon').textContent = '⏸';
-  highlightChapter(currentChapterIdx);
-});
-audioEl.addEventListener('pause', () => {
-  isPlaying = false;
-  document.getElementById('btnPlayIcon').textContent = '▶';
-  highlightChapter(currentChapterIdx);
-});
-audioEl.addEventListener('ended', () => {
-  saveProgress(book.key, currentChapterIdx, 0);
-  if (currentChapterIdx < book.chapters.length - 1) {
-    playChapter(currentChapterIdx + 1, { autoplay: true });
+  if (btn) {
+    btn.classList.add('done');
+    btn.textContent = '✓';
+    btn.title = 'Đã gửi yêu cầu tải xuống — nếu không thấy hộp thoại lưu file, bấm lại';
   }
-});
-audioEl.addEventListener('timeupdate', () => {
-  if (!audioEl.duration) return;
-  const pct = (audioEl.currentTime / audioEl.duration) * 1000;
-  const seekbar = document.getElementById('seekbar');
-  if (seekbar && !seekbar.matches(':active')) seekbar.value = pct;
-  document.getElementById('curTime').textContent = fmtTime(audioEl.currentTime);
-  document.getElementById('durTime').textContent = fmtTime(audioEl.duration);
+}
 
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => saveProgress(book.key, currentChapterIdx, audioEl.currentTime), 1500);
-});
-window.addEventListener('pagehide', () => {
-  if (currentChapterIdx >= 0) saveProgress(book.key, currentChapterIdx, audioEl.currentTime || 0);
-});
+async function downloadAllChapters() {
+  if (isDownloadingAll || !book || !book.chapters.length) return;
+  isDownloadingAll = true;
+  const btnAll = document.getElementById('btnDownloadAll');
+  const originalLabel = btnAll ? btnAll.textContent : '';
+  if (btnAll) { btnAll.disabled = true; }
 
-function fmtTime(s) {
-  if (!isFinite(s)) return '0:00';
-  s = Math.max(0, Math.floor(s));
-  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
-  const mm = h > 0 ? String(m).padStart(2, '0') : String(m);
-  const ss = String(sec).padStart(2, '0');
-  return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+  // Trình duyệt (đặc biệt Chrome) sẽ chặn/hỏi xác nhận nếu 1 trang tự động
+  // mở quá nhiều tải xuống liên tiếp — nên giãn cách mỗi lượt tải ~700ms
+  // và cho người dùng biết tiến trình ngay trên nút bấm.
+  for (let i = 0; i < book.chapters.length; i++) {
+    if (btnAll) btnAll.textContent = `⬇ Đang tải ${i + 1}/${book.chapters.length}…`;
+    downloadChapter(i);
+    await new Promise(r => setTimeout(r, 700));
+  }
+
+  if (btnAll) {
+    btnAll.textContent = '✓ Đã gửi yêu cầu tải tất cả';
+    setTimeout(() => { btnAll.textContent = originalLabel; btnAll.disabled = false; }, 3000);
+  }
+  isDownloadingAll = false;
+}
+
+function fmtBytes(bytes) {
+  if (!bytes || !isFinite(bytes)) return '';
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let i = 0, n = bytes;
+  while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
+  return `${n.toFixed(n < 10 && i > 0 ? 1 : 0)} ${units[i]}`;
 }
 
 function toggleDesc() {

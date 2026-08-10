@@ -164,11 +164,46 @@ function loadImgWithFallback(img, candidates, idx = 0) {
 }
 // Tương tự loadImgWithFallback nhưng cho thẻ <audio>/<video>: gán src lần
 // lượt từng candidate, nếu phát lỗi thì thử candidate kế tiếp.
-function loadMediaWithFallback(mediaEl, candidates, idx = 0, onReady = null) {
-  if (idx >= candidates.length) return;
-  mediaEl.onerror = () => loadMediaWithFallback(mediaEl, candidates, idx + 1, onReady);
+//
+// onAllFailed (tuỳ chọn): gọi khi ĐÃ thử hết mọi candidate mà vẫn không phát
+// được — ví dụ do Google Drive tạm chặn tải file (403) hoặc proxy Apps
+// Script trả về nội dung rỗng (một số trường hợp Drive áp giới hạn lượt
+// tải/xem cho 1 file cụ thể sẽ khiến mọi cách truy cập, kể cả qua proxy,
+// đều thất bại).
+//
+// Có 1 canh giữ (watchdog) riêng: một số trường hợp lỗi (như response 200
+// nhưng 0 byte từ proxy Apps Script) KHÔNG kích hoạt sự kiện "error" của thẻ
+// <audio>/<video> — trình duyệt cứ treo ở trạng thái "đang tải" mãi mãi mà
+// không báo lỗi cũng không phát được. Watchdog sẽ tự chuyển sang candidate
+// kế tiếp nếu sau một khoảng thời gian vẫn chưa có metadata (duration).
+function loadMediaWithFallback(mediaEl, candidates, idx = 0, onReady = null, onAllFailed = null, timeoutMs = 9000) {
+  // Dọn watchdog / handler của lần gọi trước để tránh trùng lặp.
+  if (mediaEl.__fallbackWatchdog) { clearTimeout(mediaEl.__fallbackWatchdog); mediaEl.__fallbackWatchdog = null; }
+
+  if (idx >= candidates.length) {
+    mediaEl.removeAttribute('src');
+    if (onAllFailed) onAllFailed();
+    return;
+  }
+
+  const tryNext = () => {
+    if (mediaEl.__fallbackWatchdog) { clearTimeout(mediaEl.__fallbackWatchdog); mediaEl.__fallbackWatchdog = null; }
+    loadMediaWithFallback(mediaEl, candidates, idx + 1, onReady, onAllFailed, timeoutMs);
+  };
+
+  mediaEl.onerror = tryNext;
+  mediaEl.onloadedmetadata = () => {
+    if (mediaEl.__fallbackWatchdog) { clearTimeout(mediaEl.__fallbackWatchdog); mediaEl.__fallbackWatchdog = null; }
+    // duration hợp lệ (không NaN/0/Infinity giả) mới coi là thành công thật.
+    if (!mediaEl.duration || !isFinite(mediaEl.duration)) { tryNext(); return; }
+    if (onReady) onReady();
+  };
   mediaEl.src = candidates[idx];
-  if (onReady) mediaEl.onloadedmetadata = onReady;
+  mediaEl.load();
+
+  // Watchdog: nếu quá timeoutMs mà chưa có metadata/lỗi → coi là thất bại
+  // (xử lý case proxy trả 200 rỗng khiến audio "treo" không lỗi không chạy).
+  mediaEl.__fallbackWatchdog = setTimeout(tryNext, timeoutMs);
 }
 
 // ── TẢI metadata_public.json (dùng chung cho cả 2 trang) ────────
