@@ -46,7 +46,7 @@
 //      the link" → Copy link.
 //   3. Thêm 1 dòng vào mảng AUDIOBOOK_LIBRARIES bên dưới.
 const AUDIOBOOK_LIBRARIES = [
-  { id: 'default', name: 'Sách nói mặc định', link: 'https://drive.google.com/drive/folders/1vIl6b_YowhFbSl-rEIxYI6CmVZShXepP' },
+  { id: 'default', name: 'Sách nói mặc định', link: 'https://drive.google.com/file/d/19rgedzNXtMP6pjaYqLtsURklOI7GGct3/view?usp=drivesdk' },
   // { id: 'lib2', name: 'Tên thư viện sách nói thứ 2', link: 'https://drive.google.com/file/d/.../view?usp=drive_link' },
 ];
 
