@@ -14,7 +14,7 @@ async function init() {
   libId = qs('lib') || getSelectedAudiobookLibraryId();
   const bookKey = qs('book');
   const lib = getAudiobookLibraryById(libId);
-  document.getElementById('backLink').href = `myaudiobooks.html`;
+  document.getElementById('backLink').href = `index.html`;
 
   if (!bookKey) {
     showError('Thiếu thông tin sách cần mở (thiếu tham số "book" trên đường dẫn).');
@@ -40,7 +40,7 @@ function showError(msg) {
     <div class="autoload-icon">⚠️</div>
     <h2>Không mở được sách</h2>
     <p>${esc(msg)}</p>
-    <a class="btn-folder retry" href="myaudiobooks.html">← Quay lại danh sách</a>`;
+    <a class="btn-folder retry" href="index.html">← Quay lại danh sách</a>`;
 }
 
 // ── RENDER ────────────────────────────────────────────────────
