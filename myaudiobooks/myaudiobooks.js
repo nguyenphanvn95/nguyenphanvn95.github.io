@@ -8,7 +8,7 @@ let currentFilter = 'all';
 let currentAuthor = null;
 let currentLang = null;
 let currentPublisher = null;
-let currentSort = 'title_asc';
+let currentSort = 'modified_desc';
 
 let currentLibraryId = getSelectedAudiobookLibraryId();
 
