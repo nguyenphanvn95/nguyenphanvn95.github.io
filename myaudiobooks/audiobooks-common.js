@@ -127,7 +127,7 @@ function driveAudioCandidates(idOrLink) {
   return candidates;
 }
 
-async function __fetchWithTimeout(url, ms = 12000) {
+async function __fetchWithTimeout(url, ms = 30000) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), ms);
   try {
