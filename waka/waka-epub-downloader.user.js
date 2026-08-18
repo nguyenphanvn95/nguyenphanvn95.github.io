@@ -9,11 +9,11 @@
 // @match        https://waka.vn/shop/*
 // @grant        none
 // @run-at       document-start
-// @require      https://nguyenphanvn95.github.io/waka/jszip.min.js
-// @require      https://nguyenphanvn95.github.io/waka/crypto-js.min.js
-// @require      https://nguyenphanvn95.github.io/waka/epub-decode.js
-// @require      https://nguyenphanvn95.github.io/waka/epub-builder.js
-// @require      https://nguyenphanvn95.github.io/waka/metadata-injector.js
+// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/jszip.min.js
+// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/crypto-js.min.js
+// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/epub-decode.js
+// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/epub-builder.js
+// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/metadata-injector.js
 // ==/UserScript==
 
 /**
@@ -22,7 +22,7 @@
  * 2. document-idle: load book-metadata (nút Copy metadata) + ebook-content / reader-content
  *    (nút ⬇ Tải EPUB cạnh Copy metadata, one-click download)
  *
- * Upload các file sau lên https://nguyenphanvn95.github.io/waka/ :
+ * Upload các file sau lên https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/ :
  *   jszip.min.js, crypto-js.min.js, epub-decode.js, epub-builder.js,
  *   metadata-injector.js, book-metadata.js, ebook-content.js,
  *   ebook-interceptor.js, reader-interceptor.js, reader-content.js
@@ -31,7 +31,7 @@
 (function () {
   'use strict';
 
-  const BASE = 'https://nguyenphanvn95.github.io/waka/';
+  const BASE = 'https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/';
   const isReader = /\/reader\//i.test(location.pathname);
   const isEbook  = /\/ebook\//i.test(location.pathname) || /\/shop\//i.test(location.pathname);
 
