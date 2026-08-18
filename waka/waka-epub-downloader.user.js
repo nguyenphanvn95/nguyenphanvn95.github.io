@@ -1,64 +1,74 @@
 // ==UserScript==
 // @name         Waka EPUB Downloader
 // @namespace    https://nguyenphanvn95.github.io/waka/
-// @version      1.1.0
-// @description  Tải EPUB 1-click + Copy metadata từ waka.vn/ebook/ và /reader/ (tách từ Waka Toolkit 5.3.17)
+// @version      1.2.0
+// @description  Tải EPUB 1-click + Copy metadata từ waka.vn/ebook/ và /reader/
 // @author       Adapted for Tampermonkey
 // @match        https://waka.vn/ebook/*
 // @match        https://waka.vn/reader/*
 // @match        https://waka.vn/shop/*
 // @grant        none
 // @run-at       document-start
-// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/jszip.min.js
-// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/crypto-js.min.js
-// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/epub-decode.js
-// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/epub-builder.js
-// @require      https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/metadata-injector.js
+// @require      https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/jszip.min.js
+// @require      https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/crypto-js.min.js
+// @require      https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/epub-decode.js
+// @require      https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/epub-builder.js
+// @require      https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/metadata-injector.js
 // ==/UserScript==
-
-/**
- * Luồng:
- * 1. document-start: inject interceptor (MAIN world) để bắt API / đọc __NUXT__
- * 2. document-idle: load book-metadata (nút Copy metadata) + ebook-content / reader-content
- *    (nút ⬇ Tải EPUB cạnh Copy metadata, one-click download)
- *
- * Upload các file sau lên https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/ :
- *   jszip.min.js, crypto-js.min.js, epub-decode.js, epub-builder.js,
- *   metadata-injector.js, book-metadata.js, ebook-content.js,
- *   ebook-interceptor.js, reader-interceptor.js, reader-content.js
- */
 
 (function () {
   'use strict';
 
-  const BASE = 'https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/refs/heads/main/waka/';
+  // jsDelivr (ưu tiên) — không bị raw.githubusercontent MIME/CORS
+  // Fallback: GitHub Pages
+  const BASES = [
+    'https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/',
+    'https://nguyenphanvn95.github.io/waka/',
+  ];
+
   const isReader = /\/reader\//i.test(location.pathname);
   const isEbook  = /\/ebook\//i.test(location.pathname) || /\/shop\//i.test(location.pathname);
 
-  function injectScriptUrl(url) {
+  function loadScript(url) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
       s.src = url;
       s.async = false;
-      s.onload = () => resolve();
-      s.onerror = () => reject(new Error('Failed to load ' + url));
+      s.onload = () => resolve(url);
+      s.onerror = () => reject(new Error('Failed: ' + url));
       (document.documentElement || document.head).appendChild(s);
     });
   }
 
-  // ── 1. Inject interceptor ngay (MAIN world) ─────────────────────────────
-  if (isEbook) {
-    injectScriptUrl(BASE + 'ebook-interceptor.js').catch(err => {
-      console.error('[Waka Userscript] ebook-interceptor load failed', err);
-    });
-  }
-  if (isReader) {
-    injectScriptUrl(BASE + 'reader-interceptor.js').catch(err => {
-      console.error('[Waka Userscript] reader-interceptor load failed', err);
-    });
+  async function loadFromBases(filename) {
+    let lastErr;
+    for (const base of BASES) {
+      try {
+        const url = base + filename;
+        await loadScript(url);
+        console.log('[Waka Userscript] loaded', url);
+        return;
+      } catch (e) {
+        lastErr = e;
+        console.warn('[Waka Userscript]', e.message);
+      }
+    }
+    throw lastErr || new Error('All bases failed for ' + filename);
   }
 
-  // ── 2. Sau DOM sẵn sàng: load content + metadata ────────────────────────
+  // ── 1. Interceptor ngay document-start ──────────────────────────────────
+  if (isEbook) {
+    loadFromBases('ebook-interceptor.js').catch(e =>
+      console.error('[Waka Userscript] ebook-interceptor', e)
+    );
+  }
+  if (isReader) {
+    loadFromBases('reader-interceptor.js').catch(e =>
+      console.error('[Waka Userscript] reader-interceptor', e)
+    );
+  }
+
+  // ── 2. Content + metadata sau DOM ready ─────────────────────────────────
   function onReady(fn) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', fn);
@@ -69,7 +79,7 @@
 
   onReady(async () => {
     if (typeof JSZip === 'undefined') {
-      console.error('[Waka Userscript] JSZip missing – kiểm tra @require / GitHub Pages');
+      console.error('[Waka Userscript] JSZip missing – @require chưa load. Kiểm tra jsDelivr/GitHub.');
     }
     if (typeof CryptoJS === 'undefined') {
       console.error('[Waka Userscript] CryptoJS missing');
@@ -77,21 +87,19 @@
 
     try {
       if (isEbook) {
-        // book-metadata trước (tạo nút Copy metadata)
-        await injectScriptUrl(BASE + 'book-metadata.js');
-        // ebook-content (chèn nút Tải EPUB cạnh metadata + one-click)
-        await injectScriptUrl(BASE + 'ebook-content.js');
+        await loadFromBases('book-metadata.js');
+        await loadFromBases('ebook-content.js');
         console.log('[Waka Userscript] ebook mode ready');
       }
       if (isReader) {
-        await injectScriptUrl(BASE + 'reader-content.js');
+        await loadFromBases('reader-content.js');
         console.log('[Waka Userscript] reader mode ready');
       }
     } catch (err) {
-      console.error('[Waka Userscript] content script load error', err);
+      console.error('[Waka Userscript] content load error', err);
       const t = document.createElement('div');
-      t.style.cssText = 'position:fixed;bottom:20px;right:16px;background:#3b1a1a;color:#fff;padding:12px 16px;border-radius:10px;z-index:999999;font-size:13px;max-width:320px;';
-      t.textContent = 'Waka Userscript: không tải được script từ GitHub Pages. Kiểm tra đã upload đủ file.';
+      t.style.cssText = 'position:fixed;bottom:20px;right:16px;background:#3b1a1a;color:#fff;padding:12px 16px;border-radius:10px;z-index:999999;font-size:13px;max-width:340px;line-height:1.4;';
+      t.innerHTML = 'Waka Userscript: không tải được script.<br>Kiểm tra file trên GitHub + đợi jsDelivr cache (~1–5 phút).';
       document.body.appendChild(t);
     }
   });
