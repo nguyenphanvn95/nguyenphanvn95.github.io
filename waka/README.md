@@ -1,53 +1,48 @@
-# Waka EPUB Downloader – Userscript
+# Waka EPUB Downloader – Userscript v1.1
 
-Tách phần tải EPUB từ Waka Toolkit 5.3.17 thành userscript cho Tampermonkey.
+Tách phần tải EPUB + Copy metadata từ Waka Toolkit 5.3.17.
 
-## Cách dùng
+## Giao diện (giống extension gốc)
 
-### 1. Upload thư viện lên GitHub Pages
+Trên trang `/ebook/` hoặc `/shop/`:
+- Nút **Copy metadata** / **Nhận diện metadata** (màu cam) ngay dưới tiêu đề sách
+- Nút **⬇ Tải EPUB** (màu tím) cạnh nút metadata — **1 click** lưu metadata + tải EPUB
 
-Tạo repository (hoặc dùng sẵn) `nguyenphanvn95.github.io` và thư mục `waka/`.
+Trên trang `/reader/`:
+- Nút tải EPUB góc màn hình
 
-Upload **4 file** sau vào `https://nguyenphanvn95.github.io/waka/` :
+## Bước 1: Upload lên GitHub Pages
 
-| File | Mô tả |
-|------|-------|
-| `jszip.min.js` | Thư viện tạo file ZIP/EPUB |
-| `crypto-js.min.js` | Giải mã nội dung XHTML mã hóa của Waka |
-| `epub-decode.js` | Module decode shared |
-| `epub-builder.js` | Module đóng gói EPUB |
+Upload **toàn bộ** các file sau vào `https://nguyenphanvn95.github.io/waka/` :
 
-(Các file này đã có sẵn trong thư mục này.)
+| File | Bắt buộc |
+|------|----------|
+| `jszip.min.js` | ✅ |
+| `crypto-js.min.js` | ✅ |
+| `epub-decode.js` | ✅ |
+| `epub-builder.js` | ✅ |
+| `metadata-injector.js` | ✅ |
+| `book-metadata.js` | ✅ |
+| `ebook-content.js` | ✅ |
+| `ebook-interceptor.js` | ✅ |
+| `reader-content.js` | ✅ |
+| `reader-interceptor.js` | ✅ |
 
-### 2. Cài userscript
+## Bước 2: Cài userscript
 
-1. Cài [Tampermonkey](https://www.tampermonkey.net/) (Chrome / Firefox / Edge…).
-2. Tạo script mới → dán toàn bộ nội dung file `waka-epub-downloader.user.js`.
-3. Lưu.
+1. Cài Tampermonkey
+2. Tạo script mới → dán nội dung `waka-epub-downloader.user.js`
+3. Lưu → bật script
 
-### 3. Sử dụng
+## Bước 3: Dùng
 
-- Vào trang **https://waka.vn/ebook/...** hoặc **https://waka.vn/reader/...**
-- Đợi nút **⬇ Tải EPUB** hiện ở góc dưới bên phải.
-- Nhấn nút → script sẽ tải, giải mã và đóng gói thành file `.epub` rồi tải về máy.
+1. Mở trang sách trên waka.vn/ebook/...
+2. Đợi 1–2 giây → thấy 2 nút dưới tiêu đề
+3. (Tuỳ chọn) bấm **Copy metadata** để xem/sửa rồi Lưu
+4. Bấm **⬇ Tải EPUB** → tự động lưu metadata + tải file .epub
 
-## Ghi chú
+## Lưu ý
 
-- Script chạy ở `document-start` để bắt request API sớm.
-- Không cần quyền đặc biệt (`@grant none`).
-- Metadata injector / book-metadata của bản extension gốc đã được lược bỏ để gọn.
-- Nếu `@require` không load được (404), kiểm tra lại đường dẫn GitHub Pages.
-
-## File trong thư mục này
-
-```
-waka-epub-downloader.user.js   ← userscript chính (cài vào Tampermonkey)
-jszip.min.js
-crypto-js.min.js
-epub-decode.js
-epub-builder.js
-ebook-interceptor.js           (tham khảo)
-reader-interceptor.js          (tham khảo)
-ebook-content.js               (tham khảo)
-reader-content.js              (tham khảo)
-```
+- Metadata được lưu trong `localStorage` (không cần extension background)
+- Nếu nút không hiện: mở DevTools (F12) → Console, xem lỗi load script (thường do GitHub Pages chưa cập nhật hoặc sai tên file)
+- `@grant none` → script chạy cùng context với trang
