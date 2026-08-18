@@ -1,48 +1,51 @@
-# Waka EPUB Downloader – Userscript v1.1
+# Waka EPUB Downloader v1.2
 
-Tách phần tải EPUB + Copy metadata từ Waka Toolkit 5.3.17.
+## Lỗi raw.githubusercontent.com
 
-## Giao diện (giống extension gốc)
+**Không dùng** `raw.githubusercontent.com/...` làm nguồn `<script src>`.
+Trình duyệt hay fail vì MIME `text/plain`.
 
-Trên trang `/ebook/` hoặc `/shop/`:
-- Nút **Copy metadata** / **Nhận diện metadata** (màu cam) ngay dưới tiêu đề sách
-- Nút **⬇ Tải EPUB** (màu tím) cạnh nút metadata — **1 click** lưu metadata + tải EPUB
+Userscript v1.2 dùng:
+1. **jsDelivr** (ưu tiên): `https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/waka/`
+2. Fallback: `https://nguyenphanvn95.github.io/waka/`
 
-Trên trang `/reader/`:
-- Nút tải EPUB góc màn hình
+## Upload file
 
-## Bước 1: Upload lên GitHub Pages
+Đẩy các file JS vào repo `nguyenphanvn95/nguyenphanvn95.github.io`, thư mục `waka/`:
 
-Upload **toàn bộ** các file sau vào `https://nguyenphanvn95.github.io/waka/` :
+- jszip.min.js, crypto-js.min.js
+- epub-decode.js, epub-builder.js, metadata-injector.js
+- book-metadata.js, ebook-content.js, ebook-interceptor.js
+- reader-content.js, reader-interceptor.js
 
-| File | Bắt buộc |
-|------|----------|
-| `jszip.min.js` | ✅ |
-| `crypto-js.min.js` | ✅ |
-| `epub-decode.js` | ✅ |
-| `epub-builder.js` | ✅ |
-| `metadata-injector.js` | ✅ |
-| `book-metadata.js` | ✅ |
-| `ebook-content.js` | ✅ |
-| `ebook-interceptor.js` | ✅ |
-| `reader-content.js` | ✅ |
-| `reader-interceptor.js` | ✅ |
+Sau khi push, đợi 1–5 phút để jsDelivr cập nhật cache.
 
-## Bước 2: Cài userscript
+## Cài userscript
 
-1. Cài Tampermonkey
-2. Tạo script mới → dán nội dung `waka-epub-downloader.user.js`
-3. Lưu → bật script
+Dán `waka-epub-downloader.user.js` vào Tampermonkey → Save.
 
-## Bước 3: Dùng
+Trên trang ebook sẽ thấy nút **Copy metadata** + **⬇ Tải EPUB** dưới tiêu đề sách.
 
-1. Mở trang sách trên waka.vn/ebook/...
-2. Đợi 1–2 giây → thấy 2 nút dưới tiêu đề
-3. (Tuỳ chọn) bấm **Copy metadata** để xem/sửa rồi Lưu
-4. Bấm **⬇ Tải EPUB** → tự động lưu metadata + tải file .epub
+---
 
-## Lưu ý
+# Waka Hiệu Sói (Chapter) Downloader
 
-- Metadata được lưu trong `localStorage` (không cần extension background)
-- Nếu nút không hiện: mở DevTools (F12) → Console, xem lỗi load script (thường do GitHub Pages chưa cập nhật hoặc sai tên file)
-- `@grant none` → script chạy cùng context với trang
+Userscript riêng cho `https://waka.vn/hieu-soi/*`.
+
+## Tính năng
+
+- Nút **⬇ EPUB** trên **từng chương** trong danh sách
+- Nút **Tải full / tất cả chương** (gộp thành 1 file EPUB)
+
+## File cần upload thêm lên `waka/`
+
+| File | Mô tả |
+|------|--------|
+| `oak-interceptor.js` | Bắt API getDownloadItemOakWeb + danh sách chương |
+| `oak-content.js` | UI nút từng chương + tải full |
+
+(Các lib jszip, crypto-js, epub-decode, epub-builder dùng chung với userscript ebook.)
+
+## Cài
+
+Dán `waka-hieu-soi-downloader.user.js` vào Tampermonkey → Save.
