@@ -66,11 +66,38 @@ const WakaMetaInjector = (() => {
 
   async function fetchCoverBuffer(url) {
     if (!url) return null;
+
+    // 1) fetch trực tiếp
     try {
       const resp = await fetch(url, { credentials: 'omit', cache: 'no-store' });
-      if (!resp.ok) return null;
-      return await resp.arrayBuffer();
-    } catch { return null; }
+      if (resp.ok) return await resp.arrayBuffer();
+    } catch (_) { /* CORS / network */ }
+
+    // 2) Fallback: lấy từ <img> đã load trên trang (tránh CORS)
+    try {
+      const imgs = Array.from(document.querySelectorAll('img'));
+      const match = imgs.find((img) => {
+        const src = img.currentSrc || img.src || img.getAttribute('data-src') || '';
+        return src && (src === url || src.includes(url.split('?')[0]) || url.includes(src.split('?')[0]));
+      }) || imgs.find((img) => {
+        const src = (img.currentSrc || img.src || '').toLowerCase();
+        return src.includes('cover') || src.includes('vegacdn') || src.includes('image-shop') || src.includes('img.book');
+      });
+      if (match && match.naturalWidth > 0) {
+        const canvas = document.createElement('canvas');
+        canvas.width = match.naturalWidth;
+        canvas.height = match.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(match, 0, 0);
+        const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.92));
+        if (blob) return await blob.arrayBuffer();
+      }
+    } catch (e) {
+      console.warn('[WakaMetaInjector] cover canvas fallback failed', e);
+    }
+
+    // 3) Thử fetch lại với mode cors / no-cors không đọc được body → bỏ
+    return null;
   }
 
   // ── Tìm ảnh bìa hiện có trong EPUB ──────────────────────────────────────
@@ -277,7 +304,7 @@ const WakaMetaInjector = (() => {
     return newBlob;
   }
 
-  return { injectIntoBlob, hasMeta, getMeta, clearMeta };
+  return { injectIntoBlob, hasMeta, getMeta, clearMeta, saveMeta };
 })();
 
 window.WakaMetaInjector = WakaMetaInjector;
