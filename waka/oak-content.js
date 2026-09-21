@@ -820,6 +820,158 @@
   let _fullBusy = false;
   let _bookId = null;
 
+  function decodeHtmlEntities(s) {
+    if (!s) return '';
+    const ta = document.createElement('textarea');
+    ta.innerHTML = String(s);
+    return ta.value;
+  }
+
+  function cleanDescription(text) {
+    return String(text || '')
+      .replace(/\s*Rút gọn\s*$/gi, '')
+      .replace(/\s*\.{0,3}\s*Xem thêm\s*$/gi, '')
+      .replace(/\s*Đọc thêm\s*$/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 4000);
+  }
+
+  /** Mở rộng khối mô tả bị thu gọn ("Xem thêm") trước khi đọc text */
+  function expandDescriptionIfNeeded() {
+    const candidates = [
+      document.querySelector('.check-des .read-more'),
+      document.querySelector('.read-more'),
+      document.querySelector('[class*="read-more"]'),
+      ...Array.from(document.querySelectorAll('button, a, span, div')).filter((el) => {
+        const t = (el.textContent || '').trim();
+        return /^(xem thêm|\.{0,3}\s*xem thêm|đọc thêm|mở rộng)$/i.test(t);
+      }),
+    ].filter(Boolean);
+    for (const btn of candidates) {
+      try {
+        if (btn.offsetParent !== null || btn.getClientRects().length) {
+          btn.click();
+        }
+      } catch (_) {}
+    }
+  }
+
+  /** Lấy mô tả từ __NUXT__ / window state nếu có */
+  function extractDescriptionFromNuxt() {
+    try {
+      const nuxt = window.__NUXT__ || window.__NUXT_DATA__ || null;
+      if (!nuxt) return '';
+      const candidates = [];
+      const push = (o) => {
+        if (o && typeof o === 'object') candidates.push(o);
+      };
+      if (Array.isArray(nuxt.data)) {
+        for (const d of nuxt.data) {
+          if (!d || typeof d !== 'object') continue;
+          push(d.ebookInfo);
+          push(d.bookInfo);
+          push(d.book);
+          push(d.detail);
+          push(d.ebook);
+          push(d.productDetail);
+          push(d.oakInfo);
+          push(d.audioBook);
+          push(d.data?.ebookInfo);
+          push(d.data?.bookInfo);
+          push(d.data?.book);
+          push(d.props?.productDetail);
+          push(d.props?.ebookInfo);
+        }
+      }
+      const walk = (obj, depth = 0) => {
+        if (!obj || typeof obj !== 'object' || depth > 5) return;
+        if (
+          obj.title &&
+          (obj.description || obj.desc || obj.summary || obj.introduce || obj.content_intro)
+        ) {
+          candidates.push(obj);
+        }
+        for (const k of Object.keys(obj)) {
+          const v = obj[k];
+          if (v && typeof v === 'object') walk(v, depth + 1);
+        }
+      };
+      if (nuxt.state) walk(nuxt.state);
+      walk(nuxt);
+
+      for (const c of candidates) {
+        const raw =
+          c.description || c.desc || c.summary || c.introduce || c.content_intro || c.comments || '';
+        const text = cleanDescription(decodeHtmlEntities(raw));
+        if (text.length > 20) return text;
+      }
+    } catch (_) {}
+    return '';
+  }
+
+  function extractDescriptionFromDom() {
+    expandDescriptionIfNeeded();
+
+    const selectors = [
+      '.check-des',
+      '.desc-custom',
+      '.book-description',
+      '.description',
+      '[class*="description"]',
+      '[class*="desc-"]',
+      '.text-16.text-white-50.text-justify',
+      '.text-white-50.text-justify',
+      '[class*="gioi-thieu"]',
+      '[class*="introduce"]',
+      'article .content',
+      'article p',
+    ];
+
+    for (const sel of selectors) {
+      try {
+        const el = document.querySelector(sel);
+        if (!el) continue;
+        // Bỏ qua phần quá ngắn hoặc là menu/CTA
+        let text = (el.innerText || el.textContent || '').trim();
+        text = cleanDescription(text);
+        if (text.length >= 40) return text;
+      } catch (_) {}
+    }
+
+    // Label "Mô tả" / "Giới thiệu"
+    const labels = Array.from(document.querySelectorAll('div, span, p, h2, h3, h4, dt, strong, b'));
+    for (const el of labels) {
+      const t = (el.textContent || '').trim();
+      if (!/^(mô tả|giới thiệu|nội dung|tóm tắt)(\s*sách)?\s*:?$/i.test(t)) continue;
+      // Lấy khối nội dung kế bên / cha
+      const parent = el.closest('div, section, article') || el.parentElement;
+      let block = el.nextElementSibling;
+      if (!block && parent) {
+        // text còn lại trong parent sau label
+        const full = (parent.innerText || '').replace(t, '').trim();
+        const cleaned = cleanDescription(full);
+        if (cleaned.length >= 40) return cleaned;
+      }
+      while (block) {
+        const cleaned = cleanDescription(block.innerText || block.textContent || '');
+        if (cleaned.length >= 40) return cleaned;
+        block = block.nextElementSibling;
+      }
+    }
+
+    // meta tags
+    const og =
+      document.querySelector('meta[property="og:description"]') ||
+      document.querySelector('meta[name="description"]');
+    if (og && og.content) {
+      const cleaned = cleanDescription(og.content);
+      if (cleaned.length >= 20) return cleaned;
+    }
+
+    return '';
+  }
+
   function extractPageMeta() {
     const title = getBookTitle();
     let author = '';
@@ -833,37 +985,49 @@
     for (let i = 0; i < labels.length; i++) {
       const t = (labels[i].textContent || '').trim();
       if (t === 'Tác giả' || t === 'Tác giả:') {
-        const next = labels[i].parentElement?.querySelector('a, .text-f2f, [class*="text-"]') ||
+        const next =
+          labels[i].parentElement?.querySelector('a, .text-f2f, [class*="text-"]') ||
           labels[i].nextElementSibling;
         const a = (next?.textContent || '').trim();
         if (a && a !== 'Tác giả') author = a;
       }
-      if (t === 'Nhà xuất bản' || t === 'NXB') {
+      if (t === 'Nhà xuất bản' || t === 'NXB' || t === 'Nhà xuất bản:') {
         const next = labels[i].nextElementSibling || labels[i].parentElement;
-        const a = (next?.textContent || '').replace(/Nhà xuất bản/g, '').trim();
-        if (a) publisher = a;
+        const a = (next?.textContent || '')
+          .replace(/Nhà xuất bản\s*:?/gi, '')
+          .replace(/\bNXB\b/gi, '')
+          .trim();
+        if (a && a.length < 120) publisher = a;
       }
     }
-    // description
-    const descEl = document.querySelector('[class*="description"], .desc-custom, article p');
-    if (descEl) description = (descEl.innerText || '').trim().slice(0, 2000);
+
+    // description: NUXT → DOM → og
+    description = extractDescriptionFromNuxt() || extractDescriptionFromDom();
 
     // cover
     const img =
       document.querySelector('img[src*="retail_book"]') ||
       document.querySelector('img[src*="vegacdn"]') ||
-      document.querySelector('img[alt*="' + title.slice(0, 10) + '"]');
-    if (img) cover = img.src || '';
+      document.querySelector('img[src*="img.book"]') ||
+      document.querySelector('img[src*="image-shop"]') ||
+      document.querySelector('img[alt*="' + (title || '').slice(0, 10) + '"]');
+    if (img) cover = img.currentSrc || img.src || img.getAttribute('data-src') || '';
 
-    // genre
-    const genreLabel = Array.from(document.querySelectorAll('div, span')).find(
-      (el) => (el.textContent || '').trim() === 'Thể loại'
-    );
+    // genre / tags
+    const genreLabel = Array.from(document.querySelectorAll('div, span')).find((el) => {
+      const t = (el.textContent || '').trim();
+      return t === 'Thể loại' || t === 'Thể loại:';
+    });
     if (genreLabel) {
       const g = (genreLabel.parentElement?.textContent || '')
-        .replace('Thể loại', '')
+        .replace(/Thể loại\s*:?/gi, '')
         .trim();
-      if (g) tags = g.split(/[,|]/).map((s) => s.trim()).filter(Boolean);
+      if (g && g.length < 120) {
+        tags = g
+          .split(/[,|•;]/)
+          .map((s) => s.trim())
+          .filter((s) => s && s.length < 40);
+      }
     }
 
     return {
@@ -871,6 +1035,7 @@
       authors: author ? [author] : [],
       publisher,
       description,
+      comments: description, // tương thích WakaMetaInjector / EPUB dc:description
       cover,
       tags,
       language: 'vi',
