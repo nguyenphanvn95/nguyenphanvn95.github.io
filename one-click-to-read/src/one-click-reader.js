@@ -477,12 +477,15 @@
     return /(?:^|\/)toc\.ncx$/i.test(String(href || ''));
   }
 
-  async function openBlobInReader(blob, filename, job) {
+  async function openBlobInReader(blob, filename, job, ui) {
     if (job) {
       job.throwIfCancelled();
       job.commit(); // qua diem nay khong huy duoc nua (tab Reader sap mo)
     }
-    await WakaHandoff.openBlob(blob, filename);
+    // Neu trinh duyet se chan popup (het user activation) -> hien nut de nguoi dung bam mo Reader
+    await WakaHandoff.openBlob(blob, filename, {
+      askUser: ({ open, dismiss }) => ui && ui.showAction('Mở trong Reader', open, dismiss),
+    });
   }
 
   async function buildEpubFromOpf(opfUrl, titleHint, job) {
@@ -686,6 +689,7 @@
       +   '<div class="waka-ocr-ov-cover"><img alt="" draggable="false"></div>'
       +   '<div class="waka-ocr-ov-status" role="status" aria-live="polite"></div>'
       +   '<div class="waka-ocr-ov-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>'
+      +   '<button type="button" class="waka-ocr-ov-action" hidden></button>'
       +   '<button type="button" class="waka-ocr-ov-cancel">Hủy bỏ</button>'
       + '</div>';
 
@@ -696,6 +700,7 @@
     const barEl = root.querySelector('.waka-ocr-ov-bar');
     const fillEl = barEl.querySelector('i');
     const cancelBtn = root.querySelector('.waka-ocr-ov-cancel');
+    const actionBtn = root.querySelector('.waka-ocr-ov-action');
 
     if (coverUrl) {
       coverImg.src = coverUrl;
@@ -750,6 +755,24 @@
       },
       onCancel(fn) { cancelHandler = fn; },
       lockCancel() { cancelBtn.disabled = true; },
+      // Hiện nút hành động (cần cử chỉ người dùng để trình duyệt cho phép mở tab Reader)
+      showAction(label, onClick, onDismiss) {
+        if (closed) return;
+        ui.setStatus('EPUB đã sẵn sàng — bấm nút để mở trong Reader');
+        ui.setProgress(97);
+        actionBtn.textContent = label;
+        actionBtn.hidden = false;
+        actionBtn.onclick = (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          actionBtn.hidden = true;
+          onClick();            // gọi ĐỒNG BỘ trong sự kiện click để window.open hợp lệ
+        };
+        cancelBtn.disabled = false;
+        cancelBtn.textContent = 'Đóng';
+        cancelHandler = () => { try { onDismiss && onDismiss(); } catch {} };
+        try { actionBtn.focus({ preventScroll: true }); } catch {}
+      },
       showError(message) {
         if (closed) return;
         root.classList.add('is-error');
@@ -843,7 +866,7 @@
       if (info.meta?.title) epub.filename = safeName(info.meta.title) + '.epub';
 
       ui.step('Đang mở file epub...', 97);
-      await openBlobInReader(epub.blob, epub.filename, job);
+      await openBlobInReader(epub.blob, epub.filename, job, ui);
 
       ui.step('Đã mở', 100);
       setTimeout(() => ui.close(), 450);
@@ -1041,6 +1064,26 @@
       .waka-ocr-ov-cancel:active { background: rgba(255,255,255,.22); }
       .waka-ocr-ov-cancel:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
       .waka-ocr-ov-cancel:disabled { opacity: .45; cursor: default; background: transparent; }
+
+      .waka-ocr-ov-action {
+        -webkit-appearance: none;
+        appearance: none;
+        width: var(--waka-ocr-w);
+        height: 46px;
+        margin: 0 0 12px;
+        padding: 0 16px;
+        border: 0;
+        border-radius: 999px;
+        background: #fff;
+        color: #0a635e;
+        font: 700 14px/1 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        letter-spacing: .04em;
+        cursor: pointer;
+        box-shadow: 0 6px 18px rgba(0,0,0,.28);
+      }
+      .waka-ocr-ov-action[hidden] { display: none !important; }
+      .waka-ocr-ov-action:hover { background: #eafaf8; }
+      .waka-ocr-ov-action:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
       /* Mobile: phủ toàn màn hình màu xanh ngọc */
       .waka-ocr-ov--mobile {

@@ -94,15 +94,30 @@
     });
   }
 
-  function openTab(url) {
+  // Mở bằng window.open → tab Reader có window.opener → EPUB đi qua postMessage (kênh opener),
+  // KHÔNG cần userscript chạy trên trang Reader. Chỉ thành công khi còn "user activation".
+  function openViaWindow(url) {
     let w = null;
     try { w = window.open(url, '_blank'); } catch (e) { /* bị chặn */ }
     if (w) { log('Mở Reader bằng window.open (kênh opener)'); return true; }
-    // Đã qua vài giây tải sách nên popup thường bị chặn → dùng API của userscript manager.
-    try { gm.openInTab(url, { active: true, insert: true, setParent: true }); log('Popup bị chặn → mở Reader bằng GM_openInTab (kênh GM)'); return true; } catch (e) { return false; }
+    return false;
   }
 
-  function openBlob(blob, filename) {
+  // Mở bằng API của userscript manager → tab không có opener → phải nhờ userscript chạy trên trang Reader (kênh GM).
+  function openViaGM(url) {
+    try { gm.openInTab(url, { active: true, insert: true, setParent: true }); log('Mở Reader bằng GM_openInTab (kênh GM)'); return true; } catch (e) { return false; }
+  }
+
+  function hasActivation() {
+    try { return navigator.userActivation ? !!navigator.userActivation.isActive : true; } catch (e) { return true; }
+  }
+
+  /**
+   * hooks.askUser({ open, dismiss }) — (tuỳ chọn) được gọi khi trình duyệt sẽ chặn popup (đã hết user
+   * activation sau khi tải sách). UI hiển thị nút; khi người dùng bấm nút thì gọi open() TRONG sự kiện
+   * click để window.open được phép → tab Reader có opener → không phụ thuộc userscript trên Reader.
+   */
+  function openBlob(blob, filename, hooks) {
     return new Promise((resolve, reject) => {
       if (!(blob instanceof Blob)) return reject(new Error('Không có dữ liệu EPUB'));
       const token = PREFIX + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
@@ -114,11 +129,34 @@
       } catch (e) { /* không có kênh GM: chỉ còn kênh opener */ }
       entry.timer = setTimeout(() => drop(token), PENDING_TTL_MS);
 
-      if (!openTab(READER_URL + '?importToken=' + encodeURIComponent(token))) {
-        drop(token);
-        return reject(new Error('Trình duyệt chặn cửa sổ mới — hãy cho phép popup cho waka.vn'));
+      const url = READER_URL + '?importToken=' + encodeURIComponent(token);
+      const fail = () => { drop(token); reject(new Error('Không mở được tab Reader — hãy cho phép popup cho waka.vn')); };
+
+      // 1) Còn user activation (sách nhỏ, tải nhanh) → mở thẳng bằng window.open
+      if (hasActivation() && openViaWindow(url)) return resolve();
+
+      // 2) Hết activation → xin người dùng bấm 1 nút để có cử chỉ hợp lệ (đáng tin cậy nhất)
+      if (hooks && typeof hooks.askUser === 'function') {
+        log('Hết user activation → chờ người dùng bấm nút "Mở trong Reader"');
+        hooks.askUser({
+          open() {
+            if (openViaWindow(url)) return resolve();
+            if (openViaGM(url)) return resolve();       // popup vẫn bị chặn → thử kênh GM
+            fail();
+          },
+          dismiss() {
+            drop(token);
+            const err = new Error('Đã đóng');
+            err.isCancel = true;
+            reject(err);
+          },
+        });
+        return;
       }
-      resolve();
+
+      // 3) Không có UI để hỏi → kênh GM như trước
+      if (openViaGM(url)) return resolve();
+      fail();
     });
   }
 
