@@ -243,7 +243,7 @@ img { max-width: 100%; }`;
    * @param {Map<string, string|ArrayBuffer|Uint8Array>|Array<[string, any]>|Object<string, any>} files
    * @returns {Promise<Blob>}
    */
-  async function buildFromFiles(bookTitle, opfText, files) {
+  async function buildFromFiles(bookTitle, opfText, files, onProgress) {
     if (!opfText || !String(opfText).trim()) {
       throw new Error('content.opf is missing');
     }
@@ -296,6 +296,9 @@ img { max-width: 100%; }`;
       mimeType: 'application/epub+zip',
       compression: 'DEFLATE',
       compressionOptions: { level: 6 },
+    }, (meta) => {
+      // [userscript] báo tiến trình nén (0..100) cho lớp phủ; bỏ qua nếu không truyền onProgress
+      if (typeof onProgress === 'function') { try { onProgress(meta.percent); } catch (e) { /* bỏ qua */ } }
     });
   }
 

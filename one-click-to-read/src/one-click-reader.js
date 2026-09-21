@@ -241,14 +241,31 @@
   }
 
   // Metadata giu trong bo nho (WakaMetaInjector.setMeta) thay vi chrome.storage qua background.js
+  // Lỗi/treo khi nhúng metadata không được chặn việc đọc sách → giữ nguyên EPUB gốc và đi tiếp.
   async function injectMetadataIntoEpub(blob, meta) {
     if (!meta || !meta.title || !window.WakaMetaInjector?.injectIntoBlob) return blob;
     try {
       WakaMetaInjector.setMeta(meta);
-      return await WakaMetaInjector.injectIntoBlob(blob);
+      return await withTimeout(WakaMetaInjector.injectIntoBlob(blob), INJECT_TIMEOUT_MS, 'Nhúng metadata quá thời gian');
+    } catch (err) {
+      if (err?.isCancel) throw err;
+      console.warn('[Waka One Click Reader] Bỏ qua nhúng metadata:', err);
+      return blob;
     } finally {
       try { await WakaMetaInjector.clearMeta(); } catch {}
     }
+  }
+
+  const BUILD_TIMEOUT_MS = 120000;    // dựng EPUB (JSZip) tối đa 2 phút
+  const INJECT_TIMEOUT_MS = 60000;    // nhúng metadata + tải ảnh bìa tối đa 1 phút
+
+  // Promise không bao giờ treo vô hạn: quá hạn thì báo lỗi rõ ràng thay vì đứng yên ở một bước.
+  function withTimeout(promise, ms, message) {
+    let timer = 0;
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(message || 'Hết thời gian chờ')), ms);
+    });
+    return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
   }
 
   function getCookie(name) {
@@ -542,7 +559,14 @@
 
     job?.report('Đang dựng EPUB...', 82);
     const title = WakaEpubDecode.extractTitleFromOpf(opfText, titleHint || 'waka-ebook');
-    const blob = await EPUBBuilder.buildFromFiles(title, opfText, files);
+    const blob = await withTimeout(
+      EPUBBuilder.buildFromFiles(title, opfText, files, (pct) => {
+        // 82% -> 87%: tiến trình nén ZIP
+        job?.report('Đang dựng EPUB... ' + Math.round(pct) + '%', 82 + (pct / 100) * 5);
+      }),
+      BUILD_TIMEOUT_MS,
+      'Dựng EPUB quá thời gian (JSZip không phản hồi)'
+    );
     job?.throwIfCancelled();
     return {
       blob,
