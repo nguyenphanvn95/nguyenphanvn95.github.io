@@ -221,14 +221,17 @@ const WakaMetaInjector = (() => {
   }
 
   // ── Main: inject metadata vào EPUB blob ──────────────────────────────────
-  async function injectIntoBlob(epubBlob) {
+  // titleOverride: dùng tiêu đề riêng (vd tiêu đề từng phần) thay cho meta.title đã lưu,
+  // các trường khác (tác giả, ảnh bìa, mô tả...) vẫn lấy từ metadata đã lưu chung. (6.9.2 / userscript 1.3)
+  async function injectIntoBlob(epubBlob, titleOverride) {
     const meta = await getMeta();
     if (!meta || !meta.title) {
       console.log('[WakaMetaInjector] Không có metadata, bỏ qua.');
       return epubBlob;
     }
+    const effectiveMeta = titleOverride ? Object.assign({}, meta, { title: titleOverride }) : meta;
 
-    console.log('[WakaMetaInjector] Nhúng metadata:', meta.title);
+    console.log('[WakaMetaInjector] Nhúng metadata:', effectiveMeta.title);
     const zip = await JSZip.loadAsync(epubBlob);
 
     // Tìm OPF
@@ -290,7 +293,7 @@ const WakaMetaInjector = (() => {
     zip.remove('wdl-cover.jpg');
 
     // Patch OPF
-    const patchedOpf = patchOpf(opfText, meta, coverInfo);
+    const patchedOpf = patchOpf(opfText, effectiveMeta, coverInfo);
     zip.file(opfPath, patchedOpf);
 
     const newBlob = await zip.generateAsync({

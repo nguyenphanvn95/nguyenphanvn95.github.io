@@ -10,6 +10,7 @@
 
   const API_BASE = 'beta-api.waka.vn';
   const DOWNLOAD_FIELDS = ['account', 'item_id', 'content_type', 'id', 'os'];
+  const RELATED_FIELDS = ['account'];
 
   let state = {
     item_id: null,
@@ -102,6 +103,11 @@
 
   async function makeSecureCode(params, key) {
     const parts = DOWNLOAD_FIELDS.map(f => encodeParam(params[f] ?? ''));
+    return hmacSha1Base64(parts.join(' '), key);
+  }
+
+  async function makeRelatedSecureCode(params, key) {
+    const parts = RELATED_FIELDS.map(f => encodeParam(params[f] ?? ''));
     return hmacSha1Base64(parts.join(' '), key);
   }
 
@@ -250,7 +256,7 @@
           const r = extractDownloadUrl(text);
           if (r?.url) {
             state.download_url = r.url;
-            emit('__waka_ebook_ready__', { url: r.url });
+            emit('__waka_ebook_ready__', { url: r.url, item_id: p.item_id || p.content_id || state.item_id || null });
           }
         }).catch(() => {});
       }
@@ -271,7 +277,7 @@
           const r = extractDownloadUrl(xhr.responseText);
           if (r?.url) {
             state.download_url = r.url;
-            emit('__waka_ebook_ready__', { url: r.url });
+            emit('__waka_ebook_ready__', { url: r.url, item_id: p.item_id || p.content_id || state.item_id || null });
           }
         }
       } catch {}
@@ -286,6 +292,60 @@
     const acc = getAccountFromState();
     if (acc) state.account = acc;
     emit('__waka_params__', { ...state });
+  });
+
+  window.addEventListener('__waka_request_related_books__', async (e) => {
+    const detail = e.detail || {};
+    const bookId = detail.book_id || detail.bookId || extractItemIdFromPage() || state.item_id;
+    if (!bookId) {
+      emit('__waka_related_books__', { books: [], error: 'missing book_id' });
+      return;
+    }
+
+    let deviceId = detail.id || state.deviceId;
+    if (!deviceId) {
+      deviceId = getOrCreateDeviceId();
+      state.deviceId = deviceId;
+    }
+
+    state.tid = getTid() || state.tid;
+    const account = getAccountFromState() || detail.account || state.account || 'guest';
+    const attempts = [];
+    if (state.tid && account && account !== 'guest') attempts.push({ account, key: state.tid, label: 'login+tid' });
+    if (account && account !== 'guest') attempts.push({ account, key: md5(account), label: 'login+md5(account)' });
+    attempts.push({ account: 'guest', key: md5('guest'), label: 'guest' });
+
+    let lastError = null;
+    for (const a of attempts) {
+      try {
+        const params = { account: a.account, book_id: String(bookId), id: deviceId, os: 'wap' };
+        const secure_code = await makeRelatedSecureCode(params, a.key);
+        const qs = new URLSearchParams({
+          os: 'wap',
+          id: deviceId,
+          account: a.account,
+          book_id: String(bookId),
+          secure_code,
+        });
+        const url = `https://${API_BASE}/getRelatedBooks?${qs}`;
+        const resp = await origFetch(url, { credentials: 'omit', headers: { accept: 'application/json, text/plain, */*' } });
+        const json = await resp.json().catch(() => null);
+        if (json && (json.code === 0 || json.code === 200) && json.data) {
+          const list = Array.isArray(json.data.list_chapter) ? json.data.list_chapter : [];
+          emit('__waka_related_books__', {
+            book_id: String(bookId),
+            books: list,
+            data: json.data,
+            account: a.account,
+          });
+          return;
+        }
+        lastError = json?.message || ('HTTP ' + resp.status);
+      } catch (err) {
+        lastError = err && err.message ? err.message : String(err);
+      }
+    }
+    emit('__waka_related_books__', { book_id: String(bookId), books: [], error: lastError || 'getRelatedBooks failed' });
   });
 
   function getOrCreateDeviceId() {
@@ -583,7 +643,7 @@
               }
               state.download_url = result.url;
               state.item_id = iid;
-              emit('__waka_ebook_ready__', { url: result.url });
+              emit('__waka_ebook_ready__', { url: result.url, item_id: iid });
               return;
             }
             lastError = result?.error || 'unknown';

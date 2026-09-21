@@ -22,9 +22,6 @@
 
   function logDownload(title, filename) {
     console.log("[Waka Userscript] Downloaded:", title, filename);
-  },
-      });
-    } catch (e) {}
   }
 
   window.addEventListener('__waka_epub_found__', (e) => {

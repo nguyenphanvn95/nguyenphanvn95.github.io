@@ -1,0 +1,5 @@
+{
+  "name": "waka-epub-downloader",
+  "version": "1.3.0",
+  "note": "Userscript so khớp trường này với @version để chọn nguồn CDN không bị cache bản cũ."
+}
