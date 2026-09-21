@@ -88,17 +88,32 @@
     } catch (err) { /* Reader đã đóng / chưa sẵn sàng */ }
   }
 
+  // Ảnh bìa cho lớp phủ của Reader: gửi URL (Reader thử tải trực tiếp) và/hoặc dataURL (tải bằng GM nên không bị hotlink)
+  function sendCover(p) {
+    if (!p || !p.target || (!p.cover && !p.coverData)) return;
+    try {
+      p.target.postMessage(
+        { __wakaReaderHandoff: 1, type: 'cover', token: p.token, cover: p.cover || '', coverData: p.coverData || '' },
+        APP_ORIGIN
+      );
+    } catch (err) { /* Reader đã đóng / chưa sẵn sàng */ }
+  }
+
   function initWakaSide() {
     window.addEventListener('message', (e) => {
       if (e.origin !== APP_ORIGIN) return;
       const d = e.data;
-      if (!d || d.__wakaReaderHandoff !== 1 || d.type !== 'ready') return;
+      if (!d || d.__wakaReaderHandoff !== 1) return;
       const token = String(d.token || '');
       const p = pending.get(token);
-      if (!p || !e.source) return;
+      if (!p) return;
+      // Người dùng bấm "Hủy bỏ" trên lớp phủ của tab Reader
+      if (d.type === 'cancel') { log('Người dùng hủy từ tab Reader'); try { p.onCancel && p.onCancel(); } catch (err) { /* bỏ qua */ } return; }
+      if (d.type !== 'ready' || !e.source) return;
       if (!p.blob) {                      // phiên mở sớm: Reader đã sẵn sàng nhưng sách chưa dựng xong
         p.target = e.source;
         log('Reader (mở sớm) đã sẵn sàng, chờ dựng EPUB xong');
+        sendCover(p);
         sendState(p);
         return;
       }
@@ -148,6 +163,7 @@
     const entry = {
       token, blob: null, filename: 'waka.epub', win: w, target: null,
       text: 'Đang chuẩn bị...', pct: 0, error: '', listener: null, timer: null,
+      cover: '', coverData: '', onCancel: null,
     };
     pending.set(token, entry);
     try { entry.listener = gm.addValueChangeListener('oc:req:' + token, () => serveViaGM(token)); } catch (e) { /* chỉ kênh opener */ }
@@ -155,6 +171,9 @@
 
     let lastKey = '';
     return {
+      setCover(url) { entry.cover = String(url || ''); sendCover(entry); },
+      setCoverData(dataUrl) { entry.coverData = String(dataUrl || ''); sendCover(entry); },
+      onCancel(fn) { entry.onCancel = fn; },
       progress(text, pct) {
         entry.text = String(text || '');
         entry.pct = Math.round(Number(pct) || 0);

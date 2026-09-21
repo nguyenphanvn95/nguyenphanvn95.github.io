@@ -27,7 +27,7 @@
   if (w.__wakaPlatformShim) return;
   w.__wakaPlatformShim = true;
 
-  var VERSION = "1.0.3";
+  var VERSION = "1.0.4";
   var script = document.currentScript;
   // File nằm ở <gốc>/src/platform-shim.js → gốc = thư mục cha.
   var ROOT = new URL("../", script && script.src ? script.src : location.href).href;
@@ -278,54 +278,135 @@
     var ALLOWED_ORIGINS = ["https://waka.vn", "https://www.waka.vn", location.origin];
     var TIMEOUT_MS = 120000;      // hết thời gian chờ khi KHÔNG có hoạt động (mỗi tin "progress" từ waka.vn làm mới bộ đếm)
 
-    /* Lớp phủ "Đang chờ sách từ Waka..." — chỉ khi tab được waka.vn mở sớm (token oc_…, có window.opener) */
+    /* Lớp phủ tiến trình giống trang waka.vn (ảnh bìa + dòng trạng thái + thanh tiến trình + nút Hủy bỏ).
+       Chỉ hiện khi tab được waka.vn mở sớm (token oc_…, có window.opener). Dữ liệu do waka.vn gửi sang
+       bằng postMessage: {type:"cover"|"progress"|"error"|"epub"}; nút Hủy bỏ gửi {type:"cancel"} lại. */
     var Overlay = (function () {
-      var el = null, statusEl = null, barEl = null, btn = null, removeTimer = 0;
-      var params = new URLSearchParams(location.search);
-      var token = params.get("importToken") || "";
+      var token = new URLSearchParams(location.search).get("importToken") || "";
       var enabled = token.indexOf("oc_") === 0 && !!w.opener;
+      var el = null, bgEl, coverBox, coverImg, statusEl, barEl, fillEl, cancelBtn;
+      var progress = 0, removeTimer = 0, cancelExtra = null, locked = false, failed = false;
 
+      var CSS = [
+        ".wkr-ov,.wkr-ov *,.wkr-ov *::before,.wkr-ov *::after{box-sizing:border-box}",
+        ".wkr-ov{--wkr-w:190px;position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;color:#fff;",
+        "font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;opacity:0;transition:opacity .18s ease;overscroll-behavior:contain;touch-action:none;-webkit-tap-highlight-color:transparent}",
+        ".wkr-ov.is-in{opacity:1}",
+        ".wkr-ov-bg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;pointer-events:none}",
+        ".wkr-ov-panel{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}",
+        ".wkr-ov-cover{display:none;width:var(--wkr-w);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.12);box-shadow:0 12px 34px rgba(0,0,0,.38)}",
+        ".wkr-ov-cover img{display:block;width:100%;height:auto;max-height:56vh;object-fit:cover;user-select:none;-webkit-user-drag:none}",
+        ".wkr-ov-status{width:min(100%,340px);min-height:22px;margin:22px 0 14px;font-size:15px;line-height:22px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 2px rgba(0,0,0,.35)}",
+        ".wkr-ov.is-error .wkr-ov-status{color:#ffd9d2}",
+        ".wkr-ov-bar{width:var(--wkr-w);height:4px;margin-bottom:26px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.3)}",
+        ".wkr-ov-bar>i{display:block;width:0;height:100%;border-radius:999px;background:#fff;transition:width .28s ease}",
+        ".wkr-ov.is-error .wkr-ov-bar>i{background:#ffb4a8}",
+        ".wkr-ov-cancel{-webkit-appearance:none;appearance:none;width:var(--wkr-w);height:44px;margin:0;padding:0 16px;border:1.5px solid rgba(255,255,255,.78);border-radius:999px;background:transparent;color:#fff;",
+        "font:500 14px/1 system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s ease,border-color .15s ease,opacity .15s ease}",
+        ".wkr-ov-cancel:hover{background:rgba(255,255,255,.12);border-color:#fff}",
+        ".wkr-ov-cancel:active{background:rgba(255,255,255,.22)}",
+        ".wkr-ov-cancel:focus-visible{outline:2px solid #fff;outline-offset:3px}",
+        ".wkr-ov-cancel:disabled{opacity:.45;cursor:default;background:transparent}",
+        ".wkr-ov--mobile{--wkr-w:min(54vw,210px);background:linear-gradient(165deg,#0f8f86 0%,#0a635e 55%,#06423f 100%)}",
+        ".wkr-ov--mobile .wkr-ov-bg{display:none}",
+        ".wkr-ov--mobile .wkr-ov-panel{width:100%}",
+        ".wkr-ov--desktop{background:rgba(10,18,18,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}",
+        ".wkr-ov--desktop .wkr-ov-bg{opacity:.38;filter:blur(30px) saturate(1.15);transform:scale(1.2)}",
+        ".wkr-ov--desktop .wkr-ov-panel{width:420px;max-width:calc(100vw - 32px);padding:40px 32px 34px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(28,38,38,.5);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 26px 70px rgba(0,0,0,.5)}",
+      ].join("\n");
+
+      function isMobile() {
+        return w.innerWidth <= 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent || "") ||
+          !!(w.matchMedia && w.matchMedia("(max-width: 768px)").matches);
+      }
+      function onKey(e) {
+        if (e.key !== "Escape" || !el) return;
+        e.preventDefault(); e.stopPropagation();
+        if (!cancelBtn.disabled) cancelBtn.click();
+      }
+      function remove() {
+        clearTimeout(removeTimer);
+        document.removeEventListener("keydown", onKey, true);
+        var node = el; el = null;
+        if (node) { node.classList.remove("is-in"); setTimeout(function () { if (node.parentNode) node.parentNode.removeChild(node); }, 200); }
+      }
       function build() {
         if (el || !enabled) return;
-        var root = document.documentElement || document.body;
+        var root = document.documentElement;
         if (!root) return setTimeout(build, 0);
+        if (!document.getElementById("wkr-ov-style")) {
+          var st = document.createElement("style");
+          st.id = "wkr-ov-style"; st.textContent = CSS;
+          root.appendChild(st);
+        }
         el = document.createElement("div");
-        el.setAttribute("role", "status");
-        el.style.cssText = "position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;" +
-          "background:rgba(10,18,18,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);" +
-          "font:500 15px/1.4 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#fff;";
-        el.innerHTML = '<div style="width:min(86vw,360px);text-align:center">' +
-          '<div style="font-size:18px;font-weight:700;margin-bottom:14px">Đang mở sách từ Waka</div>' +
-          '<div data-st style="min-height:22px;margin-bottom:14px;opacity:.9">Đang chờ sách từ Waka...</div>' +
-          '<div style="height:6px;border-radius:99px;background:rgba(255,255,255,.22);overflow:hidden"><i data-bar style="display:block;height:100%;width:0;background:#2dd4bf;transition:width .25s ease"></i></div>' +
-          '<button data-close type="button" style="display:none;margin-top:18px;height:40px;padding:0 22px;border-radius:99px;border:1.5px solid rgba(255,255,255,.8);background:transparent;color:#fff;font:inherit;cursor:pointer">Đóng</button>' +
-          '</div>';
-        statusEl = el.querySelector("[data-st]");
-        barEl = el.querySelector("[data-bar]");
-        btn = el.querySelector("[data-close]");
-        btn.addEventListener("click", function () { remove(); });
+        el.className = "wkr-ov " + (isMobile() ? "wkr-ov--mobile" : "wkr-ov--desktop");
+        el.setAttribute("role", "dialog");
+        el.setAttribute("aria-modal", "true");
+        el.setAttribute("aria-label", "Đang mở sách");
+        el.innerHTML = '<div class="wkr-ov-bg"></div><div class="wkr-ov-panel">' +
+          '<div class="wkr-ov-cover"><img alt="" draggable="false"></div>' +
+          '<div class="wkr-ov-status" role="status" aria-live="polite"></div>' +
+          '<div class="wkr-ov-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>' +
+          '<button type="button" class="wkr-ov-cancel">Hủy bỏ</button></div>';
+        bgEl = el.querySelector(".wkr-ov-bg");
+        coverBox = el.querySelector(".wkr-ov-cover");
+        coverImg = coverBox.querySelector("img");
+        statusEl = el.querySelector(".wkr-ov-status");
+        barEl = el.querySelector(".wkr-ov-bar");
+        fillEl = barEl.querySelector("i");
+        cancelBtn = el.querySelector(".wkr-ov-cancel");
+        statusEl.textContent = "Đang chờ sách từ Waka...";
+        coverImg.addEventListener("load", function () { coverBox.style.display = "block"; });
+        coverImg.addEventListener("error", function () { coverBox.style.display = "none"; });
+        cancelBtn.addEventListener("click", function (e) {
+          e.preventDefault(); e.stopPropagation();
+          if (failed) return remove();                     // lỗi: nút "Đóng"
+          try { if (w.opener) w.opener.postMessage({ __wakaReaderHandoff: 1, type: "cancel", token: token }, "*"); } catch (err) { /* opener đã đóng */ }
+          if (cancelExtra) { try { cancelExtra(); } catch (err) { /* bỏ qua */ } }
+          try { w.close(); } catch (err) { /* bỏ qua */ }
+          removeTimer = setTimeout(remove, 300);           // nếu tab không tự đóng được thì chỉ gỡ lớp phủ
+        });
+        el.addEventListener("wheel", function (e) { e.preventDefault(); }, { passive: false });
+        el.addEventListener("touchmove", function (e) { e.preventDefault(); }, { passive: false });
+        document.addEventListener("keydown", onKey, true);
         root.appendChild(el);
+        requestAnimationFrame(function () { if (el) el.classList.add("is-in"); });
       }
-      function remove() { clearTimeout(removeTimer); if (el && el.parentNode) el.parentNode.removeChild(el); el = null; }
+      function setImage(src) {
+        if (!src || !el) return;
+        if (coverImg.getAttribute("src") !== src) { coverImg.referrerPolicy = "no-referrer"; coverImg.src = src; }
+        bgEl.style.backgroundImage = 'url("' + String(src).replace(/["\\\n\r]/g, encodeURIComponent) + '")';
+      }
       return {
         enabled: enabled,
         show: build,
+        onCancel: function (fn) { cancelExtra = fn; },
+        // Ảnh bìa: dataURL (tải bằng GM, chắc chắn hiển thị) ưu tiên hơn URL gốc (có thể bị hotlink)
+        setCover: function (d) { if (!enabled) return; build(); setImage((d && (d.coverData || d.cover)) || ""); },
         update: function (text, pct) {
           if (!enabled) return; build(); if (!el) return;
-          if (text) statusEl.textContent = text;
-          if (typeof pct === "number") barEl.style.width = Math.max(0, Math.min(100, pct)) + "%";
+          if (text) { statusEl.textContent = text; statusEl.title = text; }
+          progress = Math.max(progress, Math.min(100, Number(pct) || 0));   // chỉ chạy tới, không lùi
+          fillEl.style.width = progress + "%";
+          barEl.setAttribute("aria-valuenow", String(Math.round(progress)));
         },
+        lock: function () { locked = true; if (cancelBtn) cancelBtn.disabled = true; },
         done: function () {
           if (!el) return;
           statusEl.textContent = "Đang nhập sách vào Reader...";
-          barEl.style.width = "100%";
+          progress = 100; fillEl.style.width = "100%";
+          cancelBtn.disabled = true;
           removeTimer = setTimeout(remove, 1500);
         },
         error: function (msg) {
           if (!enabled) return; build(); if (!el) return;
-          statusEl.textContent = "Lỗi: " + String(msg || "Không rõ nguyên nhân");
-          barEl.style.background = "#f87171";
-          btn.style.display = "inline-block";
+          failed = true;
+          el.classList.add("is-error");
+          statusEl.textContent = "Lỗi: " + String(msg || "Không rõ nguyên nhân").slice(0, 120);
+          cancelBtn.disabled = false;
+          cancelBtn.textContent = "Đóng";
         },
       };
     })();
@@ -367,10 +448,12 @@
           if (!d || d.__wakaReaderHandoff !== 1 || d.token !== token) return;
           if (ALLOWED_ORIGINS.indexOf(e.origin) < 0) return;
           // Tiến trình / lỗi do waka.vn báo trong lúc còn đang tải + dựng EPUB
+          if (d.type === "cover") { Overlay.setCover(d); return; }
           if (d.type === "progress") { Overlay.update(d.text, d.pct); armTimer(); return; }
           if (d.type === "error") { finish({ success: false, error: d.message || "Waka báo lỗi" }); return; }
           if (d.type !== "epub") return;
           console.info("[Waka Reader] consume: nhận EPUB qua kênh opener");
+          Overlay.lock();
           toDataUrl(d).then(
             function (dataUrl) { finish({ success: true, filename: d.filename || "waka.epub", dataUrl: dataUrl }); },
             function (err) { finish({ success: false, error: err.message }); }
@@ -378,6 +461,8 @@
         }
         w.addEventListener("message", onMsg);
         armTimer();
+        // Người dùng bấm "Hủy bỏ" trên lớp phủ: dừng chờ, không báo lỗi cho ứng dụng (tab sắp đóng)
+        Overlay.onCancel(function () { done = true; clearTimeout(timer); w.removeEventListener("message", onMsg); });
 
         // Kênh 1: cửa sổ đã mở reader (window.opener) — nhanh, không qua bộ nhớ GM.
         try {

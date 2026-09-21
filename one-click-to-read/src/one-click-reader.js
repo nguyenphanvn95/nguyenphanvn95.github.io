@@ -477,6 +477,23 @@
     return /(?:^|\/)toc\.ncx$/i.test(String(href || ''));
   }
 
+  // Tải ảnh bìa bằng GM_xmlhttpRequest -> dataURL để tab Reader (khác origin) hiển thị được, không bị hotlink/CORS
+  async function coverToDataUrl(url) {
+    if (!url || /^data:/i.test(url)) return url || '';
+    try {
+      const resp = await WakaGM.fetch(url);
+      if (!resp.ok) return '';
+      const blob = await resp.blob();
+      if (!blob.size || blob.size > 2 * 1024 * 1024) return '';
+      return await new Promise((resolve) => {
+        const fr = new FileReader();
+        fr.onload = () => resolve(String(fr.result || ''));
+        fr.onerror = () => resolve('');
+        fr.readAsDataURL(blob);
+      });
+    } catch { return ''; }
+  }
+
   async function openBlobInReader(blob, filename, job, ui, session) {
     if (job) {
       job.throwIfCancelled();
@@ -812,21 +829,27 @@
     const coverUrl = data.img?.currentSrc || data.img?.src || '';
     const ui = createProgressOverlay({ coverUrl });
     job.report = (text, pct) => { ui.step(text, pct); if (session) session.progress(text, pct); };
+    if (session && coverUrl) {
+      session.setCover(coverUrl);                                     // Reader thử tải trực tiếp
+      coverToDataUrl(coverUrl).then((d) => { if (d && !job.cancelled) session.setCoverData(d); });
+    }
     job.onCancel(() => { if (session) session.close(); });   // huy -> dong tab Reader dang cho
     job.onCommit = () => ui.lockCancel();
-    ui.onCancel(() => {
+    const doCancel = () => {
       if (!job.cancel()) return;   // job.cancel() dọn cache + file đang dở
       if (activeJob === job) activeJob = null;
       ui.close();
       setButtonState(btn, 'Đọc ngay', false);
-    });
+    };
+    ui.onCancel(doCancel);
+    if (session) session.onCancel(doCancel);   // nút "Hủy bỏ" trên lớp phủ của tab Reader
     // Hủy -> xóa metadata tạm đã đẩy sang background (nếu có)
     job.onCancel(() => {
       try { Promise.resolve(window.WakaMetaInjector?.clearMeta?.()).catch(() => {}); } catch {}
     });
 
     setButtonState(btn, 'Dang lay ID...', true);
-    ui.step('Đang lấy link OPF...', 3);
+    job.report('Đang lấy link OPF...', 3);
 
     try {
       // Trang sách (metadata) tải song song với việc lấy link OPF; chỉ chờ khi cần
