@@ -4,7 +4,7 @@
  * Mobile icon-only mode for compact buttons on phones.
  * Continuous listen (nghe liên tục) – same stream source as download, optional attach to site player.
  * v7.2: Professional Voiz-like mini-player panel (cover, layout, polish).
- * v7.3: Picture-in-Picture (PiP) for continuous player – canvas cover + Media Session + auto-PiP.
+ * v7.3.1: Picture-in-Picture (PiP) – professional cover background (desktop-like) + robust Edge image load + sharper canvas.
  */
 (function () {
   'use strict';
@@ -931,8 +931,9 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
   function ensurePipElements() {
     if (!pipCanvas) {
       pipCanvas = document.createElement('canvas');
-      pipCanvas.width = 512;
-      pipCanvas.height = 512;
+      // Higher resolution for sharper PiP on desktop & Edge
+      pipCanvas.width = 640;
+      pipCanvas.height = 640;
       pipCanvas.style.display = 'none';
     }
     if (!pipVideo) {
@@ -940,8 +941,11 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
       pipVideo.id = 'voiz-toolkit-pip-video';
       pipVideo.muted = true;
       pipVideo.playsInline = true;
+      pipVideo.setAttribute('playsinline', '');
+      pipVideo.setAttribute('webkit-playsinline', '');
       pipVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;bottom:0;right:0;z-index:-1';
-      pipVideo.srcObject = pipCanvas.captureStream(15);
+      // 24 fps feels smoother in Edge / Chromium PiP
+      pipVideo.srcObject = pipCanvas.captureStream(24);
       document.body.appendChild(pipVideo);
       pipVideo.addEventListener('leavepictureinpicture', () => {
         pipActive = false;
@@ -956,47 +960,121 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     const ctx = canvas.getContext('2d');
     if (!ctx) return Promise.resolve();
 
+    const W = canvas.width;
+    const H = canvas.height;
+
+    function roundRectPath(ctx, x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
     return new Promise((resolve) => {
       const finish = (img) => {
-        ctx.fillStyle = '#111827';
-        ctx.fillRect(0, 0, 512, 512);
+        // Base dark background
+        ctx.fillStyle = '#0f0f14';
+        ctx.fillRect(0, 0, W, H);
+
         if (img) {
-          // Cover full-bleed, slightly darkened
-          const scale = Math.max(512 / img.width, 512 / img.height);
-          const w = img.width * scale;
-          const h = img.height * scale;
-          const x = (512 - w) / 2;
-          const y = (512 - h) / 2;
-          ctx.drawImage(img, x, y, w, h);
-          ctx.fillStyle = 'rgba(0,0,0,0.35)';
-          ctx.fillRect(0, 0, 512, 512);
+          // 1) Full-bleed cover as background (slightly zoomed)
+          const scaleBg = Math.max(W / img.width, H / img.height) * 1.12;
+          const bw = img.width * scaleBg;
+          const bh = img.height * scaleBg;
+          const bx = (W - bw) / 2;
+          const by = (H - bh) / 2;
+          ctx.drawImage(img, bx, by, bw, bh);
+
+          // Soft dark gradient overlay so text remains readable
+          const grad = ctx.createLinearGradient(0, 0, 0, H);
+          grad.addColorStop(0, 'rgba(0,0,0,0.28)');
+          grad.addColorStop(0.42, 'rgba(0,0,0,0.12)');
+          grad.addColorStop(1, 'rgba(0,0,0,0.78)');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, W, H);
+
+          // 2) Main cover card (centered, rounded, with shadow)
+          const size = Math.round(W * 0.44);
+          const cx = (W - size) / 2;
+          const cy = Math.round(H * 0.09);
+          const radius = Math.round(size * 0.08);
+
+          // Shadow
+          ctx.save();
+          ctx.shadowColor = 'rgba(0,0,0,0.55)';
+          ctx.shadowBlur = 32;
+          ctx.shadowOffsetY = 12;
+          roundRectPath(ctx, cx, cy, size, size, radius);
+          ctx.fillStyle = '#111';
+          ctx.fill();
+          ctx.restore();
+
+          // Clip & draw sharp cover
+          ctx.save();
+          roundRectPath(ctx, cx, cy, size, size, radius);
+          ctx.clip();
+          const scale = Math.max(size / img.width, size / img.height);
+          const iw = img.width * scale;
+          const ih = img.height * scale;
+          ctx.drawImage(img, cx + (size - iw) / 2, cy + (size - ih) / 2, iw, ih);
+          ctx.restore();
+
+          // Subtle border
+          ctx.strokeStyle = 'rgba(255,255,255,0.14)';
+          ctx.lineWidth = 2;
+          roundRectPath(ctx, cx, cy, size, size, radius);
+          ctx.stroke();
         } else {
-          // Gradient fallback
-          const g = ctx.createLinearGradient(0, 0, 512, 512);
-          g.addColorStop(0, '#4c1d95');
+          // Professional gradient fallback
+          const g = ctx.createLinearGradient(0, 0, W, H);
+          g.addColorStop(0, '#1e1b4b');
+          g.addColorStop(0.55, '#4c1d95');
           g.addColorStop(1, '#7c3aed');
           ctx.fillStyle = g;
-          ctx.fillRect(0, 0, 512, 512);
-          ctx.font = 'bold 96px system-ui,sans-serif';
+          ctx.fillRect(0, 0, W, H);
+
+          // Soft vignette
+          const vg = ctx.createRadialGradient(W / 2, H * 0.38, 20, W / 2, H * 0.38, W * 0.55);
+          vg.addColorStop(0, 'rgba(0,0,0,0)');
+          vg.addColorStop(1, 'rgba(0,0,0,0.35)');
+          ctx.fillStyle = vg;
+          ctx.fillRect(0, 0, W, H);
+
+          ctx.font = 'bold 110px system-ui, -apple-system, sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillStyle = '#fff';
-          ctx.fillText('🎧', 256, 220);
+          ctx.fillStyle = 'rgba(255,255,255,0.92)';
+          ctx.fillText('🎧', W / 2, H * 0.34);
         }
-        // Title + chapter text at bottom
-        ctx.fillStyle = 'rgba(0,0,0,0.55)';
-        ctx.fillRect(0, 380, 512, 132);
-        ctx.fillStyle = '#f9fafb';
-        ctx.font = 'bold 28px system-ui,sans-serif';
+
+        // 3) Title + chapter
+        const t = (title || 'Voiz').slice(0, 42);
+        const ch = chapter ? String(chapter).slice(0, 46) : '';
+
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
-        const t = (title || 'Voiz').slice(0, 36);
-        ctx.fillText(t, 256, 400);
-        if (chapter) {
+
+        // Title
+        ctx.fillStyle = '#f8fafc';
+        ctx.font = 'bold 28px system-ui, -apple-system, "Segoe UI", sans-serif';
+        ctx.fillText(t, W / 2, img ? H * 0.58 : H * 0.52);
+
+        // Chapter
+        if (ch) {
           ctx.fillStyle = '#c4b5fd';
-          ctx.font = '22px system-ui,sans-serif';
-          ctx.fillText(String(chapter).slice(0, 40), 256, 444);
+          ctx.font = '21px system-ui, -apple-system, "Segoe UI", sans-serif';
+          ctx.fillText(ch, W / 2, img ? H * 0.64 : H * 0.58);
         }
+
+        // Brand
+        ctx.fillStyle = 'rgba(255,255,255,0.32)';
+        ctx.font = '15px system-ui, -apple-system, sans-serif';
+        ctx.fillText('Voiz FM', W / 2, H - 36);
+
         resolve();
       };
 
@@ -1004,11 +1082,33 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
         finish(null);
         return;
       }
-      const image = new Image();
-      image.crossOrigin = 'anonymous';
-      image.onload = () => finish(image);
-      image.onerror = () => finish(null);
-      image.src = coverUrl;
+
+      // Robust image loading: try CORS first, then without (helps Edge / some CDNs)
+      const tryLoad = (useCors) => {
+        const image = new Image();
+        if (useCors) {
+          try { image.crossOrigin = 'anonymous'; } catch (e) {}
+        }
+        let settled = false;
+        const done = (imgOrNull) => {
+          if (settled) return;
+          settled = true;
+          finish(imgOrNull);
+        };
+        image.onload = () => done(image);
+        image.onerror = () => {
+          if (useCors) {
+            tryLoad(false);
+          } else {
+            done(null);
+          }
+        };
+        // Cache-bust lightly to avoid stale opaque responses
+        const sep = coverUrl.includes('?') ? '&' : '?';
+        image.src = coverUrl + sep + 'voizpip=1';
+      };
+
+      tryLoad(true);
     });
   }
 

@@ -44,6 +44,172 @@
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
   }
 
+  // ── Nhúng metadata + cover vào EPUB blob ───────────────────────────────
+  function xmlEscMeta(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  async function fetchCoverBuffer(url) {
+    if (!url) return null;
+    try {
+      const resp = await fetch(url, { credentials: 'omit', cache: 'no-store' });
+      if (resp.ok) {
+        return {
+          buf: await resp.arrayBuffer(),
+          mime: resp.headers.get('content-type') || 'image/jpeg',
+        };
+      }
+    } catch (_) {}
+    // Fallback: canvas từ <img> trên trang (tránh CORS)
+    try {
+      const imgs = Array.from(document.querySelectorAll('img'));
+      const match =
+        imgs.find((img) => {
+          const src = img.currentSrc || img.src || '';
+          return src && (src === url || src.split('?')[0] === url.split('?')[0]);
+        }) ||
+        imgs.find((img) => {
+          const src = (img.currentSrc || img.src || '').toLowerCase();
+          return (
+            src.includes('retail_book') ||
+            src.includes('vegacdn') ||
+            src.includes('img.book') ||
+            src.includes('cover')
+          );
+        });
+      if (match && match.naturalWidth > 0) {
+        const canvas = document.createElement('canvas');
+        canvas.width = match.naturalWidth;
+        canvas.height = match.naturalHeight;
+        canvas.getContext('2d').drawImage(match, 0, 0);
+        const blob = await new Promise((r) => canvas.toBlob(r, 'image/jpeg', 0.92));
+        if (blob) return { buf: await blob.arrayBuffer(), mime: 'image/jpeg' };
+      }
+    } catch (e) {
+      console.warn('[Waka Oak] cover canvas fallback', e);
+    }
+    return null;
+  }
+
+  async function injectMetadataIntoBlob(epubBlob, meta) {
+    if (!epubBlob || !meta || !meta.title) return epubBlob;
+    if (!window.JSZip) {
+      console.warn('[Waka Oak] JSZip missing, skip metadata inject');
+      return epubBlob;
+    }
+    try {
+      // Ưu tiên WakaMetaInjector nếu có
+      if (window.WakaMetaInjector && typeof WakaMetaInjector.injectIntoBlob === 'function') {
+        try {
+          if (typeof WakaMetaInjector.saveMeta === 'function') {
+            await WakaMetaInjector.saveMeta(meta);
+          }
+          const out = await WakaMetaInjector.injectIntoBlob(epubBlob);
+          if (out && out.size) return out;
+        } catch (e) {
+          console.warn('[Waka Oak] WakaMetaInjector failed, fallback inline', e);
+        }
+      }
+
+      const zip = await JSZip.loadAsync(epubBlob);
+      let opfPath = null;
+      try {
+        const containerXml = await zip.file('META-INF/container.xml').async('text');
+        const m = containerXml.match(/full-path="([^"]+)"/);
+        if (m) opfPath = m[1];
+      } catch {}
+      if (!opfPath) {
+        zip.forEach((p) => {
+          if (!opfPath && p.endsWith('.opf')) opfPath = p;
+        });
+      }
+      if (!opfPath) return epubBlob;
+
+      const opfFile = zip.file(opfPath);
+      if (!opfFile) return epubBlob;
+      let opfText = await opfFile.async('text');
+      const opfDir = opfPath.includes('/')
+        ? opfPath.slice(0, opfPath.lastIndexOf('/') + 1)
+        : '';
+
+      let coverInfo = null;
+      const coverRes = meta.cover ? await fetchCoverBuffer(meta.cover) : null;
+      if (coverRes && coverRes.buf) {
+        const mime = /png/i.test(coverRes.mime)
+          ? 'image/png'
+          : /webp/i.test(coverRes.mime)
+            ? 'image/webp'
+            : 'image/jpeg';
+        const ext = mime === 'image/png' ? 'png' : mime === 'image/webp' ? 'webp' : 'jpg';
+        const href = `images/cover.${ext}`;
+        zip.file(opfDir + href, coverRes.buf);
+        coverInfo = { itemId: 'cover-image', href, mimeType: mime };
+      }
+
+      const dc = [];
+      dc.push(`    <dc:identifier id="uid">waka-oak-${Date.now()}</dc:identifier>`);
+      dc.push(`    <dc:title>${xmlEscMeta(meta.title)}</dc:title>`);
+      dc.push(`    <dc:language>${xmlEscMeta(meta.language || 'vi')}</dc:language>`);
+      (meta.authors || []).forEach((a) =>
+        dc.push(`    <dc:creator>${xmlEscMeta(a)}</dc:creator>`)
+      );
+      if (meta.publisher) dc.push(`    <dc:publisher>${xmlEscMeta(meta.publisher)}</dc:publisher>`);
+      if (meta.description || meta.comments) {
+        dc.push(
+          `    <dc:description>${xmlEscMeta(meta.description || meta.comments)}</dc:description>`
+        );
+      }
+      (meta.tags || []).forEach((t) =>
+        dc.push(`    <dc:subject>${xmlEscMeta(t)}</dc:subject>`)
+      );
+      if (meta.source_url) dc.push(`    <dc:source>${xmlEscMeta(meta.source_url)}</dc:source>`);
+      dc.push(
+        `    <meta property="dcterms:modified">${new Date().toISOString().slice(0, 19)}Z</meta>`
+      );
+      if (coverInfo) {
+        dc.push(`    <meta name="cover" content="${xmlEscMeta(coverInfo.itemId)}"/>`);
+      }
+      const metadataBlock =
+        `<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n${dc.join('\n')}\n  </metadata>`;
+      opfText = opfText.replace(/<metadata[\s\S]*?<\/metadata>/i, metadataBlock);
+
+      if (coverInfo) {
+        const newItem =
+          `<item id="${xmlEscMeta(coverInfo.itemId)}" href="${xmlEscMeta(coverInfo.href)}" ` +
+          `media-type="${xmlEscMeta(coverInfo.mimeType)}" properties="cover-image"/>`;
+        opfText = opfText.replace(
+          /<item\s[^>]*properties=["'][^"']*cover-image[^"']*["'][^>]*\/?\s*>/gi,
+          ''
+        );
+        opfText = opfText.replace(/<item\s[^>]*id=["']cover-image["'][^>]*\/?\s*>/gi, '');
+        if (/<manifest>/i.test(opfText)) {
+          opfText = opfText.replace(/<manifest>/i, `<manifest>\n    ${newItem}`);
+        }
+      }
+
+      zip.file(opfPath, opfText);
+      const out = await zip.generateAsync({
+        type: 'blob',
+        mimeType: 'application/epub+zip',
+        compression: 'DEFLATE',
+        compressionOptions: { level: 6 },
+      });
+      console.log(
+        '[Waka Oak] Đã nhúng metadata' + (coverInfo ? ' + cover' : '') + ' →',
+        meta.title,
+        (out.size / 1024).toFixed(1) + ' KB'
+      );
+      return out;
+    } catch (e) {
+      console.warn('[Waka Oak] injectMetadataIntoBlob error', e);
+      return epubBlob;
+    }
+  }
+
   function safeName(s) {
     return String(s || 'waka-chapter')
       .replace(/[<>:"/\\|?*\x00-\x1f]/g, '')
@@ -205,10 +371,31 @@
       : title;
 
     let blob = await EPUBBuilder.buildFromFiles(displayTitle, opfText, files);
+
+    // Nhúng metadata + cover từ trang hieu-soi
+    try {
+      const pageMeta = typeof extractPageMeta === 'function' ? extractPageMeta() : null;
+      if (pageMeta && pageMeta.title) {
+        // Giữ title chương trong OPF, nhưng thêm author/cover/publisher từ sách
+        const metaForInject = {
+          ...pageMeta,
+          title: displayTitle,
+        };
+        blob = await injectMetadataIntoBlob(blob, metaForInject);
+      }
+    } catch (e) {
+      console.warn('[Waka Oak] inject chapter meta', e);
+    }
+
     const fname = `${safeName(displayTitle)}.epub`;
     downloadBlob(blob, fname);
 
-    console.log("[Waka Oak] Downloaded");
+    try {
+      chrome.runtime.sendMessage({
+        action: 'addDownloadHistory',
+        entry: { title: displayTitle, filename: fname, type: 'epub' },
+      });
+    } catch {}
 
     return fname;
   }
@@ -217,13 +404,28 @@
     const resp = await fetchWithFallback(url);
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const contentType = resp.headers.get('content-type') || '';
-    const blob = await resp.blob();
+    let blob = await resp.blob();
     let ext = 'epub';
     if (contentType.includes('pdf') || /\.pdf(\?|$)/i.test(url)) ext = 'pdf';
     const bookTitle = getBookTitle();
     const displayTitle = chapterTitle
       ? `${bookTitle} - ${chapterTitle}`
       : bookTitle;
+
+    if (ext === 'epub') {
+      try {
+        const pageMeta = typeof extractPageMeta === 'function' ? extractPageMeta() : null;
+        if (pageMeta && pageMeta.title) {
+          blob = await injectMetadataIntoBlob(blob, {
+            ...pageMeta,
+            title: displayTitle,
+          });
+        }
+      } catch (e) {
+        console.warn('[Waka Oak] inject direct meta', e);
+      }
+    }
+
     const fname = `${safeName(displayTitle)}.${ext}`;
     downloadBlob(blob, fname);
     return fname;
@@ -1216,11 +1418,25 @@ ${body}
         }
       }
 
-      // 4) Build EPUB
+      // 4) Build EPUB + nhúng metadata/cover
       btn.innerHTML = '⏳ Đóng gói...';
       updateFullStatus('Bước 4/4: Dựng toc.xhtml + đóng gói EPUB (' + chapterPayloads.length + ' chương)...');
       const bookTitle = getBookTitle();
-      const blob = await buildFullEpubBlob(bookTitle, chapterPayloads, sharedAssets);
+      let blob = await buildFullEpubBlob(bookTitle, chapterPayloads, sharedAssets);
+
+      try {
+        updateFullStatus('Đang nhúng metadata + ảnh bìa...');
+        const pageMeta = typeof extractPageMeta === 'function' ? extractPageMeta() : null;
+        if (pageMeta && pageMeta.title) {
+          blob = await injectMetadataIntoBlob(blob, {
+            ...pageMeta,
+            title: bookTitle,
+          });
+        }
+      } catch (e) {
+        console.warn('[Waka Oak] inject full meta', e);
+      }
+
       const fname = safeName(bookTitle) + '_full.epub';
       downloadBlob(blob, fname);
 
@@ -1228,7 +1444,12 @@ ${body}
       showToast('✅ Đã tải: ' + fname + ' (' + sizeMb + ' MB, ' + chapterPayloads.length + ' chương)');
       updateFullStatus('✅ Xong: ' + fname + ' — ' + chapterPayloads.length + ' chương, ' + sizeMb + 'MB');
 
-      console.log("[Waka Oak] Downloaded");
+      try {
+        chrome.runtime.sendMessage({
+          action: 'addDownloadHistory',
+          entry: { title: bookTitle + ' (full)', filename: fname, type: 'epub' },
+        });
+      } catch {}
     } catch (err) {
       console.error('[Waka Oak full]', err);
       showToast('Lỗi tải full: ' + (err.message || err), true);
