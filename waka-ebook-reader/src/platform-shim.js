@@ -27,7 +27,7 @@
   if (w.__wakaPlatformShim) return;
   w.__wakaPlatformShim = true;
 
-  var VERSION = "1.0.2";
+  var VERSION = "1.0.3";
   var script = document.currentScript;
   // File nằm ở <gốc>/src/platform-shim.js → gốc = thư mục cha.
   var ROOT = new URL("../", script && script.src ? script.src : location.href).href;
@@ -276,7 +276,60 @@
    * ------------------------------------------------------------------ */
   var Handoff = (function () {
     var ALLOWED_ORIGINS = ["https://waka.vn", "https://www.waka.vn", location.origin];
-    var TIMEOUT_MS = 120000;      // EPUB lớn đi qua kênh GM (base64) có thể mất vài chục giây
+    var TIMEOUT_MS = 120000;      // hết thời gian chờ khi KHÔNG có hoạt động (mỗi tin "progress" từ waka.vn làm mới bộ đếm)
+
+    /* Lớp phủ "Đang chờ sách từ Waka..." — chỉ khi tab được waka.vn mở sớm (token oc_…, có window.opener) */
+    var Overlay = (function () {
+      var el = null, statusEl = null, barEl = null, btn = null, removeTimer = 0;
+      var params = new URLSearchParams(location.search);
+      var token = params.get("importToken") || "";
+      var enabled = token.indexOf("oc_") === 0 && !!w.opener;
+
+      function build() {
+        if (el || !enabled) return;
+        var root = document.documentElement || document.body;
+        if (!root) return setTimeout(build, 0);
+        el = document.createElement("div");
+        el.setAttribute("role", "status");
+        el.style.cssText = "position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;" +
+          "background:rgba(10,18,18,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);" +
+          "font:500 15px/1.4 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#fff;";
+        el.innerHTML = '<div style="width:min(86vw,360px);text-align:center">' +
+          '<div style="font-size:18px;font-weight:700;margin-bottom:14px">Đang mở sách từ Waka</div>' +
+          '<div data-st style="min-height:22px;margin-bottom:14px;opacity:.9">Đang chờ sách từ Waka...</div>' +
+          '<div style="height:6px;border-radius:99px;background:rgba(255,255,255,.22);overflow:hidden"><i data-bar style="display:block;height:100%;width:0;background:#2dd4bf;transition:width .25s ease"></i></div>' +
+          '<button data-close type="button" style="display:none;margin-top:18px;height:40px;padding:0 22px;border-radius:99px;border:1.5px solid rgba(255,255,255,.8);background:transparent;color:#fff;font:inherit;cursor:pointer">Đóng</button>' +
+          '</div>';
+        statusEl = el.querySelector("[data-st]");
+        barEl = el.querySelector("[data-bar]");
+        btn = el.querySelector("[data-close]");
+        btn.addEventListener("click", function () { remove(); });
+        root.appendChild(el);
+      }
+      function remove() { clearTimeout(removeTimer); if (el && el.parentNode) el.parentNode.removeChild(el); el = null; }
+      return {
+        enabled: enabled,
+        show: build,
+        update: function (text, pct) {
+          if (!enabled) return; build(); if (!el) return;
+          if (text) statusEl.textContent = text;
+          if (typeof pct === "number") barEl.style.width = Math.max(0, Math.min(100, pct)) + "%";
+        },
+        done: function () {
+          if (!el) return;
+          statusEl.textContent = "Đang nhập sách vào Reader...";
+          barEl.style.width = "100%";
+          removeTimer = setTimeout(remove, 1500);
+        },
+        error: function (msg) {
+          if (!enabled) return; build(); if (!el) return;
+          statusEl.textContent = "Lỗi: " + String(msg || "Không rõ nguyên nhân");
+          barEl.style.background = "#f87171";
+          btn.style.display = "inline-block";
+        },
+      };
+    })();
+    Overlay.show();
     var USERSCRIPT_WAIT_MS = 30000; // userscript có thể nạp trễ (trang nặng / trình quản lý khởi động chậm)
 
     function toDataUrl(d) {
@@ -295,17 +348,28 @@
       return new Promise(function (resolve) {
         var done = false;
         var timer;
+        function armTimer() {
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            finish({ success: false, error: "Hết thời gian chờ EPUB từ trang Waka — hãy mở lại bằng nút Reader trên waka.vn" });
+          }, TIMEOUT_MS);
+        }
         function finish(res) {
           if (done) return;
           done = true;
           clearTimeout(timer);
           w.removeEventListener("message", onMsg);
+          if (res && res.success) Overlay.done(); else Overlay.error(res && res.error);
           resolve(res);
         }
         function onMsg(e) {
           var d = e.data;
-          if (!d || d.__wakaReaderHandoff !== 1 || d.type !== "epub" || d.token !== token) return;
+          if (!d || d.__wakaReaderHandoff !== 1 || d.token !== token) return;
           if (ALLOWED_ORIGINS.indexOf(e.origin) < 0) return;
+          // Tiến trình / lỗi do waka.vn báo trong lúc còn đang tải + dựng EPUB
+          if (d.type === "progress") { Overlay.update(d.text, d.pct); armTimer(); return; }
+          if (d.type === "error") { finish({ success: false, error: d.message || "Waka báo lỗi" }); return; }
+          if (d.type !== "epub") return;
           console.info("[Waka Reader] consume: nhận EPUB qua kênh opener");
           toDataUrl(d).then(
             function (dataUrl) { finish({ success: true, filename: d.filename || "waka.epub", dataUrl: dataUrl }); },
@@ -313,9 +377,7 @@
           );
         }
         w.addEventListener("message", onMsg);
-        timer = setTimeout(function () {
-          finish({ success: false, error: "Hết thời gian chờ EPUB từ trang Waka — hãy mở lại bằng nút Reader trên waka.vn" });
-        }, TIMEOUT_MS);
+        armTimer();
 
         // Kênh 1: cửa sổ đã mở reader (window.opener) — nhanh, không qua bộ nhớ GM.
         try {
