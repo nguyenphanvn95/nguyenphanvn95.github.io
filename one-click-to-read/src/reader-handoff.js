@@ -27,7 +27,10 @@
   let gm = null;
   const pending = new Map();          // token → { blob, filename, listener, timer }
 
-  const gmSet = (k, v) => { try { gm.setValue(k, v); } catch (e) { /* bỏ qua */ } };
+  const log = (...a) => { try { console.log('[Waka OneClick]', ...a); } catch (e) { /* bỏ qua */ } };
+  const gmSet = (k, v) => {
+    try { gm.setValue(k, v); return true; } catch (e) { log('GM_setValue lỗi:', k, e && e.message); return false; }
+  };
   const gmDel = (k) => { try { gm.deleteValue(k); } catch (e) { /* bỏ qua */ } };
 
   // Firefox: đối tượng tạo trong sandbox phải cloneInto() thì trang mới đọc được.
@@ -57,8 +60,15 @@
   async function serveViaGM(token) {
     const p = pending.get(token);
     if (!p) return;
+    log('Reader yêu cầu EPUB qua kênh GM, đang gửi', Math.round(p.blob.size / 1024) + 'KB');
     try {
-      gmSet('oc:res:' + token, { filename: p.filename, dataUrl: await blobToDataUrl(p.blob) });
+      const dataUrl = await blobToDataUrl(p.blob);
+      // Nếu ghi thất bại (vd. quá dung lượng) → báo lỗi ngay cho Reader thay vì để nó chờ hết giờ
+      if (!gmSet('oc:res:' + token, { filename: p.filename, dataUrl })) {
+        gmSet('oc:res:' + token, { error: 'Không ghi được EPUB vào bộ nhớ userscript (file quá lớn?)' });
+      } else {
+        log('Đã ghi EPUB vào kênh GM');
+      }
     } catch (err) {
       gmSet('oc:res:' + token, { error: String((err && err.message) || err) });
     }
@@ -78,17 +88,18 @@
           { __wakaReaderHandoff: 1, type: 'epub', token, filename: p.filename, blob: p.blob },
           APP_ORIGIN
         );
+        log('Đã gửi EPUB cho Reader qua kênh opener');
         drop(token);
-      } catch (err) { /* để kênh GM xử lý */ }
+      } catch (err) { log('Kênh opener lỗi, chuyển sang kênh GM:', err && err.message); }
     });
   }
 
   function openTab(url) {
     let w = null;
     try { w = window.open(url, '_blank'); } catch (e) { /* bị chặn */ }
-    if (w) return true;
+    if (w) { log('Mở Reader bằng window.open (kênh opener)'); return true; }
     // Đã qua vài giây tải sách nên popup thường bị chặn → dùng API của userscript manager.
-    try { gm.openInTab(url, { active: true, insert: true, setParent: true }); return true; } catch (e) { return false; }
+    try { gm.openInTab(url, { active: true, insert: true, setParent: true }); log('Popup bị chặn → mở Reader bằng GM_openInTab (kênh GM)'); return true; } catch (e) { return false; }
   }
 
   function openBlob(blob, filename) {
@@ -97,6 +108,7 @@
       const token = PREFIX + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
       const entry = { blob, filename: filename || 'waka.epub', listener: null, timer: null };
       pending.set(token, entry);
+      log('Chuẩn bị chuyển EPUB', Math.round(blob.size / 1024) + 'KB, token=' + token);
       try {
         entry.listener = gm.addValueChangeListener('oc:req:' + token, () => serveViaGM(token));
       } catch (e) { /* không có kênh GM: chỉ còn kênh opener */ }
@@ -138,6 +150,7 @@
         gmDel(reqKey);
         reply(d.id, payload);
       };
+      log('Reader yêu cầu EPUB, token=' + token);
       try {
         listener = gm.addValueChangeListener(resKey, (_n, _o, val) => {
           if (val && val.dataUrl) finish({ ok: true, filename: val.filename || 'waka.epub', dataUrl: val.dataUrl });
@@ -146,7 +159,7 @@
       } catch (err) {
         return reply(d.id, { ok: false, error: 'Trình quản lý userscript không hỗ trợ GM_addValueChangeListener' });
       }
-      timer = setTimeout(() => finish({ ok: false, error: 'Hết thời gian chờ tab waka.vn' }), 60000);
+      timer = setTimeout(() => finish({ ok: false, error: 'Hết thời gian chờ tab waka.vn' }), 120000);
       gmSet(reqKey, Date.now());
     }
 

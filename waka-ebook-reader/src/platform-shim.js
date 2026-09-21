@@ -27,7 +27,7 @@
   if (w.__wakaPlatformShim) return;
   w.__wakaPlatformShim = true;
 
-  var VERSION = "1.0.1";
+  var VERSION = "1.0.2";
   var script = document.currentScript;
   // File nằm ở <gốc>/src/platform-shim.js → gốc = thư mục cha.
   var ROOT = new URL("../", script && script.src ? script.src : location.href).href;
@@ -276,7 +276,8 @@
    * ------------------------------------------------------------------ */
   var Handoff = (function () {
     var ALLOWED_ORIGINS = ["https://waka.vn", "https://www.waka.vn", location.origin];
-    var TIMEOUT_MS = 45000;
+    var TIMEOUT_MS = 120000;      // EPUB lớn đi qua kênh GM (base64) có thể mất vài chục giây
+    var USERSCRIPT_WAIT_MS = 30000; // userscript có thể nạp trễ (trang nặng / trình quản lý khởi động chậm)
 
     function toDataUrl(d) {
       return new Promise(function (resolve, reject) {
@@ -305,6 +306,7 @@
           var d = e.data;
           if (!d || d.__wakaReaderHandoff !== 1 || d.type !== "epub" || d.token !== token) return;
           if (ALLOWED_ORIGINS.indexOf(e.origin) < 0) return;
+          console.info("[Waka Reader] consume: nhận EPUB qua kênh opener");
           toDataUrl(d).then(
             function (dataUrl) { finish({ success: true, filename: d.filename || "waka.epub", dataUrl: dataUrl }); },
             function (err) { finish({ success: false, error: err.message }); }
@@ -318,7 +320,10 @@
         // Kênh 1: cửa sổ đã mở reader (window.opener) — nhanh, không qua bộ nhớ GM.
         try {
           if (w.opener && !w.opener.closed) {
+            console.info("[Waka Reader] consume: gửi 'ready' cho opener, token=" + token);
             w.opener.postMessage({ __wakaReaderHandoff: 1, type: "ready", token: token }, "*");
+          } else {
+            console.info("[Waka Reader] consume: không có opener → chờ kênh userscript, token=" + token);
           }
         } catch (e) { /* opener bị chặn */ }
 
@@ -326,12 +331,17 @@
         // Nếu có opener thì nhường kênh 1 ~2 giây trước, tránh chuyển dữ liệu hai lần.
         var gmDelay = (w.opener && !w.opener.closed) ? 2000 : 0;
         new Promise(function (r) { setTimeout(r, gmDelay); })
-          .then(function () { return done ? false : Bridge.waitPresent(3000, [Bridge.READER_ATTR, Bridge.ONECLICK_ATTR]); })
+          .then(function () { return done ? false : Bridge.waitPresent(USERSCRIPT_WAIT_MS, [Bridge.READER_ATTR, Bridge.ONECLICK_ATTR]); })
           .then(function (ok) {
-          if (!ok || done) return;
+          if (done) return;
+          if (!ok) {
+            console.warn("[Waka Reader] consume: không thấy userscript sau " + USERSCRIPT_WAIT_MS + "ms (kiểm tra @match của Waka One Click to Read có gồm trang Reader)");
+            return;
+          }
+          console.info("[Waka Reader] consume: userscript đã sẵn sàng, yêu cầu EPUB qua kênh GM");
           Bridge.call("consume", { token: token }, TIMEOUT_MS).then(
-            function (d) { finish({ success: true, filename: d.filename || "waka.epub", dataUrl: d.dataUrl }); },
-            function () { /* để kênh 1 / timeout xử lý */ }
+            function (d) { console.info("[Waka Reader] consume: nhận EPUB qua kênh GM"); finish({ success: true, filename: d.filename || "waka.epub", dataUrl: d.dataUrl }); },
+            function (err) { console.warn("[Waka Reader] consume: kênh GM lỗi:", err && err.message); /* để kênh 1 / timeout xử lý */ }
           );
         });
       });
