@@ -59,7 +59,7 @@
 
   async function serveViaGM(token) {
     const p = pending.get(token);
-    if (!p) return;
+    if (!p || !p.blob) return;
     log('Reader yêu cầu EPUB qua kênh GM, đang gửi', Math.round(p.blob.size / 1024) + 'KB');
     try {
       const dataUrl = await blobToDataUrl(p.blob);
@@ -75,6 +75,19 @@
     drop(token);
   }
 
+  // Gửi trạng thái (tiến trình / lỗi) cho tab Reader để nó hiện lớp phủ "Đang chờ sách từ Waka..."
+  function sendState(p) {
+    if (!p || !p.target) return;
+    try {
+      p.target.postMessage(
+        p.error
+          ? { __wakaReaderHandoff: 1, type: 'error', token: p.token, message: p.error }
+          : { __wakaReaderHandoff: 1, type: 'progress', token: p.token, text: p.text, pct: p.pct },
+        APP_ORIGIN
+      );
+    } catch (err) { /* Reader đã đóng / chưa sẵn sàng */ }
+  }
+
   function initWakaSide() {
     window.addEventListener('message', (e) => {
       if (e.origin !== APP_ORIGIN) return;
@@ -83,6 +96,12 @@
       const token = String(d.token || '');
       const p = pending.get(token);
       if (!p || !e.source) return;
+      if (!p.blob) {                      // phiên mở sớm: Reader đã sẵn sàng nhưng sách chưa dựng xong
+        p.target = e.source;
+        log('Reader (mở sớm) đã sẵn sàng, chờ dựng EPUB xong');
+        sendState(p);
+        return;
+      }
       try {
         e.source.postMessage(
           { __wakaReaderHandoff: 1, type: 'epub', token, filename: p.filename, blob: p.blob },
@@ -110,6 +129,77 @@
 
   function hasActivation() {
     try { return navigator.userActivation ? !!navigator.userActivation.isActive : true; } catch (e) { return true; }
+  }
+
+  /**
+   * MỞ SỚM (auto-open): phải gọi ĐỒNG BỘ trong sự kiện click "Đọc ngay" — lúc đó window.open còn được
+   * phép. Tab Reader mở ngay (có window.opener) và hiện lớp phủ tiến trình; khi EPUB dựng xong thì
+   * session.deliver() đẩy sang qua postMessage — người dùng không phải bấm thêm gì.
+   * Trả về null nếu trình duyệt vẫn chặn popup → gọi code sẽ dùng luồng cũ (openBlob).
+   */
+  function prepare() {
+    const token = PREFIX + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+    const url = READER_URL + '?importToken=' + encodeURIComponent(token);
+    let w = null;
+    try { w = window.open(url, '_blank'); } catch (e) { /* bị chặn */ }
+    if (!w) { log('window.open bị chặn ngay lúc bấm → dùng luồng mở sau khi dựng xong'); return null; }
+    log('Đã mở tab Reader sớm, token=' + token);
+
+    const entry = {
+      token, blob: null, filename: 'waka.epub', win: w, target: null,
+      text: 'Đang chuẩn bị...', pct: 0, error: '', listener: null, timer: null,
+    };
+    pending.set(token, entry);
+    try { entry.listener = gm.addValueChangeListener('oc:req:' + token, () => serveViaGM(token)); } catch (e) { /* chỉ kênh opener */ }
+    entry.timer = setTimeout(() => drop(token), 30 * 60 * 1000);   // tải + dựng rất lâu vẫn còn hiệu lực
+
+    let lastKey = '';
+    return {
+      progress(text, pct) {
+        entry.text = String(text || '');
+        entry.pct = Math.round(Number(pct) || 0);
+        const key = entry.text + '|' + entry.pct;
+        if (key === lastKey) return;
+        lastKey = key;
+        sendState(entry);
+      },
+      // true = đã giao (hoặc đang chờ Reader báo sẵn sàng); false = tab Reader đã bị đóng
+      deliver(blob, filename) {
+        if (!pending.has(token)) return Promise.resolve(false);
+        let closed = false;
+        try { closed = !!entry.win.closed; } catch (e) { closed = false; }
+        if (closed) { drop(token); return Promise.resolve(false); }
+        entry.blob = blob;
+        entry.filename = filename || 'waka.epub';
+        entry.text = 'Đang chuyển sách sang Reader...';
+        entry.pct = 99;
+        clearTimeout(entry.timer);
+        entry.timer = setTimeout(() => drop(token), PENDING_TTL_MS);
+        if (entry.target) {
+          try {
+            entry.target.postMessage(
+              { __wakaReaderHandoff: 1, type: 'epub', token, filename: entry.filename, blob },
+              APP_ORIGIN
+            );
+            log('Đã gửi EPUB cho Reader (mở sớm)');
+            drop(token);
+          } catch (err) { log('Kênh opener lỗi, chờ kênh GM:', err && err.message); }
+        } else {
+          log('Đã dựng xong, chờ Reader báo sẵn sàng');
+        }
+        return Promise.resolve(true);
+      },
+      fail(message) {
+        entry.error = String(message || 'Lỗi không rõ');
+        sendState(entry);
+        clearTimeout(entry.timer);
+        entry.timer = setTimeout(() => drop(token), 60 * 1000);
+      },
+      close() {
+        try { if (!entry.blob) entry.win.close(); } catch (e) { /* bỏ qua */ }
+        drop(token);
+      },
+    };
   }
 
   /**
@@ -217,5 +307,5 @@
     else initWakaSide();
   }
 
-  window.WakaHandoff = { init, openBlob, READER_URL };
+  window.WakaHandoff = { init, prepare, openBlob, READER_URL };
 })();

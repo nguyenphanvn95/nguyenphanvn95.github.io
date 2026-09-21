@@ -477,11 +477,13 @@
     return /(?:^|\/)toc\.ncx$/i.test(String(href || ''));
   }
 
-  async function openBlobInReader(blob, filename, job, ui) {
+  async function openBlobInReader(blob, filename, job, ui, session) {
     if (job) {
       job.throwIfCancelled();
       job.commit(); // qua diem nay khong huy duoc nua (tab Reader sap mo)
     }
+    // Tab Reader da duoc mo som luc bam nut -> chi can day EPUB sang (khong can nguoi dung bam them)
+    if (session && await session.deliver(blob, filename)) return;
     // Neu trinh duyet se chan popup (het user activation) -> hien nut de nguoi dung bam mo Reader
     await WakaHandoff.openBlob(blob, filename, {
       askUser: ({ open, dismiss }) => ui && ui.showAction('Mở trong Reader', open, dismiss),
@@ -801,11 +803,16 @@
     const btn = e.currentTarget;
     if (btn.disabled || activeJob) return;
 
+    // Mo tab Reader NGAY trong su kien click (con user activation nen khong bi chan popup);
+    // tab hien lop phu tien trinh va nhan EPUB khi dung xong. null neu bi chan -> luong cu.
+    const session = window.WakaHandoff?.prepare ? WakaHandoff.prepare() : null;
+
     const job = createJob();
     activeJob = job;
     const coverUrl = data.img?.currentSrc || data.img?.src || '';
     const ui = createProgressOverlay({ coverUrl });
-    job.report = (text, pct) => ui.step(text, pct);
+    job.report = (text, pct) => { ui.step(text, pct); if (session) session.progress(text, pct); };
+    job.onCancel(() => { if (session) session.close(); });   // huy -> dong tab Reader dang cho
     job.onCommit = () => ui.lockCancel();
     ui.onCancel(() => {
       if (!job.cancel()) return;   // job.cancel() dọn cache + file đang dở
@@ -866,7 +873,7 @@
       if (info.meta?.title) epub.filename = safeName(info.meta.title) + '.epub';
 
       ui.step('Đang mở file epub...', 97);
-      await openBlobInReader(epub.blob, epub.filename, job, ui);
+      await openBlobInReader(epub.blob, epub.filename, job, ui, session);
 
       ui.step('Đã mở', 100);
       setTimeout(() => ui.close(), 450);
@@ -874,11 +881,13 @@
       setTimeout(() => setButtonState(btn, 'Đọc ngay', false), 1600);
     } catch (err) {
       if (job.cancelled || err?.isCancel) {
+        if (session) session.close();
         ui.close();
         setButtonState(btn, 'Đọc ngay', false);
         return;
       }
       console.error('[Waka One Click Reader]', err);
+      if (session) session.fail(err?.message || String(err));   // bao loi cho tab Reader dang cho
       setButtonState(btn, 'Loi', false);
       btn.title = err?.message || String(err);
       ui.showError(err?.message || String(err));
