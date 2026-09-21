@@ -168,5 +168,15 @@
   "lib.offlineHint": "Books are stored offline in your browser and never uploaded anywhere.",
   "lib.empty.title": "Your library is empty.",
   "lib.details": "Book details",
-  "lib.exportBook": "Download the .epub file"
+  "lib.exportBook": "Download the .epub file",
+  "autoscroll.label": "Auto Scroll",
+  "autoscroll.toggleOn": "Enable Auto Scroll",
+  "autoscroll.toggleOff": "Disable Auto Scroll",
+  "autoscroll.needScroll": "Available in Vertical Scroll mode only.",
+  "autoscroll.slower": "Slower",
+  "autoscroll.faster": "Faster",
+  "autoscroll.pause": "Pause",
+  "autoscroll.play": "Play",
+  "autoscroll.exit": "Exit Auto Scroll",
+  "autoscroll.endOfBook": "End of book"
 }

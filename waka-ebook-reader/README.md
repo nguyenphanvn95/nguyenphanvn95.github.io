@@ -1,7 +1,7 @@
 # Waka EBook Reader
 
-Trình đọc EPUB của **Waka Toolkit 6.9.2** chạy dưới dạng **web app + userscript**.
-Mã trình đọc giữ nguyên như extension gốc (thư viện, chú thích, đọc to Edge TTS, nhạc nền, giao diện desktop + mobile).
+Trình đọc EPUB của **Waka Toolkit 6.9.5** chạy dưới dạng **web app + userscript**.
+Mã trình đọc giữ nguyên như extension gốc (thư viện, chú thích, đọc to Edge TTS, nhạc nền, **Auto Scroll**, **10 font chữ tuỳ chỉnh**, giao diện desktop + mobile).
 
 - Reader: `https://nguyenphanvn95.github.io/waka-ebook-reader/`
 - Cài userscript: `https://nguyenphanvn95.github.io/waka-ebook-reader/waka-ebook-reader.user.js`
@@ -19,10 +19,10 @@ waka-ebook-reader/
 ├─ manifest.webmanifest           cài lên màn hình chính (mobile / desktop)
 ├─ waka-ebook-reader.user.js      userscript (cũng là @updateURL / @downloadURL)
 ├─ src/
-│  ├─ reader.html                 trang trình đọc (gốc + 2 dòng vá, xem dưới)
+│  ├─ reader.html                 trang trình đọc (gốc + vài dòng vá, xem dưới)
 │  ├─ platform-shim.js            MỚI — thay chrome.* bằng localStorage + cầu nối userscript
-│  └─ epub-reader/*.js            15 module gốc (app, parser, zip, db, annotation, read-aloud, …)
-├─ assets/{css,icons,wallpagers}/ CSS, icon, hình nền, ảnh bìa nhạc nền
+│  └─ epub-reader/*.js            17 module gốc (app, parser, zip, db, annotation, read-aloud, auto-scroll, custom-fonts, …)
+├─ assets/{css,fonts,icons,wallpagers}/ CSS (gồm auto-scroll-pill.css), 10 font tuỳ chỉnh, icon, hình nền, ảnh bìa nhạc nền
 └─ lang/{vi,en}.json
 ```
 
@@ -30,8 +30,10 @@ waka-ebook-reader/
 
 | Trang | Chức năng |
 |---|---|
-| `waka.vn` | Nút nổi 📖 (kéo được, nhớ vị trí; chạm để mở menu) + menu Tampermonkey: **Mở EPUB Reader**, **Chọn file EPUB để đọc…** (chuyển thẳng sang Reader), **Ẩn/Hiện nút nổi** |
+| `waka.vn` | **Bong bóng nổi** dùng `assets/icons/icon48.png` (kéo được, nhớ vị trí). Chạm vào → 3 lựa chọn: **Mở EPUB Reader**, **Nhập file EPUB…** (chuyển thẳng sang Reader), **Ẩn nút này**. Menu Tampermonkey/Violentmonkey có cùng các lệnh, cộng **Ẩn/Hiện nút nổi** để bật lại nút đã ẩn |
 | `nguyenphanvn95.github.io/waka-ebook-reader/*` | Cầu nối cho Reader: **nhập EPUB từ URL** vượt CORS (GM_xmlhttpRequest), nhận EPUB từ tab waka.vn khi `window.opener` bị cắt |
+
+Nếu CSP của waka.vn chặn ảnh từ github.io, userscript tự tải icon qua `GM_xmlhttpRequest` (data URL, có cache); nếu vẫn không được thì dùng biểu tượng sách SVG.
 
 Reader vẫn dùng được **không cần userscript** (như một web app/PWA); userscript chỉ bổ sung hai việc trên.
 
@@ -48,11 +50,16 @@ Reader vẫn dùng được **không cần userscript** (như một web app/PWA)
 
 ## Cập nhật khi extension có bản mới
 
-Chép đè `src/epub-reader/*`, `assets/*`, `lang/*`, `src/reader.html` từ bản extension mới, rồi áp lại **3 chỗ vá**:
+Chép đè `src/epub-reader/*`, `assets/*` (gồm `assets/fonts/`, `assets/css/auto-scroll-pill.css`), `lang/*`, `src/reader.html` từ bản extension mới, rồi áp lại **3 chỗ vá**:
 
 1. `src/reader.html` — trong `<head>` thêm: `<link rel="manifest" href="../manifest.webmanifest" />` và 3 thẻ meta/icon PWA (tuỳ chọn).
 2. `src/reader.html` — **trước** `<script src="epub-reader/i18n.js">` thêm `<script src="platform-shim.js"></script>` (bắt buộc).
 3. `src/epub-reader/read-aloud.js` — chuỗi lỗi `socket.onerror` (chỉ đổi câu chữ, bỏ nhắc "reload extension").
+
+## Lịch sử
+
+- **Userscript 1.1.0 / Reader 6.9.5** — Reader nâng từ 6.9.2 lên 6.9.5 của extension: Auto Scroll (chế độ Cuộn, pill nổi, Shift+A), 10 font tuỳ chỉnh đủ chữ tiếng Việt (`assets/fonts/`, `custom-fonts.js`), sửa nhãn công tắc Auto Scroll, sửa thanh cuộn + cuộn được bảng "Cài đặt chữ" trên mobile. Userscript: bong bóng nổi dùng icon48.png, tự gắn lại khi trang SPA gỡ nút, đồng bộ Ẩn/Hiện giữa các tab, sửa rò rỉ listener.
+- **1.0.1** — tích hợp one-click-to-read (bên dưới).
 
 ## Tích hợp với one-click-to-read (v1.0.1)
 

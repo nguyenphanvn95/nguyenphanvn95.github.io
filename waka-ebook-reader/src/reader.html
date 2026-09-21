@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../assets/css/hover-preview.css" />
 <link rel="stylesheet" href="../assets/css/reader.css" />
 <link rel="stylesheet" href="../assets/css/tts-pill.css" />
+<link rel="stylesheet" href="../assets/css/auto-scroll-pill.css" />
 <link rel="stylesheet" href="../assets/css/library-mobile.css" />
 <style>
 /* ══════════════════════════════════════════════════
@@ -536,6 +537,14 @@
             <option value="scroll">Cuộn dọc</option>
           </select>
 
+          <label class="rd-label" data-i18n="autoscroll.label">Auto Scroll</label>
+          <label class="rd-setting-toggle is-disabled" id="rd-autoscroll-row" title="Bật Auto Scroll">
+            <span data-i18n="autoscroll.toggleOn">Bật Auto Scroll</span>
+            <input type="checkbox" id="rd-autoscroll-toggle" disabled />
+            <span class="rd-switch" aria-hidden="true"></span>
+          </label>
+          <p id="rd-autoscroll-hint" class="rd-hint rd-hint--tight" data-i18n="autoscroll.needScroll">Chỉ dùng được ở kiểu đọc Cuộn dọc.</p>
+
           <label class="rd-label" for="rd-columns">Số cột</label>
           <select id="rd-columns" class="rd-select">
             <option value="1">1 cột</option>
@@ -906,6 +915,13 @@
             <i></i>
           </label>
         </div>
+        <div class="mobile-setting-row mobile-autoscroll-row">
+          <span data-i18n="autoscroll.label">Auto Scroll</span>
+          <label class="mobile-switch" title="Bật/tắt Auto Scroll">
+            <input type="checkbox" id="mobile-autoscroll" disabled />
+            <i></i>
+          </label>
+        </div>
       </div>
     </div>
 
@@ -985,6 +1001,7 @@
 <script src="epub-reader/zip.js"></script>
 <script src="epub-reader/parser.js"></script>
 <script src="epub-reader/db.js"></script>
+<script src="epub-reader/custom-fonts.js"></script>
 <script src="epub-reader/app.js"></script>
 <script src="epub-reader/features.js"></script>
 <script src="epub-reader/library-ui.js"></script>
@@ -993,6 +1010,7 @@
 <script src="epub-reader/reader-ui.js"></script>
 <script src="epub-reader/read-aloud.js"></script>
 <script src="epub-reader/tts-pill.js"></script>
+<script src="epub-reader/auto-scroll.js"></script>
 <!-- phần thêm cho Annotation -->
 <script src="epub-reader/annotation.js"></script>
 <script src="epub-reader/music-mini.js"></script>

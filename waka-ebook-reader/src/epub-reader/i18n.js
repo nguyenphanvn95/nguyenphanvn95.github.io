@@ -153,7 +153,7 @@
     setText('[data-pane="settings"] > .rd-label:nth-of-type(1)', "settings.music", root);
     setText("#rd-open-music", "settings.openMusic", root);
     setText('[data-pane="settings"] > .rd-label:nth-of-type(2)', "settings.selectText", root);
-    setText(".rd-setting-toggle span:first-child", "settings.enableSelectText", root);
+    setText(".rd-setting-toggle:has(#rd-select-text) > span:first-child", "settings.enableSelectText", root);
     setText("#rd-language-label", "settings.language", root);
     setText("#rd-language-hint", "settings.languageHint", root);
     setText('[data-pane="settings"] > .rd-label:nth-of-type(4)', "settings.other", root);

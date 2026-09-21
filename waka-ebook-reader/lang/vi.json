@@ -168,5 +168,15 @@
   "lib.offlineHint": "Sách được lưu ngoại tuyến trong trình duyệt, không tải lên máy chủ nào.",
   "lib.empty.title": "Thư viện đang trống.",
   "lib.details": "Chi tiết sách",
-  "lib.exportBook": "Tải file .epub về máy"
+  "lib.exportBook": "Tải file .epub về máy",
+  "autoscroll.label": "Auto Scroll",
+  "autoscroll.toggleOn": "Bật Auto Scroll",
+  "autoscroll.toggleOff": "Tắt Auto Scroll",
+  "autoscroll.needScroll": "Chỉ dùng được ở kiểu đọc Cuộn dọc.",
+  "autoscroll.slower": "Chậm hơn",
+  "autoscroll.faster": "Nhanh hơn",
+  "autoscroll.pause": "Tạm dừng",
+  "autoscroll.play": "Tiếp tục",
+  "autoscroll.exit": "Thoát Auto Scroll",
+  "autoscroll.endOfBook": "Đã đọc hết sách"
 }

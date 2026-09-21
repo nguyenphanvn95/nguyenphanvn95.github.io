@@ -93,6 +93,9 @@
     zoom: 1,
     accent: "#c17a4f",
     selectTextEnabled: true,
+    // Auto Scroll (chế độ Cuộn): tốc độ theo %, xem auto-scroll.js. Khoảng 25–400 phải khớp
+    // MIN_SPEED/MAX_SPEED ở đầu auto-scroll.js.
+    autoScrollSpeed: 100,
   };
 
   const clamp = (v, lo, hi, fb) => {
@@ -294,6 +297,7 @@
         state.settings.bgImageOpacity = clamp(state.settings.bgImageOpacity, 0, 1, 0.5);
         if (state.settings.mode !== "paginated") state.settings.mode = "scroll";
         state.settings.selectTextEnabled = state.settings.selectTextEnabled !== false;
+        state.settings.autoScrollSpeed = clamp(state.settings.autoScrollSpeed, 25, 400, 100);
         // lần đầu chạy bản 6.4: chuyển sang lật trang 2 cột cho giống bố cục mới
         if (!state.settings.layoutMigrated) {
           state.settings.mode = "paginated";
@@ -1215,6 +1219,9 @@
   function resolveFontFamilyCss(raw) {
     if (!raw || raw === "epub" || raw === "original") return null;
     if (FONT_STACKS[raw]) return FONT_STACKS[raw];
+    // font tuỳ chỉnh đóng gói sẵn (assets/fonts/, khai báo ở custom-fonts.js)
+    const custom = window.ReaderFonts && window.ReaderFonts.stack(raw);
+    if (custom) return custom;
     const val = String(raw).trim();
     if (!val) return null;
     // người dùng dán hẳn 1 font-stack đầy đủ (có dấu phẩy) -> dùng nguyên văn
@@ -1376,6 +1383,7 @@
 <html><head><meta charset="utf-8">
 <style id="reader-base-style">${baseStyle()}</style>
 ${entry.styleHtml}
+<style id="reader-custom-fonts">${window.ReaderFonts ? window.ReaderFonts.faceCss(state.settings.fontFamily) : ""}</style>
 <style id="reader-font-override">${fontOverrideStyle(overrideFamily)}</style>
 </head>
 <body>
@@ -2148,6 +2156,12 @@ ${entry.styleHtml}
     setFontWeight: (v) => applySettings({ fontWeight: clamp(v, 200, 900, 400) }),
     setZoom: (v) => applySettings({ zoom: clamp(v, 0.6, 2.5, 1) }, { resetPage: true }),
     setSelectTextEnabled: (enabled) => applySettings({ selectTextEnabled: enabled !== false }),
+    // Chỉ lưu tốc độ Auto Scroll, KHÔNG qua applySettings (không vẽ lại chương đang đọc,
+    // không phát "reader:settings") — được auto-scroll.js gọi mỗi lần bấm +/−.
+    setAutoScrollSpeed: (v) => {
+      state.settings.autoScrollSpeed = clamp(v, 25, 400, 100);
+      saveSettings();
+    },
     setAccent: (color) => {
       const c = /^#[0-9a-f]{3,8}$/i.test(color) ? color : "#c17a4f";
       state.settings.accent = c;

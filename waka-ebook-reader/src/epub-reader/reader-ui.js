@@ -356,7 +356,7 @@
     if (modeSelect) modeSelect.value = s.mode === "paginated" ? "paginated" : "scroll";
     if (columnsSelect) columnsSelect.value = Number(s.columns) === 2 ? "2" : "1";
     syncColumnsControlState();
-    const isPreset = !s.fontFamily || ["serif", "sans", "dyslexic"].includes(s.fontFamily);
+    const isPreset = !s.fontFamily || fontPresetBtns.some((b) => b.dataset.fontPreset === s.fontFamily);
     if (fontFamilyInput && document.activeElement !== fontFamilyInput) {
       fontFamilyInput.value = isPreset ? "" : (s.fontFamily || "");
     }

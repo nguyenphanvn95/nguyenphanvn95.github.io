@@ -1436,11 +1436,25 @@
   .mobile-sheet-card {
     width: 100%;
     max-height: 70dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 10px 22px calc(34px + env(safe-area-inset-bottom, 0px));
     border-radius: 24px 24px 0 0;
     background: var(--mobile-panel-bg);
     color: var(--mobile-panel-fg);
     box-shadow: 0 -14px 38px rgba(0,0,0,.38);
+  }
+
+  /* Thanh cuộn của bottom sheet: mảnh, nền trong suốt, thumb pha từ màu chữ của panel
+     (theo theme đang dùng) — không dùng thanh cuộn mặc định sáng/tương phản của hệ điều hành. */
+  .mobile-sheet-card::-webkit-scrollbar { width: 8px; }
+  .mobile-sheet-card::-webkit-scrollbar-track { background: transparent; margin: 14px 0; }
+  .mobile-sheet-card::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--mobile-panel-fg) 24%, transparent);
+    border-radius: 8px;
+  }
+  .mobile-sheet-card::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--mobile-panel-fg) 38%, transparent);
   }
 
   .mobile-sheet-handle {
