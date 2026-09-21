@@ -282,7 +282,8 @@
   const audio = new Audio();
   const MUSIC_VOLUME_KEY = "waka-music-volume-v1";
   const RATES = [0.75, 1, 1.25, 1.5, 2];
-  const storedVolume = Number(localStorage.getItem(MUSIC_VOLUME_KEY));
+  const storedVolumeRaw = localStorage.getItem(MUSIC_VOLUME_KEY);
+  const storedVolume = storedVolumeRaw === null ? NaN : Number(storedVolumeRaw);
   const defaultMusicVolume =
     (window.matchMedia?.("(max-width: 760px)")?.matches || document.documentElement.classList.contains("mobile-reader-forced")) ? 100 : 60;
   let musicVolume = Number.isFinite(storedVolume) ? Math.max(0, Math.min(100, storedVolume)) : defaultMusicVolume;
