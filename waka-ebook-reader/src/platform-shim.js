@@ -27,7 +27,7 @@
   if (w.__wakaPlatformShim) return;
   w.__wakaPlatformShim = true;
 
-  var VERSION = "1.0.0";
+  var VERSION = "1.0.1";
   var script = document.currentScript;
   // File nằm ở <gốc>/src/platform-shim.js → gốc = thư mục cha.
   var ROOT = new URL("../", script && script.src ? script.src : location.href).href;
@@ -190,14 +190,19 @@
       if (d.ok) p.resolve(d); else p.reject(new Error(d.error || "Bridge error"));
     });
 
-    function present() {
-      return !!document.documentElement && document.documentElement.hasAttribute("data-waka-reader-userscript");
+    // Dấu hiệu userscript: waka-ebook-reader.user.js (fetch + consume) hoặc one-click-to-read.user.js (chỉ consume)
+    var READER_ATTR = "data-waka-reader-userscript";
+    var ONECLICK_ATTR = "data-waka-oneclick-userscript";
+    function present(attrs) {
+      var el = document.documentElement;
+      if (!el) return false;
+      return (attrs || [READER_ATTR]).some(function (a) { return el.hasAttribute(a); });
     }
-    function waitPresent(ms) {
+    function waitPresent(ms, attrs) {
       return new Promise(function (resolve) {
         var t0 = Date.now();
         (function poll() {
-          if (present()) return resolve(true);
+          if (present(attrs)) return resolve(true);
           if (Date.now() - t0 >= ms) return resolve(false);
           setTimeout(poll, 100);
         })();
@@ -216,7 +221,7 @@
         w.postMessage(msg, location.origin);
       });
     }
-    return { present: present, waitPresent: waitPresent, call: call };
+    return { present: present, waitPresent: waitPresent, call: call, READER_ATTR: READER_ATTR, ONECLICK_ATTR: ONECLICK_ATTR };
   })();
 
   /* ------------------------------------------------------------------ *
@@ -321,7 +326,7 @@
         // Nếu có opener thì nhường kênh 1 ~2 giây trước, tránh chuyển dữ liệu hai lần.
         var gmDelay = (w.opener && !w.opener.closed) ? 2000 : 0;
         new Promise(function (r) { setTimeout(r, gmDelay); })
-          .then(function () { return done ? false : Bridge.waitPresent(3000); })
+          .then(function () { return done ? false : Bridge.waitPresent(3000, [Bridge.READER_ATTR, Bridge.ONECLICK_ATTR]); })
           .then(function (ok) {
           if (!ok || done) return;
           Bridge.call("consume", { token: token }, TIMEOUT_MS).then(

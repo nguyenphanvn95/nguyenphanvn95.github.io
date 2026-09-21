@@ -2,7 +2,7 @@
 // @name         Waka EBook Reader
 // @name:vi      Waka EBook Reader — Trình đọc EPUB
 // @namespace    https://nguyenphanvn95.github.io/waka-ebook-reader/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Trình đọc EPUB của Waka Toolkit 6.9.2 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), nhạc nền, giao diện desktop + mobile. Mở nhanh từ waka.vn, nhập EPUB từ URL (vượt CORS).
 // @description:vi  Trình đọc EPUB của Waka Toolkit 6.9.2 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), nhạc nền, giao diện desktop + mobile.
 // @author       nguyenphanvn95
@@ -113,6 +113,8 @@
     // op "consume": xin tab waka.vn gửi EPUB qua kênh GM_setValue/GM_addValueChangeListener
     function opConsume(d) {
       const token = String(d.token || '');
+      // Token "oc_…" thuộc userscript one-click-to-read → bỏ qua, để script đó tự trả lời.
+      if (token.indexOf('oc_') === 0) return;
       if (!token) return reply(d.id, { ok: false, error: 'Thiếu token' });
       const reqKey = 'wr:req:' + token;
       const resKey = 'wr:res:' + token;

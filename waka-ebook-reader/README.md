@@ -54,6 +54,13 @@ Chép đè `src/epub-reader/*`, `assets/*`, `lang/*`, `src/reader.html` từ b�
 2. `src/reader.html` — **trước** `<script src="epub-reader/i18n.js">` thêm `<script src="platform-shim.js"></script>` (bắt buộc).
 3. `src/epub-reader/read-aloud.js` — chuỗi lỗi `socket.onerror` (chỉ đổi câu chữ, bỏ nhắc "reload extension").
 
+## Tích hợp với one-click-to-read (v1.0.1)
+
+Userscript [`one-click-to-read`](../one-click-to-read/) dựng EPUB từ nút **Đọc ngay** trên waka.vn rồi đẩy vào Reader này bằng `?importToken=oc_…` (xem giao thức trong README của nó). Từ v1.0.1:
+
+- `platform-shim.js` nhận biết cả hai userscript (`html[data-waka-reader-userscript]` và `html[data-waka-oneclick-userscript]`) cho kênh `consume`.
+- `waka-ebook-reader.user.js` bỏ qua token `oc_…` (thuộc one-click-to-read), chỉ xử lý token `reader_…` của chính nó.
+
 ## Lưu ý
 
 - **Dữ liệu tách biệt với extension**: thư viện sách/cài đặt nằm trong origin `github.io`, không tự chuyển từ extension sang; cần nhập lại sách.
