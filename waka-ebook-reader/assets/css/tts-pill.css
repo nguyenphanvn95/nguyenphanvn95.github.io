@@ -1,0 +1,779 @@
+.waka-tts-pill {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 6100;
+  width: min(620px, calc(100vw - 48px));
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(43, 43, 46, 0.98), rgba(28, 28, 31, 0.98));
+  color: #f7f7f7;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.34);
+  font-family: var(--ui-font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.waka-tts-pill.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(14px);
+}
+
+.waka-tts-pill-track {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.waka-tts-pill-fill {
+  width: 0;
+  height: 100%;
+  background: #23ddbd;
+  transition: width 0.18s linear;
+}
+
+.waka-tts-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 10px 12px;
+}
+
+.waka-tts-pill-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 16px;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.waka-tts-pill-info:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.waka-tts-pill-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #101114;
+  background: #f7f7f7;
+}
+
+.waka-tts-pill-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.waka-tts-pill-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.waka-tts-pill-title,
+.waka-tts-pill-sub {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.waka-tts-pill-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 20px;
+}
+
+.waka-tts-pill-sub {
+  color: rgba(245, 245, 245, 0.68);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.waka-tts-pill-transport {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.waka-tts-pill-transport button {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: #f2f2f2;
+  background: transparent;
+  cursor: pointer;
+}
+
+.waka-tts-pill-transport button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.waka-tts-pill-transport svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#waka-tts-pill-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #1d1d20;
+  background: #f7f7f7;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+}
+
+#waka-tts-pill-play svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+#waka-tts-pill-sleep span {
+  position: absolute;
+  right: 1px;
+  bottom: 0;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #101114;
+  background: #23ddbd;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+#waka-tts-pill-sleep span:empty {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .waka-tts-pill {
+    bottom: 16px;
+    width: min(430px, calc(100vw - 28px));
+    border-radius: 24px;
+  }
+
+  .waka-tts-pill-row {
+    min-height: 70px;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .waka-tts-pill-icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .waka-tts-pill-sub {
+    display: none;
+  }
+
+  .waka-tts-pill-transport {
+    gap: 4px;
+  }
+
+  .waka-tts-pill-transport button {
+    width: 34px;
+    height: 34px;
+  }
+
+  #waka-tts-pill-play {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .waka-tts-pill-title {
+    max-width: 120px;
+  }
+
+  #waka-tts-pill-sleep {
+    display: grid;
+  }
+}
+
+.waka-tts-panel.hidden {
+  display: none !important;
+}
+
+.waka-tts-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 6200;
+  display: grid;
+  place-items: center;
+  color: #f2f2f2;
+  font-family: var(--ui-font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+}
+
+.waka-tts-panel-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .58);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.waka-tts-sheet {
+  position: relative;
+  z-index: 1;
+  width: min(486px, calc(100vw - 36px));
+  max-height: min(86vh, 760px);
+  overflow: hidden auto;
+  padding: 24px 28px 28px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 28px;
+  background: #1f1f1f;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, .5);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.waka-tts-sheet::-webkit-scrollbar,
+.waka-tts-quote::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.waka-tts-panel-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, .86);
+  background: rgba(255, 255, 255, .08);
+  cursor: pointer;
+}
+
+.waka-tts-panel-close:hover {
+  background: rgba(255, 255, 255, .16);
+}
+
+.waka-tts-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 36px;
+  margin-bottom: 26px;
+}
+
+.waka-tts-cover {
+  flex: 0 0 54px;
+  width: 54px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0f9f76, #9ddc55);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+  font-size: 11px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.waka-tts-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.waka-tts-book {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.waka-tts-book-title,
+.waka-tts-book-sub {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.waka-tts-book-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 850;
+  line-height: 24px;
+}
+
+.waka-tts-book-sub {
+  color: rgba(255, 255, 255, .62);
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 20px;
+}
+
+.waka-tts-quote {
+  position: relative;
+  height: 224px;
+  min-height: 224px;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+  margin: 0 0 26px;
+  padding: 0;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, .9);
+  background: transparent;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+}
+
+.waka-tts-lyric-pad {
+  padding: 92px 0;
+}
+
+.waka-tts-line {
+  max-width: 100%;
+  margin: 0 auto 10px;
+  padding: 11px 30px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: rgba(255, 255, 255, .28);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  transition: background .16s ease, color .16s ease, transform .16s ease;
+}
+
+.waka-tts-line.current {
+  color: rgba(255, 255, 255, .72);
+  background: #2c2c2c;
+  transform: scale(1.01);
+}
+
+.waka-tts-line.past {
+  color: rgba(255, 255, 255, .18);
+}
+
+.waka-tts-word.is-read {
+  color: #fff;
+}
+
+.waka-tts-word.is-active {
+  color: #75bdf0;
+  text-shadow: 0 0 18px rgba(117, 189, 240, .28);
+}
+
+.waka-tts-progress {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+#waka-tts-rem {
+  text-align: right;
+}
+
+#waka-tts-seek {
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 999px;
+  background: linear-gradient(to right, #e5e5e5 0 var(--tts-range, 0%), rgba(255, 255, 255, .18) var(--tts-range, 0%) 100%);
+  cursor: pointer;
+}
+
+#waka-tts-seek::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #e5e5e5;
+}
+
+#waka-tts-seek::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background: #e5e5e5;
+}
+
+.waka-tts-main-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.waka-tts-main-controls button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, .9);
+  background: transparent;
+  cursor: pointer;
+}
+
+.waka-tts-main-controls button:hover {
+  background: rgba(255, 255, 255, .08);
+}
+
+.waka-tts-main-controls .primary {
+  width: 72px;
+  height: 72px;
+  color: #0c2130;
+  background: #75bdf0;
+}
+
+.waka-tts-main-controls .primary:hover {
+  background: #8ac9f5;
+}
+
+.waka-tts-panel svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.waka-tts-main-controls .primary svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.waka-tts-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.waka-tts-card {
+  min-height: 70px;
+  padding: 12px 10px;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, .72);
+  background: #2c2c2c;
+  cursor: pointer;
+}
+
+.waka-tts-card:hover {
+  background: #363636;
+}
+
+.waka-tts-card strong {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #f4f4f4;
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.waka-tts-card span {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.waka-tts-card svg {
+  width: 25px;
+  height: 25px;
+}
+
+.waka-tts-offline {
+  display: none !important;
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 12px;
+  grid-template-columns: 32px minmax(0, 1fr) auto 24px;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, .9);
+  background: #2c2c2c;
+  text-align: left;
+  opacity: .95;
+}
+
+.waka-tts-offline span {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.waka-tts-offline strong,
+.waka-tts-offline small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.waka-tts-offline strong {
+  color: #fff;
+  font-size: 16px;
+}
+
+.waka-tts-offline small {
+  color: rgba(255, 255, 255, .62);
+  font-size: 14px;
+}
+
+.waka-tts-offline em {
+  color: #fff;
+  font-style: normal;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .waka-tts-panel {
+    align-items: end;
+  }
+
+  .waka-tts-pill {
+    bottom: calc(14px + var(--waka-mobile-nav-h, 0px) + env(safe-area-inset-bottom));
+    width: min(390px, calc(100vw - 24px));
+    border-radius: 22px;
+  }
+
+  .waka-tts-pill-row {
+    min-height: 60px;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .waka-tts-pill-info {
+    gap: 9px;
+    padding: 5px 6px;
+  }
+
+  .waka-tts-pill-icon {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .waka-tts-pill-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .waka-tts-pill-title {
+    max-width: none;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .waka-tts-pill-sub,
+  #waka-tts-pill-prev,
+  #waka-tts-pill-next {
+    display: none !important;
+  }
+
+  .waka-tts-pill-transport {
+    gap: 3px;
+  }
+
+  .waka-tts-pill-transport button {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+  }
+
+  #waka-tts-pill-play {
+    width: 44px;
+    height: 44px;
+  }
+
+  .waka-tts-sheet {
+    width: 100vw;
+    max-height: min(88vh, 680px);
+    padding: 22px 18px calc(20px + env(safe-area-inset-bottom));
+    border-radius: 24px 24px 0 0;
+  }
+
+  .waka-tts-head {
+    gap: 11px;
+    margin-bottom: 18px;
+  }
+
+  .waka-tts-cover {
+    flex-basis: 46px;
+    width: 46px;
+    height: 62px;
+    border-radius: 9px;
+  }
+
+  .waka-tts-book-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .waka-tts-book-sub {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .waka-tts-quote {
+    height: min(32vh, 190px);
+    min-height: 156px;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+
+  .waka-tts-lyric-pad {
+    padding: 72px 0;
+  }
+
+  .waka-tts-line {
+    padding: 10px 20px;
+  }
+
+  .waka-tts-progress {
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .waka-tts-main-controls {
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+
+  .waka-tts-main-controls button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .waka-tts-main-controls .primary {
+    width: 64px;
+    height: 64px;
+  }
+
+  .waka-tts-cards {
+    gap: 8px;
+  }
+
+  .waka-tts-card {
+    min-height: 62px;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .waka-tts-sheet {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .waka-tts-book-title {
+    font-size: 18px;
+  }
+
+  .waka-tts-book-sub {
+    font-size: 14px;
+  }
+
+  .waka-tts-quote {
+    height: min(30vh, 176px);
+    min-height: 142px;
+    font-size: 16px;
+  }
+
+  .waka-tts-lyric-pad {
+    padding: 64px 0;
+  }
+
+  .waka-tts-line {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .waka-tts-main-controls .primary {
+    width: 60px;
+    height: 60px;
+  }
+
+  .waka-tts-card strong {
+    font-size: 14px;
+  }
+
+  .waka-tts-card span {
+    font-size: 12px;
+  }
+}

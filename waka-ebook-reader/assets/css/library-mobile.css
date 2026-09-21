@@ -1,0 +1,719 @@
+/* ===========================================================
+   library-mobile.css — Thư viện ở MOBILE MODE (6.9.0)
+   Nạp SAU library.css / reader.css / tts-pill.css.
+
+   QUY TẮC QUAN TRỌNG
+   1) Phần "toàn cục" (ngoài @media) chỉ ẩn các phần tử chỉ-dành-cho-mobile
+      và khai báo icon/keyframes → desktop KHÔNG đổi.
+   2) Mọi luật bố cục mobile nằm trong MỘT khối @media (max-width: 760px)
+      (đúng ngưỡng của mobile-reader.js). mobile-reader.js sẽ "bóc" các luật
+      @media max-width <= 900px ra thành <style id="forced-mobile-media-rules">
+      khi thiết bị cảm ứng có viewport rộng bị ép sang mobile mode, nên:
+        • luật trong khối này TỰ ĐỘNG áp dụng cho cả forced mobile mode;
+        • luôn dùng selector bắt đầu bằng  #library-view  (specificity cao hơn
+          luật gốc của library.css/style.css, không cần !important);
+        • không đặt :root / html / body trong khối @media này.
+   =========================================================== */
+
+/* ---------- 1. TOÀN CỤC (không đổi desktop) ---------- */
+
+.lib-mtoolbar,
+.lib-recent,
+.lib-mempty,
+.lib-scrim,
+.lib-popover,
+.lib-sheet,
+.book-desc,
+.book-meta,
+.book-cover-fallback .bcf-author { display: none; }
+
+/* thẻ sách có ảnh bìa → ẩn bìa chữ (chỉ hiện khi "Ẩn bìa" hoặc không có ảnh)
+   (không đặt position:relative cho .book-cover ở đây: sẽ làm đổi điểm neo của huy hiệu % trên desktop —
+    luật đó nằm trong khối @media mobile bên dưới) */
+.book-cover.has-img .book-cover-fallback { display: none; }
+.book-cover-fallback .bcf-title { display: block; }
+
+/* icon lấy từ assets/icons/*.svg, tô theo currentColor (theme sáng/tối tự đổi) */
+.lib-ico {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.lib-ico-view {
+  -webkit-mask-image: url("../icons/setting-view.svg");
+  mask-image: url("../icons/setting-view.svg");
+}
+.lib-ico-humb {
+  -webkit-mask-image: url("../icons/setting-humb.svg");
+  mask-image: url("../icons/setting-humb.svg");
+}
+
+@keyframes lib-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes lib-sheet-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes lib-pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .lib-sheet, .lib-sheet-card, .lib-popover { animation: none !important; }
+}
+
+/* ---------- 2. MOBILE MODE ---------- */
+
+@media (max-width: 760px) {
+
+  /* chỉ khi đang ở màn hình thư viện — không đổi chiều cao của trình đọc */
+  #app-root:has(> #library-view:not(.hidden)) { height: 100dvh; }
+
+  #library-view {
+    flex-direction: column;
+    --lib-m-accent: #18d3a7;      /* cùng màu nhấn với các sheet của trình đọc mobile */
+    --m-cols: 3;                  /* JS ghi đè theo cài đặt Cột */
+    --m-list-cover-w: clamp(72px, 25vw, 112px);
+  }
+
+  /* bỏ toolbar dọc / thanh URL / thanh hành động / ô tìm kiếm desktop.
+     (các nút #btn-select-mode, #btn-export, #btn-import vẫn nằm trong DOM để
+      menu mobile gọi .click() — display:none không ảnh hưởng .click()) */
+  #library-view .lib-rail,
+  #library-view .lib-urlbar,
+  #library-view .lib-actionbar,
+  #library-view .lib-search-bar,
+  #library-view #rail-panel { display: none !important; }
+
+  /* bỏ khung xanh mặc định của Chrome mobile khi chạm nút (chip, menu, toolbar…) */
+  #library-view button { -webkit-tap-highlight-color: transparent; }
+
+  /* ----- toolbar ----- */
+
+  #library-view .lib-mtoolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    min-height: 52px;
+    padding: calc(6px + env(safe-area-inset-top, 0px)) 12px 6px 16px;
+    background: var(--lib-bg);
+    position: relative;
+    z-index: 20;
+  }
+
+  #library-view .lib-msearch {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--lib-fg) 8%, var(--lib-bg));
+  }
+  #library-view .lib-msearch:focus-within {
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--lib-m-accent) 55%, transparent);
+  }
+  #library-view .lib-msearch-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--lib-fg-dim);
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+  }
+  #library-view .lib-msearch-icon svg { width: 19px; height: 19px; }
+
+  #library-view .lib-msearch-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--lib-fg);
+    font: inherit;
+    font-size: 16px;               /* ≥16px: iOS không tự zoom khi focus */
+    font-weight: 300;
+    padding: 0 6px 0 40px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  #library-view .lib-msearch-input::placeholder { color: var(--lib-fg-dim); opacity: .9; }
+  #library-view .lib-msearch-input::-webkit-search-cancel-button,
+  #library-view .lib-msearch-input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+
+  #library-view .lib-msearch-clear,
+  #library-view .lib-msearch-add {
+    flex: 0 0 auto;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    color: var(--lib-fg-dim);
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+  #library-view .lib-msearch-clear { width: 32px; }
+  #library-view .lib-msearch-clear svg { width: 16px; height: 16px; }
+  #library-view .lib-msearch-add { width: 46px; border-radius: 0 999px 999px 0; }
+  #library-view .lib-msearch-add svg { width: 22px; height: 22px; stroke-width: 1.8; }
+  #library-view .lib-msearch-add:active { color: var(--lib-fg); }
+  #library-view .lib-msearch-sep {
+    flex: 0 0 auto;
+    width: 1px;
+    height: 18px;
+    background: color-mix(in srgb, var(--lib-fg) 30%, transparent);
+  }
+
+  #library-view .lib-mbtn {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--lib-fg);
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+  #library-view .lib-mbtn[aria-expanded="true"] {
+    background: color-mix(in srgb, var(--lib-fg) 13%, transparent);
+  }
+
+  /* ----- vùng cuộn ----- */
+
+  #library-view .lib-main {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: 0 0 calc(24px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  #library-view:has(.bulk-bar:not(.hidden)) .lib-main {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  }
+  #library-view.lib-sheet-open .lib-main { overflow: hidden; }
+
+  /* ----- LƯỚI (Grid) ----- */
+
+  #library-view .library-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--m-cols, 3), minmax(0, 1fr));
+    gap: 20px 16px;
+    align-items: start;
+    padding: 12px 16px 24px;
+  }
+
+  #library-view .book-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    content-visibility: auto;              /* thư viện lớn cuộn mượt hơn */
+    contain-intrinsic-size: auto 230px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #library-view .book-cover {
+    position: relative;                    /* làm mốc cho ảnh bìa / bìa chữ (absolute) */
+    width: 100%;
+    aspect-ratio: 28 / 41;                 /* tỉ lệ bìa của Readest */
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.28);
+    overflow: hidden;
+  }
+  #library-view .book-card:hover .book-cover { transform: none; box-shadow: 0 1px 6px rgba(0,0,0,.28); }
+  #library-view .book-cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                     /* Crop */
+  }
+  #library-view.covers-fit .book-cover img {
+    object-fit: contain;                   /* Fit */
+    background: var(--lib-bg-2);
+  }
+
+  /* bìa chữ (khi sách không có ảnh bìa, hoặc bật "Ẩn bìa") */
+  #library-view .book-cover-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    overflow: hidden;
+    text-align: center;
+    word-break: break-word;
+  }
+  #library-view .book-cover-fallback .bcf-title {
+    font-size: clamp(11px, 3.6vw, 15px);
+    font-weight: 600;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #library-view .book-cover-fallback .bcf-author {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: clamp(10px, 3vw, 12px);
+    opacity: .7;
+  }
+  #library-view .book-cover.has-img .book-cover-fallback { display: none; }   /* có ảnh bìa → ẩn bìa chữ */
+  #library-view.hide-covers .book-cover.has-img img { display: none; }
+  #library-view.hide-covers .book-cover.has-img .book-cover-fallback { display: flex; }
+
+  /* mobile không có hover: bỏ chip % + nút xoá kiểu desktop (xoá nằm trong "Chi tiết") */
+  #library-view .book-progress-ring,
+  #library-view .book-delete,
+  #library-view .book-file { display: none !important; }
+
+  #library-view .book-title {
+    margin: 8px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--lib-fg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #library-view .book-author { display: none; }
+
+  #library-view .book-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: 26px;
+    margin-top: 2px;
+    color: var(--lib-fg-dim);
+    font-size: 12px;
+  }
+  #library-view .book-pct {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #library-view .book-actions { display: flex; align-items: center; flex: 0 0 auto; gap: 4px; }
+  #library-view .book-act {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--lib-fg-dim);
+    display: grid;
+    place-items: center;
+  }
+  #library-view .book-act::after { content: ""; position: absolute; inset: -8px -4px; }  /* mở rộng vùng chạm */
+  #library-view .book-act svg { width: 19px; height: 19px; stroke-width: 1.7; }
+  #library-view .book-act:active { color: var(--lib-fg); }
+
+  /* nhiều cột → bỏ bớt nút cho khỏi chật */
+  #library-view.cols-dense:not(.view-list) .book-act[data-action="export"] { display: none; }
+  #library-view.cols-dense:not(.view-list) .book-title { font-size: 12px; }
+
+  /* chế độ chọn nhiều */
+  #library-view .book-card.selectable .book-act { pointer-events: none; opacity: .3; }
+  #library-view .book-select { top: 6px; left: 6px; }
+
+  /* ----- DANH SÁCH (List) ----- */
+
+  #library-view.view-list .library-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 16px 24px;
+  }
+  #library-view.view-list .book-card {
+    display: grid;
+    grid-template-columns: var(--m-list-cover-w) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "cover title"
+      "cover author"
+      "cover desc"
+      "cover meta";
+    column-gap: 16px;
+    align-items: start;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--lib-line);
+    content-visibility: visible;
+  }
+  #library-view.view-list .book-card:last-child { border-bottom: 0; }
+  #library-view.view-list .book-card:hover { background: transparent; }
+  #library-view.view-list .book-card .book-cover { grid-area: cover; align-self: start; }
+  #library-view.view-list .book-card .book-title {
+    grid-area: title;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  #library-view.view-list .book-card .book-author {
+    grid-area: author;
+    display: block;
+    margin: 4px 0 0;
+    font-size: 16px;
+    color: var(--lib-fg-dim);
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #library-view.view-list .book-card .book-desc {
+    grid-area: desc;
+    display: block;
+    align-self: end;
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 1.35;
+    color: var(--lib-fg-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #library-view.view-list .book-card .book-meta { grid-area: meta; margin-top: 2px; font-size: 14px; }
+  #library-view.view-list .book-card .book-act { width: 28px; height: 28px; }
+  #library-view.view-list .book-card .book-act svg { width: 22px; height: 22px; }
+  #library-view.view-list.hide-covers .book-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "author" "desc" "meta";
+  }
+  #library-view.view-list.hide-covers .book-card .book-cover { display: none; }
+  #library-view.view-list.cols-dense .book-act[data-action="export"] { display: grid; }
+
+  /* ----- dải "Đọc gần đây" ----- */
+
+  #library-view .lib-recent { display: block; padding: 8px 0 0; }
+  #library-view .lib-recent-title {
+    margin: 0 16px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--lib-fg-dim);
+  }
+  #library-view .lib-recent-list {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  #library-view .lib-recent-list::-webkit-scrollbar { display: none; }
+  #library-view .lib-recent-item {
+    flex: 0 0 84px;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--lib-fg);
+    text-align: left;
+  }
+  #library-view .lib-recent-cover {
+    position: relative;
+    display: block;
+    aspect-ratio: 28 / 41;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #6a7b93, #44536b);
+    box-shadow: 0 1px 6px rgba(0,0,0,.28);
+  }
+  #library-view .lib-recent-cover img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  }
+  #library-view .lib-recent-cover em {
+    position: absolute; inset: 0; display: grid; place-items: center; padding: 6px;
+    font-style: normal; font-size: 11px; line-height: 1.2; text-align: center; color: #dde3ea;
+  }
+  #library-view .lib-recent-cover i {
+    position: absolute; left: 0; bottom: 0; height: 3px; width: var(--p, 0%);
+    background: var(--lib-m-accent);
+  }
+  #library-view .lib-recent-name {
+    display: block; margin-top: 6px; font-size: 12px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* ----- trạng thái rỗng ----- */
+
+  #library-view .lib-mempty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 18vh 32px 0;
+    text-align: center;
+    color: var(--lib-fg-dim);
+  }
+  #library-view .lib-mempty p { margin: 0; font-size: 15px; line-height: 1.5; }
+
+  /* ----- thanh chọn nhiều (bulk bar) → cố định đáy màn hình ----- */
+
+  #library-view .bulk-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-radius: 16px 16px 0 0;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: var(--lib-bg-2);
+    box-shadow: 0 -8px 24px rgba(0,0,0,.25);
+  }
+  #library-view .bulk-bar-actions { gap: 10px; flex-wrap: wrap; }
+
+  /* ----- popover (menu Hiển thị / Khác) ----- */
+
+  #library-view .lib-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 130;
+    background: transparent;
+  }
+  #library-view .lib-popover {
+    display: block;
+    position: fixed;
+    z-index: 135;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 6px 0;
+    border-radius: 14px;
+    border: 1px solid var(--lib-line);
+    background: var(--lib-bg-2);
+    color: var(--lib-fg);
+    box-shadow: 0 14px 40px rgba(0,0,0,.38);
+    transform-origin: top right;
+    animation: lib-pop .14s ease-out;
+    scrollbar-width: thin;
+  }
+
+  #library-view .lib-mi {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 0 16px 0 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-size: 16px;
+    text-align: left;
+  }
+  #library-view .lib-mi:active { background: color-mix(in srgb, var(--lib-fg) 9%, transparent); }
+  #library-view .lib-mi-check { flex: 0 0 44px; width: 44px; display: grid; place-items: center; }
+  #library-view .lib-mi-check svg { width: 18px; height: 18px; stroke-width: 2.2; }
+  #library-view .lib-mi-ico { flex: 0 0 44px; width: 44px; display: grid; place-items: center; color: var(--lib-fg-dim); }
+  #library-view .lib-mi-ico svg { width: 21px; height: 21px; stroke-width: 1.8; }
+  #library-view .lib-mi-label { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #library-view .lib-mi-chev { flex: 0 0 auto; display: grid; place-items: center; color: var(--lib-fg-dim); transition: transform .18s ease; }
+  #library-view .lib-mi-chev svg { width: 18px; height: 18px; }
+  #library-view .lib-mi[aria-expanded="true"] .lib-mi-chev { transform: rotate(180deg); }
+  #library-view .lib-msep { height: 1px; margin: 6px 0; background: var(--lib-line); }
+  #library-view .lib-mlabel { padding: 8px 16px 2px 44px; font-size: 13px; color: var(--lib-fg-dim); }
+  #library-view .lib-mi.is-dim, #library-view .lib-mrow.is-dim { opacity: .5; }
+
+  #library-view .lib-mrow { display: flex; align-items: center; min-height: 48px; padding-right: 12px; }
+  #library-view .lib-mrow .lib-mi { flex: 1 1 auto; width: auto; }
+  #library-view .lib-stepper { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+  #library-view .lib-step-num { min-width: 22px; text-align: center; color: var(--lib-fg-dim); font-size: 16px; }
+  #library-view .lib-step-btn {
+    width: 34px; height: 34px; border: 0; border-radius: 50%; padding: 0;
+    display: grid; place-items: center; color: inherit;
+    background: color-mix(in srgb, var(--lib-fg) 9%, transparent);
+  }
+  #library-view .lib-step-btn svg { width: 16px; height: 16px; stroke-width: 2.2; }
+  #library-view .lib-step-btn:disabled { opacity: .3; }
+
+  #library-view .lib-switch {
+    flex: 0 0 auto; position: relative; width: 44px; height: 26px; border-radius: 999px;
+    background: color-mix(in srgb, var(--lib-fg) 24%, transparent); transition: background .16s ease;
+  }
+  #library-view .lib-switch i {
+    position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--lib-fg); transition: transform .16s ease;
+  }
+  #library-view .lib-switch.on { background: var(--lib-m-accent); }
+  #library-view .lib-switch.on i { transform: translateX(18px); background: #10201c; }
+
+  /* ----- bottom sheet (giống #music-panel ở mobile mode) ----- */
+
+  #library-view .lib-sheet {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 140;
+    align-items: flex-end;
+    justify-content: center;
+    background: color-mix(in srgb, #000 42%, transparent);
+    animation: lib-fade .18s ease-out;
+  }
+  #library-view .lib-sheet-card {
+    width: 100%;
+    max-height: 72dvh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px 24px 0 0;
+    background: var(--lib-bg-2);
+    color: var(--lib-fg);
+    box-shadow: 0 -14px 38px rgba(0,0,0,.38);
+    animation: lib-sheet-up .24s cubic-bezier(.2,.8,.2,1);
+    outline: 0;
+  }
+  #library-view .lib-sheet-handle {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 4px;
+    margin: 10px auto 4px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--lib-fg) 22%, transparent);
+    touch-action: none;
+  }
+  #library-view .lib-sheet-head {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 22px 12px;
+    border-bottom: 1px solid var(--lib-line);
+    touch-action: none;
+  }
+  #library-view .lib-sheet-title { font-size: 18px; font-weight: 600; }
+  #library-view .lib-sheet-close {
+    width: 36px; height: 36px; margin-right: -8px; border: 0; border-radius: 50%;
+    background: transparent; color: var(--lib-fg-dim); display: grid; place-items: center; padding: 0;
+  }
+  #library-view .lib-sheet-close svg { width: 20px; height: 20px; }
+  #library-view .lib-sheet-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+    padding: 14px 22px calc(28px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* thành phần bên trong sheet */
+  #library-view .lib-srow { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; font-size: 16px; }
+  #library-view .lib-srow > span:first-child { color: var(--lib-fg-dim); }
+  #library-view .lib-srow b { font-weight: 600; }
+  #library-view .lib-stat { border-top: 1px solid var(--lib-line); }
+  #library-view .lib-stat:first-child { border-top: 0; }
+
+  #library-view .lib-field { display: flex; flex-direction: column; gap: 10px; }
+  #library-view .lib-field-head { display: flex; align-items: center; justify-content: space-between; font-size: 16px; color: var(--lib-fg-dim); }
+  #library-view .lib-field-head b { color: var(--lib-fg); font-weight: 600; }
+  #library-view .lib-slider { display: grid; grid-template-columns: 24px 1fr 30px; align-items: center; gap: 14px; }
+  #library-view .lib-a { text-align: center; font-weight: 700; color: color-mix(in srgb, var(--lib-fg) 75%, var(--lib-bg-2)); }
+  #library-view .lib-a.sm { font-size: 16px; }
+  #library-view .lib-a.lg { font-size: 26px; }
+
+  #library-view .lib-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    margin: 0;
+    border-radius: 4px;
+    outline: none;
+    background: color-mix(in srgb, var(--lib-fg) 22%, transparent);
+  }
+  #library-view .lib-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--lib-fg); box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  }
+  #library-view .lib-range::-moz-range-thumb {
+    width: 26px; height: 26px; border: 0; border-radius: 50%; background: var(--lib-fg);
+  }
+
+  #library-view .lib-pills { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  #library-view .lib-pills::-webkit-scrollbar { display: none; }
+  #library-view .lib-pill {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 2px solid var(--lib-line);
+    background: color-mix(in srgb, var(--lib-fg) 8%, transparent);
+    color: color-mix(in srgb, var(--lib-fg) 85%, var(--lib-bg-2));
+    font: inherit;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  #library-view .lib-pill.active {
+    border-color: var(--lib-m-accent);
+    color: var(--lib-m-accent);
+    background: color-mix(in srgb, var(--lib-m-accent) 12%, transparent);
+    font-weight: 700;
+  }
+  #library-view .lib-seg { display: flex; gap: 10px; }
+  #library-view .lib-seg .lib-pill { flex: 1 1 0; text-align: center; padding-left: 8px; padding-right: 8px; }
+
+  #library-view .lib-row-btn {
+    display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 0 16px;
+    border: 0; border-radius: 16px; font: inherit; font-size: 16px; text-align: left; color: var(--lib-fg);
+    background: color-mix(in srgb, var(--lib-fg) 8%, transparent);
+  }
+  #library-view .lib-row-btn svg { width: 22px; height: 22px; color: var(--lib-fg-dim); flex: 0 0 auto; }
+  #library-view .lib-url { display: flex; flex-direction: column; gap: 10px; }
+  #library-view .lib-url-label { font-size: 14px; color: var(--lib-fg-dim); }
+  #library-view .lib-url-row { display: flex; gap: 10px; }
+  #library-view .lib-url-input {
+    flex: 1 1 auto; min-width: 0; height: 46px; padding: 0 16px; border-radius: 999px; outline: 0;
+    border: 1px solid var(--lib-line); background: var(--lib-bg); color: var(--lib-fg); font: inherit; font-size: 16px;
+  }
+  #library-view .lib-url-input:focus { border-color: var(--lib-m-accent); }
+  #library-view .lib-btn2 {
+    flex: 0 0 auto; height: 46px; padding: 0 18px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600;
+    border: 1px solid var(--lib-line); background: transparent; color: var(--lib-fg);
+  }
+  #library-view .lib-primary {
+    height: 48px; border: 0; border-radius: 999px; font: inherit; font-size: 16px; font-weight: 800;
+    background: var(--lib-m-accent); color: #10201c;
+  }
+  #library-view .lib-danger {
+    height: 48px; border: 0; border-radius: 14px; font: inherit; font-size: 15px; font-weight: 700;
+    background: #7a3322; color: #fff;
+  }
+  #library-view .lib-hint { margin: 0; font-size: 13px; line-height: 1.5; color: var(--lib-fg-dim); }
+
+  /* ----- thanh cuộn theo theme tối (theme sáng giữ mặc định) -----
+     dùng scrollbar-color (thumb, track) lấy từ biến --lib-* nên đồng bộ với popover/sheet/vùng cuộn chính */
+  #library-view.lib-dark .lib-main {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--lib-fg) 28%, var(--lib-bg)) var(--lib-bg);
+  }
+  #library-view.lib-dark .lib-popover,
+  #library-view.lib-dark .lib-sheet-body {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--lib-fg) 28%, var(--lib-bg-2)) var(--lib-bg-2);
+  }
+}

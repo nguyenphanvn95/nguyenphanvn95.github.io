@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Waka EBook Reader</title>
+<link rel="icon" href="assets/icons/icon48.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<!-- Chuyển tới trình đọc, giữ nguyên ?query và #hash (ví dụ ?importToken=...) -->
+<script>location.replace("src/reader.html" + location.search + location.hash);</script>
+<noscript><meta http-equiv="refresh" content="0; url=src/reader.html" /></noscript>
+</head>
+<body><a href="src/reader.html">Mở Waka EBook Reader</a></body>
+</html>

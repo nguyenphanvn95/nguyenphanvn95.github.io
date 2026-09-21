@@ -1,0 +1,487 @@
+/* ===========================================================
+   library.css — bố cục trang thư viện kiểu flowoss
+   Nạp SAU style.css, chỉ ghi đè phần LIBRARY VIEW.
+   =========================================================== */
+
+:root {
+  --lib-bg: #ffffff;
+  --lib-bg-2: #f6f7f9;
+  --lib-fg: #1f2733;
+  --lib-fg-dim: #6b7785;
+  --lib-line: #e3e6ea;
+  --lib-accent: #c17a4f;
+  --lib-rail-w: 62px;
+}
+
+#library-view.lib-dark {
+  --lib-bg: #161b22;
+  --lib-bg-2: #1d232c;
+  --lib-fg: #dde3ea;
+  --lib-fg-dim: #8b97a8;
+  --lib-line: #2b333d;
+}
+
+/* ---------- khung tổng ---------- */
+
+#library-view {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  background: var(--lib-bg);
+  color: var(--lib-fg);
+  position: relative;
+}
+
+/* ---------- thanh công cụ dọc bên trái ---------- */
+
+.lib-rail {
+  width: var(--lib-rail-w);
+  flex-shrink: 0;
+  background: var(--lib-bg-2);
+  border-right: 1px solid var(--lib-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 0 16px;
+}
+
+.rail-spacer { flex: 1; }
+
+.rail-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--lib-fg-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s ease, color .15s ease;
+}
+.rail-btn svg,
+.rail-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+.rail-btn img { opacity: .82; }
+.rail-btn:hover { background: rgba(127,127,127,0.14); color: var(--lib-fg); }
+.rail-btn.active { background: rgba(193,122,79,0.16); color: var(--lib-accent); }
+.rail-btn:hover img,
+.rail-btn.active img { opacity: 1; }
+.lib-dark .rail-btn img { filter: invert(1); }
+
+#library-view .lib-actionbar #btn-select-mode,
+#library-view .lib-actionbar #btn-export,
+#library-view .lib-actionbar #btn-import {
+  display: none !important;
+}
+
+/* ---------- vùng nội dung ---------- */
+
+.lib-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 16px 22px 60px;
+}
+
+/* ---------- ô nhập URL ---------- */
+
+.lib-urlbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--lib-line);
+  border-radius: 10px;
+  background: var(--lib-bg);
+  padding: 4px 6px 4px 14px;
+}
+.lib-urlbar:focus-within { border-color: var(--lib-accent); }
+
+.url-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--lib-fg);
+  font-size: 14px;
+  padding: 9px 0;
+  font-family: inherit;
+}
+.url-input::placeholder { color: var(--lib-fg-dim); }
+
+.url-btn {
+  width: 32px; height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--lib-fg-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.url-btn svg { width: 18px; height: 18px; }
+.url-btn:hover { background: rgba(127,127,127,0.14); color: var(--lib-fg); }
+.url-btn--go:hover { background: rgba(193,122,79,0.16); color: var(--lib-accent); }
+
+/* ---------- thanh hành động ---------- */
+
+.lib-actionbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 14px 0 8px;
+}
+
+.lib-actionbar-right {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.lib-btn {
+  border: 1px solid var(--lib-line);
+  background: var(--lib-bg);
+  color: var(--lib-fg);
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background .15s ease, border-color .15s ease;
+}
+.lib-btn:hover { background: var(--lib-bg-2); border-color: var(--lib-fg-dim); }
+.lib-btn.active { border-color: var(--lib-accent); color: var(--lib-accent); }
+
+.lib-btn--primary {
+  background: #d6e4ff;
+  border-color: #b9d1ff;
+  color: #1a3f7a;
+}
+#library-view.lib-dark .lib-btn--primary { background: #24405f; border-color: #2f5480; color: #d6e4ff; }
+.lib-btn--primary:hover { background: #c4d8ff; }
+
+.lib-empty-hint { font-size: 13px; color: var(--lib-fg-dim); }
+
+/* ---------- ô tìm kiếm ---------- */
+
+.lib-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--lib-line);
+  border-radius: 9px;
+  padding: 0 10px;
+  margin-bottom: 12px;
+  background: var(--lib-bg-2);
+}
+.lib-search-bar svg { width: 16px; height: 16px; color: var(--lib-fg-dim); flex-shrink: 0; }
+.lib-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--lib-fg);
+  font-size: 13.5px;
+  padding: 9px 0;
+  font-family: inherit;
+}
+.lib-search-clear {
+  border: none;
+  background: none;
+  color: var(--lib-fg-dim);
+  font-size: 13px;
+}
+.lib-search-clear:hover { color: var(--lib-fg); }
+
+/* ---------- thanh chọn nhiều ---------- */
+
+#library-view .bulk-bar {
+  background: var(--lib-bg-2);
+  border: 1px solid var(--lib-line);
+  color: var(--lib-fg);
+  margin-bottom: 14px;
+}
+#library-view .btn-text { color: var(--lib-fg-dim); }
+#library-view .btn-text:hover { color: var(--lib-fg); }
+
+/* ---------- lưới sách ---------- */
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-w, 172px), 1fr));
+  gap: 22px 18px;
+  align-items: start;
+}
+
+#library-view.density-sm { --card-w: 128px; }
+#library-view.density-md { --card-w: 172px; }
+#library-view.density-lg { --card-w: 220px; }
+
+.book-card { position: relative; cursor: pointer; }
+
+#library-view .book-cover {
+  aspect-ratio: 3 / 4.2;
+  border-radius: 4px;
+  border-left: none;
+  background: linear-gradient(160deg, #6a7b93, #44536b);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.16);
+  border: 1px solid var(--lib-line);
+}
+#library-view .book-card:hover .book-cover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+}
+
+#library-view .book-progress-ring {
+  top: 0; right: 0;
+  border-radius: 0 0 0 6px;
+  background: rgba(255,255,255,0.88);
+  color: #333;
+  font-size: 11px;
+  padding: 3px 7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* dòng tên file dưới bìa — ẩn theo yêu cầu, chỉ còn Tiêu đề + Tác giả cho gọn */
+.book-file {
+  display: none;
+}
+.book-file::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #4c6ef5;
+  box-shadow: inset 0 0 0 2px var(--lib-bg);
+}
+
+#library-view .book-title {
+  margin: 8px 0 0 0;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--lib-fg-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#library-view .book-author {
+  margin: 1px 0 0 0;
+  font-size: 11px;
+  color: var(--lib-fg-dim);
+  opacity: .75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#library-view .book-select {
+  background: rgba(20,26,36,0.45);
+  border-color: rgba(255,255,255,0.8);
+}
+#library-view .book-delete { left: auto; right: 8px; top: 30px; }
+
+/* ---------- kiểu danh sách ---------- */
+
+#library-view.view-list .library-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 2px;
+}
+#library-view.view-list .book-card {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-bottom: 1px solid var(--lib-line);
+}
+#library-view.view-list .book-card:hover { background: var(--lib-bg-2); }
+#library-view.view-list .book-cover { grid-row: span 3; aspect-ratio: 3 / 4.2; }
+#library-view.view-list .book-card:hover .book-cover { transform: none; }
+#library-view.view-list .book-file,
+#library-view.view-list .book-title,
+#library-view.view-list .book-author { margin-left: 0; padding-left: 0; }
+#library-view.view-list .book-file::before { display: none; }
+#library-view.view-list .book-file { font-size: 13.5px; font-weight: 500; }
+
+/* ---------- vùng thả file / trạng thái rỗng ---------- */
+
+#library-view .dropzone {
+  margin-top: 26px;
+  border: 1.5px dashed var(--lib-line);
+  border-radius: 14px;
+  padding: 34px 20px;
+  text-align: center;
+  background: var(--lib-bg-2);
+}
+#library-view .dropzone.dragover { border-color: var(--lib-accent); background: rgba(193,122,79,0.08); }
+#library-view .dropzone-hint { color: var(--lib-fg-dim); }
+#library-view .dropzone.compact { padding: 14px; margin-top: 30px; }
+#library-view .dropzone.compact .btn-primary { padding: 9px 18px; font-size: 13.5px; }
+
+.lib-nomatch { text-align: center; color: var(--lib-fg-dim); font-size: 13.5px; margin-top: 30px; }
+
+/* ---------- lớp phủ kéo thả ---------- */
+
+.drop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(15,20,28,0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.drop-overlay-card {
+  border: 2.5px dashed rgba(255,255,255,0.75);
+  border-radius: 18px;
+  padding: 40px 60px;
+  text-align: center;
+  color: #fff;
+  background: rgba(20,26,36,0.55);
+}
+.drop-overlay-card svg { width: 44px; height: 44px; margin-bottom: 12px; }
+.drop-overlay-card p { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+.drop-overlay-card span { font-size: 13px; opacity: .75; }
+
+/* ---------- bảng nhỏ của thanh trái ---------- */
+
+.rail-panel {
+  position: absolute;
+  left: calc(var(--lib-rail-w) + 10px);
+  top: 14px;
+  width: 268px;
+  background: var(--lib-bg);
+  color: var(--lib-fg);
+  border: 1px solid var(--lib-line);
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+  z-index: 120;
+  overflow: hidden;
+}
+
+.rail-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--lib-line);
+  font-size: 13px;
+  font-weight: 600;
+}
+.rail-panel-close { border: none; background: none; color: var(--lib-fg-dim); font-size: 13px; }
+.rail-panel-close:hover { color: var(--lib-fg); }
+
+.rail-panel-body { padding: 14px; font-size: 13px; line-height: 1.6; }
+
+.rp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}
+.rp-row + .rp-row { border-top: 1px solid var(--lib-line); }
+.rp-label { color: var(--lib-fg-dim); font-size: 12.5px; }
+.rp-value { font-weight: 600; }
+
+.rp-group { display: flex; gap: 6px; }
+.rp-chip {
+  border: 1px solid var(--lib-line);
+  background: transparent;
+  color: var(--lib-fg);
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+.rp-chip:hover { background: var(--lib-bg-2); }
+.rp-chip.active { border-color: var(--lib-accent); color: var(--lib-accent); font-weight: 600; }
+
+.rp-select {
+  width: 100%;
+  border: 1px solid var(--lib-line);
+  border-radius: 8px;
+  padding: 7px 8px;
+  background: var(--lib-bg);
+  color: var(--lib-fg);
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.rp-danger {
+  width: 100%;
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #7a3322;
+  color: #fff;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.rp-danger:hover { background: #8f3c28; }
+
+.rp-hint { color: var(--lib-fg-dim); font-size: 12px; margin: 10px 0 0; }
+
+/* ---------- màn hình hẹp ---------- */
+
+@media (max-width: 720px) {
+  :root {
+    --lib-rail-w: 52px;
+    --card-w: 128px;
+  }
+
+  .lib-main { padding: 12px 14px 50px; }
+  .lib-actionbar .lib-empty-hint { display: none; }
+
+  .lib-actionbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .lib-actionbar-right {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+
+  .lib-urlbar {
+    flex-wrap: nowrap;
+    padding-left: 10px;
+  }
+
+  .url-input {
+    font-size: 13px;
+  }
+
+  .lib-btn {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root { --card-w: 108px; }
+
+  .lib-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .lib-actionbar-right {
+    justify-content: space-between;
+  }
+}

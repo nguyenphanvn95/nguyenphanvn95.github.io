@@ -1,0 +1,16 @@
+{
+  "name": "Waka EBook Reader",
+  "short_name": "Waka Reader",
+  "description": "Trình đọc EPUB: thư viện, chú thích, đọc to, nhạc nền — desktop và mobile.",
+  "lang": "vi",
+  "start_url": "./src/reader.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1b1f24",
+  "theme_color": "#c17a4f",
+  "icons": [
+    { "src": "assets/icons/icon128.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon48.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
