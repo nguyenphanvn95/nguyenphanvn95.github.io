@@ -108,6 +108,7 @@
     setAttr("#rd-rail-settings", "title", "rail.settings", root);
 
     setText('[data-mobile-tab="toc"]', "panel.toc", root);
+    setText('[data-mobile-tab="search"]', "panel.search", root);
     setText('[data-mobile-tab="marks"]', "panel.marks", root);
     setText('[data-group="library"] span', "panel.library", root);
     setText('[data-group="toc"] span', "panel.toc", root);

@@ -161,7 +161,9 @@
     closeSettingsSheet();
     closeMusicSheet();
     closeTtsPanel();
-    const rail = panel === "marks" ? $("#rd-rail-marks") : $("#rd-rail-toc");
+    const rail = panel === "marks" ? $("#rd-rail-marks")
+      : panel === "search" ? $("#rd-rail-search")
+      : $("#rd-rail-toc");
     clickRailEnsureOpen(rail, panel || "toc");
     readerView.classList.add("mobile-sidebar-open", "mobile-ui-visible");
     if (mobileToc) mobileToc.classList.add("active");
@@ -183,8 +185,9 @@
   function syncMobileTabs(activePanel) {
     if (!mobileTabs) return;
     const panel = activePanel || getActivePanel() || "toc";
+    const known = panel === "marks" || panel === "search" ? panel : "toc";
     mobileTabs.querySelectorAll("[data-mobile-tab]").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.mobileTab === (panel === "marks" ? "marks" : "toc"));
+      btn.classList.toggle("active", btn.dataset.mobileTab === known);
     });
   }
 
@@ -434,7 +437,8 @@
     mobileTabs.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-mobile-tab]");
       if (!btn) return;
-      openSidebar(btn.dataset.mobileTab === "marks" ? "marks" : "toc");
+      const tab = btn.dataset.mobileTab;
+      openSidebar(tab === "marks" || tab === "search" ? tab : "toc");
     });
   }
 
