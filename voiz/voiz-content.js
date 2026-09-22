@@ -5,6 +5,8 @@
  * Continuous listen (nghe liên tục) – same stream source as download, optional attach to site player.
  * v7.2: Professional Voiz-like mini-player panel (cover, layout, polish).
  * v7.3.1: Picture-in-Picture (PiP) – professional cover background (desktop-like) + robust Edge image load + sharper canvas.
+ * v7.3.2: Screen Wake Lock – giữ màn hình sáng khi đang phát audio (tab thường lẫn khi bật PiP);
+ *         tự xin lại wake lock khi tab hiển thị/focus trở lại (trình duyệt tự nhả khi tab bị ẩn).
  */
 (function () {
   'use strict';
@@ -52,6 +54,9 @@
   let pipVideo = null;
   let pipActive = false;
   let pipMediaSessionBound = false;
+  // ─── Screen Wake Lock (giữ sáng màn hình khi đang phát) ───────────────────
+  let wakeLockSentinel = null;
+  let wakeLockWanted = false; // true bất cứ khi nào audio thực sự đang chạy
   const PLAYBACK_RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
   // Voiz-like sleep presets
   const SLEEP_PRESETS = [
@@ -692,6 +697,52 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     }
   }
 
+  // Xin giữ màn hình sáng. An toàn khi gọi nhiều lần — bỏ qua nếu đã đang giữ.
+  async function requestWakeLock() {
+    wakeLockWanted = true;
+    if (!('wakeLock' in navigator) || wakeLockSentinel) return;
+    try {
+      const sentinel = await navigator.wakeLock.request('screen');
+      // Nếu trong lúc chờ Promise, người dùng đã bấm dừng → nhả ngay, không giữ nữa.
+      if (!wakeLockWanted) {
+        try { sentinel.release(); } catch {}
+        return;
+      }
+      wakeLockSentinel = sentinel;
+      wakeLockSentinel.addEventListener('release', () => {
+        // Trình duyệt có thể tự nhả sentinel (vd. khi tab bị ẩn) — dọn biến để
+        // lần visibilitychange/focus kế tiếp biết cần xin lại nếu vẫn đang phát.
+        wakeLockSentinel = null;
+      });
+    } catch (err) {
+      // Bị từ chối (thường do tab không hiển thị/không có focus lúc xin) — sẽ tự
+      // thử lại khi tab hiển thị trở lại hoặc khi cửa sổ có focus (xem bên dưới).
+      wakeLockSentinel = null;
+      console.warn('[Voiz WakeLock] request failed:', err);
+    }
+  }
+
+  async function releaseWakeLock() {
+    wakeLockWanted = false;
+    const sentinel = wakeLockSentinel;
+    wakeLockSentinel = null;
+    if (sentinel) {
+      try { await sentinel.release(); } catch {}
+    }
+  }
+
+  // Screen Wake Lock API tự động nhả sentinel khi document bị ẩn (đổi tab).
+  // Khi tab hiển thị lại (kể cả khi âm thanh vẫn đang phát nền/qua PiP), xin lại
+  // nếu phiên nghe vẫn đang cần giữ sáng màn hình.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && wakeLockWanted && !wakeLockSentinel) {
+      requestWakeLock();
+    }
+  });
+  window.addEventListener('focus', () => {
+    if (wakeLockWanted && !wakeLockSentinel) requestWakeLock();
+  });
+
   function getActiveMedia() {
     if (continuousSiteAttached) {
       const media = findSiteMedia();
@@ -768,6 +819,10 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
       continuousDuration = continuousAudio.duration || 0;
       continuousAudio.playbackRate = continuousPlaybackRate;
     });
+    // Giữ màn hình sáng đúng theo trạng thái phát thực tế của audio (bao gồm cả
+    // khi resume qua nút toggle, phím media, hay MediaSession trên PiP).
+    continuousAudio.addEventListener('play', () => requestWakeLock());
+    continuousAudio.addEventListener('pause', () => releaseWakeLock());
     document.body.appendChild(continuousAudio);
     return continuousAudio;
   }
@@ -922,6 +977,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
       if (ui) ui.style.display = 'none';
     }
     exitPictureInPicture().catch(() => {});
+    releaseWakeLock();
     updateSleepUI();
     restoreToolkitButtonsZ();
     refreshVoizButtons();
@@ -1641,6 +1697,15 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
           duration: media.duration || 0,
         });
       });
+
+      // Giữ màn hình sáng theo trạng thái phát/tạm dừng của player trang (chỉ khi
+      // toolkit đang gắn vào nó). Gắn một lần cho mỗi phần tử media để tránh lặp.
+      if (!media.dataset.voizWakeLockBound) {
+        media.dataset.voizWakeLockBound = '1';
+        media.addEventListener('play', () => { if (continuousSiteAttached) requestWakeLock(); });
+        media.addEventListener('pause', () => { if (continuousSiteAttached) releaseWakeLock(); });
+      }
+      requestWakeLock();
       return true;
     } catch (err) {
       console.warn('[Voiz Continuous] Site player attach failed, fallback to own audio:', err);
@@ -1657,6 +1722,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     if (!continuousChapters || index < 0 || index >= continuousChapters.length) {
       updateContinuousUI({ status: 'Hết danh sách chương' });
       continuousPlaying = false;
+      releaseWakeLock();
       refreshVoizButtons();
       return;
     }
@@ -1725,6 +1791,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
       continuousLoading = false;
       updateContinuousUI({ status: 'Đang phát (player riêng)' });
       await audio.play();
+      requestWakeLock();
       const toggleBtn = document.querySelector('#voiz-continuous-overlay [data-ct-toggle]');
       if (toggleBtn) toggleBtn.innerHTML = ICONS.pause;
       updateMediaSessionMetadata();
@@ -1753,6 +1820,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     if (next >= continuousChapters.length) {
       updateContinuousUI({ status: 'Đã hết tất cả chương' });
       continuousPlaying = false;
+      releaseWakeLock();
       refreshVoizButtons();
       return;
     }
@@ -1792,6 +1860,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     } catch (err) {
       continuousLoading = false;
       continuousPlaying = false;
+      releaseWakeLock();
       alert(`Nghe liên tục thất bại: ${err.message}`);
       console.error('[Voiz Continuous] Start failed:', err);
       refreshVoizButtons();
