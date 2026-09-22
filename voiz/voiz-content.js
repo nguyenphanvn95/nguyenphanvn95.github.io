@@ -10,9 +10,18 @@
  * v7.3.3: Wake Lock – thêm lớp dự phòng (video ẩn loop) cho các trình duyệt mà
  *         Screen Wake Lock API không hoạt động ổn định (vd. một số bản Edge di động),
  *         và thêm dòng trạng thái hiển thị trực tiếp trên panel để dễ chẩn đoán.
+ * v7.3.4: Log chẩn đoán khi script nạp — in ra bản build + hỗ trợ Wake Lock ngay
+ *         trong console, để dễ phát hiện khi CDN (jsdelivr) còn cache bản cũ.
  */
 (function () {
   'use strict';
+
+  const VOIZ_BUILD = '7.3.4-wakelock';
+  console.log(
+    '[Voiz WakeLock] voiz-content.js build:', VOIZ_BUILD,
+    '| navigator.wakeLock hỗ trợ:', ('wakeLock' in navigator),
+    '| secure context (https):', window.isSecureContext
+  );
 
   const API_BASE = 'https://api.voiz.vn/v1';
   const SIGNATURE_SECRET = 'eo2fd31%Dgy4k@sd69et&nkth*thlt&nn3288ltkc#08384nddl617PcWq5b5lhvltml1f^fd2@Oc#b8';
