@@ -1,3 +1,4 @@
+/* @waka-component ebook-content 1.3.1 */
 /**
  * ebook-content.js - chạy trên /ebook/* và /shop/*  (Waka EPUB Downloader userscript 1.3)
  *
@@ -318,19 +319,36 @@
     if (select && part) select.title = `Đang chọn ${part.name || part.book_id}`;
   }
 
+  // [1.3.1] Ghi log chẩn đoán mỗi lý do một lần / một trang (hàm này được gọi lại nhiều lần bởi observer)
+  const _partsLogged = new Set();
+  function logPartsOnce(msg) {
+    const key = location.pathname + '|' + msg;
+    if (_partsLogged.has(key)) return;
+    _partsLogged.add(key);
+    console.log('[Waka DL] Nhiều phần: ' + msg);
+  }
+
   function requestRelatedParts() {
     if (_relatedParts.length > 1) return;
-    if (!hasMultiPartSignal()) return;
+    if (!hasMultiPartSignal()) {
+      logPartsOnce('không thấy "Tình trạng ra" / collection_status → coi là sách 1 phần');
+      return;
+    }
     const detail = extractProductDetail();
     const inlineParts = normalizeRelatedParts(detail?.list_chapter);
     if (inlineParts.length > 1) {
+      logPartsOnce('lấy ' + inlineParts.length + ' phần từ dữ liệu trang (list_chapter)');
       renderPartSelector(inlineParts);
       return;
     }
     const bookId = extractCurrentBookId();
-    if (!bookId) return;
+    if (!bookId) {
+      logPartsOnce('có tín hiệu nhiều phần nhưng chưa xác định được book_id');
+      return;
+    }
     if (_relatedRequestBookId === String(bookId)) return;
     _relatedRequestBookId = String(bookId);
+    logPartsOnce('gọi getRelatedBooks cho book_id=' + bookId);
     window.dispatchEvent(new CustomEvent('__waka_request_related_books__', { detail: { book_id: bookId } }));
   }
 
@@ -913,6 +931,8 @@
       showToast(`Đã phát hiện ${parts.length} phần của ebook`);
     } else if (detail.error) {
       console.warn('[Waka DL] getRelatedBooks:', detail.error);
+    } else {
+      console.log('[Waka DL] Nhiều phần: getRelatedBooks trả ' + parts.length + ' phần (book_id=' + detail.book_id + ') → sách 1 phần');
     }
   });
 

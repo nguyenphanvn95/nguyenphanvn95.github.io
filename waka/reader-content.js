@@ -1,3 +1,4 @@
+/* @waka-component reader-content 1.3.0 */
 /**
  * reader-content.js - ISOLATED world - /reader/*
  *

@@ -1,3 +1,4 @@
+/* @waka-component ebook-interceptor 1.3.1 */
 /**
  * MAIN world – generate secure_code đúng thuật toán Waka
  * verified: Base64(HmacSHA1("account item_id content_type id os", key))
