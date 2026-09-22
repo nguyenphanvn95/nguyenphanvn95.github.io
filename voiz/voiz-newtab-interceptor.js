@@ -17,12 +17,41 @@
     if (typeof item.id === "undefined" || item.id === null) return false;
     if (typeof item.name !== "string" || !item.name.length) return false;
     if (!item.avatar || typeof item.avatar !== "object") return false;
-    return (
+
+    // Loại tác giả / người đọc / kênh — không phải sách để nghe
+    // (API authors cũng có id+name+avatar cùng path /filename/)
+    if (item.type === "author" || item.type === "authors") return false;
+    if ("author_type" in item || "is_author" in item) return false;
+    // Object giống bio tác giả (description dài, không có field playlist)
+    if (
+      typeof item.description === "string" &&
+      item.description.length > 80 &&
+      !("total_duration" in item) &&
+      !("coin_price" in item) &&
+      !("playlist_counter" in item) &&
+      item.type !== "voiz"
+    ) {
+      return false;
+    }
+
+    // Playlist đầy đủ
+    if (
       "total_duration" in item ||
       "coin_price" in item ||
       "playlist_counter" in item ||
       "author_string" in item
-    );
+    ) {
+      return true;
+    }
+
+    // API rút gọn sách (new_contents, categories…): type voiz / promotion / group_type
+    if (item.type === "voiz") return true;
+    if (item.group_type != null) return true;
+    if (item.promotion === "vip" || item.promotion === "free" || item.promotion === "coin") {
+      return true;
+    }
+
+    return false;
   }
 
   // Quét đệ quy một JSON bất kỳ để tìm các mảng "giống sách", không phụ thuộc vào
@@ -35,12 +64,17 @@
 
     if (Array.isArray(node)) {
       var matched = 0;
+      var booksOnly = [];
       for (var i = 0; i < node.length; i++) {
-        if (isBookLike(node[i])) matched++;
+        if (isBookLike(node[i])) {
+          matched++;
+          booksOnly.push(node[i]);
+        }
       }
-      if (matched > 0 && matched === node.length) {
-        out.push(node);
-        return out; // không cần lặn sâu hơn vào từng cuốn sách nữa
+      // Nhận mảng khi hầu hết phần tử là sách (API đôi khi lẫn banner/null)
+      if (matched > 0 && matched >= Math.max(1, Math.floor(node.length * 0.6))) {
+        out.push(booksOnly);
+        return out;
       }
       for (var j = 0; j < node.length; j++) {
         findBookArrays(node[j], depth + 1, out, seen);
@@ -106,6 +140,8 @@
 
       return result.then(function (res) {
         try {
+          // Bỏ qua endpoint tác giả — tránh map avatar author → /play/<authorId>
+          if (/\/authors?\b/i.test(reqUrl)) return res;
           res
             .clone()
             .json()
@@ -133,6 +169,7 @@
     if (urlHostIsApi(xhr.__voizNewTabUrl)) {
       xhr.addEventListener("load", function () {
         try {
+          if (/\/authors?\b/i.test(String(xhr.__voizNewTabUrl || ""))) return;
           var json = JSON.parse(xhr.responseText);
           publish(extractBooks(json));
         } catch (e) {}

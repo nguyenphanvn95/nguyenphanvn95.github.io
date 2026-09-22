@@ -81,13 +81,27 @@
 
   // --- Chèn link "Nghe sách" dưới từng ảnh bìa đã khớp được dữ liệu ---
   function findAvatarIdFromImg(img) {
-    var src = img.currentSrc || img.src || "";
-    var m = src.match(AVATAR_ID_RE);
-    return m ? m[1] : null;
+    var candidates = [
+      img.currentSrc,
+      img.src,
+      img.getAttribute("src"),
+      img.getAttribute("data-src"),
+      img.getAttribute("data-lazy-src"),
+      img.getAttribute("srcset"),
+      img.getAttribute("data-srcset"),
+    ];
+    for (var i = 0; i < candidates.length; i++) {
+      var s = candidates[i];
+      if (!s || typeof s !== "string") continue;
+      var m = s.match(AVATAR_ID_RE);
+      if (m) return m[1];
+    }
+    return null;
   }
 
   function openInNewTab(url) {
-    try { window.open(url, "_blank"); } catch (e) {}
+    // Userscript: không có background script để mở tab mới hộ — dùng window.open trực tiếp.
+    try { window.open(url, "_blank", "noopener"); } catch (e) {}
   }
 
   // Trang chi tiết (/play/<id>/) có một ảnh bìa lớn dạng "nền" full-bleed ở phần header
@@ -99,6 +113,19 @@
     var alt = (img.getAttribute("alt") || "").trim().toLowerCase();
     var nimg = (img.getAttribute("data-nimg") || "").trim().toLowerCase();
     return alt === "cover" || nimg === "fill";
+  }
+
+  // Avatar tác giả: MuiAvatar tròn, nằm trong link /authors/, hoặc swiper author
+  function isAuthorAvatarImage(img) {
+    try {
+      if (img.classList && img.classList.contains("MuiAvatar-img")) return true;
+      if (img.closest(".MuiAvatar-root")) return true;
+      if (img.closest('a[href*="/authors/"]')) return true;
+      if (img.closest("#author-detail-info, .author-detail-info-swiper")) return true;
+      var alt = (img.getAttribute("alt") || "").toLowerCase();
+      if (alt.indexOf("image ") === 0) return true; // Voiz dùng alt="image <Tên tác giả>"
+    } catch (e) {}
+    return false;
   }
 
   function makeLink(book) {
@@ -131,21 +158,26 @@
 
     imgs.forEach(function (img) {
       if (isHeroCoverImage(img)) {
-        img.setAttribute(PROCESSED_ATTR, "1"); // đánh dấu bỏ qua hẳn, không cần quét lại
+        img.setAttribute(PROCESSED_ATTR, "1");
+        return;
+      }
+      // Không chèn lên avatar tác giả / vòng tròn MuiAvatar / link /authors/
+      if (isAuthorAvatarImage(img)) {
+        img.setAttribute(PROCESSED_ATTR, "1");
         return;
       }
 
       var avatarId = findAvatarIdFromImg(img);
       if (!avatarId) return;
       var book = bookByAvatarId.get(avatarId);
-      if (!book) return; // dữ liệu sách của ảnh này chưa tải kịp, chờ vòng quét sau
+      if (!book) return;
 
       img.setAttribute(PROCESSED_ATTR, "1");
 
       var wrap = img.closest("picture") || img;
       var parent = wrap.parentElement;
       if (!parent) return;
-      if (parent.querySelector("." + LINK_CLASS)) return; // đã chèn rồi
+      if (parent.querySelector("." + LINK_CLASS)) return;
 
       parent.classList.add(LINK_CLASS + "-wrap");
       var computedPos = window.getComputedStyle(parent).position;
@@ -316,7 +348,9 @@
   );
 
   // ─── PAGE_FETCH: tải m3u8/.ts trong context trang voiz.vn (tránh S3 AccessDenied) ───
-  if (false && typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage) {
+  // Userscript: không có `chrome` global nên khối này tự động bị bỏ qua (typeof chrome === "undefined").
+  // Giữ nguyên logic để nếu sau này có background script thật thì vẫn hoạt động không cần sửa gì.
+  if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage) {
     chrome.runtime.onMessage.addListener(function (message, _sender, sendResponse) {
       if (!message || message.type !== "PAGE_FETCH" || !message.url) return false;
       var responseType = message.responseType === "arrayBuffer" ? "arrayBuffer" : "text";
