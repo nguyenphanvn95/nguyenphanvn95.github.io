@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Voiz Live Player + PiP
 // @namespace    https://nguyenphanvn95.github.io/voiz/
-// @version      7.3.0-us.1
+// @version      7.3.1-us.1
 // @description  Nghe liên tục trên Voiz.vn — stream HLS + fallback, panel player đầy đủ, Picture-in-Picture (từ Mydio-Voiz Toolkit 7.3.0)
 // @author       Adapted for Tampermonkey
 // @match        https://voiz.vn/*
@@ -13,15 +13,20 @@
 (function () {
   'use strict';
 
+  // GitHub Pages trước (cập nhật gần như ngay khi bạn upload), jsdelivr sau
+  // làm phương án dự phòng khi GitHub Pages sập/chậm. jsdelivr cache rất lâu
+  // (nhiều giờ) nên KHÔNG dùng làm nguồn chính lúc đang phát triển/cập nhật.
   var BASES = [
-    'https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/voiz/',
-    'https://nguyenphanvn95.github.io/voiz/'
+    'https://nguyenphanvn95.github.io/voiz/',
+    'https://cdn.jsdelivr.net/gh/nguyenphanvn95/nguyenphanvn95.github.io@main/voiz/'
   ];
 
   function loadScript(url) {
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
-      s.src = url;
+      // Cache-busting: né cache trình duyệt + cache CDN của GitHub Pages,
+      // đảm bảo luôn lấy bản mới nhất bạn vừa upload.
+      s.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'v=' + Date.now();
       s.async = false;
       s.onload = function () { resolve(url); };
       s.onerror = function () { reject(new Error('Failed ' + url)); };
