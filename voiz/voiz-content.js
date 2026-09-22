@@ -7,6 +7,9 @@
  * v7.3.1: Picture-in-Picture (PiP) – professional cover background (desktop-like) + robust Edge image load + sharper canvas.
  * v7.3.2: Screen Wake Lock – giữ màn hình sáng khi đang phát audio (tab thường lẫn khi bật PiP);
  *         tự xin lại wake lock khi tab hiển thị/focus trở lại (trình duyệt tự nhả khi tab bị ẩn).
+ * v7.3.3: Wake Lock – thêm lớp dự phòng (video ẩn loop) cho các trình duyệt mà
+ *         Screen Wake Lock API không hoạt động ổn định (vd. một số bản Edge di động),
+ *         và thêm dòng trạng thái hiển thị trực tiếp trên panel để dễ chẩn đoán.
  */
 (function () {
   'use strict';
@@ -697,10 +700,64 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     }
   }
 
-  // Xin giữ màn hình sáng. An toàn khi gọi nhiều lần — bỏ qua nếu đã đang giữ.
+  // Video ẩn 2x2px, 1 giây, câm tiếng, tự lặp — mẹo dự phòng "no-sleep" dùng khi
+  // Screen Wake Lock API không tồn tại hoặc bị trình duyệt từ chối (một số bản
+  // Edge/Chromium trên di động xử lý API này không ổn định). Một <video> đang
+  // play() cũng đủ để hệ điều hành không tự khóa màn hình.
+  const NOSLEEP_VIDEO_SRC = 'data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAMXbW9vdgAAAGxtdmhkAAAAAAAAAAAAAAAAAAAD6AAAA+gAAQAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAkF0cmFrAAAAXHRraGQAAAADAAAAAAAAAAAAAAABAAAAAAAAA+gAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAIAAAACAAAAAAAkZWR0cwAAABxlbHN0AAAAAAAAAAEAAAPoAAAAAAABAAAAAAG5bWRpYQAAACBtZGhkAAAAAAAAAAAAAAAAAABAAAAAQABVxAAAAAAALWhkbHIAAAAAAAAAAHZpZGUAAAAAAAAAAAAAAABWaWRlb0hhbmRsZXIAAAABZG1pbmYAAAAUdm1oZAAAAAEAAAAAAAAAAAAAACRkaW5mAAAAHGRyZWYAAAAAAAAAAQAAAAx1cmwgAAAAAQAAASRzdGJsAAAAwHN0c2QAAAAAAAAAAQAAALBhdmMxAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAgBIAAAASAAAAAAAAAABFUxhdmM2MC4zMS4xMDIgbGlieDI2NAAAAAAAAAAAAAAAGP//AAAANmF2Y0MBZAAK/+EAGWdkAAqs2V+IiMBEAAADAAQAAAMACDxIllgBAAZo6+PLIsD9+PgAAAAAEHBhc3AAAAABAAAAAQAAABRidHJ0AAAAAAAAFigAABYoAAAAGHN0dHMAAAAAAAAAAQAAAAEAAEAAAAAAHHN0c2MAAAAAAAAAAQAAAAEAAAABAAAAAQAAABRzdHN6AAAAAAAAAsUAAAABAAAAFHN0Y28AAAAAAAAAAQAAA0cAAABidWR0YQAAAFptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABtZGlyYXBwbAAAAAAAAAAAAAAAAC1pbHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjYwLjE2LjEwMAAAAAhmcmVlAAACzW1kYXQAAAKtBgX//6ncRem95tlIt5Ys2CDZI+7veDI2NCAtIGNvcmUgMTY0IHIzMTA4IDMxZTE5ZjkgLSBILjI2NC9NUEVHLTQgQVZDIGNvZGVjIC0gQ29weWxlZnQgMjAwMy0yMDIzIC0gaHR0cDovL3d3dy52aWRlb2xhbi5vcmcveDI2NC5odG1sIC0gb3B0aW9uczogY2FiYWM9MSByZWY9MyBkZWJsb2NrPTE6MDowIGFuYWx5c2U9MHgzOjB4MTEzIG1lPWhleCBzdWJtZT03IHBzeT0xIHBzeV9yZD0xLjAwOjAuMDAgbWl4ZWRfcmVmPTEgbWVfcmFuZ2U9MTYgY2hyb21hX21lPTEgdHJlbGxpcz0xIDh4OGRjdD0xIGNxbT0wIGRlYWR6b25lPTIxLDExIGZhc3RfcHNraXA9MSBjaHJvbWFfcXBfb2Zmc2V0PS0yIHRocmVhZHM9MSBsb29rYWhlYWRfdGhyZWFkcz0xIHNsaWNlZF90aHJlYWRzPTAgbnI9MCBkZWNpbWF0ZT0xIGludGVybGFjZWQ9MCBibHVyYXlfY29tcGF0PTAgY29uc3RyYWluZWRfaW50cmE9MCBiZnJhbWVzPTMgYl9weXJhbWlkPTIgYl9hZGFwdD0xIGJfYmlhcz0wIGRpcmVjdD0xIHdlaWdodGI9MSBvcGVuX2dvcD0wIHdlaWdodHA9MiBrZXlpbnQ9MjUwIGtleWludF9taW49MSBzY2VuZWN1dD00MCBpbnRyYV9yZWZyZXNoPTAgcmNfbG9va2FoZWFkPTQwIHJjPWNyZiBtYnRyZWU9MSBjcmY9MjMuMCBxY29tcD0wLjYwIHFwbWluPTAgcXBtYXg9NjkgcXBzdGVwPTQgaXBfcmF0aW89MS40MCBhcT0xOjEuMDAAgAAAABBliIQAFf/+98nvwKbr29+B';
+  let noSleepVideo = null;
+
+  function ensureNoSleepVideo() {
+    if (noSleepVideo) return noSleepVideo;
+    noSleepVideo = document.createElement('video');
+    noSleepVideo.id = 'voiz-toolkit-nosleep-video';
+    noSleepVideo.setAttribute('playsinline', '');
+    noSleepVideo.setAttribute('webkit-playsinline', '');
+    noSleepVideo.muted = true;
+    noSleepVideo.loop = true;
+    noSleepVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0.01;pointer-events:none;bottom:0;right:0;z-index:-1';
+    noSleepVideo.src = NOSLEEP_VIDEO_SRC;
+    document.body.appendChild(noSleepVideo);
+    return noSleepVideo;
+  }
+
+  function startNoSleepFallback() {
+    try {
+      const v = ensureNoSleepVideo();
+      const p = v.play();
+      if (p && typeof p.catch === 'function') {
+        p.then(() => setWakeLockIndicator('🔆 Giữ sáng màn hình: bật (chế độ dự phòng)'))
+          .catch((err) => {
+            console.warn('[Voiz WakeLock] fallback video play failed:', err);
+            setWakeLockIndicator('⚠️ Không giữ được sáng màn hình (video dự phòng bị chặn)');
+          });
+      }
+    } catch (err) {
+      console.warn('[Voiz WakeLock] fallback video error:', err);
+    }
+  }
+
+  function stopNoSleepFallback() {
+    if (noSleepVideo) {
+      try { noSleepVideo.pause(); } catch {}
+    }
+  }
+
+  function setWakeLockIndicator(text) {
+    const el = document.querySelector('#voiz-continuous-overlay [data-ct-wakelock]');
+    if (el) el.textContent = text;
+  }
+
+  // Xin giữ màn hình sáng: thử Screen Wake Lock API thật, đồng thời luôn bật
+  // song song video dự phòng — an toàn khi gọi nhiều lần.
   async function requestWakeLock() {
     wakeLockWanted = true;
-    if (!('wakeLock' in navigator) || wakeLockSentinel) return;
+    startNoSleepFallback();
+    if (!('wakeLock' in navigator)) {
+      console.warn('[Voiz WakeLock] navigator.wakeLock không tồn tại trên trình duyệt này — chỉ dùng video dự phòng.');
+      return;
+    }
+    if (wakeLockSentinel) return;
     try {
       const sentinel = await navigator.wakeLock.request('screen');
       // Nếu trong lúc chờ Promise, người dùng đã bấm dừng → nhả ngay, không giữ nữa.
@@ -709,21 +766,25 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
         return;
       }
       wakeLockSentinel = sentinel;
+      setWakeLockIndicator('🔆 Giữ sáng màn hình: bật (Wake Lock)');
       wakeLockSentinel.addEventListener('release', () => {
         // Trình duyệt có thể tự nhả sentinel (vd. khi tab bị ẩn) — dọn biến để
         // lần visibilitychange/focus kế tiếp biết cần xin lại nếu vẫn đang phát.
         wakeLockSentinel = null;
+        if (wakeLockWanted) setWakeLockIndicator('🔆 Giữ sáng màn hình: bật (chế độ dự phòng)');
       });
     } catch (err) {
-      // Bị từ chối (thường do tab không hiển thị/không có focus lúc xin) — sẽ tự
-      // thử lại khi tab hiển thị trở lại hoặc khi cửa sổ có focus (xem bên dưới).
+      // Bị từ chối (thường do tab không hiển thị/không có focus lúc xin, hoặc bị
+      // chính sách trình duyệt chặn) — video dự phòng ở trên vẫn tiếp tục chạy.
       wakeLockSentinel = null;
-      console.warn('[Voiz WakeLock] request failed:', err);
+      console.warn('[Voiz WakeLock] request failed, dùng video dự phòng:', err && err.name, err && err.message);
     }
   }
 
   async function releaseWakeLock() {
     wakeLockWanted = false;
+    stopNoSleepFallback();
+    setWakeLockIndicator('');
     const sentinel = wakeLockSentinel;
     wakeLockSentinel = null;
     if (sentinel) {
@@ -744,6 +805,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
   });
 
   function getActiveMedia() {
+
     if (continuousSiteAttached) {
       const media = findSiteMedia();
       if (media) return media;
@@ -1421,6 +1483,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
           <div data-ct-title style="font-weight:700;font-size:14px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#f9fafb"></div>
           <div data-ct-chapter style="font-size:11px;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
           <div data-ct-status style="font-size:11px;color:#a78bfa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+          <div data-ct-wakelock style="font-size:10px;color:#6b7280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
         </div>
         <button data-ct-close title="Dừng nghe liên tục" style="flex:none;background:transparent;color:#9ca3af;border:0;font-size:20px;line-height:1;cursor:pointer;padding:4px 6px;border-radius:8px;transition:color .15s">×</button>
       </div>
