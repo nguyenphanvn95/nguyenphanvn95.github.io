@@ -129,6 +129,27 @@
     return null;
   }
 
+  var PLAY_ID_RE = /\/play\/(\d+)\/?/;
+
+  // Dự phòng: đọc thẳng React fiber/props từ chính ảnh bìa để suy ra URL
+  // /play/<id>/ khi interceptor không nhận diện được sách qua API (dùng
+  // chung hàm findUrlFromReactInternals/resolveVoizUrl định nghĩa bên dưới —
+  // function declaration nên được hoist lên trước, gọi được ở đây).
+  // Tên sách lấy tạm từ alt ảnh (Voiz thường set alt = tên sách).
+  function findBookViaReactInternals(img) {
+    try {
+      var raw = findUrlFromReactInternals(img);
+      var url = resolveVoizUrl(raw);
+      if (!url) return null;
+      var m = url.match(PLAY_ID_RE);
+      if (!m) return null;
+      var alt = (img.getAttribute("alt") || "").trim();
+      return { id: m[1], name: alt || ("sách #" + m[1]) };
+    } catch (e) {
+      return null;
+    }
+  }
+
   function openInNewTab(url) {
     // Userscript: không có background script để mở tab mới hộ — dùng window.open trực tiếp.
     try { window.open(url, "_blank", "noopener"); } catch (e) {}
@@ -199,8 +220,14 @@
       }
 
       var avatarId = findAvatarIdFromImg(img);
-      if (!avatarId) return;
-      var book = bookByAvatarId.get(avatarId);
+      var book = avatarId ? bookByAvatarId.get(avatarId) : null;
+
+      // Dự phòng: một số danh sách sách trả dữ liệu qua API mà interceptor
+      // không nhận diện được (isBookLike không khớp field), nên bookByAvatarId
+      // thiếu sách đó dù ảnh bìa vẫn hiển thị bình thường. Trường hợp này đọc
+      // thẳng React fiber/props từ chính ảnh (cùng kỹ thuật đã dùng để xử lý
+      // click ở phương án dự phòng bên dưới) để vẫn suy ra được id sách.
+      if (!book) book = findBookViaReactInternals(img);
       if (!book) return;
 
       img.setAttribute(PROCESSED_ATTR, "1");
