@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Voiz Live Player + PiP
 // @namespace    https://nguyenphanvn95.github.io/voiz/
-// @version      7.6.2-us.1
+// @version      7.6.2-us.2
 // @description  Nghe liên tục trên Voiz.vn — stream HLS + fallback, panel player đầy đủ, Picture-in-Picture (từ Mydio-Voiz Toolkit 7.6.2)
 // @author       Adapted for Tampermonkey
 // @match        https://voiz.vn/*
