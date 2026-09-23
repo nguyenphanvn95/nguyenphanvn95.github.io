@@ -19,6 +19,10 @@
   // id ảnh bìa (vd "446498") -> { id, name }
   var bookByAvatarId = new Map();
 
+  // Nút icon "Nghe sách" - hình tròn nằm giữa ảnh bìa, giống nút play của
+  // Waka (nền đen mờ + blur phía sau, icon trắng). Bản thân icon SVG (xem
+  // makeListenIconSvg) đã tự vẽ nền tròn mờ + blur riêng, nên wrapper <a> ở
+  // đây chỉ định vị trí/kích thước, không vẽ thêm nền để tránh chồng lớp.
   function injectStylesOnce() {
     if (document.getElementById("voiz-newtab-style")) return;
     var style = document.createElement("style");
@@ -26,15 +30,41 @@
     style.textContent =
       "." + LINK_CLASS + "-wrap { position: relative !important; }" +
       "." + LINK_CLASS + " {" +
-      "  position: absolute; left: 50%; bottom: 6px; transform: translateX(-50%);" +
-      "  background: rgba(20,20,24,.88); color: #fff; font: 600 11px/1 -apple-system,Segoe UI,Roboto,sans-serif;" +
-      "  padding: 5px 10px; border-radius: 999px; text-decoration: none; z-index: 2147483000;" +
-      "  border: 1px solid rgba(255,255,255,.18); white-space: nowrap; opacity: .92;" +
-      "  box-shadow: 0 1px 4px rgba(0,0,0,.35); transition: opacity .15s ease, background-color .15s ease;" +
-      "  pointer-events: auto;" +
+      "  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" +
+      "  width: 34px; height: 34px;" +
+      "  display: flex; align-items: center; justify-content: center;" +
+      "  text-decoration: none; z-index: 2147483000; pointer-events: auto;" +
       "}" +
-      "." + LINK_CLASS + ":hover { opacity: 1; background: #7C4DFF; }";
+      "." + LINK_CLASS + " svg {" +
+      "  width: 100%; height: 100%; display: block;" +
+      "  transition: transform .18s ease, filter .18s ease;" +
+      "}" +
+      // Giống hiệu ứng hover của Waka: phóng to icon một chút khi rê chuột tới.
+      "." + LINK_CLASS + ":hover svg { transform: scale(1.15); filter: drop-shadow(0 2px 6px rgba(0,0,0,.45)); }";
     (document.head || document.documentElement).appendChild(style);
+  }
+
+  // Icon nghe sách (hình tròn nền tối mờ + tam giác play trắng), phỏng theo
+  // assets/icons/icon-listen.svg. Mỗi lần gọi sinh id filter riêng để tránh
+  // trùng id khi có nhiều icon trên cùng một trang.
+  var listenIconIdSeq = 0;
+  function makeListenIconSvg() {
+    listenIconIdSeq++;
+    var filterId = "voiz-newtab-listen-blur-" + listenIconIdSeq;
+    return (
+      '<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<g filter="url(#' + filterId + ')"><circle cx="21" cy="21" r="21" fill="#121214" fill-opacity="0.6"/></g>' +
+      '<path d="M30.4086 18.3526C32.5305 19.5065 32.5305 22.4935 30.4086 23.6474L18.5966 30.6145C16.5344 31.736 14 30.2763 14 27.9671L14 14.0329C14 11.7237 16.5344 10.264 18.5966 11.3855L30.4086 18.3526Z" fill="white" stroke="white" stroke-width="2"/>' +
+      "<defs>" +
+      '<filter id="' + filterId + '" x="-16" y="-16" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">' +
+      '<feFlood flood-opacity="0" result="BackgroundImageFix"/>' +
+      '<feGaussianBlur in="BackgroundImageFix" stdDeviation="8"/>' +
+      '<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>' +
+      '<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>' +
+      "</filter>" +
+      "</defs>" +
+      "</svg>"
+    );
   }
 
   // --- Nhận dữ liệu sách từ interceptor.js ---
@@ -133,8 +163,9 @@
     a.href = PLAY_URL_PREFIX + book.id + "/";
     a.target = "_blank";
     a.rel = "noopener noreferrer";
-    a.textContent = "Nghe sách";
-    a.title = book.name;
+    a.innerHTML = makeListenIconSvg();
+    a.title = "Nghe sách: " + book.name;
+    a.setAttribute("aria-label", "Nghe sách: " + book.name);
     a.className = LINK_CLASS;
     a.addEventListener(
       "click",
