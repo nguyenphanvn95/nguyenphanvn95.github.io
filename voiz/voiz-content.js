@@ -15,11 +15,14 @@
  *         tải file bằng <a download>/GM_download, đánh dấu "đã tải" bằng localStorage.
  *         Toàn bộ UI mini-player/PiP/Wake Lock/sleep-timer responsive mobile+desktop của
  *         bản extension 7.6.2 được giữ nguyên 1:1.
+ * v7.6.2-us.2: Ẩn "Danh sách chương" mặc định của Voiz, chèn danh sách nghe liên tục
+ *         cùng chỗ (style đồng nhất desktop/mobile, không khung/không tiêu đề lặp);
+ *         thêm lưu & hỏi tiếp tục vị trí đang nghe theo từng cuốn (localStorage).
  */
 (function () {
   'use strict';
 
-  const VOIZ_BUILD = '7.6.2-us.1';
+  const VOIZ_BUILD = '7.6.2-us.2';
   try {
     console.log(
       '[Voiz Userscript] voiz-content.js build:', VOIZ_BUILD,
@@ -375,6 +378,28 @@
     return items
       .filter((item) => item?.id != null)
       .sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
+  }
+
+  let chaptersLoadPromise = null;
+  // Tải danh sách chương một lần, dùng chung cho: danh sách chèn thay thế UI
+  // mặc định của Voiz, tính năng nghe liên tục, và dialog resume vị trí.
+  function ensureChaptersLoaded(force = false) {
+    if (continuousChapters && !force) return Promise.resolve(continuousChapters);
+    if (chaptersLoadPromise && !force) return chaptersLoadPromise;
+    chaptersLoadPromise = (async () => {
+      try {
+        const playlist = await getPlaylist();
+        const chapters = await getAllChapters(playlist?.playlist_counter?.audios_count || 0);
+        continuousChapters = chapters;
+        return chapters;
+      } catch (err) {
+        console.warn('[Voiz ChapterList] Load failed:', err);
+        return null;
+      } finally {
+        chaptersLoadPromise = null;
+      }
+    })();
+    return chaptersLoadPromise;
   }
 
   function chapterPath(book, item, index) {
@@ -1019,6 +1044,152 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     });
     document.body.appendChild(continuousAudio);
     return continuousAudio;
+  }
+
+  // ─── Resume vị trí đang nghe theo cuốn sách (userscript: dùng localStorage) ──
+  const PROGRESS_KEY_PREFIX = 'voizToolkit.progress.';
+  const PROGRESS_MIN_SECONDS = 8; // bỏ qua các vị trí quá gần đầu chương
+  const PROGRESS_SAVE_INTERVAL_MS = 5000;
+  let progressSaveTimerId = null;
+  let resumePromptShown = false;
+
+  function progressStorageKey(playlistId) {
+    return `${PROGRESS_KEY_PREFIX}${playlistId || playlistIdFromUrl()}`;
+  }
+
+  function getSavedProgress() {
+    try {
+      const raw = localStorage.getItem(progressStorageKey());
+      return Promise.resolve(raw ? JSON.parse(raw) : null);
+    } catch {
+      return Promise.resolve(null);
+    }
+  }
+
+  function saveProgressNow(index, currentTime) {
+    if (!continuousChapters || index == null || index < 0 || index >= continuousChapters.length) return;
+    if (!Number.isFinite(currentTime) || currentTime < PROGRESS_MIN_SECONDS) return;
+    const item = continuousChapters[index];
+    const record = {
+      chapterIndex: index,
+      chapterId: item?.id ?? null,
+      chapterName: item?.name || '',
+      currentTime,
+      bookTitle: getBookTitle(),
+      updatedAt: Date.now(),
+    };
+    try {
+      localStorage.setItem(progressStorageKey(), JSON.stringify(record));
+    } catch {}
+  }
+
+  function clearSavedProgress() {
+    try {
+      localStorage.removeItem(progressStorageKey());
+    } catch {}
+  }
+
+  function startProgressAutoSave() {
+    if (progressSaveTimerId) return;
+    progressSaveTimerId = setInterval(() => {
+      if (!continuousPlaying || continuousIndex < 0) return;
+      const media = getActiveMedia();
+      if (!media || media.paused) return;
+      saveProgressNow(continuousIndex, media.currentTime || 0);
+    }, PROGRESS_SAVE_INTERVAL_MS);
+    // Lưu lần cuối trước khi rời trang / ẩn tab
+    const flushNow = () => {
+      if (continuousPlaying && continuousIndex >= 0) {
+        const media = getActiveMedia();
+        if (media) saveProgressNow(continuousIndex, media.currentTime || 0);
+      }
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushNow();
+    });
+    window.addEventListener('pagehide', flushNow);
+  }
+
+  function formatResumeTime(seconds) {
+    return secondsToDuration(seconds || 0);
+  }
+
+  /**
+   * Dialog xác nhận tiếp tục nghe (style riêng, không dùng confirm() mặc định).
+   * Trả về Promise<boolean> — true nếu người dùng chọn "Tiếp tục".
+   */
+  function showResumeDialog(saved) {
+    return new Promise((resolve) => {
+      const overlay = document.createElement('div');
+      overlay.id = 'voiz-toolkit-resume-dialog';
+      overlay.style.cssText =
+        'position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(0,0,0,0.55);backdrop-filter:blur(2px);padding:16px;box-sizing:border-box;';
+      const chapterLabel = escapeHtml(saved.chapterName || `Chương ${Number(saved.chapterIndex) + 1}`);
+      overlay.innerHTML = `
+        <div style="width:min(360px,100%);background:#181822;border:1px solid rgba(255,255,255,0.08);
+          border-radius:16px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,0.5);color:#f3f4f6;
+          font-family:inherit;">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px;">Tiếp tục nghe?</div>
+          <div style="font-size:13px;line-height:1.5;color:#d1d5db;margin-bottom:18px;">
+            Bạn đang nghe dở <b>${chapterLabel}</b> tại <b>${formatResumeTime(saved.currentTime)}</b>.
+            Tiếp tục từ vị trí này?
+          </div>
+          <div style="display:flex;gap:10px;justify-content:flex-end;">
+            <button type="button" data-resume-skip style="padding:9px 16px;border-radius:10px;border:0;
+              background:#2a2a37;color:#e5e7eb;font-size:13px;font-weight:600;cursor:pointer;">Bỏ qua</button>
+            <button type="button" data-resume-continue style="padding:9px 16px;border-radius:10px;border:0;
+              background:linear-gradient(90deg,#7c3aed,#6d28d9);color:#fff;font-size:13px;font-weight:700;
+              cursor:pointer;">Tiếp tục</button>
+          </div>
+        </div>`;
+      document.body.appendChild(overlay);
+      const cleanup = (result) => {
+        overlay.remove();
+        resolve(result);
+      };
+      overlay.querySelector('[data-resume-continue]').addEventListener('click', () => cleanup(true));
+      overlay.querySelector('[data-resume-skip]').addEventListener('click', () => cleanup(false));
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) cleanup(false);
+      });
+    });
+  }
+
+  async function maybePromptResume() {
+    if (resumePromptShown) return;
+    resumePromptShown = true;
+    try {
+      const saved = await getSavedProgress();
+      if (!saved || !Number.isFinite(saved.currentTime) || saved.currentTime < PROGRESS_MIN_SECONDS) return;
+      const chapters = await ensureChaptersLoaded();
+      if (!chapters || !chapters.length) return;
+      // Chương đã lưu có thể lệch nếu danh sách thay đổi — ưu tiên khớp theo id
+      let index = chapters.findIndex((c) => String(c.id) === String(saved.chapterId));
+      if (index < 0) index = Math.min(Math.max(saved.chapterIndex || 0, 0), chapters.length - 1);
+      const wantsResume = await showResumeDialog({ ...saved, chapterIndex: index });
+      if (!wantsResume) return;
+      ensureContinuousUI();
+      continuousChapters = chapters;
+      continuousPlaying = true;
+      continuousAbort = false;
+      await playContinuousChapter(index);
+      // Tua tới vị trí đã lưu ngay khi media sẵn sàng
+      const seekWhenReady = () => {
+        const media = getActiveMedia();
+        if (!media) return;
+        if (media.readyState >= 1 && Number.isFinite(media.duration) && media.duration > 0) {
+          try { media.currentTime = Math.min(saved.currentTime, media.duration - 1); } catch {}
+        } else {
+          media.addEventListener('loadedmetadata', () => {
+            try { media.currentTime = Math.min(saved.currentTime, media.duration - 1); } catch {}
+          }, { once: true });
+        }
+      };
+      setTimeout(seekWhenReady, 400);
+    } catch (err) {
+      console.warn('[Voiz Resume] Prompt failed:', err);
+    }
   }
 
   function clearSleepTimer() {
@@ -2224,6 +2395,141 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
         } catch {}
       }
     });
+  }
+
+  // ─── Thay thế "Danh sách chương" mặc định của Voiz bằng danh sách nghe liên tục ──
+  const INLINE_LIST_ID = 'voiz-toolkit-inline-chapterlist';
+  const INLINE_LIST_HIDDEN_ATTR = 'data-voiz-toolkit-list-hidden';
+
+  function isNativeChapterListContainer(el) {
+    if (!el || el.tagName !== 'UL') return false;
+    if (!/MuiList-root/.test(el.className || '')) return false;
+    const items = el.querySelectorAll(':scope > li');
+    if (!items.length) return false;
+    // Mẫu hàng: số thứ tự + tên chương + thời lượng dạng mm:ss hoặc h:mm:ss
+    let matches = 0;
+    items.forEach((li) => {
+      const text = cleanText(li.textContent || '');
+      const hasDuration = /\d{1,2}:\d{2}(?::\d{2})?\s*$/.test(text);
+      const hasListItemText = !!li.querySelector('[class*="MuiListItemText"]');
+      if (hasDuration && hasListItemText) matches++;
+    });
+    return matches >= Math.min(1, items.length) && matches === items.length;
+  }
+
+  function findNativeChapterListContainers() {
+    return Array.from(document.querySelectorAll('ul[class*="MuiList-root"]')).filter(
+      isNativeChapterListContainer
+    );
+  }
+
+  function buildChapterRowEl(item, index, isCurrent, onSelect, isLast) {
+    const row = document.createElement('button');
+    row.type = 'button';
+    row.dataset.index = String(index);
+    row.dataset.current = isCurrent ? '1' : '0';
+    row.style.cssText = [
+      'display:flex',
+      'align-items:flex-start',
+      'gap:14px',
+      'width:100%',
+      'text-align:left',
+      'padding:12px 4px',
+      'border:0',
+      isLast ? 'border-bottom:0' : 'border-bottom:1px solid rgba(255,255,255,0.08)',
+      'background:transparent',
+      'cursor:pointer',
+      'font-size:14px',
+      'line-height:1.4',
+      'transition:background .12s',
+    ].join(';');
+    const no = String(index + 1);
+    const name = item.name || `Chương ${item.id}`;
+    const dur = item.duration ? secondsToDuration(item.duration) : '';
+    const nameColor = isCurrent ? '#a78bfa' : '#e5e7eb';
+    const nameWeight = isCurrent ? '700' : '400';
+    row.innerHTML =
+      `<span style="flex:none;color:#9ca3af;font-size:13px;min-width:16px;padding-top:1px">${no}</span>` +
+      `<span style="flex:1;min-width:0;white-space:normal;word-break:break-word;color:${nameColor};font-weight:${nameWeight}">${escapeHtml(name)}</span>` +
+      `<span style="flex:none;display:flex;align-items:center;gap:6px;color:#9ca3af;font-size:12.5px;font-variant-numeric:tabular-nums;padding-top:1px">${isCurrent ? '<span style="color:#a78bfa;font-size:10px">▶</span>' : ''}${dur ? escapeHtml(dur) : ''}</span>`;
+    row.addEventListener('mouseenter', () => { row.style.background = 'rgba(255,255,255,0.05)'; });
+    row.addEventListener('mouseleave', () => { row.style.background = 'transparent'; });
+    row.addEventListener('click', () => onSelect(index));
+    return row;
+  }
+
+  async function startInlineChapter(index) {
+    const chapters = await ensureChaptersLoaded();
+    if (!chapters || !chapters.length) return;
+    ensureContinuousUI();
+    continuousChapters = chapters;
+    continuousPlaying = true;
+    continuousAbort = false;
+    await playContinuousChapter(index);
+    renderAllInlineChapterLists();
+  }
+
+  function renderInlineChapterList(container) {
+    if (!continuousChapters) return;
+    const listEl = container.querySelector('[data-inline-list]');
+    if (!listEl) return;
+    listEl.innerHTML = '';
+    continuousChapters.forEach((item, index) => {
+      const isLast = index === continuousChapters.length - 1;
+      const row = buildChapterRowEl(item, index, index === continuousIndex, startInlineChapter, isLast);
+      listEl.appendChild(row);
+    });
+  }
+
+  function renderAllInlineChapterLists() {
+    document.querySelectorAll(`#${INLINE_LIST_ID}, .${INLINE_LIST_ID}`).forEach(renderInlineChapterList);
+    document.querySelectorAll('[data-voiz-inline-chapterlist]').forEach(renderInlineChapterList);
+  }
+
+  function createInlineChapterListEl() {
+    // Không dùng khung/nền riêng và không lặp lại tiêu đề đếm số chương —
+    // trang đã có sẵn heading "Danh sách audios" phía trên, nên khối này chỉ
+    // là danh sách hàng, style đồng nhất trên cả desktop lẫn mobile.
+    const wrap = document.createElement('div');
+    wrap.setAttribute('data-voiz-inline-chapterlist', '1');
+    wrap.style.cssText = 'margin:0;box-sizing:border-box;';
+    wrap.innerHTML = `<div data-inline-list style="display:flex;flex-direction:column;"></div>`;
+    return wrap;
+  }
+
+  /**
+   * Ẩn khối "Danh sách chương" mặc định của Voiz (ul.MuiList-root chứa các
+   * chương + thời lượng) và chèn danh sách của chế độ nghe liên tục (giống
+   * kiểu hiển thị ở full mode) ngay tại vị trí đó.
+   */
+  function replaceNativeChapterLists() {
+    const containers = findNativeChapterListContainers();
+    containers.forEach((ul) => {
+      // Vùng bọc trực tiếp quanh <ul> (thường là 1 MuiBox) — ẩn cả vùng này
+      // để không còn khoảng trắng thừa, nhưng không remove khỏi DOM để tránh
+      // Voiz (React) bị lỗi khi cố re-render vào node đã mất.
+      const wrapper = ul.parentElement && ul.parentElement.children.length === 1 ? ul.parentElement : ul;
+      if (wrapper.getAttribute(INLINE_LIST_HIDDEN_ATTR) === '1') return;
+      wrapper.setAttribute(INLINE_LIST_HIDDEN_ATTR, '1');
+      wrapper.style.display = 'none';
+
+      const inlineEl = createInlineChapterListEl();
+      wrapper.insertAdjacentElement('afterend', inlineEl);
+      ensureChaptersLoaded().then(() => renderInlineChapterList(inlineEl));
+    });
+  }
+
+  function initNativeChapterListWatcher() {
+    replaceNativeChapterLists();
+    let debounceTimer = null;
+    const observer = new MutationObserver(() => {
+      if (!isVoizPlayPage()) return;
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(replaceNativeChapterLists, 250);
+    });
+    try {
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    } catch {}
   }
 
   function stripListenCtasFromContinuousUI(ui) {
@@ -3443,6 +3749,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
     if (ui && ui.querySelector('[data-ct-list-panel]')?.style.display !== 'none') {
       renderChapterList(ui);
     }
+    renderAllInlineChapterLists();
 
     const item = continuousChapters[index];
     const label = `${String(index + 1).padStart(3, '0')} / ${String(continuousChapters.length).padStart(3, '0')}`;
@@ -3561,6 +3868,7 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
       updateContinuousUI({ status: 'Đã hết tất cả chương' });
       continuousPlaying = false;
       releaseWakeLock();
+      clearSavedProgress();
       refreshVoizButtons();
       return;
     }
@@ -4416,4 +4724,11 @@ ${cover ? `    <meta property="voiz:cover">${cover}</meta>\n` : ''}${chapterMeta
   loadIconModePref();
   ensureButtons();
   setInterval(ensureButtons, 2500);
+
+  // Danh sách chương thay thế + resume vị trí nghe
+  initNativeChapterListWatcher();
+  startProgressAutoSave();
+  ensureChaptersLoaded().then(() => {
+    maybePromptResume();
+  });
 })();
