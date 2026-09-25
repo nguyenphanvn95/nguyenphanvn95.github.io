@@ -2263,10 +2263,44 @@ ${entry.styleHtml}
     return new Blob(chunks, { type: mime || "application/epub+zip" });
   }
 
+  // So khớp tiêu đề "lỏng": bỏ khoảng trắng thừa, không phân biệt hoa/thường,
+  // chuẩn hoá Unicode (tránh lệch do dấu tổ hợp NFC/NFD khi gõ tiếng Việt).
+  function normalizeTitleKey(value) {
+    return String(value || "")
+      .normalize("NFC")
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " ");
+  }
+
+  /** Tìm trong thư viện (IndexedDB) 1 cuốn có tiêu đề trùng (không phân biệt hoa/thường). */
+  async function findBookByTitle(title) {
+    const target = normalizeTitleKey(title);
+    if (!target) return null;
+    const books = await BookDB.listBooks();
+    return books.find((b) => normalizeTitleKey(b.title) === target) || null;
+  }
+
   async function importPendingReaderEpubFromToken() {
     const params = new URLSearchParams(location.search || "");
     const token = params.get("importToken");
     if (!token || !chrome?.runtime?.sendMessage) return;
+
+    // Đã có sách cùng tiêu đề trong thư viện? -> mở luôn, khỏi chờ waka.vn tải + dựng EPUB.
+    const titleHint = (params.get("titleHint") || "").trim();
+    if (titleHint) {
+      try {
+        const match = await findBookByTitle(titleHint);
+        if (match) {
+          try { chrome.runtime.sendMessage({ action: "reportTitleMatch", token }); } catch {}
+          try { history.replaceState(null, "", location.pathname); } catch {}
+          await openBook(match);
+          return;
+        }
+      } catch (err) {
+        console.warn("[Waka Reader] Không kiểm tra được sách theo tiêu đề trong thư viện:", err);
+      }
+    }
 
     chrome.runtime.sendMessage({ action: "consumeReaderEpub", token }, async (payload) => {
       try {

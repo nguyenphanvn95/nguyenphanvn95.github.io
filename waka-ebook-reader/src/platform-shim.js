@@ -27,7 +27,7 @@
   if (w.__wakaPlatformShim) return;
   w.__wakaPlatformShim = true;
 
-  var VERSION = "1.0.4";
+  var VERSION = "1.0.5";
   var script = document.currentScript;
   // File nằm ở <gốc>/src/platform-shim.js → gốc = thư mục cha.
   var ROOT = new URL("../", script && script.src ? script.src : location.href).href;
@@ -382,6 +382,9 @@
       return {
         enabled: enabled,
         show: build,
+        // Gỡ lớp phủ ngay (không cần chờ EPUB) — dùng khi trang đã tự tìm thấy sách
+        // cùng tiêu đề trong thư viện và mở thẳng, không cần chờ waka.vn gửi EPUB nữa.
+        skip: function () { if (el) remove(); },
         onCancel: function (fn) { cancelExtra = fn; },
         // Ảnh bìa: dataURL (tải bằng GM, chắc chắn hiển thị) ưu tiên hơn URL gốc (có thể bị hotlink)
         setCover: function (d) { if (!enabled) return; build(); setImage((d && (d.coverData || d.cover)) || ""); },
@@ -493,7 +496,20 @@
         });
       });
     }
-    return { consume: consume };
+
+    /* Trang đã tự kiểm tra thư viện (IndexedDB) và thấy sẵn sách cùng tiêu đề: gỡ lớp phủ
+       "Đang chờ sách từ Waka..." ngay và báo cho tab waka.vn để nó hủy tải/dựng EPUB đang dở. */
+    function reportTitleMatch(token) {
+      token = String(token || "");
+      Overlay.skip();
+      try {
+        if (w.opener && !w.opener.closed) {
+          w.opener.postMessage({ __wakaReaderHandoff: 1, type: "titleFound", token: token }, "*");
+        }
+      } catch (e) { /* opener đã đóng */ }
+    }
+
+    return { consume: consume, reportTitleMatch: reportTitleMatch };
   })();
 
   /* ------------------------------------------------------------------ *
@@ -509,6 +525,7 @@
     var p = Promise.resolve().then(function () {
       msg = msg || {};
       if (msg.action === "consumeReaderEpub") return Handoff.consume(msg.token);
+      if (msg.action === "reportTitleMatch") { Handoff.reportTitleMatch(msg.token); return { success: true }; }
       return { success: false, error: "Unsupported action: " + msg.action };
     });
     if (typeof cb === "function") {

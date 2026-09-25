@@ -494,17 +494,18 @@
     } catch { return ''; }
   }
 
-  async function openBlobInReader(blob, filename, job, ui, session) {
+  async function openBlobInReader(blob, filename, job, ui, session, titleHint) {
     if (job) {
       job.throwIfCancelled();
       job.commit(); // qua diem nay khong huy duoc nua (tab Reader sap mo)
     }
     // Tab Reader da duoc mo som luc bam nut -> chi can day EPUB sang (khong can nguoi dung bam them)
     if (session && await session.deliver(blob, filename)) return;
-    // Neu trinh duyet se chan popup (het user activation) -> hien nut de nguoi dung bam mo Reader
+    // Neu trinh duyet se chan popup (het user activation) -> hien nut de nguoi dung bam mo Reader.
+    // titleHint van duoc gui de Reader tu kiem tra thu vien truoc khi nhap ban da tai xong nay.
     await WakaHandoff.openBlob(blob, filename, {
       askUser: ({ open, dismiss }) => ui && ui.showAction('Mở trong Reader', open, dismiss),
-    });
+    }, titleHint);
   }
 
   async function buildEpubFromOpf(opfUrl, titleHint, job) {
@@ -822,7 +823,8 @@
 
     // Mo tab Reader NGAY trong su kien click (con user activation nen khong bi chan popup);
     // tab hien lop phu tien trinh va nhan EPUB khi dung xong. null neu bi chan -> luong cu.
-    const session = window.WakaHandoff?.prepare ? WakaHandoff.prepare() : null;
+    // titleHint (ten sach lay tu the/bia) de Reader tu kiem tra thu vien (IndexedDB) truoc.
+    const session = window.WakaHandoff?.prepare ? WakaHandoff.prepare(data.title) : null;
 
     const job = createJob();
     activeJob = job;
@@ -833,7 +835,10 @@
       session.setCover(coverUrl);                                     // Reader thử tải trực tiếp
       coverToDataUrl(coverUrl).then((d) => { if (d && !job.cancelled) session.setCoverData(d); });
     }
-    job.onCancel(() => { if (session) session.close(); });   // huy -> dong tab Reader dang cho
+    // Đặt cờ này = true khi Reader đã tự mở sẵn sách trùng tên (xem onTitleFound bên dưới),
+    // để khỏi đóng nhầm tab Reader lúc dọn job (nó không còn "đang chờ" nữa, mà đang hiển thị sách).
+    let titleAlreadyOpen = false;
+    job.onCancel(() => { if (session && !titleAlreadyOpen) session.close(); });   // huy -> dong tab Reader dang cho
     job.onCommit = () => ui.lockCancel();
     const doCancel = () => {
       if (!job.cancel()) return;   // job.cancel() dọn cache + file đang dở
@@ -843,6 +848,17 @@
     };
     ui.onCancel(doCancel);
     if (session) session.onCancel(doCancel);   // nút "Hủy bỏ" trên lớp phủ của tab Reader
+    // Reader đã có sẵn sách cùng tiêu đề trong thư viện và tự mở luôn -> khỏi cần tải/dựng EPUB nữa.
+    if (session) {
+      session.onTitleFound(() => {
+        titleAlreadyOpen = true;
+        if (!job.cancel()) return;   // đã cam kết (sắp/đang chuyển EPUB) -> để luồng cũ chạy tiếp cho an toàn
+        if (activeJob === job) activeJob = null;
+        ui.close();
+        setButtonState(btn, 'Đã có sẵn', false);
+        setTimeout(() => setButtonState(btn, 'Đọc ngay', false), 1600);
+      });
+    }
     // Hủy -> xóa metadata tạm đã đẩy sang background (nếu có)
     job.onCancel(() => {
       try { Promise.resolve(window.WakaMetaInjector?.clearMeta?.()).catch(() => {}); } catch {}
@@ -896,7 +912,7 @@
       if (info.meta?.title) epub.filename = safeName(info.meta.title) + '.epub';
 
       ui.step('Đang mở file epub...', 97);
-      await openBlobInReader(epub.blob, epub.filename, job, ui, session);
+      await openBlobInReader(epub.blob, epub.filename, job, ui, session, titleHint);
 
       ui.step('Đã mở', 100);
       setTimeout(() => ui.close(), 450);

@@ -23,6 +23,16 @@
   const READER_URL = APP_ORIGIN + '/waka-ebook-reader/src/reader.html';
   const PREFIX = 'oc_';               // token của script này (Reader-script dùng "reader_")
   const PENDING_TTL_MS = 5 * 60 * 1000;
+  const TITLE_HINT_MAX_LEN = 200;
+
+  // titleHint: cho Reader biết tên sách để tự kiểm tra thư viện (IndexedDB) TRƯỚC khi
+  // chờ EPUB — nếu đã có sách cùng tiêu đề thì Reader mở luôn, khỏi cần tải + dựng lại.
+  function buildReaderUrl(token, titleHint) {
+    let url = READER_URL + '?importToken=' + encodeURIComponent(token);
+    const hint = String(titleHint || '').trim().slice(0, TITLE_HINT_MAX_LEN);
+    if (hint) url += '&titleHint=' + encodeURIComponent(hint);
+    return url;
+  }
 
   let gm = null;
   const pending = new Map();          // token → { blob, filename, listener, timer }
@@ -109,6 +119,14 @@
       if (!p) return;
       // Người dùng bấm "Hủy bỏ" trên lớp phủ của tab Reader
       if (d.type === 'cancel') { log('Người dùng hủy từ tab Reader'); try { p.onCancel && p.onCancel(); } catch (err) { /* bỏ qua */ } return; }
+      // Reader đã tìm thấy sách cùng tiêu đề trong thư viện của nó và tự mở luôn
+      // → khỏi cần tải/dựng EPUB nữa, hủy job đang dở ở phía waka.vn.
+      if (d.type === 'titleFound') {
+        log('Reader đã có sẵn sách cùng tiêu đề, hủy tải/dựng EPUB');
+        try { p.onTitleFound && p.onTitleFound(); } catch (err) { /* bỏ qua */ }
+        drop(token);
+        return;
+      }
       if (d.type !== 'ready' || !e.source) return;
       if (!p.blob) {                      // phiên mở sớm: Reader đã sẵn sàng nhưng sách chưa dựng xong
         p.target = e.source;
@@ -152,9 +170,9 @@
    * session.deliver() đẩy sang qua postMessage — người dùng không phải bấm thêm gì.
    * Trả về null nếu trình duyệt vẫn chặn popup → gọi code sẽ dùng luồng cũ (openBlob).
    */
-  function prepare() {
+  function prepare(titleHint) {
     const token = PREFIX + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-    const url = READER_URL + '?importToken=' + encodeURIComponent(token);
+    const url = buildReaderUrl(token, titleHint);
     let w = null;
     try { w = window.open(url, '_blank'); } catch (e) { /* bị chặn */ }
     if (!w) { log('window.open bị chặn ngay lúc bấm → dùng luồng mở sau khi dựng xong'); return null; }
@@ -163,7 +181,7 @@
     const entry = {
       token, blob: null, filename: 'waka.epub', win: w, target: null,
       text: 'Đang chuẩn bị...', pct: 0, error: '', listener: null, timer: null,
-      cover: '', coverData: '', onCancel: null,
+      cover: '', coverData: '', onCancel: null, onTitleFound: null,
     };
     pending.set(token, entry);
     try { entry.listener = gm.addValueChangeListener('oc:req:' + token, () => serveViaGM(token)); } catch (e) { /* chỉ kênh opener */ }
@@ -174,6 +192,8 @@
       setCover(url) { entry.cover = String(url || ''); sendCover(entry); },
       setCoverData(dataUrl) { entry.coverData = String(dataUrl || ''); sendCover(entry); },
       onCancel(fn) { entry.onCancel = fn; },
+      // fn được gọi khi Reader tự tìm thấy sách cùng tiêu đề trong thư viện và mở luôn
+      onTitleFound(fn) { entry.onTitleFound = fn; },
       progress(text, pct) {
         entry.text = String(text || '');
         entry.pct = Math.round(Number(pct) || 0);
@@ -226,7 +246,7 @@
    * activation sau khi tải sách). UI hiển thị nút; khi người dùng bấm nút thì gọi open() TRONG sự kiện
    * click để window.open được phép → tab Reader có opener → không phụ thuộc userscript trên Reader.
    */
-  function openBlob(blob, filename, hooks) {
+  function openBlob(blob, filename, hooks, titleHint) {
     return new Promise((resolve, reject) => {
       if (!(blob instanceof Blob)) return reject(new Error('Không có dữ liệu EPUB'));
       const token = PREFIX + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
@@ -238,7 +258,7 @@
       } catch (e) { /* không có kênh GM: chỉ còn kênh opener */ }
       entry.timer = setTimeout(() => drop(token), PENDING_TTL_MS);
 
-      const url = READER_URL + '?importToken=' + encodeURIComponent(token);
+      const url = buildReaderUrl(token, titleHint);
       const fail = () => { drop(token); reject(new Error('Không mở được tab Reader — hãy cho phép popup cho waka.vn')); };
 
       // 1) Còn user activation (sách nhỏ, tải nhanh) → mở thẳng bằng window.open
