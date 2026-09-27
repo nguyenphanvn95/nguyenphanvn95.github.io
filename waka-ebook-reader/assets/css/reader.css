@@ -1265,8 +1265,8 @@
     z-index: 240;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 14px max(18px, env(safe-area-inset-left, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-right, 0px));
+    gap: 8px;
+    padding: 8px max(12px, env(safe-area-inset-left, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-right, 0px));
     background: color-mix(in srgb, var(--mobile-panel-bg) 96%, transparent);
     transform: translateY(105%);
     transition: transform .18s ease;
@@ -1278,18 +1278,18 @@
 
   #mobile-chapter-nav button {
     min-width: 0;
-    height: 58px;
+    height: 40px;
     border: 1px solid var(--mobile-panel-line);
     border-radius: 999px;
     background: var(--mobile-panel-surface);
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mobile-panel-fg) 6%, transparent);
     color: var(--mobile-panel-fg);
-    font-size: clamp(15px, 4.2vw, 19px);
+    font-size: clamp(12px, 3.2vw, 14px);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
   }
 
   #mobile-chapter-nav button:disabled {
@@ -1297,8 +1297,8 @@
   }
 
   #mobile-chapter-nav svg {
-    width: 26px;
-    height: 26px;
+    width: 16px;
+    height: 16px;
     stroke-width: 2.3;
     flex: 0 0 auto;
   }
@@ -2294,13 +2294,14 @@
 
 @media (max-width: 380px) {
   #mobile-chapter-nav {
-    gap: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
+    gap: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   #mobile-chapter-nav button {
-    height: 52px;
+    height: 36px;
+    font-size: 12px;
   }
 
   .mobile-bg-options {
