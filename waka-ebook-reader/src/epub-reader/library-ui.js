@@ -359,6 +359,13 @@
     return `${v.toFixed(i === 0 ? 0 : 1)} ${u[i]}`;
   }
 
+  const railSyncDownload = $("#rail-sync-download");
+  if (railSyncDownload) {
+    railSyncDownload.addEventListener("click", () => {
+      if (window.DropboxSync) window.DropboxSync.syncNow();
+    });
+  }
+
   const railStats = $("#rail-stats");
   if (railStats) {
     railStats.addEventListener("click", async () => {
@@ -451,9 +458,14 @@
             ${DENSITIES.map((d) => `<button class="rp-chip${ui.density === d ? " active" : ""}" data-density="${d}">${d === "sm" ? "Nhỏ" : d === "md" ? "Vừa" : "Lớn"}</button>`).join("")}
           </span>
         </div>
+        <div class="rp-row" style="display:block" id="rp-sync-row">
+          <span class="rp-label">Đồng bộ Dropbox</span>
+          <div class="rp-sync-block" id="rp-sync-block"></div>
+        </div>
         <button class="rp-danger" id="rp-clear">Xoá toàn bộ thư viện</button>
         <p class="rp-hint">Sách được lưu ngoại tuyến trong trình duyệt, không tải lên máy chủ nào.</p>
       `, () => {
+        if (window.DropboxSync) window.DropboxSync.mountSyncBlock($("#rp-sync-block"));
         panelBody.querySelectorAll("[data-mode]").forEach((b) =>
           b.addEventListener("click", () => {
             app().setMode && app().setMode(b.dataset.mode);

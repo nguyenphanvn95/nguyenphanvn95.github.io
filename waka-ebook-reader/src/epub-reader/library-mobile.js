@@ -49,6 +49,7 @@
     gear: svg('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'),
     file: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>'),
     book: svg('<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h8"/>'),
+    sync: svg('<path d="M7 17a4 4 0 0 1-1-7.85A5.5 5.5 0 0 1 16.9 8H17a4 4 0 0 1 1 7.87"/><path d="M12 12v6m0 0-3-3m3 3 3-3"/>'),
   };
 
   /* ═══════════════════════════════════════════════
@@ -177,6 +178,7 @@
     return [
       row("select", ICON.select, tr("lib.selectMultiple", null, "Chọn nhiều")),
       row("export", ICON.export, tr("lib.export", null, "Xuất sách")),
+      row("sync-download", ICON.sync, tr("lib.syncDownload", null, "Đồng bộ từ Dropbox")),
       row("stats", ICON.stats, tr("lib.stats", null, "Thống kê đọc")),
       row("typo", ICON.typo, tr("lib.typoZoom", null, "Cỡ chữ & thu phóng mặc định")),
       row("theme", p.dark ? ICON.sun : ICON.moon, tr("lib.darkMode", null, "Giao diện tối"),
@@ -270,6 +272,7 @@
       switch (act) {
         case "select": { const b = $("#btn-select-mode"); if (b) b.click(); break; }
         case "export": { const b = $("#btn-export"); if (b) b.click(); break; }
+        case "sync-download": window.DropboxSync?.syncNow(); break;
         case "stats": openStats(); break;
         case "typo": openTypo(); break;
         case "settings": openSettings(); break;
@@ -485,8 +488,13 @@
           ${seg("cols", "2", tr("typo.twoColumns", null, "Hai cột"), s.columns === 2)}
         </div>
       </div>
+      <div class="lib-field">
+        <div class="lib-field-head"><span>${esc(tr("dropbox.sectionTitle", null, "Đồng bộ Dropbox"))}</span></div>
+        <div class="rp-sync-block" id="lib-sync-block"></div>
+      </div>
       <button type="button" class="lib-danger" id="lib-clear-all">${esc(tr("lib.clearAll", null, "Xoá toàn bộ thư viện"))}</button>
       <p class="lib-hint">${esc(tr("lib.offlineHint", null, "Sách được lưu ngoại tuyến trong trình duyệt, không tải lên máy chủ nào."))}</p>`, (body) => {
+      if (window.DropboxSync) window.DropboxSync.mountSyncBlock($("#lib-sync-block", body));
       body.addEventListener("click", async (e) => {
         const m = e.target.closest("[data-mode]");
         const c = e.target.closest("[data-cols]");

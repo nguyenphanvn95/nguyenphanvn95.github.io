@@ -80,6 +80,7 @@ const BookDB = {
       annotations: (existing && existing.annotations) || [],
     };
     await withStore("readwrite", (store) => store.put(record));
+    document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "save" } }));
     return record;
   },
 
@@ -109,7 +110,9 @@ const BookDB = {
   },
 
   async deleteBook(id) {
-    return withStore("readwrite", (store) => store.delete(id));
+    const result = await withStore("readwrite", (store) => store.delete(id));
+    document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "delete" } }));
+    return result;
   },
 
   async deleteBooks(ids) {
@@ -118,7 +121,10 @@ const BookDB = {
       const tx = db.transaction(STORE_BOOKS, "readwrite");
       const store = tx.objectStore(STORE_BOOKS);
       for (const id of ids) store.delete(id);
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { ids: [...ids], reason: "delete-bulk" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -136,7 +142,10 @@ const BookDB = {
         record.lastOpened = Date.now();
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "position" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -154,7 +163,10 @@ const BookDB = {
         record.bookmarks.push(bookmark);
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "bookmark" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -171,7 +183,10 @@ const BookDB = {
         record.bookmarks = (record.bookmarks || []).filter((b) => b.createdAt !== createdAt);
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "bookmark" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -191,7 +206,10 @@ const BookDB = {
         record.annotations.push(annotation);
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "annotation" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -210,7 +228,10 @@ const BookDB = {
         if (idx >= 0) record.annotations[idx] = { ...record.annotations[idx], ...patch };
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "annotation" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },
@@ -227,7 +248,10 @@ const BookDB = {
         record.annotations = (record.annotations || []).filter((a) => a.id !== annotationId);
         store.put(record);
       };
-      tx.oncomplete = () => resolve(true);
+      tx.oncomplete = () => {
+        document.dispatchEvent(new CustomEvent("waka:book-changed", { detail: { id, reason: "annotation" } }));
+        resolve(true);
+      };
       tx.onerror = () => reject(tx.error);
     });
   },

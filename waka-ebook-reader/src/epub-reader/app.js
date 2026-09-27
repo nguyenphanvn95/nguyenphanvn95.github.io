@@ -2187,6 +2187,10 @@ ${entry.styleHtml}
     importFiles,
     importFromUrl,
     openFilePicker: () => el.fileInput && el.fileInput.click(),
+    // Nhập 1 file .epub y hệt luồng chọn file thủ công (parse + tạo coverBlob + BookDB.saveBook)
+    // nhưng KHÔNG tự renderLibrary()/mở sách — dùng cho các luồng nhập hàng loạt ở nền
+    // (vd. dropbox-sync.js khi tải sách mới về từ Dropbox).
+    addBookFromFile,
 
     /* thư viện */
     renderLibrary,
