@@ -65,6 +65,22 @@
       base: "white",
       image: `url("${WALLPAPER_BASE}white-bg.jpg") center center / cover fixed no-repeat`,
     },
+    scrapbook: {
+      base: "sepia", // ảnh giấy nâu, sáng vừa — cùng tông chữ với warm-paper
+      image: `url("${WALLPAPER_BASE}scrapbook-bg.jpg") center center / cover fixed no-repeat`,
+    },
+    sand: {
+      base: "white", // ảnh cát trắng rất sáng
+      image: `url("${WALLPAPER_BASE}sand-bg.jpg") center center / cover fixed no-repeat`,
+    },
+    moonsky: {
+      base: "dark", // ảnh bầu trời đêm gần như đen
+      image: `url("${WALLPAPER_BASE}moonsky-bg.jpg") center center / cover fixed no-repeat`,
+    },
+    leaves: {
+      base: "white", // hoạ tiết lá màu bạc hà nhạt, nền sáng
+      image: `url("${WALLPAPER_BASE}leaves-bg.jpg") center center / cover fixed no-repeat`,
+    },
   };
 
   const MIME_BY_EXT = {

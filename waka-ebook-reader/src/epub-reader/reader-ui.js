@@ -384,7 +384,7 @@
     if (bgOpacityInput && document.activeElement !== bgOpacityInput) bgOpacityInput.value = String(bgOpacityPct);
     if (bgOpacityValue) bgOpacityValue.textContent = bgOpacityPct + "%";
 
-    readerView.classList.toggle("rd-dark", (s.bgImage && s.bgImage !== "white" && s.bgImage !== "warm-paper") || s.theme === "dark");
+    readerView.classList.toggle("rd-dark", (s.bgImage && !["white", "warm-paper", "scrapbook", "sand", "leaves"].includes(s.bgImage)) || s.theme === "dark");
   }
 
   document.addEventListener("reader:settings", syncControls);

@@ -1,6 +1,6 @@
 # Waka EBook Reader
 
-Trình đọc EPUB của **Waka Toolkit 6.9.5** chạy dưới dạng **web app + userscript**.
+Trình đọc EPUB của **Waka Toolkit 6.9.6** chạy dưới dạng **web app + userscript**.
 Mã trình đọc giữ nguyên như extension gốc (thư viện, chú thích, đọc to Edge TTS, nhạc nền, **Auto Scroll**, **10 font chữ tuỳ chỉnh**, giao diện desktop + mobile).
 
 - Reader: `https://nguyenphanvn95.github.io/waka-ebook-reader/`
@@ -58,6 +58,10 @@ Chép đè `src/epub-reader/*`, `assets/*` (gồm `assets/fonts/`, `assets/css/a
 
 ## Lịch sử
 
+- **Reader — thu gọn toolbar trên cùng + bottom sheet (mobile)** — Vá riêng CSS mobile của Reader (cùng nội dung với bản vá kích thước của Waka Toolkit 6.9.10; không đổi `waka-ebook-reader.user.js`, không đổi các phần khác của Reader): thanh công cụ trên cùng 56px → 44px (nút 46px → 34px, icon 28px → 20px), bottom sheet "Cài đặt chữ" — mỗi hàng 68px → 52px, chấm chọn Nền 56px → 38px, công tắc 64×36px → 46×26px, các phần khác co theo tỉ lệ tương ứng. File: `assets/css/reader.css` (chỉ file này thay đổi).
+- **Reader — 4 theme nền mới** — Vá riêng phần theme của Reader (không đổi `waka-ebook-reader.user.js`, không đổi các phần khác của Reader): thêm 4 theme ảnh nền vào pane Theme (desktop) và bảng "Cài đặt chữ" → hàng "Nền" (mobile), giống 4 theme mới thêm ở Waka Toolkit 6.9.9 — **Giấy scrapbook** (chữ tông Sepia), **Cát** (tông Trắng), **Trăng đêm** (tông Tối), **Lá cây** (tông Trắng). File: `src/epub-reader/app.js` (4 mục `BG_IMAGES`), `src/reader.html` (4 nút mỗi bên desktop/mobile), `src/epub-reader/reader-ui.js` (điều kiện thanh công cụ tối `rd-dark`), `assets/css/reader.css` (CSS thumbnail), `assets/wallpagers/{scrapbook,sand,moonsky,leaves}-bg{,-thumbnail}.jpg`. Các thay đổi khác giữa Reader 6.9.6 (bản gốc của thư mục này) và 6.9.9 của extension (nếu có, ngoài 4 theme) **chưa** được đồng bộ.
+- **platform-shim.js 1.0.5 / app.js** — Reader tự kiểm tra thư viện (IndexedDB) theo **tiêu đề sách** trước khi chờ EPUB từ one-click-to-read: nếu `?importToken=oc_…&titleHint=<tên sách>` khớp 1 sách đã có (so khớp không phân biệt hoa/thường, bỏ khoảng trắng thừa) → mở thẳng sách đó, gửi `{type:"titleFound"}` để waka.vn hủy tải/dựng EPUB đang dở; nếu chưa có mới chờ nhận EPUB như cũ. Xem README của `one-click-to-read`.
+- **Userscript 1.1.0 / Reader 6.9.6** — Reader nâng từ 6.9.5 lên 6.9.6 của extension: bottom sheet Mục lục ở mobile có thêm tab **Tìm kiếm** (bên cạnh Mục lục, Đánh dấu), dùng lại nguyên tính năng tìm kiếm trong sách đã có ở desktop (`#search-input`/`#search-results`/`runSearch` trong `app.js`, không đổi logic tìm kiếm) — chỉ nối thêm đường vào từ tab mobile (`src/reader.html`, `src/epub-reader/mobile-reader.js`, `src/epub-reader/i18n.js`) và style riêng cho theme tối của panel mobile (`assets/css/reader.css`). Userscript (loader) không đổi.
 - **Userscript 1.1.0 / Reader 6.9.5** — Reader nâng từ 6.9.2 lên 6.9.5 của extension: Auto Scroll (chế độ Cuộn, pill nổi, Shift+A), 10 font tuỳ chỉnh đủ chữ tiếng Việt (`assets/fonts/`, `custom-fonts.js`), sửa nhãn công tắc Auto Scroll, sửa thanh cuộn + cuộn được bảng "Cài đặt chữ" trên mobile. Userscript: bong bóng nổi dùng icon48.png, tự gắn lại khi trang SPA gỡ nút, đồng bộ Ẩn/Hiện giữa các tab, sửa rò rỉ listener.
 - **1.0.1** — tích hợp one-click-to-read (bên dưới).
 
@@ -67,6 +71,7 @@ Userscript [`one-click-to-read`](../one-click-to-read/) dựng EPUB từ nút **
 
 - `platform-shim.js` nhận biết cả hai userscript (`html[data-waka-reader-userscript]` và `html[data-waka-oneclick-userscript]`) cho kênh `consume`.
 - `waka-ebook-reader.user.js` bỏ qua token `oc_…` (thuộc one-click-to-read), chỉ xử lý token `reader_…` của chính nó.
+- Từ `platform-shim.js` 1.0.5: nếu URL có thêm `titleHint=<tên sách>`, Reader kiểm tra thư viện trước — có sách cùng tên thì mở luôn (không tải EPUB); action `reportTitleMatch` báo ngược cho waka.vn để hủy job.
 
 ## Lưu ý
 

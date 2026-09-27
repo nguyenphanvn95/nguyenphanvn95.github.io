@@ -357,6 +357,10 @@
 .rd-wallpaper-green { background-image: url("../wallpagers/green-bg-thumbnail.jpg"); }
 .rd-wallpaper-green2 { background-image: url("../wallpagers/green2-bg-thumbnail.jpg"); }
 .rd-wallpaper-white { background-image: url("../wallpagers/white-bg-thumbnail.jpg"); }
+.rd-wallpaper-scrapbook { background-image: url("../wallpagers/scrapbook-bg-thumbnail.jpg"); }
+.rd-wallpaper-sand { background-image: url("../wallpagers/sand-bg-thumbnail.jpg"); }
+.rd-wallpaper-moonsky { background-image: url("../wallpagers/moonsky-bg-thumbnail.jpg"); }
+.rd-wallpaper-leaves { background-image: url("../wallpagers/leaves-bg-thumbnail.jpg"); }
 
 .rd-bg-opacity {
   margin-top: 14px;
@@ -1152,11 +1156,11 @@
     left: 0;
     right: 0;
     z-index: 280;
-    height: calc(56px + env(safe-area-inset-top, 0px));
-    padding: env(safe-area-inset-top, 0px) 18px 0;
+    height: calc(44px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 14px 0;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: color-mix(in srgb, var(--mobile-panel-bg) 96%, transparent);
     border: 0;
     box-shadow: 0 1px 0 var(--mobile-panel-line);
@@ -1172,32 +1176,32 @@
   }
 
   #reader-view .rd-tab {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     max-width: none;
     padding: 0;
     justify-content: center;
     background: transparent;
     border: 0;
     color: var(--mobile-panel-fg);
-    flex: 0 0 48px;
+    flex: 0 0 38px;
     cursor: pointer;
   }
 
   #reader-view .rd-tab::before {
     content: "";
-    width: 20px;
-    height: 20px;
-    border-left: 3px solid currentColor;
-    border-bottom: 3px solid currentColor;
+    width: 13px;
+    height: 13px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
     transform: rotate(45deg);
-    margin-left: 8px;
+    margin-left: 6px;
   }
 
   #reader-view .rd-tabbar-actions {
     flex: 1;
     justify-content: flex-end;
-    gap: clamp(14px, 5vw, 34px);
+    gap: clamp(8px, 3.5vw, 20px);
     margin-left: 0;
   }
 
@@ -1206,8 +1210,8 @@
   }
 
   #reader-view .rd-tabbar-actions .icon-btn {
-    width: 46px;
-    height: 46px;
+    width: 34px;
+    height: 34px;
     color: var(--mobile-panel-fg);
     background: transparent;
     border-radius: 0;
@@ -1222,8 +1226,8 @@
 
   #reader-view .rd-tabbar-actions .icon-btn svg,
   #reader-view .rd-tabbar-actions .icon-btn .mobile-toolbar-icon {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
   }
 
   #reader-view .rd-tabbar-actions .icon-btn svg {
@@ -1475,8 +1479,8 @@
     max-height: 70dvh;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 10px 22px calc(34px + env(safe-area-inset-bottom, 0px));
-    border-radius: 24px 24px 0 0;
+    padding: 8px 20px calc(26px + env(safe-area-inset-bottom, 0px));
+    border-radius: 20px 20px 0 0;
     background: var(--mobile-panel-bg);
     color: var(--mobile-panel-fg);
     box-shadow: 0 -14px 38px rgba(0,0,0,.38);
@@ -1495,11 +1499,11 @@
   }
 
   .mobile-sheet-handle {
-    width: 52px;
+    width: 40px;
     height: 4px;
     border-radius: 999px;
     background: color-mix(in srgb, var(--mobile-panel-fg) 22%, transparent);
-    margin: 0 auto 22px;
+    margin: 0 auto 16px;
   }
 
   .mobile-sheet-card h2 {
@@ -1522,26 +1526,26 @@
 
   .mobile-setting-row {
     display: grid;
-    grid-template-columns: minmax(82px, 1fr) auto auto auto;
+    grid-template-columns: minmax(72px, 1fr) auto auto auto;
     align-items: center;
-    gap: 16px;
-    min-height: 68px;
+    gap: 14px;
+    min-height: 52px;
     color: var(--mobile-panel-muted);
-    font-size: 21px;
+    font-size: 16px;
   }
 
-  .mobile-brightness-row { grid-template-columns: 32px 1fr 32px; }
-  .mobile-fontsize-row { grid-template-columns: 24px 1fr 30px; }
+  .mobile-brightness-row { grid-template-columns: 26px 1fr 26px; }
+  .mobile-fontsize-row { grid-template-columns: 18px 1fr 22px; }
 
   .mobile-slider-icon {
-    width: 22px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
     color: var(--mobile-panel-muted);
   }
 
   .mobile-slider-icon.bright {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     color: var(--mobile-panel-fg);
   }
 
@@ -1557,8 +1561,8 @@
 
   .mobile-range::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--mobile-panel-fg);
     box-shadow: 0 1px 4px rgba(0,0,0,.4);
@@ -1567,8 +1571,8 @@
   }
 
   .mobile-range::-moz-range-thumb {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     border: 0;
     border-radius: 50%;
     background: var(--mobile-panel-fg);
@@ -1587,8 +1591,8 @@
     text-align: center;
   }
 
-  .mobile-a-label.small { font-size: 16px; }
-  .mobile-a-label.big { font-size: 26px; }
+  .mobile-a-label.small { font-size: 13px; }
+  .mobile-a-label.big { font-size: 20px; }
 
   .mobile-range-ticks {
     background-image: repeating-linear-gradient(
@@ -1620,9 +1624,9 @@
   }
 
   .mobile-icon-btn {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     border: 2px solid transparent;
     background: var(--mobile-panel-surface);
     display: grid;
@@ -1631,8 +1635,8 @@
   }
 
   .mobile-icon-btn svg {
-    width: 24px;
-    height: 20px;
+    width: 19px;
+    height: 16px;
     stroke: color-mix(in srgb, var(--mobile-panel-fg) 75%, var(--mobile-panel-bg));
     stroke-width: 2;
     fill: none;
@@ -1667,12 +1671,12 @@
 
   .mobile-pill {
     flex: 0 0 auto;
-    padding: 10px 18px;
+    padding: 7px 14px;
     border-radius: 999px;
     border: 2px solid var(--mobile-panel-line);
     background: var(--mobile-panel-surface);
     color: color-mix(in srgb, var(--mobile-panel-fg) 85%, var(--mobile-panel-bg));
-    font-size: 16px;
+    font-size: 14px;
     white-space: nowrap;
   }
 
@@ -1695,7 +1699,7 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 18px;
+    gap: 12px;
     min-width: 0;
     padding-bottom: 2px;
     scrollbar-width: none;
@@ -1709,8 +1713,8 @@
   .mobile-bg-dot {
     flex: 0 0 auto;
     position: relative;
-    width: 56px;
-    height: 56px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     border: 2px solid transparent;
     padding: 0;
@@ -1718,7 +1722,7 @@
 
   .mobile-bg-dot.active {
     border-color: #18d3a7;
-    box-shadow: 0 0 0 4px rgba(24,211,167,.16);
+    box-shadow: 0 0 0 3px rgba(24,211,167,.16);
   }
 
   .mobile-bg-dot.active::after {
@@ -1728,7 +1732,7 @@
     display: grid;
     place-items: center;
     color: #18d3a7;
-    font-size: 28px;
+    font-size: 19px;
     font-weight: 900;
     text-shadow: 0 1px 2px rgba(0,0,0,.35);
   }
@@ -1760,12 +1764,16 @@
   .mobile-bg-green-wall { background-image: url("../wallpagers/green-bg-thumbnail.jpg"); }
   .mobile-bg-green2-wall { background-image: url("../wallpagers/green2-bg-thumbnail.jpg"); }
   .mobile-bg-white-wall { background-image: url("../wallpagers/white-bg-thumbnail.jpg"); }
+  .mobile-bg-scrapbook-wall { background-image: url("../wallpagers/scrapbook-bg-thumbnail.jpg"); }
+  .mobile-bg-sand-wall { background-image: url("../wallpagers/sand-bg-thumbnail.jpg"); }
+  .mobile-bg-moonsky-wall { background-image: url("../wallpagers/moonsky-bg-thumbnail.jpg"); }
+  .mobile-bg-leaves-wall { background-image: url("../wallpagers/leaves-bg-thumbnail.jpg"); }
 
   .mobile-switch {
     grid-column: 4;
     position: relative;
-    width: 64px;
-    height: 36px;
+    width: 46px;
+    height: 26px;
   }
 
   .mobile-switch input {
@@ -1786,8 +1794,8 @@
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: var(--mobile-panel-fg);
     transition: transform .16s ease;
@@ -1798,7 +1806,7 @@
   }
 
   .mobile-switch input:checked + i::after {
-    transform: translateX(28px);
+    transform: translateX(20px);
   }
 
   #reader-view .music-panel {
