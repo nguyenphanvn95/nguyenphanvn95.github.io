@@ -2,7 +2,7 @@
 // @name         Waka EBook Reader
 // @name:vi      Waka EBook Reader — Trình đọc EPUB
 // @namespace    https://nguyenphanvn95.github.io/waka-ebook-reader/
-// @version      1.1.0
+// @version      1.2.6
 // @description  Trình đọc EPUB của Waka Toolkit 6.9.6 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), tự động cuộn, font chữ tuỳ chỉnh, nhạc nền, giao diện desktop + mobile. Bong bóng nổi trên waka.vn: mở Reader, nhập file EPUB, ẩn nút.
 // @description:vi  Trình đọc EPUB của Waka Toolkit 6.9.6 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), tự động cuộn, font chữ tuỳ chỉnh, nhạc nền, giao diện desktop + mobile. Bong bóng nổi trên waka.vn: mở Reader, nhập file EPUB, ẩn nút.
 // @author       nguyenphanvn95
@@ -42,6 +42,12 @@
  * Toàn bộ mã trình đọc (giống hệt extension gốc, gồm Auto Scroll + font tuỳ chỉnh) nằm trên máy chủ tĩnh,
  * không nhúng trong file này → cập nhật Reader không cần cập nhật userscript.
  *
+ * v1.2.6
+ *  - Đồng bộ Dropbox, đồng bộ LÊN: sau khi đẩy xong thư viện cục bộ, tự dọn trên Dropbox
+ *    mọi sách không còn trong trình duyệt (dữ liệu Dropbox khớp hệt trình duyệt).
+ *  - Đồng bộ Dropbox, đồng bộ XUỐNG: sách đã có sẵn cục bộ (trùng id) không còn hỏi
+ *    ghi đè nữa — luôn tự đồng bộ tiến trình đọc/bookmark/ghi chú xuống, bỏ qua .epub.
+ *
  * v1.1.0
  *  - Nút nổi dùng icon48.png của Reader làm bong bóng (thay nút cam + biểu tượng sách).
  *    Nếu CSP của trang chặn ảnh từ github.io → tự tải ảnh qua GM_xmlhttpRequest (data URL), cuối cùng mới về biểu tượng SVG.
@@ -57,7 +63,7 @@
   const APP_BASE = APP_ORIGIN + '/waka-ebook-reader/';
   const READER_URL = APP_BASE + 'src/reader.html';
   const ICON_URL = APP_BASE + 'assets/icons/icon48.png';
-  const VERSION = (typeof GM_info !== 'undefined' && GM_info.script && GM_info.script.version) || '1.1.0';
+  const VERSION = (typeof GM_info !== 'undefined' && GM_info.script && GM_info.script.version) || '1.2.6';
 
   /* ---------------------------------------------------------------- tiện ích GM */
   const gmGet = (k, d) => { try { return GM_getValue(k, d); } catch (e) { return d; } };

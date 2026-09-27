@@ -13,6 +13,14 @@
 //
 // Lên Dropbox (upload) = tự động, có debounce, bám theo sự kiện "waka:book-changed"
 // mà db.js bắn ra sau mỗi lần ghi. Từ Dropbox (download) = thủ công, bấm nút mới bắt đầu.
+//
+// Đồng bộ 2 chiều, ưu tiên dữ liệu trình duyệt (local) là bản "mới hơn":
+//   - Lên (uploadAllNow / periodicSafetyScan): sau khi đẩy đủ sách cục bộ, DỌN trên
+//     Dropbox mọi sách KHÔNG còn trong thư viện cục bộ (xoá .epub + .meta.json + entry
+//     trong manifest) → dữ liệu Dropbox khớp hệt trình duyệt.
+//   - Xuống (syncNow): sách đã có sẵn cục bộ (trùng id = trùng buffer byte-for-byte) thì
+//     BỎ QUA việc hỏi ghi đè — chỉ luôn đồng bộ tiến trình đọc/bookmark/ghi chú (meta.json)
+//     từ Dropbox xuống, không tải lại .epub.
 
 (() => {
   "use strict";
@@ -348,6 +356,33 @@
     if (next.length !== list.length) await writeManifest(next);
   }
 
+  /**
+   * Dọn trên Dropbox mọi entry manifest KHÔNG còn nằm trong `localIds` (sách đã bị xoá
+   * khỏi trình duyệt bằng cách nào đó — kể cả khi sự kiện "waka:book-changed" bị bỏ lỡ,
+   * vd. xoá lúc offline/mất mạng). Trả về số sách đã dọn để hiện trong toast tổng kết.
+   * Không đụng tới sách nào có id nằm trong `localIds`.
+   */
+  async function cleanupRemoteExtras(localIds) {
+    const localIdSet = new Set(localIds);
+    const list = await readManifest();
+    const toRemove = list.filter((it) => !localIdSet.has(it.id));
+    if (!toRemove.length) return 0;
+    for (const entry of toRemove) {
+      try {
+        await apiDeletePath(`/books/${entry.id}.epub`);
+        await apiDeletePath(`/books/${entry.id}.meta.json`);
+      } catch (err) {
+        console.warn("[DropboxSync] Lỗi dọn sách thừa trên Dropbox", entry.id, err);
+      }
+    }
+    // Ghi lại manifest 1 lần duy nhất (đọc lại để tránh đè lên thay đổi xen giữa lúc xoá).
+    const latest = await readManifest();
+    const latestLocalIds = localIdSet;
+    const next = latest.filter((it) => latestLocalIds.has(it.id));
+    if (next.length !== latest.length) await writeManifest(next);
+    return toRemove.length;
+  }
+
   /** Xử lý hàng đợi debounce: gộp mọi id đổi trong ~9s gần nhất, upload tuần tự. */
   async function flushUploadQueue() {
     if (uploadInFlight || !pendingIds.size) return;
@@ -412,6 +447,10 @@
           || entry.hasAnnotations !== !!(b.annotations && b.annotations.length);
         if (changed) queueUpload(b.id, false);
       }
+      // Dọn luôn sách thừa trên Dropbox không còn trong thư viện cục bộ (phòng khi sự
+      // kiện xoá ở nơi khác bị bỏ lỡ, vd. xoá lúc mất mạng). Việc dọn chỉ dựa trên danh
+      // sách id cục bộ hiện tại nên không cần chờ hàng đợi upload phía trên xong.
+      await cleanupRemoteExtras(books.map((b) => b.id));
     } catch (err) {
       console.warn("[DropboxSync] Quét định kỳ lỗi:", err);
     }
@@ -456,7 +495,7 @@
     pendingIds.clear();
     uploadInFlight = true;
     app().loading?.(true, tr("dropbox.uploadingNow", null, "Đang đồng bộ lên Dropbox…"));
-    let ok = 0, failed = 0;
+    let ok = 0, failed = 0, removed = 0;
     try {
       const books = await window.BookDB.listBooks();
       for (const b of books) {
@@ -468,8 +507,15 @@
           failed++;
         }
       }
-      app().toast?.(tr("dropbox.uploadNowSummary", { ok, failed },
-        `Đã đồng bộ ${ok} sách lên Dropbox, ${failed} sách lỗi.`));
+      // Dọn trên Dropbox mọi sách không còn trong thư viện cục bộ (ưu tiên dữ liệu
+      // trình duyệt — trình duyệt không có thì Dropbox cũng không được giữ).
+      try {
+        removed = await cleanupRemoteExtras(books.map((b) => b.id));
+      } catch (err) {
+        console.warn("[DropboxSync] Dọn sách thừa trên Dropbox lỗi:", err);
+      }
+      app().toast?.(tr("dropbox.uploadNowSummary", { ok, failed, removed },
+        `Đã đồng bộ ${ok} sách lên Dropbox, ${failed} sách lỗi, dọn ${removed} sách thừa.`));
     } catch (err) {
       console.error("[DropboxSync] uploadAllNow lỗi:", err);
       app().toast?.(tr("dropbox.syncError", { message: err.message }, "Đồng bộ Dropbox thất bại: " + err.message), true);
@@ -481,32 +527,6 @@
   }
 
   /* ---------------------------------------------------------- tải XUỐNG (thủ công) */
-
-  /** Hộp thoại xác nhận Ghi đè/Bỏ qua cho 1 cuốn trùng id, có tuỳ chọn áp dụng cho tất cả. */
-  function askOverwrite(title) {
-    return new Promise((resolve) => {
-      const overlay = document.createElement("div");
-      overlay.className = "dbx-modal-overlay";
-      overlay.innerHTML = `
-        <div class="dbx-modal-card" role="dialog" aria-modal="true">
-          <p class="dbx-modal-title">${tr("dropbox.conflictTitle", null, "Sách đã có trong thư viện")}</p>
-          <p class="dbx-modal-body">${tr("dropbox.conflictBody", { title: esc(title) }, `Sách «${esc(title)}» đã có trong thư viện. Ghi đè tiến trình đọc/bookmark/ghi chú cục bộ bằng dữ liệu trên Dropbox?`)}</p>
-          <label class="dbx-modal-check"><input type="checkbox" id="dbx-apply-all"> ${tr("dropbox.applyAll", null, "Áp dụng cho tất cả các sách trùng")}</label>
-          <div class="dbx-modal-actions">
-            <button type="button" class="lib-danger" id="dbx-skip">${tr("dropbox.conflictSkip", null, "Bỏ qua")}</button>
-            <button type="button" class="btn-primary" id="dbx-overwrite">${tr("dropbox.conflictOverwrite", null, "Ghi đè")}</button>
-          </div>
-        </div>`;
-      document.body.appendChild(overlay);
-      const cleanup = (overwrite) => {
-        const applyAll = overlay.querySelector("#dbx-apply-all")?.checked || false;
-        overlay.remove();
-        resolve({ overwrite, applyAll });
-      };
-      overlay.querySelector("#dbx-skip").addEventListener("click", () => cleanup(false));
-      overlay.querySelector("#dbx-overwrite").addEventListener("click", () => cleanup(true));
-    });
-  }
 
   /** Áp dữ liệu (position/bookmarks/annotations) từ Dropbox vào 1 record cục bộ đã có sẵn (trùng id). */
   async function applyRemoteMetaToLocal(id, meta) {
@@ -550,7 +570,6 @@
     }
     app().loading?.(true, tr("dropbox.syncing", null, "Đang đồng bộ từ Dropbox…"));
     let added = 0, updated = 0, skipped = 0;
-    let applyAllChoice = null; // null = chưa hỏi; true/false = áp dụng cho các mục sau
     try {
       const [list, localBooks] = await Promise.all([readManifest(), window.BookDB.listBooks()]);
       const localById = new Map(localBooks.map((b) => [b.id, b]));
@@ -568,20 +587,9 @@
           continue;
         }
 
-        // id trùng = buffer trùng byte-for-byte → không tải lại .epub, chỉ hỏi có ghi đè
-        // tiến trình/bookmark/ghi chú cục bộ bằng bản trên Dropbox hay không.
-        let overwrite;
-        if (applyAllChoice !== null) {
-          overwrite = applyAllChoice;
-        } else {
-          app().loading?.(false);
-          const choice = await askOverwrite(local.title || local.fileName || entry.title || "");
-          app().loading?.(true, tr("dropbox.syncing", null, "Đang đồng bộ từ Dropbox…"));
-          overwrite = choice.overwrite;
-          if (choice.applyAll) applyAllChoice = choice.overwrite;
-        }
-
-        if (!overwrite) { skipped++; continue; }
+        // id trùng = buffer trùng byte-for-byte → sách đã có sẵn cục bộ, KHÔNG tải lại
+        // .epub và KHÔNG hỏi ghi đè nữa — luôn đồng bộ tiến trình đọc/bookmark/ghi chú
+        // xuống từ Dropbox (dữ liệu trình duyệt sau đó khớp hệt Dropbox).
         try {
           const meta = await apiDownloadJson(`/books/${entry.id}.meta.json`);
           await applyRemoteMetaToLocal(entry.id, meta);

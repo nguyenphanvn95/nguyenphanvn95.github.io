@@ -188,7 +188,7 @@
   "dropbox.uploadNow": "Đồng bộ ngay",
   "dropbox.uploadingNow": "Đang đồng bộ lên Dropbox…",
   "dropbox.uploadBusy": "Đang đồng bộ lên Dropbox, vui lòng đợi…",
-  "dropbox.uploadNowSummary": "Đã đồng bộ {ok} sách lên Dropbox, {failed} sách lỗi.",
+  "dropbox.uploadNowSummary": "Đã đồng bộ {ok} sách lên Dropbox, {failed} sách lỗi, dọn {removed} sách thừa.",
   "dropbox.autoSync": "Tự động đồng bộ",
   "dropbox.autoSyncOff": "Tắt",
   "dropbox.syncNow": "Đồng bộ từ Dropbox",
@@ -201,10 +201,5 @@
   "dropbox.noAppKey": "Chưa cấu hình Dropbox App Key (xem đầu file dropbox-sync.js).",
   "dropbox.syncSuccess": "Đồng bộ Dropbox thành công.",
   "dropbox.syncError": "Đồng bộ Dropbox thất bại: {message}",
-  "dropbox.conflictTitle": "Sách đã có trong thư viện",
-  "dropbox.conflictBody": "Sách «{title}» đã có trong thư viện. Ghi đè tiến trình đọc/bookmark/ghi chú cục bộ bằng dữ liệu trên Dropbox?",
-  "dropbox.conflictOverwrite": "Ghi đè",
-  "dropbox.conflictSkip": "Bỏ qua",
-  "dropbox.applyAll": "Áp dụng cho tất cả các sách trùng",
   "dropbox.summary": "Đã thêm {added} sách mới, cập nhật {updated} sách, bỏ qua {skipped} sách."
 }

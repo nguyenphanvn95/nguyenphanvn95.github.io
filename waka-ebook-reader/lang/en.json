@@ -188,7 +188,7 @@
   "dropbox.uploadNow": "Sync now",
   "dropbox.uploadingNow": "Uploading to Dropbox…",
   "dropbox.uploadBusy": "Already syncing to Dropbox, please wait…",
-  "dropbox.uploadNowSummary": "Synced {ok} books to Dropbox, {failed} failed.",
+  "dropbox.uploadNowSummary": "Synced {ok} books to Dropbox, {failed} failed, removed {removed} extra.",
   "dropbox.autoSync": "Auto sync",
   "dropbox.autoSyncOff": "Off",
   "dropbox.syncNow": "Sync from Dropbox",
@@ -201,10 +201,5 @@
   "dropbox.noAppKey": "Dropbox App Key is not configured (see the top of dropbox-sync.js).",
   "dropbox.syncSuccess": "Dropbox sync complete.",
   "dropbox.syncError": "Dropbox sync failed: {message}",
-  "dropbox.conflictTitle": "Book already in your library",
-  "dropbox.conflictBody": "«{title}» is already in your library. Overwrite the local reading position/bookmarks/notes with the Dropbox copy?",
-  "dropbox.conflictOverwrite": "Overwrite",
-  "dropbox.conflictSkip": "Skip",
-  "dropbox.applyAll": "Apply to all matching books",
   "dropbox.summary": "Added {added} new books, updated {updated}, skipped {skipped}."
 }
