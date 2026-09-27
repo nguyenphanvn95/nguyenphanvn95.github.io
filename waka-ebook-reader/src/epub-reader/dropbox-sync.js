@@ -29,7 +29,7 @@
   // quyền "App folder"), rồi điền App Key vào đây. Redirect URI khai báo trong
   // Dropbox App Console phải khớp CHÍNH XÁC:
   // https://nguyenphanvn95.github.io/waka-ebook-reader/src/reader.html
-  const DROPBOX_APP_KEY = "";
+  const DROPBOX_APP_KEY = "txjev524hdzy123";
   const REDIRECT_URI = "https://nguyenphanvn95.github.io/waka-ebook-reader/src/reader.html";
 
   const STORAGE_AUTH_KEY = "dropboxAuth"; // { accessToken, refreshToken, expiresAt, accountEmail }
