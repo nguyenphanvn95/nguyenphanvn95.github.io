@@ -433,6 +433,53 @@
     startAutoSyncTimerIfNeeded();
   }
 
+  /* ---------------------------------------------------------- tải LÊN (thủ công, nút "Đồng bộ ngay") */
+
+  /**
+   * Đẩy toàn bộ thư viện cục bộ hiện có lên Dropbox ngay lập tức (không chờ debounce 9s,
+   * không chờ chu kỳ tự động). Dùng lại `uploadOneBook()` — file .epub chỉ upload nếu
+   * Dropbox chưa có (so theo id = hash buffer), phần .meta.json luôn ghi đè bằng bản mới
+   * nhất từ IndexedDB. Không đụng tới sách đã bị xoá cục bộ (việc xoá trên Dropbox đã do
+   * `uploadOneDelete()` xử lý riêng qua sự kiện "waka:book-changed" lúc xoá sách).
+   */
+  async function uploadAllNow() {
+    if (!auth) {
+      app().toast?.(tr("dropbox.loginRequired", null, "Hãy đăng nhập Dropbox trước."), true);
+      return;
+    }
+    if (uploadInFlight) {
+      app().toast?.(tr("dropbox.uploadBusy", null, "Đang đồng bộ lên Dropbox, vui lòng đợi…"), true);
+      return;
+    }
+    // Huỷ hàng đợi debounce đang chờ — các cuốn đó sẽ được xử lý trong lượt quét toàn bộ này luôn.
+    clearTimeout(uploadDebounceTimer);
+    pendingIds.clear();
+    uploadInFlight = true;
+    app().loading?.(true, tr("dropbox.uploadingNow", null, "Đang đồng bộ lên Dropbox…"));
+    let ok = 0, failed = 0;
+    try {
+      const books = await window.BookDB.listBooks();
+      for (const b of books) {
+        try {
+          await uploadOneBook(b.id);
+          ok++;
+        } catch (err) {
+          console.warn("[DropboxSync] Đồng bộ ngay lỗi cho", b.id, err);
+          failed++;
+        }
+      }
+      app().toast?.(tr("dropbox.uploadNowSummary", { ok, failed },
+        `Đã đồng bộ ${ok} sách lên Dropbox, ${failed} sách lỗi.`));
+    } catch (err) {
+      console.error("[DropboxSync] uploadAllNow lỗi:", err);
+      app().toast?.(tr("dropbox.syncError", { message: err.message }, "Đồng bộ Dropbox thất bại: " + err.message), true);
+    } finally {
+      uploadInFlight = false;
+      app().loading?.(false);
+      if (pendingIds.size) flushUploadQueue(); // có thay đổi mới tới trong lúc đang chạy
+    }
+  }
+
   /* ---------------------------------------------------------- tải XUỐNG (thủ công) */
 
   /** Hộp thoại xác nhận Ghi đè/Bỏ qua cho 1 cuốn trùng id, có tuỳ chọn áp dụng cho tất cả. */
@@ -568,6 +615,9 @@
           : `<button type="button" class="rp-chip" id="dbx-login-btn">${esc(tr("dropbox.login", null, "Đăng nhập vào Dropbox"))}</button>`}
       </div>
       <div class="dbx-row">
+        <button type="button" class="rp-chip" id="dbx-upload-now-btn" ${loggedIn ? "" : "disabled"}>${esc(tr("dropbox.uploadNow", null, "Đồng bộ ngay"))}</button>
+      </div>
+      <div class="dbx-row">
         <span class="rp-label" style="flex:none">${esc(tr("dropbox.autoSync", null, "Tự động đồng bộ"))}</span>
         <select class="rp-select" id="dbx-autosync-select" ${loggedIn ? "" : "disabled"}>
           ${AUTOSYNC_OPTIONS.map((m) => `<option value="${m}"${m === autoSyncMinutes ? " selected" : ""}>${m === 0 ? esc(tr("dropbox.autoSyncOff", null, "Tắt")) : m + " phút"}</option>`).join("")}
@@ -584,9 +634,11 @@
       container.innerHTML = syncBlockHtml();
       const loginBtn = container.querySelector("#dbx-login-btn");
       const logoutBtn = container.querySelector("#dbx-logout-btn");
+      const uploadNowBtn = container.querySelector("#dbx-upload-now-btn");
       const sel = container.querySelector("#dbx-autosync-select");
       if (loginBtn) loginBtn.addEventListener("click", () => login());
       if (logoutBtn) logoutBtn.addEventListener("click", () => logout());
+      if (uploadNowBtn) uploadNowBtn.addEventListener("click", () => uploadAllNow());
       if (sel) sel.addEventListener("change", () => setAutoSyncMinutes(Number(sel.value)));
     }
   }
@@ -617,6 +669,7 @@
     getAutoSyncMinutes: () => autoSyncMinutes,
     setAutoSyncMinutes,
     syncNow,
+    uploadNow: uploadAllNow,
     requestUploadFlush,
     /* dùng nội bộ bởi library-ui.js / library-mobile.js để vẽ khối đăng nhập + chu kỳ */
     mountSyncBlock,
