@@ -790,6 +790,12 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   white-space: nowrap;
 }
 
+/* Trên desktop, khối thu gọn/mở rộng không có tác dụng — display:contents để
+   #bi-meta/#bi-meta-heading/#bi-description/#bi-tags giữ nguyên vị trí trong
+   luồng DOM như trước khi có wrapper này. Nút thu gọn cũng luôn ẩn. */
+.bi-collapsible { display: contents; }
+.bi-toggle { display: none; }
+
 @media (max-width: 760px) {
   #book-info-modal.modal-overlay {
     padding: 0;
@@ -807,11 +813,9 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
       "author"
       "progress"
       "actions"
-      "description"
-      "meta-heading"
-      "meta"
-      "tags";
-    row-gap: 12px;
+      "collapsible"
+      "toggle";
+    row-gap: 10px;
     width: 100%;
     min-width: 0;
     max-width: none;
@@ -858,20 +862,22 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     display: contents;
   }
 
+  /* Đọc sách + Xuất file + Xoá trên cùng 1 hàng: nút Đọc sách chiếm phần lớn
+     chiều rộng, 2 nút còn lại thu về dạng icon tròn — đúng vị trí mà ảnh mẫu
+     dành cho nút "Nâng cấp". */
   #book-info-modal .bi-actions {
     grid-area: actions;
-    display: grid;
-    grid-template-columns: 1fr 58px 58px;
-    grid-template-rows: auto 58px;
-    gap: 14px 12px;
+    display: flex;
     align-items: center;
-    margin: 0;
+    gap: 10px;
+    margin: 4px 0 0;
     padding: 0;
     border: 0;
   }
 
   #book-info-modal .bi-backdrop {
     display: block;
+    filter: blur(26px) brightness(0.6) saturate(1.25);
   }
 
   #book-info-modal .bi-backdrop::after {
@@ -881,16 +887,16 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     background:
       linear-gradient(
         to bottom,
-        color-mix(in srgb, var(--modal-bg) 18%, transparent) 0%,
-        color-mix(in srgb, var(--modal-bg) 52%, transparent) 40%,
-        color-mix(in srgb, var(--modal-bg) 92%, transparent) 78%,
+        color-mix(in srgb, var(--modal-bg) 10%, transparent) 0%,
+        color-mix(in srgb, var(--modal-bg) 42%, transparent) 44%,
+        color-mix(in srgb, var(--modal-bg) 90%, transparent) 82%,
         var(--modal-bg) 100%
       ),
-      color-mix(in srgb, var(--modal-bg) 18%, transparent);
+      color-mix(in srgb, var(--modal-bg) 10%, transparent);
   }
 
   #book-info-modal.modal-light .bi-backdrop {
-    filter: blur(30px) brightness(1.06) saturate(.82);
+    filter: blur(26px) brightness(1.1) saturate(.85);
   }
 
   #book-info-modal.modal-light .bi-backdrop::after {
@@ -907,10 +913,10 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
 
   #book-info-modal .bi-cover {
     grid-area: cover;
-    width: min(52vw, 260px);
+    width: min(46vw, 220px);
     max-height: none;
     aspect-ratio: 2 / 3;
-    margin: 118px auto 8px;
+    margin: 96px auto 8px;
     justify-self: center;
     border: 0;
     border-radius: 8px;
@@ -933,12 +939,12 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   #book-info-modal .bi-title {
     grid-area: title;
     text-align: center;
-    font-size: clamp(28px, 8vw, 42px);
-    line-height: 1.25;
+    font-size: clamp(20px, 5.6vw, 26px);
+    line-height: 1.28;
     letter-spacing: 0;
     margin: 0;
     color: var(--modal-fg);
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   #book-info-modal .bi-creator {
@@ -946,7 +952,7 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     text-align: center;
     margin: 0;
     color: color-mix(in srgb, var(--modal-fg) 68%, var(--modal-bg));
-    font-size: clamp(17px, 4.4vw, 24px);
+    font-size: clamp(13px, 3.4vw, 16px);
   }
 
   #book-info-modal.modal-light .bi-title {
@@ -967,46 +973,42 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   }
 
   #book-info-modal #bi-read {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    width: 100%;
-    justify-self: stretch;
-    min-height: 62px;
-    margin-top: 10px;
+    order: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 52px;
+    margin: 0;
     border-radius: 999px;
     background: #18d3a7;
     color: #fff;
     border: none;
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 800;
     text-transform: uppercase;
   }
 
-  #book-info-modal #bi-export {
-    grid-column: 2;
-    grid-row: 2;
-    display: flex;
-    width: 58px;
-    height: 58px;
-    padding: 0;
-    margin: 18px 0 0;
-    border: none;
-    color: var(--modal-fg);
-    background: transparent;
-  }
-
+  #book-info-modal #bi-export,
   #book-info-modal #bi-delete {
-    grid-column: 3;
-    grid-row: 2;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58px;
-    height: 58px;
+    width: 50px;
+    height: 50px;
     padding: 0;
-    margin: 18px 0 0;
-    background: transparent;
+    margin: 0;
     border: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--modal-fg) 9%, transparent);
+  }
+
+  #book-info-modal #bi-export {
+    order: 2;
+    color: var(--modal-fg);
+  }
+
+  #book-info-modal #bi-delete {
+    order: 3;
     color: #ff4d5f;
     box-shadow: none;
   }
@@ -1019,8 +1021,44 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
   #book-info-modal #bi-export .bi-icon,
   #book-info-modal #bi-delete .bi-icon {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
+  }
+
+  #book-info-modal #bi-delete:active,
+  #book-info-modal #bi-export:active {
+    transform: scale(.94);
+  }
+
+  /* ---- Khối thu gọn/mở rộng: mô tả + "Thông tin xuất bản" ---- */
+
+  #book-info-modal .bi-collapsible {
+    grid-area: collapsible;
+    display: grid;
+    grid-template-areas:
+      "description"
+      "meta-heading"
+      "meta"
+      "tags";
+    row-gap: 10px;
+    min-width: 0;
+    position: relative;
+  }
+
+  #book-info-modal .bi-collapsible.collapsed {
+    max-height: 260px; /* phải khớp với BI_COLLAPSE_MAX_HEIGHT trong app.js */
+    overflow: hidden;
+  }
+
+  #book-info-modal .bi-collapsible.collapsed::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 56px;
+    background: linear-gradient(to bottom, transparent, var(--modal-bg));
+    pointer-events: none;
   }
 
   #book-info-modal #bi-description {
@@ -1032,8 +1070,8 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     overflow: visible;
     padding: 0;
     color: color-mix(in srgb, var(--modal-fg) 93%, var(--modal-bg));
-    font-size: clamp(17px, 4.5vw, 24px);
-    line-height: 1.42;
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.55;
     margin-top: -2px;
   }
 
@@ -1042,18 +1080,19 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     display: block;
     font-family: var(--sans-font);
     color: var(--modal-fg);
-    font-size: clamp(22px, 6vw, 34px);
-    margin: 24px 0 2px;
+    font-weight: 700;
+    font-size: clamp(15px, 4vw, 18px);
+    margin: 14px 0 0;
   }
 
   #book-info-modal #bi-meta {
     grid-area: meta;
     grid-template-columns: minmax(0, 36%) minmax(0, 1fr);
-    gap: 12px 22px;
+    gap: 10px 18px;
     min-width: 0;
     margin: 0;
     color: color-mix(in srgb, var(--modal-fg) 90%, var(--modal-bg));
-    font-size: clamp(17px, 4.7vw, 25px);
+    font-size: clamp(13px, 3.5vw, 15px);
   }
 
   #book-info-modal .bi-meta dt {
@@ -1073,10 +1112,10 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     display: flex;
     flex-wrap: wrap;
     overflow-x: hidden;
-    gap: 10px;
+    gap: 8px;
     min-width: 0;
     padding-bottom: 0;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   #book-info-modal .bi-tag {
@@ -1085,15 +1124,43 @@ svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width:
     color: var(--modal-fg);
     border-color: color-mix(in srgb, var(--modal-fg) 24%, transparent);
     background: color-mix(in srgb, var(--modal-fg) 6%, transparent);
-    font-size: clamp(16px, 4.2vw, 22px);
-    padding: 10px 18px;
+    font-size: clamp(11px, 3vw, 13px);
+    padding: 6px 12px;
     white-space: normal;
     overflow-wrap: anywhere;
   }
 
-  #book-info-modal #bi-delete:active,
-  #book-info-modal #bi-export:active {
-    transform: scale(.94);
+  /* ---- Nút "Xem thêm" / "Rút gọn" ---- */
+
+  #book-info-modal .bi-toggle {
+    grid-area: toggle;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    margin: 2px 0 0;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    color: var(--terracotta);
+    font-family: var(--sans-font);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  #book-info-modal .bi-toggle:not(.hidden) {
+    display: flex;
+  }
+
+  #book-info-modal .bi-toggle-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  #book-info-modal .bi-toggle[aria-expanded="true"] .bi-toggle-icon {
+    transform: rotate(180deg);
   }
 }
 

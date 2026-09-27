@@ -167,10 +167,13 @@
     biTitle: $("#bi-title"),
     biCreator: $("#bi-creator"),
     biProgress: $("#bi-progress"),
+    biInfo: $(".bi-info"),
     biMeta: $("#bi-meta"),
     biMetaHeading: $("#bi-meta-heading"),
     biDescription: $("#bi-description"),
     biTags: $("#bi-tags"),
+    biCollapsible: $("#bi-collapsible"),
+    biToggle: $("#bi-toggle"),
     biDelete: $("#bi-delete"),
     biExport: $("#bi-export"),
     biRead: $("#bi-read"),
@@ -808,7 +811,46 @@
     const readLabel = el.biRead.querySelector("span");
     if (readLabel) readLabel.textContent = progress > 0 ? "Đọc tiếp" : "Bắt đầu đọc";
     else el.biRead.textContent = progress > 0 ? "Đọc tiếp" : "Bắt đầu đọc";
+    setupBookInfoCollapse();
     show(el.bookInfoModal);
+  }
+
+  /**
+   * Chế độ mobile (≤760px): phần "Thông tin xuất bản" + mô tả sách có thể rất
+   * dài, nên mặc định thu gọn lại (chiều cao giới hạn theo CSS .bi-collapsible)
+   * với nút "Xem thêm" / "Rút gọn" để mở/đóng. Ở desktop khối này hiển thị đầy
+   * đủ (không giới hạn chiều cao), nên không cần nút — hàm này chỉ bật nút khi
+   * nội dung thực sự tràn quá chiều cao thu gọn trên mobile.
+   */
+  const BI_COLLAPSE_MAX_HEIGHT = 260; // phải khớp với --bi-collapse-max-height trong CSS
+
+  function setupBookInfoCollapse() {
+    if (!el.biCollapsible || !el.biToggle) return;
+    el.biCollapsible.classList.remove("collapsed");
+    hide(el.biToggle);
+    el.biToggle.setAttribute("aria-expanded", "true");
+    const label = el.biToggle.querySelector("span");
+    if (label) label.textContent = "Rút gọn";
+    requestAnimationFrame(() => {
+      const isMobile = window.matchMedia("(max-width: 760px)").matches;
+      if (!isMobile) return;
+      if (el.biCollapsible.scrollHeight <= BI_COLLAPSE_MAX_HEIGHT + 32) return;
+      el.biCollapsible.classList.add("collapsed");
+      show(el.biToggle);
+      el.biToggle.setAttribute("aria-expanded", "false");
+      if (label) label.textContent = "Xem thêm";
+    });
+  }
+
+  if (el.biToggle) {
+    el.biToggle.addEventListener("click", () => {
+      if (!el.biCollapsible) return;
+      const nowCollapsed = el.biCollapsible.classList.toggle("collapsed");
+      el.biToggle.setAttribute("aria-expanded", nowCollapsed ? "false" : "true");
+      const label = el.biToggle.querySelector("span");
+      if (label) label.textContent = nowCollapsed ? "Xem thêm" : "Rút gọn";
+      if (nowCollapsed && el.biInfo) el.biInfo.scrollTop = 0;
+    });
   }
 
   function closeBookInfo() {
