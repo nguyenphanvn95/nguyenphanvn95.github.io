@@ -267,7 +267,15 @@
       }
 
       // ── menu Khác ──
-      if (act === "theme") { LU.set({ dark: !p.dark }); renderPopover(); return; }
+      if (act === "theme") {
+        const a = app();
+        // Đổi theme ở thư viện (mobile) → áp cho reader 1 theme sáng/tối đơn màu;
+        // ui.dark của LU sẽ tự đồng bộ lại theo sự kiện "reader:settings" (library-ui.js).
+        if (a.setTheme) a.setTheme(!p.dark ? "dark" : "white");
+        else LU.set({ dark: !p.dark });
+        renderPopover();
+        return;
+      }
       closePopover();
       switch (act) {
         case "select": { const b = $("#btn-select-mode"); if (b) b.click(); break; }

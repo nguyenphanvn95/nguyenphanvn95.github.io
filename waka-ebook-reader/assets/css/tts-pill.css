@@ -1,3 +1,72 @@
+/* ---------- Waka TTS pill/panel — biến theme (mặc định: tối, khớp giao diện gốc) ----------
+   #reader-view.rd-dark dùng để tô màu #reader-view, nhưng pill/panel này được gắn thẳng vào
+   <body> (xem tts-pill.js: document.body.append(pill, panel)) nên không thừa hưởng được biến
+   --lib-* và class .rd-dark. reader-ui.js gắn class .waka-theme-dark / .waka-theme-light lên <body>
+   mỗi khi theme đọc đổi (xem syncControls trong reader-ui.js) — dùng class đó ở đây. */
+.waka-tts-pill,
+.waka-tts-panel {
+  --wtts-bg: linear-gradient(180deg, rgba(43, 43, 46, 0.98), rgba(28, 28, 31, 0.98));
+  --wtts-sheet-bg: #1f1f1f;
+  --wtts-fg: #ffffff;
+  --wtts-fg-strong: #ffffff;
+  --wtts-fg-dim: #ffffff;
+  --wtts-fg-faint: #ffffff;
+  --wtts-fg-past: #ffffff;
+  --wtts-border: rgba(255, 255, 255, 0.16);
+  --wtts-shadow: rgba(0, 0, 0, 0.34);
+  --wtts-hover: rgba(255, 255, 255, 0.14);
+  --wtts-hover-strong: rgba(255, 255, 255, 0.22);
+  --wtts-track-bg: rgba(255, 255, 255, 0.22);
+  --wtts-icon-bg: #ffffff;
+  --wtts-icon-fg: #101114;
+  --wtts-play-bg: #ffffff;
+  --wtts-play-fg: #1d1d20;
+  --wtts-play-ring: rgba(255, 255, 255, 0.22);
+  --wtts-close-bg: rgba(255, 255, 255, 0.14);
+  --wtts-close-bg-hover: rgba(255, 255, 255, 0.22);
+  --wtts-close-fg: #ffffff;
+  --wtts-card-bg: #35353a;
+  --wtts-card-bg-hover: #40404a;
+  --wtts-card-fg: #ffffff;
+  --wtts-card-strong: #ffffff;
+  --wtts-line-current-bg: #3a3a40;
+  --wtts-seek-fill: #ffffff;
+  --wtts-seek-track: rgba(255, 255, 255, 0.22);
+  --wtts-backdrop: rgba(0, 0, 0, 0.72);
+}
+
+body.waka-theme-light .waka-tts-pill,
+body.waka-theme-light .waka-tts-panel {
+  --wtts-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 245, 247, 0.98));
+  --wtts-sheet-bg: #ffffff;
+  --wtts-fg: #1c1d1f;
+  --wtts-fg-strong: #101114;
+  --wtts-fg-dim: rgba(16, 17, 20, 0.95);
+  --wtts-fg-faint: rgba(16, 17, 20, 0.82);
+  --wtts-fg-past: rgba(16, 17, 20, 0.48);
+  --wtts-border: rgba(20, 21, 23, 0.1);
+  --wtts-shadow: rgba(20, 21, 23, 0.18);
+  --wtts-hover: rgba(20, 21, 23, 0.06);
+  --wtts-hover-strong: rgba(20, 21, 23, 0.1);
+  --wtts-track-bg: rgba(20, 21, 23, 0.12);
+  --wtts-icon-bg: #1c1d1f;
+  --wtts-icon-fg: #ffffff;
+  --wtts-play-bg: #1c1d1f;
+  --wtts-play-fg: #ffffff;
+  --wtts-play-ring: rgba(20, 21, 23, 0.12);
+  --wtts-close-bg: rgba(20, 21, 23, 0.06);
+  --wtts-close-bg-hover: rgba(20, 21, 23, 0.12);
+  --wtts-close-fg: rgba(20, 21, 23, 0.8);
+  --wtts-card-bg: #eef0f2;
+  --wtts-card-bg-hover: #e2e5e9;
+  --wtts-card-fg: rgba(16, 17, 20, 0.92);
+  --wtts-card-strong: #17181a;
+  --wtts-line-current-bg: #eef0f2;
+  --wtts-seek-fill: #1c1d1f;
+  --wtts-seek-track: rgba(20, 21, 23, 0.14);
+  --wtts-backdrop: rgba(20, 21, 23, 0.55);
+}
+
 .waka-tts-pill {
   position: fixed;
   left: 50%;
@@ -6,13 +75,14 @@
   width: min(620px, calc(100vw - 48px));
   transform: translateX(-50%);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid var(--wtts-border);
   border-radius: 22px;
-  background: linear-gradient(180deg, rgba(43, 43, 46, 0.98), rgba(28, 28, 31, 0.98));
-  color: #f7f7f7;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.34);
+  background-color: var(--wtts-sheet-bg, #1f1f1f);
+  background-image: var(--wtts-bg);
+  color: var(--wtts-fg);
+  box-shadow: 0 22px 55px var(--wtts-shadow);
   font-family: var(--ui-font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease, background 0.18s ease, color 0.18s ease;
 }
 
 .waka-tts-pill.hidden {
@@ -23,7 +93,7 @@
 
 .waka-tts-pill-track {
   height: 3px;
-  background: rgba(255, 255, 255, 0.16);
+  background: var(--wtts-track-bg);
 }
 
 .waka-tts-pill-fill {
@@ -57,7 +127,7 @@
 }
 
 .waka-tts-pill-info:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--wtts-hover);
 }
 
 .waka-tts-pill-icon {
@@ -67,8 +137,8 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: #101114;
-  background: #f7f7f7;
+  color: var(--wtts-icon-fg);
+  background: var(--wtts-icon-bg);
 }
 
 .waka-tts-pill-icon svg {
@@ -98,14 +168,14 @@
 }
 
 .waka-tts-pill-title {
-  color: #fff;
+  color: var(--wtts-fg-strong);
   font-size: 15px;
   font-weight: 800;
   line-height: 20px;
 }
 
 .waka-tts-pill-sub {
-  color: rgba(245, 245, 245, 0.68);
+  color: var(--wtts-fg-dim);
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
@@ -127,13 +197,13 @@
   border-radius: 13px;
   display: grid;
   place-items: center;
-  color: #f2f2f2;
+  color: var(--wtts-fg);
   background: transparent;
   cursor: pointer;
 }
 
 .waka-tts-pill-transport button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--wtts-hover);
 }
 
 .waka-tts-pill-transport svg {
@@ -150,9 +220,9 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  color: #1d1d20;
-  background: #f7f7f7;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+  color: var(--wtts-play-fg);
+  background: var(--wtts-play-bg);
+  box-shadow: 0 0 0 4px var(--wtts-play-ring);
 }
 
 #waka-tts-pill-play svg {
@@ -239,29 +309,31 @@
   z-index: 6200;
   display: grid;
   place-items: center;
-  color: #f2f2f2;
+  color: var(--wtts-fg);
   font-family: var(--ui-font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
 }
 
 .waka-tts-panel-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, .58);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: var(--wtts-backdrop, rgba(0, 0, 0, .72));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .waka-tts-sheet {
   position: relative;
   z-index: 1;
+  isolation: isolate;
+  opacity: 1;
   width: min(486px, calc(100vw - 36px));
   max-height: min(86vh, 760px);
   overflow: hidden auto;
   padding: 24px 28px 28px;
-  border: 1px solid rgba(255, 255, 255, .08);
+  border: 1px solid var(--wtts-border);
   border-radius: 28px;
-  background: #1f1f1f;
-  box-shadow: 0 26px 80px rgba(0, 0, 0, .5);
+  background-color: var(--wtts-sheet-bg, #1f1f1f);
+  box-shadow: 0 26px 80px var(--wtts-shadow);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -284,13 +356,13 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: rgba(255, 255, 255, .86);
-  background: rgba(255, 255, 255, .08);
+  color: var(--wtts-close-fg);
+  background: var(--wtts-close-bg);
   cursor: pointer;
 }
 
 .waka-tts-panel-close:hover {
-  background: rgba(255, 255, 255, .16);
+  background: var(--wtts-close-bg-hover);
 }
 
 .waka-tts-head {
@@ -340,14 +412,14 @@
 }
 
 .waka-tts-book-title {
-  color: #fff;
+  color: var(--wtts-fg-strong);
   font-size: 20px;
   font-weight: 850;
   line-height: 24px;
 }
 
 .waka-tts-book-sub {
-  color: rgba(255, 255, 255, .62);
+  color: var(--wtts-fg-dim);
   font-size: 16px;
   font-weight: 650;
   line-height: 20px;
@@ -362,7 +434,7 @@
   margin: 0 0 26px;
   padding: 0;
   border-radius: 16px;
-  color: rgba(255, 255, 255, .9);
+  color: var(--wtts-fg);
   background: transparent;
   font-size: 20px;
   font-weight: 900;
@@ -370,8 +442,8 @@
   text-align: center;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
-  mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
 }
 
 .waka-tts-lyric-pad {
@@ -384,7 +456,7 @@
   padding: 11px 30px;
   border: 1px solid transparent;
   border-radius: 14px;
-  color: rgba(255, 255, 255, .28);
+  color: var(--wtts-fg-faint);
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
@@ -392,17 +464,17 @@
 }
 
 .waka-tts-line.current {
-  color: rgba(255, 255, 255, .72);
-  background: #2c2c2c;
+  color: var(--wtts-fg-dim);
+  background: var(--wtts-line-current-bg);
   transform: scale(1.01);
 }
 
 .waka-tts-line.past {
-  color: rgba(255, 255, 255, .18);
+  color: var(--wtts-fg-past);
 }
 
 .waka-tts-word.is-read {
-  color: #fff;
+  color: var(--wtts-fg-strong);
 }
 
 .waka-tts-word.is-active {
@@ -416,8 +488,9 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;
-  color: rgba(255, 255, 255, .9);
+  color: var(--wtts-fg);
   font-size: 15px;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
@@ -433,7 +506,7 @@
   appearance: none;
   -webkit-appearance: none;
   border-radius: 999px;
-  background: linear-gradient(to right, #e5e5e5 0 var(--tts-range, 0%), rgba(255, 255, 255, .18) var(--tts-range, 0%) 100%);
+  background: linear-gradient(to right, var(--wtts-seek-fill) 0 var(--tts-range, 0%), var(--wtts-seek-track) var(--tts-range, 0%) 100%);
   cursor: pointer;
 }
 
@@ -444,7 +517,7 @@
   border-radius: 50%;
   appearance: none;
   -webkit-appearance: none;
-  background: #e5e5e5;
+  background: var(--wtts-seek-fill);
 }
 
 #waka-tts-seek::-moz-range-thumb {
@@ -452,7 +525,7 @@
   height: 16px;
   border: 0;
   border-radius: 50%;
-  background: #e5e5e5;
+  background: var(--wtts-seek-fill);
 }
 
 .waka-tts-main-controls {
@@ -471,13 +544,13 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: rgba(255, 255, 255, .9);
+  color: var(--wtts-fg);
   background: transparent;
   cursor: pointer;
 }
 
 .waka-tts-main-controls button:hover {
-  background: rgba(255, 255, 255, .08);
+  background: var(--wtts-hover);
 }
 
 .waka-tts-main-controls .primary {
@@ -496,7 +569,7 @@
   height: 24px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.25;
+  stroke-width: 2.2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -525,13 +598,13 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: rgba(255, 255, 255, .72);
-  background: #2c2c2c;
+  color: var(--wtts-card-fg);
+  background: var(--wtts-card-bg);
   cursor: pointer;
 }
 
 .waka-tts-card:hover {
-  background: #363636;
+  background: var(--wtts-card-bg-hover);
 }
 
 .waka-tts-card strong {
@@ -539,14 +612,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #f4f4f4;
+  color: var(--wtts-card-strong);
   font-size: 16px;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .waka-tts-card span {
   font-size: 14px;
-  font-weight: 650;
+  font-weight: 500;
 }
 
 .waka-tts-card svg {
@@ -564,8 +637,8 @@
   grid-template-columns: 32px minmax(0, 1fr) auto 24px;
   align-items: center;
   gap: 12px;
-  color: rgba(255, 255, 255, .9);
-  background: #2c2c2c;
+  color: var(--wtts-fg);
+  background: var(--wtts-card-bg);
   text-align: left;
   opacity: .95;
 }
@@ -585,17 +658,17 @@
 }
 
 .waka-tts-offline strong {
-  color: #fff;
+  color: var(--wtts-fg-strong);
   font-size: 16px;
 }
 
 .waka-tts-offline small {
-  color: rgba(255, 255, 255, .62);
+  color: var(--wtts-fg-dim);
   font-size: 14px;
 }
 
 .waka-tts-offline em {
-  color: #fff;
+  color: var(--wtts-fg-strong);
   font-style: normal;
   font-size: 14px;
 }

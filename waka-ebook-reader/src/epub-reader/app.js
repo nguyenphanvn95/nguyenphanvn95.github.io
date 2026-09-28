@@ -2112,6 +2112,14 @@ ${entry.styleHtml}
 
   /* ---------------------------------------------------------- theme / font / mode controls */
 
+  // Nền sáng dù không phải theme cơ bản "light/white/gray/sepia" → coi là theme tối.
+  // Dùng chung cho #reader-view.rd-dark (reader-ui.js) và đồng bộ theme thư viện (library-ui.js).
+  const LIGHT_BG_IMAGES = ["white", "warm-paper", "scrapbook", "sand", "leaves"];
+  function themeIsDark(s) {
+    if (!s) return false;
+    return !!((s.bgImage && !LIGHT_BG_IMAGES.includes(s.bgImage)) || s.theme === "dark");
+  }
+
   function applyThemeAndFontUi() {
     el.themeDots.forEach((d) => d.classList.toggle("active", !state.settings.bgImage && d.dataset.theme === state.settings.theme));
     if (el.selectFontFamily) el.selectFontFamily.value = state.settings.fontFamily;
@@ -2202,6 +2210,9 @@ ${entry.styleHtml}
 
     /* cài đặt hiển thị */
     getSettings: () => ({ ...state.settings }),
+    // Thư viện (library-ui.js) dùng hàm này để suy ra sáng/tối đơn giản từ theme đọc hiện
+    // tại (hoặc 1 bộ settings tuỳ ý truyền vào), phục vụ đồng bộ theme reader ⇄ library.
+    isDarkTheme: (s) => themeIsDark(s || state.settings),
     setTheme: (theme) => applySettings({ theme: THEMES[theme] ? theme : "light", bgImage: "" }),
     setBgImage: (key) => applySettings({ bgImage: BG_IMAGES[key] ? key : "" }),
     setBgImageOpacity: (value) => applySettings({ bgImageOpacity: clamp(value, 0, 1, 0.5) }),

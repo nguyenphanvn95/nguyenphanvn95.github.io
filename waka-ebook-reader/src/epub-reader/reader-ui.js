@@ -384,7 +384,10 @@
     if (bgOpacityInput && document.activeElement !== bgOpacityInput) bgOpacityInput.value = String(bgOpacityPct);
     if (bgOpacityValue) bgOpacityValue.textContent = bgOpacityPct + "%";
 
-    readerView.classList.toggle("rd-dark", (s.bgImage && !["white", "warm-paper", "scrapbook", "sand", "leaves"].includes(s.bgImage)) || s.theme === "dark");
+    const dark = app().isDarkTheme ? app().isDarkTheme(s) : ((s.bgImage && !["white", "warm-paper", "scrapbook", "sand", "leaves"].includes(s.bgImage)) || s.theme === "dark");
+    readerView.classList.toggle("rd-dark", dark);
+    document.body.classList.toggle("waka-theme-dark", dark);
+    document.body.classList.toggle("waka-theme-light", !dark);
   }
 
   document.addEventListener("reader:settings", syncControls);

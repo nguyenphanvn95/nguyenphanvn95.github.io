@@ -98,6 +98,22 @@
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d");
 
+  /* ═══════════════════════════════════════════════
+     Đồng bộ theme sáng/tối với reader (yêu cầu: theme thư viện ăn theo theme
+     đọc sách). Đăng ký NGAY (đồng bộ, trước mọi thao tác async) để không bỏ lỡ
+     sự kiện "reader:settings" mà app.js phát ra ngay khi nạp xong cài đặt.
+     ═══════════════════════════════════════════════ */
+
+  document.addEventListener("reader:settings", (e) => {
+    const a = app();
+    if (!a.isDarkTheme) return;
+    const dark = !!a.isDarkTheme(e.detail);
+    if (dark === ui.dark) return;
+    ui.dark = dark;
+    applyUi();
+    saveUi();
+  });
+
   function refreshGridState() {
     const cards = Array.from(grid ? grid.querySelectorAll(".book-card") : []);
     const total = cards.length;
@@ -304,7 +320,12 @@
   const railTheme = $("#rail-theme");
   if (railTheme) {
     railTheme.addEventListener("click", () => {
-      ui.dark = !ui.dark;
+      const nextDark = !ui.dark;
+      const a = app();
+      // Đổi theme ở thư viện → chọn 1 theme sáng/tối đơn màu cho reader (bỏ ảnh nền
+      // đang chọn nếu có); "reader:settings" sẽ tự đồng bộ lại ui.dark ở trên.
+      if (a.setTheme) { a.setTheme(nextDark ? "dark" : "white"); return; }
+      ui.dark = nextDark;
       applyUi(); saveUi();
     });
   }

@@ -2,7 +2,7 @@
 // @name         Waka EBook Reader
 // @name:vi      Waka EBook Reader — Trình đọc EPUB
 // @namespace    https://nguyenphanvn95.github.io/waka-ebook-reader/
-// @version      1.2.6
+// @version      1.2.7
 // @description  Trình đọc EPUB của Waka Toolkit 6.9.6 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), tự động cuộn, font chữ tuỳ chỉnh, nhạc nền, giao diện desktop + mobile. Bong bóng nổi trên waka.vn: mở Reader, nhập file EPUB, ẩn nút.
 // @description:vi  Trình đọc EPUB của Waka Toolkit 6.9.6 dưới dạng userscript: thư viện sách, chú thích, đọc to (Edge TTS), tự động cuộn, font chữ tuỳ chỉnh, nhạc nền, giao diện desktop + mobile. Bong bóng nổi trên waka.vn: mở Reader, nhập file EPUB, ẩn nút.
 // @author       nguyenphanvn95
@@ -42,6 +42,14 @@
  * Toàn bộ mã trình đọc (giống hệt extension gốc, gồm Auto Scroll + font tuỳ chỉnh) nằm trên máy chủ tĩnh,
  * không nhúng trong file này → cập nhật Reader không cần cập nhật userscript.
  *
+ * v1.2.7
+ *  - Reader: theme tối của panel/pill "Đọc to" hiển thị lại đúng (chữ trắng, nút rõ) — sửa comment CSS
+ *    đóng sớm làm mất khối màu mặc định; giảm độ đậm nét icon + nhãn nút trong panel.
+ *  - Reader: nút "Đọc to" ở mobile (icon read-aloud) đổi màu theo theme thay vì luôn đen.
+ *  - Reader: panel + pill "Đọc to" và pill "Nhạc nền" đổi màu theo theme đọc (sáng/tối).
+ *  - Reader: đồng bộ theme thư viện ⇄ reader (đổi theme reader → thư viện đổi theo; đổi theme thư viện
+ *    → reader tự chọn 1 theme sáng/tối đơn màu). Userscript (loader) không đổi logic.
+ *
  * v1.2.6
  *  - Đồng bộ Dropbox, đồng bộ LÊN: sau khi đẩy xong thư viện cục bộ, tự dọn trên Dropbox
  *    mọi sách không còn trong trình duyệt (dữ liệu Dropbox khớp hệt trình duyệt).
@@ -63,7 +71,7 @@
   const APP_BASE = APP_ORIGIN + '/waka-ebook-reader/';
   const READER_URL = APP_BASE + 'src/reader.html';
   const ICON_URL = APP_BASE + 'assets/icons/icon48.png';
-  const VERSION = (typeof GM_info !== 'undefined' && GM_info.script && GM_info.script.version) || '1.2.6';
+  const VERSION = (typeof GM_info !== 'undefined' && GM_info.script && GM_info.script.version) || '1.2.7';
 
   /* ---------------------------------------------------------------- tiện ích GM */
   const gmGet = (k, d) => { try { return GM_getValue(k, d); } catch (e) { return d; } };

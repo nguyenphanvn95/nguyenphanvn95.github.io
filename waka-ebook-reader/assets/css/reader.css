@@ -2481,11 +2481,49 @@
 }
 
 /* ---------- music mini final layout lock 6.7.3.3 ---------- */
+/* Bộ biến màu của pill nhạc nền — mặc định (không có .rd-dark) dùng tông SÁNG vì
+   theme đọc mặc định là "light"; #reader-view.rd-dark ghi đè lại đúng tông tối cũ
+   ngay bên dưới, để nhạc nền luôn khớp theme đọc thay vì hardcode tối như trước. */
 .music-mini {
-  --mm-bg: #262628;
-  --mm-fg: #ffffff;
-  --mm-muted: rgba(255,255,255,.58);
+  --mm-bg: linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,245,247,.98));
+  --mm-fg: #1c1d1f;
+  --mm-fg-strong: #101114;
+  --mm-muted: rgba(20,21,23,.62);
   --mm-accent: #22d6b2;
+  --mm-border: rgba(20,21,23,.1);
+  --mm-shadow: rgba(20,21,23,.18);
+  --mm-hover: rgba(20,21,23,.08);
+  --mm-track-bg: rgba(20,21,23,.14);
+  --mm-play-bg: #1c1d1f;
+  --mm-play-fg: #ffffff;
+  --mm-play-border: rgba(20,21,23,.16);
+  --mm-play-ring: rgba(20,21,23,.12);
+  --mm-close-bg: rgba(20,21,23,.08);
+  --mm-close-bg-hover: rgba(20,21,23,.14);
+  --mm-close-fg: #1c1d1f;
+  --mm-bubble-bg: rgba(255,255,255,.92);
+  --mm-cover-bg: #e4e6ea;
+}
+
+#reader-view.rd-dark .music-mini {
+  --mm-bg: linear-gradient(180deg, #2b2b2e, #232326);
+  --mm-fg: #f7f7f7;
+  --mm-fg-strong: #ffffff;
+  --mm-muted: rgba(230,230,230,.62);
+  --mm-accent: #22d6b2;
+  --mm-border: rgba(255,255,255,.1);
+  --mm-shadow: rgba(0,0,0,.34);
+  --mm-hover: rgba(255,255,255,.1);
+  --mm-track-bg: rgba(255,255,255,.24);
+  --mm-play-bg: #f7f7f7;
+  --mm-play-fg: #1d1d20;
+  --mm-play-border: rgba(255,255,255,.85);
+  --mm-play-ring: rgba(255,255,255,.18);
+  --mm-close-bg: rgba(255,255,255,.12);
+  --mm-close-bg-hover: rgba(255,255,255,.2);
+  --mm-close-fg: #f6f6f6;
+  --mm-bubble-bg: rgba(32,32,35,.88);
+  --mm-cover-bg: #202023;
 }
 .music-mini[data-mode="full"] .mm-pill {
   display: flex !important;
@@ -2808,10 +2846,10 @@
   gap: 22px !important;
   overflow: hidden !important;
   pointer-events: auto !important;
-  color: #f7f7f7 !important;
-  background: linear-gradient(180deg, rgba(42, 42, 45, 0.98), rgba(31, 31, 34, 0.98)) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.34) !important;
+  color: var(--mm-fg) !important;
+  background: var(--mm-bg) !important;
+  border: 1px solid var(--mm-border) !important;
+  box-shadow: 0 22px 55px var(--mm-shadow) !important;
   backdrop-filter: blur(18px) saturate(135%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
 }
@@ -2885,7 +2923,7 @@
   border-radius: 50% !important;
   overflow: hidden !important;
   clip-path: circle(50% at 50% 50%) !important;
-  background: #202023 !important;
+  background: var(--mm-cover-bg) !important;
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.12) inset !important;
 }
 
@@ -2960,7 +2998,7 @@
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
-  color: #fff !important;
+  color: var(--mm-fg-strong) !important;
   font-size: 16px !important;
   line-height: 20px !important;
   font-weight: 800 !important;
@@ -2968,7 +3006,7 @@
 }
 
 #reader-view .mm-title:hover {
-  color: #23ddbd !important;
+  color: var(--mm-accent) !important;
 }
 
 #reader-view .mm-artist-line {
@@ -2976,7 +3014,7 @@
   align-items: center !important;
   gap: 6px !important;
   min-width: 0 !important;
-  color: rgba(230, 230, 230, 0.62) !important;
+  color: var(--mm-muted) !important;
 }
 
 #reader-view .mm-artist-icon {
@@ -3008,7 +3046,7 @@
   border-radius: 12px !important;
   display: grid !important;
   place-items: center !important;
-  color: #f3f3f3 !important;
+  color: var(--mm-fg) !important;
   background: transparent !important;
   box-shadow: none !important;
   font-size: 13px !important;
@@ -3020,7 +3058,7 @@
 #reader-view #mm-pill .mm-tool:hover,
 #reader-view #mm-pill .mm-icon-tool:hover,
 #reader-view #mm-pill .mm-tool.active {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--mm-hover) !important;
 }
 
 #reader-view #mm-pill .mm-icon-tool img,
@@ -3063,13 +3101,13 @@
   height: 48px !important;
   min-width: 48px !important;
   padding: 0 !important;
-  border: 2px solid rgba(255, 255, 255, 0.85) !important;
+  border: 2px solid var(--mm-play-border) !important;
   border-radius: 50% !important;
   display: grid !important;
   place-items: center !important;
-  color: #1d1d20 !important;
-  background: #f7f7f7 !important;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18) !important;
+  color: var(--mm-play-fg) !important;
+  background: var(--mm-play-bg) !important;
+  box-shadow: 0 0 0 4px var(--mm-play-ring) !important;
 }
 
 #reader-view #mm-play svg {
@@ -3083,7 +3121,7 @@
 #reader-view #mm-dur {
   flex: 0 0 48px !important;
   min-width: 48px !important;
-  color: rgba(245, 245, 245, 0.86) !important;
+  color: var(--mm-fg) !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   line-height: 16px !important;
@@ -3107,7 +3145,7 @@
   border-radius: 999px !important;
   appearance: none !important;
   -webkit-appearance: none !important;
-  background: linear-gradient(to right, #23ddbd 0 var(--mm-range, 0%), rgba(255, 255, 255, 0.24) var(--mm-range, 0%) 100%) !important;
+  background: linear-gradient(to right, var(--mm-accent) 0 var(--mm-range, 0%), var(--mm-track-bg) var(--mm-range, 0%) 100%) !important;
   cursor: pointer !important;
 }
 
@@ -3152,12 +3190,12 @@
   border-radius: 50% !important;
   display: grid !important;
   place-items: center !important;
-  color: #f6f6f6 !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  color: var(--mm-close-fg) !important;
+  background: var(--mm-close-bg) !important;
 }
 
 #reader-view #mm-close:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
+  background: var(--mm-close-bg-hover) !important;
 }
 
 #reader-view #mm-bubble.mm-bubble {
@@ -3169,8 +3207,8 @@
   border-radius: 50% !important;
   overflow: visible !important;
   pointer-events: auto !important;
-  background: rgba(32, 32, 35, 0.88) !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34) !important;
+  background: var(--mm-bubble-bg) !important;
+  box-shadow: 0 12px 32px var(--mm-shadow) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
 }
@@ -3298,4 +3336,15 @@
   #reader-view #mm-title.mm-title {
     max-width: 180px !important;
   }
+}
+
+/* ---------- 6.11.7: icon điều khiển pill nhạc nền ở theme sáng ----------
+   Các icon (rewind/prev/next/forward/shuffle/list/pip/speaker/close) là SVG gần trắng
+   (#F2F2F2) nạp qua <img> nên không ăn theo màu chữ; rule "filter: none !important" ở trên
+   giữ nguyên màu trắng → trắng trên nền pill sáng thì mất hút. Ở theme sáng (không có
+   .rd-dark) đảo sang đen; theme tối giữ nguyên. */
+#reader-view:not(.rd-dark) #mm-pill .mm-icon-tool img,
+#reader-view:not(.rd-dark) #mm-pill .mm-tool img,
+#reader-view:not(.rd-dark) #mm-close img {
+  filter: invert(1) !important;
 }
