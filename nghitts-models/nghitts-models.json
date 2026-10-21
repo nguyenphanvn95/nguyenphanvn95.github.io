@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "models": [
+    { "id": "maiphuong", "name": "Mai Phương", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/maiphuong.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/maiphuong.onnx.json" },
+    { "id": "manhdung", "name": "Mạnh Dũng", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/manhdung.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/manhdung.onnx.json" },
+    { "id": "minhkhang", "name": "Minh Khang", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/minhkhang.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/minhkhang.onnx.json" },
+    { "id": "minhquang", "name": "Minh Quang", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/minhquang.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/minhquang.onnx.json" },
+    { "id": "mytam2", "name": "Mỹ Tâm 2", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/mytam2.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/mytam2.onnx.json" },
+    { "id": "mytam2794", "name": "Mỹ Tâm 2794", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/mytam2794.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/mytam2794.onnx.json" },
+    { "id": "ngochuyen", "name": "Ngọc Huyền", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/ngochuyen.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/ngochuyen.onnx.json" },
+    { "id": "ngochuyennew", "name": "Ngọc Huyền Mới", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/ngochuyennew.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/ngochuyennew.onnx.json" },
+    { "id": "ngocngan3701", "name": "Ngọc Ngân 3701", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/ngocngan3701.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/ngocngan3701.onnx.json" },
+    { "id": "phuongtrang", "name": "Phương Trang", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/phuongtrang.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/phuongtrang.onnx.json" },
+    { "id": "taian2", "name": "Tài An 2", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/taian2.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/taian2.onnx.json" },
+    { "id": "taian4", "name": "Tài An 4", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/taian4.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/taian4.onnx.json" },
+    { "id": "thanhphuong2", "name": "Thanh Phương 2", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/thanhphuong2.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/thanhphuong2.onnx.json" },
+    { "id": "thientam", "name": "Thiện Tâm", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/thientam.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/thientam.onnx.json" },
+    { "id": "yannew", "name": "Yan Mới", "model_url": "https://nguyenphanvn95.github.io/nghitts-models/yannew.onnx", "config_url": "https://nguyenphanvn95.github.io/nghitts-models/yannew.onnx.json" }
+  ]
+}
