@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.27
+// @version      1.2.28
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -13,6 +13,52 @@
 
 /* Runs in page context. The H button opens settings, the floating Ctrl button
    uses the current answer hint, and Alt+H toggles Hint. */
+
+// Hide Duolingo's mobile "open in app" prompt and dismiss it cleanly when it appears.
+(() => {
+  const APP_LINK = 'a[href*="mobile_web_to_app_conversion"]';
+  const style = document.createElement('style');
+  style.textContent = `
+    #overlays [data-focus-lock-disabled]:has(${APP_LINK}),
+    #overlays:has(${APP_LINK}) > div[style*="pointer-events: none"] { display: none !important; }
+  `;
+  (document.head || document.documentElement)?.appendChild(style);
+
+  function dismissAppPrompt() {
+    const link = document.querySelector(APP_LINK);
+    if (!link) return;
+    const card = link.parentElement;
+    const modal = link.closest('[data-focus-lock-disabled]') || card;
+    if (!modal || modal.dataset.duoHintAppPromptHandled) return;
+    modal.dataset.duoHintAppPromptHandled = '1';
+    card?.querySelector('button')?.click();
+    setTimeout(() => {
+      if (!document.contains(link)) return;
+      const overlays = document.getElementById('overlays');
+      if (overlays) {
+        overlays.querySelectorAll('[data-focus-guard]').forEach(element => element.remove());
+        overlays.querySelectorAll('div[style*="pointer-events: none"]').forEach(element => element.remove());
+      }
+      modal.remove();
+      document.documentElement.style.removeProperty('overflow');
+      document.body?.style.removeProperty('overflow');
+    }, 300);
+  }
+
+  let queued = false;
+  const observer = new MutationObserver(() => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; dismissAppPrompt(); });
+  });
+  const start = () => {
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    dismissAppPrompt();
+  };
+  if (document.documentElement) start();
+  else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+
 
 (() => {
   const BRIDGE_KEY = '__duolingoHintUserscriptBridgeV1__';
@@ -574,7 +620,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.27';
+  const VERSION = '1.2.28';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -1379,11 +1425,11 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.27', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.28', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
     ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: event => {
       if (suppressCtrlClick) { event.preventDefault(); event.stopPropagation(); suppressCtrlClick = false; clearTimeout(suppressCtrlClickTimer); return; }
       if (enabled) selectNextToken();
-    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.27', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.28', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     installCtrlDrag();
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
