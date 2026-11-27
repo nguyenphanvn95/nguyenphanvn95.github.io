@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.10
+// @version      1.2.11
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -442,7 +442,7 @@
 #duo-hint-fab img { display: block; width: 27px; height: 27px; object-fit: contain; pointer-events: none; }
 #duo-hint-fab:hover, #duo-hint-fab.on { opacity: 1; }
 #duo-hint-fab.on { background: #58a700; }
-#duo-hint-panel { position: fixed; left: 12px; bottom: 56px; z-index: 2147483000; width: 290px; max-height: 80vh; overflow: auto; box-sizing: border-box; padding: 14px; border: 2px solid #e5e5e5; border-radius: 16px; color: #3c3c3c; background: #fff; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 6px 24px #0003; }
+#duo-hint-panel { position: fixed; left: 12px; bottom: 56px; z-index: 2147483005; width: 290px; max-height: 80vh; max-height: calc(100dvh - 76px); overflow: auto; overscroll-behavior: contain; touch-action: pan-y; pointer-events: auto !important; box-sizing: border-box; padding: 14px; border: 2px solid #e5e5e5; border-radius: 16px; color: #3c3c3c; background: #fff; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 6px 24px #0003; }
 #duo-hint-panel[hidden] { display: none; }
 #duo-hint-panel h3 { margin: 0 0 10px; font-size: 17px; } #duo-hint-panel h3 small { color: #999; font-weight: 600; font-size: 12px; }
 #duo-hint-panel .duo-hint-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 8px 0; cursor: pointer; }
@@ -452,7 +452,9 @@
 #duo-hint-panel .duo-hint-switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .15s; }
 #duo-hint-panel input:checked + .duo-hint-switch { background: #58cc02; } #duo-hint-panel input:checked + .duo-hint-switch::after { transform: translateX(18px); }
 #duo-hint-panel .duo-hint-group { margin: 10px 0; padding: 6px 10px; border: 1px solid #e5e5e5; border-radius: 10px; } #duo-hint-panel .duo-hint-group legend { padding: 0 4px; font-weight: 700; font-size: 12px; color: #777; }
-#duo-hint-panel .duo-hint-group label { display: block; margin: 4px 0; cursor: pointer; }
+#duo-hint-panel .duo-hint-group label { display: flex; align-items: center; min-height: 42px; margin: 3px 0; padding: 6px 8px; border-radius: 8px; cursor: pointer; touch-action: manipulation; pointer-events: auto !important; }
+#duo-hint-panel .duo-hint-group input[type="radio"] { position: static !important; flex: none; width: 18px; height: 18px; margin: 0 10px 0 0; opacity: 1 !important; pointer-events: auto !important; appearance: auto !important; accent-color: #58cc02; }
+@media (max-width: 600px) { #duo-hint-panel { left: 10px; right: 10px; bottom: 54px; width: auto; max-height: calc(100vh - 76px); max-height: calc(100dvh - 76px); padding: 12px; } }
 #duo-hint-panel .duo-hint-note, #duo-hint-panel .duo-hint-status { margin: 8px 0; font-size: 12px; color: #777; word-break: break-word; }
 #duo-hint-panel .duo-hint-copy { width: 100%; padding: 7px; border: 2px solid #e5e5e5; border-radius: 10px; background: #fff; font: 700 12px system-ui, sans-serif; cursor: pointer; }
 `;
@@ -462,7 +464,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.10';
+  const VERSION = '1.2.11';
   const REQUEST = 'duo-hint-request-v1', RESPONSE = 'duo-hint-response-v1', CARD = 'duolingo-hint-card';
   let enabled = false, autoCheck = false, autoContinue = true, mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
   let diagnostics = { bridge: 'chưa kiểm tra', reactFibers: null, pairs: 0, result: 'chưa kiểm tra' };
