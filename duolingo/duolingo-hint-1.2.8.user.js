@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.23
+// @version      1.2.26
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -536,14 +536,15 @@
 .duo-hint-anchor { position: relative !important; overflow: visible !important; }
 .duo-hint-number { position: absolute; top: -7px; left: -7px; z-index: 3; display: grid; min-width: 20px; height: 20px; padding: 0 3px; place-items: center; border: 2px solid #fff; border-radius: 999px; color: #fff; background: #58a700; font: 800 11px/1 system-ui, sans-serif; pointer-events: none; box-shadow: 0 1px 3px #0004; }
 
-#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 52px; height: 52px; margin: 0; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #142328; line-height: 0; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 2px 8px #0004; }
-#duo-hint-ctrl img { position: absolute; top: 50%; left: 50%; display: block; width: 42px; height: 42px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
+#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 52px; height: 52px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: transparent; line-height: 0; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: none; }
+#duo-hint-ctrl img { position: absolute; top: 50%; left: 50%; display: block; width: 52px; height: 52px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
 #duo-hint-ctrl:hover { filter: brightness(1.08); }
 #duo-hint-ctrl:active { cursor: grabbing; }
 #duo-hint-ctrl[aria-disabled="true"] { opacity: .45; }
 #duo-hint-ctrl[hidden] { display: none !important; }
 #duo-hint-fab { position: fixed; top: 12px; left: 12px; right: auto; bottom: auto; z-index: 2147483000; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 38px; height: 38px; margin: 0; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #9aa5ad; line-height: 0; transform: none; cursor: pointer; opacity: .75; box-shadow: 0 2px 8px #0004; }
 #duo-hint-fab[hidden] { display: none !important; }
+#duo-hint-fab.duo-hint-mobile-nav { position: relative; top: auto; left: auto; right: auto; bottom: auto; flex: 0 0 38px; width: 38px; height: 38px; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; opacity: 1; box-shadow: none; transform: none; }
 #duo-hint-fab img { position: absolute; top: 50%; left: 50%; display: block; width: 30px; height: 30px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
 #duo-hint-fab:hover, #duo-hint-fab.on { opacity: 1; }
 #duo-hint-fab.on { background: #58a700; }
@@ -572,7 +573,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.23';
+  const VERSION = '1.2.26';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -1254,6 +1255,41 @@
   function placeFabInNavigation() {
     if (!fab) return;
     const visible = element => element && element.getClientRects().length && getComputedStyle(element).visibility !== 'hidden' && getComputedStyle(element).display !== 'none';
+    const mobile = window.matchMedia('(max-width: 600px)').matches;
+    const lingotStat = document.querySelector('[data-test="lingot-stat"]');
+    const lingotButton = lingotStat?.closest('[role="button"]');
+
+    if (!mobile) {
+      document.querySelectorAll('[data-duo-hint-original-display]').forEach(element => {
+        element.style.display = element.dataset.duoHintOriginalDisplay;
+        delete element.dataset.duoHintOriginalDisplay;
+      });
+      fab.classList.remove('duo-hint-mobile-nav');
+      if (fab.parentElement !== document.body) document.body.append(fab);
+      fab.style.left = '';
+      fab.style.top = '';
+      fab.style.right = '';
+      fab.style.bottom = '';
+      fab.style.transform = '';
+    } else if (lingotButton && (visible(lingotButton) || Object.hasOwn(lingotButton.dataset, 'duoHintOriginalDisplay'))) {
+      if (!Object.hasOwn(lingotButton.dataset, 'duoHintOriginalDisplay')) {
+        lingotButton.dataset.duoHintOriginalDisplay = lingotButton.style.display;
+      }
+      lingotButton.style.display = 'none';
+      fab.classList.add('duo-hint-mobile-nav');
+      fab.hidden = false;
+      fab.style.left = '';
+      fab.style.top = '';
+      fab.style.right = '';
+      fab.style.bottom = '';
+      fab.style.transform = '';
+      if (fab.parentElement !== lingotButton.parentElement || fab.previousElementSibling !== lingotButton) {
+        lingotButton.insertAdjacentElement('afterend', fab);
+      }
+      return;
+    }
+
+    fab.classList.remove('duo-hint-mobile-nav');
     const moreNav = document.querySelector('[data-test="more-nav"]');
     const shopLink = document.querySelector('a[data-test="shop-nav"]');
     const shopHost = shopLink?.closest('.SLpL3') || shopLink?.parentElement || shopLink;
@@ -1342,11 +1378,11 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.23', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.26', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
     ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: event => {
       if (suppressCtrlClick) { event.preventDefault(); event.stopPropagation(); suppressCtrlClick = false; clearTimeout(suppressCtrlClickTimer); return; }
       if (enabled) selectNextToken();
-    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.23', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.26', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     installCtrlDrag();
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
