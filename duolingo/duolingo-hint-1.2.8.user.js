@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.26
+// @version      1.2.27
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -548,6 +548,7 @@
 #duo-hint-fab img { position: absolute; top: 50%; left: 50%; display: block; width: 30px; height: 30px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
 #duo-hint-fab:hover, #duo-hint-fab.on { opacity: 1; }
 #duo-hint-fab.on { background: #58a700; }
+#duo-hint-fab.duo-hint-mobile-nav, #duo-hint-fab.duo-hint-mobile-nav:hover, #duo-hint-fab.duo-hint-mobile-nav.on { border: 0; background: transparent; opacity: 1; box-shadow: none; }
 #duo-hint-panel { position: fixed; left: 12px; bottom: 56px; z-index: 2147483005; width: 290px; max-height: 80vh; max-height: calc(100dvh - 76px); overflow: auto; overscroll-behavior: contain; touch-action: pan-y; pointer-events: auto !important; box-sizing: border-box; padding: 14px; border: 2px solid #e5e5e5; border-radius: 16px; color: #3c3c3c; background: #fff; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 6px 24px #0003; }
 #duo-hint-panel[hidden] { display: none; }
 #duo-hint-panel h3 { margin: 0 0 10px; padding-right: 34px; font-size: 17px; } #duo-hint-panel h3 small { color: #999; font-weight: 600; font-size: 12px; }
@@ -573,7 +574,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.26';
+  const VERSION = '1.2.27';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -1378,11 +1379,11 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.26', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.27', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
     ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: event => {
       if (suppressCtrlClick) { event.preventDefault(); event.stopPropagation(); suppressCtrlClick = false; clearTimeout(suppressCtrlClickTimer); return; }
       if (enabled) selectNextToken();
-    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.26', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.27', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     installCtrlDrag();
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
