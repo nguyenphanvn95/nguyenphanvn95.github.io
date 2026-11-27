@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.15
+// @version      1.2.17
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -15,26 +15,59 @@
    uses the current answer hint, and Alt+H toggles Hint. */
 
 (() => {
+  const BRIDGE_KEY = '__duolingoHintUserscriptBridgeV1__';
+  if (window[BRIDGE_KEY]) return;
+  Object.defineProperty(window, BRIDGE_KEY, { value: true, configurable: false });
   const norm = s => String(s || '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
   let sessionChallenges = [];
+  let activeSessionId = '';
   let podcastResponses = [];
   let storyElements = [];
-  function storeSession(data) {
+  function sessionIdFromUrl(url) {
+    try { return new URL(url, location.href).pathname.match(/\/sessions\/([^/?]+)\/?$/)?.[1] || ''; }
+    catch { return ''; }
+  }
+  function storeSession(data, sessionId = '') {
     if (!data || typeof data !== 'object') return;
+    const nextSessionId = sessionId || (typeof data.id === 'string' ? data.id : '');
+    if (nextSessionId && activeSessionId && nextSessionId !== activeSessionId) {
+      sessionChallenges = [];
+      podcastResponses = [];
+    }
+    if (nextSessionId) activeSessionId = nextSessionId;
     const candidates = [data.challenges, data.adaptiveChallenges, data.mistakesReplacementChallenges, data.adaptiveInterleavedChallenges?.challenges]
       .filter(Array.isArray).flat();
     if (data.challengePools && typeof data.challengePools === 'object') {
       for (const pool of Object.values(data.challengePools)) if (Array.isArray(pool)) candidates.push(...pool);
     }
-    if (!candidates.length) return;
-    sessionChallenges = [...sessionChallenges, ...candidates.filter(item => item && typeof item === 'object')].slice(-500);
+    const visited = new WeakSet(), stack = [data]; let scanned = 0;
+    while (stack.length && scanned++ < 30000) {
+      const value = stack.pop();
+      if (!value || typeof value !== 'object' || visited.has(value)) continue;
+      visited.add(value);
+      if (Array.isArray(value)) { stack.push(...value.slice(0, 100)); continue; }
+      const type = value.challengeType || value.type;
+      const hasAnswer = Number.isInteger(value.correctIndex) || Number.isInteger(value.correctIndices?.[0]) ||
+        Number.isInteger(value.correctAnswerIndex) || Number.isInteger(value.correctChoiceIndex) ||
+        Array.isArray(value.correctSolutions) || Array.isArray(value.correctTokens) || Array.isArray(value.pairs) ||
+        Array.isArray(value.phraseOrder) || value.challengeResponseTrackingProperties?.best_solution;
+      if (typeof type === 'string' && hasAnswer) candidates.push(value);
+      for (const child of Object.values(value)) if (child && typeof child === 'object') stack.push(child);
+    }
+    const uniqueCandidates = [...new Set(candidates.filter(item => item && typeof item === 'object'))];
+    if (!uniqueCandidates.length) return;
+    sessionChallenges = [...sessionChallenges, ...uniqueCandidates].slice(-500);
     document.dispatchEvent(new CustomEvent('duo-hint-session-v1'));
   }
-  function storeSessionPayload(payload) {
-    try { storeSession(typeof payload === 'string' ? JSON.parse(payload) : payload); } catch {}
+  function storeSessionPayload(payload, sessionId = '') {
+    try { storeSession(typeof payload === 'string' ? JSON.parse(payload) : payload, sessionId); } catch {}
   }
   function isSession(url) {
     try { const u = new URL(url, location.href); return u.origin === location.origin && /\/sessions(?:\/[^/?]+)?\/?$/.test(u.pathname); }
+    catch { return false; }
+  }
+  function isDuolingoApi(url) {
+    try { const u = new URL(url, location.href); return u.origin === location.origin && !/\.(?:js|mjs|css|png|jpe?g|gif|svg|woff2?|ttf|mp3|mp4)(?:[?#]|$)/i.test(u.pathname); }
     catch { return false; }
   }
   function isPodcastData(url) {
@@ -62,20 +95,25 @@
   }
   const originalFetch = window.fetch;
   window.fetch = function (...args) {
-    const requestCopy = args[0] instanceof Request ? args[0].clone() : null;
+    let requestCopy = null;
+    try { if (args[0] instanceof Request && !args[0].bodyUsed) requestCopy = args[0].clone(); } catch {}
     const promise = originalFetch.apply(this, args);
     const url = typeof args[0] === 'string' || args[0] instanceof URL ? String(args[0]) : args[0]?.url;
     const method = args[1]?.method || args[0]?.method || 'GET';
     if (isSession(url)) {
+      const sessionId = sessionIdFromUrl(url);
       const body = args[1]?.body;
-      if (typeof body === 'string') storeSessionPayload(body);
-      else if (requestCopy) requestCopy.text().then(storeSessionPayload).catch(() => {});
+      if (typeof body === 'string') storeSessionPayload(body, sessionId);
+      else if (requestCopy) requestCopy.text().then(payload => storeSessionPayload(payload, sessionId)).catch(() => {});
       promise.then(response => {
-        if (response.ok) response.clone().json().then(storeSession).catch(() => {});
+        if (response.ok) response.clone().json().then(data => storeSession(data, sessionId)).catch(() => {});
       }).catch(() => {});
     }
     else if (isPodcastData(url)) promise.then(response => {
       if (response.ok && /json/i.test(response.headers.get('content-type') || '')) response.clone().json().then(storePodcast).catch(() => {});
+    }).catch(() => {});
+    else if (isDuolingoApi(url)) promise.then(response => {
+      if (response.ok && /json/i.test(response.headers.get('content-type') || '')) response.clone().json().then(data => storeSession(data)).catch(() => {});
     }).catch(() => {});
     else if (isStoryData(url, method)) promise.then(response => {
       if (response.ok) response.clone().json().then(storeStory).catch(() => {});
@@ -84,21 +122,24 @@
   };
   const originalOpen = XMLHttpRequest.prototype.open, originalSend = XMLHttpRequest.prototype.send;
   const observedRequests = new WeakMap();
+  const observedSessionIds = new WeakMap();
   XMLHttpRequest.prototype.open = function (method, url, ...rest) {
-    if (isSession(url)) observedRequests.set(this, 'session');
+    if (isSession(url)) { observedRequests.set(this, 'session'); observedSessionIds.set(this, sessionIdFromUrl(url)); }
     else if (isPodcastData(url)) observedRequests.set(this, 'podcast');
+    else if (isDuolingoApi(url)) observedRequests.set(this, 'api');
     else if (isStoryData(url, method)) observedRequests.set(this, 'story');
     else observedRequests.delete(this);
     return originalOpen.call(this, method, url, ...rest);
   };
   XMLHttpRequest.prototype.send = function (...args) {
     const kind = observedRequests.get(this);
-    if (kind === 'session' && typeof args[0] === 'string') storeSessionPayload(args[0]);
+    const sessionId = observedSessionIds.get(this) || '';
+    if (kind === 'session' && typeof args[0] === 'string') storeSessionPayload(args[0], sessionId);
     if (kind) this.addEventListener('load', function () {
       if (this.status < 200 || this.status >= 300) return;
       try {
         const data = this.responseType === 'json' ? this.response : JSON.parse(this.responseText);
-        if (kind === 'session') storeSession(data); else if (kind === 'story') storeStory(data); else storePodcast(data);
+        if (kind === 'session' || kind === 'api') storeSession(data, sessionId); else if (kind === 'story') storeStory(data); else storePodcast(data);
       } catch {}
     }, { once: true });
     return originalSend.apply(this, args);
@@ -525,7 +566,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.15';
+  const VERSION = '1.2.17';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -1273,8 +1314,8 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.15', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
-    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.15', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.17', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.17', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ki\u1ec3m tra / Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi m\u1ed9t trong hai n\u00fat ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
     statusEl = h('p', { class: 'duo-hint-status' });
