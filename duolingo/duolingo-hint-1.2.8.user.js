@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.8
+// @version      1.2.10
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
 // @run-at       document-start
 // @grant        none
+// @updateURL   https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/duolingo/duolingo-hint-1.2.8.user.js
+// @downloadURL https://raw.githubusercontent.com/nguyenphanvn95/nguyenphanvn95.github.io/main/duolingo/duolingo-hint-1.2.8.user.js
 // ==/UserScript==
 
 /* Runs in page context. The H button opens settings, the floating Ctrl button
@@ -432,10 +434,12 @@
 .duo-hint-anchor { position: relative !important; overflow: visible !important; }
 .duo-hint-number { position: absolute; top: -7px; left: -7px; z-index: 3; display: grid; min-width: 20px; height: 20px; padding: 0 3px; place-items: center; border: 2px solid #fff; border-radius: 999px; color: #fff; background: #58a700; font: 800 11px/1 system-ui, sans-serif; pointer-events: none; box-shadow: 0 1px 3px #0004; }
 
-#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; min-width: 54px; padding: 11px 9px; border: 2px solid #fff; border-radius: 999px; color: #fff; background: #58a700; font: 800 13px/1 system-ui, sans-serif; cursor: pointer; box-shadow: 0 2px 8px #0004; }
+#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; display: grid; place-items: center; width: 48px; height: 48px; padding: 4px; border: 2px solid #fff; border-radius: 50%; background: #142328; cursor: pointer; box-shadow: 0 2px 8px #0004; }
+#duo-hint-ctrl img { display: block; width: 38px; height: 38px; object-fit: contain; pointer-events: none; }
 #duo-hint-ctrl:hover { filter: brightness(1.08); }
 #duo-hint-ctrl:disabled { opacity: .45; cursor: not-allowed; }
-#duo-hint-fab { position: fixed; left: 12px; bottom: 12px; z-index: 2147483000; width: 34px; height: 34px; border: 2px solid #fff; border-radius: 50%; color: #fff; background: #9aa5ad; font: 800 15px/1 system-ui, sans-serif; cursor: pointer; opacity: .55; box-shadow: 0 2px 8px #0004; }
+#duo-hint-fab { position: fixed; left: 12px; bottom: 12px; z-index: 2147483000; display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #9aa5ad; cursor: pointer; opacity: .55; box-shadow: 0 2px 8px #0004; }
+#duo-hint-fab img { display: block; width: 27px; height: 27px; object-fit: contain; pointer-events: none; }
 #duo-hint-fab:hover, #duo-hint-fab.on { opacity: 1; }
 #duo-hint-fab.on { background: #58a700; }
 #duo-hint-panel { position: fixed; left: 12px; bottom: 56px; z-index: 2147483000; width: 290px; max-height: 80vh; overflow: auto; box-sizing: border-box; padding: 14px; border: 2px solid #e5e5e5; border-radius: 16px; color: #3c3c3c; background: #fff; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 6px 24px #0003; }
@@ -458,9 +462,9 @@
 })();
 
 (() => {
-  const VERSION = '1.2.8';
+  const VERSION = '1.2.10';
   const REQUEST = 'duo-hint-request-v1', RESPONSE = 'duo-hint-response-v1', CARD = 'duolingo-hint-card';
-  let enabled = false, autoCheck = false, mode = 'full', ctrlMode = 'all', observer, pending = false, timer, requestId = 0;
+  let enabled = false, autoCheck = false, autoContinue = true, mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
   let diagnostics = { bridge: 'chưa kiểm tra', reactFibers: null, pairs: 0, result: 'chưa kiểm tra' };
   const savedSequences = new WeakMap();
   const podcastPairs = new WeakMap();
@@ -792,6 +796,34 @@
       button.click();
     }, 80);
   }
+  function continueButton() {
+    const labels = /(?:ti\u1ebfp t\u1ee5c|continue|next|got it|\u7ee7\u7eed)/i;
+    return [...document.querySelectorAll('[data-test="player-next"], [data-test="stories-player-continue"]')].find(button => {
+      const text = (button.innerText || button.textContent || button.getAttribute('aria-label') || '').trim();
+      if (!labels.test(text) || button.disabled || button.getAttribute('aria-disabled') === 'true' || !button.getClientRects().length) return false;
+      const style = getComputedStyle(button);
+      return style.visibility !== 'hidden' && style.display !== 'none' && Number(style.opacity) !== 0;
+    }) || null;
+  }
+  function maybeAutoContinue() {
+    if (!autoContinue) return;
+    const button = continueButton();
+    if (!button) { lastAutoContinued = null; return; }
+    if (button === lastAutoContinued) return;
+    lastAutoContinued = button;
+    button.click();
+  }
+  function startAutoContinue() {
+    if (!autoContinue) return;
+    if (!continueObserver && document.documentElement) {
+      continueObserver = new MutationObserver(maybeAutoContinue);
+      continueObserver.observe(document.documentElement, {
+        childList: true, subtree: true, characterData: true, attributes: true,
+        attributeFilter: ['disabled', 'aria-disabled', 'data-test', 'hidden', 'class']
+      });
+    }
+    maybeAutoContinue();
+  }
   document.addEventListener('keydown', event => {
     if (event.key === 'Control') {
       if (!event.repeat && !event.altKey && !event.metaKey && !event.shiftKey && heldKeys.size === 0 && !editableTarget(event.target)) ctrlArmed = true;
@@ -955,7 +987,7 @@
 
   // ====== Cài đặt (thay chrome.storage bằng localStorage) ======
   const SKEY = 'duolingo-hint-settings-v1';
-  const settings = { hintEnabled: false, hintMode: 'full', autoCheck: false, ctrlMode: 'all' };
+  const settings = { hintEnabled: false, hintMode: 'full', autoCheck: false, autoContinue: true, ctrlMode: 'all' };
   try { Object.assign(settings, JSON.parse(localStorage.getItem(SKEY) || '{}')); } catch {}
   function saveSettings() { try { localStorage.setItem(SKEY, JSON.stringify(settings)); } catch {} }
   ctrlMode = settings.ctrlMode === 'one' ? 'one' : 'all';
@@ -968,6 +1000,7 @@
     settings[key] = value; saveSettings();
     if (key === 'ctrlMode') { ctrlMode = value === 'one' ? 'one' : 'all'; if (fillRun) fillRun.cancelled = true; }
     else if (key === 'autoCheck') { autoCheck = !!value; if (autoCheck) queueAutoCheck(); else { clearTimeout(autoTimer); autoTimer = null; } }
+    else if (key === 'autoContinue') { autoContinue = !!value; lastAutoContinued = null; if (autoContinue) startAutoContinue(); else { continueObserver?.disconnect(); continueObserver = null; } }
     else if (key === 'hintMode') { mode = ['compact', 'card', 'full'].includes(value) ? value : 'full'; if (enabled) { clean(); schedule(); } }
     else if (key === 'hintEnabled') { enabled = !!value; enabled ? start() : stop(); }
   }
@@ -1014,10 +1047,11 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, 'H');
-    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, 'Ctrl');
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png', alt: 'Duolingo Hint' }));
+    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png', alt: 'Ctrl' }));
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const auto = switchRow('Tự động kiểm tra', 'Áp dụng khi đáp án khớp Hint', 'autoCheck');
+    const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'B\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c \u0111\u01b0\u1ee3c b\u1eadt', 'autoContinue');
     statusEl = h('p', { class: 'duo-hint-status' });
     const copy = h('button', { type: 'button', class: 'duo-hint-copy', onclick: async () => {
       try { await navigator.clipboard.writeText(statusText()); copy.textContent = 'Đã sao chép'; } catch { copy.textContent = 'Không sao chép được'; }
@@ -1025,7 +1059,7 @@
     } }, 'Sao chép trạng thái');
     panel = h('div', { id: 'duo-hint-panel', hidden: '' },
       h('h3', {}, 'Duolingo Hint ', h('small', {}, VERSION)),
-      hintSwitch.row, auto.row,
+      hintSwitch.row, auto.row, autoContinueSwitch.row,
       radioGroup('Cách hiện Hint', 'mode', 'hintMode', [['compact', 'Chỉ hiện Hint rút gọn'], ['card', 'Chỉ hiện khối đáp án gợi ý'], ['full', 'Hiện đầy đủ Hint']]),
       radioGroup('Phím tắt Ctrl cho bài xếp từ', 'ctrl', 'ctrlMode', [['all', 'Tự động điền hết'], ['one', 'Mỗi lần bấm chọn một từ']]),
       h('p', { class: 'duo-hint-note' }, 'Hint mặc định tắt. Trạng thái được lưu cho lần sau.'),
@@ -1044,6 +1078,10 @@
     }
   }, true);
   if (document.body) buildUI(); else document.addEventListener('DOMContentLoaded', buildUI, { once: true });
+  if (autoContinue) {
+    if (document.documentElement) startAutoContinue();
+    else document.addEventListener('DOMContentLoaded', startAutoContinue, { once: true });
+  }
   // SPA có thể thay body: kiểm tra lại định kỳ
   setInterval(() => { if (document.body && !document.getElementById('duo-hint-fab')) buildUI(); }, 3000);
 })();
