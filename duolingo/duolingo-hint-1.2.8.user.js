@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.11
+// @version      1.2.15
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -20,10 +20,18 @@
   let podcastResponses = [];
   let storyElements = [];
   function storeSession(data) {
-    if (!data || typeof data !== 'object' || !Array.isArray(data.challenges)) return;
-    sessionChallenges = [data.challenges, data.adaptiveChallenges, data.mistakesReplacementChallenges, data.adaptiveInterleavedChallenges?.challenges]
-      .filter(Array.isArray).flat().filter(item => item && typeof item === 'object');
+    if (!data || typeof data !== 'object') return;
+    const candidates = [data.challenges, data.adaptiveChallenges, data.mistakesReplacementChallenges, data.adaptiveInterleavedChallenges?.challenges]
+      .filter(Array.isArray).flat();
+    if (data.challengePools && typeof data.challengePools === 'object') {
+      for (const pool of Object.values(data.challengePools)) if (Array.isArray(pool)) candidates.push(...pool);
+    }
+    if (!candidates.length) return;
+    sessionChallenges = [...sessionChallenges, ...candidates.filter(item => item && typeof item === 'object')].slice(-500);
     document.dispatchEvent(new CustomEvent('duo-hint-session-v1'));
+  }
+  function storeSessionPayload(payload) {
+    try { storeSession(typeof payload === 'string' ? JSON.parse(payload) : payload); } catch {}
   }
   function isSession(url) {
     try { const u = new URL(url, location.href); return u.origin === location.origin && /\/sessions(?:\/[^/?]+)?\/?$/.test(u.pathname); }
@@ -54,12 +62,18 @@
   }
   const originalFetch = window.fetch;
   window.fetch = function (...args) {
+    const requestCopy = args[0] instanceof Request ? args[0].clone() : null;
     const promise = originalFetch.apply(this, args);
     const url = typeof args[0] === 'string' || args[0] instanceof URL ? String(args[0]) : args[0]?.url;
     const method = args[1]?.method || args[0]?.method || 'GET';
-    if (isSession(url)) promise.then(response => {
-      if (response.ok) response.clone().json().then(storeSession).catch(() => {});
-    }).catch(() => {});
+    if (isSession(url)) {
+      const body = args[1]?.body;
+      if (typeof body === 'string') storeSessionPayload(body);
+      else if (requestCopy) requestCopy.text().then(storeSessionPayload).catch(() => {});
+      promise.then(response => {
+        if (response.ok) response.clone().json().then(storeSession).catch(() => {});
+      }).catch(() => {});
+    }
     else if (isPodcastData(url)) promise.then(response => {
       if (response.ok && /json/i.test(response.headers.get('content-type') || '')) response.clone().json().then(storePodcast).catch(() => {});
     }).catch(() => {});
@@ -79,6 +93,7 @@
   };
   XMLHttpRequest.prototype.send = function (...args) {
     const kind = observedRequests.get(this);
+    if (kind === 'session' && typeof args[0] === 'string') storeSessionPayload(args[0]);
     if (kind) this.addEventListener('load', function () {
       if (this.status < 200 || this.status >= 300) return;
       try {
@@ -96,18 +111,43 @@
     for (const c of availableChallenges) {
       if (!c || typeof c !== 'object') continue;
       const kind = req.kind || '';
+      // Duoradio's challengePools wrap items as { type: "challenge",
+      // challengeType: "listenMatch" }; ordinary lesson responses use type directly.
+      const challengeType = String(c.challengeType || c.type || '').toLowerCase();
       const isListen = /challenge-listenTap(?:\s|$)/i.test(kind);
       const isAssist = /challenge-assist(?:\s|$)/i.test(kind);
       const expectedType = /challenge-translate(?:\s|$)/i.test(kind) ? 'translate'
         : isListen ? 'listenTap'
         : /challenge-assist(?:\s|$)/i.test(kind) ? 'assist'
+        : /challenge-selectTranscription(?:\s|$)/i.test(kind) ? 'selectTranscription'
+        : /challenge-listenMatch(?:\s|$)/i.test(kind) ? 'listenMatch'
         : /challenge-select(?:\s|$)/i.test(kind) ? 'select'
         : /challenge-sameDifferent(?:\s|$)/i.test(kind) ? 'sameDifferent'
         : /challenge-gapFill(?:\s|$)/i.test(kind) ? 'gapFill'
         : /challenge-tapComplete(?:\s|$)/i.test(kind) ? 'tapComplete' : '';
-      if (expectedType && c.type && String(c.type).toLowerCase() !== expectedType.toLowerCase()) continue;
-      if (isAssist && c.type && !/^assist$/i.test(c.type)) continue;
-      if (isListen && !/^listenTap$/i.test(c.type || '')) continue;
+      if (expectedType && challengeType !== expectedType.toLowerCase()) continue;
+      if (isAssist && challengeType && !/^assist$/i.test(challengeType)) continue;
+      if (isListen && !/^listenTap$/i.test(challengeType)) continue;
+      if (/challenge-listenMatch(?:\s|$)/i.test(kind) && challengeType && !/^listenMatch$/i.test(challengeType)) continue;
+      if (/challenge-listenMatch(?:\s|$)/i.test(kind) && Array.isArray(c.pairs)) {
+        const available = (req.words || []).map((word, index) => ({ word: norm(word), index, used: false }));
+        const pairIndices = [], pairs = [];
+        for (const pair of c.pairs) {
+          const left = norm(pair?.learningWord ?? pair?.left ?? pair?.source ?? '');
+          const right = norm(pair?.translation ?? pair?.right ?? pair?.target ?? '');
+          const leftToken = available.find(token => !token.used && token.word === left);
+          const rightToken = available.find(token => !token.used && token !== leftToken && token.word === right);
+          if (!left || !right || !leftToken || !rightToken) { pairIndices.length = 0; pairs.length = 0; break; }
+          leftToken.used = true; rightToken.used = true;
+          pairIndices.push({ number: pairIndices.length + 1, indices: [leftToken.index, rightToken.index] });
+          pairs.push([pair.learningWord ?? pair.left ?? pair.source, pair.translation ?? pair.right ?? pair.target]);
+        }
+        if (pairIndices.length && pairIndices.reduce((n, pair) => n + pair.indices.length, 0) === available.length) {
+          const score = 500 + pairIndices.length;
+          candidates.push({ score, answer: '', tokens: [], pairs, pairIndices });
+        }
+        continue;
+      }
       const rawChoices = Array.isArray(c.choices) ? c.choices
         : isListen && Array.isArray(c.correctTokens) && Array.isArray(c.wrongTokens) ? [...c.correctTokens, ...c.wrongTokens] : [];
       const bank = rawChoices.map(x => norm(typeof x === 'string' ? x : x?.text)).filter(Boolean);
@@ -148,9 +188,15 @@
         : Number.isInteger(c.correctAnswerIndex) ? c.correctAnswerIndex
         : Number.isInteger(c.correctChoiceIndex) ? c.correctChoiceIndex
         : Array.isArray(c.correctIndices) && c.correctIndices.length === 1 ? c.correctIndices[0] : -1;
+      const correctIndices = Array.isArray(c.correctIndices) ? [...new Set(c.correctIndices.filter(i => Number.isInteger(i) && i >= 0 && i < (c.choices || []).length))]
+        : singleCorrectIndex >= 0 && singleCorrectIndex < (c.choices || []).length ? [singleCorrectIndex] : [];
       if (singleCorrectIndex >= 0 && Array.isArray(c.choices) && singleCorrectIndex < c.choices.length &&
-          /gapFill|tapComplete|select|sameDifferent|assist/i.test(req.kind || '')) {
+          /gapFill|tapComplete|select|sameDifferent|assist|podcast-judge/i.test(req.kind || '')) {
         const choice = c.choices[singleCorrectIndex]; correctChoice = typeof choice === 'string' ? choice : choice?.text || '';
+      }
+      if (correctIndices.length > 1 && Array.isArray(c.choices)) {
+        const correctChoices = correctIndices.map(i => typeof c.choices[i] === 'string' ? c.choices[i] : c.choices[i]?.text).filter(Boolean);
+        if (correctChoices.length === correctIndices.length) answer = correctChoices.join(' / ');
       }
       if (!correctChoice && c.currentScope && singleCorrectIndex >= 0 && singleCorrectIndex < (req.choices || []).length) correctChoice = req.choices[singleCorrectIndex];
       if (correctChoice) answer = correctChoice;
@@ -158,10 +204,18 @@
       if (!answer && tokens.length) answer = c.challengeResponseTrackingProperties?.best_solution || '';
       if (!answer && tokens.length) answer = tokens.join(' ');
       if (!answer) continue;
-      candidates.push({ score, answer, tokens, correctChoice, index: singleCorrectIndex >= 0 ? singleCorrectIndex : undefined });
+      const audioKey = typeof c.tts === 'string' ? c.tts.split(/[?#]/, 1)[0] : '';
+      const audioRank = audioKey && Array.isArray(req.audioUrls) ? req.audioUrls.findIndex(url => String(url).split(/[?#]/, 1)[0] === audioKey) : -1;
+      const audioMatch = audioRank >= 0;
+      // The prompt audio is requested before the choice audio files. Lower resource
+      // position therefore identifies the active prompt when choices are identical.
+      candidates.push({ score: score + (audioMatch ? 300 - audioRank : 0), answer, tokens, correctChoice,
+        index: singleCorrectIndex >= 0 ? singleCorrectIndex : undefined,
+        indices: correctIndices.length > 1 ? correctIndices : undefined });
     }
     candidates.sort((a, b) => b.score - a.score);
-    if (!candidates.length || (candidates[1]?.score === candidates[0].score && (candidates[1].answer !== candidates[0].answer || candidates[1].tokens.join('\u0000') !== candidates[0].tokens.join('\u0000')))) return null;
+    const signature = candidate => JSON.stringify([candidate.answer, candidate.tokens, candidate.indices, candidate.pairIndices]);
+    if (!candidates.length || (candidates[1]?.score === candidates[0].score && signature(candidates[1]) !== signature(candidates[0]))) return null;
     return candidates[0];
   }
   function selectStory(challenge, req) {
@@ -260,7 +314,7 @@
   }
   function selectPodcastJudge(challenge, req) {
     const wanted = norm(req.prompt);
-    if (wanted.length < 4 || (req.choices || []).length !== 2) return {};
+    if (wanted.length < 4 || (req.choices || []).length < 2) return {};
     const roots = [], seenFibers = new Set();
     for (const el of [challenge, ...challenge.querySelectorAll('[data-test="challenge-choice"]')]) {
       for (const key of Object.keys(el).filter(k => k.startsWith('__reactFiber$'))) {
@@ -288,7 +342,7 @@
       const hasPrompt = Object.entries(obj).some(([key, value]) => /^(prompt|question|statement|sentence|text|displayText|content)$/i.test(key) && containsPrompt(value));
       if (hasPrompt) {
         for (const key of ['correctIndex', 'correctAnswerIndex', 'correctChoiceIndex', 'correctOptionIndex']) {
-          if (Number.isInteger(obj[key]) && obj[key] >= 0 && obj[key] < 2) found.add(obj[key]);
+          if (Number.isInteger(obj[key]) && obj[key] >= 0 && obj[key] < req.choices.length) found.add(obj[key]);
         }
         if (req.booleanLabels) {
           for (const key of ['correctAnswer', 'isTrue', 'correctStatement']) {
@@ -303,8 +357,10 @@
       }
     }
     for (const obj of roots) walk(obj, 0);
-    if (found.size !== 1) return { fiberCount: seenFibers.size };
-    const index = [...found][0];
+    if (!found.size) return { fiberCount: seenFibers.size };
+    const indices = [...found].sort((a, b) => a - b);
+    if (indices.length > 1) return { indices, answer: indices.map(index => req.choices[index]).join(' / '), fiberCount: seenFibers.size };
+    const index = indices[0];
     return { index, answer: req.booleanLabels ? (index === 0 ? 'Đúng' : 'Sai') : `Lựa chọn ${index + 1}`, fiberCount: seenFibers.size };
   }
   document.addEventListener('duo-hint-request-v1', event => {
@@ -314,6 +370,11 @@
     if (!challenge) return;
     try {
     if (req.kind === 'podcast-judge') {
+      const sessionResult = selectFromSession(req);
+      if (sessionResult) {
+        document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, answer: sessionResult.answer, index: sessionResult.index, indices: sessionResult.indices, source: 'session' }) }));
+        return;
+      }
       const result = selectPodcastJudge(challenge, req);
       document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, ...result, source: 'podcast-judge' }) }));
       return;
@@ -325,7 +386,7 @@
     }
     const sessionResult = selectFromSession(req);
     if (sessionResult) {
-      document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, answer: sessionResult.answer, tokens: sessionResult.tokens, index: sessionResult.index, source: 'session' }) }));
+      document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, answer: sessionResult.answer, tokens: sessionResult.tokens, index: sessionResult.index, indices: sessionResult.indices, pairs: sessionResult.pairs, pairIndices: sessionResult.pairIndices, source: 'session' }) }));
       return;
     }
     const words = Array.isArray(req.words) ? req.words.filter(x => typeof x === 'string') : [];
@@ -403,7 +464,7 @@
     if (!Number.isInteger(answerIndex) && scopedAnswerIndices.size === 1) answerIndex = [...scopedAnswerIndices][0];
     const reactResult = selectFromSession(req, reactChallenges);
     if (reactResult) {
-      document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, answer: reactResult.answer, tokens: reactResult.tokens, index: reactResult.index, source: 'react', fiberCount: visitedFibers.size }) }));
+      document.dispatchEvent(new CustomEvent('duo-hint-response-v1', { detail: JSON.stringify({ id: req.id, answer: reactResult.answer, tokens: reactResult.tokens, index: reactResult.index, indices: reactResult.indices, pairs: reactResult.pairs, pairIndices: reactResult.pairIndices, source: 'react', fiberCount: visitedFibers.size }) }));
       return;
     }
     if (/tapComplete|challenge-listenTap|challenge-assist/i.test(req.kind || '')) {
@@ -464,9 +525,147 @@
 })();
 
 (() => {
-  const VERSION = '1.2.11';
+  const VERSION = '1.2.15';
+  const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
+    'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
+    'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
+    'KwFnOyOJOIv3nHfq//pVv+59Va/+q272A37A/xAEW6zzgNQr1O1/DypHLu4LJlu8z2SvAbO9Hsxhn3mMljHq8feDUwF/GMiHhj8FgaEvc3PYi15z2CPq0Tcg' +
+    'mNC8ASFvi6ELhTBFoNmFGOoSPlPo150B9ttUs0uLDtP8aWB2HBNDo4UIXICEsBy6QIDJ8QUfbvuxaibBr4+40me0CGEOF16jbYYwW0f4AixfkghvgGWlanbp' +
+    '4DHND0LyPmFGbxIpk7XNa7aACHSgCKfwGK2rVdNu+EzW33iNz85UtwyFTBZDY4TPaC1SVZcOnoCQP4vASPS2nXuN1iVnTY7BnWbbKJ/JVilMoSgqTPB/sr5R' +
+    '8AiPyXYvEs+VM2C0XdoZwOVxuTdgfoMIpOVgKVfVEp0BIY/JWQmMEh6zNUJVS4j7F1/mNYYUCjPOEs6aCHSSA8BjsgepJpcGuA1ehgHpFsOep6WySVVL4HpO' +
+    'lAIwHjxGW7SqlvCYbeNEoD+AcTk1gTk0Dx0wST2+tPAYQ8bD0OjMzkDrHXRfGhTcx2e2u3BXAU5LCIl6AkPGysYKHUNCb+WBkU0ek/UDfmtUf1X9/eNUQNhA' +
+    '9Gih3IkkeScurZBX1eNuYKBPQ/KxYnBwP1X1nwHeZ/FoYabt0y7A6DjDB4UvUY+6IVj0AGHCtY+xIW6ym1T1d4/QbHa15Ss2xPE5G9xtueevn8brj8JG3+4b' +
+    'YjsljJECy+2MsysfcbPrqJ+0jWwQfci4Hu3iPwnN4AFh320a8cznLDC8QIuLLNBLIvK15vA87Yxjm3aGSrKIPB2NSu1M2DZ2Zn4ZO10xc7qHs+f4nmkzfNZS' +
+    '1haeT8+0s2SRedrJqEKt7Mlq5kRx3/jA9Tqsm/Rnooq104v26sJZpouoIl1EFmoiAo2uo4o0eR8pr9HwOmy7JhZ+eQV/a9kISFw9kNvKmayX7QqwH5bOUk3E' +
+    '7sb3lLGTD9ezR9VwvQv7Fj14YQWSKkZS23RwkG31l+hJCM/XIaJAh3C6zsOSDJ/R/TPlDNZFjYbWGy18fcQYmF/KsK8GYdKwDZaWEgauoj5iXeQY6DRaNnCj' +
+    '4wPvjfbeEROymZlxyXQQeRqYiC/dZYAXKgxInoQgEUkcS0m+SwTe5zOwFTNoCJoDnMXz/ZNnw/ydDEJlHx0SKg3gqtQg+ot+cGTc4yD6uoQY4BTiRiwxd+o0' +
+    'hvxd0H9rhOVqSbF7dEnejhaJ3k6t0SHjoA7xSIC8KEUoAdKU98ls6N30d2+Ar56eAAkfDwRLoZ98IvbNxHcsOcqg6PGJwA0uqLt7DryTMQJ2zJ66lV8b/rUw' +
+    'Ydphso1UVC4KGk7xzgWlupBe363DwlIDpLp1SK7WId1NdQY1C4o8mn+msA6Nloh1O4PgSobkcfnkkufRAfiO5QdR3J4+0DZyHvCrwmHFG0YIbmJiejOL4j9y' +
+    'rhU3xeKX2R6suHx7zMtj/XEGmqK364K8nkaDVumQgtd0n1JjgLQDfhFSgLIuAbhDdc9QqCz95Ok9qeiA5AMaLEcnNN01F2cgGt5eewMEH2Ni2XvXbuX9I2so' +
+    'e/Wa7f/wHPFvgfbp0By9ZdFOg0g74CedXMMgcT+DF/YxiEdLqkYv4lKIkzOBJGU8XCAC6+zodSrjkXy6W4NE7PdCFYMEesdhBm9tuA7Wv3IrJBzW4Y0/DoO2' +
+    'm58WIgDJB1gqe/R1tqxhg3DKT8bvRQHoNSJMg6+sDYJP638Nq45Ogkz3ACmGBMajCPwWSLKhSJrMnkMB7Q9YEk9tXzt0C/afDWvrpsMr7sHwHIpY2oiCMB6O' +
+    'j/8diP5O4QsM3d0eGGJWVC4Os95hg2JLDC0Zh3VBA7956E6oPZvLuY/7AZyf7jzCP6t/Qoojkcn7MDDLdXBt98fL0nIkvt8Ay3GmUqv7w67Wd7jX16lewHm7' +
+    'p4VvbVrIyTFLUESOayyIfnF4ELK8r2hcPB5bz65ZttfQknyIidcPjwQajABeZP43WFc3G+JwWZCIdJwNWSpLqdEgaV9fONS2RbW+AMoZ+c1LYKmbQdaeK3jV' +
+    'b2ft5IMiH1Y0Lh7OYjYoab92MukAE+62DXIgn9fLAYCXFBfzGKcTNm3aJOtPnnPzlOrLcXfS0ONIGoOUYoaMhH3e8JRUTX1XrVoFsbGxULZjh+xLInw+H3/j' +
+    'wM0Qd4KJNz8eUswHxNRhlpqlqFwcwrPZNQlVrGXFkQDR6T3nHwgFEHaWlfGf3X4bBI0eBbnZuKwQFBvLMMBph5FGOxUKomB1t/1FtiGkpabym4cPg4cefABq' +
+    'qmtULeebj9tgcR0TH702vIIPcJ72Gu0vKioXh/BSdg3uFi0r60YLIg9oXhTQ2trCs7Ky4OcTxsPYu++CpGXLpHfXHJsmg5zIp6HRLKTg2k9CUUfPFqD3OW9s' +
+    'bOR2mw3u//kEuGtMEHyyerUkTyg6kQhpDUw8v58lUpqtaFw8aAbi9rKWd+tGCSJPOH3qNH9i7hwYf999MHXKFLjv3nsgeXmyFPDJsV9Jb6dg0J6fASZn5bin' +
+    'hLc2t/NHH50thf9y6hS4Z9xYWLPmk+6AKmyO5+nHmUjca0hWFHoGOQMo4L36IDkDhNaWVj5zxgyY+IuHYKoiceEMkIBEWvcYuPG459PWSTPQ6C3lzfVn+JTJ' +
+    'k2DypIkofjKMG3s3rF79sXwvoRhngAQk7NFSFIWegYI4HgW8dewW4fPSGuK8o6ODz53zuPQ8eXHUnXfAildXSAEfHZ0Isejx1/cw+AyTtjW7GGRgDMShiIaO' +
+    'Qt7e5uUPz5wplw+JoPjZsnmzJE/Ib14EqSggfq/WOzNAApZVsZOpB/uIxvZKKYCQk52NnpwsvT/vySeh8XgT90IHzzg4BLKLGHiLrwd+cALwqjuhaVsfyNrN' +
+    'oLD1Jdl33dq1/MEH7pd9Xa4YONfe3v3eVUcfgsxGWkK9JIBiYPk+vSXBzcT6+jlykK5YaGho4LQNnmvH3QlR0Poy/xRzff4VWuHV4Nv7U/DtGgZ8iwFO5jB4' +
+    '79Bt4FGdaw/X8oqKCnyZYo44ciYXP2Y6ZDVrIrGylwRM/xPGwG5DS2atJih3KWpOUcN9E7Vns3mi+yrILdWg8wsdfJsY+LL9Bl/q0LpFg5cwG13X8Hv8DJwn' +
+    '3YUT56p4ltskd7CsJl24inspiJ/AXCgqX29JP2gQqRiQlE6sqZsFNW3reVP7bn707Da+pSkSP2B9ZargwuAtz9CAL9LgXLoGHcl4HaPBaygivtb/PVh5eBxU' +
+    'nlrJG9t38fqvS3jhiQSeWTMQ8HsDGfgFT6k1CPsWbbmi0DMEYyrhwGw0dgcmc5g6p2P6G487SgKaTA+wJFGpB5jMdyylOrz9oQ7cjsQdaDYNjsXhcROTutid' +
+    'eAZAgkkY0JQ3pWC5XPUn8Zn4jFJt1y5N2LK1JEWhZyABmF22ROTjARzPvAl7cH9HL6fhbKRi3kKzklJtgLgKJIkZJ53YLIU6fPiBDtVJGpRm4na6UQdLAabV' +
+    'KCKmxABJVegIzI/SsH86CpcJIKYez5f5T3cxKCAUT4GKQs+AAvrh2baefnGgcyy+GKKQ4MISyjRxsGJdHjGpnozOxnQeeLZIByseHeejWZE8HfDpdBaa4z8f' +
+    'LMB3xGL/WMxYo7Etiaf+dH5w7dYFnh+cikLPgS/NjSnDA70i153rUykJEfGuA4z/LCCvZVtFnp4TQWn+fl0ntC7i1B5FcucOXVizDRPV8D2HPVt/Nray6xcJ' +
+    'RQAH7iLtL/1E5PERS0lQEQ6ThP31KMbXLZIIdwv324JSnOkczT11A7tcDd9z2PBljhxtl6vCv4zOe00NLomq83BX3VbN528rvep/jibLCwR0G7ahOIspR+9v' +
+    'MsxSQ/ceQrLZ8MhC/fBCnInwfJ2CTIqQcaGIyh+5kBgJ6Xru/wEMSyIvS791OYIM28tf+qJp6WzUo9SQvY9577MhEQXaShTS6arAjw0GmyyVxai6GJwp2kli' +
+    'yqlEcnjtxFK2w1I+k6W/LqpYF+EFepFto2GqGuq7RZh/Nuaid52OPN1l36q70JMu/F648ADvN7zvvv4X5sjXgx15l32//wf/gP9vMPZX5y38b3jAYhMAAAAA' +
+    'SUVORK5CYII=';
+  const ICON_CTRL_FALLBACK = 'data:image/png;base64,' +
+    'iVBORw0KGgoAAAANSUhEUgAAAioAAAIqCAMAAAA97pGBAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJZQTFRFOq88AAAA////N645M601' +
+    'Ma00LawwLawwMa0zKassKassSbVLVrlYR7RJasBrv+G/IqklVrlYPrFA+/77Yr5kJaooSrVM9Pv05fTlh8uId8V4fsh/N645M601PrFAasBrisyL3vHed8Z4' +
+    'sN2xYr5k7vju1u3WOq88zurPjM2NyOfIgMmBoNahuOC5k9CUe8Z8qturmdSaqmc6aAAAADJ0Uk5T/wD/////6P/f8v//iaxc////wf9t+6X//xg+/9Ha////' +
+    '////////yv8L/yj///8z//9kH4l6AAAhi0lEQVR4nO2daVfjOgxAk9pJutOWFujQspQdhgfz///cS9ItTZ1diq1E99s7550z0F5sSZZly2YCPm43m/v75+fp' +
+    'dDC4s6y7u8FgMJ1On583tx+6fzZDsHT/ANr4+BnPh1ezlbvouW7XkVJssfbs/ls6Xdft9Rbd2dV8/LPU/WPro3WqfIyHs7fVeh3IIaNmZLLzprter95G8x/d' +
+    'v0jttEiVr/mo13OdYn4kWSOl6y80V+MWrTJtUGU5Ho5m3UCSqoqcKSMdtzsbDedtMKbpqgy7i3AhgZbkRBjfmN5kNtb9uyLTYFX+DGduF9WRU2Gk2x0N/+j+' +
+    'rfFopirLkZ/WIK8lSl1EEMJcNTO9bp4qH/NZz6ldkhNhnN5s/qX7cwCnWaosR5MeQvRawhbhuJNus6KXBqnyc6V5NTlD9poU6zZElT+zVdeE1SSOkN3VqCHV' +
+    'uiaospz1TNRkTxC6NKHuQl6V8ahr2LajQDjd0Vz3J1UV2qrMe279GXE5/DR6MdT9eVWCsCrjmSt1C1AM4b4RDnOpqjIOSmy6v/oS+GsL1Z2IpCrLIbX1JIpw' +
+    'r0jW5wiqsl6YH8em4+dEru5PsTjUVPl6c4l7ssN9o1ZuoaUKhcQ4L0KuZ7o/z0IQUuVj1ZAF5YBwu4Rqc2RUma+as6BEcFZkEiIaqny89QinPOnIHpF9iIIq' +
+    'f2ZeExeUA8IdUciezVdluCBZayuEcCbml3FNV2XctFA2CemaLovZqqyaG6KcY3rQYrIqw15LVpQ9omdyOmSuKqNui1aUPbJr7spiqirDtsQocYR7pfuzT8BM' +
+    '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';
   const REQUEST = 'duo-hint-request-v1', RESPONSE = 'duo-hint-response-v1', CARD = 'duolingo-hint-card';
-  let enabled = false, autoCheck = false, autoContinue = true, mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
+  let enabled = false, autoCheck = true, autoContinue = true, mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
   let diagnostics = { bridge: 'chưa kiểm tra', reactFibers: null, pairs: 0, result: 'chưa kiểm tra' };
   const savedSequences = new WeakMap();
   const podcastPairs = new WeakMap();
@@ -692,7 +891,10 @@
           visibleToken(button, challenge) && normalize(tokenText(button)) === sequence[selected.length]);
         if (!next) return;
         next.click();
-        if (run.single) return;
+        if (run.single) {
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          return;
+        }
         let advanced = false;
         for (let attempts = 0; attempts < 25; attempts++) {
           await new Promise(resolve => setTimeout(resolve, 60));
@@ -704,6 +906,7 @@
           if (current.length > selected.length) { advanced = true; break; }
         }
         if (!advanced) return;
+        await new Promise(resolve => setTimeout(resolve, 1000));
       }
     } finally {
       if (fillRun === run) fillRun = null;
@@ -809,10 +1012,22 @@
   }
   function maybeAutoContinue() {
     if (!autoContinue) return;
+    const check = checkButton();
+    if (check) {
+      if (lastAutoContinued?.button === check && lastAutoContinued.stage === 'check') return;
+      lastAutoContinued = { button: check, stage: 'check' };
+      if (autoState?.challenge === root() && matchesHint(autoState)) {
+        const signature = [autoState.answer || '', ...(autoState.sequence || []), autoState.index ?? ''].join('\u0000');
+        if (lastSubmission?.challenge === autoState.challenge && lastSubmission.signature === signature) return;
+        lastSubmission = { challenge: autoState.challenge, signature };
+      }
+      check.click();
+      return;
+    }
     const button = continueButton();
     if (!button) { lastAutoContinued = null; return; }
-    if (button === lastAutoContinued) return;
-    lastAutoContinued = button;
+    if (lastAutoContinued?.button === button && lastAutoContinued.stage === 'continue') return;
+    lastAutoContinued = { button, stage: 'continue' };
     button.click();
   }
   function startAutoContinue() {
@@ -884,6 +1099,8 @@
       clone.querySelector('#' + CARD)?.remove();
       clone.querySelectorAll('.duo-hint-number').forEach(el => el.remove());
       const screen = clone.textContent || '';
+      const audioUrls = [...performance.getEntriesByType('resource')]
+        .map(entry => entry.name).filter(url => /\.mp3(?:[?#]|$)|dyvwhs7jlfw68\.cloudfront\.net/i.test(url)).slice(-40);
       let prompt = '', booleanLabels = false;
       if (podcastJudge) {
         clone.querySelector('[role="radiogroup"]')?.remove();
@@ -904,7 +1121,7 @@
       } else if (isPodcast) {
         document.dispatchEvent(new CustomEvent(RESPONSE, { detail: JSON.stringify({ id, ...podcastResult(challenge) }) }));
       } else {
-        document.dispatchEvent(new CustomEvent(REQUEST, { detail: JSON.stringify({ id, words, choices, hintWords, screen, prompt, storyPrompt, booleanLabels, kind: podcastJudge ? 'podcast-judge' : challenge.getAttribute('data-test'), storyIndex }) }));
+        document.dispatchEvent(new CustomEvent(REQUEST, { detail: JSON.stringify({ id, words, choices, hintWords, screen, prompt, storyPrompt, booleanLabels, audioUrls, kind: podcastJudge ? 'podcast-judge' : challenge.getAttribute('data-test'), storyIndex }) }));
       }
       setTimeout(() => {
         document.removeEventListener(RESPONSE, acknowledge);
@@ -943,7 +1160,7 @@
     clean();
     const challenge = root();
     shortcutState = null;
-    if (result.source === 'podcast' && result.pairIndices?.length) {
+    if (result.pairIndices?.length) {
       autoState = null;
       const grid = challenge.querySelector('[style*="--match-challenge-rows"]');
       const buttons = grid ? [...grid.querySelectorAll('button[data-test$="-challenge-tap-token"]')] : [];
@@ -969,18 +1186,22 @@
     } else if (result.answer || Number.isInteger(result.index)) {
       const story = challenge.getAttribute('data-test') === 'stories-element';
       const choices = [...challenge.querySelectorAll(story ? '[data-test="stories-choice"]' : '[data-test="challenge-choice"]')];
-      const correctChoice = resolveChoice(challenge, result.answer, result.index);
-      if (mode !== 'card' && correctChoice) correctChoice.classList.add('duo-hint-correct');
-      if (choices.length && !correctChoice) {
+      const indexedChoices = Array.isArray(result.indices) ? [...new Set(result.indices)]
+        .filter(index => Number.isInteger(index) && index >= 0 && index < choices.length).map(index => choices[index]) : [];
+      const correctChoice = indexedChoices[0] || resolveChoice(challenge, result.answer, result.index);
+      const correctChoices = indexedChoices.length ? indexedChoices : correctChoice ? [correctChoice] : [];
+      if (mode !== 'card') correctChoices.forEach(choice => choice.classList.add('duo-hint-correct'));
+      if (choices.length && !correctChoices.length) {
         autoState = null;
         card('Chưa xác định được lựa chọn đúng.');
       } else {
         const sequence = numberTokens(challenge, result.answer, result.tokens, mode !== 'card');
         if (sequence?.length) shortcutState = { challenge, sequence };
         else if (correctChoice) shortcutState = { challenge, choice: correctChoice };
-        autoState = { challenge, sequence: sequence || [], answer: result.answer || '', index: result.index };
-        const choiceText = Number.isInteger(result.index) && story ? storyChoiceText(choices[result.index]) : '';
-        card(result.answer || choiceText || `Chọn đáp án ${result.index + 1}`);
+        autoState = correctChoices.length > 1 ? null : { challenge, sequence: sequence || [], answer: result.answer || '', index: result.index };
+        const choiceLabel = correctChoices.length > 1 ? correctChoices.map(choice => story ? storyChoiceText(choice) : choiceText(choice)).join(' / ')
+          : Number.isInteger(result.index) && story ? storyChoiceText(choices[result.index]) : '';
+        card(result.answer || choiceLabel || `Chọn đáp án ${result.index + 1}`);
       }
     } else { autoState = null; card('Chưa tìm thấy dữ liệu đáp án cho câu này.'); }
     observer?.observe(document.documentElement, observeOptions);
@@ -989,20 +1210,23 @@
 
   // ====== Cài đặt (thay chrome.storage bằng localStorage) ======
   const SKEY = 'duolingo-hint-settings-v1';
-  const settings = { hintEnabled: false, hintMode: 'full', autoCheck: false, autoContinue: true, ctrlMode: 'all' };
+  const settings = { hintEnabled: false, hintMode: 'full', autoContinue: true, ctrlMode: 'all' };
   try { Object.assign(settings, JSON.parse(localStorage.getItem(SKEY) || '{}')); } catch {}
+  delete settings.autoCheck;
   function saveSettings() { try { localStorage.setItem(SKEY, JSON.stringify(settings)); } catch {} }
   ctrlMode = settings.ctrlMode === 'one' ? 'one' : 'all';
   mode = ['compact', 'card', 'full'].includes(settings.hintMode) ? settings.hintMode : 'full';
-  autoCheck = Boolean(settings.autoCheck);
+  autoCheck = Boolean(settings.autoContinue);
   enabled = Boolean(settings.hintEnabled);
   if (enabled) start();
 
   function setSetting(key, value) {
-    settings[key] = value; saveSettings();
+    settings[key] = value;
+    if (key === 'autoContinue') { autoCheck = !!value; delete settings.autoCheck; }
+    saveSettings();
     if (key === 'ctrlMode') { ctrlMode = value === 'one' ? 'one' : 'all'; if (fillRun) fillRun.cancelled = true; }
     else if (key === 'autoCheck') { autoCheck = !!value; if (autoCheck) queueAutoCheck(); else { clearTimeout(autoTimer); autoTimer = null; } }
-    else if (key === 'autoContinue') { autoContinue = !!value; lastAutoContinued = null; if (autoContinue) startAutoContinue(); else { continueObserver?.disconnect(); continueObserver = null; } }
+    else if (key === 'autoContinue') { autoContinue = !!value; lastAutoContinued = null; if (autoContinue) startAutoContinue(); else { continueObserver?.disconnect(); continueObserver = null; clearTimeout(autoTimer); autoTimer = null; } }
     else if (key === 'hintMode') { mode = ['compact', 'card', 'full'].includes(value) ? value : 'full'; if (enabled) { clean(); schedule(); } }
     else if (key === 'hintEnabled') { enabled = !!value; enabled ? start() : stop(); }
   }
@@ -1049,11 +1273,10 @@
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png', alt: 'Duolingo Hint' }));
-    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png', alt: 'Ctrl' }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.15', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.15', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
-    const auto = switchRow('Tự động kiểm tra', 'Áp dụng khi đáp án khớp Hint', 'autoCheck');
-    const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'B\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c \u0111\u01b0\u1ee3c b\u1eadt', 'autoContinue');
+    const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ki\u1ec3m tra / Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi m\u1ed9t trong hai n\u00fat ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
     statusEl = h('p', { class: 'duo-hint-status' });
     const copy = h('button', { type: 'button', class: 'duo-hint-copy', onclick: async () => {
       try { await navigator.clipboard.writeText(statusText()); copy.textContent = 'Đã sao chép'; } catch { copy.textContent = 'Không sao chép được'; }
@@ -1061,7 +1284,7 @@
     } }, 'Sao chép trạng thái');
     panel = h('div', { id: 'duo-hint-panel', hidden: '' },
       h('h3', {}, 'Duolingo Hint ', h('small', {}, VERSION)),
-      hintSwitch.row, auto.row, autoContinueSwitch.row,
+      hintSwitch.row, autoContinueSwitch.row,
       radioGroup('Cách hiện Hint', 'mode', 'hintMode', [['compact', 'Chỉ hiện Hint rút gọn'], ['card', 'Chỉ hiện khối đáp án gợi ý'], ['full', 'Hiện đầy đủ Hint']]),
       radioGroup('Phím tắt Ctrl cho bài xếp từ', 'ctrl', 'ctrlMode', [['all', 'Tự động điền hết'], ['one', 'Mỗi lần bấm chọn một từ']]),
       h('p', { class: 'duo-hint-note' }, 'Hint mặc định tắt. Trạng thái được lưu cho lần sau.'),
