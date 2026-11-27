@@ -2,9 +2,14 @@
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
 // @version      1.2.8
-// @description  Hiện gợi ý câu trả lời khi học trên Duolingo (chuyển từ extension Duolingo Hint 1.2.8).
+// @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
-// @match        https://www.duolingo.com/* Runs in page context. The H button opens settings, the floating Ctrl button
+// @match        https://www.duolingo.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+/* Runs in page context. The H button opens settings, the floating Ctrl button
    uses the current answer hint, and Alt+H toggles Hint. */
 
 (() => {
