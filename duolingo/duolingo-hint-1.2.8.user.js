@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.17
+// @version      1.2.18
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -536,12 +536,13 @@
 .duo-hint-anchor { position: relative !important; overflow: visible !important; }
 .duo-hint-number { position: absolute; top: -7px; left: -7px; z-index: 3; display: grid; min-width: 20px; height: 20px; padding: 0 3px; place-items: center; border: 2px solid #fff; border-radius: 999px; color: #fff; background: #58a700; font: 800 11px/1 system-ui, sans-serif; pointer-events: none; box-shadow: 0 1px 3px #0004; }
 
-#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; display: grid; place-items: center; width: 48px; height: 48px; padding: 4px; border: 2px solid #fff; border-radius: 50%; background: #142328; cursor: pointer; box-shadow: 0 2px 8px #0004; }
-#duo-hint-ctrl img { display: block; width: 38px; height: 38px; object-fit: contain; pointer-events: none; }
+#duo-hint-ctrl { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2147483001; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 52px; height: 52px; margin: 0; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #142328; line-height: 0; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 2px 8px #0004; }
+#duo-hint-ctrl img { position: absolute; top: 50%; left: 50%; display: block; width: 42px; height: 42px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
 #duo-hint-ctrl:hover { filter: brightness(1.08); }
-#duo-hint-ctrl:disabled { opacity: .45; cursor: not-allowed; }
-#duo-hint-fab { position: fixed; left: 12px; bottom: 12px; z-index: 2147483000; display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #9aa5ad; cursor: pointer; opacity: .55; box-shadow: 0 2px 8px #0004; }
-#duo-hint-fab img { display: block; width: 27px; height: 27px; object-fit: contain; pointer-events: none; }
+#duo-hint-ctrl:active { cursor: grabbing; }
+#duo-hint-ctrl[aria-disabled="true"] { opacity: .45; }
+#duo-hint-fab { position: fixed; left: 12px; bottom: 12px; z-index: 2147483000; display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 38px; height: 38px; margin: 0; padding: 0; border: 2px solid #fff; border-radius: 50%; background: #9aa5ad; line-height: 0; cursor: pointer; opacity: .55; box-shadow: 0 2px 8px #0004; }
+#duo-hint-fab img { position: absolute; top: 50%; left: 50%; display: block; width: 30px; height: 30px; max-width: none; max-height: none; margin: 0; padding: 0; object-fit: contain; object-position: center; vertical-align: top; transform: translate(-50%, -50%); pointer-events: none; }
 #duo-hint-fab:hover, #duo-hint-fab.on { opacity: 1; }
 #duo-hint-fab.on { background: #58a700; }
 #duo-hint-panel { position: fixed; left: 12px; bottom: 56px; z-index: 2147483005; width: 290px; max-height: 80vh; max-height: calc(100dvh - 76px); overflow: auto; overscroll-behavior: contain; touch-action: pan-y; pointer-events: auto !important; box-sizing: border-box; padding: 14px; border: 2px solid #e5e5e5; border-radius: 16px; color: #3c3c3c; background: #fff; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 6px 24px #0003; }
@@ -566,7 +567,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.17';
+  const VERSION = '1.2.18';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -1306,16 +1307,80 @@
     return set;
   }
   let panel, fab, ctrlButton, statusEl, hintSwitch, statusTimer;
+  const CTRL_POSITION_KEY = 'duolingo-hint-ctrl-position-v1';
+  let ctrlPosition = null, ctrlDrag = null, suppressCtrlClick = false, suppressCtrlClickTimer;
+  try {
+    const stored = JSON.parse(localStorage.getItem(CTRL_POSITION_KEY) || 'null');
+    if (Number.isFinite(stored?.x) && Number.isFinite(stored?.y)) ctrlPosition = stored;
+  } catch {}
+  function clampCtrlPosition(left, top) {
+    if (!ctrlButton) return;
+    const rect = ctrlButton.getBoundingClientRect();
+    const margin = 6;
+    const x = Math.max(margin, Math.min(window.innerWidth - rect.width - margin, left));
+    const y = Math.max(margin, Math.min(window.innerHeight - rect.height - margin, top));
+    ctrlButton.style.left = `${x}px`;
+    ctrlButton.style.top = `${y}px`;
+    ctrlButton.style.right = 'auto';
+    ctrlButton.style.bottom = 'auto';
+    ctrlButton.style.transform = 'none';
+    return { left: x, top: y, width: rect.width, height: rect.height };
+  }
+  function applyCtrlPosition() {
+    if (!ctrlButton || !ctrlPosition) return;
+    const rect = ctrlButton.getBoundingClientRect();
+    clampCtrlPosition(ctrlPosition.x * window.innerWidth - rect.width / 2,
+      ctrlPosition.y * window.innerHeight - rect.height / 2);
+  }
+  function saveCtrlPosition() {
+    const rect = ctrlButton?.getBoundingClientRect();
+    if (!rect || !window.innerWidth || !window.innerHeight) return;
+    ctrlPosition = { x: (rect.left + rect.width / 2) / window.innerWidth, y: (rect.top + rect.height / 2) / window.innerHeight };
+    try { localStorage.setItem(CTRL_POSITION_KEY, JSON.stringify(ctrlPosition)); } catch {}
+  }
+  function finishCtrlDrag() {
+    if (!ctrlDrag) return;
+    if (ctrlDrag.moved) {
+      saveCtrlPosition();
+      suppressCtrlClick = true;
+      clearTimeout(suppressCtrlClickTimer);
+      suppressCtrlClickTimer = setTimeout(() => { suppressCtrlClick = false; }, 500);
+    }
+    ctrlDrag = null;
+  }
+  function installCtrlDrag() {
+    ctrlButton.addEventListener('pointerdown', event => {
+      if (event.button !== undefined && event.button !== 0) return;
+      const rect = ctrlButton.getBoundingClientRect();
+      ctrlDrag = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, left: rect.left, top: rect.top, moved: false };
+      try { ctrlButton.setPointerCapture(event.pointerId); } catch {}
+    });
+    ctrlButton.addEventListener('pointermove', event => {
+      if (!ctrlDrag || event.pointerId !== ctrlDrag.pointerId) return;
+      const dx = event.clientX - ctrlDrag.startX, dy = event.clientY - ctrlDrag.startY;
+      if (!ctrlDrag.moved && Math.hypot(dx, dy) < 5) return;
+      ctrlDrag.moved = true;
+      event.preventDefault();
+      clampCtrlPosition(ctrlDrag.left + dx, ctrlDrag.top + dy);
+    }, { passive: false });
+    ctrlButton.addEventListener('pointerup', finishCtrlDrag);
+    ctrlButton.addEventListener('pointercancel', finishCtrlDrag);
+    ctrlButton.addEventListener('lostpointercapture', finishCtrlDrag);
+  }
   function refresh() {
     if (hintSwitch) { hintSwitch.input.checked = enabled; hintSwitch.subEl.textContent = enabled ? 'Đang bật' : 'Đang tắt'; }
     if (statusEl) statusEl.textContent = statusText();
     if (fab) fab.classList.toggle('on', enabled);
-    if (ctrlButton) { ctrlButton.disabled = !enabled; ctrlButton.title = enabled ? 'Ch\u1ecdn g\u1ee3i y\u0301 b\u0103\u0300ng ph\u00edm Ctrl' : 'B\u1eadt Hint \u0111\u1ec3 d\u00f9ng'; }
+    if (ctrlButton) { ctrlButton.setAttribute('aria-disabled', String(!enabled)); ctrlButton.title = enabled ? 'K\u00e9o \u0111\u1ec3 di chuy\u1ec3n; nh\u1ea5n \u0111\u1ec3 ch\u1ecdn g\u1ee3i \u00fd' : 'K\u00e9o \u0111\u1ec3 di chuy\u1ec3n; b\u1eadt Hint \u0111\u1ec3 d\u00f9ng'; }
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.17', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
-    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: () => selectNextToken() }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.17', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-48.png?v=1.2.18', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: event => {
+      if (suppressCtrlClick) { event.preventDefault(); event.stopPropagation(); suppressCtrlClick = false; clearTimeout(suppressCtrlClickTimer); return; }
+      if (enabled) selectNextToken();
+    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.18', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    installCtrlDrag();
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ki\u1ec3m tra / Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi m\u1ed9t trong hai n\u00fat ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
     statusEl = h('p', { class: 'duo-hint-status' });
@@ -1336,8 +1401,10 @@
       if (!panel.hidden) { refresh(); statusTimer = setInterval(refresh, 1000); }
     });
     document.body.append(fab, panel, ctrlButton);
+    applyCtrlPosition();
     refresh();
   }
+  window.addEventListener('resize', applyCtrlPosition, { passive: true });
   document.addEventListener('keydown', event => {
     if (event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.code === 'KeyH' && !editableTarget(event.target)) {
       event.preventDefault(); setSetting('hintEnabled', !enabled); refresh();
