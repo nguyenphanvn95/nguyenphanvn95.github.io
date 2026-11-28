@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Duolingo Hint
 // @namespace    https://www.duolingo.com/
-// @version      1.2.28
+// @version      2.0.1
 // @description  Duolingo answer hints and shortcuts.
 // @icon         https://d35aaqx5ub95lt.cloudfront.net/images/700755cf688b76a1eba261e682def131.svg
 // @match        https://www.duolingo.com/*
@@ -94,9 +94,13 @@
       if (Array.isArray(value)) { stack.push(...value.slice(0, 100)); continue; }
       const type = value.challengeType || value.type;
       const hasAnswer = Number.isInteger(value.correctIndex) || Number.isInteger(value.correctIndices?.[0]) ||
-        Number.isInteger(value.correctAnswerIndex) || Number.isInteger(value.correctChoiceIndex) ||
-        Array.isArray(value.correctSolutions) || Array.isArray(value.correctTokens) || Array.isArray(value.pairs) ||
-        Array.isArray(value.phraseOrder) || value.challengeResponseTrackingProperties?.best_solution;
+        Number.isInteger(value.correctAnswerIndex) || Number.isInteger(value.correctChoiceIndex) || Number.isInteger(value.correctOptionIndex) ||
+        Number.isInteger(value.correctAnswer?.index) || typeof value.correctAnswer === 'string' || typeof value.correctSolution === 'string' ||
+        typeof value.solutionText === 'string' || typeof value.bestSolution === 'string' || typeof value.best_solution === 'string' ||
+        typeof value.fullText === 'string' || typeof value.isTrue === 'boolean' || Array.isArray(value.correctIndices) ||
+        Array.isArray(value.correctSolutions) || Array.isArray(value.correctAnswers) || Array.isArray(value.correctTokens) ||
+        Array.isArray(value.pairs) || Array.isArray(value.phraseOrder) || Array.isArray(value.displayTokens) ||
+        Array.isArray(value.displayTableTokens) || value.challengeResponseTrackingProperties?.best_solution;
       if (typeof type === 'string' && hasAnswer) candidates.push(value);
       for (const child of Object.values(value)) if (child && typeof child === 'object') stack.push(child);
     }
@@ -191,6 +195,7 @@
     return originalSend.apply(this, args);
   };
   function selectFromSession(req, availableChallenges = sessionChallenges) {
+    const valueText = value => typeof value === 'string' ? value : [value?.text, value?.label, value?.value, value?.word, value?.translation].find(x => typeof x === 'string') || '';
     const screen = norm(req.screen);
     const visible = (req.words?.length ? req.words : req.choices || []).map(norm).filter(Boolean);
     const context = Array.isArray(req.hintWords) ? norm(req.hintWords.join('')) : '';
@@ -215,19 +220,19 @@
       if (expectedType && challengeType !== expectedType.toLowerCase()) continue;
       if (isAssist && challengeType && !/^assist$/i.test(challengeType)) continue;
       if (isListen && !/^listenTap$/i.test(challengeType)) continue;
-      if (/challenge-listenMatch(?:\s|$)/i.test(kind) && challengeType && !/^listenMatch$/i.test(challengeType)) continue;
-      if (/challenge-listenMatch(?:\s|$)/i.test(kind) && Array.isArray(c.pairs)) {
+      if (/challenge-(?:listen)?Match(?:\s|$)/i.test(kind) && challengeType && !/^(?:listen)?match$/i.test(challengeType)) continue;
+      if (/challenge-(?:listen)?Match(?:\s|$)/i.test(kind) && Array.isArray(c.pairs)) {
         const available = (req.words || []).map((word, index) => ({ word: norm(word), index, used: false }));
         const pairIndices = [], pairs = [];
         for (const pair of c.pairs) {
-          const left = norm(pair?.learningWord ?? pair?.left ?? pair?.source ?? '');
-          const right = norm(pair?.translation ?? pair?.right ?? pair?.target ?? '');
+          const left = norm(pair?.learningWord ?? pair?.left ?? pair?.source ?? pair?.sourceWord ?? '');
+          const right = norm(pair?.translation ?? pair?.right ?? pair?.target ?? pair?.targetWord ?? '');
           const leftToken = available.find(token => !token.used && token.word === left);
           const rightToken = available.find(token => !token.used && token !== leftToken && token.word === right);
           if (!left || !right || !leftToken || !rightToken) { pairIndices.length = 0; pairs.length = 0; break; }
           leftToken.used = true; rightToken.used = true;
           pairIndices.push({ number: pairIndices.length + 1, indices: [leftToken.index, rightToken.index] });
-          pairs.push([pair.learningWord ?? pair.left ?? pair.source, pair.translation ?? pair.right ?? pair.target]);
+          pairs.push([pair.learningWord ?? pair.left ?? pair.source ?? pair.sourceWord, pair.translation ?? pair.right ?? pair.target ?? pair.targetWord]);
         }
         if (pairIndices.length && pairIndices.reduce((n, pair) => n + pair.indices.length, 0) === available.length) {
           const score = 500 + pairIndices.length;
@@ -235,16 +240,17 @@
         }
         continue;
       }
-      const rawChoices = Array.isArray(c.choices) ? c.choices
-        : isListen && Array.isArray(c.correctTokens) && Array.isArray(c.wrongTokens) ? [...c.correctTokens, ...c.wrongTokens] : [];
-      const bank = rawChoices.map(x => norm(typeof x === 'string' ? x : x?.text)).filter(Boolean);
+      const rawChoices = Array.isArray(c.choices) ? c.choices : Array.isArray(c.options) ? c.options : Array.isArray(c.answers) ? c.answers
+        : isListen && Array.isArray(c.correctTokens) && Array.isArray(c.wrongTokens) ? [...c.correctTokens, ...c.wrongTokens]
+        : Array.isArray(c.displayTokens) ? c.displayTokens.filter(x => x && !x.isBlank) : Array.isArray(c.displayTableTokens) ? c.displayTableTokens.flat() : [];
+      const bank = rawChoices.map(x => norm(valueText(x))).filter(Boolean);
       const remaining = bank.slice();
       let overlap = 0;
       for (const word of visible) { const i = remaining.indexOf(word); if (i >= 0) { overlap++; remaining.splice(i, 1); } }
       const bankMatch = visible.length > 0 && bank.length > 0 && overlap === visible.length;
       // Listening questions have no visible prompt: require the whole word bank to match.
       if ((isListen || isAssist) && (!bankMatch || visible.length !== bank.length)) continue;
-      const prompt = norm(c.prompt);
+      const prompt = norm(c.prompt || c.question || c.statement || c.sentence || c.transcript || c.text);
       const promptMatch = prompt.length >= 2 && screen.includes(prompt);
       const displayed = Array.isArray(c.displayTokens) ? norm(c.displayTokens.filter(x => x && !x.isBlank).map(x => x.text || '').join('')) : '';
       const contextMatch = context.length >= 2 && displayed.length >= 2 && (context === displayed || context.includes(displayed) || displayed.includes(context));
@@ -252,20 +258,26 @@
       if (/tapComplete/i.test(req.kind || '') && bank.length <= 2 && context && !contextMatch && !promptMatch) continue;
       if (!promptMatch && !bankMatch && !c.currentScope) continue;
       const score = (c.currentScope ? 250 : 0) + (contextMatch ? 150 : 0) + (promptMatch ? 100 : 0) + (bankMatch ? 40 + overlap : 0) - (bankMatch ? Math.abs(bank.length - visible.length) : 0);
-      let answer = Array.isArray(c.correctSolutions) ? c.correctSolutions.find(x => typeof x === 'string') : '';
-      let tokens = Array.isArray(c.correctTokens) ? c.correctTokens.filter(x => typeof x === 'string') : [];
-      if (!tokens.length && /^(tapComplete|listenTap)$/i.test(c.type || '') && Array.isArray(c.correctIndices) && Array.isArray(c.choices)) {
-        const indices = c.correctIndices;
-        if (indices.length && indices.every(i => Number.isInteger(i) && i >= 0 && i < c.choices.length)) {
-          tokens = indices.map(i => typeof c.choices[i] === 'string' ? c.choices[i] : c.choices[i]?.text).filter(x => typeof x === 'string' && x.trim());
-          if (tokens.length !== indices.length) tokens = [];
+      const bestSolution = c.challengeResponseTrackingProperties?.best_solution;
+      let answer = [c.correctSolution, c.solutionText, c.solutionTranslation, c.bestSolution, c.best_solution, c.fullText, bestSolution,
+        typeof c.correctAnswer === 'string' ? c.correctAnswer : valueText(c.correctAnswer),
+        ...(Array.isArray(c.correctSolutions) ? c.correctSolutions.map(valueText) : []), ...(Array.isArray(c.correctAnswers) ? c.correctAnswers.map(valueText) : [])]
+        .find(x => typeof x === 'string' && x.trim()) || '';
+      let tokens = Array.isArray(c.correctTokens) ? c.correctTokens.map(valueText).filter(x => x.trim()) : [];
+      const choiceList = Array.isArray(c.choices) ? c.choices : Array.isArray(c.options) ? c.options : Array.isArray(c.answers) ? c.answers : rawChoices;
+      const orderedIndices = Array.isArray(c.correctIndices) ? c.correctIndices
+        : Array.isArray(c.phraseOrder) ? c.phraseOrder.map(item => Number.isInteger(item) ? item : item?.index) : [];
+      if (!tokens.length && orderedIndices.length && choiceList.length) {
+        if (orderedIndices.length && orderedIndices.every(i => Number.isInteger(i) && i >= 0 && i < choiceList.length)) {
+          tokens = orderedIndices.map(i => valueText(choiceList[i])).filter(x => x.trim());
+          if (tokens.length !== orderedIndices.length) tokens = [];
         }
       }
       if (isListen && tokens.length) {
         const remainingChoices = bank.slice();
         if (!tokens.every(word => { const i = remainingChoices.indexOf(norm(word)); if (i < 0) return false; remainingChoices.splice(i, 1); return true; })) continue;
       }
-      if (!tokens.length && /tapComplete/i.test(c.type || '') && Array.isArray(c.displayTokens)) {
+      if (!tokens.length && /tapComplete|listenTap|translate|gapFill/i.test(challengeType) && Array.isArray(c.displayTokens)) {
         const blanks = c.displayTokens.filter(x => x?.isBlank && typeof x.text === 'string' && x.text.trim()).map(x => x.text);
         const available = bank.slice();
         if (blanks.length && blanks.every(word => { const i = available.indexOf(norm(word)); if (i < 0) return false; available.splice(i, 1); return true; })) tokens = blanks;
@@ -274,23 +286,29 @@
       const singleCorrectIndex = Number.isInteger(c.correctIndex) ? c.correctIndex
         : Number.isInteger(c.correctAnswerIndex) ? c.correctAnswerIndex
         : Number.isInteger(c.correctChoiceIndex) ? c.correctChoiceIndex
+        : Number.isInteger(c.correctOptionIndex) ? c.correctOptionIndex
+        : Number.isInteger(c.correctAnswer?.index) ? c.correctAnswer.index
         : Array.isArray(c.correctIndices) && c.correctIndices.length === 1 ? c.correctIndices[0] : -1;
-      const correctIndices = Array.isArray(c.correctIndices) ? [...new Set(c.correctIndices.filter(i => Number.isInteger(i) && i >= 0 && i < (c.choices || []).length))]
-        : singleCorrectIndex >= 0 && singleCorrectIndex < (c.choices || []).length ? [singleCorrectIndex] : [];
-      if (singleCorrectIndex >= 0 && Array.isArray(c.choices) && singleCorrectIndex < c.choices.length &&
-          /gapFill|tapComplete|select|sameDifferent|assist|podcast-judge/i.test(req.kind || '')) {
-        const choice = c.choices[singleCorrectIndex]; correctChoice = typeof choice === 'string' ? choice : choice?.text || '';
+      const correctIndices = Array.isArray(c.correctIndices) ? [...new Set(c.correctIndices.filter(i => Number.isInteger(i) && i >= 0 && i < choiceList.length))]
+        : singleCorrectIndex >= 0 && singleCorrectIndex < choiceList.length ? [singleCorrectIndex] : [];
+      if (singleCorrectIndex >= 0 && singleCorrectIndex < choiceList.length) {
+        correctChoice = valueText(choiceList[singleCorrectIndex]);
       }
-      if (correctIndices.length > 1 && Array.isArray(c.choices)) {
-        const correctChoices = correctIndices.map(i => typeof c.choices[i] === 'string' ? c.choices[i] : c.choices[i]?.text).filter(Boolean);
+      if (correctIndices.length > 1 && choiceList.length) {
+        const correctChoices = correctIndices.map(i => valueText(choiceList[i])).filter(Boolean);
         if (correctChoices.length === correctIndices.length) answer = correctChoices.join(' / ');
       }
       if (!correctChoice && c.currentScope && singleCorrectIndex >= 0 && singleCorrectIndex < (req.choices || []).length) correctChoice = req.choices[singleCorrectIndex];
+      if (!correctChoice && typeof c.isTrue === 'boolean') {
+        const yes = /true|correct|right|yes|đúng|是/i;
+        const no = /false|incorrect|wrong|no|không|不/i;
+        correctChoice = (req.choices || []).find(choice => c.isTrue ? yes.test(choice) : no.test(choice)) || '';
+      }
       if (correctChoice) answer = correctChoice;
       if (!answer && c.type === 'listenTap') answer = c.prompt || '';
       if (!answer && tokens.length) answer = c.challengeResponseTrackingProperties?.best_solution || '';
       if (!answer && tokens.length) answer = tokens.join(' ');
-      if (!answer) continue;
+      if (!answer && singleCorrectIndex < 0 && !correctIndices.length) continue;
       const audioKey = typeof c.tts === 'string' ? c.tts.split(/[?#]/, 1)[0] : '';
       const audioRank = audioKey && Array.isArray(req.audioUrls) ? req.audioUrls.findIndex(url => String(url).split(/[?#]/, 1)[0] === audioKey) : -1;
       const audioMatch = audioRank >= 0;
@@ -518,15 +536,19 @@
         for (const item of obj.slice(0, 100)) walk(item, depth + 1);
         return;
       }
-      if (/challenge-assist(?:\s|$)/i.test(req.kind || '') && (!obj.type || /^assist$/i.test(obj.type)) && Array.isArray(obj.choices) && Number.isInteger(obj.correctIndex)) {
-        reactChallenges.push({ ...obj, type: 'assist' });
+      const objOptions = obj.choices || obj.options || obj.answers;
+      const correctIndex = obj.correctIndex ?? obj.correctAnswerIndex ?? obj.correctChoiceIndex ?? obj.correctOptionIndex ?? obj.correctAnswer?.index;
+      const hasCorrectValue = Number.isInteger(correctIndex) || typeof obj.correctAnswer === 'string' || typeof obj.correctSolution === 'string' ||
+        typeof obj.solutionText === 'string' || typeof obj.bestSolution === 'string' || typeof obj.best_solution === 'string' ||
+        typeof obj.fullText === 'string' || Array.isArray(obj.correctSolutions) || Array.isArray(obj.correctAnswers) ||
+        Array.isArray(obj.correctTokens) || Array.isArray(obj.phraseOrder) || Array.isArray(obj.correctIndices) || typeof obj.isTrue === 'boolean';
+      if (/challenge-assist(?:\s|$)/i.test(req.kind || '') && (!obj.type || /^assist$/i.test(obj.type)) && Array.isArray(objOptions) && hasCorrectValue) {
+        reactChallenges.push({ ...obj, choices: objOptions, correctIndex });
       }
       if (/challenge-(?:select|sameDifferent)(?:\s|$)/i.test(req.kind || '') &&
-          (sameOptions(obj.choices) || (/challenge-sameDifferent(?:\s|$)/i.test(req.kind || '') && /^sameDifferent$/i.test(obj.type || ''))) &&
-          (Number.isInteger(obj.correctIndex) || Number.isInteger(obj.correctAnswerIndex) || Number.isInteger(obj.correctChoiceIndex) ||
-            (Array.isArray(obj.correctIndices) && obj.correctIndices.length === 1))) {
+          (sameOptions(objOptions) || (/challenge-sameDifferent(?:\s|$)/i.test(req.kind || '') && /^sameDifferent$/i.test(obj.type || ''))) && hasCorrectValue) {
         const type = /challenge-select(?:\s|$)/i.test(req.kind || '') ? 'select' : 'sameDifferent';
-        reactChallenges.push({ ...obj, type, currentScope: true, correctIndex: obj.correctIndex ?? obj.correctAnswerIndex ?? obj.correctChoiceIndex ?? obj.correctIndices[0] });
+        reactChallenges.push({ ...obj, choices: objOptions, type, currentScope: true, correctIndex });
       }
       if (/tapComplete/i.test(req.kind || '') && Array.isArray(obj.choices) && (Array.isArray(obj.correctIndices) || Array.isArray(obj.displayTokens))) {
         reactChallenges.push({ ...obj, type: obj.type || 'tapComplete' });
@@ -601,6 +623,25 @@
 #duo-hint-panel .duo-hint-close { position: absolute; top: 8px; right: 8px; z-index: 1; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin: 0; padding: 0; border: 0; border-radius: 8px; color: #777; background: transparent; font: 400 26px/1 system-ui, sans-serif; cursor: pointer; }
 #duo-hint-panel .duo-hint-close:hover { color: #333; background: #f2f2f2; }
 #duo-hint-panel .duo-hint-note, #duo-hint-panel .duo-hint-status, #duo-hint-panel .duo-hint-copy { display: none !important; }
+.duo-hint-tabs { display: flex; gap: 6px; margin: 0 0 10px; padding: 3px; border-radius: 10px; background: #f1f1f1; }
+.duo-hint-tabs button { flex: 1; min-height: 34px; border: 0; border-radius: 8px; color: #555; background: transparent; font: 700 13px system-ui, sans-serif; cursor: pointer; }
+.duo-hint-tabs button[aria-selected="true"] { color: #347900; background: #fff; box-shadow: 0 1px 4px #0002; }
+.duo-hint-pane { display: none; }
+.duo-hint-pane.active { display: block; }
+.duo-hint-runner-note { margin: 8px 0; color: #666; font-size: 12px; }
+.duo-hint-runner-status { min-height: 38px; margin: 10px 0; padding: 9px; border-radius: 9px; color: #444; background: #f5f5f5; font-size: 12px; }
+.duo-hint-runner-actions { display: flex; gap: 8px; }
+.duo-hint-runner-actions button { flex: 1; min-height: 38px; border: 0; border-radius: 9px; color: #fff; background: #58cc02; font: 700 13px system-ui, sans-serif; cursor: pointer; }
+.duo-hint-runner-actions button:last-child { background: #777; }
+.duo-hint-runner-actions button:disabled { opacity: .5; cursor: default; }
+.duo-hint-answer-counter { position: absolute; top: -25px; right: 0; z-index: 10; display: flex; align-items: center; gap: 10px; padding: 2px 7px; border-radius: 8px; color: #eaf4f7; background: #26383dbb; font: 700 12px/1.4 system-ui, sans-serif; white-space: nowrap; pointer-events: none; }
+.duo-hint-correct-count { color: #8ee000; }
+.duo-hint-incorrect-count { color: #ff7777; }
+.duo-hint-heart-count { color: #ff7389; }
+.duo-hint-daily-stats { display: grid; gap: 5px; margin: 12px 8px; padding: 12px 14px; border: 2px solid #58cc02; border-radius: 12px; color: #263238; background: #fff; font: 600 13px/1.4 system-ui, sans-serif; }
+.duo-hint-daily-stats strong { font-size: 14px; }
+.duo-hint-hidden-promo, .duo-hint-tournament-hidden { display: none !important; }
+.duo-hint-streak-badge { position: absolute; top: -3px; right: -5px; min-width: 15px; padding: 1px 3px; border: 1px solid #fff; border-radius: 9px; color: #fff; background: #58a700; font: 700 9px/1.2 system-ui, sans-serif; text-align: center; }
 #duo-hint-panel .duo-hint-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 8px 0; cursor: pointer; }
 #duo-hint-panel .duo-hint-row small { display: block; color: #777; }
 #duo-hint-panel .duo-hint-row input { position: absolute; opacity: 0; pointer-events: none; }
@@ -620,7 +661,7 @@
 })();
 
 (() => {
-  const VERSION = '1.2.28';
+  const VERSION = '2.0.1';
   const ICON_HINT_FALLBACK = 'data:image/png;base64,' +
     'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAxFSURB' +
     'VGhD7VkJdFRFFq3/W3BEGRxwA9PdQVA5jI5CUFBhXIZthkXEWY6C54yMRkkv6Wyk0wQRYhJCdscTFXdxXBABGQcXliSQnRBCCASSZgmQhCSQQMCQdPermveq' +
@@ -760,14 +801,145 @@
     'HA9Hs66LEe/6ybD7NhrOm7nlnNIGVXZ8zYMIJlhiqivjLyS+JItukzecOC1SZcvHeDh7W63XXUfKYtb4/7O/03S76/Xq7W00b0IBthCtU+XAx894PrwarXr+' +
     'UuMG4ojAnIg7Yotvh+v2eovu7Go+/mnDTpNAe1U5ZXm72dzfPz9Pp4PBnWXd3Q0Gg+l0+vy8uTVvKI4e/geYsthqgBBgXgAAAABJRU5ErkJggg==';
   const REQUEST = 'duo-hint-request-v1', RESPONSE = 'duo-hint-response-v1', CARD = 'duolingo-hint-card';
-  let enabled = false, autoContinue = true, mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
+  let enabled = false, autoContinue = true, autoRun = false, autoRunStage = 'solve', autoRunBusy = false, autoRunTimer = null, autoRunChallenge = null, autoRunQuestionKey = '';
+  let mode = 'full', ctrlMode = 'all', observer, continueObserver, lastAutoContinued = null, pending = false, timer, requestId = 0;
+  let showExtraStatusInTest = true, onlyShowExp = false;
+  let correctAnswers = 0, incorrectAnswers = 0, counterBar = null, currentPath = location.pathname;
+  let dailyStatsCache = null, dailyStatsAt = 0, dailyStatsRequest = null, healthCache = null, healthAt = 0, healthRequest = null;
+  let streakCache = null, streakAt = 0, streakRequest = null, streakTimer = null, fabStreakEl = null;
+  let autoRunStatus = 'Chưa chạy';
   let diagnostics = { bridge: 'chưa kiểm tra', reactFibers: null, pairs: 0, result: 'chưa kiểm tra' };
   const savedSequences = new WeakMap();
   const podcastPairs = new WeakMap();
   const heldKeys = new Set();
+  const countedFeedback = new WeakSet();
   const observeOptions = { childList: true, subtree: true, attributes: true, attributeFilter: ['data-test', 'aria-disabled', 'aria-checked', 'aria-pressed', 'disabled', 'aria-hidden', 'hidden', 'class'] };
   let ctrlArmed = false, shortcutState = null, clickLocked = false, fillRun = null;
   const normalize = s => String(s || '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
+  function accountUserId() {
+    try { return Object.keys(JSON.parse(localStorage.getItem('duo.avatarsIntro') || '{}'))[0] || ''; } catch { return ''; }
+  }
+  function jwtToken() {
+    const entry = document.cookie.split(';').map(value => value.trim()).find(value => value.startsWith('jwt_token='));
+    try { return entry ? decodeURIComponent(entry.slice('jwt_token='.length)) : ''; } catch { return ''; }
+  }
+  async function authenticatedDuolingoGet(url) {
+    const token = jwtToken();
+    if (!token) throw new Error('JWT cookie unavailable');
+    const response = await fetch(url, { headers: { Authorization: `Bearer ${token}`, Accept: 'application/json; charset=UTF-8' } });
+    if (!response.ok) throw new Error(`API ${response.status}`);
+    return response.json();
+  }
+  function getDailyStats() {
+    if (dailyStatsCache && Date.now() - dailyStatsAt < 60000) return Promise.resolve(dailyStatsCache);
+    if (dailyStatsRequest) return dailyStatsRequest;
+    const userId = accountUserId();
+    if (!userId) return Promise.reject(new Error('Duolingo user ID unavailable'));
+    const query = new URLSearchParams({ timezone: 'Asia/Bangkok', ui_language: 'en', _: String(Date.now()) });
+    dailyStatsRequest = authenticatedDuolingoGet(`https://goals-api.duolingo.com/users/${encodeURIComponent(userId)}/progress?${query}`)
+      .then(data => { dailyStatsCache = data; dailyStatsAt = Date.now(); return data; })
+      .finally(() => { dailyStatsRequest = null; });
+    return dailyStatsRequest;
+  }
+  function getPracticeHealth() {
+    if (healthCache && Date.now() - healthAt < 15000) return Promise.resolve(healthCache);
+    if (healthRequest) return healthRequest;
+    const userId = accountUserId();
+    if (!userId) return Promise.reject(new Error('Duolingo user ID unavailable'));
+    const query = new URLSearchParams({ fields: 'health', timezone: 'Asia/Bangkok', ui_language: 'en', _: String(Date.now()) });
+    healthRequest = authenticatedDuolingoGet(`https://www.duolingo.com/2017-06-30/users/${encodeURIComponent(userId)}?${query}`)
+      .then(data => { healthCache = data; healthAt = Date.now(); return data; })
+      .finally(() => { healthRequest = null; });
+    return healthRequest;
+  }
+  function refreshStreak() {
+    if (streakCache !== null && Date.now() - streakAt < 15 * 60 * 1000) { updateStreakBadge(); return Promise.resolve(streakCache); }
+    if (streakRequest) return streakRequest;
+    const userId = accountUserId();
+    if (!userId) return Promise.resolve(null);
+    const query = new URLSearchParams({ fields: 'streak', timezone: 'Asia/Bangkok', ui_language: 'en', _: String(Date.now()) });
+    streakRequest = authenticatedDuolingoGet(`https://www.duolingo.com/2017-06-30/users/${encodeURIComponent(userId)}?${query}`)
+      .then(data => {
+        const raw = data?.streak ?? data?.streakData?.currentStreak?.length;
+        if (raw === undefined || raw === null || !Number.isFinite(Number(raw))) throw new Error('Streak unavailable');
+        streakCache = Math.max(0, Number(raw)); streakAt = Date.now(); updateStreakBadge(); return streakCache;
+      }).catch(() => null).finally(() => { streakRequest = null; });
+    return streakRequest;
+  }
+  function updateStreakBadge() {
+    if (!fabStreakEl) return;
+    fabStreakEl.hidden = streakCache === null;
+    if (streakCache !== null) fabStreakEl.textContent = String(streakCache);
+  }
+  function formatDuration(totalSeconds) {
+    const value = Math.max(0, Math.floor(Number(totalSeconds) || 0));
+    return [Math.floor(value / 3600), Math.floor((value % 3600) / 60), value % 60].map(part => String(part).padStart(2, '0')).join(':');
+  }
+  function sidebarRoot() { return document.querySelector('[data-test="home"] > *:nth-child(1) > *:first-child'); }
+  function updateDailyStatsWidget(sidebar) {
+    if (!onlyShowExp || !sidebar) return;
+    let widget = sidebar.querySelector('.duo-hint-daily-stats');
+    if (!widget) {
+      widget = document.createElement('section'); widget.className = 'duo-hint-daily-stats';
+      widget.innerHTML = '<strong>Tiến độ hôm nay</strong><span class="duo-hint-daily-xp">Daily XP: …</span><span class="duo-hint-daily-time">Thời gian học: …</span>';
+      const footer = sidebar.querySelector('[data-test="footer-links"]');
+      if (footer?.parentElement === sidebar) sidebar.insertBefore(widget, footer); else sidebar.append(widget);
+    }
+    if (widget.dataset.loaded || widget.dataset.loading) return;
+    widget.dataset.loading = '1';
+    getDailyStats().then(data => {
+      const progress = data?.goals?.progress || {};
+      widget.querySelector('.duo-hint-daily-xp').textContent = `Daily XP: ${Number(progress.daily_goal_daily_quest) || 0}`;
+      widget.querySelector('.duo-hint-daily-time').textContent = `Thời gian học: ${formatDuration(progress.time_spent_core_daily_quest)}`;
+      widget.dataset.loaded = '1';
+    }).catch(() => {
+      widget.querySelector('.duo-hint-daily-xp').textContent = 'Daily XP: không tải được';
+      widget.querySelector('.duo-hint-daily-time').textContent = 'Thời gian học: không tải được';
+      widget.dataset.loaded = '1';
+    }).finally(() => { delete widget.dataset.loading; });
+  }
+  function applyOnlyShowExp() {
+    const sidebar = sidebarRoot();
+    if (!sidebar) return;
+    const isHome = location.pathname === '/' || location.pathname === '/learn';
+    if (!onlyShowExp || !isHome) {
+      sidebar.querySelectorAll('.duo-hint-hidden-promo').forEach(element => element.classList.remove('duo-hint-hidden-promo'));
+      sidebar.querySelectorAll('.duo-hint-daily-stats').forEach(element => element.remove());
+      document.querySelectorAll('.duo-hint-tournament-hidden').forEach(element => element.classList.remove('duo-hint-tournament-hidden'));
+      return;
+    }
+    const keep = ['[data-test="courses-menu"]', '[data-test="footer-links"]', '.duo-hint-daily-stats'];
+    for (const child of sidebar.children) child.classList.toggle('duo-hint-hidden-promo', !keep.some(selector => child.matches(selector) || child.querySelector(selector)));
+    document.querySelectorAll('[data-test*="leaderboard"], [data-test*="tournament"]').forEach(element => element.classList.add('duo-hint-tournament-hidden'));
+    updateDailyStatsWidget(sidebar);
+  }
+  function updateProgressCounter() {
+    const path = location.pathname;
+    if (path !== currentPath) { currentPath = path; correctAnswers = 0; incorrectAnswers = 0; counterBar = null; }
+    const bar = document.querySelector('[role="progressbar"]');
+    if (!bar) { if (counterBar && !counterBar.isConnected) { counterBar = null; correctAnswers = 0; incorrectAnswers = 0; } return; }
+    if (counterBar && counterBar !== bar) { correctAnswers = 0; incorrectAnswers = 0; }
+    counterBar = bar;
+    const correct = document.querySelector('[data-test="blame blame-correct"]');
+    const incorrect = document.querySelector('[data-test="blame blame-incorrect"]');
+    if (correct && !countedFeedback.has(correct)) { countedFeedback.add(correct); correctAnswers++; }
+    if (incorrect && !countedFeedback.has(incorrect)) { countedFeedback.add(incorrect); incorrectAnswers++; }
+    let counter = bar.querySelector(':scope > .duo-hint-answer-counter');
+    if (!showExtraStatusInTest) { counter?.remove(); return; }
+    if (!counter) {
+      counter = document.createElement('div'); counter.className = 'duo-hint-answer-counter'; counter.setAttribute('aria-live', 'polite');
+      counter.innerHTML = '<span class="duo-hint-correct-count"></span><span class="duo-hint-incorrect-count"></span><span class="duo-hint-heart-count" hidden></span>';
+      bar.append(counter);
+    }
+    counter.querySelector('.duo-hint-correct-count').textContent = `✓ ${correctAnswers}`;
+    counter.querySelector('.duo-hint-incorrect-count').textContent = `✗ ${incorrectAnswers}`;
+    if (!path.startsWith('/practice')) return;
+    const heart = counter.querySelector('.duo-hint-heart-count'); heart.hidden = false;
+    if (heart.dataset.loaded || heart.dataset.loading) return;
+    heart.dataset.loading = '1';
+    getPracticeHealth().then(data => { heart.textContent = `♥ ${Number(data?.health?.hearts) || 0}`; heart.dataset.loaded = '1'; })
+      .catch(() => { heart.textContent = '♥ —'; }).finally(() => { delete heart.dataset.loading; });
+  }
   function root() {
     const lesson = document.querySelector('[data-test^="challenge challenge-"]');
     if (lesson) return lesson;
@@ -1068,11 +1240,14 @@
     }) || null;
   }
   function maybeAutoContinue() {
-    if (!autoContinue) return;
+    if (!autoContinue || autoRun) return;
+    if (document.querySelector('[data-test="blame blame-incorrect"]')) { lastAutoContinued = null; return; }
+    const feedback = document.querySelector('[data-test="blame blame-correct"]');
+    if (!feedback) { lastAutoContinued = null; return; }
     const button = continueButton();
     if (!button) { lastAutoContinued = null; return; }
-    if (lastAutoContinued?.button === button && lastAutoContinued.stage === 'continue') return;
-    lastAutoContinued = { button, stage: 'continue' };
+    if (lastAutoContinued?.button === button && lastAutoContinued.feedback === feedback) return;
+    lastAutoContinued = { button, feedback, stage: 'continue' };
     button.click();
   }
   function startAutoContinue() {
@@ -1085,6 +1260,199 @@
       });
     }
     maybeAutoContinue();
+  }
+  function autoRunReport(message) {
+    autoRunStatus = message;
+    if (autoRunStatusEl) autoRunStatusEl.textContent = message;
+    if (autoRunStartButton) autoRunStartButton.disabled = autoRun;
+    if (autoRunStopButton) autoRunStopButton.disabled = !autoRun;
+  }
+  function stopAutoRun(message = 'Đã dừng') {
+    autoRun = false;
+    autoRunBusy = false;
+    autoRunStage = 'solve';
+    autoRunChallenge = null;
+    clearTimeout(autoRunTimer);
+    autoRunTimer = null;
+    autoRunReport(message);
+    if (!enabled) stop();
+  }
+  function startAutoRun() {
+    autoRun = true;
+    autoRunStage = 'solve';
+    autoRunBusy = false;
+    autoRunChallenge = null;
+    lastAutoContinued = null;
+    autoRunReport('Đang chờ câu hỏi…');
+    start();
+    schedule();
+    autoRunTimer = setTimeout(() => { if (autoRun && !root()) stopAutoRun('No active lesson found; stopped.'); }, 5000);
+  }
+  function autoButtonEnabled(button) {
+    return !!button && !button.disabled && button.getAttribute('aria-disabled') !== 'true' && button.getClientRects().length > 0;
+  }
+  function autoCheckButton() {
+    const button = document.querySelector('[data-test="player-next"]');
+    const text = (button?.innerText || button?.textContent || '').trim();
+    return /^(kiểm tra|check)(?:\s|\(|$)/i.test(text) ? button : null;
+  }
+  function autoSelected(button) {
+    return button.disabled || button.getAttribute('aria-disabled') === 'true' || button.getAttribute('aria-checked') === 'true' ||
+      button.getAttribute('aria-pressed') === 'true' || !!button.querySelector('input:checked');
+  }
+  function autoRunQuestionSignature(challenge) {
+    if (!challenge) return '';
+    const text = normalize(challenge.textContent || '');
+    const buttons = [...challenge.querySelectorAll('[data-test="challenge-choice"], [data-test="stories-choice"], button[data-test*="challenge-tap-token"]')]
+      .map(button => normalize(choiceText(button) || tokenText(button) || button.getAttribute('aria-label') || '')).join('|');
+    return `${challenge.getAttribute('data-test') || ''}:${text}:${buttons}`;
+  }
+  function autoRunAnswer(result, challenge) {
+    if (!autoRun || autoRunBusy || !challenge || autoRunChallenge === challenge) return;
+    autoRunChallenge = challenge;
+    autoRunQuestionKey = autoRunQuestionSignature(challenge);
+    clearTimeout(autoRunTimer);
+    autoRunBusy = true;
+    autoRunStage = 'solve';
+    autoRunReport('Đang điền đáp án…');
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const perform = async () => {
+      let acted = false;
+      if (result.pairIndices?.length) {
+        const grid = challenge.querySelector('[style*="--match-challenge-rows"]');
+        const buttons = grid ? [...grid.querySelectorAll('button[data-test$="-challenge-tap-token"]')] : [];
+        for (const pair of result.pairIndices) for (const index of pair.indices || []) {
+          const button = buttons[index];
+          if (!button || !autoButtonEnabled(button) || autoSelected(button)) continue;
+          button.click(); acted = true; await wait(1000);
+          if (!autoRun || root() !== challenge) return false;
+        }
+      } else if (result.pairs?.length) {
+        const buttons = [...challenge.querySelectorAll('button[data-test*="challenge-tap-token"]')];
+        const used = new Set();
+        for (const pair of result.pairs) for (const word of pair) {
+          const button = buttons.find(el => !used.has(el) && normalize(tokenText(el)) === normalize(word));
+          if (!button) return false;
+          used.add(button);
+          if (!autoButtonEnabled(button) || autoSelected(button)) continue;
+          button.click(); acted = true; await wait(1000);
+          if (!autoRun || root() !== challenge) return false;
+        }
+      } else {
+        const story = challenge.getAttribute('data-test') === 'stories-element';
+        const choices = [...challenge.querySelectorAll(story ? '[data-test="stories-choice"]' : '[data-test="challenge-choice"]')];
+        const indexes = Array.isArray(result.indices) ? result.indices : Number.isInteger(result.index) ? [result.index] : [];
+        let matchedChoice = false;
+        if (!indexes.length && choices.length && result.answer) {
+          const choice = resolveChoice(challenge, result.answer, -1);
+          if (choice && autoButtonEnabled(choice)) {
+            matchedChoice = true;
+            acted = true;
+            if (!autoSelected(choice)) { choice.click(); acted = true; await wait(1000); }
+          }
+        }
+        if (indexes.length) {
+          for (const index of indexes) {
+            let button = choices[index];
+            if (!button && result.answer) button = resolveChoice(challenge, result.answer, -1);
+            if (!button || !autoButtonEnabled(button)) return false;
+            acted = true;
+            if (!autoSelected(button)) { button.click(); acted = true; await wait(1000); }
+          }
+        } else if (!matchedChoice) {
+          const bank = challenge.querySelector('[data-test="word-bank"]');
+          const buttons = [...(bank || challenge).querySelectorAll('button[data-test*="challenge-tap-token"]')];
+          const tokens = Array.isArray(result.tokens) && result.tokens.length ? result.tokens : result.answer ? splitAnswer(result.answer, buttons) : [];
+          if (tokens.length) {
+            const selected = bank ? selectedWordTokens(challenge, bank) : [];
+            const normalizedTokens = tokens.map(normalize);
+            if (bank && !isAnswerPrefix(selected, normalizedTokens)) return false;
+            if (bank && selected.length === tokens.length) acted = true;
+            for (const token of bank ? tokens.slice(selected.length) : tokens) {
+              const currentBank = challenge.querySelector('[data-test="word-bank"]') || challenge;
+              const currentButtons = [...currentBank.querySelectorAll('button[data-test*="challenge-tap-token"]')];
+              const button = currentButtons.find(el => autoButtonEnabled(el) && normalize(tokenText(el)) === normalize(token));
+              if (!button) return false;
+              button.click(); acted = true; await wait(1000);
+              if (!autoRun || root() !== challenge) return false;
+            }
+          } else {
+            const input = challenge.querySelector('input:not([type="radio"]):not([type="checkbox"]), textarea, [contenteditable="true"], [role="textbox"]');
+            if (input && result.answer) {
+              if (input.isContentEditable || input.getAttribute('contenteditable') === 'true') input.textContent = result.answer;
+              else {
+                const setter = Object.getOwnPropertyDescriptor(input.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype, 'value')?.set;
+                setter?.call(input, result.answer);
+              }
+              input.dispatchEvent(new Event('input', { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+              acted = true;
+            }
+          }
+        }
+      }
+      if (!acted) return false;
+      await wait(250);
+      if (!autoRun || root() !== challenge) return false;
+      const check = autoCheckButton();
+      if (check && autoButtonEnabled(check)) {
+        autoRunStage = 'checking';
+        autoRunReport('Đã điền; đang kiểm tra…');
+        check.click();
+        autoRunTimer = setTimeout(() => {
+          if (autoRun && autoRunStage === 'checking') stopAutoRun('Chưa nhận diện được kết quả chấm; đã tạm dừng.');
+        }, 6000);
+      } else {
+        autoRunStage = 'check';
+        autoRunReport('Đã điền; chờ Duolingo chấm…');
+        autoRunTimer = setTimeout(() => {
+          if (autoRun && autoRunStage === 'check' && root() === challenge) stopAutoRun('Không tìm thấy nút Kiểm tra khả dụng; đã tạm dừng.');
+        }, 5000);
+      }
+      return true;
+    };
+    perform().then(ok => {
+      autoRunBusy = false;
+      if (!ok && autoRun) stopAutoRun('Không thể xác định chắc chắn cách điền câu này; đã tạm dừng.');
+    }).catch(() => stopAutoRun('Gặp lỗi khi điền; đã tạm dừng.'));
+  }
+  function autoRunTick() {
+    if (!autoRun) return;
+    const incorrect = document.querySelector('[data-test="blame blame-incorrect"], [data-test="player-next"] [data-test*="incorrect"]');
+    if (incorrect && incorrect.getClientRects().length) { stopAutoRun('Đáp án chưa đúng; đã tạm dừng.'); return; }
+    if (autoRunStage === 'check' && autoRunChallenge === root()) {
+      const check = autoCheckButton();
+      if (check && autoButtonEnabled(check)) {
+        autoRunStage = 'checking';
+        autoRunReport('Đã điền; đang kiểm tra…');
+        check.click();
+        autoRunTimer = setTimeout(() => { if (autoRun && autoRunStage === 'checking') stopAutoRun('Chưa nhận diện được kết quả chấm; đã tạm dừng.'); }, 6000);
+      }
+      return;
+    }
+    if (autoRunStage === 'checking') {
+      const correct = document.querySelector('[data-test="blame blame-correct"], [data-test="blame blame-correct-answer"]');
+      if (correct?.getClientRects().length) {
+        clearTimeout(autoRunTimer);
+        autoRunStage = 'advance';
+        autoRunReport('Đúng; đang chuyển tiếp…');
+        setTimeout(() => {
+          if (!autoRun) return;
+          const next = continueButton();
+          if (!next) { stopAutoRun('Đáp án đúng nhưng chưa thấy nút Tiếp tục; đã tạm dừng.'); return; }
+          next.click();
+          autoRunStage = 'advance';
+          autoRunReport('Đang chờ câu tiếp theo…');
+        }, 250);
+      }
+      return;
+    }
+    if (autoRunStage === 'advance' && root() && autoRunQuestionSignature(root()) !== autoRunQuestionKey) {
+      autoRunStage = 'solve';
+      autoRunChallenge = null;
+      autoRunQuestionKey = '';
+      schedule();
+    }
   }
   document.addEventListener('keydown', event => {
     if (event.key === 'Control') {
@@ -1110,7 +1478,7 @@
     document.querySelectorAll('.duo-hint-anchor').forEach(el => el.classList.remove('duo-hint-anchor'));
   };
   function card(text) {
-    if (mode === 'compact') return;
+    if (!enabled || mode === 'compact') return;
     const container = root(); if (!container) return;
     let el = document.getElementById(CARD);
     if (!el) { el = document.createElement('aside'); el.id = CARD; container.prepend(el); }
@@ -1121,7 +1489,7 @@
     const value = document.createElement('span'); value.textContent = text; el.append(label, value);
   }
   function schedule() {
-    if (!enabled || pending) return;
+    if ((!enabled && !autoRun) || pending) return;
     pending = true;
     timer = setTimeout(() => {
       pending = false;
@@ -1170,11 +1538,12 @@
       }
       setTimeout(() => {
         document.removeEventListener(RESPONSE, acknowledge);
-        if (!received && enabled && id === requestId && root() === challenge) {
+        if (!received && (enabled || autoRun) && id === requestId && root() === challenge) {
           diagnostics = { bridge: 'không phản hồi', reactFibers: null, pairs: 0, result: 'không đọc được dữ liệu trang' };
           observer?.disconnect();
           card('Không thể đọc dữ liệu trang. Hãy tải lại trang Duolingo.');
           observer?.observe(document.documentElement, observeOptions);
+          if (autoRun) stopAutoRun('Không nhận được phản hồi dữ liệu; đã tạm dừng.');
         }
       }, 800);
     }, 120);
@@ -1182,24 +1551,34 @@
   function start() {
     if (!observer) {
       observer = new MutationObserver(records => {
-        if (records.every(r => r.target instanceof Element && (r.target.closest('#' + CARD) || r.target.closest('.duo-hint-number')))) return;
-        schedule();
+        if (records.every(r => r.target instanceof Element && (r.target.closest('#' + CARD) || r.target.closest('.duo-hint-number') || r.target.closest('.duo-hint-answer-counter') || r.target.closest('.duo-hint-daily-stats')))) return;
+        autoRunTick();
+        updateProgressCounter();
+        applyOnlyShowExp();
+        if (enabled || autoRun) schedule();
       });
       observer.observe(document.documentElement, observeOptions);
     }
+    updateProgressCounter();
+    applyOnlyShowExp();
     schedule();
   }
-  document.addEventListener('duo-hint-session-v1', () => { if (enabled) schedule(); });
-  function stop() { if (fillRun) fillRun.cancelled = true; observer?.disconnect(); observer = null; clearTimeout(timer); pending = false; requestId++; shortcutState = null; clean(); }
+  document.addEventListener('duo-hint-session-v1', () => { if (enabled || autoRun) schedule(); });
+  function stop() {
+    if (fillRun) fillRun.cancelled = true;
+    observer?.disconnect(); observer = null; clearTimeout(timer); pending = false; requestId++; shortcutState = null; clean();
+    if (autoRun) { if (document.documentElement) start(); setTimeout(() => { if (autoRun) schedule(); }, 150); }
+  }
   document.addEventListener(RESPONSE, event => {
-    if (!enabled) return;
     let result; try { result = JSON.parse(event.detail); } catch { return; }
     if (result.id !== requestId || !root()) return;
+    const challenge = root();
+    if (autoRun && !enabled) { autoRunAnswer(result, challenge); return; }
+    if (!enabled) return;
     diagnostics = { bridge: result.source === 'podcast' ? 'dữ liệu trên trang' : 'đã kết nối', reactFibers: result.fiberCount ?? null, pairs: result.pairs?.length || 0, result: result.error ? 'lỗi khi đọc dữ liệu' : result.source === 'podcast' && result.pairs?.length ? 'đã tìm thấy các cặp podcast' : result.source === 'session' ? 'đã tìm thấy trong phiên học' : (result.pairs?.length || result.answer || Number.isInteger(result.index)) ? 'đã tìm thấy dữ liệu React' : 'không tìm thấy đáp án', error: result.error || undefined };
     // Pause observation while updating our own UI to avoid a render loop.
     observer?.disconnect();
     clean();
-    const challenge = root();
     shortcutState = null;
     if (result.pairIndices?.length) {
       const grid = challenge.querySelector('[style*="--match-challenge-rows"]');
@@ -1241,14 +1620,18 @@
         card(result.answer || choiceLabel || `Chọn đáp án ${result.index + 1}`);
       }
     } else { card('Chưa tìm thấy dữ liệu đáp án cho câu này.'); }
+    if (autoRun) autoRunAnswer(result, challenge);
     observer?.observe(document.documentElement, observeOptions);
   });
 
   // ====== Cài đặt (thay chrome.storage bằng localStorage) ======
   const SKEY = 'duolingo-hint-settings-v1';
-  const settings = { hintEnabled: false, hintMode: 'full', autoContinue: true, ctrlMode: 'all' };
+  const settings = { hintEnabled: false, hintMode: 'full', autoContinue: true, ctrlMode: 'all', showExtraStatusInTest: true, onlyShowExp: false };
   try { Object.assign(settings, JSON.parse(localStorage.getItem(SKEY) || '{}')); } catch {}
   delete settings.autoCheck;
+  autoContinue = settings.autoContinue !== false;
+  showExtraStatusInTest = settings.showExtraStatusInTest !== false;
+  onlyShowExp = Boolean(settings.onlyShowExp);
   function saveSettings() { try { localStorage.setItem(SKEY, JSON.stringify(settings)); } catch {} }
   ctrlMode = settings.ctrlMode === 'one' ? 'one' : 'all';
   mode = ['compact', 'card', 'full'].includes(settings.hintMode) ? settings.hintMode : 'full';
@@ -1261,6 +1644,8 @@
     saveSettings();
     if (key === 'ctrlMode') { ctrlMode = value === 'one' ? 'one' : 'all'; if (fillRun) fillRun.cancelled = true; }
     else if (key === 'autoContinue') { autoContinue = !!value; lastAutoContinued = null; if (autoContinue) startAutoContinue(); else { continueObserver?.disconnect(); continueObserver = null; } }
+    else if (key === 'showExtraStatusInTest') { showExtraStatusInTest = !!value; updateProgressCounter(); }
+    else if (key === 'onlyShowExp') { onlyShowExp = !!value; applyOnlyShowExp(); }
     else if (key === 'hintMode') { mode = ['compact', 'card', 'full'].includes(value) ? value : 'full'; if (enabled) { clean(); schedule(); } }
     else if (key === 'hintEnabled') { enabled = !!value; enabled ? start() : stop(); }
   }
@@ -1298,7 +1683,7 @@
     });
     return set;
   }
-  let panel, fab, ctrlButton, statusEl, hintSwitch, statusTimer;
+  let panel, fab, ctrlButton, statusEl, hintSwitch, statusTimer, autoRunStatusEl, autoRunStartButton, autoRunStopButton;
   function placeFabInNavigation() {
     if (!fab) return;
     const visible = element => element && element.getClientRects().length && getComputedStyle(element).visibility !== 'hidden' && getComputedStyle(element).display !== 'none';
@@ -1422,14 +1807,20 @@
     if (hintSwitch) { hintSwitch.input.checked = enabled; hintSwitch.subEl.textContent = enabled ? 'Đang bật' : 'Đang tắt'; }
     if (fab) fab.classList.toggle('on', enabled);
     if (ctrlButton) { ctrlButton.hidden = !enabled; ctrlButton.setAttribute('aria-disabled', String(!enabled)); ctrlButton.title = enabled ? 'K\u00e9o \u0111\u1ec3 di chuy\u1ec3n; nh\u1ea5n \u0111\u1ec3 ch\u1ecdn g\u1ee3i \u00fd' : 'K\u00e9o \u0111\u1ec3 di chuy\u1ec3n; b\u1eadt Hint \u0111\u1ec3 d\u00f9ng'; }
+    if (autoRunStatusEl) autoRunStatusEl.textContent = autoRunStatus;
+    if (autoRunStartButton) autoRunStartButton.disabled = autoRun;
+    if (autoRunStopButton) autoRunStopButton.disabled = !autoRun;
   }
   function buildUI() {
     if (document.getElementById('duo-hint-fab') || !document.body) return;
-    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=1.2.28', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    fab = h('button', { id: 'duo-hint-fab', type: 'button', title: 'Duolingo Hint (Alt+H bật/tắt)' }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-panel.png?v=2.0.1', alt: 'Duolingo Hint', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_HINT_FALLBACK; } } }));
+    fabStreakEl = h('span', { class: 'duo-hint-streak-badge', hidden: '' });
+    fab.append(fabStreakEl);
+    updateStreakBadge();
     ctrlButton = h('button', { id: 'duo-hint-ctrl', type: 'button', title: 'Use the current answer hint', onclick: event => {
       if (suppressCtrlClick) { event.preventDefault(); event.stopPropagation(); suppressCtrlClick = false; clearTimeout(suppressCtrlClickTimer); return; }
       if (enabled) selectNextToken();
-    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=1.2.28', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
+    } }, h('img', { src: 'https://nguyenphanvn95.github.io/duolingo/icon-ctrl.png?v=2.0.1', alt: 'Ctrl', onerror: event => { const image = event.currentTarget; if (!image.dataset.fallbackApplied) { image.dataset.fallbackApplied = 'true'; image.src = ICON_CTRL_FALLBACK; } } }));
     installCtrlDrag();
     hintSwitch = switchRow('Hiện Hint', enabled ? 'Đang bật' : 'Đang tắt', 'hintEnabled');
     const autoContinueSwitch = switchRow('T\u1ef1 \u0111\u1ed9ng b\u1ea5m Ti\u1ebfp t\u1ee5c', 'T\u1ef1 b\u1ea5m khi n\u00fat Ti\u1ebfp t\u1ee5c ho\u1ea1t \u0111\u1ed9ng', 'autoContinue');
@@ -1447,9 +1838,40 @@
       h('h3', {}, 'Duolingo Hint ', h('small', {}, VERSION)), closePanel,
       hintSwitch.row, autoContinueSwitch.row,
       radioGroup('Cách hiện Hint', 'mode', 'hintMode', [['compact', 'Chỉ hiện Hint rút gọn'], ['card', 'Chỉ hiện khối đáp án gợi ý'], ['full', 'Hiện đầy đủ Hint']]),
-      radioGroup('Phím tắt Ctrl cho bài xếp từ', 'ctrl', 'ctrlMode', [['all', 'Tự động điền hết'], ['one', 'Mỗi lần bấm chọn một từ']]),
       h('p', { class: 'duo-hint-note' }, 'Hint mặc định tắt. Trạng thái được lưu cho lần sau.'),
       statusEl, copy);
+    const header = panel.querySelector('h3'), close = panel.querySelector('.duo-hint-close');
+    const settingsPane = h('div', { class: 'duo-hint-pane active' });
+    for (const child of [...panel.children]) if (child !== header && child !== close) settingsPane.append(child);
+    settingsPane.append(
+      switchRow('Hiện bộ đếm đúng/sai', 'Đếm câu đúng và sai trên thanh tiến độ', 'showExtraStatusInTest').row,
+      switchRow('Ẩn giải đấu, chỉ hiện XP và thời gian', 'Thay nội dung quảng bá ở trang chủ bằng tiến độ hôm nay', 'onlyShowExp').row
+    );
+    const settingsTab = h('button', { type: 'button', role: 'tab', 'aria-selected': 'true' }, 'Cài đặt');
+    const runnerTab = h('button', { type: 'button', role: 'tab', 'aria-selected': 'false' }, 'Tự chạy');
+    const tabs = h('div', { class: 'duo-hint-tabs', role: 'tablist' }, settingsTab, runnerTab);
+    const runnerPane = h('div', { class: 'duo-hint-pane' });
+    autoRunStatusEl = h('div', { class: 'duo-hint-runner-status', 'aria-live': 'polite' }, autoRunStatus);
+    autoRunStartButton = h('button', { type: 'button', onclick: () => { startAutoRun(); refresh(); } }, 'Bắt đầu');
+    autoRunStopButton = h('button', { type: 'button', onclick: () => { stopAutoRun('Đã dừng'); refresh(); } }, 'Dừng');
+    const runActions = h('div', { class: 'duo-hint-runner-actions' }, autoRunStartButton, autoRunStopButton);
+    runnerPane.append(
+      radioGroup('Phím tắt Ctrl cho bài xếp từ', 'ctrl', 'ctrlMode', [['all', 'Tự động điền hết'], ['one', 'Mỗi lần bấm chọn một từ']]),
+      h('p', { class: 'duo-hint-runner-note' }, 'Nhấn Ctrl + Alt để bật hoặc tắt nhanh chế độ tự chạy.'),
+      h('p', { class: 'duo-hint-runner-note' }, 'Tự giải câu hỏi trong bài đang mở bằng dữ liệu đáp án tìm được. Tạm dừng nếu không xác định được đáp án hoặc kết quả chấm.'),
+      autoRunStatusEl,
+      runActions
+    );
+    const selectTab = selected => {
+      const settingsActive = selected === 'settings';
+      settingsTab.setAttribute('aria-selected', String(settingsActive));
+      runnerTab.setAttribute('aria-selected', String(!settingsActive));
+      settingsPane.classList.toggle('active', settingsActive);
+      runnerPane.classList.toggle('active', !settingsActive);
+    };
+    settingsTab.addEventListener('click', () => selectTab('settings'));
+    runnerTab.addEventListener('click', () => selectTab('runner'));
+    panel.replaceChildren(header, close, tabs, settingsPane, runnerPane);
     fab.addEventListener('click', () => {
       panel.hidden = !panel.hidden;
       clearInterval(statusTimer);
@@ -1457,12 +1879,50 @@
       if (!panel.hidden) refresh();
     });
     document.body.append(fab, panel, ctrlButton);
+    void refreshStreak();
+    if (!streakTimer) streakTimer = setInterval(() => { void refreshStreak(); }, 60 * 60 * 1000);
     placeFabInNavigation();
     applyCtrlPosition();
     refresh();
   }
   window.addEventListener('resize', () => { applyCtrlPosition(); placeFabInNavigation(); }, { passive: true });
   window.addEventListener('scroll', placeFabInNavigation, { capture: true, passive: true });
+  function activeAudioButton() {
+    const challenge = root();
+    if (!challenge) return null;
+    return [...challenge.querySelectorAll('[data-test="audio-button"]')].filter(button => button.getClientRects().length && !button.disabled && button.getAttribute('aria-disabled') !== 'true').at(-1) || null;
+  }
+  function navigateShortcut(path, event) { event.preventDefault(); event.stopPropagation(); location.href = path; }
+  document.addEventListener('keydown', event => {
+    if (event.repeat || editableTarget(event.target)) return;
+    const key = String(event.key || '').toLowerCase();
+    // Treat pressing the second modifier as the Ctrl+Alt chord, regardless of order.
+    const ctrlAltChord = !event.metaKey && !event.shiftKey && (
+      (event.ctrlKey && event.key === 'Alt') || (event.altKey && event.key === 'Control')
+    );
+    if (ctrlAltChord) {
+      event.preventDefault(); event.stopPropagation();
+      if (autoRun) stopAutoRun('Đã tắt bằng Ctrl + Alt');
+      else startAutoRun();
+      refresh();
+      return;
+    }
+    if (event.ctrlKey && !event.altKey && !event.metaKey && (key === ' ' || event.code === 'Space')) {
+      const audio = activeAudioButton();
+      if (audio) { event.preventDefault(); event.stopPropagation(); audio.click(); }
+      return;
+    }
+    if (event.ctrlKey && !event.altKey && !event.metaKey && key === 'home') return navigateShortcut('/', event);
+    if (event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey && key === 'l') return navigateShortcut('/lesson', event);
+    if (event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey && key === 'p') return navigateShortcut('/practice', event);
+    if (event.altKey && event.shiftKey && !event.ctrlKey && !event.metaKey && key === 'q') return navigateShortcut('/stories', event);
+    if (key === 'escape' && root()) {
+      const skip = document.querySelector('[data-test="player-skip"]');
+      if (skip && !skip.disabled && skip.getAttribute('aria-disabled') !== 'true' && skip.getClientRects().length) {
+        event.preventDefault(); event.stopPropagation(); skip.click();
+      }
+    }
+  }, true);
   document.addEventListener('keydown', event => {
     if (event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && event.code === 'KeyH' && !editableTarget(event.target)) {
       event.preventDefault(); setSetting('hintEnabled', !enabled); refresh();
@@ -1478,5 +1938,8 @@
     if (!document.body) return;
     if (!document.getElementById('duo-hint-fab')) buildUI();
     else placeFabInNavigation();
+    updateProgressCounter();
+    applyOnlyShowExp();
+    autoRunTick();
   }, 1500);
 })();
